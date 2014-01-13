@@ -2,7 +2,7 @@ Science-Commons.org
 ===================
 <i>Organizing the World’s Scientific Information all in One Public Place</i>
 
-This repository hosts the codebase for Science-Commons.org, an online platform that aims to organize the world’s scientific information all in one public place as to maximize the quality of and accessibility to scientific information for all (benefiting not only working researchers, but also laypeople, educators, and public policy makers). 
+This repository hosts the codebase for Science-Commons.org, an online platform that organizes scientific information at the article level as to enhance the interpretation of scientific findings and accelerate cumulative knowledge development. This will benefit not only academic and industry researchers, but also laypeople, educators, and public policy makers. 
 
 For each article as much of the following information will be posted/available:
 <ul>
