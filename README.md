@@ -10,10 +10,10 @@ For each article as much of the following information will be posted/available:
 <li>post-publication comments from various sources</li>
 <li>peer reviewer information</li>
 <li>information about (and direct links to) follow-up independent direct/conceputal replications</li>
-<li>display of important statistical information (and disaply of publication bias indices)</li>
+<li>display of important statistical information (and display of publication bias indices)</li>
 <li>disclosure of unreported methodological details</li>
 <li>figures, graphs, interactive graphs, videos</li>
-<li>ability to confirm reproducibility of analyses and graphs for articles linked to raw data/syntax</li>
+<li>in-browser R analyses to confirm reproducibility of analyses and graphs for articles linked to raw data/syntax</li>
 <li>direct links to open-access full-text and to SSRN pre-print version of article</li>
 <li>display of social media presence (news stories, tweets, or blog posts about the article)</li>
 <li>display of alternaive metrics (altmetrics.org) of article's impact</li>
