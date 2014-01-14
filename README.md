@@ -22,3 +22,6 @@ For each article as much of the following information will be posted/available:
 This will be accomplished by aggregating information from several pre-existing sources (e.g., PubMed, PubMedCommons, PubPeer.com, Mendeley, ImpactStory, open-access journals, SSRN, data repositories, and other open-science initiatives, e.g., OpenScienceFramework, ArchivalProject.org, PsychFileDrawer.org, PsychDisclosure.org). Other information will be user-inputted in a crowd-sourced manner like Wikipedia, with some information involving both automatic aggregation and human interaction. The information will be organized at the article-level, following on the footsteps of PubMed (basically a highly augmented version of the PubMed interface).
 
 For more details (prototype screenshots and features), see https://dl.dropboxusercontent.com/u/227724/Science-Commons%20(Dec%2017%2C%202013%20Version).pdf
+
+Funding opportunities being considered:
+https://docs.google.com/spreadsheet/ccc?key=0ApAs97wRypnadDhfcS1yd3VYOG1Fdm9rMWdUUURWWWc&usp=drive_web#gid=0
