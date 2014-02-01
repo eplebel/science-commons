@@ -170,7 +170,6 @@ class ReadFile:
 
 			if self.addrow:
 				row = dict(row, **self.addrow)
-			print row
 			self.table.insert(row)
 
 
