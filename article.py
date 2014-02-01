@@ -20,7 +20,7 @@ import cherrypy
 from mako_defs import *
 import mongo_tools as mt
 import os
-
+from config import *
 
 class article(object):
 
@@ -28,8 +28,8 @@ class article(object):
 	def index(self, **kwargs):
 		output = ""
 
-		if kwargs.has_key['DOI']:
-			data = self.fetchData(kwargs['DOI'])
+		if kwargs.has_key('doi'):
+			data = self.fetchData(kwargs['doi'])
 		else:
 			data = "no DOI provided"
 
@@ -37,10 +37,20 @@ class article(object):
 
 	def fetchData(self, doi):
 		db = mt.Connect("sciencecommons", "articles")
-		row = db.table.find_one({'DOI' : doi})
-		output = article_template.render(data=row)
-		return output
+		row = db.table.find_one({'doi': doi})
 
+		#format stuff, check if data present
+		data = {}
+	
+		for item in ITEMS:
+			if row.has_key(item):
+				data[item] = formatter[item](row[item])
+			else:
+				data[item] = ''
+
+		output = article_template.render(data=data)
+
+		return output
 
 
 if __name__ == '__main__':
