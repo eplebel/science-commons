@@ -60,13 +60,13 @@ def StringToType(value):
 		try:
 			val = float(value)
 		except:
-			val = value
+			val = unicode(value)
 
 		#val = value.split('.')
 		#if val[0].isdigit() and val[1].isdigit():
 
 	else:
-		val = value
+		val = unicode(value)
 
 	return val
 
@@ -115,14 +115,14 @@ class ReadFile:
 
 			for myFile in self.fileList:
 				lines = open(myFile, 'r').readlines()
-				self.process(lines)
+				self.process(lines, myFile)
 
 
 		else:
-			self.process(data)
+			self.process(data, fileName)
 
 
-	def process(self, raw_lines):
+	def process(self, raw_lines, thefile):
 		lines = []
 		#remove illegal chars, convert to utf, remove whitespace
 		for line in raw_lines:
@@ -131,13 +131,16 @@ class ReadFile:
 		if lines[0] == "*** Header Start ***":
 			self.processEPrime(lines)
 		else:
-			self.processCSV(lines)
+			self.processCSV(thefile)
 
 
-	def processCSV(self, lines):
+	def processCSV(self, thefile):
 		print "Processing as CSV"
+		r = csv.reader(open(thefile, 'r'))
+
+
 		#get the headers, make the variables
-		headers = lines[self.startLine].split(',')
+		headers = r.next()
 		headers = map(strip, headers)
 		#make sure the keys are all safe
 		headers = map(KeySafe, headers)
@@ -154,9 +157,7 @@ class ReadFile:
 				index[k] = headers.index(k)
 				VARs[k] = []
 
-
-		for line in lines[self.startLine+1:]:
-			line = line.split(',')
+		for line in r:
 			line = map(strip, line)
 			row = {}
 			for k in VARs.keys():
@@ -169,7 +170,9 @@ class ReadFile:
 
 			if self.addrow:
 				row = dict(row, **self.addrow)
+			print row
 			self.table.insert(row)
+
 
 	def processEPrime(self, lines):
 		print "processing as E-Prime"
