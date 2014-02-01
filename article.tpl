@@ -4,7 +4,7 @@
 <html>
   
   <head>
-    <title>Science-Commons.org - ${data['Title']}</title>
+    <title>Science-Commons.org - ${data['title']}</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
@@ -54,11 +54,11 @@
           </div>
         </div>
       </div>
-      <span><i>Psychonomic Bulletin & Review </i> (in press) doi: 10.3758/s13423-013-0549-2</span><br>
-      <font size="6px">Big secrets do not necessarily cause hills to appear steeper</font><br>
+      <span><i>${data['journal']} doi: ${data['doi']}</span><br>
+      <font size="6px">${data['title']}</font><br>
       <span>LeBel, E. P. & Wilbur, C. J.</span><br>
-      <span>Montclair State University, Department of Psychology</span><br>
-      <span><b>Action Editor: </b>Cathleen Moore <b>Reviewer 1:</b>  <i>Unknown at this time.</i>, <b>Reviewer 2:</b> <i>Unknown at this time.</i></span><br><br>
+      <span>${data['affiliation']}</span><br>
+      <span><b>Action Editor: </b>${data['editor']}<b>Reviewer 1:</b>  <i>Unknown at this time.</i>, <b>Reviewer 2:</b> <i>Unknown at this time.</i></span><br><br>
 		<div class="row">
 		  <div class="col-md-12" class="panel-group" id="accordion">
 			<div class="panel panel-default">
@@ -69,7 +69,7 @@
 				<div class="accordion-body collapse" id="collapse3">
 					<div class="accordion-inner">
 						<div class="panel-body">
-							<p>Slepian, Masicampo, Toosi, and Ambady (Journal of Experimental Psychology: General, 141, 619-624, 2012, Study 1) found that individuals recalling and writing about a big, meaningful secret judged a pictured hill as steeper than did those who recalled and wrote about a small, inconsequential secret (with estimates unrelated to physical effort unaffected). From an embodied cognition perspective, this result was interpreted as suggesting that important secrets weigh people down. Answering to mounting calls for the crucial need of independent direct replications of published findings to ensure the self-correcting nature of our science, we sought to corroborate Slepian et al.â€™s finding in two extremely high-powered, preregistered studies that were very faithful to all procedural and methodological details of the original study (i.e., same cover story, study title, manipulation, measures, item order, scale anchors, task instructions, sampling frame, population, and statistical analyses). In both samples, we were unsuccessful in replicating the target finding. Although Slepian et al. reported three other studies supporting the secret burdensomeness phenomenon, we advise that these three other findings need to be independently corroborated before the general phenomenon informs theory or health interventions.</p>
+							<p>${data['abstract']}</p>
 							<p><b>Keywords:</b> <a>Embodied cognition</a>, <a>secrecy</a>, <a>Concealment of secrets</a>, <a>Independent direct replication</a></p>
 						</div>
 					</div>
