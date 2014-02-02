@@ -87,10 +87,7 @@
 				</div>
 				<div class="panel-body">
                 <strong><font size="3px">Basic Statistics</font></strong><br>
-                <div>Study 1: &nbsp; N = 240, &nbsp;d = .18, &nbsp;power = 99%
-                </div>
-                <div>Study 2: &nbsp; N = 90, &nbsp;d = -.32, &nbsp;power = 96%
-                </div><br>
+                ${data['stats']}
                 <strong><font size="3px">Evidentiary Value</font></strong><br>
                 <img src="logos/pcurve.png">&nbsp; <i>Not yet estimated</i><br>
                 <img src="logos/icindex.png">&nbsp; &nbsp;<i>Not yet estimated</i>
