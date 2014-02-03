@@ -27,14 +27,10 @@ for row in db.table.find():
 for row in db.table.find({'stats' : {'$exists':True}}):
 	stats = []
 	for stat in row['stats']:
-		d = OrderedDict()
-		st = stat.split(',')
-		for s in st:
-			k = s.split('=')[0].strip()
-			v = s.split('=')[1].strip()
-			d[k] = v
-		stats.append(d)
+		try:
+			stats.append(eval(stat))
+		except:
+			raise(Exception("Stats Field Update Error : Cannot parse %s into dictionary format" % stat))
 	row['stats'] = stats
 	db.table.save(row)
-
 
