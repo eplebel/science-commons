@@ -95,7 +95,7 @@ class ReadFile:
 		table = db.table
 
 		if clear:
-			table.remove({})
+			table.remove()
 
 		self.table = table
 
