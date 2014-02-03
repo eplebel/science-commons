@@ -54,9 +54,9 @@
           </div>
         </div>
       </div>
-      <span><i>${data['journal']} doi: ${data['doi']}</span><br>
+      <span><i>${data['journal']}, (${data['year']}) doi: ${data['doi']}</span><br>
       <font size="6px">${data['title']}</font><br>
-      <span>LeBel, E. P. & Wilbur, C. J.</span><br>
+      <span>${data['author']}</span><br>
       <span>${data['affiliation']}</span><br>
       <span><b>Action Editor: </b>${data['editor']}<b>Reviewer 1:</b>  <i>Unknown at this time.</i>, <b>Reviewer 2:</b> <i>Unknown at this time.</i></span><br><br>
 		<div class="row">
@@ -102,14 +102,7 @@
             </div>
             <div class="panel-body">
 				<strong>Independent Replications</strong>
-              <table class="table table-condensed">
-                <tbody>
-                  <tr><td><ul><ul><i><li>None yet identified.</li></i></ul></ul></td>
-				  </tr>
-				  
-                  
-                </tbody>
-              </table>
+		${data['replications']}
             </div>
           </div>
         </div>
