@@ -95,9 +95,21 @@ def replications(reps):
 
 	return output
 
+def materials(m):
+	output = ""
+	count = 1
+	for mats in m:
+		output += "<p class='tab'>For study %i:<p>" % count
+		output += "%s<br\>" %  m
+		count += 1
+
+	return output
+				
+
 formatter = dict.fromkeys(ITEMS, dummy)
 formatter['keywords'] = keywords
 formatter['stats'] = stats
 formatter['author'] = author
 formatter['affiliation'] = author
 formatter['replications'] = replications
+formatter['materials'] = materials

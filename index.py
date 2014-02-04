@@ -26,7 +26,7 @@ class index(object):
 
 	@cherrypy.expose
 	def index(self):
-		output = "<h1>Landing Page</h1>"
+		output = "<h1>Discovery Page</h1>"
 
 		articles = db.table.find()
 

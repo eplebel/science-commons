@@ -117,32 +117,7 @@
 				  <img src="logos/badgeReprodAnal.png" width="50">
 				</div>
 				<div class="panel-body">
-						
-					
-							<img src="logos/osf.png" class="pull-left">
-						
-				  
-				  <p class="tab">For Study 1:</p>
-				  <ul>
-					<ul>
-					  <li>
-						<a href="https://osf.io/api/v1/project/w6kv5/node/butpa/osffiles/results_deIdentified.sav/version/1/">
-						results_deIdentified.sav<br></li></a>
-					  <li>
-						<a href="https://osf.io/api/v1/project/w6kv5/node/butpa/osffiles/mainSyntax_OSF.sps/version/1/">
-						mainSyntax_OSF.sps<br></li></a>
-					  </ul>
-					</ul>
-					<p class="tab">For Study 2:</p>
-					<ul>
-						<ul>
-					  <li><a href="https://osf.io/api/v1/project/euzwh/node/efytw/osffiles/results_deIdentified.sav/version/1/">results_deIdentified.sav</a>
-					  <li><a href="https://osf.io/api/v1/project/euzwh/node/efytw/osffiles/mainSyntax_OSF.sps/version/1/">mainSyntax_OSF.sps</li></a>
-					  <li><a href="https://osf.io/efytw/osffiles/CIs_uriReplicationStandard.R/">CIs_uriReplicationStandard.R</a></li>
-					  <li><a href="https://osf.io/api/v1/project/w6kv5/node/butpa/osffiles/simonsohnApproachFigure.xlsx/version/1/">simonsohnApproachFigure.xlsx</a></li>
-					</ul>
-				  </ul>
-				  
+					${data['materials']}				 				  
 				</div>
           </div>
 		</div>
