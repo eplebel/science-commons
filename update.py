@@ -21,8 +21,6 @@ for row in db.table.find():
 		#split up the stuff separated by a |
 		if type(row[k]) == unicode and row[k].count('|'):
 			row[k] = row[k].split('|')
-
-	print row
 	
 	db.table.save(row)
 		

@@ -6,6 +6,9 @@ db = mt.Connect("sciencecommons", "articles")
 
 ITEMS = ['doi','year', 'title','author','affiliation','journal','editor','reviewers','abstract','keywords','stats','ev','replications','data','materials','prereg','disclosure','comments']
 
+index_url = '127.0.0.1:8181'
+article_url = '127.0.0.1:8080'
+
 
 def dummy(x):
 	if x == 'NA':
@@ -67,15 +70,19 @@ def replications(reps):
 		repList.append(copy.deepcopy([]))
 
 
+	print reps
 	for rep in reps:
 		doi = rep.strip()
+		print doi
+
 		row = db.table.find_one({'doi':doi})
-		repLink = row['repLink']
-		stats = row['stats']
-		journal = formatter['journal'](row['journal'])
-		author = formatter['author'](row['author'])
-		for rep in repLink:
-			repList[rep[0]-1].append([journal, author, formatter['stats'](stats[rep[1]-1], rep=True), label[rep[2]-1]])
+		if row:
+			repLink = row['repLink']
+			stats = row['stats']
+			journal = formatter['journal'](row['journal'])
+			author = formatter['author'](row['author'])
+			for rep in repLink:
+				repList[rep[0]-1].append([journal, author, formatter['stats'](stats[rep[1]-1], rep=True), label[rep[2]-1]])
 
 	count = 1
 	output = ""
@@ -88,9 +95,21 @@ def replications(reps):
 
 	return output
 
+def materials(m):
+	output = ""
+	count = 1
+	for mats in m:
+		output += "<p class='tab'>For study %i:<p>" % count
+		output += "%s<br\>" %  m
+		count += 1
+
+	return output
+				
+
 formatter = dict.fromkeys(ITEMS, dummy)
 formatter['keywords'] = keywords
 formatter['stats'] = stats
 formatter['author'] = author
 formatter['affiliation'] = author
 formatter['replications'] = replications
+formatter['materials'] = materials
