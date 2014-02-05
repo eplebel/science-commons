@@ -41,8 +41,8 @@ class index(object):
 		return output 
 
 if __name__ == '__main__':
-
-	#cherrypy.config.update(cherry_settings)
+	cherrypy.config.update({'server.socket_host':'97.107.137.132'})
+	cherrypy.config.update({'server.socket_port':9191})
 	index = index()
 	index.article = article.article()
 	cherrypy.quickstart(index)
