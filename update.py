@@ -4,7 +4,6 @@ Update the dang ol' database
 """
 
 from mongo_tools import ReadFile, Connect
-from collections import OrderedDict
 import time
 
 #get the data
