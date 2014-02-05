@@ -70,7 +70,7 @@
 					<div class="accordion-inner">
 						<div class="panel-body">
 							<p>${data['abstract']}</p>
-							<p><b>Keywords:</b> <a>Embodied cognition</a>, <a>secrecy</a>, <a>Concealment of secrets</a>, <a>Independent direct replication</a></p>
+							<p><b>Keywords:</b> ${data['keywords']}</p>
 						</div>
 					</div>
 				</div>
@@ -117,7 +117,7 @@
 				  <img src="logos/badgeReprodAnal.png" width="50">
 				</div>
 				<div class="panel-body">
-					${data['materials']}				 				  
+					${data['data']}				 				  
 				</div>
           </div>
 		</div>
@@ -128,20 +128,7 @@
             </div>
             <div class="panel-body">
               <img src="logos/osf.png" class="pull-left">
-							<p class="tab">For Study 1:</p>
-							<ul>
-							<ul>
-							<li><a href="https://osf.io/api/v1/project/w6kv5/osffiles/ReplicationProtocol_for_Slepian_et_al._2012_Replication_1_-_LeBel.doc/version/1/">
-							ReplicationProtocol_Replication_1_-_LeBel.doc</a></li>
-							</ul>
-							</ul>
-							<p class="tab">For Study 2:</p>
-							<ul>
-							<ul>
-							<li><a href="https://osf.io/api/v1/project/euzwh/osffiles/ReplicationProtocol_for_Slepian_et_al._2012_Replication_2_-_LeBel.doc/version/1/">
-							ReplicationProtocol_Replication_2_-_LeBel.doc</a></li>
-							</ul>
-							</ul>
+							${data['materials']}
             </div>
           </div>
         </div>

@@ -61,7 +61,7 @@ def keywords(kw):
 	return output
 
 def replications(reps):
-	label = ['Exact', 'Very Close', 'Fairly Close']
+	label = ['Very Close', 'Fairly Close', 'Close', 'Unknown']
 
 	num_studies = db.table.find_one({'replications':reps})['numStudies']
 
@@ -73,7 +73,6 @@ def replications(reps):
 	print reps
 	for rep in reps:
 		doi = rep.strip()
-		print doi
 
 		row = db.table.find_one({'doi':doi})
 		if row:
@@ -82,7 +81,8 @@ def replications(reps):
 			journal = formatter['journal'](row['journal'])
 			author = formatter['author'](row['author'])
 			for rep in repLink:
-				repList[rep[0]-1].append([journal, author, formatter['stats'](stats[rep[1]-1], rep=True), label[rep[2]-1]])
+				url = "<a href='http://%s?doi=%s'>go to paper</a>" % (article_url, doi)
+				repList[rep[0]-1].append([journal, author, formatter['stats'](stats[rep[1]-1], rep=True), label[rep[2]-1], url])
 
 	count = 1
 	output = ""
@@ -90,7 +90,7 @@ def replications(reps):
 	for item in repList:
 		output += "<h3>Study %i</h3>\n" % count
 		for i in item:
-			output += "%s, %s, %s, type: %s<br/>\n" % (i[0], i[1], i[2].rstrip('<br/>'), i[3])
+			output += "%s, %s, %s, type: %s, %s<br/>\n" % (i[0], i[1], i[2].rstrip('<br/>'), i[3], i[4])
 		count +=1 
 
 	return output
@@ -99,12 +99,12 @@ def materials(m):
 	output = ""
 	count = 1
 	for mats in m:
-		output += "<p class='tab'>For study %i:<p>" % count
-		output += "%s<br\>" %  m
+		output += "<p class='tab'>For study %i:</p>" % count
+		for item in mats.split(','):
+			output += "%s<br\>" %  item.strip()
 		count += 1
 
 	return output
-				
 
 formatter = dict.fromkeys(ITEMS, dummy)
 formatter['keywords'] = keywords
@@ -113,3 +113,4 @@ formatter['author'] = author
 formatter['affiliation'] = author
 formatter['replications'] = replications
 formatter['materials'] = materials
+formatter['data'] = materials
