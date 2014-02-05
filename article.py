@@ -48,7 +48,7 @@ class article(object):
 			else:
 				data[item] = ''
 
-		output = article_template.render(data=data)
+		output = article_template.render(index_url = index_url, data=data)
 
 		return output
 

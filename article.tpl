@@ -24,7 +24,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </button>
-            <a href="http://www.science-commons.org" class="navbar-brand"><strong><font size="5px">Science-Commons.org</font></strong></a>
+            <a href="http://${index_url}" class="navbar-brand"><strong><font size="5px">Science-Commons.org</font></strong></a>
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -54,7 +54,7 @@
           </div>
         </div>
       </div>
-      <span><i>${data['journal']}, (${data['year']}) doi: ${data['doi']}</span><br>
+      <span><i>${data['journal']} (${data['year']}), doi: ${data['doi']}</span><br>
       <font size="6px">${data['title']}</font><br>
       <span>${data['author']}</span><br>
       <span>${data['affiliation']}</span><br>
@@ -145,18 +145,7 @@
 					<div class="accordion-inner">
 						<div class="panel-body">
 							<img src="logos/osf.png" class="pull-left">
-							<p class="tab">For Study 1:</p>
-							<ul>
-							<ul>
-							<li><a href="https://osf.io/tvszz/">PreregistrationProtocol</a></li>
-							</ul>
-							</ul>
-							<p class="tab">For Study 2:</p>
-							<ul>
-							<ul>
-							<li><a href="https://osf.io/54v2d/">PreregistrationProtocol</a></li>
-							</ul>
-							</ul>
+							${data['prereg']}
 						</div>
 					</div>
 				</div>
@@ -194,19 +183,7 @@
 				  <font size="5px">Comments/Blog Posts (1)</font>
 				</div>
 				<div class="panel-body">
-				  <table class="table table-striped">
-					<tbody>
-					  <tr>
-						<td style="vertical-align:middle">
-						  <img src="logos/wordpress.jpg" width="100">
-						</td>
-						<td>
-						  <strong>Ase Kvist Innes-Ker &nbsp; &nbsp;</strong> November 26, 2013<br>
-						  Calooo Calay, what a happy day! Ase Fixes Science blogs about big secrets and steep hills. See blog post <a href="http://asefixesscience.wordpress.com/2013/11/26/calooo-calay-what-a-happy-day/">here</a></td>
-					  </tr>
-					  
-					</tbody>
-				  </table>
+				  ${data['comments']}
 				</div>
 			  </div>
 			</div>

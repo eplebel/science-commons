@@ -97,12 +97,31 @@ def replications(reps):
 
 def materials(m):
 	output = ""
-	count = 1
-	for mats in m:
-		output += "<p class='tab'>For study %i:</p>" % count
-		for item in mats.split(','):
-			output += "%s<br\>" %  item.strip()
-		count += 1
+
+	if m != "NA":
+		count = 1
+		for mats in m:
+			output += "<h5>For study %i:</h5>" % count
+			output += "<ul>"
+			for item in mats.split(','):
+				output += "<li>%s</li>" %  item.strip()
+			count += 1
+			output += "</ul>"
+
+	return output
+
+def disclosure(d):
+	output = ""
+	if d != "NA":
+		for disc in d:
+			output += "<p>%s</p>" % disc
+
+	return output
+
+def comments(c):
+	output = ""
+	if c != "NA":
+		output = c
 
 	return output
 
@@ -114,3 +133,5 @@ formatter['affiliation'] = author
 formatter['replications'] = replications
 formatter['materials'] = materials
 formatter['data'] = materials
+formatter['prereg'] = materials
+formatter['comments'] = comments
