@@ -30,6 +30,13 @@ class index(object):
 
 		articles = db.table.find()
 
+		#get the recent articles
+		recents = articles.find().sort('recent')
+		completes = articles.find({'complete' : 1}).sort('recent')
+
+
+		#get the most updated articles
+
 		for article in articles:
 			title = article['title']
 			author = article['author']
@@ -41,8 +48,8 @@ class index(object):
 		return output 
 
 if __name__ == '__main__':
-	cherrypy.config.update({'server.socket_host':'97.107.137.132'})
-	cherrypy.config.update({'server.socket_port':9191})
+	cherrypy.config.update({'server.socket_host':url})
+	cherrypy.config.update({'server.socket_port':index_port})
 	index = index()
 	index.article = article.article()
 	cherrypy.quickstart(index)

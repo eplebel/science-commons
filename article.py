@@ -55,7 +55,7 @@ class article(object):
 
 
 if __name__ == '__main__':
-	cherrypy.config.update({'server.socket_host':'97.107.137.132'})
-	cherrypy.config.update({'server.socket_port':9292})
+	cherrypy.config.update({'server.socket_host':url})
+	cherrypy.config.update({'server.socket_port':article_port})
 	cherrypy.quickstart(article())
 
