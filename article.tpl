@@ -113,8 +113,9 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 				  <font size="5px">Data/Syntax (3)</font>&nbsp;&nbsp;
-				  <img src="logos/badgeAvailData.png" width="50">&nbsp; &nbsp;
-				  <img src="logos/badgeReprodAnal.png" width="50">
+					
+				  ${data['dataAvailBadge']}&nbsp; &nbsp;
+				  ${data['reprodAnalBadge']}
 				</div>
 				<div class="panel-body">
 				    ${data['dataSourceLogo']}
@@ -125,7 +126,7 @@
 		<div class="col-md-6">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <font size="5px">Materials (0) &nbsp;&nbsp;</font> <img src="logos/badgeAvailMat.png" width="50">&nbsp; &nbsp; &nbsp;
+              <font size="5px">Materials (0) &nbsp;&nbsp;</font> ${data['matAvailBadge']}&nbsp; &nbsp; &nbsp;
             </div>
             <div class="panel-body">
               ${data['materialSourceLogo']}
@@ -139,7 +140,7 @@
 			  <div class="panel panel-default">
 				<div class="panel-heading">
 				  <font size="5px">Pre-registration (1) &nbsp;&nbsp;</font> 
-						<img src="logos/badgePreRegAnal.png" width="50">
+						${data['preRegBadge']}
 					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1"> <i class="fa fa-chevron-down fa-2x pull-right"></i></a>
 				</div>
 				<div class="accordion-body collapse" id="collapse1">
@@ -156,23 +157,14 @@
 			  <div class="panel panel-default">
 				<div class="panel-heading">
 				  <font size="5px">Disclosure (4) &nbsp;&nbsp;</font> 
-				  <img src="logos/badgeDisclMethods.png" width="50">
+				  ${data['disclBadge']}
 					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2"> <i class="fa fa-chevron-down fa-2x pull-right"></i></a>
 				</div>
 				<div class="accordion-body collapse" id="collapse2">
 					<div class="accordion-inner">
 						<div class="panel-body">
 						${data['disclSourceLogo']}
-						<ol>
-							<ol>
-							<ol>
-								<li>Exclusions: Full Disclosure</li>
-								<li>Measures: Full Disclosure</li>
-								<li>Conditions: Full Disclosure</li>
-								<li>Sample size: Full Disclosure</li>
-							</ol>
-							</ol>
-						</ol>
+						${data['disclosure']}
 						</div>
 					</div>
 				</div>

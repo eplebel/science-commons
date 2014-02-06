@@ -49,6 +49,10 @@ class article(object):
 			else:
 				data[item] = ''
 
+		for badge in BADGES:
+			if row.has_key(badge):
+				data[badge] = formatter[badge](row[badge], badge)
+
 		output = article_template.render(index_url = index_url, data=data)
 
 		return output

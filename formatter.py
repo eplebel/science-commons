@@ -69,7 +69,7 @@ def replications(reps):
 		if row:
 			repLink = row['repLink']
 			stats = row['stats']
-			journal = formatter['journal'](row['journal'])
+			journal = formatter['journalID'](row['journalID'])[1]
 			author = formatter['author'](row['author'])
 			for rep in repLink:
 				url = "<a href='http://%s?doi=%s'>go to paper</a>" % (article_url, doi)
@@ -104,8 +104,10 @@ def materials(m):
 def disclosure(d):
 	output = ""
 	if d != "NA":
+		output += "<ol>"
 		for disc in d:
-			output += "<p>%s</p>" % disc
+			output += "<li>%s</li>" % disc
+		output += "</ol>"
 
 	return output
 
@@ -119,14 +121,31 @@ def comments(c):
 def image(i):
 	output = ""
 	if i != "NA":
-		output = "<img src='%s/logos/%s' class='pull-left' />" % (url, i)
-	return i
+		output = "<img src='http://%s/logos/%s' class='pull-left' width='50'/>" % (url, i)
+	return output
 
 def journalID(j):
 	output = ""
 	journal = journals.table.find_one({'journalID' : j})
 	if journal:
 		output = [journal['journalName'], journal['acronym']]
+
+	return output
+
+def badge(b, field):
+	output = ""
+	d ={}
+	d['replBadge'] = 'badgeReplFindings'
+	d['dataAvailBadge'] = 'badgeOpenData'
+	d['reprodAnalBadge'] = 'badgeReprodAnal'
+	d['matAvailBadge'] = 'badgeOpenMat'
+	d['preRegBadge'] = 'badgeRegStudy'
+	d['disclBadge'] = ' badgeDisclCOI'
+
+	if b == 1:
+		output = "<img src='http://%s/logos/%s.png' class='pull-left' width = '50'>" % (url, d[field])
+	else:
+		output = "<img src='http://%s/logos/badgeBlank.png' class='pull-left' width = '50'>" % (url)
 
 	return output
 
@@ -141,8 +160,10 @@ formatter['data'] = materials
 formatter['prereg'] = materials
 formatter['comments'] = comments
 formatter['journalID'] = journalID
+formatter['disclosure'] = disclosure
 
-for img in ['dataSourceLogo', 'materialSourceLogo', 'preRegSourceLogo', 'disclSourceLogo', 'commentSourceLogo']:
-	formatter[img] = image
+for logo in ['dataSourceLogo', 'materialSourceLogo', 'preRegSourceLogo', 'disclSourceLogo', 'commentSourceLogo']:
+	formatter[logo] = image
 
-
+for b in BADGES:
+	formatter[b] = badge
