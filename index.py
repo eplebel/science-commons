@@ -38,7 +38,6 @@ class index(object):
 		#get the most updated articles
 
 		for article in articles:
-			print article
 			title = article['title']
 			author = article['author']
 			year = article['year']
