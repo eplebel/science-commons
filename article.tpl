@@ -117,6 +117,7 @@
 				  <img src="logos/badgeReprodAnal.png" width="50">
 				</div>
 				<div class="panel-body">
+				    ${data['dataSourceLogo']}
 					${data['data']}				 				  
 				</div>
           </div>
@@ -127,8 +128,8 @@
               <font size="5px">Materials (0) &nbsp;&nbsp;</font> <img src="logos/badgeAvailMat.png" width="50">&nbsp; &nbsp; &nbsp;
             </div>
             <div class="panel-body">
-              <img src="logos/osf.png" class="pull-left">
-							${data['materials']}
+              ${data['materialSourceLogo']}
+			  ${data['materials']}
             </div>
           </div>
         </div>
@@ -144,7 +145,7 @@
 				<div class="accordion-body collapse" id="collapse1">
 					<div class="accordion-inner">
 						<div class="panel-body">
-							<img src="logos/osf.png" class="pull-left">
+							${data['preRegSourceLogo']}
 							${data['prereg']}
 						</div>
 					</div>
@@ -161,7 +162,7 @@
 				<div class="accordion-body collapse" id="collapse2">
 					<div class="accordion-inner">
 						<div class="panel-body">
-						<img src="logos/psiDiscl.png" class="pull-left">
+						${data['disclSourceLogo']}
 						<ol>
 							<ol>
 							<ol>
@@ -183,6 +184,7 @@
 				  <font size="5px">Comments/Blog Posts (1)</font>
 				</div>
 				<div class="panel-body">
+				  ${data['commentSourceLogo']}
 				  ${data['comments']}
 				</div>
 			  </div>
