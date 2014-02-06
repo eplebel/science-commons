@@ -116,6 +116,20 @@ def comments(c):
 
 	return output
 
+def image(i):
+	output = ""
+	if i != "NA":
+		output = "<img src='%s/logos/%s' class='pull-left' />" % (url, i)
+	return i
+
+def journalID(j):
+	output = ""
+	journal = journals.table.find_one({'journalID' : j})
+	if journal:
+		output = [journal['journalName'], journal['acronym']]
+
+	return output
+
 formatter = dict.fromkeys(ITEMS, dummy)
 formatter['keywords'] = keywords
 formatter['stats'] = stats
@@ -126,3 +140,9 @@ formatter['materials'] = materials
 formatter['data'] = materials
 formatter['prereg'] = materials
 formatter['comments'] = comments
+formatter['journalID'] = journalID
+
+for img in ['dataSourceLogo', 'materialSourceLogo', 'preRegSourceLogo', 'disclSourceLogo', 'commentSourceLogo']:
+	formatter[img] = image
+
+

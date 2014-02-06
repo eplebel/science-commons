@@ -54,7 +54,7 @@
           </div>
         </div>
       </div>
-      <span><i>${data['journal']} (${data['year']}), doi: ${data['doi']}</span><br>
+      <span><i>${data['journalID'][0]} (${data['year']}), doi: ${data['doi']}</span><br>
       <font size="6px">${data['title']}</font><br>
       <span>${data['author']}</span><br>
       <span>${data['affiliation']}</span><br>

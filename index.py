@@ -31,13 +31,14 @@ class index(object):
 		articles = db.table.find()
 
 		#get the recent articles
-		recents = articles.find().sort('recent')
-		completes = articles.find({'complete' : 1}).sort('recent')
+		recents = db.table.find().sort('recent')
+		completes = db.table.find({'complete' : 1}).sort('recent')
 
 
 		#get the most updated articles
 
 		for article in articles:
+			print article
 			title = article['title']
 			author = article['author']
 			year = article['year']

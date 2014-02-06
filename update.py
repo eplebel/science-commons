@@ -8,7 +8,7 @@ import time
 
 #get the data
 ReadFile("articles.csv", "sciencecommons", "articles", clear=True)
-ReadFile("journals.csv", "sciencecommons", "journals", clear=True
+ReadFile("journals.csv", "sciencecommons", "journals", clear=True)
 
 time.sleep(1)
 
