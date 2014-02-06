@@ -21,6 +21,7 @@ from mako_defs import *
 import mongo_tools as mt
 import os
 from config import *
+from formatter import formatter
 
 class article(object):
 
