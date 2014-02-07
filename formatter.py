@@ -32,6 +32,7 @@ def stats(kw, rep=False):
 	for study in kw:
 		if not rep:
 			output += "Study %i: " % count
+		print study
 		for k in study.keys():
 			val = study[k]
 			if k == 'power':
@@ -60,8 +61,6 @@ def replications(reps):
 	for i in range(num_studies):
 		repList.append(copy.deepcopy([]))
 
-
-	print reps
 	for rep in reps:
 		doi = rep.strip()
 
@@ -118,6 +117,12 @@ def comments(c):
 
 	return output
 
+def explanatory_value(ev):
+	output = ""
+	if ev != "NA":
+		pass
+	return output
+
 def image(i):
 	output = ""
 	if i != "NA":
@@ -161,6 +166,7 @@ formatter['prereg'] = materials
 formatter['comments'] = comments
 formatter['journalID'] = journalID
 formatter['disclosure'] = disclosure
+formatter['ev'] = stats
 
 for logo in ['dataSourceLogo', 'materialSourceLogo', 'preRegSourceLogo', 'disclSourceLogo', 'commentSourceLogo']:
 	formatter[logo] = image

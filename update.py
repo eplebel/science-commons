@@ -35,6 +35,18 @@ for row in db.table.find({'stats' : {'$ne':'NA'}}):
 	row['stats'] = stats
 	db.table.save(row)
 
+
+#format the EV pile
+for row in db.table.find({'ev' : {'$ne':'NA'}}):
+	evs = []
+	for ev in row['ev']:
+		try:
+			evs.append(eval(ev))
+		except:
+			raise(Exception("EV Field Update Error : Cannot parse %s into dictionary format" % ev))
+	row['ev'] = evs
+	db.table.save(row)
+
 #format the replication stuff
 for row in db.table.find({'repLink' : {'$ne': 'NA'}}):
 	try:
