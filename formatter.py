@@ -124,10 +124,14 @@ def disclosure(d):
 def comments(c):
 	output = ""
 	if c != "NA":
+		output += "<table class='table table-striped'><tbody>"
+
 		if type(c) != list:
 			c = list(c)
 		for comment in c:
-			output += "%s<br/>" % comment
+			output += "<tr>%s<br/></tr>" % comment
+
+		output += "</tbody></table>"
 
 	return output
 
@@ -182,6 +186,7 @@ formatter['journalID'] = journalID
 formatter['disclosure'] = disclosure
 formatter['ev'] = stats
 formatter['reviewers'] = reviewers
+formatter['comments'] = comments
 
 for logo in ['dataSourceLogo', 'materialSourceLogo', 'preRegSourceLogo', 'disclSourceLogo', 'commentSourceLogo']:
 	formatter[logo] = image
