@@ -1,4 +1,3 @@
-
 <!doctype html>
 
 <html>
@@ -37,28 +36,23 @@
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Search">
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
               </form>
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <a href="#">Username</a>
                 </li>
-                <li>
-                  <a href="#">My ScienceCommons</a>
-                </li>
-                <li>
-                  <a href="#">Sign Out</a>
-                </li>
+                <li><a rel="tooltip" title="Settings" href="#"><i class="icon-cog icon-white"></i></a></li>
+		<li><a rel="tooltip" title="Log out" href="#"><i class="icon-off icon-white"></i></a></li>
               </ul>
             </nav>
           </div>
         </div>
       </div>
-      <span><i>${data['journalID'][0]} (${data['year']}), doi: ${data['doi']}</span><br>
+      <span><i>${data['journalID'][0]}</i> (${data['year']}), doi: ${data['doi']}</span><br>
       <font size="6px">${data['title']}</font><br>
       <span>${data['author']}</span><br>
       <span>${data['affiliation']}</span><br>
-      <span><b>Action Editor: </b>${data['editor']}<b>Reviewer 1:</b>  <i>Unknown at this time.</i>, <b>Reviewer 2:</b> <i>Unknown at this time.</i></span><br><br>
+      <span><b>Action Editor: </b>${data['editor']} &nbsp;&nbsp;${data['reviewers']}</span><br><br>
 		<div class="row">
 		  <div class="col-md-12" class="panel-group" id="accordion">
 			<div class="panel panel-default">
@@ -97,7 +91,7 @@
         <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <font size="5px">Replicability (0/0) &nbsp;&nbsp;</font> 
+              <font size="5px">Replicability (${data['replications'].count('<br/>')}) &nbsp;&nbsp;</font> 
             </div>
             <div class="panel-body">
 				<strong>Independent Replications</strong>
@@ -111,7 +105,7 @@
 		<div class="col-md-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-				  <font size="5px">Data/Syntax (3)</font>&nbsp;&nbsp;
+				  <font size="5px">Data/Syntax (${data['data'].count("</li>")})</font>&nbsp;&nbsp;
 					
 				  ${data['dataAvailBadge']}&nbsp; &nbsp;
 				  ${data['reprodAnalBadge']}
@@ -125,7 +119,7 @@
 		<div class="col-md-6">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <font size="5px">Materials (0) &nbsp;&nbsp;</font> ${data['matAvailBadge']}&nbsp; &nbsp; &nbsp;
+              <font size="5px">Materials (${data['materials'].count("</li>")}) &nbsp;&nbsp;</font> ${data['matAvailBadge']}&nbsp; &nbsp; &nbsp;
             </div>
             <div class="panel-body">
               ${data['materialSourceLogo']}
@@ -138,7 +132,7 @@
 		  <div class="col-md-6" class="panel-group" id="accordion">
 			  <div class="panel panel-default">
 				<div class="panel-heading">
-				  <font size="5px">Pre-registration (1) &nbsp;&nbsp;</font> 
+				  <font size="5px">Pre-registration (${data['prereg'].count("</li>")}) &nbsp;&nbsp;</font> 
 						${data['preRegBadge']}
 					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1"> <i class="fa fa-chevron-down fa-2x pull-right"></i></a>
 				</div>
@@ -155,7 +149,7 @@
 			<div class="col-md-6" class="panel-group" id="accordion">
 			  <div class="panel panel-default">
 				<div class="panel-heading">
-				  <font size="5px">Disclosure (4) &nbsp;&nbsp;</font> 
+				  <font size="5px">Disclosure&nbsp;&nbsp;</font> 
 				  ${data['disclBadge']}
 					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2"> <i class="fa fa-chevron-down fa-2x pull-right"></i></a>
 				</div>
@@ -172,7 +166,7 @@
 			<div class="col-md-12">  
 			  <div class="panel panel-default">
 				<div class="panel-heading">
-				  <font size="5px">Comments/Blog Posts (1)</font>
+				  <font size="5px">Comments/Blog Posts (${data['comments'].count("<br/>")})</font>
 				</div>
 				<div class="panel-body">
 				  ${data['commentSourceLogo']}

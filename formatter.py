@@ -7,9 +7,6 @@ def dummy(x):
 	else:
 		return x
 
-def repLink(repLink):
-	pass	
-
 def author(a):
 	output = ""
 
@@ -20,6 +17,20 @@ def author(a):
 
 	else:
 		output = a
+
+	return output
+
+def reviewers(r):
+	output = ""
+	if reviewers != "NA":
+		if type(r) != list:
+			r = [r]
+		count = 1
+		for reviewer in r:
+			output += "<b>Reviewer %i:</b> <i>%s</i>, " % (count, reviewer)
+			count += 1
+
+	output = output.rstrip(', ')
 
 	return output
 
@@ -68,7 +79,7 @@ def replications(reps):
 		if row:
 			repLink = row['repLink']
 			stats = row['stats']
-			journal = formatter['journalID'](row['journalID'])[1]
+			journal = "<span class='label label-default'>%s</span>" % formatter['journalID'](row['journalID'])[1]
 			author = formatter['author'](row['author'])
 			for rep in repLink:
 				url = "<a href='http://%s?doi=%s'>go to paper</a>" % (article_url, doi)
@@ -78,7 +89,7 @@ def replications(reps):
 	output = ""
 
 	for item in repList:
-		output += "<h3>Study %i</h3>\n" % count
+		output += "Of Study %i\n" % count
 		for i in item:
 			output += "%s, %s, %s, type: %s, %s<br/>\n" % (i[0], i[1], i[2].rstrip('<br/>'), i[3], i[4])
 		count +=1 
@@ -91,29 +102,32 @@ def materials(m):
 	if m != "NA":
 		count = 1
 		for mats in m:
-			output += "<h5>For study %i:</h5>" % count
-			output += "<ul>"
+			output += "For study %i:" % count
+			output += "<ul><ul>"
 			for item in mats.split(','):
 				output += "<li>%s</li>" %  item.strip()
 			count += 1
-			output += "</ul>"
+			output += "</ul></ul>"
 
 	return output
 
 def disclosure(d):
 	output = ""
 	if d != "NA":
-		output += "<ol>"
+		output += "<ol><ol>"
 		for disc in d:
 			output += "<li>%s</li>" % disc
-		output += "</ol>"
+		output += "</ol></ol>"
 
 	return output
 
 def comments(c):
 	output = ""
 	if c != "NA":
-		output = c
+		if type(c) != list:
+			c = list(c)
+		for comment in c:
+			output += "%s<br/>" % comment
 
 	return output
 
@@ -126,7 +140,7 @@ def explanatory_value(ev):
 def image(i):
 	output = ""
 	if i != "NA":
-		output = "<img src='http://%s/logos/%s' class='pull-left' width='50'/>" % (url, i)
+		output = "<img src='http://%s/logos/%s' width='50'/>" % (url, i)
 	return output
 
 def journalID(j):
@@ -145,12 +159,12 @@ def badge(b, field):
 	d['reprodAnalBadge'] = 'badgeReprodAnal'
 	d['matAvailBadge'] = 'badgeOpenMat'
 	d['preRegBadge'] = 'badgeRegStudy'
-	d['disclBadge'] = ' badgeDisclCOI'
+	d['disclBadge'] = 'badgeDisclMethods'
 
 	if b == 1:
-		output = "<img src='http://%s/logos/%s.png' class='pull-left' width = '50'>" % (url, d[field])
+		output = "<img src='http://%s/logos/%s.png' width = '50'>" % (url, d[field])
 	else:
-		output = "<img src='http://%s/logos/badgeBlank.png' class='pull-left' width = '50'>" % (url)
+		output = "<img src='http://%s/logos/badgeBlank.png' width = '50'>" % (url)
 
 	return output
 
@@ -167,6 +181,7 @@ formatter['comments'] = comments
 formatter['journalID'] = journalID
 formatter['disclosure'] = disclosure
 formatter['ev'] = stats
+formatter['reviewers'] = reviewers
 
 for logo in ['dataSourceLogo', 'materialSourceLogo', 'preRegSourceLogo', 'disclSourceLogo', 'commentSourceLogo']:
 	formatter[logo] = image
