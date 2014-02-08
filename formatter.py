@@ -93,7 +93,7 @@ def replications(reps):
 		output += "<tr><td colspan='6'>Of Study %i:</td></tr>" % count
 
 		for i in item:
-			output += "<tr><td>%s</td><td>%s</td><td>%s</td><td>type: <span class='label label-default'>%s</span></td></tr>\n" % (i[0], i[1], i[2].rstrip('<br/>'), i[3])
+			output += "<tr><td>%s</td><td>%s</td><td>type: <span class='label label-default'>%s</span><td>%s</td></td></tr>\n" % (i[0], i[1], i[3], i[2].rstrip('<br/>'))
 		count +=1 
 
 	output += "</tbody></table>"
