@@ -102,12 +102,16 @@ def materials(m):
 	if m != "NA":
 		count = 1
 		for mats in m:
-			output += "For study %i:" % count
+			output += "<p class='tab'>For study %i:</p>" % count
 			output += "<ul><ul>"
 			for item in mats.split(','):
 				output += "<li>%s</li>" %  item.strip()
 			count += 1
 			output += "</ul></ul>"
+			
+
+	else:
+		output = "<i>None yet identified or posted.</i>"
 
 	return output
 
@@ -144,7 +148,7 @@ def explanatory_value(ev):
 def image(i):
 	output = ""
 	if i != "NA":
-		output = "<img src='http://%s/logos/%s' width='50'/>" % (url, i)
+		output = "<img src='http://%s/logos/%s' width='50' class='pull-left'/>" % (url, i)
 	return output
 
 def journalID(j):
