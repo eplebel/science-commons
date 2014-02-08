@@ -82,17 +82,21 @@ def replications(reps):
 			journal = "<span class='label label-default'>%s</span>" % formatter['journalID'](row['journalID'])[1]
 			author = formatter['author'](row['author'])
 			for rep in repLink:
-				url = "<a href='http://%s?doi=%s'>go to paper</a>" % (article_url, doi)
-				repList[rep[0]-1].append([journal, author, formatter['stats'](stats[rep[1]-1], rep=True), label[rep[2]-1], url])
+				author = "<a href='http://%s?doi=%s'>%s</a>" % (article_url, doi, author)
+				repList[rep[0]-1].append([journal, author, formatter['stats'](stats[rep[1]-1], rep=True), label[rep[2]-1]])
 
 	count = 1
-	output = ""
+	output = "<table class='table table-condensed'><tbody>"
+
 
 	for item in repList:
-		output += "Of Study %i\n" % count
+		output += "<tr><td colspan='6'>Of Study %i:</td></tr>" % count
+
 		for i in item:
-			output += "%s, %s, %s, type: %s, %s<br/>\n" % (i[0], i[1], i[2].rstrip('<br/>'), i[3], i[4])
+			output += "<tr><td>%s</td><td>%s</td><td>%s</td><td>type: <span class='label label-default'>%s</span></td></tr>\n" % (i[0], i[1], i[2].rstrip('<br/>'), i[3])
 		count +=1 
+
+	output += "</tbody></table>"
 
 	return output
 
