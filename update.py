@@ -6,14 +6,15 @@ Update the dang ol' database
 from mongo_tools import ReadFile, Connect
 import time
 
+#now format the data for later use
+db = Connect("sciencecommons", "articles")
+
 #get the data
 ReadFile("articles.csv", "sciencecommons", "articles", clear=True)
 ReadFile("journals.csv", "sciencecommons", "journals", clear=True)
 
 time.sleep(1)
 
-#now format the data for later use
-db = Connect("sciencecommons", "articles")
 
 #break up the stuff between the |
 for row in db.table.find():
@@ -55,4 +56,6 @@ for row in db.table.find({'repLink' : {'$ne': 'NA'}}):
 		raise(Exception("Replication Field Update Error : Cannot parse %s into dictionary format" % rep))
 	row['repLink'] = reps
 	db.table.save(row)
+
+
 

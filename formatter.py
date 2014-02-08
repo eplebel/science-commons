@@ -7,9 +7,6 @@ def dummy(x):
 	else:
 		return x
 
-def repLink(repLink):
-	pass	
-
 def author(a):
 	output = ""
 
@@ -113,7 +110,10 @@ def disclosure(d):
 def comments(c):
 	output = ""
 	if c != "NA":
-		output = c
+		if type(c) != list:
+			c = list(c)
+		for comment in c:
+			output += "%s<br/>" % comment
 
 	return output
 
