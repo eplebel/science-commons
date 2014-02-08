@@ -1,4 +1,3 @@
-
 <!doctype html>
 
 <html>
@@ -37,18 +36,13 @@
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Search">
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
               </form>
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <a href="#">Username</a>
                 </li>
-                <li>
-                  <a href="#">My ScienceCommons</a>
-                </li>
-                <li>
-                  <a href="#">Sign Out</a>
-                </li>
+                <li><a rel="tooltip" title="Settings" href="#"><i class="icon-cog icon-white"></i></a></li>
+		<li><a rel="tooltip" title="Log out" href="#"><i class="icon-off icon-white"></i></a></li>
               </ul>
             </nav>
           </div>
