@@ -103,21 +103,21 @@ def materials(m):
 		count = 1
 		for mats in m:
 			output += "For study %i:" % count
-			output += "<ul>"
+			output += "<ul><ul>"
 			for item in mats.split(','):
 				output += "<li>%s</li>" %  item.strip()
 			count += 1
-			output += "</ul>"
+			output += "</ul></ul>"
 
 	return output
 
 def disclosure(d):
 	output = ""
 	if d != "NA":
-		output += "<ol>"
+		output += "<ol><ol>"
 		for disc in d:
 			output += "<li>%s</li>" % disc
-		output += "</ol>"
+		output += "</ol></ol>"
 
 	return output
 
