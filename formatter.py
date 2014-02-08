@@ -89,7 +89,7 @@ def replications(reps):
 	output = ""
 
 	for item in repList:
-		output += "<h3>Study %i</h3>\n" % count
+		output += "Study %i\n" % count
 		for i in item:
 			output += "%s, %s, %s, type: %s, %s<br/>\n" % (i[0], i[1], i[2].rstrip('<br/>'), i[3], i[4])
 		count +=1 
@@ -102,7 +102,7 @@ def materials(m):
 	if m != "NA":
 		count = 1
 		for mats in m:
-			output += "<h5>For study %i:</h5>" % count
+			output += "For study %i:" % count
 			output += "<ul>"
 			for item in mats.split(','):
 				output += "<li>%s</li>" %  item.strip()
@@ -140,7 +140,7 @@ def explanatory_value(ev):
 def image(i):
 	output = ""
 	if i != "NA":
-		output = "<img src='http://%s/logos/%s' class='pull-left' width='50'/>" % (url, i)
+		output = "<img src='http://%s/logos/%s' width='50'/>" % (url, i)
 	return output
 
 def journalID(j):
@@ -159,12 +159,12 @@ def badge(b, field):
 	d['reprodAnalBadge'] = 'badgeReprodAnal'
 	d['matAvailBadge'] = 'badgeOpenMat'
 	d['preRegBadge'] = 'badgeRegStudy'
-	d['disclBadge'] = ' badgeDisclCOI'
+	d['disclBadge'] = 'badgeDisclMethods'
 
 	if b == 1:
-		output = "<img src='http://%s/logos/%s.png' class='pull-left' width = '50'>" % (url, d[field])
+		output = "<img src='http://%s/logos/%s.png' width = '50'>" % (url, d[field])
 	else:
-		output = "<img src='http://%s/logos/badgeBlank.png' class='pull-left' width = '50'>" % (url)
+		output = "<img src='http://%s/logos/badgeBlank.png' width = '50'>" % (url)
 
 	return output
 
