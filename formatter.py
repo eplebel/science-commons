@@ -79,7 +79,7 @@ def replications(reps):
 		if row:
 			repLink = row['repLink']
 			stats = row['stats']
-			journal = "<span class='label label-info'>%s</span>" % formatter['journalID'](row['journalID'])[1]
+			journal = "<span class='label label-default'>%s</span>" % formatter['journalID'](row['journalID'])[1]
 			author = formatter['author'](row['author'])
 			for rep in repLink:
 				url = "<a href='http://%s?doi=%s'>go to paper</a>" % (article_url, doi)
@@ -89,7 +89,7 @@ def replications(reps):
 	output = ""
 
 	for item in repList:
-		output += "Study %i\n" % count
+		output += "Of Study %i\n" % count
 		for i in item:
 			output += "%s, %s, %s, type: %s, %s<br/>\n" % (i[0], i[1], i[2].rstrip('<br/>'), i[3], i[4])
 		count +=1 
