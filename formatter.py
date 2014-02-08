@@ -20,6 +20,20 @@ def author(a):
 
 	return output
 
+def reviewers(r):
+	output = ""
+	if reviewers != "NA":
+		if type(r) != list:
+			r = [r]
+		count = 1
+		for reviewer in r:
+			output += "<b>Reviewer %i:</b> <i>%s</i>, " % (count, reviewer)
+			count += 1
+
+	output = output.rstrip(', ')
+
+	return output
+
 def stats(kw, rep=False):
 	output = ""
 	count = 1
@@ -167,6 +181,7 @@ formatter['comments'] = comments
 formatter['journalID'] = journalID
 formatter['disclosure'] = disclosure
 formatter['ev'] = stats
+formatter['reviewers'] = reviewers
 
 for logo in ['dataSourceLogo', 'materialSourceLogo', 'preRegSourceLogo', 'disclSourceLogo', 'commentSourceLogo']:
 	formatter[logo] = image

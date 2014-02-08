@@ -58,7 +58,7 @@
       <font size="6px">${data['title']}</font><br>
       <span>${data['author']}</span><br>
       <span>${data['affiliation']}</span><br>
-      <span><b>Action Editor: </b>${data['editor']}<b>Reviewer 1:</b>  <i>Unknown at this time.</i>, <b>Reviewer 2:</b> <i>Unknown at this time.</i></span><br><br>
+      <span><b>Action Editor: </b>${data['editor']} &nbsp;&nbsp;${data['reviewers']}</span><br><br>
 		<div class="row">
 		  <div class="col-md-12" class="panel-group" id="accordion">
 			<div class="panel panel-default">
