@@ -1,6 +1,8 @@
 journalID,journalName,acronym
-scicomjournal1,Psychonomic Bulletin & Review,PBR
-scicomjournal2,Science,S
-scicomjournal3,Spanish Journal of Psychology,SJP
-scicomjournal4,Basic and Applied Social Psychology,BASP
-scicomjournal5,Journal of Articles Supporting the Null Hypothesis,JASNH
+1,Psychonomic Bulletin & Review,PBR
+2,Science,S
+3,Spanish Journal of Psychology,SJP
+4,Basic and Applied Social Psychology,BASP
+5,Journal of Articles Supporting the Null Hypothesis,JASNH
+6,Journal of Personality and Social Psychology,JPSP
+7,PLoS ONE,PLoS1
