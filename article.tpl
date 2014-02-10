@@ -83,6 +83,9 @@
                 <strong><font size="3px">Basic Statistics</font></strong><br>
                 ${data['stats']}
                 <strong><font size="3px">Evidentiary Value</font></strong><br>
+              		<img src="logos/pcurve.png">&nbsp; <a rel="tooltip" title="Studies lack evidential value.">&#934; = 1.70, CI95% = [1.05, 2.35]</a><br>
+                	<img src="logos/icindex.png">&nbsp; <a rel="tooltip" title="Only 8% chance these data originated from random sampling.">IC-index = .92, CI95% = [.85, .99]</a><br>
+			<img src="logos/ptes.png">&nbsp; <a rel="tooltip" title="There is an excess of significance across this set of studies."><i>p</i><sub>TES </sub>< .07</a>
               </div>
               <div></div>
             </div>
