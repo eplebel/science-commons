@@ -43,6 +43,8 @@ class article(object):
 		#format stuff, check if data present
 		data = {}
 	
+		data['comments'] = formatter['comments'](doi)
+
 		for item in ITEMS:
 			if row.has_key(item):
 				data[item] = formatter[item](row[item])

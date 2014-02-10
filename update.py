@@ -6,15 +6,19 @@ Update the dang ol' database
 from mongo_tools import ReadFile, Connect
 import time
 
-#now format the data for later use
 db = Connect("sciencecommons", "articles")
 
 #get the data
+print "Uploading articles.csv"
 ReadFile("articles.csv", "sciencecommons", "articles", clear=True)
+print "Uploading journals.csv"
 ReadFile("journals.csv", "sciencecommons", "journals", clear=True)
+print "Uploading comments.csv"
+ReadFile("comments.csv", "sciencecommons", "comments", clear=True)
 
 time.sleep(1)
 
+#now format the data for later use
 
 #break up the stuff between the |
 for row in db.table.find():

@@ -83,7 +83,6 @@
                 <strong><font size="3px">Basic Statistics</font></strong><br>
                 ${data['stats']}
                 <strong><font size="3px">Evidentiary Value</font></strong><br>
-				${data['ev']}
               </div>
               <div></div>
             </div>
@@ -166,10 +165,9 @@
 			<div class="col-md-12">  
 			  <div class="panel panel-default">
 				<div class="panel-heading">
-				  <font size="5px">Comments/Blog Posts (${data['comments'].count("<br/>")})</font>
+				  <font size="5px">Comments/Blog Posts (${data['comments'].count("</tr>")})</font>
 				</div>
 				<div class="panel-body">
-				  ${data['commentSourceLogo']}
 				  ${data['comments']}
 				</div>
 			  </div>

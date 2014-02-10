@@ -3,6 +3,9 @@
 from config import *
 from formatter import formatter
 
-for row in db.table.find({'ev': {'$ne':'NA'}}):
-	print row['ev'], type(row['ev'])
-	print formatter['ev'](row['ev'])
+dois = db.table.find().distinct("doi")
+
+for doi in dois:
+	print formatter['comment'](doi)
+
+	print "\n\n"
