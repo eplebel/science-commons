@@ -44,12 +44,17 @@ def reviewers(r):
 def statistics(doi):
 	output = ""
 	for row in stats.table.find({'doi':doi}).sort('study'):		
-		n = "N = %s" % row['n']
-		effect = "%s = %s" % (row['effectType'], row['effectSize'])
-		power = "power = %s" % (row['power']) + "%"
+		n, effect, power = stat_line(doi, row['study'])
 		output += "<div>Study %s: &nbsp; %s, &nbsp;%s, &nbsp;%s</div>\n" % (row['study'], n, effect, power)
 
 	return output
+
+def stat_line(doi,study):
+	row = stats.table.find_one({'doi':doi, 'study':study})
+	n = "N = %s" % row['n']
+	effect = "%s = %s" % (row['effectType'], row['effectSize'])
+	power = "power = %s" % (row['power']) + "%"
+	return n, effect, power
 
 """
 def stats(kw, rep=False):
