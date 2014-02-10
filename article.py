@@ -44,6 +44,7 @@ class article(object):
 		data = {}
 	
 		data['comments'] = formatter['comments'](doi)
+		data['stats'] = formatter['stats'](doi)
 
 		for item in ITEMS:
 			if row.has_key(item):

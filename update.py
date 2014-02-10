@@ -15,6 +15,10 @@ print "Uploading journals.csv"
 ReadFile("journals.csv", "sciencecommons", "journals", clear=True)
 print "Uploading comments.csv"
 ReadFile("comments.csv", "sciencecommons", "comments", clear=True)
+print "Uploading stats.csv"
+ReadFile("stats.csv", "sciencecommons", "stats", clear=True)
+print "Uploading authors.csv"
+ReadFile("authors.csv", "sciencecommons", "authors", clear=True)
 
 time.sleep(1)
 
@@ -28,7 +32,8 @@ for row in db.table.find():
 			row[k] = row[k].split('|')
 	
 	db.table.save(row)
-		
+
+"""		
 #format the stats pile
 for row in db.table.find({'stats' : {'$ne':'NA'}}):
 	stats = []
@@ -51,6 +56,13 @@ for row in db.table.find({'ev' : {'$ne':'NA'}}):
 			raise(Exception("EV Field Update Error : Cannot parse %s into dictionary format" % ev))
 	row['ev'] = evs
 	db.table.save(row)
+"""
+
+#format the author pile
+for row in db.table.find():
+	row['authorIDs'] = row['authorIDs'].split(',')
+	db.table.save(row)
+
 
 #format the replication stuff
 for row in db.table.find({'repLink' : {'$ne': 'NA'}}):

@@ -5,8 +5,10 @@ import copy
 db = mt.Connect("sciencecommons", "articles")
 comments = mt.Connect("sciencecommons", "comments")
 journals = mt.Connect("sciencecommons", "journals")
+authors = mt.Connect("sciencecommons", "authors")
+stats = mt.Connect("sciencecommons", "stats")
 
-ITEMS = ['doi','year', 'title','author','affiliation','journalID','editor','reviewers','abstract','keywords','stats','replications','data','materials','prereg','disclosure','dataSourceLogo', 'materialSourceLogo', 'preRegSourceLogo', 'disclSourceLogo']
+ITEMS = ['doi','year', 'title','authorIDs','affiliation','journalID','editor','reviewers','abstract','keywords','replications','data','materials','prereg','disclosure','dataSourceLogo', 'materialSourceLogo', 'preRegSourceLogo', 'disclSourceLogo']
 
 BADGES = ['replBadge', 'dataAvailBadge', 'reprodAnalBadge', 'matAvailBadge', 'preRegBadge', 'disclBadge']
 

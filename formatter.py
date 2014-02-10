@@ -7,16 +7,23 @@ def dummy(x):
 	else:
 		return x
 
-def author(a):
+def author(authorIDs):
 	output = ""
 
-	if type(a) == list:
-		for author in a:
-			output += "%s, " % author.strip()
-		output.rstrip(', ')
+	for ID in authorIDs:
+		try:
+			auth = authors.table.find_one({'authorID' : int(ID)})
+			first = auth['firstName']
+			last = auth['lastName']
+			middle = auth['initials']
+			if middle != "NA":
+				output += "%s, %s %s, " % (last, first, middle)
+			else:
+				output += "%s, %s, " % (last, first)
+		except:
+			pass
 
-	else:
-		output = a
+	output = output.rstrip(", ")
 
 	return output
 
@@ -34,6 +41,17 @@ def reviewers(r):
 
 	return output
 
+def statistics(doi):
+	output = ""
+	for row in stats.table.find({'doi':doi}).sort('study'):		
+		n = "N = %s" % row['n']
+		effect = "%s = %s" % (row['effectType'], row['effectSize'])
+		power = "power = %s" % (row['power']) + "%"
+		output += "<div>Study %s: &nbsp; %s, &nbsp;%s, &nbsp;%s</div>\n" % (row['study'], n, effect, power)
+
+	return output
+
+"""
 def stats(kw, rep=False):
 	output = ""
 	if kw != "NA":
@@ -55,6 +73,7 @@ def stats(kw, rep=False):
 			count += 1
 
 	return output
+"""
 
 def keywords(kw):
 	output = ""
@@ -185,8 +204,8 @@ def badge(b, field):
 
 formatter = dict.fromkeys(ITEMS, dummy)
 formatter['keywords'] = keywords
-formatter['stats'] = stats
-formatter['author'] = author
+formatter['stats'] = statistics
+formatter['authorIDs'] = author
 formatter['affiliation'] = author
 formatter['replications'] = replications
 formatter['materials'] = materials

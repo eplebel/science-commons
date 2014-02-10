@@ -21,6 +21,7 @@ along with Science Commons.  If not, see <http://www.gnu.org/licenses/>.
 from config import *
 import cherrypy
 import article
+from formatter import formatter
 
 class index(object):
 
@@ -39,7 +40,7 @@ class index(object):
 
 		for article in articles:
 			title = article['title']
-			author = article['author']
+			author = formatter['authorIDs'](article['authorIDs'])
 			year = article['year']
 			url = "http://%s?doi=%s" % (article_url, article['doi'])
 			output += "<a href='%s'>%s, %s, %s</a><br/>" % (url, title, author, year)
