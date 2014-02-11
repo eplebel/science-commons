@@ -33,7 +33,7 @@ class index(object):
 		articles = db.table.find()
 
 		#get the recent articles
-		complete = db.table.find({'mostComplete' : {'$gte' : 1}}).sort([('mostComplete', -1)]).limit(5)
+		complete = db.table.find({'mostComplete' : {'$gte' : 1}}).sort([('mostComplete', 1)]).limit(5)
 		recents = db.table.find().sort([('recentlyUpdated', -1)]).limit(5)
 
 		complete_articles = formatter['article_list'](complete)
