@@ -60,13 +60,13 @@ def StringToType(value):
 		try:
 			val = float(value)
 		except:
-			val = unicode(value)
+			val = value
 
 		#val = value.split('.')
 		#if val[0].isdigit() and val[1].isdigit():
 
 	else:
-		val = unicode(value)
+		val = value
 
 	return val
 
@@ -166,7 +166,7 @@ class ReadFile:
 					if value:
 						row[k] = StringToType(value)
 				except:
-					pass
+						print "I shat myself because of %s" % line[index[k]]
 
 			if self.addrow:
 				row = dict(row, **self.addrow)
