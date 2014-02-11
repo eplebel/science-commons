@@ -56,30 +56,6 @@ def stat_line(doi,study):
 	power = "power = %s" % (row['power']) + "%"
 	return n, effect, power
 
-"""
-def stats(kw, rep=False):
-	output = ""
-	if kw != "NA":
-		count = 1
-		if type(kw) != list:
-			kw = [kw]
-
-		for study in kw:
-			if not rep:
-				output += "Study %i: " % count
-			print study
-			for k in study.keys():
-				val = study[k]
-				if k == 'power':
-					val = str(study[k]) + '%'
-				output += "%s = %s, " % (k, val)
-			output = output.rstrip(', ')
-			output += "<br/>"
-			count += 1
-
-	return output
-"""
-
 def keywords(kw):
 	output = ""
 	for kw in kw.split(','):
@@ -169,7 +145,6 @@ def comment(doi):
 	count = comments.table.find({'doi':doi}).count()
 
 	for row in comments.table.find({'doi':doi}).sort('date'):
-		print row
 		output += "<tr>\n"
 		output += "<td style='vertical-align:middle'><img src='http://%s/logos/%s' width='100px'/></td>\n" % (url, row['img'])
 		output += "<td><strong>%s</strong> &nbsp; &nbsp; %s <br/> %s <br/><a href='%s'>%s</a></td> \n" % (row['author'], row['date'], row['text'], row['link'], row['linkText'])

@@ -6,6 +6,7 @@ from formatter import formatter
 dois = db.table.find().distinct("doi")
 
 for doi in dois:
-	print formatter['stats'](doi)
+	print doi
+	print formatter['comments'](doi)
 
 	print "\n\n"
