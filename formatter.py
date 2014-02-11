@@ -61,7 +61,7 @@ def statistics(doi):
 	output = ""
 	for row in stats.table.find({'doi':doi}).sort('study'):		
 		n, effect, power = stat_line(doi, row['study'])
-		output += "<div>Study %s: &nbsp; %s, &nbsp;%s, &nbsp;%s</div>\n" % (row['study'], n, effect, power)
+		output += "<div>Study %s: &nbsp; %s, &nbsp;%s, &nbsp;%s</div>\n" % (row['study'], n, power, effect)
 
 	return output
 
@@ -109,7 +109,7 @@ def replications(reps):
 				child = rep[1]
 				rep_type = label[rep[2]-1]
 				n, effect, power = stat_line(doi, child)
-				stats = "<td>%s</td><td>%s</td><td>%s</td>" % (n, effect, power)
+				stats = "<td>%s</td><td>%s</td><td>%s</td>" % (n, power, effect)
 				author = "<a href='http://%s?doi=%s'>%s</a>" % (article_url, doi, author)
 				repList[rep[0]-1].append([journal, author, stats, rep_type])
 
