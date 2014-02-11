@@ -7,6 +7,22 @@ def dummy(x):
 	else:
 		return x
 
+def article_list(rows):
+	output = "<div class='list-group'>"
+	for row in rows:
+		url = 'http://%s?doi=%s' % (article_url, row['doi'])
+		title = row['title']
+		author = formatter['authorIDs'](row['authorIDs'])
+		year = row['year']
+
+		output += """
+			<a href='%s' class="list-group-item">                        
+			<h4 class="list-group-item-heading">%s</h4>
+			<p class="list-group-item-text">%s (%s)</p></a>""" % (url, title, author, year)
+
+	output += "</div>"
+	return output 
+
 def author(authorIDs):
 	output = ""
 
@@ -204,6 +220,7 @@ formatter['journalID'] = journalID
 formatter['disclosure'] = disclosure
 formatter['reviewers'] = reviewers
 formatter['comments'] = comment
+formatter['article_list'] = article_list
 
 for logo in ['dataSourceLogo', 'materialSourceLogo', 'preRegSourceLogo', 'disclSourceLogo', 'commentSourceLogo']:
 	formatter[logo] = image

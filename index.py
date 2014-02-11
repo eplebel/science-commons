@@ -22,29 +22,35 @@ from config import *
 import cherrypy
 import article
 from formatter import formatter
+from mako_defs import index_template
 
 class index(object):
 
 	@cherrypy.expose
 	def index(self):
-		output = "<h1>Discovery Page</h1>"
+		output = ""
 
 		articles = db.table.find()
 
 		#get the recent articles
-		recents = db.table.find().sort('recent')
-		completes = db.table.find({'complete' : 1}).sort('recent')
+		complete = db.table.find({'mostComplete' : {'$gte' : 1}}).sort([('mostComplete', -1)]).limit(5)
+		recents = db.table.find().sort([('recentlyUpdated', -1)]).limit(5)
 
+		complete_articles = formatter['article_list'](complete)
+		recent_articles = formatter['article_list'](recents)
 
+		"""
 		#get the most updated articles
-
 		for article in articles:
 			title = article['title']
 			author = formatter['authorIDs'](article['authorIDs'])
 			year = article['year']
 			url = "http://%s?doi=%s" % (article_url, article['doi'])
 			output += "<a href='%s'>%s, %s, %s</a><br/>" % (url, title, author, year)
-		
+		"""
+
+		output = index_template.render_unicode(recents = recent_articles, completes = complete_articles)		
+
 
 		return output 
 
