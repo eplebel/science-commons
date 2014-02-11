@@ -71,7 +71,7 @@
         <h2>Know the Scientific Record.</h2><br>
         <p>Science-Commons' mission is to accelerate the growth of cumulative knowledge and innovation by organizing and curating key information about scientific articles.
 </p>
-        <p><a class="btn btn-info btn-xs" href="about.html">Learn More</a></p>
+        <p><a class="btn btn-info btn-xs" href="http://science-commons.org/about.html">Learn More</a></p>
       </div>
       <div class="row">
         <div class="col-md-12">
@@ -91,12 +91,27 @@
         </div>
         <div class="col-md-6">
           <center>
-            <h3>Most Curated Articles</h3>
+            <h3>Most <a rel="tooltip" title="Curation is the process of extracting, organizing, and selecting information to improve its quality" href="http://en.wikipedia.org/wiki/Digital_curation">Curated</a> Articles</h3> 
           </center>
 			${completes}          
 		</div>
         </div>
       </div>
+      
+      
+      <div class="row">
+        <div class="col-md-12">
+          <center>
+            <h3>All Articles</h3>
+          </center>
+          	${all}    
+			
+          </div>
+        </div>
+      </div>
+      
+      
+      
       <div id="footer">
         <div class="container">
 		  <ul class="nav navbar-nav">
