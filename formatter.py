@@ -169,6 +169,7 @@ def comment(doi):
 	count = comments.table.find({'doi':doi}).count()
 
 	for row in comments.table.find({'doi':doi}).sort('date'):
+		print row
 		output += "<tr>\n"
 		output += "<td style='vertical-align:middle'><img src='http://%s/logos/%s' width='100px'/></td>\n" % (url, row['img'])
 		output += "<td><strong>%s</strong> &nbsp; &nbsp; %s <br/> %s <br/><a href='%s'>%s</a></td> \n" % (row['author'], row['date'], row['text'], row['link'], row['linkText'])
