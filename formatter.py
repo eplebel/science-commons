@@ -134,6 +134,8 @@ def materials(m):
 	output = ""
 
 	if m != "NA":
+		if type(m) != list:
+			m = [m]
 		count = 1
 		for mats in m:
 			output += "<p class='tab'>For study %i:</p>" % count
