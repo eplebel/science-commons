@@ -4,7 +4,7 @@
   
   <head>
     <title>Science-Commons.org - ${data['title']}</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="view	port" content="width=device-width">
     <link rel="stylesheet" href="http://www.science-commons.org/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -50,7 +50,7 @@
       </div>
       <span><i>${data['journalID'][0]}</i> (${data['year']}), doi: ${data['doi']}</span><br>
       <font size="6px">${data['title']}</font><br>
-      <span>${data['author']}</span><br>
+      <span>${data['authorIDs']}</span><br>
       <span>${data['affiliation']}</span><br>
       <span><b>Action Editor: </b>${data['editor']} &nbsp;&nbsp;${data['reviewers']}</span><br><br>
 		<div class="row">

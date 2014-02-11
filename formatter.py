@@ -99,25 +99,31 @@ def replications(reps):
 	for rep in reps:
 		doi = rep.strip()
 
+		#this is the doi of the paper that is the replication
 		row = db.table.find_one({'doi':doi})
 		if row:
-			repLink = row['repLink']
-			stats = row['stats']
+			#repLink - parent study, child study, type of replication
+			repLink = row['repLink']			
 			journal = "<span class='label label-default'>%s</span>" % formatter['journalID'](row['journalID'])[1]
-			author = formatter['author'](row['author'])
+			author = formatter['authorIDs'](row['authorIDs'])
+
 			for rep in repLink:
+				parent = rep[0]
+				child = rep[1]
+				rep_type = label[rep[2]-1]
+				n, effect, power = stat_line(doi, child)
+				stats = "<td>%s</td><td>%s</td><td>%s</td>" % (n, effect, power)
 				author = "<a href='http://%s?doi=%s'>%s</a>" % (article_url, doi, author)
-				repList[rep[0]-1].append([journal, author, formatter['stats'](stats[rep[1]-1], rep=True), label[rep[2]-1]])
+				repList[rep[0]-1].append([journal, author, stats, rep_type])
 
 	count = 1
 	output = "<table class='table table-condensed'><tbody>"
-
 
 	for item in repList:
 		output += "<tr><td colspan='6'>Of Study %i:</td></tr>" % count
 
 		for i in item:
-			output += "<tr><td>%s</td><td>%s</td><td>type: <span class='label label-default'>%s</span><td>%s</td></td></tr>\n" % (i[0], i[1], i[3], i[2].rstrip('<br/>'))
+			output += "<tr><td>%s</td><td>%s</td><td>type: <span class='label label-default'>%s</span><td>%s</td></td></tr>\n" % (i[0], i[1], i[3], i[2])
 		count +=1 
 
 	output += "</tbody></table>"
