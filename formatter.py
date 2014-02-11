@@ -169,7 +169,7 @@ def comment(doi):
 	for row in comments.table.find({'doi':doi}).sort('date'):
 		output += "<tr>\n"
 		output += "<td style='vertical-align:middle'><img src='http://%s/logos/%s.png' width='100px'/></td>\n" % (url, row['img'])
-		output += "<td><strong>%s</strong> &nbsp; &nbsp; %s <br/> %s <br/>Read full comment <a href='%s'>here</a>.</td> \n" % (row['author'], row['date'], row['text'], row['link'])
+		output += "<td><strong>%s</strong> &nbsp; &nbsp; %s <br/> %s <br/><a href='%s'>%s</a></td> \n" % (row['author'], row['date'], row['text'], row['link'], row['linkText'])
 		output += "</tr>"
 	
 	output += "</table>"
