@@ -82,11 +82,16 @@ def keywords(kw):
 def replications(reps):
 	label = ['Very Close', 'Fairly Close', 'Close', 'Unknown']
 
+	#ping the original study we are currently generating a page for
 	num_studies = db.table.find_one({'replications':reps})['numStudies']
 
 	repList = []
 	for i in range(num_studies):
 		repList.append(copy.deepcopy([]))
+
+	if type(reps) != list:
+		reps = [reps]
+
 
 	for rep in reps:
 		doi = rep.strip()
