@@ -56,7 +56,7 @@ class article(object):
 			if row.has_key(badge):
 				data[badge] = formatter[badge](row[badge], badge)
 
-		output = article_template.render(index_url = index_url, data=data)
+		output = article_template.render_unicode(index_url = index_url, data=data)
 
 		return output
 
