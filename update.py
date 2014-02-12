@@ -60,7 +60,10 @@ for row in db.table.find({'ev' : {'$ne':'NA'}}):
 
 #format the author pile
 for row in db.table.find():
-	row['authorIDs'] = row['authorIDs'].split(',')
+	if type(row['authorIDs']) == unicode:
+		row['authorIDs'] = row['authorIDs'].split(',')
+	else:
+		row['authorIDs'] = [row['authorIDs']]
 	db.table.save(row)
 
 
