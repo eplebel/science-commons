@@ -104,7 +104,7 @@
           <center>
             <h3>All Articles</h3>
           </center>
-          	${all}    
+          	${all_articles}    
 			
           </div>
         </div>

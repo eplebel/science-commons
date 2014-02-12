@@ -30,7 +30,7 @@ class index(object):
 	def index(self):
 		output = ""
 
-		articles = db.table.find()
+		articles = db.table.find().sort([('year', -1)])
 
 		#get the recent articles
 		complete = db.table.find({'mostComplete' : {'$gte' : 1}}).sort([('mostComplete', 1)]).limit(5)
@@ -38,6 +38,8 @@ class index(object):
 
 		complete_articles = formatter['article_list'](complete)
 		recent_articles = formatter['article_list'](recents)
+		all_articles = formatter['article_list'](articles)
+		
 
 		"""
 		#get the most updated articles
@@ -49,7 +51,7 @@ class index(object):
 			output += "<a href='%s'>%s, %s, %s</a><br/>" % (url, title, author, year)
 		"""
 
-		output = index_template.render_unicode(recents = recent_articles, completes = complete_articles)		
+		output = index_template.render_unicode(recents = recent_articles, completes = complete_articles, all_articles=all_articles)		
 
 
 		return output 
