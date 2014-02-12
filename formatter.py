@@ -12,7 +12,7 @@ def article_list(rows):
 	for row in rows:
 		url = 'http://%s?doi=%s' % (article_url, row['doi'])
 		title = row['title']
-		author = formatter['authorIDs'](row['authorIDs'])
+		author = formatter['authorIDs'](row['authorIDs'], short=True)
 		year = row['year']
 
 		output += """
@@ -23,21 +23,43 @@ def article_list(rows):
 	output += "</div>"
 	return output 
 
-def author(authorIDs):
+def author(authorIDs, short=False):
 	output = ""
 
-	for ID in authorIDs:
-		try:
+	n = len(authorIDs)
+
+	if not short:
+		for ID in authorIDs:
+			i = authorIDs.index(ID)
+			last = False
+			if i == (n - 1):
+				last = True
+
+			if last:
+				output = output.rstrip(", ")
+				output += " &amp; "
 			auth = authors.table.find_one({'authorID' : int(ID)})
 			first = auth['firstName']
 			last = auth['lastName']
 			middle = auth['initials']
 			if middle != "NA":
-				output += "%s, %s %s, " % (last, first, middle)
+				output += "%s, %s.%s, " % (last, first[0], middle)
 			else:
-				output += "%s, %s, " % (last, first)
-		except:
-			pass
+				output += "%s, %s., " % (last, first[0])
+	else:
+		print authorIDs
+
+		if n > 2:
+			auth = authors.table.find_one({'authorID' : int(authorIDs[0])})
+			output += "%s et al." % auth['lastName']
+		elif n == 2:
+			auth1 = authors.table.find_one({'authorID' : int(authorIDs[0])})
+			auth2 = authors.table.find_one({'authorID' : int(authorIDs[1])})
+			output += "%s &amp; %s" % (auth1['lastName'], auth2['lastName'])
+		else:
+			auth = authors.table.find_one({'authorID' : int(authorIDs[0])})
+			output += "%s" % auth['lastName']
+
 
 	output = output.rstrip(", ")
 
@@ -62,7 +84,7 @@ def statistics(doi):
 	for row in stats.table.find({'doi':doi}).sort('study'):		
 		n, effect, power = stat_line(doi, row['study'])
 		output += "<div>Study %s: &nbsp; %s, &nbsp;%s, &nbsp;%s</div>\n" % (row['study'], n, power, effect)
-
+	
 	return output
 
 def stat_line(doi,study):
@@ -102,7 +124,7 @@ def replications(reps):
 			#repLink - parent study, child study, type of replication
 			repLink = row['repLink']			
 			journal = "<span class='label label-default'>%s</span>" % formatter['journalID'](row['journalID'])[1]
-			author = formatter['authorIDs'](row['authorIDs'])
+			author = formatter['authorIDs'](row['authorIDs'], short=True)
 
 			for rep in repLink:
 				parent = rep[0]
