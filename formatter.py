@@ -35,7 +35,7 @@ def author(authorIDs, short=False):
 			if i == (n - 1):
 				last = True
 
-			if last:
+			if last and (n != 1):
 				output = output.rstrip(", ")
 				output += " &amp; "
 			auth = authors.table.find_one({'authorID' : int(ID)})
