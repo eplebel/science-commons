@@ -93,7 +93,7 @@
         <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <font size="5px">Replicability (${data['replications'].count('<br/>')}) &nbsp;&nbsp;</font> 
+              <font size="5px">Replicability (${data['replications'].count('label-info')}) &nbsp;&nbsp;</font> 
             </div>
             <div class="panel-body">
 				<strong>Independent Replications</strong>
