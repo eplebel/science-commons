@@ -47,7 +47,6 @@ def author(authorIDs, short=False):
 			else:
 				output += "%s, %s., " % (last, first[0])
 	else:
-		print authorIDs
 
 		if n > 2:
 			auth = authors.table.find_one({'authorID' : int(authorIDs[0])})
