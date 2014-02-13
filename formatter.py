@@ -138,7 +138,8 @@ def replications(reps):
 	output = "<table class='table table-condensed'><tbody>"
 
 	for item in repList:
-		output += "<tr><td colspan='6'>Of Study %i:</td></tr>" % count
+		if len(item):
+			output += "<tr><td colspan='6'>Of Study %i:</td></tr>" % count
 
 		for i in item:
 			output += "<tr><td>%s</td><td>%s</td><td><span class='label label-info'>%s</span></td><td>%s</td></tr>\n" % (i[0], i[1], i[3], i[2])
