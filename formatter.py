@@ -183,7 +183,7 @@ def disclosure(d):
 def comment(doi):
 	output = ""
 	doi = doi.strip()
-	output += "<table>"
+	output += "<table class='table table-striped'>"
 
 	count = comments.table.find({'doi':doi}).count()
 
@@ -221,10 +221,10 @@ def badge(b, field):
 	output = ""
 	d ={}
 	d['replBadge'] = 'badgeReplFindings'
-	d['dataAvailBadge'] = 'badgeOpenData'
+	d['dataAvailBadge'] = 'badgeAvailData'
 	d['reprodAnalBadge'] = 'badgeReprodAnal'
-	d['matAvailBadge'] = 'badgeOpenMat'
-	d['preRegBadge'] = 'badgeRegStudy'
+	d['matAvailBadge'] = 'badgeAvailMat'
+	d['preRegBadge'] = 'badgePreRegAnal'
 	d['disclBadge'] = 'badgeDisclMethods'
 
 	if b == 1:
