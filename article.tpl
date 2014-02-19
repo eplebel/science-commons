@@ -84,8 +84,7 @@
                 ${data['stats']}
                 <strong><font size="3px">Evidentiary Value</font></strong><br>
               		<img src="http://science-commons.org/logos/pcurve.png">&nbsp; <a rel="tooltip" title="Studies lack evidential value."><i>Not yet estimated.</i></a><br>
-                	<img src="http://science-commons.org/logos/icindex.png">&nbsp; <a rel="tooltip" title="Only 8% chance these data originated from random sampling."><i>Not yet estimated.</i></a><br>
-			<img src="http://science-commons.org/logos/ptes.png">&nbsp; <a rel="tooltip" title="There is an excess of significance across this set of studies."><i>Not yet estimated.</i></a>
+                	<img src="http://science-commons.org/logos/icindex.png">&nbsp; <a rel="tooltip" title="Only 8% chance these data originated from random sampling."><i>Not yet estimated.</i></a>
               </div>
               <div></div>
             </div>
