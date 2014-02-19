@@ -116,7 +116,7 @@ authorID,firstName,initials,lastName,affiliation,email
 115,Konrad,NA,Bocian,University of Social Sciences and Humanities Campus Sopot,NA
 116,Mark,J.,Brandt,Tilburg University,NA
 117,Beach,NA,Brooks,University of Florida,NA
-118,Claudia,C.,Brumbaugh,"Queens College, City University of New York",NA
+118,Claudia,C.,Brumbaugh,Queens College - City University of New York,NA
 119,Zeynep,NA,Cemalcilar,Koc University,NA
 120,Jesse,NA,Chandler,University of Michigan at Ann Arbor & PRIME Research,NA
 121,Winnee,NA,Cheong,HELP University,NA
@@ -144,12 +144,12 @@ authorID,firstName,initials,lastName,affiliation,email
 143,Jason,A.,Nier,Connecticut College,NA
 144,Grant,NA,Packard,Wilfrid Laurier University,NA
 145,Ronoldo,NA,Pilati,University of Brasilia,NA
-146,Abraham,M.,Rutchick,"California State University, Northridge",NA
+146,Abraham,M.,Rutchick,California State University - Northridge,NA
 147,Kathleen,NA,Schmidt,University of Virginia,NA
 148,Jeanine,L.,Skorinko,Worcester Polytechnic Institute,NA
 149,Robert,NA,Smith,Ohio State University,NA
 150,Troy,G.,Steiner,University of Padua,NA
-151,Justin,NA,Storbeck,"Queens College, City University of New York",NA
+151,Justin,NA,Storbeck,Queens College - City University of New York,NA
 152,Lyn,M.,Van Swol,University of Wisconsin-Madison,NA
 153,Donna,NA,Thompson,Mount Saint Vincent University,NA
 154,Anna,NA,van't Veer,Tilburg University,NA
@@ -163,12 +163,12 @@ authorID,firstName,initials,lastName,affiliation,email
 162,Annette,NA,Lee-Chai,New York University,NA
 163,Kimberly,NA,Barndollar,New York University,NA
 164,Roman,NA,Tritschel,Universitat Konstanz,NA
-165,Husnu,NA,Senel,University of Kent,NA
-166,Crisp,J.,Richard,University of Kent,NA
-167,Birtel,D.,Michele,University of Manchester,NA
-168,McDonald,M.,Melissa,"Interdisciplinary Center, Herzliya, Israel",NA
-169,Lang,NA,Ryan,Michigan State University,NA
-170,Nikolajuk,NA,Katie,Michigan State University,NA
+165,Senel,NA,Husnu,University of Kent,NA
+166,Richard,J.,Crisp,University of Kent,NA
+167,Michele,D.,Birtel,University of Manchester,NA
+168,Melissa,M.,McDonald,"Interdisciplinary Center - Herzliya, Israel",NA
+169,Ryan,NA,Lang,Michigan State University,NA
+170,Katie,NA,Nikolajuk,Michigan State University,NA
 171,Travis,J.,Carter,University of Chicago,NA
 172,Melissa,J.,Ferguson,Cornell University,NA
 173,Ran,R.,Hassin,Hebrew University,NA
@@ -179,14 +179,14 @@ authorID,firstName,initials,lastName,affiliation,email
 178,Martin,NA,Buschkuehl,University of Michigan & University of Bern,mbu@umich.edu
 179,John,NA,Jonides,University of Michigan,NA
 180,Walter,J.,Perrig,University of Bern,NA
-181,Thomas,S.,Redick,"Georgia Institute of Technology,",tsredick@iupuc.edu
-182,Zach,NA,Shipstead,"Georgia Institute of Technology,",NA
-183,Tyler,L.,Harrison,"Georgia Institute of Technology,",NA
-184,Kenny,L.,Hicks,"Georgia Institute of Technology,",NA
+181,Thomas,S.,Redick,Georgia Institute of Technology,tsredick@iupuc.edu
+182,Zach,NA,Shipstead,Georgia Institute of Technology,NA
+183,Tyler,L.,Harrison,Georgia Institute of Technology,NA
+184,Kenny,L.,Hicks,Georgia Institute of Technology,NA
 185,David,E.,Fried,Michigan State University,NA
 186,David,Z,Hambrick,Michigan State University,NA
 187,Michael,J.,Kane,University of North Carolina Greensboro,NA
-188,Randall,W.,Engle,"Georgia Institute of Technology,",NA
+188,Randall,W.,Engle,Georgia Institute of Technology,NA
 189,Matthew,T.,Galliot,Florida State University,mgalliot@gmail.com
 190,Roy,F.,Baumeister,Florida State University,baumeister@psy.fsu.edu
 191,Nathan,C.,DeWall,Florida State University,NA
@@ -207,7 +207,7 @@ authorID,firstName,initials,lastName,affiliation,email
 206,Edward,K.,Vogel,University of Iowa,NA
 207,Nicole,L.,Mead,Florida State University,NA
 208,Miranda,R.,Goode,University of British Columbia,NA
-209,Jason,A.,Tate,"California State University, Chico ",NA
+209,Jason,A.,Tate,California State University - Chico ,NA
 210,Manuel,NA,Grenier,Bishop's University,NA
 211,Thomas,NA,Bertrand,Bishop's University,NA
 212,Emilie,NA,Pepin,Bishop's University,NA
