@@ -175,7 +175,7 @@
 				</div>
 			  </div>
 			<span><b>Peer Review Information:</b>&nbsp; &nbsp;&nbsp; <b>Action Editor: </b>${data['editor']} &nbsp;&nbsp;${data['reviewers']}</span><br>
-			<p></p>
+			<hr>
 			</div>
       </div>
     </div>
