@@ -61,9 +61,15 @@ for row in db.table.find({'ev' : {'$ne':'NA'}}):
 #format the author pile
 for row in db.table.find():
 	if type(row['authorIDs']) == unicode:
-		row['authorIDs'] = row['authorIDs'].split(',')
+		authors = []
+		for a in row['authorIDs'].split(','):
+			if a:
+				authors.append(int(a))
+		row['authorIDs'] = authors
 	else:
 		row['authorIDs'] = [row['authorIDs']]
+
+	print row['authorIDs']
 	db.table.save(row)
 
 
@@ -72,7 +78,7 @@ for row in db.table.find({'repLink' : {'$ne': 'NA'}}):
 	try:
 		reps = eval(row['repLink'])
 	except:
-		raise(Exception("Replication Field Update Error : Cannot parse %s into dictionary format" % rep))
+		raise(Exception("Replication Field Update Error : Cannot parse %s into list format" % reps))
 	row['repLink'] = reps
 	db.table.save(row)
 
