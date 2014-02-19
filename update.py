@@ -69,7 +69,6 @@ for row in db.table.find():
 	else:
 		row['authorIDs'] = [row['authorIDs']]
 
-	print row['authorIDs']
 	db.table.save(row)
 
 

@@ -170,8 +170,11 @@ class ReadFile:
 
 			if self.addrow:
 				row = dict(row, **self.addrow)
-			self.table.insert(row)
 
+			try:
+				self.table.insert(row)
+			except: 
+				print "I peed myself because of %s" % row
 
 	def processEPrime(self, lines):
 		print "processing as E-Prime"
