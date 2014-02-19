@@ -1,14 +1,14 @@
 authorID,firstName,initials,lastName,affiliation,email
-1,Michael,L.,Slepian,Stanford University,slepian@stanford.edu 
+1,Michael,L.,Slepian,Stanford University,slepian+AEA-stanford.edu 
 2,E. J.,NA,Masicampo,Wake Forest University,NA
 3,Negin,R.,Toosi,Columbia University,NA
 4,Nalini,NA,Ambady,Stanford University,NA
-5,Etienne,P.,LeBel,Montclair State University,etienne.lebel@gmail.com
-6,Christopher,J.,Wilbur,University of Wisconsin – Wausa,cjwilbur2@gmail.com
-7,Hannah,NA,Perfecto,University of California – Berkeley,hannah_perfecto@haas.berkeley.edu 
-8,Leif,NA,Nelson,University of California – Berkeley,NA
-9,Alice,NA,Moon,University of California – Berkeley,NA
-10,Chen-Bo,NA,Zhong,University of Toronto,NA
+5,Etienne,P.,LeBel,Montclair State University,etienne.lebel+AEA-gmail.com
+6,Christopher,J.,Wilbur,University of Wisconsin at+AJM- Wausa,cjwilbur2+AEA-gmail.com
+7,Hannah,NA,Perfecto,University of California at Berkeley,hannah+AF8-perfecto+AEA-haas.berkeley.edu 
+8,Leif,NA,Nelson,University of California at+AJM- Berkeley,NA
+9,Alice,NA,Moon,University of California at+AJM- Berkeley,NA
+10,Chen+AC0-Bo,NA,Zhong,University of Toronto,NA
 11,Katie,NA,Liljenquist,Northwestern University,NA
 12,Elena,NA,Gamez,Universidad de La Laguna,NA
 13,Jose,M.,Diaz,Universidad de La Laguna,NA
@@ -17,29 +17,29 @@ authorID,firstName,initials,lastName,affiliation,email
 16,Jim,A. C.,Everett,University of Oxford,NA
 17,Elizabeth,N.,Madva,Weill Cornell Medical College,NA
 18,J. Kiley,NA,Hamlin,University of British Columbia,NA
-19,Jennifer,V.,Fayard,"University of Illinois, Urbana-Champaign",NA
+19,Jennifer,V.,Fayard,+ACI-University of Illinois, Urbana+AC0-Champaign+ACI-,NA
 20,Amandeep,K.,Bassi,University of Ottawa,NA
 21,Daniel,M.,Bernstein,Kwantlen Polytechnic University,NA
-22,Brent,W.,Roberts,"University of Illinois, Urbana-Champaign",NA
+22,Brent,W.,Roberts,+ACI-University of Illinois, Urbana+AC0-Champaign+ACI-,NA
 23,Daryl,J. ,Bem,Cornell University,NA
 24,Jeff,NA,Galak,Carnegie Mellon University,NA
 25,Robyn,A.,LeBoeuf,University of Florida,NA
-26,Joseph,P.,Simmons,University of Pennsylvania,jsimmo@wharton.upenn.edu 
-27,E.-J.,NA,Wagenmakers,University of Amsterdam,NA
+26,Joseph,P.,Simmons,University of Pennsylvania,jsimmo+AEA-wharton.upenn.edu 
+27,E.+AC0-J.,NA,Wagenmakers,University of Amsterdam,NA
 28,Ruud,NA,Wetzels,University of Amsterdam,NA
 29,Denny,NA,Borsboom,University of Amsterdam,NA
 30,Han,L. J.,van der Maas,University of Amsterdam,NA
 31,Rogier,A.,Kievit,University of Cambridge,NA
 32,Stuart,J.,Ritchie,University of Edinburgh,NA
 33,Richard,NA,Wiseman,University of Hertfordshire,NA
-34,Christopher,C.,French,University of London – Goldsmiths,NA
+34,Christopher,C.,French,University of London at Goldsmiths,NA
 35,John,A.,Bargh,Yale University,NA
 36,Mark,NA,Chen,New York University,NA
 37,Lisa,NA,Burrows,New York University,NA
-38,Stephane,NA,Doyen,Université Libre de Bruxelles,NA
-39,Olivier,NA,Klein,Université Libre de Bruxelles,NA
-40,Cora-Lise,NA,Pichon,Université Libre de Bruxelles,NA
-41,Axel,NA,Cleeremans,Université Libre de Bruxelles,NA
+38,Stephane,NA,Doyen,Universite Libre de Bruxelles,NA
+39,Olivier,NA,Klein,Universite Libre de Bruxelles,NA
+40,Cora+AC0-Lise,NA,Pichon,Universite Libre de Bruxelles,NA
+41,Axel,NA,Cleeremans,Universite Libre de Bruxelles,NA
 42,Ap,NA,Dijksterhuis,University of Nijmegen,NA
 43,Russell,NA,Spears,University of Amsterdam,NA
 44,Tom,NA,Postmes,University of Amsterdam,NA
@@ -47,9 +47,9 @@ authorID,firstName,initials,lastName,affiliation,email
 46,Willem,NA,Koomen,University of Amsterdam,NA
 47,Ad,NA,van Knippenberg,University of Nijmegen,NA
 48,Daan,NA,Scheepers,University of Amsterdam,NA
-49,Harold,NA,Pashler,Unviersity of California – San Diego,NA
-50,Christine,R.,Harris,Unviersity of California – San Diego,NA
-51,Noriko,NA,Coburn,Unviersity of California – San Diego,NA
+49,Harold,NA,Pashler,Unviersity of California at+AJM- San Diego,NA
+50,Christine,R.,Harris,Unviersity of California at+AJM- San Diego,NA
+51,Noriko,NA,Coburn,Unviersity of California at+AJM- San Diego,NA
 52,Idit,NA,Shalev,Yale University,NA
 53,M. Brent,NA,Donnellan,Michigan State University,NA
 54,Richard,E.,Lucas,Michigan State University,NA
@@ -76,7 +76,7 @@ authorID,firstName,initials,lastName,affiliation,email
 75,SanSuk,NA,Yoon,Temple University,NA
 76,Nathan,NA,Fong,Temple University,NA
 77,Angelika,NA,Dimoka,Temple University,NA
-78,Uri,NA,Simonsohn,University of Pennsylvania,uws@wharton.upenn.edu 
+78,Uri,NA,Simonsohn,University of Pennsylvania,uws+AEA-wharton.upenn.edu 
 79,E. Troy,NA,Higgins,Columbia University,NA
 80,Jason,E.,Plaks,University of Washington,NA
 81,Sander,NA,Nieuwenhuis,Leiden University,NA
@@ -86,25 +86,25 @@ authorID,firstName,initials,lastName,affiliation,email
 85,Peter,NA,Duijs,Leiden University,NA
 86,Zoe,NA,Samara,Maastricht University,NA
 87,Heleen,A.,Slagter,University of Amsterdam,NA
-88,Dora,NA,Matzke,University of Amsterdam,d.matzke@uva.nl.
+88,Dora,NA,Matzke,University of Amsterdam,d.matzke+AEA-uva.nl.
 89,Hedderik,NA,van Rijn,University of Groningen,NA
 90,Mauritis,W.,van der Molen,University of Amsterdam,NA
 91,Claude,M.,Steele,Stanford University,NA
 92,Joshua,NA,Aronson,Stanford University,NA
-93,Colleen,M.,Ganley,University of Illinois at Urbana-Champaign,cganley@illinois.edu
-94,Leigh,A,Mingle,University of Illinois at Urbana-Champaign,NA
+93,Colleen,M.,Ganley,University of Illinois at Urbana+AC0-Champaign,cganley+AEA-illinois.edu
+94,Leigh,A,Mingle,University of Illinois at Urbana+AC0-Champaign,NA
 95,Allison,M.,Ryan,University of Michigan at Ann Arbor,NA
-96,Katherine,NA,Ryan,University of Illinois at Urbana-Champaign,NA
+96,Katherine,NA,Ryan,University of Illinois at Urbana+AC0-Champaign,NA
 97,Marina,NA,Vasilyeva,Boston College,NA
-98,Michelle,NA,Perry,University of Illinois at Urbana-Champaign,NA
-99,Thomas,E.,Wei,Harvard University,twei@fas.harvard.edu
-100,Lawrence,J.,Stricker,Education Testing Service,lstricker@ets.org 
+98,Michelle,NA,Perry,University of Illinois at Urbana+AC0-Champaign,NA
+99,Thomas,E.,Wei,Harvard University,twei+AEA-fas.harvard.edu
+100,Lawrence,J.,Stricker,Education Testing Service,lstricker+AEA-ets.org 
 101,William,C.,Ward,Education Testing Service,NA
 102,Roland,G.,Fryer,Harvard University,NA
 103,Steven,D.,Levitt,University of Chicago,NA
 104,John,A.,List,University of Chicago,NA
 105,Eugene,M.,Caruso,University of Chicago,NA
-106,Kathleen,D.,Vohs,University of Minnesota,kvohs@csom.umn.edu
+106,Kathleen,D.,Vohs,University of Minnesota,kvohs+AEA-csom.umn.edu
 107,Brittani,NA,Baxter,University of Chicago,NA
 108,Adam,NA,Waytz,Northwestern University,NA
 109,Richard,A.,Klein,University of Florida,NA
@@ -116,26 +116,26 @@ authorID,firstName,initials,lastName,affiliation,email
 115,Konrad,NA,Bocian,University of Social Sciences and Humanities Campus Sopot,NA
 116,Mark,J.,Brandt,Tilburg University,NA
 117,Beach,NA,Brooks,University of Florida,NA
-118,Claudia,C.,Brumbaugh,Queens College - City University of New York,NA
+118,Claudia,C.,Brumbaugh,Queens College +AC0- City University of New York,NA
 119,Zeynep,NA,Cemalcilar,Koc University,NA
-120,Jesse,NA,Chandler,University of Michigan at Ann Arbor & PRIME Research,NA
+120,Jesse,NA,Chandler,University of Michigan at Ann Arbor +ACY- PRIME Research,NA
 121,Winnee,NA,Cheong,HELP University,NA
-122,William,E.,Davis,Texas A&M University,NA
+122,William,E.,Davis,Texas A+ACY-M University,NA
 123,Thierry,NA,Devos,San Diego State University,NA
 124,Matthew,NA,Eisner,Ohio State University,NA
 125,Natalia,NA,Frankowska,University of Social Sciences and Humanities Campus Sopot,NA
 126,David,NA,Furrow,Mount Saint Vincent University,NA
 127,Elisa,M.,Galliani,University of Florida,NA
 128,Fred,NA,Hasselman,Radboud University Nijmegen,NA
-129,Joshua,A.,Hicks,Texas A&M University,NA
+129,Joshua,A.,Hicks,Texas A+ACY-M University,NA
 130,James,F.,Hovermale,Virginia Commonwealth University,NA
-131,S.,J.,Hunt,Texas A&M University-Commerce,NA
+131,S.,J.,Hunt,Texas A+ACY-M University+AC0-Commerce,NA
 132,Jeffery,R.,Huntsinger,Loyola University Chicago,NA
 133,Hans,NA,Ijzerman,Tilburg University,NA
-134,Mellisa-Sue,NA,John,Worcester Polytechnic Institute,NA
-135,Jennifer,A.,Joy-Gaba,Virginia Commonwealth University,NA
+134,Mellisa+AC0-Sue,NA,John,Worcester Polytechnic Institute,NA
+135,Jennifer,A.,Joy+AC0-Gaba,Virginia Commonwealth University,NA
 136,Heather,B.,Kappes,London School of Economics and Political Science,NA
-137,Lacy,E.,Krueger,Texas A&M University-Commerce,NA
+137,Lacy,E.,Krueger,Texas A+ACY-M University+AC0-Commerce,NA
 138,Jaime,NA,Kurtz,James Madison University,NA
 139,Carmel,A.,Levitan,Occidental College,NA
 140,Robyn,NA,Mallett,Loyola University Chicago,NA
@@ -144,29 +144,29 @@ authorID,firstName,initials,lastName,affiliation,email
 143,Jason,A.,Nier,Connecticut College,NA
 144,Grant,NA,Packard,Wilfrid Laurier University,NA
 145,Ronoldo,NA,Pilati,University of Brasilia,NA
-146,Abraham,M.,Rutchick,California State University - Northridge,NA
+146,Abraham,M.,Rutchick,California State University +AC0- Northridge,NA
 147,Kathleen,NA,Schmidt,University of Virginia,NA
 148,Jeanine,L.,Skorinko,Worcester Polytechnic Institute,NA
 149,Robert,NA,Smith,Ohio State University,NA
 150,Troy,G.,Steiner,University of Padua,NA
-151,Justin,NA,Storbeck,Queens College - City University of New York,NA
-152,Lyn,M.,Van Swol,University of Wisconsin-Madison,NA
+151,Justin,NA,Storbeck,Queens College +AC0- City University of New York,NA
+152,Lyn,M.,Van Swol,University of Wisconsin+AC0-Madison,NA
 153,Donna,NA,Thompson,Mount Saint Vincent University,NA
 154,Anna,NA,van't Veer,Tilburg University,NA
 155,Leigh Ann,NA,Vaughn,Ithica College,NA
 156,Marek,NA,Vranka,Charles University,NA
 157,Aaron,NA,Wichman,Western Kentucky University,NA
 158,Julie,A.,Woodzicka,Washington and Lee University,NA
-159,Brian,A. ,Nosek,University of Virginia & The Center for Open Science,NA
+159,Brian,A. ,Nosek,University of Virginia +ACY- The Center for Open Science,NA
 160,Doug,NA,Rohrer,University of South Florida,NA
-161,Peter,M.,Gollweitzer,Universitat Konstanz and New York University,pgm4@nyu.edu
-162,Annette,NA,Lee-Chai,New York University,NA
+161,Peter,M.,Gollweitzer,Universitat Konstanz and New York University,pgm4+AEA-nyu.edu
+162,Annette,NA,Lee+AC0-Chai,New York University,NA
 163,Kimberly,NA,Barndollar,New York University,NA
 164,Roman,NA,Tritschel,Universitat Konstanz,NA
 165,Senel,NA,Husnu,University of Kent,NA
 166,Richard,J.,Crisp,University of Kent,NA
 167,Michele,D.,Birtel,University of Manchester,NA
-168,Melissa,M.,McDonald,"Interdisciplinary Center - Herzliya, Israel",NA
+168,Melissa,M.,McDonald,+ACI-Interdisciplinary Center +AC0- Herzliya, Israel+ACI-,NA
 169,Ryan,NA,Lang,Michigan State University,NA
 170,Katie,NA,Nikolajuk,Michigan State University,NA
 171,Travis,J.,Carter,University of Chicago,NA
@@ -174,12 +174,12 @@ authorID,firstName,initials,lastName,affiliation,email
 173,Ran,R.,Hassin,Hebrew University,NA
 174,Ravi,NA,Mehta,NA,NA
 175,Rui (Juliet),NA,Zhu,University of British Columbia,NA
-176,Kenneth,M.,Steele,Appalachian State University,steelekm@appstate.edu
-177,Susanne,M.,Jaeggi,University of Michigan & University of Bern,sjaeggi@umich.edu
-178,Martin,NA,Buschkuehl,University of Michigan & University of Bern,mbu@umich.edu
+176,Kenneth,M.,Steele,Appalachian State University,steelekm+AEA-appstate.edu
+177,Susanne,M.,Jaeggi,University of Michigan +ACY- University of Bern,sjaeggi+AEA-umich.edu
+178,Martin,NA,Buschkuehl,University of Michigan +ACY- University of Bern,mbu+AEA-umich.edu
 179,John,NA,Jonides,University of Michigan,NA
 180,Walter,J.,Perrig,University of Bern,NA
-181,Thomas,S.,Redick,Georgia Institute of Technology,tsredick@iupuc.edu
+181,Thomas,S.,Redick,Georgia Institute of Technology,tsredick+AEA-iupuc.edu
 182,Zach,NA,Shipstead,Georgia Institute of Technology,NA
 183,Tyler,L.,Harrison,Georgia Institute of Technology,NA
 184,Kenny,L.,Hicks,Georgia Institute of Technology,NA
@@ -187,14 +187,14 @@ authorID,firstName,initials,lastName,affiliation,email
 186,David,Z,Hambrick,Michigan State University,NA
 187,Michael,J.,Kane,University of North Carolina Greensboro,NA
 188,Randall,W.,Engle,Georgia Institute of Technology,NA
-189,Matthew,T.,Galliot,Florida State University,mgalliot@gmail.com
-190,Roy,F.,Baumeister,Florida State University,baumeister@psy.fsu.edu
+189,Matthew,T.,Galliot,Florida State University,mgalliot+AEA-gmail.com
+190,Roy,F.,Baumeister,Florida State University,baumeister+AEA-psy.fsu.edu
 191,Nathan,C.,DeWall,Florida State University,NA
 192,Jon,K,Maner,Florida State University,NA
 193,E. Ashby,NA,Plant,Florida State University,NA
 194,Dianne,M.,Tice,Florida State University,NA
 195,Lauren,E.,Brewer,Florida State University,NA
-196,Brandon,J.,Schmeichel,Texas A&M University,NA
+196,Brandon,J.,Schmeichel,Texas A+ACY-M University,NA
 197,Katherine,NA,Corker,Michigan State University,NA
 198,Erica,NA,Lane,Bishop's University,NA
 199,Kelsea,NA,Beadman,Bishop's University,NA
@@ -207,18 +207,18 @@ authorID,firstName,initials,lastName,affiliation,email
 206,Edward,K.,Vogel,University of Iowa,NA
 207,Nicole,L.,Mead,Florida State University,NA
 208,Miranda,R.,Goode,University of British Columbia,NA
-209,Jason,A.,Tate,California State University - Chico ,NA
+209,Jason,A.,Tate,California State University +AC0- Chico ,NA
 210,Manuel,NA,Grenier,Bishop's University,NA
 211,Thomas,NA,Bertrand,Bishop's University,NA
 212,Emilie,NA,Pepin,Bishop's University,NA
 213,Philip,D.,Laflamme,Bishop's University,NA
 214,Lindsay,NA,Webster,Bishop's University,NA
 215,Laura,NA,Wheeler,Bishop's University,NA
-216,Jen-Francois,NA,Devlvenne,Catholic University of Louvain,jean-francois.delvenne@psp.ucl.ac.be 
+216,Jen+AC0-Francois,NA,Devlvenne,Catholic University of Louvain,jean+AC0-francois.delvenne+AEA-psp.ucl.ac.be 
 217,Raymond,NA,Bruyer,Catholic University of Louvain,NA
-218,Ingrid,R.,Olson,Yale School of Medicine,iolson@boreas.med.yale.edu 
-219,Yuhong,NA,Jiang,Massachusetts Institute of Technology,yuhong@mit.edu 
-220,Mario,A.,Parra,University of Edinburgh,M.A.Parra-Rodriguez@sms.ed.ac.uk 
+218,Ingrid,R.,Olson,Yale School of Medicine,iolson+AEA-boreas.med.yale.edu 
+219,Yuhong,NA,Jiang,Massachusetts Institute of Technology,yuhong+AEA-mit.edu 
+220,Mario,A.,Parra,University of Edinburgh,M.A.Parra+AC0-Rodriguez+AEA-sms.ed.ac.uk 
 221,Sergio,D.,Sala,University of Edinburgh,NA
 222,Robert,H.,Logie,University of Edinburgh,NA
 223,Sharon,NA,Abrahams,University of Edinburgh,NA
@@ -229,13 +229,13 @@ authorID,firstName,initials,lastName,affiliation,email
 228,Daniel,NA,Smilek,University of Waterloo,NA
 229,John,D.,Eastwood,University of Waterloo,NA
 230,Philip,M.,Merikle,University of Waterloo,NA
-231,Stephen,R.,Mitroff,Harvard University,Stephen.Mitroff@yale.edu 
-232,Daniel,J.,Simons,Harvard University,dsimons@uiuc.edu 
+231,Stephen,R.,Mitroff,Harvard University,Stephen.Mitroff+AEA-yale.edu 
+232,Daniel,J.,Simons,Harvard University,dsimons+AEA-uiuc.edu 
 233,Steven,L.,Franconeri,Harvard University,NA
 234,J,A.,Anguera,University of California,NA
 235,J,NA,Boccanfuso,University of California,NA
 236,J,L.,Rintoul,University of California,NA
-237,O,NA,Al-Hashimi,University of California,NA
+237,O,NA,Al+AC0-Hashimi,University of California,NA
 238,F,NA,Faraji,University of California,NA
 239,J,NA,Janowich,University of California,NA
 240,E,NA,Kong,University of California,NA
@@ -243,11 +243,11 @@ authorID,firstName,initials,lastName,affiliation,email
 242,C,NA,Rolle,University of California,NA
 243,E,NA,Johnston,University of California,NA
 244,A,NA,Gazzaley,University of California,NA
-245,Jazmin,L.,Brown-Iannuzzi,University of North Carolina at Chapel Hill,NA
+245,Jazmin,L.,Brown+AC0-Iannuzzi,University of North Carolina at Chapel Hill,NA
 246,Kelly,M.,Hoffman,University of Virginia,NA
 247,B. Keith,NA,Payne,University of North Carolina at Chapel Hill,NA
 248,Sophie,NA,Trawalter,University of Virginia,NA
-249,Charles,NA,Brown,University of Maryland & National Bureau of Economic Research,NA
+249,Charles,NA,Brown,University of Maryland +ACY- National Bureau of Economic Research,NA
 250,Curtis,NA,Gilroy,U.S. Army Research Institute,NA
 251,Andrew,NA,Kohen,James Madison University,NA
 252,Sheena,S.,Iyengar,Columbia University,NA
