@@ -50,9 +50,9 @@
       </div>
       <span><i>${data['journalID'][0]}</i> (${data['year']}), doi: ${data['doi']}</span><br>
       <font size="6px">${data['title']}</font><br>
-      <span>${data['authorIDs']}</span><br>
-      <span>${data['affiliation']}</span><br>
-      <span><b>Action Editor: </b>${data['editor']} &nbsp;&nbsp;${data['reviewers']}</span><br><br>
+      <span>${data['authorIDs']}</span>
+      <!--<span>${data['affiliation']}</span><br>-->
+      
 		<div class="row">
 		  <div class="col-md-12" class="panel-group" id="accordion">
 			<div class="panel panel-default">
@@ -92,7 +92,8 @@
         <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <font size="5px">Replicability (${data['replications'].count('label-info')}) &nbsp;&nbsp;</font> 
+              <font size="5px">Replicability (${data['replications'].count('label-info')}) &nbsp;&nbsp;</font>
+				${data['replBadge']}			  
             </div>
             <div class="panel-body">
 				<strong>Independent Replications</strong>
@@ -173,6 +174,8 @@
 				  ${data['comments']}
 				</div>
 			  </div>
+			<span><b>Peer Review Information:</b>&nbsp; &nbsp;&nbsp; <b>Action Editor: </b>${data['editor']} &nbsp;&nbsp;${data['reviewers']}</span><br>
+			<hr>
 			</div>
       </div>
     </div>

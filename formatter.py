@@ -131,8 +131,8 @@ def replications(reps):
 				rep_type = label[rep[2]-1]
 				n, effect, power = stat_line(doi, child)
 				stats = "<td>%s</td><td>%s</td><td>%s</td>" % (n, power, effect)
-				author = "<a href='http://%s?doi=%s'>%s</a>" % (article_url, doi, author)
-				repList[rep[0]-1].append([journal, author, stats, rep_type])
+				auth_url = "<a href='http://%s?doi=%s'>%s</a>" % (article_url, doi, author)
+				repList[rep[0]-1].append([journal, auth_url, stats, rep_type])
 
 	count = 1
 	output = "<table class='table table-condensed'><tbody>"
@@ -142,7 +142,7 @@ def replications(reps):
 			output += "<tr><td colspan='6'>Of Study %i:</td></tr>" % count
 
 		for i in item:
-			output += "<tr><td>%s</td><td>%s</td><td><span class='label label-info'>%s</span></td><td>%s</td></tr>\n" % (i[0], i[1], i[3], i[2])
+			output += "<tr><td>%s</td><td>%s</td><td><span class='label label-info'>%s</span></td>%s</tr>\n" % (i[0], i[1], i[3], i[2])
 		count +=1 
 
 	output += "</tbody></table>"
@@ -183,7 +183,7 @@ def disclosure(d):
 def comment(doi):
 	output = ""
 	doi = doi.strip()
-	output += "<table>"
+	output += "<table class='table table-striped'>"
 
 	count = comments.table.find({'doi':doi}).count()
 
@@ -221,10 +221,10 @@ def badge(b, field):
 	output = ""
 	d ={}
 	d['replBadge'] = 'badgeReplFindings'
-	d['dataAvailBadge'] = 'badgeOpenData'
+	d['dataAvailBadge'] = 'badgeAvailData'
 	d['reprodAnalBadge'] = 'badgeReprodAnal'
-	d['matAvailBadge'] = 'badgeOpenMat'
-	d['preRegBadge'] = 'badgeRegStudy'
+	d['matAvailBadge'] = 'badgeAvailMat'
+	d['preRegBadge'] = 'badgePreRegAnal'
 	d['disclBadge'] = 'badgeDisclMethods'
 
 	if b == 1:
