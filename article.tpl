@@ -25,33 +25,28 @@
             </button>
             <a href="http://${index_url}" class="navbar-brand"><strong><font size="5px">Science-Commons.org</font></strong></a>
           </div>
-          <div class="collapse navbar-collapse">
+          
+		  <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li>
-                <a href="about.html">About</a>
-              </li>
+              <li><a href="about.html">About</a></li>
+			  <li><a href="#">Features</a></li>
             </ul>
             <nav>
-              <form class="navbar-form navbar-left">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                </div>
-              </form>
+              
               <ul class="nav navbar-nav pull-right">
                 <li>
-                  <a href="#">Username</a>
+                 <span class="label label-danger">ALPHA RELEASE</span> 
                 </li>
-                <li><a rel="tooltip" title="Settings" href="#"><i class="icon-cog icon-white"></i></a></li>
-		<li><a rel="tooltip" title="Log out" href="#"><i class="icon-off icon-white"></i></a></li>
+				
               </ul>
             </nav>
           </div>
         </div>
       </div>
-      <span><i>${data['journalID'][0]}</i> (${data['year']}), doi: ${data['doi']}</span><br>
       <font size="6px">${data['title']}</font><br>
-      <span>${data['authorIDs']}</span>
+      <span>${data['authorIDs']}</span>&nbsp; (${data['year']}) <br>
       <!--<span>${data['affiliation']}</span><br>-->
+	  <span><i>${data['journalID'][0]}</i>, doi: ${data['doi']}</span><br>
       
 		<div class="row">
 		  <div class="col-md-12" class="panel-group" id="accordion">
