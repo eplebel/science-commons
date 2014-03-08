@@ -3,7 +3,7 @@
 <html>
   
   <head>
-    <title>Science-Commons.org - ${data['title']}</title>
+    <title>Curate-Science.org - ${data['title']}</title>
     <meta name="view	port" content="width=device-width">
     <link rel="stylesheet" href="http://www.science-commons.org/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
@@ -23,7 +23,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </button>
-            <a href="http://${index_url}" class="navbar-brand"><strong><font size="5px">Science-Commons.org</font></strong></a>
+            <a href="http://${index_url}" class="navbar-brand"><strong><font size="5px">Curate-Science</font></strong></a>
           </div>
           
 		  <div class="collapse navbar-collapse">
@@ -43,11 +43,25 @@
           </div>
         </div>
       </div>
-      <font size="6px">${data['title']}</font><br>
-      <span>${data['authorIDs']}</span>&nbsp; (${data['year']}) <br>
-      <!--<span>${data['affiliation']}</span><br>-->
-	  <span><i>${data['journalID'][0]}</i>, doi: ${data['doi']}</span><br>
-      
+      <table class="table table-condensed">
+		<thead>
+			<tr>
+				<td width='64.5%'>
+					<font size="6px">${data['title']}</font><br>
+					${data['authorIDs']}&nbsp;(${data['year']},&nbsp;<i>${data['journalID'][0]}</i>, doi: ${data['doi']})
+				</td>	
+				<td width='35.5%' style="vertical-align:middle">
+					${data['replBadge']}&nbsp;
+					${data['dataAvailBadge']}&nbsp;
+					${data['reprodAnalBadge']}&nbsp;
+					${data['matAvailBadge']}&nbsp;
+					${data['preRegBadge']}&nbsp;
+					${data['disclBadge']}
+				</td>
+			</tr>
+		</thead>
+	  </table>
+	  
 		<div class="row">
 		  <div class="col-md-12" class="panel-group" id="accordion">
 			<div class="panel panel-default">
@@ -87,8 +101,7 @@
         <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <font size="5px">Replicability (${data['replications'].count('label-info')}) &nbsp;&nbsp;</font>
-				${data['replBadge']}			  
+              <font size="5px">Replicability (${data['replications'].count('label-info')}) &nbsp;&nbsp;</font>			  
             </div>
             <div class="panel-body">
 				<strong>Independent Replications</strong>
@@ -103,9 +116,6 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 				  <font size="5px">Data/Syntax (${data['data'].count("</li>")})</font>&nbsp;&nbsp;
-					
-				  ${data['dataAvailBadge']}&nbsp; &nbsp;
-				  ${data['reprodAnalBadge']}
 				</div>
 				<div class="panel-body">
 				    ${data['dataSourceLogo']}
@@ -116,7 +126,7 @@
 		<div class="col-md-6">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <font size="5px">Materials (${data['materials'].count("</li>")}) &nbsp;&nbsp;</font> ${data['matAvailBadge']}&nbsp; &nbsp; &nbsp;
+              <font size="5px">Materials (${data['materials'].count("</li>")}) &nbsp;&nbsp;</font> 
             </div>
             <div class="panel-body">
               ${data['materialSourceLogo']}
@@ -130,7 +140,6 @@
 			  <div class="panel panel-default">
 				<div class="panel-heading">
 				  <font size="5px">Pre-registration (${data['prereg'].count("</li>")}) &nbsp;&nbsp;</font> 
-						${data['preRegBadge']}
 					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1"> <i class="fa fa-chevron-down fa-2x pull-right"></i></a>
 				</div>
 				<div class="accordion-body collapse" id="collapse1">
@@ -147,7 +156,6 @@
 			  <div class="panel panel-default">
 				<div class="panel-heading">
 				  <font size="5px">Disclosure&nbsp;&nbsp;</font> 
-				  ${data['disclBadge']}
 					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2"> <i class="fa fa-chevron-down fa-2x pull-right"></i></a>
 				</div>
 				<div class="accordion-body collapse" id="collapse2">

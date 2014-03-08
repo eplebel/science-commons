@@ -220,17 +220,19 @@ def journalID(j):
 def badge(b, field):
 	output = ""
 	d ={}
-	d['replBadge'] = 'badgeReplFindings'
-	d['dataAvailBadge'] = 'badgeAvailData'
-	d['reprodAnalBadge'] = 'badgeReprodAnal'
-	d['matAvailBadge'] = 'badgeAvailMat'
-	d['preRegBadge'] = 'badgePreRegAnal'
-	d['disclBadge'] = 'badgeDisclMethods'
+	d['replBadge'] = '1repFinding'
+	d['dataAvailBadge'] = '2availData'
+	d['reprodAnalBadge'] = '3reprodAnal'
+	d['matAvailBadge'] = '4availMaterials'
+	d['disclBadge'] = '5disclMethods'
+	d['preRegBadge'] = '6preReg'
 
-	if b == 1:
-		output = "<img src='http://%s/logos/%s.png' width = '50'>" % (url, d[field])
+	if b == 0:
+		output = "<img src='http://%s/logos/%sRed.png' width = '60'>" % (url, d[field])
+        elif b == 1:
+                output = "<img src='http://%s/logos/%sOrange.png' width = '60'>" % (url, d[field])
 	else:
-		output = "<img src='http://%s/logos/badgeBlank.png' width = '50'>" % (url)
+		output = "<img src='http://%s/logos/%sGreen.png' width = '60'>" % (url, d[field])
 
 	return output
 
