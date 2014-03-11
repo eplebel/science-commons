@@ -5,7 +5,7 @@
   <head>
     <title>Curate-Science.org - ${data['title']}</title>
     <meta name="view	port" content="width=device-width">
-    <link rel="stylesheet" href="http://www.science-commons.org/bootstrap.min.css">
+    <link rel="stylesheet" href="http://www.curatescience.org/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
@@ -92,8 +92,8 @@
                 <strong><font size="3px">Basic Statistics</font></strong><br>
                 ${data['stats']}
                 <strong><font size="3px">Evidentiary Value</font></strong><br>
-              		<img src="http://science-commons.org/logos/pcurve.png">&nbsp; <a rel="tooltip" title="Studies lack evidential value."><i>Not yet estimated.</i></a><br>
-                	<img src="http://science-commons.org/logos/icindex.png">&nbsp; <a rel="tooltip" title="Only 8% chance these data originated from random sampling."><i>Not yet estimated.</i></a>
+              		<img src="http://curatescience.org/logos/pcurve.png">&nbsp; <a rel="tooltip" title="Studies lack evidential value."><i>Not yet estimated.</i></a><br>
+                	<img src="http://curatescience.org/logos/icindex.png">&nbsp; <a rel="tooltip" title="Only 8% chance these data originated from random sampling."><i>Not yet estimated.</i></a>
               </div>
               <div></div>
             </div>

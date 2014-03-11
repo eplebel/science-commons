@@ -3,9 +3,9 @@
 <html>
   
   <head>
-    <title>Science-Commons.org</title>
+    <title>curatescience.org</title>
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="http://science-commons.org/bootstrap.min.css">
+    <link rel="stylesheet" href="http://curatescience.org/bootstrap.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <style type="text/css">
@@ -66,12 +66,12 @@
       </div>
       
       <div class="jumbotron">
-        <h1>Science-Commons</h1>
+        <h1>Curate Science</h1>
 
         <h2>Know the Scientific Record.</h2><br>
-        <p>Science-Commons' mission is to accelerate the growth of cumulative knowledge and innovation by organizing and curating key information about scientific articles.
+        <p>Curate Science's mission is to accelerate the growth of cumulative knowledge and innovation by organizing and curating key information about scientific articles.
 		</p>
-        <p><a class="btn btn-info btn-xs" href="http://science-commons.org/about.html">Learn More</a></p>
+        <p><a class="btn btn-info btn-xs" href="http://curatescience.org/about.html">Learn More</a></p>
       </div>
       
 		  <div class="row">
