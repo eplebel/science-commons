@@ -4,7 +4,7 @@
   
   <head>
     <title>Curate-Science.org - ${data['title']}</title>
-    <meta name="view	port" content="width=device-width">
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="http://www.curatescience.org/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -28,8 +28,8 @@
           
 		  <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li><a href="about.html">About</a></li>
-			  <li><a href="#">Features</a></li>
+              <li><a href="http://curatescience.org/#section-1">About</a></li>
+			  <li><a href="http://curatescience.org/#section-3">Features</a></li>
             </ul>
             <nav>
               
@@ -50,13 +50,13 @@
 					<font size="6px">${data['title']}</font><br>
 					${data['authorIDs']}&nbsp;(${data['year']},&nbsp;<i>${data['journalID'][0]}</i>, doi: ${data['doi']})
 				</td>	
-				<td width='35.5%' style="vertical-align:middle">
+				<td width='35.5%' style="vertical-align:top">
 					${data['replBadge']}&nbsp;
 					${data['dataAvailBadge']}&nbsp;
 					${data['reprodAnalBadge']}&nbsp;
 					${data['matAvailBadge']}&nbsp;
-					${data['preRegBadge']}&nbsp;
-					${data['disclBadge']}
+					${data['disclBadge']}&nbsp;
+					${data['preRegBadge']}
 				</td>
 			</tr>
 		</thead>
