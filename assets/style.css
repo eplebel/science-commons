@@ -307,8 +307,8 @@ width: 71%;
     background:#000 url('../images/Top_view.jpg') center no-repeat;
 }
 .billboard .wrapper {
-    min-height: 750px;
-    max-height: 864px;
+    min-height: 850px;
+    max-height: 964px;
     position: relative;
     }
 .billboard h2 small{
