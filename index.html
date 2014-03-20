@@ -670,7 +670,6 @@
   <script src="assets/semantic.js"></script>
   <script src="assets/feed.js"></script>
   <script src="assets/wvg1mgw.js"></script>
-  <script src="assets/Headroom.js"></script>
   <script src="assets/bigslide.js"></script>
   <script src="assets/venobox.js"></script>
   <script src="assets/all.js"></script>
@@ -679,20 +678,6 @@
     $(function(){
       $.scrollIt();
     });
-
-    var headroom = new Headroom(header, {
-      "tolerance": 5,
-      "offset": 5,
-      "classes": {
-        "initial": "animated",
-        "pinned": "slideDown",
-        "unpinned": "slideUp"
-      }
-    });
-    headroom.init();
-
-    // to destroy
-    headroom.destroy();
 
     $(document).ready(function() {
         $('.menu-link').bigSlide();
