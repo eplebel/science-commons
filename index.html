@@ -60,6 +60,21 @@
       float: left;
       margin: 74px 0 0;
     }
+
+    .faq-item {
+      padding: 10px 0 10px 0;
+    }
+
+    .faq-item .question {
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .faq-item .answer {
+      display:none;
+      padding-left: 20px;
+    }
   </style>
 
 </head>
@@ -515,50 +530,187 @@
       <div class="container">
         <header class="page-header"><h1>Frequently Asked Questions</h1></header>
         <div class="wrapper">
-          <strong>Q: Who is Curate-Science's intended audience?</strong><br>
-          A: Our primary audience is the community of academic, government, and industry researchers. However, we are designing the website so that the organized information is also useful to students, educators, journalists, and public policy makers. For example, a journalist could look up an article to see whether findings have been independently corroborated and/or whether critical flaws or limitations have been identified so that they can write a more balanced news article about a published article.<br>
-          <br>
-          <strong>Q: What is curation?<br></strong>
-          A: Digital curation is the process of selecting, filtering, and extracting information as to increase its quality. Curate-Science organizes, selects, filters, and extracts information from a diverse set of sources with the goal of increasing the quality of fundamental information about scientific articles.<br>
-          <br>
-          <strong>Q: Who can access and consume information about articles on Curate-Science?<br></strong>
-          A: Anyone, including non-registered users, can lookup information on Curate-Science.<br>
-          <br>
-          <strong>Q: Who can add, modify, and update article information on Curate-Science?<br></strong>
-          A: Only registered users will be able to add, modify, and update information about articles. That being said, anyone that is affiliated with a research organization can become a registered user, as long as they provide their real names, email address, affiliation, and title (e.g., post-doc, graduate student, undergraduate student, research assistant).<br>
-          <br>
-          <strong>Q: How will you ensure quality control of the information posted about articles on Curate-Science?<br></strong>
-          A: We will employ a two-stage verification process for some of the information whereby information initially posted will be labeled as "unverified" until a second user confirms it, at which time it will appear as verified. This will be the case for key statistics, independent replication information, and publication bias indices. Like Wikipedia, we will also have a revision history for each editable/updatable field showing which user changed what information on what date (and any notes regarding the edit left by the user).<br>
-          <br>
-          <strong>Q: Will I be able to post data/materials directly on an article page on Curate-Science?<br></strong>
-          A: No, not at the moment. Our current focus is to organize and curate the available data/materials that are already hosted by the many public repositories that already exist. However, in our quest to radically simplify the fundamental scientific practice of sharing data/materials, we may consider this option in the near future.<br>
-          <br>
-          <strong>Q: Will I be able to post unpublished manuscripts on Curate-Science?<br></strong>
-          A: Eventually yes. Our initial focus is on organizing and curating information for published articles, however, we will eventually allow researchers to post working papers with corresponding data/syntax and materials files as a way to significantly facilitate the pre-publication peer review approach that has been so successful in physics and mathematics (i.e., arxiv.org).<br>
-          <br>
-          <strong>Q: Is it really feasible to organize and curate information for all scientific articles? In other words, why would researchers be willing to spend their precious time curating information on Curate-Science?<br></strong>
-          A: Our view is that researchers should be highly motivated to add and update information regarding published articles in their own area of research because there is an intrinsic interest to update the scientific record to more accurately reflect the totality of the evidence. We also expect -- just like what happened with Wikipedia -- that more prominent and/or controversial articles will be curated first given that a large number of researchers are interested in these articles. Other articles will likely be curated commensurate to the level of interest commanded by the market, though of course article authors are free to curate their own articles as much as they want (and for good reasons, e.g. available data citation advantage, see <a href="https://peerj.com/articles/175/">Piwowar & Vision, 2013</a>)<br>
-          <br>
-          <strong>Q: What is Curate-Science's business model?<br></strong>
-          A: We will soon be incorporating as a non-profit organization. Curate-Science organizes and curates fundamental information about unpublished and published scientific articles and we see this information as a public good that belongs to the community of scientists. Consequently, information organized on Curate-Science is and will forever remain a free public good accessible to anyone with an Internet connection.<br>
-          <br>
-          <strong>Q: Who is funding Curate-Science?<br></strong>
-          A: We are currently applying for funding from the Sloan Foundation, Templeton Foundation, Knight Foundation, Shuttleworth Foundation, and Open Society Foundation.<br>
-          <br>
-          <strong>Q: Is Curate-Science associated with the Open Science Framework hosted by the Center for Open Science?<br></strong>
-          A: No. Though we will be linking available data, materials, and pre-registration information from the Open Science Framework, we are an independent group of researchers in no way formally associated with the Open Science Framework.<br>
-          <br>
-          <strong>Q: How is Curate-Science different from <a href="http://Figshare.com">Figshare.com</a>, <a href="http://DataDryad.org">DataDryad.org</a>, and <a href="http://thedata.harvard.edu/dvn/">Harvard's Dataverse</a>?<br></strong>
-          A: <a href="http://Figshare.com">Figshare.com</a>, <a href="http://DataDryad.org">DataDryad.org</a>, and <a href="http://thedata.harvard.edu/dvn/">Harvard's Dataverse</a> (and many other similar websites) are data repositories where researchers can make their data, syntax, and materials publicly availalbe and get credit for doing so. Curate-Science organizes, consolidates, and curates all of this publicly available information from as many different sources as possible at the study-level for all published articles with a DOI. Curate-science also provides a platform for the crowd to verify analyses and post comments regarding specific issues such as reproducibility of analyses, problems with posted materials/stimuli, etc. <br>
-          <br>
-          <strong>Q: How is Curate-Science different from the <a href="http:osf.io">Open Science Framework</a>?<br></strong>
-          A: The <a href="http:osf.io">Open Science Framework</a> is a place for researchers to archive, collaborate on, and pre-register their research projects to facilitate researchers' workflow to help increase the alignment between scientific values and scientific practices (see more details on OSF's <a href="https://osf.io/4znzp/wiki/home/">about</a> page). In contrast, Curate-Science, as its name implies, is focused primarily on the curation of scientific information tied to <i>published articles</i> by providing a platform for users to add, modify, update, and comment on published article's replication and reproducibility information (among other things).  <br>
-          <br>
-          <strong>Q: What is an "alpha release" and what does that mean in Curate-Science's case?<br></strong>
-          A: An "alpha release" is a stage of software development whereby a product is in its early stages of development and may be unstable, contain errors, and not have all product features yet implemented. In our case, this means the version of Curate-Science you are currently viewing is a very rough prototype that only shows some of the website's features (most of our core features are currently being developed; see the <a href="#section-3">Features</a> page for more information). The actual website will offer all of our core features including a blazingly fast and advanced search, an innovative search results page, the ability for registered users to add, modify, and update article information (and revision history for all changes), and component-specific in-line commenting. The actual website will have a completely different look, identity, and branding; we are currently working with a design firm carefully designing an elegant and intuitive user interface to allow for a pleasant user experience.<br>
-          <br>
-          <strong>Q: When will I be able to add, modify, and update information on Curate-Science?<br></strong>
-          A: Registered users will be able to add/modify information once we launch our Beta (a "Beta" is a stage of software development where a product has implemented all of its core features and is ready for testing by the community of users). Our projected Beta launch is May-June 2014. If you're interested in being one of the first Science Curators, you can sign up <a href="http://curatescience.org/#section-6">below</a> to be automatically notified when our Beta website version is ready!<br>
+          <div class="faq-item">
+            <div class="question">
+              Who is Curate-Science's intended audience?
+            </div>
+            <div class="answer">
+              Our primary audience is the community of academic, government, and industry researchers.
+              However, we are designing the website so that the organized information is also useful to students,
+              educators, journalists, and public policy makers. For example, a journalist could look up an article
+              to see whether findings have been independently corroborated and/or whether critical flaws or
+              limitations have been identified so that they can write a more balanced news article about a published article.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              What is curation?
+            </div>
+            <div class="answer">
+              Digital curation is the process of selecting, filtering, and extracting information as to increase its quality.
+              Curate-Science organizes, selects, filters, and extracts information from a diverse set of sources with the goal
+              of increasing the quality of fundamental information about scientific articles.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              Who can access and consume information about articles on Curate-Science?
+            </div>
+            <div class="answer">
+              Anyone, including non-registered users, can lookup information on Curate-Science.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              Who can add, modify, and update article information on Curate-Science?
+            </div>
+            <div class="answer">
+              Only registered users will be able to add, modify, and update information about articles.
+              That being said, anyone that is affiliated with a research organization can become a registered user,
+              as long as they provide their real names, email address, affiliation, and title (e.g., post-doc,
+              graduate student, undergraduate student, research assistant).
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              How will you ensure quality control of the information posted about articles on Curate-Science?
+            </div>
+            <div class="answer">
+              We will employ a two-stage verification process for some of the information whereby information
+              initially posted will be labeled as "unverified" until a second user confirms it, at which time it
+              will appear as verified. This will be the case for key statistics, independent replication information,
+              and publication bias indices. Like Wikipedia, we will also have a revision history for each editable/updatable
+              field showing which user changed what information on what date (and any notes regarding the edit left by the user).
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              Will I be able to post data/materials directly on an article page on Curate-Science?
+            </div>
+            <div class="answer">
+              No, not at the moment. Our current focus is to organize and curate the available data/materials
+              that are already hosted by the many public repositories that already exist. However, in our quest to
+              radically simplify the fundamental scientific practice of sharing data/materials, we may consider
+              this option in the near future.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              Will I be able to post unpublished manuscripts on Curate-Science?
+            </div>
+            <div class="answer">
+              Eventually yes. Our initial focus is on organizing and curating information for published articles,
+              however, we will eventually allow researchers to post working papers with corresponding data/syntax and
+              materials files as a way to significantly facilitate the pre-publication peer review approach that has
+              been so successful in physics and mathematics (i.e., arxiv.org).
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              Is it really feasible to organize and curate information for all scientific articles? In other words,
+              why would researchers be willing to spend their precious time curating information on Curate-Science?
+            </div>
+            <div class="answer">
+              Our view is that researchers should be highly motivated to add and update information regarding published
+              articles in their own area of research because there is an intrinsic interest to update the scientific record
+              to more accurately reflect the totality of the evidence. We also expect -- just like what happened with
+              Wikipedia --that more prominent and/or controversial articles will be curated first given that a large
+              number of researchers are interested in these articles. Other articles will likely be curated commensurate
+              to the level of interest commanded by the market, though of course article authors are free to curate their
+              own articles as much as they want (and for good reasons, e.g. available data citation advantage,
+              see <a href="https://peerj.com/articles/175/">Piwowar & Vision, 2013</a>)
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              What is Curate-Science's business model?
+            </div>
+            <div class="answer">
+              We will soon be incorporating as a non-profit organization. Curate-Science organizes and curates
+              fundamental information about unpublished and published scientific articles and we see this information
+              as a public good that belongs to the community of scientists. Consequently, information organized on
+              Curate-Science is and will forever remain a free public good accessible to anyone with an Internet connection.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              Who is funding Curate-Science?
+            </div>
+            <div class="answer">
+              We are currently applying for funding from the Sloan Foundation, Templeton Foundation, Knight Foundation,
+              Shuttleworth Foundation, and Open Society Foundation.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              Is Curate-Science associated with the Open Science Framework hosted by the Center for Open Science?
+            </div>
+            <div class="answer">
+              No. Though we will be linking available data, materials, and pre-registration information from the Open
+              Science Framework, we are an independent group of researchers in no way formally associated with the
+              Open Science Framework.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              How is Curate-Science different from <a href="http://Figshare.com">Figshare.com</a>,
+              <a href="http://DataDryad.org">DataDryad.org</a> and <a href="http://thedata.harvard.edu/dvn/">Harvard's Dataverse</a>?
+            </div>
+            <div class="answer">
+              <a href="http://Figshare.com">Figshare.com</a>, <a href="http://DataDryad.org">DataDryad.org</a>,
+              and <a href="http://thedata.harvard.edu/dvn/">Harvard's Dataverse</a> (and many other similar websites)
+              are data repositories where researchers can make their data, syntax, and materials publicly available
+              and get credit for doing so. Curate-Science organizes, consolidates, and curates all of this publicly
+              available information from as many different sources as possible at the study-level for all published
+              articles with a DOI. Curate-science also provides a platform for the crowd to verify analyses and post
+              comments regarding specific issues such as reproducibility of analyses, problems with posted
+              materials/stimuli, etc.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              How is Curate-Science different from the <a href="http:osf.io">Open Science Framework</a>?
+            </div>
+            <div class="answer">
+              The <a href="http:osf.io">Open Science Framework</a> is a place for researchers to archive,
+              collaborate on, and pre-register their research projects to facilitate researchers' workflow to
+              help increase the alignment between scientific values and scientific practices
+              (see more details on OSF's <a href="https://osf.io/4znzp/wiki/home/">about</a> page).
+              In contrast, Curate-Science, as its name implies, is focused primarily on the curation of
+              scientific information tied to <i>published articles</i> by providing a platform for users to add,
+              modify, update, and comment on published article's replication and reproducibility information (among other things).
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              What is an "alpha release" and what does that mean in Curate-Science's case?
+            </div>
+            <div class="answer">
+              An "alpha release" is a stage of software development whereby a product is in its early stages of
+              development and may be unstable, contain errors, and not have all product features yet implemented.
+              In our case, this means the version of Curate-Science you are currently viewing is a very rough prototype
+              that only shows some of the website's features (most of our core features are currently being developed;
+              see the <a href="#section-3">Features</a> page for more information). The actual website will offer
+              all of our core features including a blazingly fast and advanced search, an innovative search results page,
+              the ability for registered users to add, modify, and update article information (and revision
+              history for all changes), and component-specific in-line commenting. The actual website will
+              have a completely different look, identity, and branding; we are currently working with a design
+              firm carefully designing an elegant and intuitive user interface to allow for a pleasant user experience.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              When will I be able to add, modify, and update information on Curate-Science?
+            </div>
+            <div class="answer">
+              Registered users will be able to add/modify information once we launch our Beta
+              (a "Beta" is a stage of software development where a product has implemented all of its core features
+              and is ready for testing by the community of users). Our projected Beta launch is May-June 2014. If
+              you're interested in being one of the first Science Curators, you can sign up
+              <a href="http://curatescience.org/#section-6">below</a> to be automatically notified
+              when our Beta website version is ready!
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -636,6 +788,9 @@
 
   <script type="text/javascript">
   $('.billboard h2').addClass('complete').delay(800);
+  $(".faq-item .question").click(function(e) {
+    $(e.target).siblings(".answer").toggle();
+  });
 
   $(function(){
     $.scrollIt();
