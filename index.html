@@ -675,17 +675,11 @@
   <script src="assets/all.js"></script>
 
   <script type="text/javascript">
-    $(function(){
-      $.scrollIt();
-    });
-
-    $(document).ready(function() {
-        $('.menu-link').bigSlide();
-    });
-
     $('.billboard h2').addClass('complete').delay(800);
 
-    $(document).ready(function(){
+    $(function(){
+      $.scrollIt();
+      $('.menu-link').bigSlide();
     	/* open content with custom settings */
     	$('.venobox').venobox({
     	    framewidth: '700px'
