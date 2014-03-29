@@ -773,36 +773,20 @@
 
     <!-- lightbox -->
     <div class="lightbox fade" id="lightbox" style="display: none;">
-      <div class="lightbox-content">
-        <img src="" />
-      </div>
+      <div class="lightbox-content"></div>
     </div>
 
   </div>
 
-  <script src="assets/jquery.min.js"></script>
-  <script src="assets/scrollIt.js"></script>
-  <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.js"></script>-->
+  <script src="assets/jquery-2.1.0.min.js"></script>
   <script src="assets/semantic.js"></script>
   <script src="assets/wvg1mgw.js"></script>
-  <script src="assets/venobox.js"></script>
   <script src="assets/all.js"></script>
 
   <script type="text/javascript">
   $('.billboard h2').addClass('complete').delay(800);
   $(".faq-item .question").click(function(e) {
     $(e.target).siblings(".answer").toggle();
-  });
-
-  $(function(){
-    $.scrollIt();
-    /* open content with custom settings */
-    $('.venobox').venobox({
-      framewidth: '700px'
-    });
-
-    /* auto-open #firstlink on page load */
-    $("#firstlink").venobox().trigger('click');
   });
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
