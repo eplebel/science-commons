@@ -9,7 +9,7 @@
 
   <title>Curate-Science</title>
 
-  <link rel="stylesheet" href="http://curatescience.org/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="assets/semantic.css" />
   <link rel="stylesheet" type="text/css" href="assets/all.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="assets/ss-social.css" />
@@ -43,6 +43,23 @@
       padding: 10px;
       background: #f5f5f5;
     }
+	p.features {
+	  font-size: 18px;
+	  margin-left: 130px;
+	  margin-right: 130px;
+	}
+	img.features {
+		width: 75%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto
+	}
+	img.features-logo {
+		width: 80px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto
+	}
     .table.articles {
       width: 100%;
       margin-bottom: 0px;
@@ -133,7 +150,7 @@
           Our mission is to accelerate the growth of cumulative knowledge and innovation by
           organizing and curating key information about scientific articles.
         </h1>
-        <a class="btn btn-info btn-xs" href="#section-1">Learn More</a>
+        <a href="#section-1">Learn More</a>
       </div>
     </section>
 
@@ -355,45 +372,30 @@
         </header>
 
         <div class="wrapper">
-          <div class="skill left">
-            <a href="logos/articlepageexpanded.png"><h3>Consolidated Independent Replication Info</h3></a>
-            Our flagship feature is the consolidation, organization, and curation of follow-up independent replications for published articles. This includes dynamically updating graphs that easily allows you to compare the replication effect sizes with the original study effect size.
-          </div>
-          <a href="logos/articlepageexpanded.png"><div class="img desktop right"><img src="logos/articlepageexpanded.png" width="50"> </div></a>
-          <a href="logos/feature1b.png"><div class="img desktop right"><img src="logos/feature1b.png" width="50"> </div></a>
-        </div>
-        <div class="wrapper">
-          <div class="skill right">
-            <a href="logos/feature2.png"><h3>Available Data/Syntax, Materials, & Pre-Registration</h3></a>
-            We will also consolidate available raw data sets, syntax files, experimental materials, and pre-registration protocols at the study-level for published articles. For R syntax files, users will be able to execute in-browser analyses in order to independently verify the reproducibility of analyes.
-          </div>
-          <a href="logos/feature2.png"><div class="img desktop right"><img src="logos/feature2.png" width="100"></div> </a>
-        </div>
-        <div class="wrapper">
-          <div class="skill left">
-            <a href="logos/feature3.png"><h3>Crowd Curation via Editable Fields</h3></a>
-            Our web application will feature editable fields so that registered users can add, modify, or update information related to independent replications, data files, syntax files, experimental materials, pre-registration, and disclosure information. Edits will be tracked via revision history.
-
-          </div>
-          <a href="logos/feature3.png"><div class="img desktop"><img src="logos/feature3.png" width="100"></div> </a>
-        </div>
-        <div class="wrapper">
-          <div class="skill right">
-            <a href="logos/feature4_.png"><h3>Component Indicator Icon System</h3></a>
-            To facilitate the search and discovery of scientific articles, we will use an indicator system -- inspired by the Open Science Collaboration's <a href="http://centerforopenscience.org/journals/">open-science badges</a> -- that depicts key article components such as replicability information, available data, reproducibility, available materials, methods disclosure, and pre-registration.
-          </div>
-          <a href="logos/feature4_.png"><div class="img desktop right"><img src="logos/feature4_.png"></div> </a>
-        </div>
-        <div class="wrapper">
-          <div class="skill left">
-            <a href="logos/feature5b.png"><h3>Element-specific Post-Publication Comments</h3></a>
-            Users will be able to add post-publication comments about specific elements of an article, including in-line commenting and comment-helpfulness up-down voting. We will also aggregate and display pre-existing post-pub comments from various external sources (e.g., from
-            <a href="http://www.ncbi.nlm.nih.gov/pubmedcommons/">PubMedCommons</a>, <a href="http://www.pubpeer.com">PubPeer.com</a>, etc.).
-
-
-          </div>
-          <a href="logos/feature5b.png"><div class="img desktop"><img src="logos/feature5b.png" width="50"></div> </a>
-          <a href="logos/feature5a.png"><div class="img desktop"><img src="logos/feature5a.png" width="50"></div> </a>
+		
+			<div class="row-fluid">
+				<h3 class="text-center">Lightning-fast Search with Auto-complete</h3>
+				<p class="features">Our homepage will feature a lightning-fast search with auto-complete so that you can quickly find what you're looking for. To browse, you can select from the Most Curated or Recently Updated articles lists.</p>
+				<a href="logos/1-search-page.png"><img src="logos/1-search-page.png" class="features"/></a>
+				
+				<img src="logos/features-down-arrow.png" class="features-logo"/>
+				<h3 class="text-center">Innovative Search Results Page</h3>
+				<p class="features">To ease your job in sifting through articles, our search results page features our novel indicator icons that depicts key article components that are available such as replicability information, available data/syntax, reproducibility, available materials, methods disclosure, and pre-registration information. If you're looking for articles that have specific components available, you can use custom filters to display only those articles (e.g., only display articles with available data/syntax). </p>
+				<a href="logos/2-search-results.png"><img src="logos/2-search-results.png" class="features"/></a>
+		
+				<img src="logos/features-down-arrow.png" class="features-logo"/>
+				<h3 class="text-center">Article Page -- Putting it all Together</h3>
+				<p class="features">Out flagship feature is the consolidation and curation of key information about published articles, which all comes together on the article page. The screen will feature dynamically updating effect size graphs (not shown), in-browser R analyses to verify to reproducibility of the results (not shown), editable fields so registered users can add, modify, or update article information (edits tracked via revision history), and element-specific in-line commenting to facilitate curation and efficient scholarship.</p>
+				<a href="logos/3-article-page.png"><img src="logos/3-article-page.png" class="features"/></a>
+				
+				<img src="logos/features-down-arrow.png" class="features-logo"/>
+				<h3 class="text-center">User Profile Dashboard Page</h3>
+				<p class="features">The user dashboard will display a user's recent contributions, a list of their articles, reading and analyses history, recent activities by other users, and customization of notification and other user settings. On this screen, users will also be able to easily pre-register a new study and post data/syntax for a working paper. </p>
+				<a href="logos/4-profile-dashboard.png"><img src="logos/4-profile-dashboard.png" class="features"/></a>
+			</div>
+		
+		
+          
 
           <div class="wrapper">
             <div class="space"></div>
@@ -778,9 +780,9 @@
 
   </div>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="assets/jquery.min.js"></script>
   <script src="assets/scrollIt.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.js"></script>
+  <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.js"></script>-->
   <script src="assets/semantic.js"></script>
   <script src="assets/wvg1mgw.js"></script>
   <script src="assets/venobox.js"></script>
@@ -806,10 +808,11 @@
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-48865749-1', 'curatescience.org');
   ga('send', 'pageview');
+  
   </script>
 </body>
 </html>

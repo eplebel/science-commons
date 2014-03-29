@@ -39,7 +39,7 @@ a.item{
     cursor:pointer;
 }
 img{
-    width: 100%;
+    width: auto;
 }
 img.team{
     width: 60%;
@@ -304,7 +304,7 @@ width: 71%;
     position: relative;
     }
 .billboard.3{
-    background:#000 url('../images/Top_view.jpg') center no-repeat;
+    background:none center no-repeat;
 }
 .billboard .wrapper {
     min-height: 850px;
