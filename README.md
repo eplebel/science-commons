@@ -1,27 +1,17 @@
-Science-Commons.org
-===================
-<i>Organizing the World’s Scientific Information all in One Public Place</i>
+CurateScience
+=============
+<i>Curating Key Information about Published Scientific Articles</i>
 
-This repository hosts the codebase for Science-Commons.org, an online platform that organizes information about academic articles. This allows more accurate interpretation of scientific findings and thus accelerates cumulative knowledge development. Organizing this information will benefit academic and industry researchers, educators, laypeople, educators, and public policy makers. 
-<p><img src="http://publish.uwo.ca/~elebel/BasicArticleInterface.png"></p>
-For each article as much of the following information will be posted/available:
-<ul>
-<li>direct links to raw data/syntax, experimental materials, and pre-registrationp protocols</li>
-<li>post-publication comments from various sources</li>
-<li>peer reviewer information</li>
-<li>information about (and direct links to) follow-up independent direct/conceputal replications</li>
-<li>display of important statistical information (and display of publication bias indices)</li>
-<li>disclosure of unreported methodological details</li>
-<li>figures, graphs, interactive graphs, videos</li>
-<li>in-browser R analyses to confirm reproducibility of analyses and graphs for articles linked to raw data/syntax</li>
-<li>direct links to open-access full-text and to SSRN pre-print version of article</li>
-<li>display of social media presence (news stories, tweets, or blog posts about the article)</li>
-<li>display of alternaive metrics (altmetrics.org) of article's impact</li>
-</ul>
+<p>This repository hosts the codebase for CurateScience.org, an online platform that curates fundamental information about published scientific articles. </p>
 
-This will be accomplished by aggregating information from several pre-existing sources (e.g., PubMed, PubMedCommons, PubPeer.com, Mendeley, ImpactStory, open-access journals, SSRN, data repositories, and other open-science initiatives, e.g., OpenScienceFramework, ArchivalProject.org, PsychFileDrawer.org, PsychDisclosure.org). Other information will be user-inputted in a crowd-sourced manner like Wikipedia, with some information involving both automatic aggregation and human interaction. The information will be organized at the article-level, following on the footsteps of PubMed (basically a highly augmented version of the PubMed interface).
+<p>
+              Replicability is a cornerstone of science, but evidence of independent replications is currently disorganized, making it difficult to gauge the reliability of empirical findings. Independent verification of data and analyses is another hallmark of science, yet is currently challenging in practice because data/syntax are difficult to track down.
+            </p>
+            <p>
+              Curate-Science aims to solve both of these problems by providing an online platform that substantially facilitates these two crucial processes of science. Independent replication information and available data/syntax files will automatically be aggregated from pre-existing sources (e.g., from <a href="http://PsychFileDrawer.org">PsychFileDrawer.org</a>, <a href="http://www.figshare.com">Figshare.com</a>). Registered users will be able to add, modify, and update such information, including in-line commenting directed at specific elements of an article and in-browser analyses for articles with available <a href="http://en.wikipedia.org/wiki/R_(programming_language)">R</a> syntax files.
+            </p>
+            <p>
+              Our vision is that building such a platform will accelerate the growth of cumulative knowledge and innovation by facilitating and incentivizing independent replications and verification, but also by facilitating the post-publication critique, evaluation, extension, re-analysis, and interpretation of findings (see <a href="#section-3">Features</a>, for a flowchar of our core features).
+          </p>
+			
 
-For more details (prototype screenshots and features), see https://dl.dropboxusercontent.com/u/227724/Science-Commons%20(Dec%2017%2C%202013%20Version).pdf
-
-Funding opportunities being considered:
-https://docs.google.com/spreadsheet/ccc?key=0ApAs97wRypnadDhfcS1yd3VYOG1Fdm9rMWdUUURWWWc&usp=drive_web#gid=0
