@@ -15,6 +15,7 @@
   <link rel="stylesheet" type="text/css" href="assets/style.css" />
 
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  
 </head>
 
 <body>
@@ -50,8 +51,7 @@
       <div class="wrapper text-center">
         <h2 class="complete"><img src="logos/billboard.png" class="billboard"></h2>
         <h1 class="billboard">
-          Our mission is to accelerate the growth of cumulative knowledge and innovation by
-          organizing and curating key information about scientific articles.
+          Accelerating the growth of cumulative knowledge and innovation by <a rel="tooltip" title="Curation is the process of extracting, organizing, and selecting information to improve its quality" href="http://en.wikipedia.org/wiki/Digital_curation" class="billboard-link">curating</a> key information about scientific articles.
         </h1>
         <a class="btn btn-info btn-xs" href="#section-1">Learn More</a>
       </div>
@@ -61,39 +61,40 @@
       <div class="container">
         <header class="page-header"><h1>About</h1></header>
 
-        <div class="well">
+        
           <div class="wrapper">
-            <p class="about"><font size="4px">
-              Replicability is a cornerstone of science yet independent replication information is not currently organized in a systematic fashion, making it difficult to gauge the reliability of empirical findings. Independent verification of data and analyses is another hallmark of science, yet in practice verification is extremely challenging because available data and syntax are difficult to track down.
-            </font></p>
-            <p class="about"><font size="4px">
-              Curate-Science aims to solve both of these problems by providing an online platform that substantially facilitates these two crucial processes of science. At the article level, we will automatically aggregate available independent replication information and data/syntax files from pre-existing sources (e.g., from <a href="http://PsychFileDrawer.org">PsychFileDrawer.org</a>, <a href="http://www.figshare.com">Figshare.com</a>, and the <a href="http://www.openscienceframework.org">OpenScienceFramework.org</a>). Critically, however, registered users will also be able to add, modify, and update such information, including in-line commenting directed at specific elements of an article (e.g., data/syntax problem, statistical reporting question, etc.). For articles with available <a href="http://en.wikipedia.org/wiki/R_(programming_language)">R</a> syntax files, users will also be able to execute in-browser analyses, which will go a long way in facilitating the independent verification process so crucial to science.
-            </font></p>
-            <p class="about"><font size="4px">
-              Our vision is that building such a platform will accelerate the growth of cumulative knowledge and innovation by facilitating and incentivizing independent replications and verification, but also by facilitating the post-publication critique, evaluation, extension, re-analysis, and interpretation of findings (see <a href="#section-3">Features</a>, for a list of our core features).
-            </font></p>
-          </div>
-        </div>
+            <div class="well">
+				<p class="about"><font size="4px">
+				  Replicability is a cornerstone of science, but evidence of independent replications is currently disorganized, making it difficult to gauge the reliability of empirical findings. Independent verification of data and analyses is another hallmark of science, yet is currently challenging in practice because data/syntax are difficult to track down.
+				</font></p>
+				<p class="about"><font size="4px">
+				  Curate-Science aims to solve both of these problems by providing an online platform that substantially facilitates these two crucial processes of science. Independent replication information and available data/syntax files will automatically be aggregated from pre-existing sources (e.g., from <a href="http://PsychFileDrawer.org">PsychFileDrawer.org</a>, <a href="http://www.figshare.com">Figshare.com</a>). Registered users will be able to add, modify, and update such information, including in-line commenting directed at specific elements of an article and in-browser analyses for articles with available <a href="http://en.wikipedia.org/wiki/R_(programming_language)">R</a> syntax files.
+				</font></p>
+				<p class="about"><font size="4px">
+				  Our vision is that building such a platform will accelerate the growth of cumulative knowledge and innovation by facilitating and incentivizing independent replications and verification, but also by facilitating the post-publication critique, evaluation, extension, re-analysis, and interpretation of findings (see <a href="#section-3">Features</a>, for a flowchar of our core features).
+				</font></p>
+			</div>
+		</div>
+       
       </div>
     </section>
 
     <section class="section" id="section-2">
       <div class="container">
         <header class="page-header"><h1>Featured Articles</h1></header>
-        <div class="wrapper-articles">
-          <div class="col-md-12">
+        
+          <div class="wrapper">
 
-            <div class="list-group">
+            <div class="list-group articles">
 
               <a href='http://curatescience.org:9292?doi=10.1037/a0021524' class="list-group-item">
-                <table class="table table-condensed" class="articles">
+                <table class="articles">
                   <thead>
                     <tr>
-                      <td width='60%'>
-                        <font size="4px">Feeling the future: Experimental evidence for anomalous retroactive influences on cognition and affect</font><br>
-                        Bem (2011)
+                      <td width="50%">Feeling the future: Experimental evidence for anomalous retroactive influences on cognition and affect<br>
+					  Bem (2011)
                       </td>
-                      <td width='40%' style="vertical-align:top">
+                      <td  width="50%" style="vertical-align:top">
                         <img src='logos/indicators_bem.png'/>
                       </td>
                     </tr>
@@ -103,14 +104,14 @@
 
               <a href='http://curatescience.org:9292?doi=10.1037/0022-3514.71.2.230' class="list-group-item">
 
-                <table class="table table-condensed" class="articles">
+                <table class="articles">
                   <thead>
                     <tr>
-                      <td width='60%'>
-                        <font size="4px">Automaticity of social behavior: Direct effects of trait construct and stereotype activation on action</font><br>
+                      <td width="50%">
+                        Automaticity of social behavior: Direct effects of trait construct and stereotype activation on action<br>
                         Bargh, Chen, & Burrows (1996)
                       </td>
-                      <td width='40%' style="vertical-align:top">
+                      <td width="50%" style="vertical-align:top">
                         <img src='logos/indicators_bargh.png'/>
                       </td>
                     </tr>
@@ -119,14 +120,14 @@
               </a>
 
               <a href="http://curatescience.org:9292/?doi=scicom11" class="list-group-item">
-                <table class="table table-condensed" class="articles">
+                <table class="articles">
                   <thead>
                     <tr>
-                      <td width='60%'>
-                        <font size="4px">Two birds with one stone: A preregistered adversarial collaboration on horizontal eye movements in free recall</font><br>
+                      <td width="50%">
+                        Two birds with one stone: A preregistered adversarial collaboration on horizontal eye movements in free recall<br>
                         Matzke, Nieuwenhuis, van Rijn, Slagter, van der Molen, & Wagenmakers (2013)
                       </td>
-                      <td width='40%' style="vertical-align:top">
+                      <td width="50%" style="vertical-align:top">
                         <img src='logos/indicators_matzke.png'/>
                       </td>
                     </tr>
@@ -135,14 +136,14 @@
               </a>
 
               <a href="http://curatescience.org:9292/?doi=scicom5" class="list-group-item">
-                <table class="table table-condensed" class="articles">
+                <table class="articles">
                   <thead>
                     <tr>
-                      <td width='60%'>
-                        <font size="4px">On the association between loneliness and bathing habits: Nine replications of Bargh & Shalev (2012) Study 1</font><br>
+                      <td width="50%">
+                        On the association between loneliness and bathing habits: Nine replications of Bargh & Shalev (2012) Study 1<br>
                         Donnellan, Lucas, & Cesario (In press)
                       </td>
-                      <td width='40%' style="vertical-align:top">
+                      <td width="50%"  style="vertical-align:top">
                         <img src='logos/indicators_donnellan.png'/>
                       </td>
                     </tr>
@@ -151,14 +152,14 @@
               </a>
 
               <a href='http://curatescience.org:9292?doi=10.2307/25053899' class="list-group-item">
-                <table class="table table-condensed" class="articles">
+                <table class="articles">
                   <thead>
                     <tr>
-                      <td width='60%'>
-                        <font size="4px">Coherent arbitrariness': Stable demand curves without stable preferences</font><br>
+                      <td width="50%">
+                        Coherent arbitrariness': Stable demand curves without stable preferences<br>
                         Ariely et al. (2003)
                       </td>
-                      <td width='40%' style="vertical-align:top">
+                      <td width="50%" style="vertical-align:top">
                         <img src='logos/indicators_ariely.png'/>
                       </td>
                     </tr>
@@ -167,14 +168,14 @@
               </a>
 
               <a href="http://curatescience.org:9292/?doi=10.1126/science.1130726" class="list-group-item">
-                <table class="table table-condensed" class="articles">
+                <table class="articles">
                   <thead>
                     <tr>
-                      <td width='60%'>
-                        <font size="4px">Washing away your sins: Threatened morality and physical cleansing</font><br>
+                      <td width="50%">
+                        Washing away your sins: Threatened morality and physical cleansing<br>
                         Zhong &amp; Liljenquist (2006)
                       </td>
-                      <td width='40%' style="vertical-align:top">
+                      <td width="50%" style="vertical-align:top">
                         <img src='logos/indicators_zhong.png'/>
                       </td>
                     </tr>
@@ -183,14 +184,14 @@
               </a>
 
               <a href="http://curatescience.org/Tversky&Kahneman.html" class="list-group-item">
-                <table class="table table-condensed" class="articles">
+                <table class="articles">
                   <thead>
                     <tr>
-                      <td width='60%'>
-                        <font size="4px">The Framing of Decisions and the Psychology of Choice </font><br>
+                      <td width="50%">
+                        The framing of decisions and the psychology of choice<br>
                         Tversky & Kahneman (1981)
                       </td>
-                      <td width='40%' style="vertical-align:top">
+                      <td width="50%" style="vertical-align:top">
                         <img src='logos/indicators_tversky.png'/>
                       </td>
                     </tr>
@@ -198,47 +199,15 @@
                 </table>
               </a>
 
-              <a href="http://curatescience.org:9292/?doi=10.2466/PR0.5.3.305-312" class="list-group-item">
-                <table class="table table-condensed" class="articles">
-                  <thead>
-                    <tr>
-                      <td width='60%'>
-                        <font size="4px">Influence of inter-item associative strength upon immediate free recall</font><br>
-                        Deese (1959)
-                      </td>
-                      <td width='40%' style="vertical-align:top">
-                        <img src='logos/indicators_deese.png'/>
-                      </td>
-                    </tr>
-                  </thead>
-                </table>
-              </a>
-
-              <a href="http://curatescience.org:9292/?doi=10.1038/36846" class="list-group-item">
-                <table class="table table-condensed" class="articles">
-                  <thead>
-                    <tr>
-                      <td width='60%'>
-                        <font size="4px">The capacity of visual working memory for features and conjunctions</font><br>
-                        Luck & Vogel (1997)
-                      </td>
-                      <td width='40%' style="vertical-align:top">
-                        <img src='logos/indicators_luck.png'/>
-                      </td>
-                    </tr>
-                  </thead>
-                </table>
-              </a>
-
               <a href="http://curatescience.org/Husnu&Crisp.html" class="list-group-item">
-                <table class="table table-condensed" class="articles">
+                <table class="articles">
                   <thead>
                     <tr>
-                      <td width='60%'>
-                        <font size="4px">Elaboration enhances the imagined contact effect</font><br>
+                      <td width="50%">
+                        Elaboration enhances the imagined contact effect<br>
                         Husnu & Crisp (2010)
                       </td>
-                      <td width='40%' style="vertical-align:top">
+                      <td width="50%" style="vertical-align:top">
                         <img src='logos/indicators_husnu.png'/>
                       </td>
                     </tr>
@@ -247,16 +216,16 @@
               </a>
 
 
-              <a href="http://curatescience.org/SlepianEtAl.html" class="list-group-item">
-                <table class="table table-condensed" class="articles">
+              <a href="http://curatescience.org/LeBel&Wilbur.html" class="list-group-item">
+                <table class="articles">
                   <thead>
                     <tr>
-                      <td width='60%'>
-                        <font size="4px">The physical burdens of secrecy</font><br>
-                        Slepian, Masicampo, Toosi, &amp; Ambady (2012)
+                      <td width="50%">
+                        Big secrets do not necessarily cause hills to appear steeper<br>
+                        LeBel & Wilbur (In press)
                       </td>
-                      <td width='40%' style="vertical-align:top">
-                        <img src='logos/indicators_slepian.png'/>
+                      <td width="50%" style="vertical-align:top">
+                        <img src='logos/indicators_lebel&wilbur.png'/>
                       </td>
                     </tr>
                   </thead>
@@ -264,7 +233,9 @@
               </a>
             </div>
           </div>
-        </div>
+        
+		
+		
       </div>
     </section>
 
@@ -277,22 +248,22 @@
         <div class="wrapper">
 		
 			<div class="row-fluid">
-				<h3 class="text-center">Lightning-fast Search with Auto-complete</h3>
+				<h3 class="text-center" id="section-3a">Lightning-fast Search with Auto-complete</h3>
 				<p class="features">Our homepage will feature a lightning-fast search with auto-complete so that you can quickly find what you're looking for. To browse, you can select from the Most Curated or Recently Updated articles lists.</p>
 				<a href="logos/1-search-page.png"><img src="logos/1-search-page.png" class="features"/></a>
+				<a href="#section-3b"><img src="logos/features-down-arrow.png" class="features-logo" id="section-3b"/></a>
 				
-				<img src="logos/features-down-arrow.png" class="features-logo"/>
-				<h3 class="text-center">Innovative Search Results Page</h3>
+				<h3 class="text-center features">Innovative Search Results Page</h3>
 				<p class="features">Easily find relevant and interesting articles via our novel indicator icons that depict availability of key article information such as replicability information, available data/syntax, reproducibility, pre-registration information, and more. Looking for articles that have specific components available? Use custom filters to only display those articles (e.g., only display articles with available data/syntax)! </p>
 				<a href="logos/2-search-results.png"><img src="logos/2-search-results.png" class="features"/></a>
-		
-				<img src="logos/features-down-arrow.png" class="features-logo"/>
-				<h3 class="text-center">Article Page: Putting it all Together</h3>
+				<a href="#section-3c"><img src="logos/features-down-arrow.png" class="features-logo" id="section-3c"/></a>
+				
+				<h3 class="text-center features">Article Page: Putting it all Together</h3>
 				<p class="features">Out flagship feature is the consolidation and curation of key information about published articles, which all comes together on the article page. The screen will feature <a href="logos/simonsohnApproachFigure.png">dynamically updating effect size graphs</a>, <a href="logos/in-browser-analyses.png">in-browser R analyses</a> to verify to reproducibility of results, editable fields so registered users can add, modify, or update article information, and element-specific in-line commenting.</p>
 				<a href="logos/3-article-page.png"><img src="logos/3-article-page.png" class="features"/></a>
+				<a href="#section-3d"><img src="logos/features-down-arrow.png" class="features-logo" id="section-3d"/></a>
 				
-				<img src="logos/features-down-arrow.png" class="features-logo"/>
-				<h3 class="text-center">User Profile Dashboard Page</h3>
+				<h3 class="text-center features">User Profile Dashboard Page</h3>
 				<p class="features">The user dashboard will display a user's recent contributions, a list of their own articles, reading and analyses history, recent activities by other users, and customization of notifications and other user settings. Users will also be able to easily pre-register a new study and post data/syntax for a working paper on this screen. </p>
 				<a href="logos/4-profile-dashboard.png"><img src="logos/4-profile-dashboard.png" class="features"/></a>
 			</div>
@@ -438,18 +409,17 @@
           <div class="faq-item">
             <div class="question">
               Who is Curate-Science's intended audience?
-            </div>
+            </div>  
             <div class="answer">
               Our primary audience is the community of academic, government, and industry researchers.
               However, we are designing the website so that the organized information is also useful to students,
-              educators, journalists, and public policy makers. For example, a journalist could look up an article
-              to see whether findings have been independently corroborated and/or whether critical flaws or
-              limitations have been identified so that they can write a more balanced news article about a published article.
+              educators, journalists, and public policy makers (e.g., a journalist could look up an article
+              to see whether limitations/flaws have been identified enabling them to write a more balanced news article). Our initial focus involves published articles in the life and social sciences (starting with psychology/neuroscience), however we may eventually expand to other areas.
             </div>
           </div>
           <div class="faq-item">
             <div class="question">
-              What is curation?
+              What is curation? 
             </div>
             <div class="answer">
               Digital curation is the process of selecting, filtering, and extracting information as to increase its quality.
@@ -486,28 +456,6 @@
               will appear as verified. This will be the case for key statistics, independent replication information,
               and publication bias indices. Like Wikipedia, we will also have a revision history for each editable/updatable
               field showing which user changed what information on what date (and any notes regarding the edit left by the user).
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="question">
-              Will I be able to post data/materials directly on an article page on Curate-Science?
-            </div>
-            <div class="answer">
-              No, not at the moment. Our current focus is to organize and curate the available data/materials
-              that are already hosted by the many public repositories that already exist. However, in our quest to
-              radically simplify the fundamental scientific practice of sharing data/materials, we may consider
-              this option in the near future.
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="question">
-              Will I be able to post unpublished manuscripts on Curate-Science?
-            </div>
-            <div class="answer">
-              Eventually yes. Our initial focus is on organizing and curating information for published articles,
-              however, we will eventually allow researchers to post working papers with corresponding data/syntax and
-              materials files as a way to significantly facilitate the pre-publication peer review approach that has
-              been so successful in physics and mathematics (i.e., arxiv.org).
             </div>
           </div>
           <div class="faq-item">
@@ -551,15 +499,13 @@
               Is Curate-Science associated with the Open Science Framework hosted by the Center for Open Science?
             </div>
             <div class="answer">
-              No. Though we will be linking available data, materials, and pre-registration information from the Open
-              Science Framework, we are an independent group of researchers in no way formally associated with the
+              No. Though we will be linking available data, materials, and pre-registration information from the <a href="http:osf.io">Open Science Framework</a>, we are an independent group of researchers in no way formally associated with the
               Open Science Framework.
             </div>
           </div>
           <div class="faq-item">
             <div class="question">
-              How is Curate-Science different from <a href="http://Figshare.com">Figshare.com</a>,
-              <a href="http://DataDryad.org">DataDryad.org</a> and <a href="http://thedata.harvard.edu/dvn/">Harvard's Dataverse</a>?
+              How is Curate-Science different from Figshare.com, DataDryad.org, and Harvard's Dataverse?
             </div>
             <div class="answer">
               <a href="http://Figshare.com">Figshare.com</a>, <a href="http://DataDryad.org">DataDryad.org</a>,
@@ -574,7 +520,7 @@
           </div>
           <div class="faq-item">
             <div class="question">
-              How is Curate-Science different from the <a href="http:osf.io">Open Science Framework</a>?
+              How is Curate-Science different from the Open Science Framework?
             </div>
             <div class="answer">
               The <a href="http:osf.io">Open Science Framework</a> is a place for researchers to archive,
@@ -583,36 +529,48 @@
               (see more details on OSF's <a href="https://osf.io/4znzp/wiki/home/">about</a> page).
               In contrast, Curate-Science, as its name implies, is focused primarily on the curation of
               scientific information tied to <i>published articles</i> by providing a platform for users to add,
-              modify, update, and comment on published article's replication and reproducibility information (among other things).
+              modify, update, and comment on published article's replication and reproducibility information (among other things, see <a href="#section-3">features</a>).
+            </div>
+          </div>
+		  <div class="faq-item">
+            <div class="question">
+              How is Curate-Science different from the PsychFileDrawer.org?
+            </div>
+            <div class="answer">
+              <a href="http://psychfiledrawer.org">PsychFileDrawer.org</a> is a highly useful website that was designed to overcome the pernicious file drawer problem in psychology where researchers can manually upload serious replication attempts whether they succeeded or failed. Curate-Science aims to significantly build upon PsychFileDrawer's venerable efforts by automatically identifying as many extant independent replication results as possible (via text mining) and also will provide a simple interface for the crowd to add any missing replication results. Curate-Science will also feature an innovative <a href="#section-3c">article page</a> that visually depicts the complex inter-relationships between original and replication studies (to facilitate the difficult task of interpreting replication results) and which will also allow the crowd to curate key information about the original and replication studies (in addition to several other <a href="#section-3">features</a>).
             </div>
           </div>
           <div class="faq-item">
             <div class="question">
-              What is an "alpha release" and what does that mean in Curate-Science's case?
+              Will I be able to post data/materials directly on an article page on Curate-Science?
             </div>
             <div class="answer">
-              An "alpha release" is a stage of software development whereby a product is in its early stages of
-              development and may be unstable, contain errors, and not have all product features yet implemented.
-              In our case, this means the version of Curate-Science you are currently viewing is a very rough prototype
-              that only shows some of the website's features (most of our core features are currently being developed;
-              see the <a href="#section-3">Features</a> page for more information). The actual website will offer
-              all of our core features including a blazingly fast and advanced search, an innovative search results page,
-              the ability for registered users to add, modify, and update article information (and revision
-              history for all changes), and component-specific in-line commenting. The actual website will
-              have a completely different look, identity, and branding; we are currently working with a design
-              firm carefully designing an elegant and intuitive user interface to allow for a pleasant user experience.
+              Yes, eventually. Our current focus is to organize and curate the available data/materials
+              that are already hosted by the many public repositories that already exist. However, in our quest to
+              radically simplify the fundamental scientific practice of sharing data/materials, we are working on forging a partnership with a major data repository website so that users can easily drag-and-drop data for their articles via our interface using our partner's infrastructure.
             </div>
           </div>
           <div class="faq-item">
+            <div class="question">
+              Will I be able to post unpublished manuscripts on Curate-Science?
+            </div>
+            <div class="answer">
+              Yes, eventually. Our initial focus is on organizing and curating information for published articles,
+              however, we will eventually allow researchers to post working papers with corresponding data/syntax and
+              materials files as a way to significantly facilitate the pre-publication peer review approach that has
+              been so successful in physics and mathematics (i.e., arxiv.org).
+            </div>
+          </div>
+		  <div class="faq-item">
             <div class="question">
               When will I be able to add, modify, and update information on Curate-Science?
             </div>
             <div class="answer">
               Registered users will be able to add/modify information once we launch our Beta
               (a "Beta" is a stage of software development where a product has implemented all of its core features
-              and is ready for testing by the community of users). Our projected Beta launch is May-June 2014. If
+              and is ready for testing by a small number of users). Our projected Beta launch is May-June 2014. If
               you're interested in being one of the first Science Curators, you can sign up
-              <a href="http://curatescience.org/#section-6">below</a> to be automatically notified
+              <a href="#section-6">below</a> to be automatically notified
               when our Beta website version is ready!
             </div>
           </div>
@@ -690,7 +648,7 @@
   $(".faq-item .question").click(function(e) {
     $(e.target).siblings(".answer").toggle();
   });
-
+  
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

@@ -729,7 +729,7 @@ p.features {
   margin-right: 130px;
 }
 img.features {
-  width: 75%;
+  width: 60%;
   display: block;
   margin-left: auto;
   margin-right: auto
@@ -771,4 +771,21 @@ td {  line-height: 125%;}
 .faq-item .answer {
   display:none;
   padding-left: 20px;
+}
+a.billboard-link {
+    color: rgb(255,255,255);
+}
+h3.features {
+  margin-top: 60px;
+ }
+table.articles {
+	width: 80%;
+	margin-bottom: 0px;
+}
+.list-group.articles {
+	padding-left: 0;
+	margin: auto;
+}
+.list-group-item.active:hover{
+	color:transparent;
 }
