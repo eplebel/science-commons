@@ -5,7 +5,13 @@
   <meta name="google-site-verification" content="7CrO9Y_velY8TjF6s8CWKB1s2S8TGRdQ8NoZ-gHPDE0" />
   <title>Curate Science</title>
   <link data-turbolinks-track="true" href="assets/main.css" media="all" rel="stylesheet" />
+  <!--<link href="assets/glyphicons.css" rel="stylesheet" />-->
   <script data-turbolinks-track="true" src="assets/main.js"></script>
+  
+  <!--<link rel="stylesheet" type="text/css" href="assets/tooltipster.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="assets/jquery.tooltipster.min.js"></script>-->
+
   <meta content="authenticity_token" name="csrf-param" />
 <meta content="/iDkQk3fySjDxSBGMaWY6CxQ9WzgIX4G/vkMyH6tgaU=" name="csrf-token" />
   <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -16,9 +22,10 @@
         $(".nav-collapse").collapse('hide');
       });
     });
+	
   </script>
   <style>
-	p span.displaynone { display:none; }
+	
   </style>
 </head>
 
@@ -62,7 +69,7 @@
         <div class="wrapper">
           <div class="well">
 		  <p class="about" style="font-style:italic;"><strong>Curating the scientific record.</strong></p>
-		  <p class="about">Scientists believe in empirical findings only once independent researchers can consistently replicate such results, however, no database currently exists that organizes independent replication results. <strong>Curate Science</strong> organizes and summarizes independent direct replication results meta-analytically so researchers can calibrate their beliefs in empirical findings according to independent replication evidence. This will accelerate scientific progress in terms of theory development and applied innovations.</p>
+		  <p class="about">Scientists believe in empirical findings only once independent researchers can consistently replicate such results, however, no database currently exists that organizes independent replication results. <strong>Curate Science</strong> organizes and summarizes <a title="'Independent' meaning replicators are arm's length from original authors (see FAQ for more details)">independent</a> <a title="Direct replications involve using the same methodology as original study, barring any required cultural or linguistic modifications (see FAQ for more details)">direct</a> replication results meta-analytically so researchers can calibrate their beliefs in empirical findings according to independent replication evidence. This will accelerate scientific progress in terms of theory development and applied innovations.</p>
       <p class="about">
         <strong>NOTE:</strong> Curating replication results involves publically discussing original research, hence our policy is to contact authors of original studies under discussion *before* publicly posting curated information. Feedback from original authors will be used to improve the posted information (author comments may also be posted directly underneath replication results to further augment interpretation of results). We seek to be as comprehensive as possible, so if you know of any independent direct replication studies we're missing please reach out to us via our twitter handle <a href="https://twitter.com/curatescience">@curatescience</a> (our vision is for this to eventually occur via crowdsourcing, see <a href="#section-4c">here</a> for details). Please also contact us if we're missing original findings for which at least two independent direct replications have been reported (see <a href="#section-3">here</a> for list of original articles currently being curated).
       </p>
@@ -428,6 +435,22 @@
       <header class="page-header"><h1>Frequently Asked Questions</h1></header>
       <div class="wrapper">
         <div class="faq-item">
+          <div class="question">
+            Why are only "direct replications" considered on Curate Science?
+          </div>
+          <div class="answer">
+            "Direct replications" involve repeating a study using the same methodology as the original study (except any required cultural or linguistic modifications). On the other hand, "conceptual replications" involve repeating a study using a different methodology, to test whether a finding generalizes to other manipulations and measurements of the focal constructs (we argue such studies should thus more accurately be called "generalizability studies"). Curate Science only considers direct replications because only such studies can falsify original findings. Failed "conceptual replications" are completely ambiguous as to whether negative results are due to (1) the falsity of original finding or (2) the different methodology employed. Consequently, an over-emphasis on "conceptual replications", in combination with publication bias and unintentional exploitation of design and analytic flexibility, can grossly mischaracterize the evidence base for the reliability of empirical findings (<a href="http://pps.sagepub.com/content/7/6/531.short">Pashler & Harris, 2012</a>; <a href="http://etiennelebel.com/documents/l&p(2011,rgp).pdf">LeBel & Peters, 2011</a>).
+          </div>
+        </div>
+		<div class="faq-item">
+          <div class="question">
+            What does "independent" in "independent replication" mean?
+          </div>
+          <div class="answer">
+            To prevent bias, replications must be carried out by researchers who are sufficiently independent from the researchers who executed the original studies. We conceptualize "sufficiently independent" following the <a href="https://en.wikipedia.org/wiki/Arm%27s_length_principle">"arm's length principle"</a> used in law. In our context, this means that replicators have not co-authored articles with any original authors and also do not have any familial or interpersonal ties with any original authors.
+          </div>
+        </div>
+		<div class="faq-item">
           <div class="question">
             Who is Curate Science's intended audience?
           </div>
