@@ -11,6 +11,7 @@
   <meta content="authenticity_token" name="csrf-param" />
 <meta content="/iDkQk3fySjDxSBGMaWY6CxQ9WzgIX4G/vkMyH6tgaU=" name="csrf-token" />
   <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
   <script src="assets/bootstrap.min.js"></script>
   <script>
     $(document).ready(function () {
@@ -25,7 +26,17 @@
       padding: 0em;
       border: 0px dashed black;
     }
-	
+	#some-element {
+	border: 0px solid #ccc;
+	display: none;
+	font-size: 16px;
+	margin-bottom: 10px;
+	padding: 2px;
+	line-height: 1.25em;
+	}	
+	#some-div:hover #some-element {
+	display: block;
+	}
 	
   </style>
 </head>
@@ -76,10 +87,15 @@
 	
 
 	<div class="container">		
-		<p>
-		<font size="6px"> Zhong & Liljenquist (2006) -- Replications (8) </font>	<br>
-		<font size="5px">Washing away your sins: Threatened morality and physical cleansing (DOI:<a href='https://dx.doi.org/10.1126/science.1130726'>10.1126/science.1130726</a>)</font>
-		</p>
+		<p style="margin: 0 0 0px;">
+		<font size="6px"> Zhong & Liljenquist (2006) -- Replications (8) </font><br>
+		<font size="5px">Washing away your sins: Threatened morality and physical cleansing</font><br>
+		DOI:<a href='https://dx.doi.org/10.1126/science.1130726'>10.1126/science.1130726</a></p>
+		<div id="some-div">
+			<p>[Original Abtract <i class="fa fa-angle-double-down"></i>]</p>
+			<span id="some-element">Physical cleansing has been a focal element in religious ceremonies for thousands of years. The prevalence of this practice suggests a psychological association between bodily purity and moral purity. In three studies, we explored what we call the "Macbeth effect", that is, a threat to one's moral purity induces the need to cleanse oneself. This effect revealed itself through an increased mental accessibility of cleansing-related concepts, a greater desire for cleansing products, and a greater likelihood of taking antiseptic wipes. Furthermore, we showed that physical cleansing alleviates the upsetting consequences of unethical behavior and reduces threats to one's moral self-image. Daily hygiene routines such as washing hands, as simple and benign as they might seem, can deliver a powerful antidote to threatened morality, enabling people to truly wash away their sins.</span>
+		</div>
+		
 				
 		<table ><tbody>
 			
