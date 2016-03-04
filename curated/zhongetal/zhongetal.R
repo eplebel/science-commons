@@ -1,6 +1,6 @@
 library(metafor)
-library(plotrix)
-setwd("C:/Users/Etienne/Google Drive/Curate Science/website/curated")
+library(plotrix) #for ablineclip function
+setwd(getwd())
 
 ### to save as png file
 #png(filename="forest_plot_Z&L.png", res=95, width=1200, height=800, type="cairo")

@@ -33,7 +33,7 @@ data <- read.table(textConnection(
 23	Joanna Ulatowska, Aleksandra Cislak	Ulatowska, Cislak	Both	Poland	Polish	51	4	0	0	4	47	27	8	12	55	8	0	0	8	47	35	7	5
 24	Kimberley A. Wade, Ulrike Körner, Melissa F. Colloff, Melina A. Kunar	Wade, Körner, Colloff, Kunar	Both	United Kingdom	English	61	1	0	0	1	60	26	19	15	60	0	0	0	0	60	36	19	5
 "), header=TRUE, sep = "\t")
-
+#write.table(data,file="data-export.csv", sep="\t")
 # Rename the relevant variables from the data file for ease of understanding the code
 V_Hit <- data$N_verbal_correct
 V_FA <- data$N_verbal_foil
@@ -49,7 +49,8 @@ Author <- data$Author
 Group <- data$Group
 VerbalAccuracy <- 100*round(V_Hit/V_Included,3)
 ControlAccuracy <- 100*round(C_Hit/C_Included,3)
-
+verbalAccuracy.repl = mean(VerbalAccuracy[3:24]) #for "Summary" section (excludes original & online rep)
+controlAccuracy.repl = mean(ControlAccuracy[3:24])
 
 ###############################################################
 ### FOREST PLOT WITH META-ANALYSIS ACROSS REPLICATION STUDIES
