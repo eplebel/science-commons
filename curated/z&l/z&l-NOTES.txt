@@ -1,0 +1,4 @@
+
+for Z&L:
+-add Reuven et al. clinical direct replication of Z&L Study 4 (NOTE: their DV operationalization slightly different given they used 1 = no volunteer, 2= volunteer for short version of study, and 3= volunteer for long version of study (instead of dichotomous as in original). decided it's close enough given Fayard et al. Study 2 used continuous instead of dichotomous, but would be interesting to re-analyze Reuven et al. as dichotomous (1 vs. 2 &3)
+-but also add Siev (2012, Study 1 & 2) as two direct replications of Z&L Study 2, as long as he's fine with me publicly posting the two summary files he previously shared with Uri! (though both replication attempts included word completion task before main desirability DV, and 1st attempt was online; these are the kinds of NOTES that could be added in my table somehow [perhaps "MINOR DEVIATIONS", which expands row on hover??])
