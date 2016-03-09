@@ -49,7 +49,7 @@ addpoly(res.rep3, row= 2, cex=1.25, mlab="Meta-analytic estimate of Study 4 repl
 
 ablineclip(v=.25, y1=-2,y2=21, col="skyblue1", lty="dashed", lwd=.1) #Simonsohn's small telescope line
 op <- par(cex=.75, font=1)
-text(.57, .75, "r_33% small telescope", col="skyblue1")
+text(.27, .75, "Z&L's r_33% small telescope", col="skyblue1", pos=4)
 
 #dev.off()
 
