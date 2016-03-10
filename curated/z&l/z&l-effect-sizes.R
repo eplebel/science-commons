@@ -28,6 +28,6 @@ chies(5.02, 45)
 #Gamez et al. (2011) Study 4
 chies(1.04, 28)
 #Fayard et al. (2009) Study 2
-fes(.01,58,57) #they used continuous measure of volunteer behavior (in mins) instead of dichotomous yes/no
+fes(.01,58,57) #continuous measure of volunteer behavior (in mins) instead of dichotomous yes/no
 #Reuven et al. (2013)
-fes(110.41, 29,29) #holy crap, equivalent to r=.81????#@ perhaps a mis-reported F-statistic?
+tes(2.19, 15,14) #non-OCD control Ps only; yields d=.81 whereas d=.54 reported ??? (perhaps incorrect t-value)
