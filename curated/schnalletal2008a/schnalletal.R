@@ -31,7 +31,7 @@ text( 2, 13, "Effect sizes (d) [95% CI]",  pos=2)
 ### set par back to the original settings
 par(op)
 
-### fit fixed-effects model (use slab argument to define study labels)
+### fit random-effects model (use slab argument to define study labels)
 res <- rma(m1i=dat$m1i, sd1i=dat$sd1i, n1i=dat$n1i, m2i=dat$m2i, sd2i=dat$sd2i, 
            n2i=dat$n2i, data=dat, measure="SMD", subset=(dat$study.type=="replication"),
            slab=dat$study)
@@ -40,7 +40,7 @@ addpoly(res, row=-1, cex=1.25, mlab="Random-effects meta-analytic estimate (repl
 ### horizontal separation line
 abline(h=0)
 
-### fit fixed-effects model in the three subgroups
+### fit random-effects model in the three subgroups
 res.rep1 <- rma(m1i=dat$m1i, sd1i=dat$sd1i, n1i=dat$n1i, m2i=dat$m2i, sd2i=dat$sd2i, 
                 n2i=dat$n2i, data=dat, measure="SMD", subset=(dat$study.info=="replication1"))
 
