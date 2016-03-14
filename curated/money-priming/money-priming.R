@@ -1,8 +1,8 @@
 library(metafor)
-setwd(getwd())
+#setwd(getwd())
 
 ### to save as png file
-#png(filename="moneyPriming.png", res=95, width=1200, height=800, type="cairo")
+#png(filename="money-priming.png", res=95, width=1200, height=1500, type="cairo")
 
 dat <- read.csv(file = "money-priming-replications.csv", header = TRUE)
 dat <- escalc(measure="SMD", m1i=dat$m1i, sd1i=dat$sd1i, n1i=dat$n1i, m2i=dat$m2i, sd2i=dat$sd2i, 
@@ -17,18 +17,18 @@ par(mar=c(4,4,1,2))
 
 ### set up forest plot (rows argument used to specify exactly in which rows outcomes will be plotted)
 forest(fe.all, xlim=c(-4, 3), at=c(-.75,-.50, 0, .50, 1.00, 1.50, 1.75),
-       cex=.75, ylim=c(-1, 57), rows=c(54:52, 49:12, 9:8, 6:5, 3:2),
+       ylim=c(-1, 58), rows=c(55:53, 49:12, 9:8, 6:5, 3:2),
        addfit=FALSE, atransf=FALSE,
        ilab=dat$N, ilab.xpos=-1.5,
        xlab="Effect size (d) [95% CI]", psize=1, pch=dat$study.symbol)
-op <- par(cex=1.25, font=3)
-text(-4, 56, "Studies and Replications",    pos=4)
-text(-1.5, 56, c("N"))
-text( 3, 56, "Effect sizes (d) [95% CI]",  pos=2)
+op <- par(cex=1, font=3)
+text(-4, 57, "Studies and Replications",    pos=4)
+text(-1.5, 57, c("N"))
+text( 3, 57, "Effect sizes (d) [95% CI]",  pos=2)
 
 
 ### set par back to the original settings
-par(op)
+par(cex=1, font=1)
 
 ### fit random-effects model (use slab argument to define study labels)
 res <- rma(m1i=dat$m1i, sd1i=dat$sd1i, n1i=dat$n1i, m2i=dat$m2i, sd2i=dat$sd2i, 
@@ -39,15 +39,15 @@ addpoly(res, row=-1, cex=1, mlab="Random-effects meta-analytic estimate (replica
 ### horizontal separation line
 abline(h=0)
 
-### fit random-effects model in the three subgroups
+### fit random-effects model in subgroups
 res.rep1 <- rma(m1i=dat$m1i, sd1i=dat$sd1i, n1i=dat$n1i, m2i=dat$m2i, sd2i=dat$sd2i, 
                 n2i=dat$n2i, data=dat, measure="SMD", subset=(dat$study.info=="replication1"))
 res.rep2 <- rma(m1i=dat$m1i, sd1i=dat$sd1i, n1i=dat$n1i, m2i=dat$m2i, sd2i=dat$sd2i, 
                 n2i=dat$n2i, data=dat, measure="SMD", subset=(dat$study.info=="replication2"))
 
 ### add summary polygons for the three subgroups
-addpoly(res.rep1, row=51, cex=.75, mlab="Meta-analytic estimate of replications of VMG's Study 3")
-addpoly(res.rep2, row=11, cex=.75, mlab="Meta-analytic estimate of replications of CVBW's Study 1")
+addpoly(res.rep1, row=51.5, cex=1, mlab="Meta-analytic estimate of replications of VMG's Study 3")
+addpoly(res.rep2, row=11, cex=1, mlab="Meta-analytic estimate of replications of CVBW's Study 1")
 
 
 #dev.off()

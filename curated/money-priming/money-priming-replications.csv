@@ -1,48 +1,48 @@
-ML1sample,study,study.type,study.info,study.symbol,N,m1i,sd1i,n1i,m2i,sd2i,n2i
-,Vohs et al. (2006) Study 3,original,original1,1,39,8.47,5.99,20,5.1,3.99,19
-,Tate (2009),replication,replication1,15,125,6.43,7.43,63,5.5,6.4,62
-,Grenier et al. (2012),replication,replication1,15,40,3.95,3.3,20,3.7,4.03,20
-,Caruso et al. (2013) Study 1,original,original2,1,30,4.96,1.27,15,3.99,1.19,15
-,Rohrer et al. (2015) Study 1,replication,replication2,15,136,3.76,0.97,69,3.83,1.02,67
-PSU,Adams & Nelson (2014),replication,replication2,15,95,3.869,0.722,44,3.86,0.769,51
-abington,Bernstein (2014),replication,replication2,15,84,3.53,1.02,40,3.53,0.78,44
-SWPS,Bocian & Frankowska (2014) Study 1,replication,replication2,15,79,3.448,0.79,34,3.28,0.79,45
-SWPSON,Bocian & Frankowska (2014) Study 2,replication,replication2,15,169,3.189,0.886,92,3.299,0.97,77
-Tilburg,Brandt et al. (2014),replication,replication2,15,80,3.87,0.917,40,3.68,0.905,40
-QCCUNY,Brumbaugh & Storbeck (2014) Study 1,replication,replication2,15,103,3.696,0.84,44,3.67,0.878,58
-QCCUNY2,Brumbaugh & Storbeck (2014) Study 2,replication,replication2,15,86,3.52,0.83,49,3.41,0.87,36
-KU,Cemalcilar (2014),replication,replication2,15,113,2.585,0.855,58,2.687,0.758,55
-Help,Cheong (2014),replication,replication2,15,102,2.87,0.785,48,3.04,0.647,54
-TAMU,Davis & Hicks (2014) Study 1,replication,replication2,15,187,3.93,0.86,94,4.07,0.905,93
-TAMUON,Davis & Hicks (2014) Study 2,replication,replication2,15,225,4.047,0.908,112,3.887,0.904,113
-SDSU,Devos (2014),replication,replication2,15,162,3.61,0.764,77,3.79,0.921,85
-MSVU,Furrow & Thompson (2014),replication,replication2,15,85,3.696,0.833,44,3.52,0.896,41
-VCU,Hovermale & Joy-Gaba (2014),replication,replication2,15,108,3.625,0.8499,68,3.67,0.811,39
-TAMUC,Hunt & Krueger (2014),replication,replication2,15,87,3.367,0.98,46,3.6,0.788,41
-Luc,Huntsinger & Mallett (2014),replication,replication2,15,146,3.45,0.995,64,3.52,0.901,81
-WPI,John & Skorinko (2014),replication,replication2,15,87,3.625,0.74,48,3.79,1.02,39
-LSE,Kappes (2014),replication,replication2,15,277,3.676,0.835,128,3.81,0.817,149
-UFL,Klein et al. (2014),replication,replication2,15,127,3.91,0.894,64,4.046,0.875,63
-JMU,Kurtz (2014),replication,replication2,15,174,3.96,0.94,92,3.86,0.787,82
-Oxy,Levitan (2014),replication,replication2,15,123,3.25,0.76,54,3.22,1.01,68
-McDaniel,Morris (2014),replication,replication2,15,98,3.627,0.863,45,3.278,0.856,53
-Conncoll,Nier (2014),replication,replication2,15,95,3.87,1,55,3.64,1.02,40
-Laurier,Packard (2014),replication,replication2,15,112,4.43,0.826,57,4.545,0.794,55
-brasilia ,Pilati (2014),replication,replication2,15,120,2.91,0.66,59,2.78,0.77,61
-CSUN,Rutchick (2014),replication,replication2,15,96,3.67,0.93,46,3.66,0.825,50
-UVA,Schmidt & Nosek (2014),replication,replication2,15,81,3.994,0.888,42,3.75,0.72,39
-MTURK,"Schmidt & Nosek (2014, MTURK)",replication,replication2,15,1000,3.668,1.145,508,3.74,1.147,491
-PI,"Schmidt & Nosek (2014, PI)",replication,replication2,15,1329,3.42,0.932,651,3.449,0.96,675
-OSU,Smith (2014),replication,replication2,15,107,4.12,0.957,48,4.03,0.851,59
-Wisc,Swol (2014),replication,replication2,15,96,3.84,0.737,47,3.987,0.705,49
-Ithaca,Vaughn (2014),replication,replication2,15,90,3.53,0.92,35,3.525,0.91,55
-UNIPD,Vianello & Galliani (2014),replication,replication2,15,144,2.4,0.759,78,2.43,0.851,64
-Charles,Vranka (2014),replication,replication2,15,84,3.6,0.68,44,3.71,0.85,40
-WKU,Wichman (2014),replication,replication2,15,103,3.86,0.918,37,3.7,0.897,66
-WL,Woodzicka (2014),replication,replication2,15,90,4.02,0.986,46,3.79,0.941,44
-,Caruso et al. (2013) Study 2,original,original3,1,168,2.53,0.52,84,2.32,0.44,84
-,Rohrer et al. (2015) Study 2,replication,replication3,15,420,2.59,0.5,211,2.56,0.55,209
-,Caruso et al. (2013) Study 3,original,original4,1,80,3.2,1.32,40,2.56,1.24,40
-,Rohrer et al. (2015) Study 3,replication,replication4,15,156,2.1,0.89,78,2.15,0.88,78
-,Caruso et al. (2013) Study 4,original,original5,1,48,1.1,1.74,24,-0.02,1.43,24
-,Rohrer et al. (2015) Study 4,replication,replication5,15,116,0.68,1.38,50,0.48,1.55,66
+ML1sample,study,study.type,study.info,study.symbol,N,m1i,sd1i,n1i,m2i,sd2i,n2i,ML1.d
+,Vohs et al. (2006) Study 3,original,original1,1,39,8.47,5.99,20,5.1,3.99,19,
+,Tate (2009),replication,replication1,15,125,6.43,7.43,63,5.5,6.4,62,
+,Grenier et al. (2012),replication,replication1,15,40,3.95,3.3,20,3.7,4.03,20,
+,Caruso et al. (2013) Study 1,original,original2,1,30,4.96,1.27,15,3.99,1.19,15,
+,Rohrer et al. (2015) Study 1,replication,replication2,15,136,3.76,0.97,69,3.83,1.02,67,
+McDaniel,Morris (2014),replication,replication2,15,98,3.627,0.863,45,3.278,0.856,53,0.406050029
+UVA,Schmidt & Nosek (2014),replication,replication2,15,81,3.994,0.888,42,3.75,0.72,39,0.303482587
+WL,Woodzicka (2014),replication,replication2,15,90,4.02,0.986,46,3.79,0.941,44,0.238713025
+Conncoll,Nier (2014),replication,replication2,15,95,3.87,1,55,3.64,1.02,40,0.227722772
+SWPS,Bocian & Frankowska (2014) Study 1,replication,replication2,15,79,3.448,0.79,34,3.28,0.79,45,0.212658228
+Tilburg,Brandt et al. (2014),replication,replication2,15,80,3.87,0.917,40,3.68,0.905,40,0.20856202
+MSVU,Furrow & Thompson (2014),replication,replication2,15,85,3.696,0.833,44,3.527,0.896,41,0.195488722
+brasilia ,Pilati (2014),replication,replication2,15,120,2.91,0.66,59,2.78,0.77,61,0.181818182
+TAMUON,Davis & Hicks (2014) Study 2,replication,replication2,15,225,4.047,0.908,112,3.887,0.904,113,0.176600442
+WKU,Wichman (2014),replication,replication2,15,103,3.86,0.918,37,3.7,0.897,66,0.17630854
+QCCUNY2,Brumbaugh & Storbeck (2014) Study 2,replication,replication2,15,86,3.52,0.83,49,3.41,0.87,36,0.129411765
+JMU,Kurtz (2014),replication,replication2,15,174,3.96,0.94,92,3.86,0.787,82,0.115807759
+OSU,Smith (2014),replication,replication2,15,107,4.12,0.957,48,4.03,0.851,59,0.099557522
+Oxy,Levitan (2014),replication,replication2,15,123,3.25,0.76,54,3.22,1.01,68,0.033898305
+QCCUNY,Brumbaugh & Storbeck (2014) Study 1,replication,replication2,15,103,3.696,0.84,44,3.67,0.878,58,0.030267753
+PSU,Adams & Nelson (2014),replication,replication2,15,95,3.869,0.722,44,3.86,0.769,51,0.012072435
+CSUN,Rutchick (2014),replication,replication2,15,96,3.67,0.93,46,3.66,0.825,50,0.011396011
+Ithaca,Vaughn (2014),replication,replication2,15,90,3.53,0.92,35,3.525,0.91,55,0.005464481
+abington,Bernstein (2014),replication,replication2,15,84,3.53,1.02,40,3.53,0.78,44,0
+PI,"Schmidt & Nosek (2014, PI)",replication,replication2,15,1329,3.42,0.932,651,3.449,0.96,675,-0.030655391
+UNIPD,Vianello & Galliani (2014),replication,replication2,15,144,2.4,0.759,78,2.43,0.851,64,-0.037267081
+VCU,Hovermale & Joy-Gaba (2014),replication,replication2,15,108,3.625,0.8499,68,3.67,0.811,39,-0.054187489
+MTURK,"Schmidt & Nosek (2014, MTURK)",replication,replication2,15,1000,3.668,1.145,508,3.74,1.147,491,-0.062827225
+Luc,Huntsinger & Mallett (2014),replication,replication2,15,146,3.45,0.995,64,3.52,0.901,81,-0.073839662
+SWPSON,Bocian & Frankowska (2014) Study 2,replication,replication2,15,169,3.189,0.886,92,3.299,0.97,77,-0.118534483
+KU,Cemalcilar (2014),replication,replication2,15,113,2.585,0.855,58,2.687,0.758,55,-0.126472412
+Laurier,Packard (2014),replication,replication2,15,112,4.43,0.826,57,4.545,0.794,55,-0.141975309
+Charles,Vranka (2014),replication,replication2,15,84,3.6,0.68,44,3.71,0.85,40,-0.14379085
+UFL,Klein et al. (2014),replication,replication2,15,127,3.91,0.894,64,4.046,0.875,63,-0.153759186
+TAMU,Davis & Hicks (2014) Study 1,replication,replication2,15,187,3.93,0.86,94,4.07,0.905,93,-0.158640227
+LSE,Kappes (2014),replication,replication2,15,277,3.676,0.835,128,3.81,0.817,149,-0.162227603
+WPI,John & Skorinko (2014),replication,replication2,15,87,3.625,0.74,48,3.79,1.02,39,-0.1875
+Wisc,Swol (2014),replication,replication2,15,96,3.84,0.737,47,3.987,0.705,49,-0.203883495
+SDSU,Devos (2014),replication,replication2,15,162,3.61,0.764,77,3.79,0.921,85,-0.213649852
+Help,Cheong (2014),replication,replication2,15,102,2.87,0.785,48,3.04,0.647,54,-0.237430168
+TAMUC,Hunt & Krueger (2014),replication,replication2,15,87,3.367,0.98,46,3.6,0.788,41,-0.263574661
+,Caruso et al. (2013) Study 2,original,original3,1,168,2.53,0.52,84,2.32,0.44,84,
+,Rohrer et al. (2015) Study 2,replication,replication3,15,420,2.59,0.5,211,2.56,0.55,209,
+,Caruso et al. (2013) Study 3,original,original4,1,80,3.2,1.32,40,2.56,1.24,40,
+,Rohrer et al. (2015) Study 3,replication,replication4,15,156,2.1,0.89,78,2.15,0.88,78,
+,Caruso et al. (2013) Study 4,original,original5,1,48,1.1,1.74,24,-0.02,1.43,24,
+,Rohrer et al. (2015) Study 4,replication,replication5,15,116,0.68,1.38,50,0.48,1.55,66,
