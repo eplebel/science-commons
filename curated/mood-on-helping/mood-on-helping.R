@@ -3,12 +3,12 @@ library(metafor)
 #png(filename="schnalletal2008a.png", res=95, width=1200, height=800, type="cairo")
 
 #direct input of data approach
-header <- c("study"                    ,"s.type","s.info","s.symbol","ai","bi","ci","di","N")
-s1 <- c("Isen & Levin (1972) Study 2"  ,"orig"  ,"orig1" ,1         ,14  ,2   ,1   ,24  ,41)
-s2 <- c("Blevins & Murphy (1974)"      ,"rep"   ,"rep1"  ,15        ,6   ,9   ,15  ,20  ,50)
-s3 <- c("Levin & Isen (1975) Study 1"  ,"orig"  ,"orig2" ,1         ,10  ,1   ,4   ,9   ,24)
-s4 <- c("Weyant & Clark (1977) Study 1","rep"   ,"rep2"  ,15        ,6   ,10  ,2   ,14  ,32)
-s5 <- c("Weyant & Clark (1977) Study 2","rep"   ,"rep2"  ,15        ,12  ,42  ,15  ,37  ,106)
+header <- c("study"                            ,"s.type","s.info","s.symbol","ai","bi","ci","di","N")
+s1 <- c("Isen & Levin (1972) Study 2"          ,"orig"  ,"orig1" ,1         ,14  ,2   ,1   ,24  ,41)
+s2 <- c("       Blevins & Murphy (1974)"       ,"rep"   ,"rep1"  ,15        ,6   ,9   ,15  ,20  ,50)
+s3 <- c("Levin & Isen (1975) Study 1"          ,"orig"  ,"orig2" ,1         ,10  ,1   ,4   ,9   ,24)
+s4 <- c("       Weyant & Clark (1977) Study 1" ,"rep"   ,"rep2"  ,15        ,6   ,10  ,2   ,14  ,32)
+s5 <- c("       Weyant & Clark (1977) Study 2" ,"rep"   ,"rep2"  ,15        ,12  ,42  ,15  ,37  ,106)
 dat <- rbind.data.frame(s1,s2,s3,s4,s5)
 colnames(dat) <- header
 dat$s.symbol <- as.numeric(as.character(dat$s.symbol)) #workaround for now
@@ -38,7 +38,7 @@ text( 3, 9, "Effect sizes (RD) [95% CI]",  pos=2)
 
 
 ### set par back to the original settings
-par(op)
+par(op, cex=1,font=3)
 
 ### fit random-effects model (use slab argument to define study labels)
 re.reps <- rma(ai=dat$ai, bi=dat$bi, ci=dat$ci, di=dat$di, data=dat, measure="RD", 
