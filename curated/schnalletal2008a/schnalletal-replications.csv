@@ -1,9 +1,10 @@
-study.num,study,study.type,study.info,study.symbol,N,m1i,sd1i,n1i,m2i,sd2i,n2i
-1,Schnall et al. (2008a) Study 1,original,original1,1,40,4.98,1.26,20,5.81,1.47,20
-2,Johnson et al. (2014a) Study 1,replication,replication1,15,208,6.47,1.12,106,6.48,1.13,102
-3,Johnson et al. (2014b),replication,replication1,15,736,7.026,1.49,369,6.96,1.41,367
-4,Lee et al. (2013),replication,replication1,15,90,6.5,1.92,42,6.67,1.51,48
-5,Arbesfeld et al. (2014),replication,replication1,15,60,5.96,1.4,30,6.57,1.14,30
-6,Besman et al. (2013),replication,replication1,15,60,6.04,1.34,30,6.6,1.17,30
-7,Schnall et al. (2008a) Study 2,original,original2,1,43,4.73,0.95,21,5.43,0.67,22
-8,Johnson et al. (2014a) Study 2,replication,replication2,15,126,5.66,0.59,58,5.65,0.68,68
+study,study.type,study.info,study.symbol,N,m1i,sd1i,n1i,m2i,sd2i,n2i
+Schnall et al. (2008a) Study 1,original,original1,1,40,4.98,1.26,20,5.81,1.47,20
+Johnson et al. (2014a) Study 1,replication,replication1,15,208,6.47,1.12,106,6.48,1.13,102
+Johnson et al. (2014b),replication,replication1,15,736,7.026,1.49,369,6.96,1.41,367
+Lee et al. (2013),replication,replication1,15,90,6.5,1.92,42,6.67,1.51,48
+Arbesfeld et al. (2014),replication,replication1,15,60,5.96,1.4,30,6.57,1.14,30
+Besman et al. (2013),replication,replication1,15,60,6.04,1.34,30,6.6,1.17,30
+Huang (2014) Study 1,replication,replication1,15,189,5.94,1.54,96,6.24,1.4,93
+Schnall et al. (2008a) Study 2,original,original2,1,43,4.73,0.95,21,5.43,0.67,22
+Johnson et al. (2014a) Study 2,replication,replication2,15,126,5.66,0.59,58,5.65,0.68,68

@@ -18,18 +18,18 @@ par(mar=c(4,4,1,2))
 
 ### set up forest plot (rows argument used to specify exactly in which rows outcomes will be plotted)
 forest(fe.all, xlim=c(-5, 2), at=c(-1.5, -1.0, -.50, 0, .50),
-       cex=1.25, ylim=c(-1, 14), rows=c(11:6,3:2),
+       cex=1.25, ylim=c(-1, 15), rows=c(12:6,3:2),
        addfit=FALSE, atransf=FALSE,
        ilab=dat$N, ilab.xpos=-2,
        xlab="Effect size (d) [95% CI]", psize=1, pch=dat$study.symbol)
 op <- par(cex=1.25, font=3)
-text(-5, 13, "Studies and Replications",    pos=4)
-text(-2, 13, c("N"))
-text( 2, 13, "Effect sizes (d) [95% CI]",  pos=2)
+text(-5, 14, "Studies and Replications",    pos=4)
+text(-2, 14, c("N"))
+text( 2, 14, "Effect sizes (d) [95% CI]",  pos=2)
 
 
 ### set par back to the original settings
-par(op)
+par(op, cex=1, font=3)
 
 ### fit random-effects model (use slab argument to define study labels)
 res <- rma(m1i=dat$m1i, sd1i=dat$sd1i, n1i=dat$n1i, m2i=dat$m2i, sd2i=dat$sd2i, 
@@ -52,7 +52,7 @@ library(pwr)
 get.d33=function(n,power) pwr.t.test(n=n,power=power)$d
 d33 <- -get.d33(n=22,power=.33) #make it negative because cleanliness priming effect is negative
 library(plotrix)
-ablineclip(v=d33, y1=-2,y2=12, col="blue", lty="dashed", lwd=.25) #Simonsohn's small telescope line
+ablineclip(v=d33, y1=-2,y2=13, col="blue", lty="dashed", lwd=.25) #Simonsohn's small telescope line
 op <- par(cex=.75, font=1)
 text(-.47, .65, "SMB's d_33% small telescope", col="blue", pos=2)
 
