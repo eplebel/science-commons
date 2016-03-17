@@ -54,7 +54,7 @@ d33 <- -get.d33(n=22,power=.33) #make it negative because cleanliness priming ef
 library(plotrix)
 ablineclip(v=d33, y1=-2,y2=13, col="blue", lty="dashed", lwd=.25) #Simonsohn's small telescope line
 op <- par(cex=.75, font=1)
-text(-.47, .65, "SMB's d_33% small telescope", col="blue", pos=2)
+text(-.47, .65, "SBH's d_33% small telescope", col="blue", pos=2)
 
 #dev.off()
 
