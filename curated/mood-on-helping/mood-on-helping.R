@@ -1,6 +1,6 @@
 library(metafor)
 ### to save as png file
-#png(filename="schnalletal2008a.png", res=95, width=1200, height=800, type="cairo")
+#png(filename="mood-on-helping.png", res=95, width=1200, height=800, type="cairo")
 
 #direct input of data approach
 header <- c("study"                            ,"s.type","s.info","s.symbol","ai","bi","ci","di","N")
