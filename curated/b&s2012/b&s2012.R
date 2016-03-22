@@ -1,6 +1,5 @@
 library(metafor)
 library(plotrix) #for ablineclip function
-setwd(getwd())
 
 ### to save as png file
 #png(filename="b&s2012.png", res=95, width=1200, height=800, type="cairo")
