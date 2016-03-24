@@ -1,0 +1,13 @@
+-Money Priming
+	
+Of Vohs, Mead, & Goode (2006, science) study 3
+	-Tate (2009) (thesis)  (though used money exposure manipulation from VMG's study 8, i.e., poster of money vs. seascape/flower)
+	-Grenier et al. (2012) PDF: http://www.psychfiledrawer.org/replication.php?attempt=MTQ2
+
+Of Caruso, Vohs, Baxter, & Waytz (2013) money priming
+	-4 reps by Rohrer, Pashler, & Harris (2015, JEPG) of CVBW's studies 1, 2, 3, and 4
+	-also 36 replications from ML1 of CVBW's study 1
+	
+***based on Vohs feedback: Probably should remove Tate (2009) given different manipulation and then add excerpts of her comments; then state: Grenier et al. methodologically close enough according to eligibility criteria, and that it's actually a strength that direct replications contain minor deviations because if findings don't generalize to these slight deviations, then don't reflect general phenomenon, therefore cannot be theoretically or practically important! (try not to harp too hard on the fact that Vohs has switching standards of methodological closeness based on study outcomes!)
+		-she mentioned Schuler & Wänke (2016) Study 1 as replication of Caruso et al (2013) Study 1, but they used different manipulation, i.e., unscrambling task instead of dollar bill background image manipulation  as in Caruso et al. and in Rohrer et al.  
+		-Schuler & Wänke (2016) Study 2 attempted to replicate Caruso et al. (2013) Study 2, but they used a modified unscrambling task that was either "me-money" (self-related) or "their-money" (other-related) or control. [Actually, could collapse across "me-money" and "their-money" vs. control on Just-world beliefs, N=115, n1=77, n2=38]
