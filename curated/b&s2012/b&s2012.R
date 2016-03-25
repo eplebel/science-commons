@@ -24,12 +24,13 @@ text(-.75, 15, c("N"))
 
 ### set par back to the original settings
 par(op)
+par(op, cex=1,font=3)
 
 ### fit random-effects model (use slab argument to define study labels)
 res <- rma(yi=dat$yi, vi=dat$vi, data=dat, measure="COR", subset=(dat$study.type=="replication"),
            slab=dat$study)
 ### add summary estimate to the bottom
-addpoly(res, row=-1, cex=1.25, mlab="Random-effects meta-analytic estimate of all replications")
+addpoly(res, row=-.75, cex=1.25, mlab="Random-effects meta-analytic estimate of all replications")
 ### horizontal separation line
 abline(h=0)
 

@@ -46,7 +46,7 @@ res <- rma(m1i=dat$m1i, sd1i=dat$sd1i, n1i=dat$n1i, m2i=dat$m2i, sd2i=dat$sd2i,
 ### add summary estimate to the bottom
 addpoly(res, row=-1, cex=1.25, mlab="Random-effects meta-analytic estimate of replications")
 ### horizontal separation line
-abline(h=0)
+abline(h=-.5)
 
 ### fit random-effects model in the three subgroups
 #res.rep1 <- rma(m1i=dat$m1i, sd1i=dat$sd1i, n1i=dat$n1i, m2i=dat$m2i, sd2i=dat$sd2i, 
@@ -62,7 +62,7 @@ d33 <- get.d33(n=30,power=.33) #make it negative because cleanliness priming eff
 library(plotrix)
 ablineclip(v=d33, y1=-2,y2=8, col="blue", lty="dashed", lwd=.25) #Simonsohn's small telescope line
 op <- par(cex=.75, font=1)
-text(.4, .45, "Bargh et al.'s d_33% small telescope", col="blue", pos=4)
+text(.4, .15, "Bargh et al.'s d_33% small telescope", col="blue", pos=4)
 #my alternative interpretation to d_33%=.40, is d_95% replications *could* have detected = .29
 d95_reps = pwr.t.test(n=302,power=.95)$d
 
