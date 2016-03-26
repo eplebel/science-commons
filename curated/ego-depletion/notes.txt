@@ -29,3 +29,13 @@ of Wang & Dvorak (2010) [basically Gaillot et al., 2007 study ?]
 
 
 ...look for more direct replications of Baumeister et al.'s (1998) Study 1 to 4 (and of Gaillot et al., 2007 studies 1 through 9!)
+
+
+
+External commentary:
+
+http://www.healthandbehaviourchange.com/#!hagger-blog/fs7gi ("While we have some sympathy with this claim, we do not think it provides sufficient basis to dismiss the task as failing to tax self-control.", "sample size necessary to detect an effect at the p=.10 level with this effect size, assuming an a priori power of .95 and equal numbers in each of the depletion and control groups, would be 875 in each group (total N=1750).")
+
+Responses:
+Baumeister and Vohs’ (2016) http://www.psychologicalscience.org/redesign/wp-content/uploads/2016/03/RRR-comment-BaumeisterVohs-revised-March17-002.pdf
+Sripada et al.’s (2016) http://www.psychologicalscience.org/redesign/wp-content/uploads/2016/03/Sripada-Kessler-Jonides-Commentary_final2-002.pdf
