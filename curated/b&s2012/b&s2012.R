@@ -13,7 +13,7 @@ op <- par(cex=1, font=1)
 par(mar=c(4,4,1,2))
 
 ### set up forest plot (rows argument used to specify exactly in which rows outcomes will be plotted)
-forest(dat$yi, dat$vi, xlim=c(-2.5, 2), at=c(-.5, -.25, 0, .25, .5, .75, 1),
+forest(dat$yi, dat$vi, xlim=c(-2.5, 1.5), at=c(-.5, -.25, 0, .25, .5, .75, .80),
        cex=1.25, ylim=c(-1, 16), rows=c(13:1),
        ilab=dat$N, ilab.xpos=-.75
        ,xlab="Effect size (r) [95% CI]", psize=1, pch=dat$study.symbol)

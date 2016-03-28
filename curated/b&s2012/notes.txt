@@ -1,0 +1,24 @@
+-Embodiment of warmth
+	Bargh & Shalev (2012) [honors Donnellan, and a quick one given i can input rs and Ns directly from my Beta site screenshot
+	-Donnellan et al (2015) 9 studies
+	-McDonald & Donnellan (2015) http://psychfiledrawer.org/replication.php?attempt=MTk5 (direct replication, Israel online sample)
+	-Ferrell et al (2013) http://psychfiledrawer.org/replication.php?attempt=MTg3 (direct replication, U of T austin
+	-Bargh & Shalev (2015) follow-up studies don't seem to qualify, but could ask Donnellan et al for their opinion (it wouldn't change the meta-analytic conclusions; come to think of it, probably should, because studies can be considered close enough methodologically (must be consistent!!)
+	
+	Related commentary:
+	-3 from screenshot
+	https://traitstate.wordpress.com/2012/09/20/whats-the-first-rule-about-john-barghs-data/
+	https://www.psychologytoday.com/blog/choke/201201/feeling-lonely-take-warm-bath
+	http://www.mentalhealthy.co.uk/news/526-take-long-hot-baths-or-showers-you-may-be-lonely.html
+	http://www.dailymail.co.uk/sciencetech/article-2007555/How-soaking-warm-bath-stop-feeling-lonely.html
+	http://hotair.com/headlines/archives/2011/07/06/confirmed-people-who-take-longer-showers-are-lonely/
+	http://www.allure.com/beauty-trends/blogs/daily-beauty-reporter/2011/07/what-a-long-hot-bath-says-abou.html Elizabeth Angell July 11, 2011
+	http://www.telegraph.co.uk/news/picturegalleries/howaboutthat/8594643/Having-a-hot-bath-dispels-loneliness.html June 23, 2011
+	http://bodyodd.nbcnews.com/_news/2011/07/05/6992690-wash-the-loneliness-away-with-a-long-hot-bath?lite July 5, 2011
+	http://www.scientificamerican.com/podcast/episode/hot-baths-may-cure-loneliness-11-07-02/ July 2, 2011
+	http://digest.bps.org.uk/2011/06/feeling-lonely-have-bath.html June 20, 2011 Christian Jarrett
+
+
+
+add this one later:
+<li>Brent Donnellan (September 20, 2012): <a href="https://traitstate.wordpress.com/2012/09/20/whats-the-first-rule-about-john-barghs-data/" target="_blank">What’s the First Rule about John Bargh’s Data?</a></li>
