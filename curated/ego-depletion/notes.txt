@@ -1,34 +1,35 @@
+STUDIES & REPLICATIONS:
+
+%%%GLUCOSE
+of Gaillot et al., 2007, Study 7 [F-value attenuated interaction; self-control {avoiding video caption} impairement on stroop eliminated with glucose]
+	-cesario & corker (PFD, 2010, unsuccessful)
+
+of Gaillot et al., 2007, Study 8 [F-value attenuated interaction; mortality salience impairment on word fragment task eliminated under glucose]
+	-Lane et al. (2012, PFD "successful", though way underpowered) http://psychfiledrawer.org/replication.php?attempt=MTQ1
+	-Astrologo et al (2014, PFD, "successful") http://psychfiledrawer.org/replication.php?attempt=MjIz
+	[but these replications should not be considered because they "replicate" a non-finding in the original study wherein they incorectly interpreted a simple effect within a non-sign interaction]
+
+of Wang & Dvorak (2010) [F-value attenuated interaction; glucose on cognitive performance]
+	-Lange & Eggert (2014) study 1  (unsuccessful)
+
+%%%EGO-DEPLETION
+of Schmeichel (2007, JEPG {OSPAN DV only}) study 1 [cohen's d; self-control {avoiding video caption} impairs cognitive performance {OSPAN working memory}]
+	-Carter & McCullough (2013, control conditions [sucralose and unsweetened, ns = 90 and 48, resp]) unsuccessful direct rep (though effortful essay task in between IV & DV)
+	-Lurquin et al. (2016, PLOS ONE) unsuccessful (with open materials and pre-registration!! 
 
 of Sripada et al. (2014) (which used "letter e" manipulation from Baumeister et al.'s (1998) Study 4, but DV [MSIT] from Bush et al. (2003)
-	-RRR: 24 direct replications
+	-RRR: 24 direct replications [cohen's d]
 
 
-of Gaillot et al., 2007, Study 7 
-	-cesario & corker (PFD, 2010)
-
-of Gaillot et al., 2007, Study 8 
-	-Lane et al. (2012, PFD ) http://psychfiledrawer.org/replication.php?attempt=MTQ1
-	-Astrologo et al (2014, PFD) http://psychfiledrawer.org/replication.php?attempt=MjIz
-
-of Schmeichel (2007, JEPG) study 1
-	-Carter & McCullough (2013, BMC) unsuccessful direct rep 
-	-Lurquin et al. (2016, PLOS ONE) (with open materials and pre-registration!! 
-
-of Wang & Dvorak (2010) [basically Gaillot et al., 2007 study ?]
-	-Lange & Eggert (2014) study 1 
+[-Xu et al. (2014, PLOS ONE) 4 unsuccessful ego depletion replications {crossing e task on handgrip and stroop performance [community and undergrad samples]}
+[unfortunately, none of the 4 reps map onto original studies frpm Gaillot et al. or Baumeister et al for both IV *and* DV]
 
 
+***looks like i'll need to go w/ r effect size given F-value attenuated interaction and then Cohen d's
 
-
-
-
-
--Xu et al. (2014, PLOS ONE) 4 unsuccessful ego depletion replications [but need to map these onto original studies.. Baumeister et al....]
-
-
-
-
-...look for more direct replications of Baumeister et al.'s (1998) Study 1 to 4 (and of Gaillot et al., 2007 studies 1 through 9!)
+[...look for more direct replications of Baumeister et al.'s (1998) Study 1 to 4 (and of Gaillot et al., 2007 studies 1 through 9!)]
+-->OK but seems i'm mixing 2 different claims: (1)self-control impairs further self-control [ego depletion] and (2) self-control relies on glucose
+NEXT STEP: go through studies in Hagger et al. (2010) to find direct reps for ego depletion studies "proper" (non-glucose related) {word doc suppl. appendices}
 
 
 
