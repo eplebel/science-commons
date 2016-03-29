@@ -25,12 +25,19 @@ of Sripada et al. (2014) (which used "letter e" manipulation from Baumeister et 
 [unfortunately, none of the 4 reps map onto original studies frpm Gaillot et al. or Baumeister et al for both IV *and* DV]
 
 
-***looks like i'll need to go w/ r effect size given F-value attenuated interaction and then Cohen d's
+
 
 [...look for more direct replications of Baumeister et al.'s (1998) Study 1 to 4 (and of Gaillot et al., 2007 studies 1 through 9!)]
 -->OK but seems i'm mixing 2 different claims: (1)self-control impairs further self-control [ego depletion] and (2) self-control relies on glucose
 NEXT STEP: go through studies in Hagger et al. (2010) to find direct reps for ego depletion studies "proper" (non-glucose related) {word doc suppl. appendices}
 
+
+***Kurzban has 3 unsuccessful ego depletion effect reps (mentioned to me in an email), which were included in Carter & McCullough’s (2015, meta-analysis), though a quick look couldn’t find them; i could email C&M (CCing Kurzban) asking about this **or** just reply back to Kurzban for the details he sent C&M
+--actually should email C&M, and M. Inzlicht more generally and ask them for a list of studies that qualify as sufficiently methodologically similar direct replications! (for either classic ego depletion or glucose effects).
+--and also ask them about this most recent review paper (or conference talk perhaps?) where baumeister admits glucose hypothesis incorrect???
+
+
+***looks like i'll need to go w/ r effect size given F-value attenuated interaction and then Cohen d's
 
 
 External commentary:
