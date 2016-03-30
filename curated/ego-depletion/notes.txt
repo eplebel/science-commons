@@ -13,10 +13,17 @@ of Wang & Dvorak (2010) [F-value attenuated interaction; glucose on cognitive pe
 	-Lange & Eggert (2014) study 1  (unsuccessful)
 
 %%%EGO-DEPLETION
-of Schmeichel (2007, JEPG {OSPAN DV only}) study 1 [cohen's d; self-control {avoiding video caption} impairs cognitive performance {OSPAN working memory}]
+of Schmeichel et al. (2003) Study 1 {attention video on cognitive performance, 13 analytic GRE questions}
+      -Pond et al. (2011) Study 3 {unpublished dissertation study; *need to confirm details w/ Carter & McCullough }
+
+of Schmeichel (2007, JEPG, study 1 {OSPAN DV only}) [cohen's d; self-control {avoiding video caption} impairs cognitive performance {OSPAN working memory}]
 	-Carter & McCullough (2013, control conditions [sucralose and unsweetened, ns = 90 and 48, resp]) unsuccessful direct rep (though effortful essay task in between IV & DV)
 	-Lurquin et al. (2016, PLOS ONE) unsuccessful (with open materials and pre-registration!! 
+	-Healy et al. (2011, JEPG) Study 1 through 4!
 
+of Schmeichel (2007, JEPG) study 2 {attention essay on OSPAN WM}
+	-Darowski & Hambrick (2011) Studies p2 and p3 (unpublished dissertation, Michigan state; *need details from Carter & McCullough)
+	
 of Muraven, Tice, & Baumeister (1998) Study 2 (thought suppression vs. control on anagram performance; cohen's d)
 	-Murtagh & Todd (2004) Study 2 (their Study 1 might map onto an original study [stroop vs. control on handgrip performance])
 
