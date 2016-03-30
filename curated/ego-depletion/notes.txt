@@ -17,6 +17,9 @@ of Schmeichel (2007, JEPG {OSPAN DV only}) study 1 [cohen's d; self-control {avo
 	-Carter & McCullough (2013, control conditions [sucralose and unsweetened, ns = 90 and 48, resp]) unsuccessful direct rep (though effortful essay task in between IV & DV)
 	-Lurquin et al. (2016, PLOS ONE) unsuccessful (with open materials and pre-registration!! 
 
+of Muraven, Tice, & Baumeister (1998) Study 2 (thought suppression vs. control on anagram performance; cohen's d)
+	-Murtagh & Todd (2004) Study 2 (their Study 1 might map onto an original study [stroop vs. control on handgrip performance])
+
 of Sripada et al. (2014) (which used "letter e" manipulation from Baumeister et al.'s (1998) Study 4, but DV [MSIT] from Bush et al. (2003)
 	-RRR: 24 direct replications [cohen's d]
 
