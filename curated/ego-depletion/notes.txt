@@ -4,26 +4,18 @@ STUDIES & REPLICATIONS:
 of Gaillot et al., 2007, Study 7 [F-value attenuated interaction; self-control {avoiding video caption} impairement on stroop eliminated with glucose]
 	-cesario & corker (PFD, 2010, unsuccessful)
 
-of Gaillot et al., 2007, Study 8 [F-value attenuated interaction; mortality salience impairment on word fragment task eliminated under glucose]
-	-Lane et al. (2012, PFD "successful", though way underpowered) http://psychfiledrawer.org/replication.php?attempt=MTQ1
-	-Astrologo et al (2014, PFD, "successful") http://psychfiledrawer.org/replication.php?attempt=MjIz
-	[but these replications should not be considered because they "replicate" a non-finding in the original study wherein they incorectly interpreted a simple effect within a non-sign interaction]
-
 of Wang & Dvorak (2010) [F-value attenuated interaction; glucose on cognitive performance]
 	-Lange & Eggert (2014) study 1  (unsuccessful)
 
 %%%EGO-DEPLETION
 of Schmeichel et al. (2003) Study 1 {attention video on cognitive performance, 13 analytic GRE questions}
-      -Pond et al. (2011) Study 3 {unpublished dissertation study; *need to confirm details w/ Carter & McCullough }
+    -Pond et al. (2011) Study 3 {unpublished dataset; *need to confirm details w/ Carter & McCullough }
 
 of Schmeichel (2007, JEPG, study 1 {OSPAN DV only}) [cohen's d; self-control {avoiding video caption} impairs cognitive performance {OSPAN working memory}]
 	-Carter & McCullough (2013, control conditions [sucralose and unsweetened, ns = 90 and 48, resp]) unsuccessful direct rep (though effortful essay task in between IV & DV)
 	-Lurquin et al. (2016, PLOS ONE) unsuccessful (with open materials and pre-registration!! 
 	-Healy et al. (2011, JEPG) Study 1 through 4!
 
-of Schmeichel (2007, JEPG) study 2 {attention essay on OSPAN WM}
-	-Darowski & Hambrick (2011) Studies p2 and p3 (unpublished dissertation, Michigan state; *need details from Carter & McCullough)
-	
 of Muraven, Tice, & Baumeister (1998) Study 2 (thought suppression vs. control on anagram performance; cohen's d)
 	-Murtagh & Todd (2004) Study 2 (their Study 1 might map onto an original study [stroop vs. control on handgrip performance])
 
@@ -31,20 +23,22 @@ of Sripada et al. (2014) (which used "letter e" manipulation from Baumeister et 
 	-RRR: 24 direct replications [cohen's d]
 
 
+Myers (2010, Study 1, unpublished thesis w/ Kurzban) might be direct rep of one of Muraven et al.'s original study {typing task on Stroop performance}
+
+
+----Considered, but not retained for various reasons:
+----------------------------------------------------
 [-Xu et al. (2014, PLOS ONE) 4 unsuccessful ego depletion replications {crossing e task on handgrip and stroop performance [community and undergrad samples]}
 [unfortunately, none of the 4 reps map onto original studies frpm Gaillot et al. or Baumeister et al for both IV *and* DV]
 
-
-
-
-[...look for more direct replications of Baumeister et al.'s (1998) Study 1 to 4 (and of Gaillot et al., 2007 studies 1 through 9!)]
--->OK but seems i'm mixing 2 different claims: (1)self-control impairs further self-control [ego depletion] and (2) self-control relies on glucose
-NEXT STEP: go through studies in Hagger et al. (2010) to find direct reps for ego depletion studies "proper" (non-glucose related) {word doc suppl. appendices}
-
-
-***Kurzban has 3 unsuccessful ego depletion effect reps (mentioned to me in an email), which were included in Carter & McCullough’s (2015, meta-analysis), though a quick look couldn’t find them; i could email C&M (CCing Kurzban) asking about this **or** just reply back to Kurzban for the details he sent C&M
---actually should email C&M, and M. Inzlicht more generally and ask them for a list of studies that qualify as sufficiently methodologically similar direct replications! (for either classic ego depletion or glucose effects).
---and also ask them about this most recent review paper (or conference talk perhaps?) where baumeister admits glucose hypothesis incorrect???
+of Gaillot et al., 2007, Study 8 [F-value attenuated interaction; mortality salience impairment on word fragment task eliminated under glucose]
+	-Lane et al. (2012, PFD "successful", though way underpowered) http://psychfiledrawer.org/replication.php?attempt=MTQ1
+	-Astrologo et al (2014, PFD, "successful") http://psychfiledrawer.org/replication.php?attempt=MjIz
+	[but these replications should not be considered because they "replicate" a non-finding in the original study wherein they incorectly interpreted a simple effect within a non-sign interaction]
+of Schmeichel (2007, JEPG) study 2 {attention essay on OSPAN WM}
+	-Darowski & Hambrick (2011) Studies p2 and p3 (unpublished dissertation studies, http://etd.lib.msu.edu/islandora/object/etd%3A1627/datastream/OBJ/view)
+	[upon inspection of dissertation, the studies don't qualify as direct reps unfortunately...]
+	
 
 
 ***looks like i'll need to go w/ r effect size given F-value attenuated interaction and then Cohen d's
