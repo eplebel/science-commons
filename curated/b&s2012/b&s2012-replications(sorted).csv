@@ -1,14 +1,18 @@
 study,study.type,study.info,study.symbol,r,N
 Bargh & Shalev (2012) Study 1a,original,original1,1,0.57,51
 Bargh & Shalev (2012) Study 1b,original,original1,1,0.37,41
-     Donnellan et al. (2015) Study 3,replication,replication1,15,0.13,210
-     Donnellan et al. (2015) Study 5,replication,replication1,15,0.1,494
-     Donnellan et al. (2015) Study 6,replication,replication1,15,0.06,553
-     Donnellan et al. (2015) Study 7,replication,replication1,15,0.02,311
-     Donnellan et al. (2015) Study 8,replication,replication1,15,0.02,365
-     Donnellan et al. (2015) Study 2,replication,replication1,15,-0.01,480
+     Donnellan et al. (2015a) Study 3,replication,replication1,15,0.13,210
+     Donnellan et al. (2015a) Study 5,replication,replication1,15,0.1,494
+     Donnellan et al. (2015a) Study 6,replication,replication1,15,0.06,553
+     Donnellan & Lucas (2014),replication,replication1,15,0.04,531
+     Donnellan et al. (2015a) Study 7,replication,replication1,15,0.02,311
+     Donnellan et al. (2015a) Study 8,replication,replication1,15,0.02,365
+     Donnellan et al. (2015a) Study 2,replication,replication1,15,-0.01,480
      McDonald & Donnellan (2015),replication,replication1,15,-0.025,356
      Ferrell et al. (2013),replication,replication1,15,-0.03,365
-     Donnellan et al. (2015) Study 1,replication,replication1,15,-0.06,235
-     Donnellan et al. (2015) Study 4,replication,replication1,15,-0.1,228
-     Donnellan et al. (2015) Study 9,replication,replication1,15,-0.13,197
+     Donnellan et al. (2015b),replication,replication1,15,-0.04,291
+     Donnellan et al. (2015a) Study 1,replication,replication1,15,-0.06,235
+     Donnellan et al. (2015a) Study 4,replication,replication1,15,-0.1,228
+     Donnellan et al. (2015a) Study 9,replication,replication1,15,-0.13,197
+Bargh & Shalev (2012) Study 2,original,original2,1,0.29,75
+     Wortman et al. (2014),replication,replication2,15,0.01,260

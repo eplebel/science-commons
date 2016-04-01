@@ -13,14 +13,14 @@ op <- par(cex=1, font=1)
 par(mar=c(4,4,1,2))
 
 ### set up forest plot (rows argument used to specify exactly in which rows outcomes will be plotted)
-forest(dat$yi, dat$vi, xlim=c(-2.5, 1.5), at=c(-.5, -.25, 0, .25, .5, .75, .80),
-       cex=1.25, ylim=c(-1, 16), rows=c(13:1),
+forest(dat$yi, dat$vi, xlim=c(-2.5, 1.5), at=c(-.3, -.25, 0, .25, .5, .75, .80),
+       cex=1.25, ylim=c(-1, 22), rows=c(19:5, 2:1),
        ilab=dat$N, ilab.xpos=-.75
        ,xlab="Effect size (r) [95% CI]", psize=1, pch=dat$study.symbol)
 op <- par(cex=1.25, font=3)
-text(-2.5, 15, "Studies and Replications",    pos=4)
-text( 2, 15, "Effect sizes (r) [95% CI]",  pos=2)
-text(-.75, 15, c("N"))
+text(-2.5, 21, "Studies and Replications",    pos=4)
+text( 1.5, 21, "Effect sizes (r) [95% CI]",  pos=2)
+text(-.75, 21, c("N"))
 
 ### set par back to the original settings
 par(op)
@@ -35,10 +35,10 @@ addpoly(res, row=-.75, cex=1.25, mlab="Random-effects meta-analytic estimate of 
 abline(h=0)
 
 ### fit random-effects model in subgroups
-#res.rep1 <- rma(yi=dat$yi, vi=dat$vi, data=dat, measure="COR", subset=(dat$study.info=="replication1"))
+res.rep1 <- rma(yi=dat$yi, vi=dat$vi, data=dat, measure="COR", subset=(dat$study.info=="replication1"))
 
 ### add summary polygons for the three subgroups
-#addpoly(res.rep1, row=2, cex=1.25, mlab="Meta-analytic estimate of B&S Study 1 replications")
+addpoly(res.rep1, row=4, cex=1.25, mlab="Meta-analytic estimate of B&S Study 1 replications")
 
 #ablineclip(v=.25, y1=-2,y2=21, col="blue", lty="dashed", lwd=.25) #Simonsohn's small telescope line
 #op <- par(cex=.75, font=1)
