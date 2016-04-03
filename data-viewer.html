@@ -19,7 +19,7 @@ mean(x)
 <br /> <button id="submitbutton" type="button">Run R Code!</button>
 
 <pre><code id="output"></code></pre>
-
+<!--<div id="plotdiv"></div>-->
 
 <iframe src="https://mfr.osf.io/render?url=https://osf.io/4xrpk/?action=download%26mode=render" width="100%" scrolling="yes" height="950px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
 
@@ -51,10 +51,12 @@ mean(x)
 			"x" : mysnippet
 		}, function(session){
 			session.getConsole(function(outtxt){
-				$("#output").text(outtxt); 
+				$("#output").text(outtxt);
 			});
 		});
-			
+		
+	
+		
 		//if R returns an error, alert the error message
 		req.fail(function(){
 			alert("Server error: " + req.responseText);
