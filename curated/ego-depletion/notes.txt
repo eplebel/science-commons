@@ -2,49 +2,52 @@ STUDIES & REPLICATIONS:
 
 %%%GLUCOSE
 of Gaillot et al., 2007, Study 7 [F-value attenuated interaction; self-control {avoiding video caption} impairement on stroop eliminated with glucose]
-	-cesario & corker (PFD, 2010, unsuccessful)
+	-cesario & corker (PFD, 2010, unsuccessful, http://psychfiledrawer.org/replication.php?attempt=MTIw)
 
-of Wang & Dvorak (2010) [F-value attenuated interaction; glucose on cognitive performance]
+of Wang & Dvorak (2010) [F-value attenuated interaction; glucose on cognitive performance {future-discounting}]
 	-Lange & Eggert (2014) study 1  (unsuccessful)
 
 %%%EGO-DEPLETION
-of Schmeichel et al. (2003) Study 1 {attention video on cognitive performance, 13 analytic GRE questions}
-    -Pond et al. (2011) Study 3 {unpublished dataset; *need to confirm details w/ Carter & McCullough }
-
+of Schmeichel et al. (2003) Study 1 {attention video on cognitive performance (standardized test, i.e., 13 analytic GRE questions}
+    -Pond et al. (2011) Study 3 {unpublished dataset, non-religious priming control; attention video on standardized test (10 verbal GRE); n=63, n=65}
+	
 of Schmeichel (2007, JEPG, study 1 {OSPAN DV only}) [cohen's d; self-control {avoiding video caption} impairs cognitive performance {OSPAN working memory}]
 	-Carter & McCullough (2013, control conditions [sucralose and unsweetened, ns = 90 and 48, resp]) unsuccessful direct rep (though effortful essay task in between IV & DV)
-	-Lurquin et al. (2016, PLOS ONE) unsuccessful (with open materials and pre-registration!! 
-	-Healy et al. (2011, JEPG) Study 1 through 4!
+	-Lurquin et al. (2016, PLOS ONE) (unsuccessful, N=200; with open materials and pre-registration!! 
+	-Healy et al. (2011, JEPG) Study 1 (successful, N=38)
 
 of Muraven, Tice, & Baumeister (1998) Study 2 (thought suppression vs. control on anagram performance; cohen's d)
-	-Murtagh & Todd (2004) Study 2 (their Study 1 might map onto an original study [stroop vs. control on handgrip performance])
+	-Murtagh & Todd (2004) Study 2  {thought suppression vs. control on anagram performance}
 
 of Sripada et al. (2014) (which used "letter e" manipulation from Baumeister et al.'s (1998) Study 4, but DV [MSIT] from Bush et al. (2003)
 	-RRR: 24 direct replications [cohen's d]
 
 
-Myers (2010, Study 1, unpublished thesis w/ Kurzban) might be direct rep of one of Muraven et al.'s original study {typing task on Stroop performance}
-
 
 ----Considered, but not retained for various reasons:
 ----------------------------------------------------
-[-Xu et al. (2014, PLOS ONE) 4 unsuccessful ego depletion replications {crossing e task on handgrip and stroop performance [community and undergrad samples]}
-[unfortunately, none of the 4 reps map onto original studies frpm Gaillot et al. or Baumeister et al for both IV *and* DV]
 
 of Gaillot et al., 2007, Study 8 [F-value attenuated interaction; mortality salience impairment on word fragment task eliminated under glucose]
 	-Lane et al. (2012, PFD "successful", though way underpowered) http://psychfiledrawer.org/replication.php?attempt=MTQ1
 	-Astrologo et al (2014, PFD, "successful") http://psychfiledrawer.org/replication.php?attempt=MjIz
 	[but these replications should not be considered because they "replicate" a non-finding in the original study wherein they incorectly interpreted a simple effect within a non-sign interaction]
+
 of Schmeichel (2007, JEPG) study 2 {attention essay on OSPAN WM}
 	-Darowski & Hambrick (2011) Studies p2 and p3 (unpublished dissertation studies, http://etd.lib.msu.edu/islandora/object/etd%3A1627/datastream/OBJ/view)
-	[upon inspection of dissertation, the studies don't qualify as direct reps unfortunately...]
+	[upon inspection of dissertation, the studies don't appear to map onto any of Schmeichel's 2007 studies]
 	
+-Xu et al. (2014, PLOS ONE) 4 unsuccessful ego depletion replications {crossing e task on handgrip and stroop performance [community and undergrad samples]}
+[unfortunately, none of the 4 reps map onto original studies frpm Gaillot et al., Muraven et al., or Baumeister et al for both IV *and* DV]
+
+-Myers (2010, Study 1 & 2, unpublished thesis w/ Kurzban)[study 1: typing task on Stroop performance; study 2: video attention on solvable anagrams, both don't map onto any original studies i'm aware of, including Muraven et al., 1998, Gaillot et al., 2007]
 
 
 ***looks like i'll need to go w/ r effect size given F-value attenuated interaction and then Cohen d's
 
 
 External commentary:
+
+Michael Inzlicht (April 4, 2016) "Updating beliefs" http://michaelinzlicht.com/getting-better/2016/4/3/updating-beliefs
 
 http://www.healthandbehaviourchange.com/#!hagger-blog/fs7gi ("While we have some sympathy with this claim, we do not think it provides sufficient basis to dismiss the task as failing to tax self-control.", "sample size necessary to detect an effect at the p=.10 level with this effect size, assuming an a priori power of .95 and equal numbers in each of the depletion and control groups, would be 875 in each group (total N=1750).")
 
