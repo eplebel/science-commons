@@ -1,42 +1,42 @@
-study,study.type,study.info,study.symbol,r,N,IVs,DV,notes
+study,study.type,study.info,study.symbol,r,N,IVs,DV,notes,d,var
 Gaillot et al. (2007) Study 7,original,original1,1,0.28,61,"sugar vs. splenda
-video attention task vs. control",stroop performance,
+video attention task vs. control",stroop performance,,,
      Cesario & Corker (2010),replication,replication1,15,0.03,119,"sugar vs. splenda
-video attention task vs. control",stroop performance,*need to double-check sign of interaction term (might be negative)
+video attention task vs. control",stroop performance,*need to double-check sign of interaction term (might be negative),,
 Wang & Dvorak (2010),original,original2,1,0.45,61,"sugar vs. splenda
-future-discounting t1 vs. t2",future-discounting task,
+future-discounting t1 vs. t2",future-discounting task,,,
      Lange & Eggert (2014) Study 1,replication,replication2,15,0.13,70,"sugar vs. splenda
-future-discounting t1 vs. t2",future-discounting task,*need to double-check sign of interaction term (might be negative)
-Schmeichel et al. (2003) Study 1 ,original,original3,1,-0.64,24,video attention task vs. control,GRE standardized test,
-     Pond et al. (2011) Study 3,replication,replication3,15,-0.17,128,video attention task vs. control,GRE standardized test,
-Schmeichel (2007) Study 1,original,original4,1,-0.18,79,video attention task vs. control,working memory (OSPAN),total target words recalled (48 targets total)
-     Healy et al. (2011) Study 1 ,replication,replication4,15,-0.55,38,video attention task vs. control,working memory (OSPAN),% of target words recalled (48 targets total)
-"     Carter & McCullough (2013, controls)",replication,replication4,15,0.027,138,video attention task vs. control,working memory (OSPAN),total target words recalled (48 targets total) *weighted by ns of sucralose and unsweetened control conditions
-     Lurquin et al. (2016),replication,replication4,15,0.1,200,video attention task vs. control,working memory (OSPAN),total target words recalled (40 targets total)
-Muraven et al. (1998) Study 2 ,original,original5,1,-0.35,34,thought suppression vs. control,anagram performance,
-     Murtagh & Todd (2004) Study 2,replication,replication5,15,-0.01,51,thought suppression vs. control,anagram performance,
-Sripada et al. (2014) ,original,original6,1,-0.33,47,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 1,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 2,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 3,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 4,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 5,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 6,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 7,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 8,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 9,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 10,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 11,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 12,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 13,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 14,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 15,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 16,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 17,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 18,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 19,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 20,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 21,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 22,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 23,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
-     RRR Sample 24,replication,replication6,15,,,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),
+future-discounting t1 vs. t2",future-discounting task,*need to double-check sign of interaction term (might be negative),,
+Schmeichel et al. (2003) Study 1 ,original,original3,1,-0.64,24,video attention task vs. control,GRE standardized test,,,
+     Pond et al. (2011) Study 3,replication,replication3,15,-0.17,128,video attention task vs. control,GRE standardized test,,,
+Schmeichel (2007) Study 1,original,original4,1,-0.18,79,video attention task vs. control,working memory (OSPAN),total target words recalled (48 targets total),,
+     Healy et al. (2011) Study 1 ,replication,replication4,15,-0.55,38,video attention task vs. control,working memory (OSPAN),% of target words recalled (48 targets total),,
+"     Carter & McCullough (2013, controls)",replication,replication4,15,0.027,138,video attention task vs. control,working memory (OSPAN),total target words recalled (48 targets total) *weighted by ns of sucralose and unsweetened control conditions,,
+     Lurquin et al. (2016),replication,replication4,15,0.1,200,video attention task vs. control,working memory (OSPAN),total target words recalled (40 targets total),,
+Muraven et al. (1998) Study 2 ,original,original5,1,-0.35,34,thought suppression vs. control,anagram performance,,,
+     Murtagh & Todd (2004) Study 2,replication,replication5,15,-0.01,51,thought suppression vs. control,anagram performance,,,
+Sripada et al. (2014) ,original,original6,1,-0.33,47,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,,
+     Birt & Muise,replication,replication6,15,-0.01,96,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,0.177378489,0.041848629
+     Calvillo & Mills,replication,replication6,15,-0.01,124,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,0.114850776,0.032344855
+     Carruth & Miyake,replication,replication6,15,-0.01,178,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,0.046665208,0.022489381
+"     Crowell, Finley & Schmeichel",replication,replication6,15,-0.01,124,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,-0.137115308,0.032333873
+"     Evans, Fay & Mosser",replication,replication6,15,-0.01,151,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,-0.117249401,0.026536749
+     Francis & Inzlicht,replication,replication6,15,-0.01,109,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,-0.139389498,0.036789463
+"     Hagger, Chatzisarantis & Zweinenberg",replication,replication6,15,-0.01,117,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,0.044507495,0.0344
+     Lau & Brewer,replication,replication6,15,-0.01,128,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,0.323819457,0.031659606
+"     Lynch, VanDellen & Campbell",replication,replication6,15,-0.01,139,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,0.151773185,0.028873249
+     Philipp & Cannon,replication,replication6,15,-0.01,84,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,-0.143244889,0.047768195
+     Ringos & Carlucci,replication,replication6,15,-0.01,95,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,0.271378385,0.042497541
+     Tinghög & Koppel,replication,replication6,15,-0.01,99,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,0.116859548,0.040477134
+     Brandt,replication,replication6,15,-0.01,145,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,-0.157992223,0.027705122
+"     Cheung, Kroese, Fennis & de Ridder",replication,replication6,15,-0.01,203,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,-0.032449177,0.019707505
+     Elson,replication,replication6,15,-0.01,101,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,0.176891286,0.039762747
+"     Lange, Heise & Hoemann",replication,replication6,15,-0.01,119,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,-0.070945965,0.033636968
+"     Muller, Zerhouni & Batailler",replication,replication6,15,-0.01,109,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,-0.392991485,0.037408788
+"     Otgaar, Martijn, Alberts, Michirev, Merckelbach & Howe",replication,replication6,15,-0.01,98,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,-0.180198838,0.040999005
+"     Rentzsch, Nalis & Schütz",replication,replication6,15,-0.01,120,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,-0.059951787,0.033385387
+"     Schlinkert, Schrama & Koole",replication,replication6,15,-0.01,103,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,0.136631051,0.038929234
+"     Stamos, Bruyneel & DeWitte",replication,replication6,15,-0.01,114,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,-0.182473059,0.035244559
+"     Ullrich, Primoceri & Schoch",replication,replication6,15,-0.01,114,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,0.270584621,0.035408842
+"     Wolff, Muzzi & Brand",replication,replication6,15,-0.01,105,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,0.086357659,0.038161874
+"     Yusainy, Wimbarti, Nurwanti & Octavianus",replication,replication6,15,-0.01,196,effortful letter crossing vs. control,multi-source interference task (MSIT; RTV),,-0.028156988,0.020412311
