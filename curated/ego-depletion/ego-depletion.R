@@ -14,7 +14,8 @@ d.wang.dvorak2010 = wang.dvorak2010$d
 v.wang.dvorak2010 = wang.dvorak2010$var.d
 lange.eggert2014study1 <- fes(1.12, 35,35)
 d.lange.eggert2014study1 = lange.eggert2014study1$d
-v.lange.eggert2014study1 = lange.eggert2014study1$var.d
+v.lange.eggert2014study1 = lange.eggert2014study1$var.d  #update ES calc for these 4 studies
+
 schmeicheletal2003study1 <- tes(3.87, 12, 12) #total # correct
 d.schmeicheletal2003study1 = schmeicheletal2003study1$d
 v.schmeicheletal2003study1 = schmeicheletal2003study1$var.d
@@ -31,7 +32,7 @@ carter.mccullough.unsweetened <- mes(41.54, 39.38, 6.6, 5.9, 26, 24)
 #weighted average for d and v of sucralose and unsweetened control conditions
 d.carter.mccullough2013 = (carter.mccullough.sucralose$d * carter.mccullough.sucralose$N.total + carter.mccullough.unsweetened$d * carter.mccullough.unsweetened$N.total)/ (carter.mccullough.sucralose$N.total + carter.mccullough.unsweetened$N.total)
 v.carter.mccullough2013 = (carter.mccullough.sucralose$var.d * carter.mccullough.sucralose$N.total + carter.mccullough.unsweetened$var.d * carter.mccullough.unsweetened$N.total)/ (carter.mccullough.sucralose$N.total + carter.mccullough.unsweetened$N.total)
-lurquinetal2016 <- tes(-1.46, 100,100)
+lurquinetal2016 <- tes(1.46, 100,100)
 d.lurquinetal2016 = lurquinetal2016$d
 v.lurquinetal2016 = lurquinetal2016$var.d
 muravenetal1998study2 <- mes(563, 758, 240, 280, 17, 17)
@@ -46,50 +47,54 @@ v.sripadaetal2014 = sripadaetal2014$var.d
 #RRR4 ego depletion: 24 replication effect sizes (& var) as calculated from their own RRR-metaanalysisRTV_incl.R file
 
 ### to save as png file
-#png(filename="ego-depletion.png", res=95, width=1200, height=800, type="cairo")
+png(filename="ego-depletion.png", res=95, width=1200, height=1200, type="cairo")
 
-dat <- read.csv(file = "ego-depletion.csv", header = TRUE)
-#dat <- escalc(measure="SMD", yi=dat$d, vi=dat$var, data=dat, slab=dat$study)
-dat
+dat <- read.csv(file = "ego-depletion(sorted).csv", header = TRUE)
 
 ### decrease margins so the full space is used
 op <- par(cex=1, font=1)
 par(mar=c(4,4,1,2))
 
 ### set up forest plot (rows argument used to specify exactly in which rows outcomes will be plotted)
-forest(dat$yi, dat$vi, xlim=c(-2.5, 1.5), at=c(-.3, -.25, 0, .25, .5, .75, .80),
-       cex=1.25, ylim=c(-1, 22), rows=c(19:5, 2:1),
-       ilab=dat$N, ilab.xpos=-.75
-       ,xlab="Effect size (r) [95% CI]", psize=1, pch=dat$study.symbol)
-op <- par(cex=1.25, font=3)
-text(-2.5, 21, "Studies and Replications",    pos=4)
-text( 1.5, 21, "Effect sizes (r) [95% CI]",  pos=2)
-text(-.75, 21, c("N"))
+forest(dat$d, dat$var, xlim=c(-6, 2), at=c(-2.5, -2, -1.5, -1.0, -.5, 0, .5, .75),
+       cex=1, ylim=c(-1, 51), rows=c(46:45,43:42,37:36,34:33,31:29,27:3),
+       ilab=dat$N, ilab.xpos=-3, slab=dat$study
+       ,xlab="Effect size (d) [95% CI]", psize=1, pch=dat$study.symbol)
+op <- par(cex=1.25, font=2)
+text(-6, 50, "Studies and Replications",    pos=4)
+text( 2, 50, "Effect sizes (d) [95% CI]",  pos=2)
+text(-3, 50, c("N"))
+op <- par(cex=1.15, font=3)
+text(-6, 47.5, "Prediction 1: Self-control relies on glucose",    pos=4)
+text(-6, 38.5, "Prediction 2: Self-control impairs further self-control (ego depletion)",    pos=4)
 
 ### set par back to the original settings
 par(op)
 par(op, cex=1,font=3)
 
-### fit random-effects model (use slab argument to define study labels)
-res <- rma(yi=dat$d, vi=dat$var, data=dat, measure="SMD", slab=dat$study) #it works!
-forest(res)
-res <- rma(yi=dat$yi, vi=dat$vi, data=dat, measure="SMD", subset=(dat$study.type=="replication"),
+### fit random-effects model 
+res <- rma(yi=dat$d, vi=dat$var, data=dat, measure="SMD", subset=(dat$study.type=="replication"),
            slab=dat$study)
 ### add summary estimate to the bottom
-addpoly(res, row=-.75, cex=1.25, mlab="Random-effects meta-analytic estimate of all replications")
+addpoly(res, row=-1, cex=1, mlab=NA)
+text(-5.7,-1,"Random-effects meta-analytic estimate of all replications:",pos=4)
 ### horizontal separation line
 abline(h=0)
 
 ### fit random-effects model in subgroups
-res.rep1 <- rma(yi=dat$yi, vi=dat$vi, data=dat, measure="COR", subset=(dat$study.info=="replication1"))
+res.rep.pred1 <- rma(yi=dat$d, vi=dat$var, data=dat, measure="SMD", subset=(dat$study.info=="replication1"|dat$study.info=="replication2"))
+res.rep.pred2 <- rma(yi=dat$d, vi=dat$var, data=dat, measure="SMD", subset=(dat$study.info=="replication3"|dat$study.info=="replication4"|dat$study.info=="replication5"|dat$study.info=="replication6"))
 
 ### add summary polygons for the three subgroups
-addpoly(res.rep1, row=4, cex=1.25, mlab="Meta-analytic estimate of B&S Study 1 replications")
+addpoly(res.rep.pred1, row=40.5, cex=1, efac=.8, mlab=NA)
+addpoly(res.rep.pred2, row=1.5, cex=1, mlab=NA)
+text(-5.7, 40.5, "Meta-analytic estimate of Prediction 1 replications:",pos=4)
+text(-5.7, 1.5, "Meta-analytic estimate of Prediction 2 replications:",pos=4)
 
 #ablineclip(v=.25, y1=-2,y2=21, col="blue", lty="dashed", lwd=.25) #Simonsohn's small telescope line
 #op <- par(cex=.75, font=1)
 #text(.25, .75, "Z&L's r_33% small telescope", col="blue", pos=4)
 
-#dev.off()
+dev.off()
 
 
