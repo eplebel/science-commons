@@ -1,0 +1,9 @@
+study,study.type,study.info,study.symbol,N,d,var
+Vul & Pashler (2008) - Immediate,original,original1,0,255,0.28,0.0036
+     Steegan et al. (2014) - Immediate,replication,replication1,15,471,0.4,0.002
+     Hourihan & Benjamin (2010) - Immediate,replication,replication1,15,100,0.3,0.0096
+     Rauhut & Lorenz (2011) - Immediate,replication,replication1,15,100,0.3,0.0096
+     Herzog & Hertwig (2009) - Immediate,replication,replication1,15,100,0.2,0.0096
+     Banker & McCoy (2014) - Immediate,replication,replication1,15,100,0.1,0.0096
+Vul & Pashler (2008) - Delayed,original,original2,1,173,0.47,0.007
+     Steegan et al. (2014) - Delayed,replication,replication2,16,140,0.34,0.0077
