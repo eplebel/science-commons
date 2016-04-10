@@ -12,9 +12,9 @@ of Schmeichel et al. (2003) Study 1 {attention video on cognitive performance (s
     -Pond et al. (2011) Study 3 {unpublished dataset, non-religious priming control; attention video on standardized test (10 verbal GRE); n=63, n=65}
 	
 of Schmeichel (2007, JEPG, study 1 {OSPAN DV only}) [cohen's d; self-control {avoiding video caption} impairs cognitive performance {OSPAN working memory}]
+	-Healy et al. (2011, JEPG) Study 1 (successful, N=38) {email re: data in relation to total vs. % of target words recalled and outlier}
 	-Carter & McCullough (2013, control conditions [sucralose and unsweetened, ns = 90 and 48, resp]) unsuccessful direct rep (though effortful essay task in between IV & DV)
 	-Lurquin et al. (2016, PLOS ONE) (unsuccessful, N=200; with open materials and pre-registration!! 
-	-Healy et al. (2011, JEPG) Study 1 (successful, N=38) {email re: data in relation to total vs. % of target words recalled and outlier}
 
 of Muraven, Tice, & Baumeister (1998) Study 2 (thought suppression vs. control on anagram performance; cohen's d)
 	-Murtagh & Todd (2004) Study 2  {thought suppression vs. control on anagram performance}
@@ -22,7 +22,7 @@ of Muraven, Tice, & Baumeister (1998) Study 2 (thought suppression vs. control o
 of Sripada et al. (2014) (which used "letter e" manipulation from Baumeister et al.'s (1998) Study 4, but DV [MSIT] from Bush et al. (2003)
 	-RRR: 24 direct replications [cohen's d]
 
-
+	
 
 ----Considered, but not retained for various reasons:
 ----------------------------------------------------
