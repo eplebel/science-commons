@@ -6,7 +6,7 @@
 require("metafor")
 
 # Import the data
-RTVdat<- read.csv("RRR-RTV_incl.csv")
+RTVdat<- read.csv("RRR-RTV.csv")
 #RTVdat<- RTVdat[order(RTVdat$study),]
 ### random-effects model meta-analysis 
 # modeled after http://www.metafor-project.org/doku.php/tips:assembling_data_smd
@@ -18,6 +18,7 @@ effectSizesAll<- escalc(measure="SMD", #standardized mean difference
 #(RTVdat$Ego.Depletion.Mean - RTVdat$Control.Mean) / RTVdat$Ego.Depletion.Std.Dev
 
 write.csv(effectSizesAll, file="RRR4-effect-sizes.csv")
+#then i sorted in Excel, reversed signs, & copy-pasted into ego-depletion.csv file; i know, BAD FORM!!!
 
 res <- rma(data=effectSizesAll, yi,vi,  method="REML", slab=paste(Study.name))
 

@@ -1,3 +1,5 @@
+analysis.dir <- 'C:/Users/Etienne/Google Drive/Curate Science/website/science-commons/curated/ego-depletion'
+setwd(analysis.dir) ### Set Working Directory
 library(metafor)
 library(plotrix) #for ablineclip function
 library(compute.es)
@@ -49,27 +51,27 @@ v.wangetal = wangetal$var.d
 sripadaetal2014 <- tes(2.38, 24,23)
 d.sripadaetal2014 = sripadaetal2014$d
 v.sripadaetal2014 = sripadaetal2014$var.d
-#RRR4 ego depletion: 24 replication effect sizes (& var) as calculated from their own RRR-metaanalysisRTV_incl.R file
+#RRR4 ego depletion: 24 replication effect sizes (& var) as calculated from their own RRR-metaanalysisRTV.R file
 
 ### to save as png file
-#png(filename="ego-depletion.png", res=95, width=1200, height=1200, type="cairo")
+#png(filename="ego-depletion.png", res=95, width=1200, height=1800, type="cairo")
 
-dat <- read.csv(file = "ego-depletion(sorted).csv", header = TRUE)
+dat <- read.csv(file = "ego-depletion.csv", header = TRUE)
 
 ### decrease margins so the full space is used
 op <- par(cex=1, font=1)
 par(mar=c(4,4,1,2))
 
 ### set up forest plot (rows argument used to specify exactly in which rows outcomes will be plotted)
-forest(dat$d, dat$var, xlim=c(-6, 2), at=c(-2.5, -2, -1.5, -1.0, -.5, 0, .5, .75),
-       cex=1, ylim=c(-1, 55), rows=c(50:49,47:46,41:40,38:37,35:32,30:29,27:3),
-       ilab=dat$N, ilab.xpos=-3, slab=dat$study
+forest(dat$d, dat$var, xlim=c(-6, 2.5), at=c(-2.5, -2, -1.5, -1.0, -.5, 0, .5, 1.0),
+       cex=1.2, ylim=c(-1, 55), rows=c(50:49,47:46,41:40,38:37,35:32,30:29,27:3),
+       ilab=dat$N, ilab.xpos=-3, slab=dat$study, efac=.6
        ,xlab="Effect size (d) [95% CI]", psize=1, pch=dat$study.symbol)
-op <- par(cex=1.25, font=2)
+op <- par(cex=1.5, font=2)
 text(-6, 54, "Studies and Replications",    pos=4)
-text( 2, 54, "Effect sizes (d) [95% CI]",  pos=2)
+text(2.2, 54, "Effect sizes (d) [95% CI]",  pos=2)
 text(-3, 54, c("N"))
-op <- par(cex=1.15, font=3)
+op <- par(cex=1.35, font=3)
 text(-6, 51.5, "Prediction 1: Self-control relies on glucose",    pos=4)
 text(-6, 42.5, "Prediction 2: Self-control impairs further self-control (ego depletion)",    pos=4)
 
@@ -81,7 +83,7 @@ par(op, cex=1,font=3)
 res <- rma(yi=dat$d, vi=dat$var, data=dat, measure="SMD", subset=(dat$study.type=="replication"),
            slab=dat$study)
 ### add summary estimate to the bottom
-addpoly(res, row=-1, cex=1, mlab=NA)
+addpoly(res, row=-1, cex=1.2, mlab=NA, efac=.5)
 text(-5.7,-1,"Random-effects meta-analytic estimate of all replications:",pos=4)
 ### horizontal separation line
 abline(h=0)
@@ -91,8 +93,8 @@ res.rep.pred1 <- rma(yi=dat$d, vi=dat$var, data=dat, measure="SMD", subset=(dat$
 res.rep.pred2 <- rma(yi=dat$d, vi=dat$var, data=dat, measure="SMD", subset=(dat$study.info=="replication3"|dat$study.info=="replication4"|dat$study.info=="replication5"|dat$study.info=="replication6"|dat$study.info=="replication7"))
 
 ### add summary polygons for the three subgroups
-addpoly(res.rep.pred1, row=44.5, cex=1, efac=.75, mlab=NA)
-addpoly(res.rep.pred2, row=1.5, cex=1, mlab=NA)
+addpoly(res.rep.pred1, row=44.5, cex=1.2, mlab=NA, efac=.5)
+addpoly(res.rep.pred2, row=1.5, cex=1.2, mlab=NA, efac=.5)
 text(-5.7, 44.5, "Meta-analytic estimate of Prediction 1 replications:",pos=4)
 text(-5.7, 1.5, "Meta-analytic estimate of Prediction 2 replications:",pos=4)
 
