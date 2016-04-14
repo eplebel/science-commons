@@ -4,67 +4,67 @@
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <meta name="google-site-verification" content="7CrO9Y_velY8TjF6s8CWKB1s2S8TGRdQ8NoZ-gHPDE0" />
   <title>Curate Science</title>
-  <link data-turbolinks-track="true" href="assets/main.css" media="all" rel="stylesheet" />
+  <!--<link data-turbolinks-track="true" href="assets/main.css" media="all" rel="stylesheet" />
   <link rel="stylesheet" href="assets/extra.css">
-
   <script data-turbolinks-track="true" src="assets/main.js"></script>
   <meta content="authenticity_token" name="csrf-param" />
 <meta content="/iDkQk3fySjDxSBGMaWY6CxQ9WzgIX4G/vkMyH6tgaU=" name="csrf-token" />
   <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
   <script src="assets/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
 </head>
 
-<body>
-
-
-<ul class="nav nav-tabs" id="myTab" style="margin-bottom:15px;">
-			  <li class="active"><a data-target="#home" data-toggle="tab">Execute R code</a></li>
-			  <li><a data-target="#view-data" data-toggle="tab">View Data</a></li>
-			</ul>
-
-			<div class="tab-content">
-			  <div class="tab-pane active" id="home">
+<body>			
+	<div class="wrapper" style="max-width:1100px;">
+		<p>
+			<h2>1. Data File Details</h2><br>
+			<img src="logos/osf.png"> <a href="https://osf.io/4xrpk/">Halberstadt_lab_data_2.xlsx</a>
+			<a href="#data-preview"><img src='logos/view-icon.png' title="Preview data"></a>
+			<br>
+			<br>
+			<h2>2. Reproducibility Syntax</h2><br>
+			<img src="logos/figshare.png"> <a href="https://osf.io/4xrpk/">Reproducibility-check.R</a> <button id="submitbutton" type="button">Run R Code!</button>
+			<img src="logos/reproducible.png" title="Joe Hilgard endorses set of findings as analytically reproducible"><img src="logos/_data_reprod.png" title="Study based on open data and reproducible results.">
+		
+		</p>
+		<div class="row">
+			<div class="col-md-6">
+	
+				<p>
 					
-						<div class="wrapper">
-							<div class="row">
-								<div class="col-md-6">
-						
-									<p>
-										<button id="submitbutton" type="button">Run R Code!</button>
-										<br>
-										<textarea id="input" rows="10" cols="200">
-										library(compute.es)
+					<textarea id="input" rows="6" cols="70">
+library(compute.es)
 tes(2.99,25,25)
 x = rnorm(1000)
 y= rnorm(1000)  		
 plot(x,y)
 mean(x)
 plot(x,x+1)
-										</textarea> 
-
-										
-
-										
-									</p>
-								</div>
-								<div class="col-md-6">
-									
-									<pre><code id="output"></code></pre>
-									<!--<div id="plotdiv"></div>-->
-									
-								</div>
-							</div>
-						</div>
-						
-				</div>
-				
-				<div class="tab-pane" id="view-data">
-					<iframe src="https://widgets.figshare.com/articles/3081211/embed?show_title=1" width="800" height="517" frameborder="0"></iframe>					
-				</div>
+					</textarea>	
+				</p>
 			</div>
+			<div class="col-md-6">
+				
+				<pre><code id="output"></code></pre>
+				<!--<div id="plotdiv"></div>-->
+				
+			</div>
+		</div>
+	</div>
+						
+	<p><a name="data-preview" class="anchor"></a>
 	
+	<iframe src="https://mfr.osf.io/render?url=https://osf.io/4xrpk/?action=download%26mode=render" width="95%" scrolling="yes" height="1000px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>	
+	
+	</p>	
+				
+		
 
 
 
