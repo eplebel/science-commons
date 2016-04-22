@@ -1,3 +1,7 @@
+### to save as png file
+png(filename="kgg1989.png", res=95, width=1000, height=800, type="cairo")
+
+
 plotsegraph <- function(loc, value, sterr, wiskwidth, color = "grey", linewidth = 2) {
   
   w <- wiskwidth/2
@@ -42,3 +46,5 @@ points(2.7, 87.2, pch = 19, lwd = 2, cex = 1.5)
 text(2.75, 87.2, "Men", cex = 1.2, font = 1, adj = 0)
 points(2.7, 82.3, pch = 21, lwd = 2, cex = 1.5)
 text(2.75, 82.3, "Women", cex = 1.2, font = 1, adj = 0)
+
+dev.off()
