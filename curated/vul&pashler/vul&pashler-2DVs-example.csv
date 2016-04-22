@@ -1,0 +1,9 @@
+study,study.outcome,study.type,study.info,study.symbol,N,d,var
+Vul & Pashler (2008),DV1: Immediate,original,original1,0,255,0.28,0.0036
+,DV2: Delayed,original,original2,1,173,0.47,0.007
+       Herzog & Hertwig (2009),DV1: Immediate,replication,replication1,15,100,0.2,0.0096
+,DV2: Delayed,replication,replication2,16,100,0.15,0.01
+       Hourihan & Benjamin (2010),DV1: Immediate,replication,replication1,15,112,0.3,0.0096
+,DV2: Delayed,replication,replication2,16,114,0.22,0.0086
+       Steegan et al. (2014),DV1: Immediate,replication,replication1,15,471,0.4,0.002
+,DV2: Delayed,replication,replication2,16,140,0.34,0.0077
