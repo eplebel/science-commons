@@ -42,7 +42,6 @@ abline(h=0)
 
 
 ### Graphing interaction plots
-### to save as png file
 #png(filename="kgg1989-interaction-01.png", res=95, width=1000, height=800, type="cairo")
 
 plotsegraph <- function(loc, value, sterr, wiskwidth, color = "grey", linewidth = 2) {
@@ -57,7 +56,7 @@ plotsegraph <- function(loc, value, sterr, wiskwidth, color = "grey", linewidth 
 }
 
 #Kenrick et al (1989) Study 2
-love.control.men <- 98.8
+love.control.men <- 98.8 #remember: display 95% CIs rather than SE intervals (just multiply by 1.96)
 love.nudes.men <- 87.2
 se.love.control.men <- 6
 se.love.nudes.men <- 6
@@ -87,9 +86,10 @@ points(2.7, 87.2, pch = 19, lwd = 2, cex = 2)
 text(2.75, 87.2, "Men", cex = 1.2, font = 1, adj = 0)
 points(2.7, 82.3, pch = 21, lwd = 2, cex = 2)
 text(2.75, 82.3, "Women", cex = 1.2, font = 1, adj = 0)
+#dev.off()
 
 #Balzarini et al. Study 1
-png(filename="kgg1989-interaction-02.png", res=95, width=1000, height=800, type="cairo")
+#png(filename="kgg1989-interaction-02.png", res=95, width=1000, height=800, type="cairo")
 love.control.men <- 89.19
 love.nudes.men <- 92.48
 se.love.control.men <- 16.21 / sqrt(64)
@@ -120,5 +120,72 @@ points(2.7, 87.2, pch = 19, lwd = 2, cex = 2)
 text(2.75, 87.2, "Men", cex = 1.2, font = 1, adj = 0)
 points(2.7, 82.3, pch = 21, lwd = 2, cex = 2)
 text(2.75, 82.3, "Women", cex = 1.2, font = 1, adj = 0)
+#dev.off()
 
+#Balzarini et al. Study 2
+#png(filename="kgg1989-interaction-03.png", res=95, width=1000, height=800, type="cairo")
+love.control.men <- 90.94
+love.nudes.men <- 92.66
+se.love.control.men <- 18.12 / sqrt(85)
+se.love.nudes.men <- 14.81 / sqrt(85)
+love.control.women <- 95.04
+love.nudes.women <- 91.65
+se.love.control.women <- 16.95 / sqrt(52)
+se.love.nudes.women <- 16.25 / sqrt(40)
+par(cex.main = 1.5, mar = c(5, 6, 4, 5) + 0.1, mgp = c(3.5, 1, 0), cex.lab = 1.5, 
+    font.lab = 2, cex.axis = 1.3, bty = "n", las = 1)
+x <- c(1, 2, 3, 4)
+plot(x, c(-10, -10, -10, -10), type = "p", ylab = "", xlab = " ", cex = 1.5, 
+     ylim = c(77, 104), xlim = c(1, 4), lwd = 2, pch = 5, axes = F, main = " ")
+axis(1, at = c(1.5, 2.5), labels = c("Control", "Opposite-sex nudes"))
+#mtext("Word Frequency", side = 1, line = 3, cex = 1.5, font = 2)
+axis(2, pos = 1.2)
+par(las = 0)
+mtext(expression("Rubin Love scores"), side = 2, line = -.5, cex = 1.5, font = 2)
+x <- c(1.52, 2.5)
+points(x, c(love.control.men, love.nudes.men), cex = 2, lwd = 2, pch = 19)
+plot.errbars <- plotsegraph(x, c(love.control.men, love.nudes.men), c(se.love.control.men, se.love.nudes.men), 0.1, color = "black")  #0.1 = wiskwidth
+lines(c(1.52, 2.5), c(love.control.men, love.nudes.men), lwd = 2, type = "c", lty="dashed")
+x <- c(1.5, 2.54) #to add x-axis jitter to disambiguate overlapping CIs
+points(x, c(love.control.women, love.nudes.women), cex = 2, lwd = 2, pch = 21)
+plot.errbars <- plotsegraph(x, c(love.control.women, love.nudes.women), c(se.love.control.women, se.love.nudes.women), 0.1, color = "black")  #0.1 = wiskwidth
+lines(c(1.5, 2.54), c(love.control.women, love.nudes.women), lwd = 2, type = "c", lty="dashed")
+points(2.7, 87.2, pch = 19, lwd = 2, cex = 2)
+text(2.75, 87.2, "Men", cex = 1.2, font = 1, adj = 0)
+points(2.7, 82.3, pch = 21, lwd = 2, cex = 2)
+text(2.75, 82.3, "Women", cex = 1.2, font = 1, adj = 0)
+#dev.off()
+
+#Balzarini et al. Study 3
+png(filename="kgg1989-interaction-04.png", res=95, width=1000, height=800, type="cairo")
+love.control.men <- 92.52
+love.nudes.men <- 90.07
+se.love.control.men <- 13.65 / sqrt(63)
+se.love.nudes.men <- 16.96 / sqrt(58)
+love.control.women <- 90.60
+love.nudes.women <- 94.19
+se.love.control.women <- 17.51 / sqrt(50)
+se.love.nudes.women <- 14.73 / sqrt(54)
+par(cex.main = 1.5, mar = c(5, 6, 4, 5) + 0.1, mgp = c(3.5, 1, 0), cex.lab = 1.5, 
+    font.lab = 2, cex.axis = 1.3, bty = "n", las = 1)
+x <- c(1, 2, 3, 4)
+plot(x, c(-10, -10, -10, -10), type = "p", ylab = "", xlab = " ", cex = 1.5, 
+     ylim = c(77, 104), xlim = c(1, 4), lwd = 2, pch = 5, axes = F, main = " ")
+axis(1, at = c(1.5, 2.5), labels = c("Control", "Opposite-sex nudes"))
+#mtext("Word Frequency", side = 1, line = 3, cex = 1.5, font = 2)
+axis(2, pos = 1.2)
+par(las = 0)
+mtext(expression("Rubin Love scores"), side = 2, line = -.5, cex = 1.5, font = 2)
+x <- c(1.52, 2.5)
+points(x, c(love.control.men, love.nudes.men), cex = 2, lwd = 2, pch = 19)
+plot.errbars <- plotsegraph(x, c(love.control.men, love.nudes.men), c(se.love.control.men, se.love.nudes.men), 0.1, color = "black")  #0.1 = wiskwidth
+lines(c(1.52, 2.5), c(love.control.men, love.nudes.men), lwd = 2, type = "c", lty="dashed")
+x <- c(1.5, 2.5) #to add x-axis jitter to disambiguate overlapping CIs
+points(x, c(love.control.women, love.nudes.women), cex = 2, lwd = 2, pch = 21)
+plot.errbars <- plotsegraph(x, c(love.control.women, love.nudes.women), c(se.love.control.women, se.love.nudes.women), 0.1, color = "black")  #0.1 = wiskwidth
+lines(c(1.5, 2.5), c(love.control.women, love.nudes.women), lwd = 2, type = "c", lty="dashed")
+points(2.7, 87.2, pch = 19, lwd = 2, cex = 2)
+text(2.75, 87.2, "Men", cex = 1.2, font = 1, adj = 0)
+points(2.7, 82.3, pch = 21, lwd = 2, cex = 2)
+text(2.75, 82.3, "Women", cex = 1.2, font = 1, adj = 0)
 dev.off()
