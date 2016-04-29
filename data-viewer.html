@@ -1,73 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <meta name="google-site-verification" content="7CrO9Y_velY8TjF6s8CWKB1s2S8TGRdQ8NoZ-gHPDE0" />
   <title>Curate Science</title>
-  <!--<link data-turbolinks-track="true" href="assets/main.css" media="all" rel="stylesheet" />
+  <link data-turbolinks-track="true" href="assets/main.css" media="all" rel="stylesheet" />
   <link rel="stylesheet" href="assets/extra.css">
+  <!--<link href="assets/glyphicons.css" rel="stylesheet" />-->
   <script data-turbolinks-track="true" src="assets/main.js"></script>
+  
+  <!--<link rel="stylesheet" type="text/css" href="assets/tooltipster.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="assets/jquery.tooltipster.min.js"></script>-->
+	
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
+
   <meta content="authenticity_token" name="csrf-param" />
 <meta content="/iDkQk3fySjDxSBGMaWY6CxQ9WzgIX4G/vkMyH6tgaU=" name="csrf-token" />
   <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
   <script src="assets/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+  <script>
+    $(document).ready(function () {
+      $(".navbar-nav li a").click(function(event) {
+        $(".nav-collapse").collapse('hide');
+      });
+    });
 	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	
+  </script>
+  <style>
+	td {
+      line-height: 1em;
+      padding: 0em;
+      border: 0px dashed black;
+    }
+	#some-element {
+	border: 0px solid #ccc;
+	display: none;
+	font-size: 16px;
+	margin-bottom: 10px;
+	padding: 2px;
+	line-height: 1.25em;
+	}	
+	#some-div:hover #some-element {
+	display: block;
+	}
+	ul li { line-height:1.2em; }
+	i { font-style: italic;}
+	a.anchor{
+		padding-top:80px;
+		display:block;
+		margin-top:-30px; /* if you want to cancel out the padding-top */
+		}
+  </style>
 </head>
+	
 
 <body>			
 
-<div class="container">
-	<div class="wrapper">
-		<p>
-			<h3>1. Data File Details</h2><br>
-			<img src="logos/osf.png"> <a href="https://osf.io/4xrpk/">Halberstadt_lab_data_2.xlsx</a>
-			<a href="#data-preview"><img src='logos/view-icon.png' title="Preview data"></a>
-			<br>
-			<br>
-			<h3>2. Reproducibility Syntax</h2><br>
-			<img src="logos/figshare.png"> <a href="https://osf.io/4xrpk/">Reproducibility-check.R</a> <button id="submitbutton" type="button">Run R Code!</button>
-			<img src="logos/reproducible.png" title="Joe Hilgard endorses set of findings as analytically reproducible"><img src="logos/_data_reprod.png" title="Study based on open data and reproducible results.">
-		
-		</p>
-		<div class="row">
-			<div class="col-md-6">
-	
+<div class="main-container push">
+  <section class="section" id="section-1">
+
+		<div class="container" style="padding:20px 0 20px;">
+			<div class="wrapper">
 				<p>
-					
-					<textarea id="input" rows="6" cols="70">
+					<font size="5px">1. Data File Details</font><br>
+					<img src="logos/osf.png"> <a href="https://osf.io/4xrpk/">Halberstadt_lab_data_2.xlsx</a>
+					<a href="#data-preview"><img src='logos/view-icon.png' title="Preview data"></a>
+					<br>
+					<br>
+					<font size="5px">2. Reproducibility Syntax</font><br>
+					<img src="logos/figshare.png"> <a href="https://osf.io/4xrpk/">Reproducibility-check.R</a> <button id="submitbutton" type="button">Run R Code!</button>
+					<img src="logos/reproducible.png" title="Joe Hilgard endorses set of findings as analytically reproducible"><img src="logos/_data_reprod.png" title="Study based on open data and reproducible results.">
+				
+				</p>
+				<div class="row">
+					<div class="col-md-6">
+			
+						<p>
+							
+							<textarea id="input" rows="15" style="width:420px;line-height:20px;">
 library(compute.es)
 tes(2.99,25,25)
 x = rnorm(1000)
-y= rnorm(1000)  		
+y= rnorm(1000)
 plot(x,y)
-mean(x)
 plot(x,x+1)
-					</textarea>	
-				</p>
-			</div>
-			<div class="col-md-6">
-				
-				<pre><code id="output"></code></pre>
-				<!--<div id="plotdiv"></div>-->
-				
-			</div>
-		</div>
-	</div>
+mean(x)
+							</textarea>	
+						</p>
+					</div>
+					<div class="col-md-6">
 						
-	<p><a name="data-preview" class="anchor"></a>
-	
-	<iframe src="https://mfr.osf.io/render?url=https://osf.io/4xrpk/?action=download%26mode=render" width="95%" scrolling="yes" height="1000px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>	
-	
-	</p>	
-				
-</div>		
+						<pre><code id="output"></code></pre>
+						<!--<div id="plotdiv"></div>-->
+						
+					</div>
+				</div>
+			</div>
+								
+			<p><a name="data-preview" class="anchor"></a>
+			
+			<iframe src="https://mfr.osf.io/render?url=https://osf.io/4xrpk/?action=download%26mode=render" width="95%" scrolling="yes" height="1000px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>	
+			
+			</p>	
+						
+		</div>		
 
+	</section>
+</div>
 
 
 
@@ -110,5 +152,29 @@ plot(x,x+1)
 	});   
 </script>
 
+<!--<script type="text/javascript">
+$(".faq-item .question").click(function(e) {
+  $(e.target).siblings(".answer").toggle();
+});
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>-->
+
+
+  <!--<script src="assets/raven.min.js"></script>-->
+
+  <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+  
+  <script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-48865749-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
 </body>
 </html>
