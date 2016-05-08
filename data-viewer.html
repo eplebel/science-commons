@@ -95,7 +95,7 @@ mean(x)
 						
 						<pre><code id="output"></code></pre>
 						<!--<div id="plotdiv"></div>-->
-						
+                                                <div id="image"></div>
 					</div>
 				</div>
 			</div>
@@ -137,6 +137,15 @@ mean(x)
 			session.getConsole(function(outtxt){
 				$("#output").text(outtxt);
 			});
+                        var graphicsLinks = session.output.filter(
+                          function(str){return str.includes("graphics");}
+                        );
+                        
+                        graphicsLinks.forEach(function(link){
+                          var img = document.createElement("IMG");
+                          img.src = "https://public.opencpu.org/" + link;
+                          $('#image').append(img);
+                        });
 		});
 		
 	
