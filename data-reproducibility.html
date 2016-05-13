@@ -68,7 +68,38 @@
 					<font size="5px">1. Data File Details</font><br>
 					<img src="logos/osf.png"> <a href="https://osf.io/4xrpk/">Halberstadt_lab_data_2.xlsx</a>
 					<a href="#data-preview"><img src='logos/view-icon.png' title="Preview data"></a>
-				</p>				
+					<br>
+					<br>
+					<font size="5px">2. Reproducibility Syntax</font><br>
+					<img src="logos/figshare.png"> <a href="https://osf.io/4xrpk/">Reproducibility-check.R</a> <button id="submitbutton" type="button">Run R Code!</button>
+					<img src="logos/reproducible.png" title="Joe Hilgard endorses set of findings as analytically reproducible"><img src="logos/_data_reprod.png" title="Study based on open data and reproducible results.">
+				
+				</p>
+				<div class="row">
+					<div class="col-md-6">
+			
+						<p>
+							
+							<textarea id="input" rows="15" style="width:420px;line-height:20px;">
+library(compute.es)
+tes(2.99,25,25)
+x = rnorm(1000)
+y= rnorm(1000)
+plot(x,y)
+plot(x,x+1)
+mean(x)
+							</textarea>	
+						</p>
+					</div>
+					<div class="col-md-6">
+						
+						<pre><code id="output"></code></pre>
+						<!--<div id="plotdiv"></div>-->
+                                                <div id="image"></div>
+					</div>
+				</div>
+			</div>
+								
 			<p><a name="data-preview" class="anchor"></a>
 			
 			<iframe src="https://mfr.osf.io/render?url=https://osf.io/4xrpk/?action=download%26mode=render" width="95%" scrolling="yes" height="1000px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>	
@@ -83,7 +114,52 @@
 
 
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://cdn.opencpu.org/opencpu-0.4.js"></script>
 
+<script type="text/javascript">
+		//because identity is in base
+	ocpu.seturl("//public.opencpu.org/ocpu/library/base/R")
+
+	//actual handler
+	$("#submitbutton").on("click", function(){
+
+		//arguments
+		var mysnippet = new ocpu.Snippet($("#input").val());
+		
+		//disable button
+		$("button").attr("disabled", "disabled");
+
+		//perform the request
+		var req = ocpu.call("identity", {
+			"x" : mysnippet
+		}, function(session){
+			session.getConsole(function(outtxt){
+				$("#output").text(outtxt);
+			});
+                        var graphicsLinks = session.output.filter(
+                          function(str){return str.includes("graphics");}
+                        );
+                        
+                        graphicsLinks.forEach(function(link){
+                          var img = document.createElement("IMG");
+                          img.src = "https://public.opencpu.org/" + link;
+                          $('#image').append(img);
+                        });
+		});
+		
+	
+		
+		//if R returns an error, alert the error message
+		req.fail(function(){
+			alert("Server error: " + req.responseText);
+		});      
+		
+		req.always(function(){
+			$("button").removeAttr("disabled");    
+		});
+	});   
+</script>
 
 <!--<script type="text/javascript">
 $(".faq-item .question").click(function(e) {
