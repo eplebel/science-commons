@@ -67,23 +67,23 @@
 				<p>
 					<font size="5px">1. Data File Details</font><br>
 					<img src="logos/osf.png"> <a href="https://osf.io/4xrpk/">Halberstadt_lab_data_2.xlsx</a>
-				<p style="margin-top:-10px;padding-left:30px;"><i>Data file indeed publicly available and is in a readable format (see below <a href="#data-preview"><img src='logos/view-icon.png' title="Preview data"></a>).</i>
+				<p style="margin-top:-10px;padding-left:30px;"><i>Data file indeed publicly available and is in a machine and human readable format.</i> <img src="logos/_data.png" title="This study has open data.">
 				</p>
 				<p style="margin-top:-85px;"><a name="data-preview" class="anchor"></a>
-				<iframe src="https://mfr.osf.io/render?url=https://osf.io/4xrpk/?action=download%26mode=render" width="95%" scrolling="no" height="400px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>	
+				<iframe src="https://mfr.osf.io/render?url=https://osf.io/4xrpk/?action=download%26mode=render" width="100%" scrolling="no" height="400px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>	
 				</p>
 				<p style="margin-top:30px;">
 					<font size="5px">2. Reproducibility Syntax</font><br>
-					<img src="logos/figshare.png"> <a href="https://osf.io/4xrpk/">Reproducibility-check.R</a> <button id="submitbutton" type="button">Run R Code!</button>
+					<img src="logos/figshare.png" style="width:23px;height:22px;"><a href="http://opencpu.org"><img src="logos/opencpu-logo.jpg" alt="Powered by OpenCPU" style="float:right;width:200px;height:56px;"></a> <a href="https://osf.io/4xrpk/">Reproducibility-check.R</a>&nbsp; <button id="submitbutton" type="button" style="line-height:15px;font-size:14px;">Run R Code!</button>
 				</p>
-				<p style="margin-top:-10px;padding-left:30px;"><i>Joe Hilgard has endorsed set of findings as analytically reproducible.</i>
-					<img src="logos/reproducible.png" title="Joe Hilgard has endorsed set of findings as analytically reproducible"><img src="logos/_data_reprod.png" title="Study based on open data and reproducible results.">
+				<p style="margin-top:-10px;padding-left:30px;"><i><a href="">Joe Hilgard</a> has endorsed set of findings as analytically reproducible.</i>
+					<img src="logos/reproducible.png" title="Joe Hilgard has endorsed set of findings as analytically reproducible">
 				</p>
 				<div class="row">
 					<div class="col-md-6">
 						<p style="padding-left:15px;">
 							
-							<textarea id="input" rows="15" style="width:420px;line-height:20px;">
+							<textarea id="input" rows="40" style="width:480px;line-height:20px;">
 full.data <- read.csv("https://osf.io/5dsj8/?action=download")
 data <- subset(full.data, full.data$Excluded == 0) #ignore excluded Ps
 correct <- data$Lineup_Choice == 6
@@ -91,29 +91,28 @@ data <- cbind(data,correct)
 verbal.identification.rate <- sum(subset(data$correct, data$Condition == "Experimental")) / length(subset(data$correct, data$Condition == "Experimental"))
 control.identification.rate <- sum(subset(data$correct, data$Condition == "Control")) / length(subset(data$correct, data$Condition == "Control"))
 effect.size = verbal.identification.rate - control.identification.rate
-print(effect.size)
-
+cat("VERBAL condition identification rate  =",verbal.identification.rate, "\n")
+cat("CONTROL condition identification rate =",control.identification.rate, "\n")
+cat("Verbal overshadowing effect size =", effect.size, "\n")
 chisq <- chisq.test(subset(data$correct, data$Condition == "Experimental"),subset(data$correct, data$Condition == "Control"))
-print(chisq)
-
-Input =(
-  "Value     Verbal  Control 
+cat("Pearson's Chi-squared test of observed difference, X^2(1) =", chisq$statistic, ", p-value =", chisq$p.value, "\n")
+Input =("Value     Verbal  Control 
  Correct  25    31  
- Incorrect  25    19 
-")
+ Incorrect  25    19 ")
 Matriz = as.matrix(read.table(textConnection(Input),header=TRUE, row.names=1))
+par(bg=NA)
 barplot(Matriz, beside=TRUE, legend=TRUE, ylim=c(0, 35),xlab="Experimental Condition", ylab="Number of Ps", cex.axis=1.5, cex.names=1.5, col = c("green", "red"))
-
-print("#active sample evidence")
-t.test(subset(data$Confidence, data$Condition == "Experimental")+.8,subset(data$Confidence, data$Condition == "Control"))
+cat("***ACTIVE SAMPLE EVIDENCE***", "\n")
+height.sex.diff <- t.test(subset(data$Confidence, data$Condition == "Experimental")+.8,subset(data$Confidence, data$Condition == "Control"))
+cat("On average, MALES taller than FEMALES, t(98) = ", height.sex.diff$statistic, ", p-value = ", height.sex.diff$p.value, "\n")
 							</textarea>	
 						</p>
 					</div>
 					<div class="col-md-6">
-						
-						<pre><code id="output"></code></pre>
-						<!--<div id="plotdiv"></div>-->
-                                                <div id="image"></div>
+						<pre>
+							<code id="output"></code>
+							<div id="image"></div>
+						</pre>
 					</div>
 				</div>
 			</div>
