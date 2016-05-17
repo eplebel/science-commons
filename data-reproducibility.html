@@ -147,7 +147,7 @@ cat("On average, MALES taller than FEMALES, t(98) = ", height.sex.diff$statistic
 		var req = ocpu.call("identity", {
 			"x" : mysnippet
 		}, function(session){
-			session.getConsole(function(outtxt){
+			session.getStdout(function(outtxt){
 				$("#output").text(outtxt);
 			});
                         var graphicsLinks = session.output.filter(
