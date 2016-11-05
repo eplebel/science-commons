@@ -7,6 +7,7 @@
   <link data-turbolinks-track="true" href="assets/main.css" media="all" rel="stylesheet" />
   <link rel="stylesheet" href="assets/extra.css">
   <!--<link href="assets/glyphicons.css" rel="stylesheet" />-->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
   <script data-turbolinks-track="true" src="assets/main.js"></script>
   
   <!--<link rel="stylesheet" type="text/css" href="assets/tooltipster.css" />
@@ -49,6 +50,7 @@
 		display:block;
 		margin-top:-30px; /* if you want to cancel out the padding-top */
 		}
+	iframe { border: none; overflow: hidden;}
   </style>
 </head>
 
@@ -101,137 +103,59 @@
   
   <section class="section" id="section-2">
     <div class="container" style="padding: 0px 0 40px;">
-      <header class="page-header"><h1>Replications To-Be Curated</h1></header>
+      <header class="page-header"><h1>Curated List of Replications</h1></header>
         
 		<div class="wrapper">
-			
-			<p style="text-align:center">
-			<iframe src="https://docs.google.com/spreadsheets/d/14noRKFaPz50yeghM19VYQWm-0BM_-qnY4wMFxXwwQ6I/pubhtml?gid=0&range=A1:E100&amp;single=true&amp;widget=false&amp;chrome=false&amp;headers=false" width="650" height="1000" frameborder="1"></iframe>
-			</p>
-			<br>
-			<br>
-			
 			<div class="row">
-				<div class="col-md-6">
-					<div class="well">
-						<strong>Large-Scale Meta-Science</strong>
+				<div class="col-md-12">
+					<div class="well" style="margin-left:40px;margin-right:40px;padding-bottom:10px;">
+						<strong>Large-Scale Replication Projects (865 replications)</strong>
 						<ul>
-							<li>Reproducibility Project [<strong>100</strong> replications] <a href="http://etiennelebel.com/documents/osc(2015,science).pdf"  target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li>Social Psych Special Issue [<strong>31</strong> replications] <a href="https://osf.io/e4nxu/" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+							<li>Reproducibility Project: Psychology [<strong>100</strong> replications] <a href="http://etiennelebel.com/documents/osc(2015,science).pdf"  target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+							<li><i>Social Psychology</i> Special Issue [<strong>31</strong> replications] <a href="https://osf.io/e4nxu/" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
 							<ul>
 								<li>Many Labs 1 [<a href="https://osf.io/wx7ck/wiki/home/" target="_blank">12 effects</a> x 36 labs = <strong>432</strong> replications] <a href="https://osf.io/ebmf8/" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
 							</ul>
 							<li>Many Labs 2 [<a href="https://osf.io/znm32/" target="_blank">26 effects</a>, N = ~15,000] <a href="https://osf.io/8cd4r/wiki/home/" target="_blank"><img src="logos/osf.png"></a></li>
-							<li>Many Labs 3 [<a href="https://osf.io/tukby/" target="_blank">10 effects</a> x 21 labs = <strong>210</strong> replications] <a href="https://osf.io/csygd/" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li><a href="#s&e-s">RRR1 & RRR2: Verbal overshadowing</a> [<strong>23</strong> replications] <a href="http://pps.sagepub.com/content/9/5/556.abstract" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li>RRR3: Hart & Albarracín (2011) [<strong>13</strong> replications] <a href="http://pps.sagepub.com/content/11/1/158.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li><a href="#ego-depletion">RRR4: Ego depletion</a> [<strong>24</strong> replications] <a href="https://osf.io/v79xp/" target="_blank"><img src="logos/osf.png"></a></li>
-							<li>RRR5: Facial feedback hypothesis <a href="https://osf.io/6wvj4/" target="_blank"><img src="logos/osf.png"></a></li>
-							<li>RRR6: Commitment priming on forgiveness [<strong>20</strong> replications] <a href="https://osf.io/2h6tf/" target="_blank"><img src="logos/osf.png"></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="well">
-						<strong>Applied Topics</strong>
-						<ul>
-							<li>Brain training [<strong>10</strong> replications]</li>
-							<li>Effects of violent video games [<strong>4</strong> replications]</li>
-							<li>Cognitive benefits of bilingualism [<strong>6</strong> replications]</li>
-							<li>Stereotype Threat [<strong>5</strong> replications]</li>
-							<li>Reducing prejudice via imagined contact [<strong>4</strong> replications]</li>
-							<li>Benefits of growth mindset [<strong>4</strong> replications]</li>
-							<li>Reading fiction boosts empathy [<strong>3</strong> replications]</li>
-							<li>Mozart effect [<strong>3</strong> replications]</li>
-							<li>Subliminal advertising [<strong>3</strong> replications]</li>
-							<li>Weather on happiness [<strong>3</strong> replications]</li>
+							<li>Many Labs 3 [<a href="https://osf.io/tukby/" target="_blank">10 effects</a> x 21 labs = <strong>210</strong> replications] <a href="https://osf.io/csygd/" target="_blank"><img src="logos/pdf-icon.gif"></a> <span style="display:none">View Studies <a href="#sbh2008a"><i class="fa fa-chevron-down"></span></i> </a></li>
+							<li>Registered Replication Reports (<a href="http://www.psychologicalscience.org/publications/replication/ongoing-projects" target="_blank">RRRs</a>) at <i>Perspectives on Psychological Science</i></li>
+							<ul>
+								<li><a href="#s&e-s">RRR1 & RRR2: Verbal overshadowing</a> [<strong>23</strong> replications] <a href="http://pps.sagepub.com/content/9/5/556.abstract" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+								<li>RRR3: Grammar on intentionality [<strong>13</strong> replications] <a href="http://pps.sagepub.com/content/11/1/158.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+								<li><a href="#ego-depletion">RRR4: Ego depletion</a> [<strong>23</strong> replications] <a href="https://osf.io/v79xp/" target="_blank"><img src="logos/osf.png"></a><a href="http://pps.sagepub.com/content/11/4/546.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+								<li>RRR5: Commitment on forgiveness [<strong>16</strong> replications] <a href="https://osf.io/2h6tf/" target="_blank"><img src="logos/osf.png"></a><a href="http://pps.sagepub.com/content/11/5/750.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+								<li>RRR6: Facial feedback hypothesis [<strong>17</strong> replications] <a href="https://osf.io/6wvj4/" target="_blank"><img src="logos/osf.png"></a><a href="http://pps.sagepub.com/content/early/2016/10/21/1745691616674458.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+							</ul>
+							<li>Economics Reproducibility Project [<strong>67</strong> replications; Chang & Li, 2015] <a href="https://www.federalreserve.gov/econresdata/feds/2015/files/2015083pap.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+							<li>Economics Lab Experiments Replicability Project [<strong>18</strong> replications; Camerer et al, 2016] <a href="https://www.researchgate.net/profile/Teck_Ho/publication/297144482_Evaluating_replicability_of_laboratory_experiments_in_economics/links/56dd442308aee73df6d583b3.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="well">
-						<strong>Basic Research Areas</strong><br>
-						<div class="row" style="margin-left:-15px;">
-							<div class="col-md-6" >
-								<strong><i>Social Priming</i></strong>
-								<ul>
-									<li>Elderly priming [<strong>4</strong> replications]</li>
-									<li>Intelligence priming [<strong>8</strong> replications]</li>
-									<li><a href="#money-priming">Money priming</a> [<strong>42</strong> replications]</li>
-									<li><a href="#sbh2008a">Cleanliness priming</a> [<strong>7</strong> replications]</li>
-									<li>Achievement/goal priming [<strong>3</strong> replications]</li>
-									<li>Religious priming [<strong>4</strong> replications]</li>
-									<li>Color priming [<strong>8</strong> replications]</li>
-									<li>Honesty priming [<strong>3</strong> replications]</li>
-									<li>Heat priming [<strong>2</strong> replications]</li>
-									<li>Distance priming [<strong>5</strong> replications]</li>
-									<li>Mate priming [<strong>8</strong> replications]</li>
-									<li>US flag priming [<strong>36</strong> replications]</li>
-								</ul>
-								<strong><i>Social Embodiment</i></strong>
-								<ul>
-									<li><a href="#z&l">Macbeth effect</a> [<strong>11</strong> replications]</li>
-									<li>Power posing [<strong>3</strong> replications]</li>
-									<li>Embodiment of weight [<strong>6</strong> replications]</li>
-									<li>Embodiment of secrets [<strong>5</strong> replications]</li>
-									<li>Embodiment of warmth </li>
-									<ul>
-										<li><a href="#b&s2012">Bargh & Shalev (2012)</a> [<strong>14</strong> replications]</li>
-										<li>Williams & Bargh (2006) [<strong>3</strong> replications]</li>
-										<li>Vess (2012) [<strong>2</strong> replications]</li>
-									</ul>
-								</ul>
-								<strong><i>Classic social psychology</i></strong>
-								<ul>
-									<li><a href="#mood-on-helping">Mood on helping</a> [<strong>3</strong> replications]</li>
-									<li>Argument strength x NFC effect (ELM) [<strong>21</strong> replications]</li>
-								</ul>
-							</div>
-							<div class="col-md-6" >
-								<strong><i>Self</i></strong>
-								<ul>
-									<li><a href="#ego-depletion">Strength model of self-control</a> [<strong>32</strong> replications]</li>
-									<li>Narcissist fragile self-esteem [<strong>9</strong> replications]</li>
-									<li>Unconscious self-esteem boosting [<strong>4</strong> replications]</li>
-								</ul>
-								<strong><i>Evolutionary Psychology</i></strong>
-								<ul>
-									<li>Ovulation on voting [<strong>2</strong> replications]</li>
-									<li>Ovulation on mate preferences [<strong>3</strong> replications]</li>
-									<li>Ovulation on clothing choice [<strong>2</strong> replications]</li>
-									<li>Color on physical attraction [<strong>5</strong> replications]</li>
-								</ul>
-								<strong><i>Attitudes & Stereotypes</i></strong>
-								<ul>
-									
-									<li>Race-erased effect [<strong>2</strong> replications]</li>
-									<li>1/f noise in racial bias [<strong>2</strong> replications]</li>
-									<li>Subliminal approach/avoidance effects [<strong>3</strong> replications]</li>
-									<li>Status legitimacy effect [<strong>3</strong> replications]</li>
-									<li>SES on unethical behaviors [<strong>9</strong> replications]</li>
-								</ul>
-								<strong><i>Judgment & Decision-making</i></strong>
-								<ul>
-									<li>Unconscious decision-making [<strong>12</strong> replications]</li>
-									<li>Framing effects [<strong>36</strong> replications]</li>
-									<li>Anchoring effects [<strong>36</strong> replications]</li>
-									<li>Protection effect [<strong>3</strong> replications]</li>
-									<li>Incidental values on time judgments [<strong>8</strong> replications]</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		
-    </div>
+			
+			<p style="font-size:16px;line-height:1.2em;margin-left:40px;margin-right:40px;">
+				<strong>All Replications (1135 replications)</strong><br>
+				List of known direct replications of generalizations of effects according to our <a href="#replication-taxonomy">working taxonomy</a> ("Exact", "Very Close", or "Close" direct replications). All studies linked to their respective PDFs. For more details about the replication studies, please see linked Google spreadsheet.
+				<br>
+				<font style="color:red;">Last updated: November 4, 2016</font>
+			</p>
+			
+			<p style="text-align:center">
+			<iframe src="https://docs.google.com/spreadsheets/d/14noRKFaPz50yeghM19VYQWm-0BM_-qnY4wMFxXwwQ6I/pubhtml?gid=0&range=A1:F240&amp;single=true&amp;widget=false&amp;chrome=false&amp;headers=false" width="825" height="1250" frameborder="1" style="margin-top:-5px;"></iframe>
+			</p>
+			<br>
+			<br>
+			
+			
+				
+		</div>
+
+	</div>
   </section>
 
 		<section class="section" id="section-3">
 		<div class="container" style="padding: 0px 0 40px;">
-		  <header class="page-header"><h1>Curated Replications</h1></header>
+		  <header class="page-header"><h1>Curated Evidence Collections</h1></header>
 
 			<div class="wrapper">
 			
