@@ -26,11 +26,9 @@
 	
   </script>
   <style>
-	td {
-      line-height: 1em;
-      padding: 0em;
-      border: 0px dashed black;
-    }
+	td { line-height: 1em;
+		 padding: 0em;
+		 border: 0px dashed black; }
 	#some-element {
 	border: 0px solid #ccc;
 	display: none;
@@ -51,26 +49,28 @@
 		margin-top:-30px; /* if you want to cancel out the padding-top */
 		}
 	span.displaynone { display:none; }
-	
+	h1 { font-size: 24px; }
+	.navbar .nav { font-size: 12px;}
+	.navbar-nav>li>a { line-height: 15px;}
   </style>
 </head>
 
 <body>
-<header class="pull-center" id="masthead">
+<header class="pull-center" id="masthead" >
   <nav class="navbar navbar-fixed-top" role="navigation">
-    <div class="navbar-inner">
-      <div class="container">
+    <div class="navbar-inner" style="min-height:50px;">
+      <div class="container" >
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <a class="brand brand-appland" href="#">
-              <img alt="Curate Science" src="logos/navbar-icon.png" />
+              <img alt="Curate Science" src="logos/navbar-icon-smaller.png" />
             </a>
           </a>
         <div class="nav-collapse">
           <ul class="nav navbar-nav">
-            <li><a class="brand brand-appland" href="#"><img alt="Navbar icon" src="logos/navbar-icon.png" /></a></li>
+            <li><a class="brand brand-appland" href="#"><img alt="Navbar icon" src="logos/navbar-icon-smaller.png" /></a></li>
             <li><a href="#section-3">Replications</a></li>
 			<li><a href="#section-4">About</a></li>            
             <li><a href="sandbox.html">Sandbox</a></li>
@@ -87,12 +87,12 @@
   
 
   <section class="section" id="section-1">
-    <div class="container" style="padding-bottom:25px;">
+    <div class="container" style="padding-bottom:15px;">
       
         <div class="wrapper">
-			<p style="margin-top:-55px;"><center><h4>Crowd-sourcing the tracking and interpretation of replication evidence.</center></h4><br>
+			<p style="margin-top:-70px;"><center><h4 style="font-size:16px;">Crowd-sourcing the tracking and interpretation of replication evidence.</center></h4><br>
 			</p>
-          <div class="well" style="margin-left:35px;margin-right:35px;margin-top:-30px;padding-top:5px;padding-bottom:0px;">
+          <div class="well" style="margin-left:35px;margin-right:35px;margin-top:-35px;padding-top:5px;padding-bottom:0px;">
 			  <p class="about" style="font-size:16px;line-height:1.2em;padding-bottom:0px;margin-bottom:8px;">Published scientific findings can only be considered trustworthy -- for theory and applications (e.g., health interventions) -- once successfully replicated and generalized by independent researchers. No database, however, currently exists that systematically tracks and meta-analytically summarizes independent <a title="Direct replications involve using the same general methodology as original study, barring any required cultural or linguistic modifications (see our working replication taxonomy below for more details)" href="#replication-taxonomy">direct replications</a> to gauge the <i>replicability</i> and <i>generalizability</i> of social science findings over time. <strong>Curate Science</strong> is a crowd-sourced effort to achieve just this to accelerate the development of trustworthy knowledge that can soundly inform theory and effective public policy to improve human welfare (see <a href="#section-4">About section</a> for more details).
 			  </p>
 			  <p class="about" style="font-size:14px;line-height:1.2em;padding-top:0px;padding-bottom:0px;margin-top:0px;">
@@ -106,13 +106,13 @@
   
   <section class="section" id="section-2">
     <div class="container" style="padding: 0px 0 40px;">
-      <header class="page-header" style="padding-top:0px;padding-bottom:0px;margin-top:20px;margin-bottom:20px;"><h1>Curated List of Replications</h1></header>
+      <header class="page-header" style="padding-top:0px;padding-bottom:0px;margin-top:15px;margin-bottom:15px;"><h1>Curated List of Replications</h1></header>
         
-		<div class="wrapper">
+		<div class="wrapper" style="font-size:14px;">
 		
-			<div class="row">
-				<div class="col-md-6">
-					<div class="well">
+			<div class="row" >
+				<div class="col-md-6" >
+					<div class="well" style="padding-top:10px;padding-bottom:0px;">
 						<strong>Large-Scale Meta-Science</strong>
 						<ul>
 							<li>Reproducibility Project: Psychology [<strong>100</strong> replications] <a href="http://etiennelebel.com/documents/osc(2015,science).pdf"  target="_blank"><img src="logos/pdf-icon.gif"></a></li>
@@ -122,16 +122,18 @@
 							</ul>
 							<li>Many Labs 2 [<a href="https://osf.io/znm32/" target="_blank">26 effects</a>, N = ~15,000] <a href="https://osf.io/8cd4r/wiki/home/" target="_blank"><img src="logos/osf.png"></a></li>
 							<li>Many Labs 3 [<a href="https://osf.io/tukby/" target="_blank">10 effects</a> x 21 labs = <strong>210</strong> replications] <a href="https://osf.io/csygd/" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li><a href="#s&e-s">RRR1 & RRR2: Verbal overshadowing</a> [<strong>23</strong> replications] <a href="http://pps.sagepub.com/content/9/5/556.abstract" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li>RRR3: Grammar on intentionality [<strong>13</strong> replications] <a href="http://pps.sagepub.com/content/11/1/158.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li><a href="#ego-depletion">RRR4: Ego depletion</a> [<strong>23</strong> replications] <a href="https://osf.io/v79xp/" target="_blank"><img src="logos/osf.png"></a><a href="http://pps.sagepub.com/content/11/4/546.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li>RRR5: Commitment on forgiveness [<strong>16</strong> replications] <a href="https://osf.io/2h6tf/" target="_blank"><img src="logos/osf.png"></a><a href="http://pps.sagepub.com/content/11/5/750.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li>RRR6: Facial feedback hypothesis [<strong>17</strong> replications] <a href="https://osf.io/6wvj4/" target="_blank"><img src="logos/osf.png"></a><a href="http://pps.sagepub.com/content/early/2016/10/21/1745691616674458.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+							<li><a href="#s&e-s">RRR1 & RRR2: Verbal overshadowing</a> [<strong>23</strong> replications] <a href="https://osf.io/ybeur/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/9/5/556.abstract" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+							<li>RRR3: Grammar on intentionality [<strong>13</strong> replications] <a href="https://osf.io/d3mw4/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/11/1/158.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+							<li><a href="#ego-depletion">RRR4: Ego depletion</a> [<strong>23</strong> replications] <a href="https://osf.io/jymhe/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/11/4/546.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+							<li>RRR5: Commitment on forgiveness [<strong>16</strong> replications] <a href="https://osf.io/s3hfr/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/11/5/750.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+							<li>RRR6: Facial feedback hypothesis [<strong>17</strong> replications] <a href="https://osf.io/hgi2y/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/early/2016/10/21/1745691616674458.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+							<li>RRR7: Intuitive-cooperation effect [<strong>20</strong> replications] <a href="https://osf.io/scu2f/" target="_blank"><img src="logos/osf.png"></a></li>
+							<li>RRR8: Trivial pursuit effect <font style="color:lightgrey;">[data being collected]</font> <a href="https://osf.io/k27hm/" target="_blank"><img src="logos/osf.png"></a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-6">
-					<div class="well">
+					<div class="well" style="padding-top:10px;padding-bottom:23px;">
 						<strong>Applied Topics</strong>
 						<ul>
 							<li>Brain training [<strong>10</strong> replications]</li>
@@ -144,13 +146,16 @@
 							<li>Mozart effect [<strong>3</strong> replications]</li>
 							<li>Subliminal advertising [<strong>3</strong> replications]</li>
 							<li>Weather on happiness [<strong>3</strong> replications]</li>
+							<li>Single-exposure musical conditioning effect [<strong>6</strong> replications]</li>
+							<li>Pre-cognition [<strong>12</strong> replications]</li>
+							<li>Power posing [<strong>3</strong> replications]</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<div class="well">
+					<div class="well" style="padding-top:10px;padding-bottom:0px;">
 						<strong>Basic Research Areas</strong><br>
 						<div class="row" style="margin-left:-15px;">
 							<div class="col-md-6" >
@@ -172,7 +177,6 @@
 								<strong><i>Social Embodiment</i></strong>
 								<ul>
 									<li><a href="#z&l">Macbeth effect</a> [<strong>11</strong> replications]</li>
-									<li>Power posing [<strong>3</strong> replications]</li>
 									<li>Embodiment of weight [<strong>6</strong> replications]</li>
 									<li>Embodiment of secrets [<strong>5</strong> replications]</li>
 									<li>Embodiment of warmth </li>
