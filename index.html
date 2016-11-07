@@ -72,9 +72,9 @@
         <div class="nav-collapse" >
           <ul class="nav navbar-nav" >
             <li><a class="brand brand-appland" href="#"><img alt="Navbar icon" src="logos/navbar-icon-smaller.png" /></a></li>
-            <li><a href="#section-3">Replications</a></li>
-			<li><a href="#section-4">About</a></li>            
-            <li><a href="sandbox.html">Sandbox</a></li>
+            <li><a href="#all-replications">Replications</a></li>
+			<li><a href="#collections">Collections</a></li>
+			<li><a href="#about-section">About</a></li>            
 			<li><a href="#section-9">Sign Up</a></li>
           </ul>
         </div>
@@ -160,9 +160,9 @@
 		</div>
 	  </section>
 
-		<section class="section" id="section-3">
+		<section class="section" id="section-3"><a name="collections" class="anchor"></a>
 		<div class="container" style="padding: 0px 0 40px;">
-		  <header class="page-header"><h1>Curated Evidence Collections</h1></header>
+		  <header class="page-header" style="padding-top:0px;padding-bottom:0px;margin-top:15px;margin-bottom:15px;"><h1>Curated Evidence Collections</h1></header>
 
 			<div class="wrapper">
 			
@@ -2307,13 +2307,13 @@
 		</div>
    </section>
   
-   <section class="section" id="section-4">
+   <section class="section" id="section-4"><a name="about-section" class="anchor"></a>
 		<div class="container" style="padding: 0px 0 40px;">
-		  <header class="page-header"><h1>About - Conceptual Framework</h1></header>
+		  <header class="page-header" style="padding-top:0px;padding-bottom:0px;margin-top:15px;margin-bottom:15px;"><h1>About - Conceptual Framework</h1></header>
 			
 			<div class="wrapper" style="width:775px;margin:auto;">
 				
-					<p style="margin-top:-40px;padding-bottom:20px"><i>(For full details of our replication evidence curation framework, please see <a href="http://curatescience.org/docs/CurateScience-NewFramework[3.0.1].pdf"  target="_blank">here</a>.)</i></p>
+					<p style="margin-top:0px;padding-bottom:20px"><i>(For full details of our replication evidence curation framework, please see <a href="http://curatescience.org/docs/CurateScience-NewFramework[3.0.1].pdf"  target="_blank">here</a>.)</i></p>
 					<p style="font-size:16px;line-height:1.2em;">Every year, society spends billions of dollars (primarily of public tax payer money) to fund scientific studies aimed at deepening our understanding of the natural and social world. The hope is that the findings yielded by these studies will help us address important societal problems (e.g., cancer; suicide; racial discrimination; voter turnout). The findings yielded by these studies, however, can only be considered sufficiently trustworthy knowledge ready to inform public-policy decisions once they have been successfully <i>replicated</i> and <i>generalized</i> by independent researchers. Successful replication is taken to mean that independent researchers have been able to consistently observe similar results as originally reported using similar methodology and conditions to an original study. Successful generalization is taken to mean that independent researchers have been able to consistently observe similar results as originally reported under situations that use different methodologies (often superior methodologies or measurement instruments), contexts, and populations, consequently producing evidence that original results generalize to these different situations.</p> 
 					
 					<p style="font-size:16px;line-height:1.2em;">Current approaches (i.e., traditional meta-analyses ) to synthesizing evidence are unable to produce the trustworthy knowledge we seek because these cannot fully account for publication bias (Ferguson & Heene, 2012; McShane, Bockenholt, & Hansen, 2016; Rosenthal, 1979), questionable research practices (John et al., 2012), and unintentional exploitation of design and analytic flexibility (Simmons et al., 2011; <a href="http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf"  target="_blank">Gelman & Loken, 2013</a>) and the various unknowable interactions among these factors.</p>
@@ -2361,7 +2361,7 @@
       <div class="wrapper">
 
     <div class="row-fluid">
-		<p class="features" style="margin-top:-40px;padding-bottom:20px"><i><strong>Note:</strong> These features are from an <a href="https://osf.io/8h34x/"  target="_blank">older version (2.0.4)</a> of Curate Science. We will soon be releasing revamped UI designs and features based on a new curation framework (<a href="http://curatescience.org/docs/CurateScience-NewFramework[3.0.1].pdf"  target="_blank">version 3.0.1</a>).</i></p>
+		<p class="features" style="margin-top:-40px;padding-bottom:20px;line-height:1.2em;"><i><strong>Note:</strong> These features are from an <a href="https://osf.io/8h34x/"  target="_blank">older version (2.0.4)</a> of Curate Science. We will soon be releasing revamped UI designs and features based on a new curation framework (<a href="http://curatescience.org/docs/CurateScience-NewFramework[3.0.1].pdf" target="_blank">version 3.0.1</a>). You can also check out various other features under development in our <a href="sandbox.html">sandbox</a>.</i></p>
       <h3 class="text-center" id="section-5a">Lightning-fast Search with Auto-complete</h3>
       <p class="features">Our homepage will feature a lightning-fast search with auto-complete so that you can quickly find what you're looking for. To browse, you can select from the Most Curated or Recently Updated articles lists.</p>
       <a href="logos/1-search-page.png">
@@ -2396,9 +2396,6 @@
       </a>
     </div>
 
-
-
-
         <div class="wrapper">
           <div class="space"></div>
         </div>
@@ -2406,7 +2403,183 @@
     </div>
   </section>
 
-  <section class="section" id="section-7">
+  
+
+  <section class="section" id="section-7" style="box-shadow: 0 0 5px;">
+    <div class="container" style="padding: 0px 0 40px;">
+      <header class="page-header"><h1>Frequently Asked Questions</h1></header>
+      <div class="wrapper">
+        <div class="faq-item">
+          <div class="question">
+            Why are only "direct replications" considered on Curate Science?
+          </div>
+          <div class="answer">
+            "Direct replications" involve repeating a study using the same general methodology as the original study (except any required cultural or linguistic modifications). On the other hand, "conceptual replications" involve repeating a study using a different general methodology, to test whether a finding generalizes to other manipulations and measurements of the focal constructs (we argue such studies should thus more accurately be called "generalizability studies"). Curate Science only considers direct replications because only such studies can falsify original findings. Failed "conceptual replications" are completely ambiguous as to whether negative results are due to (1) the falsity of original finding or (2) the different methodology employed. Consequently, an over-emphasis on "conceptual replications", in combination with publication bias and unintentional exploitation of design and analytic flexibility, can grossly mischaracterize the evidence base for the reliability of empirical findings (<a href="http://pps.sagepub.com/content/7/6/531.short">Pashler & Harris, 2012</a>; <a href="http://etiennelebel.com/documents/l&p(2011,rgp).pdf">LeBel & Peters, 2011</a>).
+          </div>
+        </div>
+		<div class="faq-item">
+          <div class="question">
+            How methodologically close does a direct replication have to be to be added on Curate Science?
+          </div>
+          <div class="answer">
+            As mentioned, a "direct replication" involves repeating a study using the same general methodology as the original study. This means using the same experimental manipulation(s) for independent variables and the same measures for dependent/outcome variables. Minor deviations from the original methodology, however, are acceptable, including using different stimuli, different versions of a questionnaire (e.g., 18-item short-version of Need for cognition scale [NFC] instead of original 34-item version), and any cultural and/or linguistic changes required to execute a direct replication. For example, in <a href="#z&l">Reuven et al.'s (2013) replication</a> of Zhong & Liljenquist's (2006) Study 4, they used the same outcome measure (volunteer behavior), but used a slightly different operationalization (trichotomous rather than dichotomous volunteer choice). The important part is to disclose these design differences so that readers can judge for themselves the extent to which the design differences might be responsible for discrepant results (see <a href="http://datacolada.org/47">Simonsohn (2016)</a> for more on this). Indeed, in the near future, we will explicitly note any known design difference for curated replications (e.g., an icon, which when clicked, expands the row below revealing design differences for that replication).
+          </div>
+        </div>
+		<div class="faq-item">
+          <div class="question">
+            What does "independent" in "independent replication" mean?
+          </div>
+          <div class="answer">
+            To prevent bias, replications must be carried out by researchers who are sufficiently independent from the researchers who executed the original studies. We conceptualize "sufficiently independent" following the <a href="https://en.wikipedia.org/wiki/Arm%27s_length_principle">"arm's length principle"</a> used in law. In our context, this means that replicators have not co-authored articles with any original authors and also do not have any familial or interpersonal ties with any original authors.
+          </div>
+        </div>
+		<div class="faq-item">
+          <div class="question">
+            What is Curate Science's official policy regarding soliciting feedback from original authors?
+          </div>
+          <div class="answer">
+            Curating replication results involves publically discussing original research, hence our policy is to contact authors of original studies under discussion *before* publicly posting curated information. Feedback from original authors will be used to improve the posted information (author comments may also be posted directly underneath replication results to further augment interpretation of results).
+          </div>
+        </div>
+		<div class="faq-item">
+          <div class="question">
+            Who is Curate Science's intended audience?
+          </div>
+          <div class="answer">
+            Our primary audience is the community of academic, government, and industry researchers.
+            However, we are designing the website so that the organized information is also useful to students,
+            educators, journalists, and public policy makers (e.g., a journalist could look up an article
+            to see whether limitations/flaws have been identified enabling them to write a more balanced news article). Our initial focus involves published articles in the life and social sciences (starting with psychology/neuroscience), however we may eventually expand to other areas.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="question">
+            What is curation?
+          </div>
+          <div class="answer">
+            Digital curation is the process of selecting, filtering, and extracting information as to increase its quality.
+            Curate Science organizes, selects, filters, and extracts information from a diverse set of sources with the goal
+            of increasing the quality of fundamental information about scientific articles.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="question">
+            Who can access and consume information about articles on Curate Science?
+          </div>
+          <div class="answer">
+            Anyone, including non-registered users, can lookup information on Curate Science.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="question">
+            Who can add, modify, and update article information on Curate Science?
+          </div>
+          <div class="answer">
+            Only registered users will be able to add, modify, and update information about articles.
+            That being said, anyone that is affiliated with a research organization can become a registered user,
+            as long as they provide their real names, email address, affiliation, and title (e.g., post-doc,
+            graduate student, undergraduate student, research assistant).
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="question">
+            How will you ensure quality control of the information posted about articles on Curate Science?
+          </div>
+          <div class="answer">
+            We will employ a two-stage verification process for some of the information whereby information
+            initially posted will be labeled as "unverified" until a second user confirms it, at which time it
+            will appear as verified. This will be the case for key statistics, independent replication information,
+            and publication bias indices. Like Wikipedia, we will also have a revision history for each editable/updatable
+            field showing which user changed what information on what date (and any notes regarding the edit left by the user).
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="question">
+            Is it really feasible to organize and curate information for scientific articles? In other words,
+            why would researchers be willing to spend their precious time curating information on Curate Science?
+          </div>
+          <div class="answer">
+            Our view is that researchers should be highly motivated to add and update information regarding published
+            articles in their own area of research because there is an intrinsic interest to update the scientific record
+            to more accurately reflect the totality of the evidence. We also expect -- just like what happened with
+            Wikipedia -- that more influential and/or controversial articles will be curated first given that a large
+            number of researchers are interested in these articles. Other articles will likely be curated commensurate
+            to the level of interest commanded by the market, though of course article authors are free to curate their
+            own articles as much as they want (and for good reasons, e.g. available data citation advantage,
+            see <a href="https://peerj.com/articles/175/">Piwowar & Vision, 2013</a>)
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="question">
+            Who is funding Curate Science?
+          </div>
+          <div class="answer">
+            We have received a $10,000 USD seed grant from the Center for Open Science (COS) to help with initial development. An anonymous donor has also allocated funds to support Curate Science as part of a renewal grant given to COS. Templeton Foundation has accepted our initial grant proposal and we will soon be submitting a full proposal to them.  We are also currently in discussions with Sloan Foundation and Laura & John Arnold Foundation.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="question">
+            Is Curate Science associated with the Open Science Framework hosted by the Center for Open Science?
+          </div>
+          <div class="answer">
+            Though Curate Science has formed an informal partnership with the Center for Open Science (with respect to funding, see above), our web application is completely independent from the Open Science Framework (though we will of course be linking to available data, materials, and pre-registration information hosted on the OSF).
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="question">
+            How is Curate Science different from Figshare.com, DataDryad.org, and Harvard's Dataverse?
+          </div>
+          <div class="answer">
+            <a href="http://Figshare.com">Figshare.com</a>, <a href="http://DataDryad.org">DataDryad.org</a>,
+            and <a href="http://thedata.harvard.edu/dvn/">Harvard's Dataverse</a> (and many other similar websites)
+            are data repositories where researchers can make their data, syntax, and materials publicly available
+            and get credit for doing so. Curate Science organizes, consolidates, and curates all of this publicly
+            available information from as many different sources as possible at the study-level for all published
+            articles with a DOI. Curate Science also provides a platform for the crowd to verify analyses and post
+            comments regarding specific issues such as reproducibility of analyses, problems with posted
+            materials/stimuli, etc.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="question">
+            How is Curate Science different from the Open Science Framework?
+          </div>
+          <div class="answer">
+            The <a href="http:osf.io">Open Science Framework</a> is a place for researchers to archive,
+            collaborate on, and pre-register their research projects to facilitate researchers' workflow to
+            help increase the alignment between scientific values and scientific practices
+            (see more details on OSF's <a href="https://osf.io/4znzp/wiki/home/">about</a> page).
+            In contrast, Curate Science, as its name implies, is focused primarily on the curation of
+            scientific information tied to <i>published articles</i> by providing a platform for users to add,
+            modify, update, and comment on published article's replication and reproducibility information (among other things, see <a href="#section-5">features</a>).
+          </div>
+        </div>
+    <div class="faq-item">
+          <div class="question">
+            How is Curate Science different from PsychFileDrawer.org?
+          </div>
+          <div class="answer">
+            <a href="http://psychfiledrawer.org">PsychFileDrawer.org</a> is a highly useful website that was designed to overcome the pernicious file drawer problem in psychology where researchers can manually upload serious replication attempts whether they succeeded or failed. Curate Science aims to significantly build upon PsychFileDrawer's venerable efforts by automatically identifying as many extant independent replication results as possible (via text mining) and also will provide a simple interface for the crowd to add any missing replication results. Curate Science will also feature an innovative <a href="#section-5c">article page</a> that visually depicts the complex inter-relationships between original and replication studies (to facilitate the difficult task of interpreting replication results) and which will also allow the crowd to curate key information about the original and replication studies (in addition to several other <a href="#section-5">features</a>).
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="question">
+            Will I be able to post data/materials directly on an article page on Curate Science?
+          </div>
+          <div class="answer">
+            Yes, eventually. Our current focus is to organize and curate the available data/materials
+            that are already hosted by the many public repositories that already exist. However, in our quest to
+            radically simplify the fundamental scientific practice of sharing data/materials, we are working on forging a partnership with a major data repository website so that users can easily drag-and-drop data for their articles via our interface using our partner's infrastructure (indeed, we're currently in discussions with Figshare.com and the OSF in this regard).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  <section class="section" id="section-8" style="box-shadow: 0 0 5px;">
     <div class="container" style="padding: 0px 0 40px;">
       <header class="page-header"><h1>Team</h1></header>
       <div class="wrapper">
@@ -2588,190 +2761,13 @@
           </tbody>
         </table>
 
-
-
-
-
-
       </div>
     </div>
   </section>
-
-  <section class="section" id="section-8">
-    <div class="container" style="padding: 0px 0 40px;">
-      <header class="page-header"><h1>Frequently Asked Questions</h1></header>
-      <div class="wrapper">
-        <div class="faq-item">
-          <div class="question">
-            Why are only "direct replications" considered on Curate Science?
-          </div>
-          <div class="answer">
-            "Direct replications" involve repeating a study using the same general methodology as the original study (except any required cultural or linguistic modifications). On the other hand, "conceptual replications" involve repeating a study using a different general methodology, to test whether a finding generalizes to other manipulations and measurements of the focal constructs (we argue such studies should thus more accurately be called "generalizability studies"). Curate Science only considers direct replications because only such studies can falsify original findings. Failed "conceptual replications" are completely ambiguous as to whether negative results are due to (1) the falsity of original finding or (2) the different methodology employed. Consequently, an over-emphasis on "conceptual replications", in combination with publication bias and unintentional exploitation of design and analytic flexibility, can grossly mischaracterize the evidence base for the reliability of empirical findings (<a href="http://pps.sagepub.com/content/7/6/531.short">Pashler & Harris, 2012</a>; <a href="http://etiennelebel.com/documents/l&p(2011,rgp).pdf">LeBel & Peters, 2011</a>).
-          </div>
-        </div>
-		<div class="faq-item">
-          <div class="question">
-            How methodologically close does a direct replication have to be to be added on Curate Science?
-          </div>
-          <div class="answer">
-            As mentioned, a "direct replication" involves repeating a study using the same general methodology as the original study. This means using the same experimental manipulation(s) for independent variables and the same measures for dependent/outcome variables. Minor deviations from the original methodology, however, are acceptable, including using different stimuli, different versions of a questionnaire (e.g., 18-item short-version of Need for cognition scale [NFC] instead of original 34-item version), and any cultural and/or linguistic changes required to execute a direct replication. For example, in <a href="#z&l">Reuven et al.'s (2013) replication</a> of Zhong & Liljenquist's (2006) Study 4, they used the same outcome measure (volunteer behavior), but used a slightly different operationalization (trichotomous rather than dichotomous volunteer choice). The important part is to disclose these design differences so that readers can judge for themselves the extent to which the design differences might be responsible for discrepant results (see <a href="http://datacolada.org/47">Simonsohn (2016)</a> for more on this). Indeed, in the near future, we will explicitly note any known design difference for curated replications (e.g., an icon, which when clicked, expands the row below revealing design differences for that replication).
-          </div>
-        </div>
-		<div class="faq-item">
-          <div class="question">
-            What does "independent" in "independent replication" mean?
-          </div>
-          <div class="answer">
-            To prevent bias, replications must be carried out by researchers who are sufficiently independent from the researchers who executed the original studies. We conceptualize "sufficiently independent" following the <a href="https://en.wikipedia.org/wiki/Arm%27s_length_principle">"arm's length principle"</a> used in law. In our context, this means that replicators have not co-authored articles with any original authors and also do not have any familial or interpersonal ties with any original authors.
-          </div>
-        </div>
-		<div class="faq-item">
-          <div class="question">
-            What is Curate Science's official policy regarding soliciting feedback from original authors?
-          </div>
-          <div class="answer">
-            Curating replication results involves publically discussing original research, hence our policy is to contact authors of original studies under discussion *before* publicly posting curated information. Feedback from original authors will be used to improve the posted information (author comments may also be posted directly underneath replication results to further augment interpretation of results).
-          </div>
-        </div>
-		<div class="faq-item">
-          <div class="question">
-            Who is Curate Science's intended audience?
-          </div>
-          <div class="answer">
-            Our primary audience is the community of academic, government, and industry researchers.
-            However, we are designing the website so that the organized information is also useful to students,
-            educators, journalists, and public policy makers (e.g., a journalist could look up an article
-            to see whether limitations/flaws have been identified enabling them to write a more balanced news article). Our initial focus involves published articles in the life and social sciences (starting with psychology/neuroscience), however we may eventually expand to other areas.
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="question">
-            What is curation?
-          </div>
-          <div class="answer">
-            Digital curation is the process of selecting, filtering, and extracting information as to increase its quality.
-            Curate Science organizes, selects, filters, and extracts information from a diverse set of sources with the goal
-            of increasing the quality of fundamental information about scientific articles.
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="question">
-            Who can access and consume information about articles on Curate Science?
-          </div>
-          <div class="answer">
-            Anyone, including non-registered users, can lookup information on Curate Science.
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="question">
-            Who can add, modify, and update article information on Curate Science?
-          </div>
-          <div class="answer">
-            Only registered users will be able to add, modify, and update information about articles.
-            That being said, anyone that is affiliated with a research organization can become a registered user,
-            as long as they provide their real names, email address, affiliation, and title (e.g., post-doc,
-            graduate student, undergraduate student, research assistant).
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="question">
-            How will you ensure quality control of the information posted about articles on Curate Science?
-          </div>
-          <div class="answer">
-            We will employ a two-stage verification process for some of the information whereby information
-            initially posted will be labeled as "unverified" until a second user confirms it, at which time it
-            will appear as verified. This will be the case for key statistics, independent replication information,
-            and publication bias indices. Like Wikipedia, we will also have a revision history for each editable/updatable
-            field showing which user changed what information on what date (and any notes regarding the edit left by the user).
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="question">
-            Is it really feasible to organize and curate information for scientific articles? In other words,
-            why would researchers be willing to spend their precious time curating information on Curate Science?
-          </div>
-          <div class="answer">
-            Our view is that researchers should be highly motivated to add and update information regarding published
-            articles in their own area of research because there is an intrinsic interest to update the scientific record
-            to more accurately reflect the totality of the evidence. We also expect -- just like what happened with
-            Wikipedia -- that more influential and/or controversial articles will be curated first given that a large
-            number of researchers are interested in these articles. Other articles will likely be curated commensurate
-            to the level of interest commanded by the market, though of course article authors are free to curate their
-            own articles as much as they want (and for good reasons, e.g. available data citation advantage,
-            see <a href="https://peerj.com/articles/175/">Piwowar & Vision, 2013</a>)
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="question">
-            Who is funding Curate Science?
-          </div>
-          <div class="answer">
-            We have received a $10,000 USD seed grant from the Center for Open Science (COS) to help with initial development. An anonymous donor has also allocated funds to support Curate Science as part of a renewal grant given to COS. Templeton Foundation has accepted our initial grant proposal and we will soon be submitting a full proposal to them.  We are also currently in discussions with Sloan Foundation and Laura & John Arnold Foundation.
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="question">
-            Is Curate Science associated with the Open Science Framework hosted by the Center for Open Science?
-          </div>
-          <div class="answer">
-            Though Curate Science has formed an informal partnership with the Center for Open Science (with respect to funding, see above), our web application is completely independent from the Open Science Framework (though we will of course be linking to available data, materials, and pre-registration information hosted on the OSF).
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="question">
-            How is Curate Science different from Figshare.com, DataDryad.org, and Harvard's Dataverse?
-          </div>
-          <div class="answer">
-            <a href="http://Figshare.com">Figshare.com</a>, <a href="http://DataDryad.org">DataDryad.org</a>,
-            and <a href="http://thedata.harvard.edu/dvn/">Harvard's Dataverse</a> (and many other similar websites)
-            are data repositories where researchers can make their data, syntax, and materials publicly available
-            and get credit for doing so. Curate Science organizes, consolidates, and curates all of this publicly
-            available information from as many different sources as possible at the study-level for all published
-            articles with a DOI. Curate Science also provides a platform for the crowd to verify analyses and post
-            comments regarding specific issues such as reproducibility of analyses, problems with posted
-            materials/stimuli, etc.
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="question">
-            How is Curate Science different from the Open Science Framework?
-          </div>
-          <div class="answer">
-            The <a href="http:osf.io">Open Science Framework</a> is a place for researchers to archive,
-            collaborate on, and pre-register their research projects to facilitate researchers' workflow to
-            help increase the alignment between scientific values and scientific practices
-            (see more details on OSF's <a href="https://osf.io/4znzp/wiki/home/">about</a> page).
-            In contrast, Curate Science, as its name implies, is focused primarily on the curation of
-            scientific information tied to <i>published articles</i> by providing a platform for users to add,
-            modify, update, and comment on published article's replication and reproducibility information (among other things, see <a href="#section-5">features</a>).
-          </div>
-        </div>
-    <div class="faq-item">
-          <div class="question">
-            How is Curate Science different from PsychFileDrawer.org?
-          </div>
-          <div class="answer">
-            <a href="http://psychfiledrawer.org">PsychFileDrawer.org</a> is a highly useful website that was designed to overcome the pernicious file drawer problem in psychology where researchers can manually upload serious replication attempts whether they succeeded or failed. Curate Science aims to significantly build upon PsychFileDrawer's venerable efforts by automatically identifying as many extant independent replication results as possible (via text mining) and also will provide a simple interface for the crowd to add any missing replication results. Curate Science will also feature an innovative <a href="#section-5c">article page</a> that visually depicts the complex inter-relationships between original and replication studies (to facilitate the difficult task of interpreting replication results) and which will also allow the crowd to curate key information about the original and replication studies (in addition to several other <a href="#section-5">features</a>).
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="question">
-            Will I be able to post data/materials directly on an article page on Curate Science?
-          </div>
-          <div class="answer">
-            Yes, eventually. Our current focus is to organize and curate the available data/materials
-            that are already hosted by the many public repositories that already exist. However, in our quest to
-            radically simplify the fundamental scientific practice of sharing data/materials, we are working on forging a partnership with a major data repository website so that users can easily drag-and-drop data for their articles via our interface using our partner's infrastructure (indeed, we're currently in discussions with Figshare.com and the OSF in this regard).
-          </div>
-        </div>
-        
-    
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="section-9">
+  
+  
+  
+  <section class="section" id="section-9" style="box-shadow: 0 0 5px;">
     <div class="container" style="padding: 0px 0 40px;">
       <header class="page-header">
         <h1>
