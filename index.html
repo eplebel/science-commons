@@ -52,6 +52,7 @@
 	h1 { font-size: 24px; }
 	.navbar .nav { font-size: 12px;}
 	.navbar-nav>li>a { line-height: 15px;}
+	iframe { border: none; overflow: hidden;}
   </style>
 </head>
 
@@ -60,16 +61,16 @@
   <nav class="navbar navbar-fixed-top" role="navigation">
     <div class="navbar-inner" style="min-height:50px;">
       <div class="container" >
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" >
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-            <a class="brand brand-appland" href="#">
+            <a class="brand brand-appland" href="#" style="padding-top:0px;padding-bottom:0px;">
               <img alt="Curate Science" src="logos/navbar-icon-smaller.png" />
             </a>
           </a>
-        <div class="nav-collapse">
-          <ul class="nav navbar-nav">
+        <div class="nav-collapse" >
+          <ul class="nav navbar-nav" >
             <li><a class="brand brand-appland" href="#"><img alt="Navbar icon" src="logos/navbar-icon-smaller.png" /></a></li>
             <li><a href="#section-3">Replications</a></li>
 			<li><a href="#section-4">About</a></li>            
@@ -92,7 +93,7 @@
         <div class="wrapper">
 			<p style="margin-top:-70px;"><center><h4 style="font-size:16px;">Crowd-sourcing the tracking and interpretation of replication evidence.</center></h4><br>
 			</p>
-          <div class="well" style="margin-left:35px;margin-right:35px;margin-top:-35px;padding-top:5px;padding-bottom:0px;">
+          <div class="well" style="margin-left:90px;margin-right:90px;margin-top:-35px;padding-top:5px;padding-bottom:0px;">
 			  <p class="about" style="font-size:16px;line-height:1.2em;padding-bottom:0px;margin-bottom:8px;">Published scientific findings can only be considered trustworthy -- for theory and applications (e.g., health interventions) -- once successfully replicated and generalized by independent researchers. No database, however, currently exists that systematically tracks and meta-analytically summarizes independent <a title="Direct replications involve using the same general methodology as original study, barring any required cultural or linguistic modifications (see our working replication taxonomy below for more details)" href="#replication-taxonomy">direct replications</a> to gauge the <i>replicability</i> and <i>generalizability</i> of social science findings over time. <strong>Curate Science</strong> is a crowd-sourced effort to achieve just this to accelerate the development of trustworthy knowledge that can soundly inform theory and effective public policy to improve human welfare (see <a href="#section-4">About section</a> for more details).
 			  </p>
 			  <p class="about" style="font-size:14px;line-height:1.2em;padding-top:0px;padding-bottom:0px;margin-top:0px;">
@@ -111,9 +112,9 @@
 		<div class="wrapper" style="font-size:14px;">
 		
 			<div class="row" >
-				<div class="col-md-6" >
-					<div class="well" style="padding-top:10px;padding-bottom:0px;">
-						<strong>Large-Scale Meta-Science</strong>
+				<div class="col-md-12">
+					<div class="well" style="margin-left:105px;margin-right:90px;padding-top:10px;padding-bottom:0px;">
+						<strong>Large-Scale Replication Projects (970 replications)</strong>
 						<ul>
 							<li>Reproducibility Project: Psychology [<strong>100</strong> replications] <a href="https://osf.io/ezcuj/" target="_blank"><img src="logos/osf.png"></a> <a href="http://etiennelebel.com/documents/osc(2015,science).pdf"  target="_blank"><img src="logos/pdf-icon.gif"></a></li>
 							<li>Social Psych Special Issue [<strong>31</strong> replications] <a href="https://osf.io/e4nxu/" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
@@ -122,115 +123,42 @@
 							</ul>
 							<li>Many Labs 2 [<a href="https://osf.io/znm32/" target="_blank">26 effects</a>, N = ~15,000] <a href="https://osf.io/8cd4r/wiki/home/" target="_blank"><img src="logos/osf.png"></a></li>
 							<li>Many Labs 3 [<a href="https://osf.io/tukby/" target="_blank">10 effects</a> x 21 labs = <strong>210</strong> replications] <a href="https://osf.io/ct89g/" target="_blank"><img src="logos/osf.png"></a> <a href="https://github.com/eplebel/science-commons/blob/master/curated/ML3%5B2016%2CJESP%5D.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li><a href="#s&e-s">RRR1 & RRR2: Verbal overshadowing</a> [<strong>23</strong> replications] <a href="https://osf.io/ybeur/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/9/5/556.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li>RRR3: Grammar on intentionality [<strong>13</strong> replications] <a href="https://osf.io/d3mw4/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/11/1/158.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li><a href="#ego-depletion">RRR4: Ego depletion</a> [<strong>23</strong> replications] <a href="https://osf.io/jymhe/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/11/4/546.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li>RRR5: Commitment on forgiveness [<strong>16</strong> replications] <a href="https://osf.io/s3hfr/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/11/5/750.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li>RRR6: Facial feedback hypothesis [<strong>17</strong> replications] <a href="https://osf.io/hgi2y/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/early/2016/10/21/1745691616674458.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-							<li>RRR7: Intuitive-cooperation effect [<strong>20</strong> replications] <a href="https://osf.io/scu2f/" target="_blank"><img src="logos/osf.png"></a></li>
-							<li>RRR8: Trivial pursuit effect <font style="color:lightgrey;">[data being collected]</font> <a href="https://osf.io/k27hm/" target="_blank"><img src="logos/osf.png"></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="well" style="padding-top:10px;padding-bottom:23px;">
-						<strong>Applied Topics</strong>
-						<ul>
-							<li>Brain training [<strong>10</strong> replications]</li>
-							<li>Effects of violent video games [<strong>4</strong> replications]</li>
-							<li>Cognitive benefits of bilingualism [<strong>6</strong> replications]</li>
-							<li>Stereotype Threat [<strong>5</strong> replications]</li>
-							<li>Reducing prejudice via imagined contact [<strong>4</strong> replications]</li>
-							<li>Benefits of growth mindset [<strong>4</strong> replications]</li>
-							<li>Reading fiction boosts empathy [<strong>3</strong> replications]</li>
-							<li>Mozart effect [<strong>3</strong> replications]</li>
-							<li>Subliminal advertising [<strong>3</strong> replications]</li>
-							<li>Weather on happiness [<strong>3</strong> replications]</li>
-							<li>Single-exposure musical conditioning effect [<strong>6</strong> replications]</li>
-							<li>Pre-cognition [<strong>12</strong> replications]</li>
-							<li>Power posing [<strong>3</strong> replications]</li>
+							<li>Registered Replication Reports (<a href="http://www.psychologicalscience.org/publications/replication/ongoing-projects" target="_blank">RRRs</a>) at <i>Perspectives on Psychological Science</i></li>
+							<ul>
+								<li><a href="#s&e-s">RRR1 & RRR2: Verbal overshadowing</a> [<strong>23</strong> replications] <a href="https://osf.io/ybeur/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/9/5/556.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+								<li>RRR3: Grammar on intentionality [<strong>13</strong> replications] <a href="https://osf.io/d3mw4/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/11/1/158.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+								<li><a href="#ego-depletion">RRR4: Ego depletion</a> [<strong>23</strong> replications] <a href="https://osf.io/jymhe/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/11/4/546.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+								<li>RRR5: Commitment on forgiveness [<strong>16</strong> replications] <a href="https://osf.io/s3hfr/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/11/5/750.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+								<li>RRR6: Facial feedback hypothesis [<strong>17</strong> replications] <a href="https://osf.io/hgi2y/" target="_blank"><img src="logos/osf.png"></a> <a href="http://pps.sagepub.com/content/early/2016/10/21/1745691616674458.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+								<li>RRR7: Intuitive-cooperation effect [<strong>20</strong> replications] <a href="https://osf.io/scu2f/" target="_blank"><img src="logos/osf.png"></a></li>
+								<li>RRR8: Trivial pursuit effect <font style="color:lightgrey;">[data being collected]</font> <a href="https://osf.io/k27hm/" target="_blank"><img src="logos/osf.png"></a></li>
+							</ul>
+							<li>Economics Reproducibility Project [<strong>67</strong> replications; Chang & Li, 2015] <a href="https://www.federalreserve.gov/econresdata/feds/2015/files/2015083pap.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+							<li>Economics Lab Experiments Replicability Project [<strong>18</strong> replications; Camerer et al, 2016] <a href="https://www.researchgate.net/profile/Teck_Ho/publication/297144482_Evaluating_replicability_of_laboratory_experiments_in_economics/links/56dd442308aee73df6d583b3.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="well" style="padding-top:10px;padding-bottom:0px;">
-						<strong>Basic Research Areas</strong><br>
-						<div class="row" style="margin-left:-15px;">
-							<div class="col-md-6" >
-								<strong><i>Social Priming</i></strong>
-								<ul>
-									<li>Elderly priming [<strong>4</strong> replications]</li>
-									<li>Intelligence priming [<strong>8</strong> replications]</li>
-									<li><a href="#money-priming">Money priming</a> [<strong>42</strong> replications]</li>
-									<li><a href="#sbh2008a">Cleanliness priming</a> [<strong>7</strong> replications]</li>
-									<li>Achievement/goal priming [<strong>3</strong> replications]</li>
-									<li>Religious priming [<strong>4</strong> replications]</li>
-									<li>Color priming [<strong>8</strong> replications]</li>
-									<li>Honesty priming [<strong>3</strong> replications]</li>
-									<li>Heat priming [<strong>2</strong> replications]</li>
-									<li>Distance priming [<strong>5</strong> replications]</li>
-									<li>Mate priming [<strong>8</strong> replications]</li>
-									<li>US flag priming [<strong>36</strong> replications]</li>
-								</ul>
-								<strong><i>Social Embodiment</i></strong>
-								<ul>
-									<li><a href="#z&l">Macbeth effect</a> [<strong>11</strong> replications]</li>
-									<li>Embodiment of weight [<strong>6</strong> replications]</li>
-									<li>Embodiment of secrets [<strong>5</strong> replications]</li>
-									<li>Embodiment of warmth </li>
-									<ul>
-										<li><a href="#b&s2012">Bargh & Shalev (2012)</a> [<strong>14</strong> replications]</li>
-										<li>Williams & Bargh (2006) [<strong>3</strong> replications]</li>
-										<li>Vess (2012) [<strong>2</strong> replications]</li>
-									</ul>
-								</ul>
-								<strong><i>Classic social psychology</i></strong>
-								<ul>
-									<li><a href="#mood-on-helping">Mood on helping</a> [<strong>3</strong> replications]</li>
-									<li>Argument strength x NFC effect (ELM) [<strong>21</strong> replications]</li>
-								</ul>
-							</div>
-							<div class="col-md-6" >
-								<strong><i>Self</i></strong>
-								<ul>
-									<li><a href="#ego-depletion">Strength model of self-control</a> [<strong>32</strong> replications]</li>
-									<li>Narcissist fragile self-esteem [<strong>9</strong> replications]</li>
-									<li>Unconscious self-esteem boosting [<strong>4</strong> replications]</li>
-								</ul>
-								<strong><i>Evolutionary Psychology</i></strong>
-								<ul>
-									<li>Ovulation on voting [<strong>2</strong> replications]</li>
-									<li>Ovulation on mate preferences [<strong>3</strong> replications]</li>
-									<li>Ovulation on clothing choice [<strong>2</strong> replications]</li>
-									<li>Color on physical attraction [<strong>5</strong> replications]</li>
-								</ul>
-								<strong><i>Attitudes & Stereotypes</i></strong>
-								<ul>
-									
-									<li>Race-erased effect [<strong>2</strong> replications]</li>
-									<li>1/f noise in racial bias [<strong>2</strong> replications]</li>
-									<li>Subliminal approach/avoidance effects [<strong>3</strong> replications]</li>
-									<li>Status legitimacy effect [<strong>3</strong> replications]</li>
-									<li>SES on unethical behaviors [<strong>9</strong> replications]</li>
-								</ul>
-								<strong><i>Judgment & Decision-making</i></strong>
-								<ul>
-									<li>Unconscious decision-making [<strong>12</strong> replications]</li>
-									<li>Framing effects [<strong>36</strong> replications]</li>
-									<li>Anchoring effects [<strong>36</strong> replications]</li>
-									<li>Protection effect [<strong>3</strong> replications]</li>
-									<li>Incidental values on time judgments [<strong>8</strong> replications]</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		
-    </div>
-  </section>
+			
+			<p style="font-size:16px;line-height:1.2em;margin-left:91px;margin-right:90px;margin-bottom:5px;">
+				<strong>All Replications (1045 replications; 270 curated, 775 being curated [<a href="index-in-progress.html">see list</a>])</strong>
+			</p>
+			<p style="font-size:16px;line-height:1.2em;margin-left:91px;margin-right:90px;margin-bottom:0px;">
+				List of known direct replications ("Exact", "Very Close", or "Close" direct replications) of generalizations of effects according to our <a href="#replication-taxonomy">working taxonomy</a>. PDFs of study details are linked via study author names. Replication methodological details can be found <a href="https://docs.google.com/spreadsheets/d/14noRKFaPz50yeghM19VYQWm-0BM_-qnY4wMFxXwwQ6I/edit?usp=sharing" target="_blank">here</a>. Please let us know about any missing replications or errors at curatescience<span style="display:none">-anti-bot-bit</span>@gmail.com
+			</p>
+			<p style="font-size:12px;line-height:1.2em;margin-left:91px;margin-right:90px;margin-top:8px;margin-bottom:2px;">
+				Search via CTLR+F (Windows) or &#8984;+F (Mac) <span style="color:red;float:right;">Last updated: November 7, 2016</span> 
+			</p>
+			<p style="text-align:center">
+				<iframe src="https://docs.google.com/spreadsheets/d/14noRKFaPz50yeghM19VYQWm-0BM_-qnY4wMFxXwwQ6I/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;chrome=false&amp;headers=false" width="825" height="7150" frameborder="1" style="margin-top:0px;"></iframe>
+			</p>
+			<p style="font-size:12px;line-height:1.2em;margin-left:91px;margin-right:90px;margin-top:-15px;margin-bottom:2px;">
+				<span style="float:right;">Download as <a href="https://github.com/eplebel/science-commons/blob/master/curated/Curate-Science-replications-curated-list-production.csv" target="_blank">CSV</a></span>
+			</p>
+		</div>
+
+		</div>
+	  </section>
 
 		<section class="section" id="section-3">
 		<div class="container" style="padding: 0px 0 40px;">
