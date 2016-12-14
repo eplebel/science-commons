@@ -1,3 +1,62 @@
 
-td.center { text-align:center;}
-td.right { text-align:right;}
+	td.center { text-align:center;}
+	td.right { text-align:right;}
+	td { line-height: 1em;
+		 padding: 0em;
+		 border: 0px dashed black; }
+	#some-element {
+		border: 0px solid #ccc;
+		display: none;
+		font-size: 16px;
+		margin-bottom: 10px;
+		padding: 2px;
+		line-height: 1.25em;}	
+	#some-div:hover #some-element {
+		display: block;}
+	ul li { line-height:1.2em; }
+	ol li { line-height:1.2em; }
+	i { font-style: italic;}
+	a.anchor{
+		padding-top:80px;
+		display:block;
+		margin-top:-30px; /* if you want to cancel out the padding-top */}
+	u.dotted{
+	  border-bottom: 1px dashed #999;
+	  text-decoration: none; 
+	}	
+	span.displaynone { display:none; }
+	h1 { font-size: 24px; }
+		.navbar .nav { font-size: 12px;}
+		.navbar-nav>li>a { line-height: 15px;}
+	iframe { border: none; overflow: hidden;}
+	img.open-logos {
+		opacity: 0.06;
+		filter: alpha(opacity=6); /* For IE8 and earlier */
+		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+		filter: grayscale(100%);}
+	img.open-logos.active {
+			opacity: 0.75;
+			filter: alpha(opacity=75); /* For IE8 and earlier */
+			-webkit-filter: none; /* Safari 6.0 - 9.0 */
+			filter: none;}
+	img.pdf-icon {padding-right:4px;}
+	table.all-replications {
+		font-size:14px;
+		margin-top:15px;
+		table-layout: fixed;
+		width: 1600px;}
+	table.all-replications th {line-height:16px;}
+	tr.area {color:CornflowerBlue;font-weight:bold;font-size:18px;}
+	tr.effect {color:black;font-weight:bold;font-size:17px;}
+		.effect td {line-height:1.4em;}
+	tr.original {color:darkgrey;font-weight:bold;}
+	td.original.primary {text-align:center;font-family:courier;}
+	tr.replication {color:black;}
+	.replication td:nth-child(1) {
+		padding-left:25px;}
+	td.primary {text-align:center;font-family:courier;}
+	td.secondary {color:lightgrey;font-weight:normal;font-size:12px;}
+	.table-all-replications { 
+		overflow-x: scroll;
+		overflow-y: auto;
+		min-width:1000px;}
