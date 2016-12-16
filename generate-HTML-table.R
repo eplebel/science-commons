@@ -3,17 +3,17 @@ require(shiny) #required functions to source
 
 data.HTML <- function(data.URL) {
   if (toString(data.URL) != "") {
-    return(HTML(paste("<td><a href=\"",data.URL,"\" target=\"_blank\"><img class='open-logos active' src='logos/_data.png'></a>")))} 
+    return(HTML(paste("<td><a href=\"",data.URL,"\" target=\"_blank\"><img class='open-logos active' src='logos/_data.png' title='This study has open data'></a>")))} 
   else return(HTML(paste("<td><img class='open-logos' src='logos/_data.png'>")))
 }
 materials.HTML <- function(materials.URL) {
   if (toString(materials.URL) != "") {
-    return(HTML(paste("<a href=\"",materials.URL,"\" target=\"_blank\"><img class='open-logos active' src='logos/_materials.png'></a>")))} 
+    return(HTML(paste("<a href=\"",materials.URL,"\" target=\"_blank\"><img class='open-logos active' src='logos/_materials.png' title='This study has open materials'></a>")))} 
   else return(HTML(paste("<img class='open-logos' src='logos/_materials.png'>")))
 }
 prereg.HTML <- function(prereg.URL) {
   if (toString(prereg.URL) != "") {
-    return(HTML(paste("<a href=\"",prereg.URL,"\" target=\"_blank\"><img class='open-logos active' src='logos/_preregisteredplus.png'></a></td>")))} 
+    return(HTML(paste("<a href=\"",prereg.URL,"\" target=\"_blank\"><img class='open-logos active' src='logos/_preregisteredplus.png' title='Study and analysis plans were pre-registered'></a></td>")))} 
   else return(HTML(paste("<img class='open-logos' src='logos/_preregisteredplus.png'></td>")))
 }
 
