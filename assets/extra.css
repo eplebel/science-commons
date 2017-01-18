@@ -58,8 +58,12 @@
 	td.secondary {color:lightgrey;font-weight:normal;font-size:12px;}
 	.table-all-replications { 
 		overflow-x: scroll;
-		overflow-y: auto;
+		overflow-y: hidden;
 		min-width:1000px;}
+	.table-all-replications-RPP { 
+	overflow-x: hidden;
+	overflow-y: hidden;
+	min-width:1000px;}
 	table.all-replications-RPP {
 		font-size:14px;
 		margin-top:15px;

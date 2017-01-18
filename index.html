@@ -65,15 +65,57 @@
     <div class="container" style="padding-bottom:15px;">
       
         <div class="wrapper">
-			
-          <div class="well" style="padding-top:5px;padding-bottom:0px;">
-			  <p class="about" style="font-size:14px;line-height:1.2em;padding-bottom:0px;margin-bottom:0px;font-style:italic;text-align:center;">Tracking and interpreting replication evidence.</p>
-			  <p class="about" style="font-size:16px;line-height:1.2em;padding-bottom:0px;margin-bottom:8px;">Published scientific findings can only be considered trustworthy -- for theory and applications (e.g., health interventions) -- once successfully replicated and generalized by independent researchers. No database, however, currently exists that systematically tracks and meta-analytically summarizes independent <a title="Direct replications involve using the same general methodology as original study, barring any required cultural or linguistic modifications (see our working replication taxonomy below for more details)" href="#replication-taxonomy">direct replications</a> to gauge the <i>replicability</i> and <i>generalizability</i> of social science findings over time. <strong>Curate Science</strong> is a crowd-sourced effort to achieve just this to accelerate the development of trustworthy knowledge that can soundly inform theory and effective public policy to improve human welfare (see <a href="#section-4">About section</a> for more details).
-			  </p>
-			  <p class="about" style="font-size:14px;line-height:1.2em;padding-top:0px;padding-bottom:0px;margin-top:0px;">
-			  <i>We've developed a new framework (<a href="http://curatescience.org/docs/CurateScience-NewFramework[3.0.1].pdf"  target="_blank">version 3.0.1</a>) for curating replication evidence of social science findings. Details of our previous approaches can be found <a href="https://osf.io/8h34x/"  target="_blank">here (version 2.0.4)</a> and <a href="http://curatescience.org/docs/Science-Commons(Jan232014-Version1.0.5).pdf"  target="_blank">here (version 1.0.5)</i></a>.</i>
-			  </p>
+			<p style="margin-bottom:-5px;line-height:1;font-size:16px;font-weight:bold;color:CornflowerBlue;"><i>Recently Added</i> <span style="color:red;font-size:12px;">(January 18, 2017)</span></p>
+			<div class="table-all-replications">
+				<table class="all-replications"><tbody>
+					<tr>
+						<th width='175px'>Original &frasl; Replication Study Authors</th>
+						<th width='52px'></th>
+						<th width='115px' style="text-align:center;">Effect size [&plusmn; 95% CI]</th>
+						<th width='125px'>Active Sample Evidence &frasl; Positive Controls</th>
+						<th width='125px'>Design Differences</th>
+						<th width='125px'>IVs</th>
+						<th width='125px'>DVs</th>
+						<th width='125px'>Other Outcomes</th>
+					</tr>
+					<tr class="effect">
+						<td colspan="8">High-approach positive affect constricts attention effect</td>
+					</tr>
+					<tr class="original">
+					  <td><a href='http://www.socialemotiveneuroscience.org/pubs/gable_hj2008psy_sci.pdf' target='_blank'><img src='logos/pdf-icon.gif' class='pdf-icon'></a>Gable & Harmon-Jones (2008) Study 2</td>
+					  <td><img class='open-logos' src='logos/_data.png'> <img class='open-logos' src='logos/_materials.png'></a> <img class='open-logos' src='logos/_preregisteredplus.png'></td>
+					  <td class="original primary outcome"><span title="Interaction effect: High-approach positivity slowed down RTs to global targets, but sped up RTs to local targets."><u class='dotted'> &eta;² = .53 [.26,.67] </u></span></td>
+					  <td class="secondary active-sample">Neutral mood global bias effect observed, p < .01</td>
+					  <td class="secondary design-differences"></td>
+					  <td class="secondary IVs">Affect (High-approach positive affect vs. neutral)</td>
+					  <td class="secondary DVs">Attentional breadth (Navon, 1977 letter task RTs)</td>
+					  <td class="secondary outcome"></td>
+					</tr>
+					<tr class="replication">
+					  <td><a href='https://github.com/eplebel/science-commons/blob/master/curated/domachowska-et-al(2016%2CJESP).pdf' target='_blank'><img src='logos/pdf-icon.gif' class='pdf-icon'></a>Domachowska et al. (2016) Study 1</td>
+					  <td><img class='open-logos' src='logos/_data.png'> <img class='open-logos' src='logos/_materials.png'></a> <a href=" https://osf.io/c2bt8/" target="_blank"><img class='open-logos active' src='logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+					  <td class="replication primary outcome"><span title="Interaction effect: High-approach positivity slowed down RTs to global targets, but no effect on local targets."> &eta;² = .24 [.09,.39] </span></td>
+					  <td class="secondary active-sample">Neutral mood global bias effect observed, p < .01; Successful valence manipulation check, dz = 1.14</td>
+					  <td class="secondary design-differences">German language; Mood (PANAS) assessed at study outset</td>
+					  <td class="secondary IVs">Affect (High-approach positive affect vs. neutral)</td>
+					  <td class="secondary DVs">Attentional breadth (Navon, 1977 letter task RTs)</td>
+					  <td class="secondary outcome"></td>
+					</tr>
+					<tr class="replication">
+					  <td><a href='https://github.com/eplebel/science-commons/blob/master/curated/domachowska-et-al(2016%2CJESP).pdf' target='_blank'><img src='logos/pdf-icon.gif' class='pdf-icon'></a>Domachowska et al. (2016) Study 2</td>
+					  <td><img class='open-logos' src='logos/_data.png'> <img class='open-logos' src='logos/_materials.png'></a> <a href="https://osf.io/c2bt8/" target="_blank"><img class='open-logos active' src='logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+					  <td class="replication primary outcome"><span title="Interaction effect: High-approach positivity slowed down RTs to global targets, but no effect on local targets."> &eta;² = .08 [.00,.21] </span></td>
+					  <td class="secondary active-sample">Neutral mood global bias effect observed, p < .05; Successful valence manipulation check, dz = 2.51</td>
+					  <td class="secondary design-differences">German-normed stimuli; Low-approach positive affect within-subject condition also included</td>
+					  <td class="secondary IVs">Affect (High-approach positive affect vs. neutral)</td>
+					  <td class="secondary DVs">Attentional breadth (Navon, 1977 letter task RTs)</td>
+					  <td class="secondary outcome"></td>
+					</tr>
+		
+				</tbody>
+				</table>
 			</div>
+		
 		</div>
 
     </div>
@@ -82,9 +124,7 @@
   <section class="section" id="section-2" style="background:white;"><a name="large-scale-reps" class="anchor2"></a>
     <div class="container" style="padding: 0px 0 40px;">
       <header class="page-header" style="padding-top:0px;padding-bottom:0px;margin-top:0px;margin-bottom:15px;"><h1>Curated List of Replications</h1></header>
-        
 		<div class="wrapper" style="font-size:14px;">
-		
 			<div class="row" >
 				<div class="col-md-12">
 					<div class="well" style="padding-top:10px;padding-bottom:0px;">
@@ -121,13 +161,13 @@
 			</div>
 			
 			<p style="font-size:16px;line-height:1.2em;margin-bottom:5px;"><a name="all-replications" class="anchor"></a>
-				<strong>All Replications (1047 replications; 380 curated, 668 being curated [<a href="index-in-progress.html" target="_blank">see list</a>])</strong>
+				<strong>All Replications (1049 replications; 382 curated, 668 being curated [<a href="index-in-progress.html" target="_blank">see list</a>])</strong>
 			</p>
 			<p style="font-size:16px;line-height:1.2em;margin-bottom:0px;">
 				List of known direct replications ("Exact", "Very Close", or "Close" direct replications) of generalizations of effects according to our <a href="#replication-taxonomy">working taxonomy</a>. Please let us know about any missing replications or errors at curatescience<span style="display:none">-anti-bot-bit</span>@gmail.com
 			</p>
 			<p style="font-size:12px;line-height:1.2em;margin-top:8px;margin-bottom:2px;"><a name="RRR-commitment"></a>
-				Search via CTLR+F (Windows) or &#8984;+F (Mac) <span style="color:red;float:right;">Last updated: December 16, 2016</span> 
+				Search via CTLR+F (Windows) or &#8984;+F (Mac) <span style="color:red;float:right;">Last updated: January 18, 2017</span> 
 			</p>
 			<div class="table-all-replications">
 				<table class="all-replications"><tbody>
@@ -1086,6 +1126,39 @@
 					  <td class="secondary design-differences">French language</td>
 					  <td class="secondary IVs">effortful letter crossing vs. control</td>
 					  <td class="secondary DVs">multi-source interference task (MSIT; RTV)</td>
+					  <td class="secondary outcome"></td>
+					</tr>
+					<tr class="effect">
+						<td colspan="8">High-approach positive affect constricts attention effect</td>
+					</tr>
+					<tr class="original">
+					  <td><a href='http://www.socialemotiveneuroscience.org/pubs/gable_hj2008psy_sci.pdf' target='_blank'><img src='logos/pdf-icon.gif' class='pdf-icon'></a>Gable & Harmon-Jones (2008) Study 2</td>
+					  <td><img class='open-logos' src='logos/_data.png'> <img class='open-logos' src='logos/_materials.png'></a> <img class='open-logos' src='logos/_preregisteredplus.png'></td>
+					  <td class="original primary outcome"><span title="Interaction effect: High-approach positivity slowed down RTs to global targets, but sped up RTs to local targets."><u class='dotted'> &eta;² = .53 [.26,.67] </u></span></td>
+					  <td class="secondary active-sample">Neutral mood global bias effect observed, p < .01</td>
+					  <td class="secondary design-differences"></td>
+					  <td class="secondary IVs">Affect (High-approach positive affect vs. neutral)</td>
+					  <td class="secondary DVs">Attentional breadth (Navon, 1977 letter task RTs)</td>
+					  <td class="secondary outcome"></td>
+					</tr>
+					<tr class="replication">
+					  <td><a href='https://github.com/eplebel/science-commons/blob/master/curated/domachowska-et-al(2016%2CJESP).pdf' target='_blank'><img src='logos/pdf-icon.gif' class='pdf-icon'></a>Domachowska et al. (2016) Study 1</td>
+					  <td><img class='open-logos' src='logos/_data.png'> <img class='open-logos' src='logos/_materials.png'></a> <a href=" https://osf.io/c2bt8/" target="_blank"><img class='open-logos active' src='logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+					  <td class="replication primary outcome"><span title="Interaction effect: High-approach positivity slowed down RTs to global targets, but no effect on local targets."> &eta;² = .24 [.09,.39] </span></td>
+					  <td class="secondary active-sample">Neutral mood global bias effect observed, p < .01; Successful valence manipulation check, dz = 1.14</td>
+					  <td class="secondary design-differences">German language; Mood (PANAS) assessed at study outset</td>
+					  <td class="secondary IVs">Affect (High-approach positive affect vs. neutral)</td>
+					  <td class="secondary DVs">Attentional breadth (Navon, 1977 letter task RTs)</td>
+					  <td class="secondary outcome"></td>
+					</tr>
+					<tr class="replication">
+					  <td><a href='https://github.com/eplebel/science-commons/blob/master/curated/domachowska-et-al(2016%2CJESP).pdf' target='_blank'><img src='logos/pdf-icon.gif' class='pdf-icon'></a>Domachowska et al. (2016) Study 2</td>
+					  <td><img class='open-logos' src='logos/_data.png'> <img class='open-logos' src='logos/_materials.png'></a> <a href="https://osf.io/c2bt8/" target="_blank"><img class='open-logos active' src='logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+					  <td class="replication primary outcome"><span title="Interaction effect: High-approach positivity slowed down RTs to global targets, but no effect on local targets."> &eta;² = .08 [.00,.21] </span></td>
+					  <td class="secondary active-sample">Neutral mood global bias effect observed, p < .05; Successful valence manipulation check, dz = 2.51</td>
+					  <td class="secondary design-differences">German-normed stimuli; Low-approach positive affect within-subject condition also included</td>
+					  <td class="secondary IVs">Affect (High-approach positive affect vs. neutral)</td>
+					  <td class="secondary DVs">Attentional breadth (Navon, 1977 letter task RTs)</td>
 					  <td class="secondary outcome"></td>
 					</tr>
 					<tr class="area">
@@ -3503,7 +3576,7 @@
 					  <td class="secondary outcome"></td>
 					</tr>
 					<tr class="replication">
-					  <td><a href='http://econtent.hogrefe.com/doi/pdf/10.1027/1864-9335/a000188' target='_blank'><img src='logos/pdf-icon.gif' class='pdf-icon'></a> Zezelj & Jokic (2015) Study 4</td>
+					  <td><a href='http://econtent.hogrefe.com/doi/pdf/10.1027/1864-9335/a000188' target='_blank'><img src='logos/pdf-icon.gif' class='pdf-icon'></a> Zezelj & Jokic (2015) Study 4<a name="RPP-replications"></a></td>
 					  <td><a href=" https://osf.io/5a8tm/ " target="_blank"><img class='open-logos active' src='logos/_data.png' title="This study has open data"></a> <a href=" https://osf.io/fbmtg/ " target="_blank"><img class='open-logos active' src='logos/_materials.png' title="This study has open materials"></a> <a href=" https://osf.io/my6wv/ " target="_blank"><img class='open-logos active' src='logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
 					  <td class="replication primary outcome"><span title=""> d = -.68 ± .36 </span></td>
 					  <td class="secondary active-sample"></td>
@@ -3516,8 +3589,9 @@
 				</tbody>
 				</table>
 			</div>
-			
-			<p style="font-size:16px;line-height:1.2em;margin-bottom:5px;"><a name="RPP-replications" class="anchor"></a>
+			<p style="padding-top:40px;">
+			</p>
+			<p style="font-size:16px;line-height:1.2em;margin-bottom:5px;">
 				<strong>Reproducibility Project: Psychology (100 replications; 57 Social, 43 Cognition)</strong> <a href="https://osf.io/ezcuj/" target="_blank"><img src="logos/osf.png"></a> <a href="http://etiennelebel.com/documents/osc(2015,science).pdf"  target="_blank"><img src="logos/pdf-icon.gif"></a>
 			</p>
 			<p style="font-size:16px;line-height:1.2em;margin-bottom:0px;">
@@ -3527,7 +3601,7 @@
 				Search via CTLR+F (Windows) or &#8984;+F (Mac) <span style="color:red;float:right;">Last updated: January 12, 2017</span> 
 			</p>
 			
-			<div class="table-all-replications">
+			<div class="table-all-replications-RPP">
 				<table class="all-replications-RPP"><tbody>
 					<tr>
 						<th width='165px'>Original &frasl; Replication Study Authors</th>
@@ -6899,11 +6973,19 @@
   
    <section class="section" id="section-4"><a name="about-section" class="anchor"></a>
 		<div class="container" style="padding: 0px 0 40px;">
-		  <header class="page-header" style="padding-top:0px;padding-bottom:0px;margin-top:15px;margin-bottom:15px;"><h1>About - Conceptual Framework</h1></header>
+		  <header class="page-header" style="padding-top:0px;padding-bottom:0px;margin-top:15px;margin-bottom:15px;"><h1>About</h1></header>
 			
 			<div class="wrapper" style="width:800px;margin:auto;">
-				
-					<p style="margin-top:0px;padding-bottom:20px;font-size:14px;text-align:center"><i>(For full details of our replication evidence curation framework, please see <a href="http://curatescience.org/docs/CurateScience-NewFramework[3.0.1].pdf"  target="_blank">here</a>.)</i></p>
+					
+					<div class="well" style="padding-top:5px;padding-bottom:0px;">
+					  <p class="about" style="font-size:14px;line-height:1.2em;padding-bottom:0px;margin-bottom:0px;font-style:italic;text-align:center;">Tracking and interpreting replication evidence.</p>
+					  <p class="about" style="font-size:16px;line-height:1.2em;padding-bottom:0px;margin-bottom:8px;">Published scientific findings can only be considered trustworthy -- for theory and applications (e.g., health interventions) -- once successfully replicated and generalized by independent researchers. No database, however, currently exists that systematically tracks and meta-analytically summarizes independent <a title="Direct replications involve using the same general methodology as original study, barring any required cultural or linguistic modifications (see our working replication taxonomy below for more details)" href="#replication-taxonomy">direct replications</a> to gauge the <i>replicability</i> and <i>generalizability</i> of social science findings over time. <strong>Curate Science</strong> is a crowd-sourced effort to achieve just this to accelerate the development of trustworthy knowledge that can soundly inform theory and effective public policy to improve human welfare.
+					  </p>
+					  <p class="about" style="font-size:14px;line-height:1.2em;padding-top:0px;padding-bottom:0px;margin-top:0px;">
+					  <i>We've developed a new framework (<a href="http://curatescience.org/docs/CurateScience-NewFramework[3.0.1].pdf"  target="_blank">version 3.0.1</a>) for curating replication evidence of social science findings. Details of our previous approaches can be found <a href="https://osf.io/8h34x/"  target="_blank">here (version 2.0.4)</a> and <a href="http://curatescience.org/docs/Science-Commons(Jan232014-Version1.0.5).pdf"  target="_blank">here (version 1.0.5)</i></a>.</i>
+					  </p>
+					</div>
+					
 					<p style="font-size:14px;line-height:1.2em;">Every year, society spends billions of dollars (primarily of public tax payer money) to fund scientific studies aimed at deepening our understanding of the natural and social world. The hope is that the findings yielded by these studies will help us address important societal problems (e.g., cancer; suicide; racial discrimination; voter turnout). The findings yielded by these studies, however, can only be considered sufficiently trustworthy knowledge ready to inform public-policy decisions once they have been successfully <i>replicated</i> and <i>generalized</i> by independent researchers. Successful replication is taken to mean that independent researchers have been able to consistently observe similar results as originally reported using similar methodology and conditions to an original study. Successful generalization is taken to mean that independent researchers have been able to consistently observe similar results as originally reported under situations that use different methodologies (often superior methodologies or measurement instruments), contexts, and populations, consequently producing evidence that original results generalize to these different situations.</p> 
 					
 					<p style="font-size:14px;line-height:1.2em;">Current approaches (i.e., traditional meta-analyses ) to synthesizing evidence are unable to produce the trustworthy knowledge we seek because these cannot fully account for publication bias (Ferguson & Heene, 2012; McShane, Bockenholt, & Hansen, 2016; Rosenthal, 1979), questionable research practices (John et al., 2012), and unintentional exploitation of design and analytic flexibility (Simmons et al., 2011; <a href="http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf"  target="_blank">Gelman & Loken, 2013</a>) and the various unknowable interactions among these factors.</p>
@@ -6936,7 +7018,7 @@
 					
 					<p style="font-size:14px;line-height:1.2em;">To achieve our goal, only the three types of direct replications (“Exact”, “Very Close”, and “Close”) are eligible for inclusion in evidence collections. We need such a demarcation because sufficiently methodologically similar replications naturally constrain design and analytic flexibility (old-school “poor person’s pre-registration”) and so ensures sufficient levels of falsifiability to refute an original claim, assuming auxiliary assumptions are met (Earp & Trafimow, 2015; <a href="http://meehl.umn.edu/sites/g/files/pua1696/f/074theorytestingparadox.pdf"  target="_blank">Meehl, 1967</a>, <a href="http://meehl.umn.edu/sites/g/files/pua1696/f/113theoreticalrisks.pdf"  target="_blank">1978</a>). If a follow-up study is different on every methodological facet, then it can never refute an original claim because unsupportive evidence can always be attributed to one of the intentionally introduced design differences rather than to the falsity of the original hypothesis (Hendrick, 1991; <a href="http://etiennelebel.com/documents/l&p(2011,rgp).pdf"  target="_blank">LeBel & Peters, 2011</a>; see also <a href="http://calteches.library.caltech.edu/3043/1/CargoCult.pdf"  target="_blank">Feynman, 1974</a>). Without such constraints, a popular field where numerous researchers are testing the same (false) hypothesis will inevitably produce false positives with enough determination given that typically an infinite number of analytic and design specifications (across different operationalizations) exist to test a specific effect/phenomenon (<a href="http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124"  target="_blank">Ioannidis, 2005</a>; <a href="http://pps.sagepub.com/content/7/6/645.full.pdf+html"  target="_blank">2012</a>). The historical case of cold fusion provides a compelling example of this. As recounted by Pashler and Harris (2012, p. 534), only follow-up studies using very different methodology yielded a trickle of positive results observing a cold fusion effect whereas more methodologically similar replications yielded overwhelmingly negative results (Taubes & Bond, 1993). </p>
 
-					
+					<p style="margin-top:0px;padding-bottom:20px;font-size:14px;"><i>(For full details of our replication evidence curation framework, please see <a href="http://curatescience.org/docs/CurateScience-NewFramework[3.0.1].pdf"  target="_blank">here</a>.)</i></p>
 			</div>
 		</div>
 	</section>
