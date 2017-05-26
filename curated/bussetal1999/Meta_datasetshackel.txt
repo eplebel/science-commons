@@ -1,0 +1,10 @@
+Study	n	yi 	vi 	Country	Young_Old	Us_them
+IJzerman et al. (2013) - Study 1 Young	87	1.11	0.08	N	Young	us
+IJzerman et al. (2013) - Study 2 Young	201	0.3	0.02	N	Young 	us
+IJzerman et al. (2013) - Study 3 Old	140	-0.09	0.03	N	Old	us
+IJzerman et al. (2013) - Study 4 Young	959	0.5	0.004	US	Young	them
+IJzerman et al. (2013) - Study 4 Old	211	0.05	0.02	US	Old	them
+Buss et al. (1999) - Study 2 Young	234	1.3	0.02	US	Young	them
+Buss et al. (1999) - Study 3 Young	188	0.8	0.02	K	Young	them
+Buss et al. (1999) - Study 4 Young	315	0.57	0.02	J	Young	them
+Shackelford et al. (2004) - Study 2 Old	189	0.57	0.02	US	Old	them
