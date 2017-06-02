@@ -1,11 +1,10 @@
 library(metafor)
 library(plotrix) #for ablineclip function
-setwd(getwd())
 
 ### to save as png file
 #png(filename="z&l.png", res=95, width=1200, height=800, type="cairo")
 
-dat <- read.csv(file = "z&l-replications.csv", header = TRUE)
+dat <- read.csv(file = "https://raw.githubusercontent.com/eplebel/science-commons/master/curated/z%26l/z%26l-replications.csv", header = TRUE)
 
 dat <- escalc(measure="COR", ri=dat$r, ni=dat$N, data=dat, slab=dat$study)
 dat
