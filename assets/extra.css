@@ -69,3 +69,4 @@
 		table-layout: fixed;
 		}
 	img.about {padding:5px;}
+	p span.displaynone { display:none; }
