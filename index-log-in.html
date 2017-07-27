@@ -6,16 +6,12 @@
   <title>Curate Science</title>
   <link data-turbolinks-track="true" href="assets/main.css" media="all" rel="stylesheet" />
   <link rel="stylesheet" href="assets/extra.css">
-  <!--<link href="assets/glyphicons.css" rel="stylesheet" />-->
-  <script data-turbolinks-track="true" src="assets/main.js"></script>
-  
-  <!--<link rel="stylesheet" type="text/css" href="assets/tooltipster.css" />
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="assets/jquery.tooltipster.min.js"></script>-->
 
+  <script data-turbolinks-track="true" src="assets/main.js"></script>
   <meta content="authenticity_token" name="csrf-param" />
 <meta content="/iDkQk3fySjDxSBGMaWY6CxQ9WzgIX4G/vkMyH6tgaU=" name="csrf-token" />
   <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
   <script src="assets/bootstrap.min.js"></script>
   <script>
     $(document).ready(function () {
@@ -23,33 +19,69 @@
         $(".nav-collapse").collapse('hide');
       });
     });
-	
+	function changeImage() {
+		var image = document.getElementById('myImage');
+		if (image.src.match("button")) {
+			image.src = "logos/add-replication-window.png";
+		} else {
+			image.src = "logos/add-replication-button.png";
+		}
+	}
   </script>
   <style>
-
+	td {
+      line-height: 1em;
+      padding: 0em;
+      border: 0px dashed black;
+    }
+	#some-element {
+	border: 0px solid #ccc;
+	display: none;
+	font-size: 16px;
+	margin-bottom: 10px;
+	padding: 2px;
+	line-height: 1.25em;
+	}	
+	#some-div:hover #some-element {
+	display: block;
+	}
+	ul li { line-height:1.2em; }
+	a.anchor{
+		padding-top:80px;
+		display:block;
+		margin-top:-30px; /* if you want to cancel out the padding-top */
+		}
+	.nav-tabs > li > a
+	{
+    /* adjust padding for height*/
+    padding-top: 4px; 
+    padding-bottom: 4px;
+	}
+	
   </style>
 </head>
 
 <body>
-<header class="pull-center" id="masthead" >
+<header class="pull-center" id="masthead">
   <nav class="navbar navbar-fixed-top" role="navigation">
     <div class="navbar-inner" style="min-height:50px;">
-      <div class="container" >
+      <div class="container">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-            <a class="brand brand-appland" href="/">
+            <a class="brand brand-appland" href="#">
               <img alt="Curate Science" src="logos/navbar-icon-smaller.png" />
             </a>
           </a>
         <div class="nav-collapse">
           <ul class="nav navbar-nav">
-            <li><a class="brand brand-appland" href="/"><img alt="Navbar icon" src="logos/navbar-icon-smaller.png" /></a></li>
-             <li><a href="http://curatescience.org#about-section">About</a></li>            
+            <li><a class="brand brand-appland" href="http://curatescience.org/"><img alt="Navbar icon" src="logos/navbar-icon-smaller.png" /></a></li>
+            <li><a href="http://curatescience.org#about-section">About</a></li>            
 			<li><a href="http://curatescience.org#people-section">People</a></li>
-			<li><a href="#signup-section">Sign Up</a></li>
+			<li><a href="http://curatescience.org#signup-section">Sign Up</a></li>
 			<li><a href="http://curatescience.orgindex-log-in.html">Log In</a></li>
+            
           </ul>
         </div>
       </div>
@@ -58,53 +90,24 @@
 </header>
 
 <div class="main-container push">
-
-  
-
-  
-  
-  <section class="section" id="section-2">
-    <div class="container" style="padding: 0px 0 40px;">
-      <header class="page-header" style="padding-top:0px;padding-bottom:0px;margin-top:15px;margin-bottom:15px;"><h1>List of Replications being Curated (In progress)</h1></header>
-        
-		<div class="wrapper" >
-			<div class="row">
-				
-			
-			<p style="font-size:16px;line-height:1.2em;margin-top:-10px;">
-				<strong>668 replications being curated (<a href="/#all-replications">see list</a> of 382 curated replications)</strong>
-			</p>
-			<p style="font-size:16px;line-height:1.2em;margin-top:-10px;">
-				Direct replications ("Exact", "Very Close", or "Close" direct replications) of generalizations of effects according to our <a href="/#replication-taxonomy">working taxonomy</a>. Please let us know about any missing replications at curatescience<span style="display:none">-anti-bot-bit</span>@gmail.com
-			</p>
-			<p style="font-size:12px;line-height:1.2em;margin-top:-5px;margin-bottom:2px;">
-				Search via CTLR+F (Windows) or &#8984;+F (Mac) <span style="color:red;float:right;">Last updated: December 14, 2016</span> 
-			</p>
-			<p style="text-align:center">
-				<iframe src="https://docs.google.com/spreadsheets/d/14noRKFaPz50yeghM19VYQWm-0BM_-qnY4wMFxXwwQ6I/pubhtml?gid=1409440131&amp;single=true&amp;widget=false&amp;chrome=false&amp;headers=false" width="1050" height="4000" frameborder="1" style="margin-top:2px;"></iframe>
-			</p>
-			<br>
-			<br>
-			
-			
-				
-		</div>
-
-	</div>
-  </section>
-
+ 
+ <section class="section" id="section-5">
+	<div class="container" style="padding: 0px 0 40px;">		
+		<div class="wrapper" style="max-width:1200px;">
 		
-
-  <section class="section" id="signup-section">
-    <div class="container" style="padding: 0px 0 40px;">
-      <header class="page-header">
-        <h1>
-          Sign up
-        </h1>
-      </header>
-      <div class="text-center">
+		<!--<header class="page-header" style="padding-top:20px;padding-bottom:0px;margin-top:15px;margin-bottom:15px;"><h1>Sandbox</h1></header>-->
+			
+			
+			
+			
+			<p style="text-align:center;margin-top:50px;">
+			Our crowdsourcing <a href="https://github.com/ScienceCommons/api" target="_blank">beta website</a> is currently offline. We are currently hard at work securing additional funding to bring it back online and continue improving its user interface.
+			</p>
+			
+			
+			<div class="text-center" style="font-size:14px;">
         <strong>
-          Please sign up below to receive the Curate Science Newsletter to be automatically notifed about news and updates.
+          In the meantime, please sign up to the Curate Science Newsletter to be automatically notifed about news and updates. See <a href="http://us8.campaign-archive2.com/home/?u=0833383918fc50773891d363a&id=aaad5734e3">past announcements</a>.
         </strong>
       </div>
       <br>
@@ -120,8 +123,27 @@
           <div class="clear"><input type="submit" value="Sign up" name="subscribe" id="mc-embedded-subscribe" class="btn btn-info btn-xs"></div>
         </form>
       </div>
+			
+			
+			
+		</div> <!--wrapper div-->
+		 
+		 
+	 </div>
+ </section>
+ 
+ 
+ 
 
-      <div class="row-fluid">
+  <section class="section" id="section-6">
+    <div class="container">
+      
+      
+	
+	<center><a class="twitter-timeline" data-width="600" data-height="1200" href="https://twitter.com/curatescience">Tweets by curatescience</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+		
+		
+		<div class="row-fluid">
         <ul class="social">
           <li>
             <a href="https://twitter.com/curatescience">
@@ -134,13 +156,26 @@
             </a>
           </li>
         </ul>
-		
-		<center>*Thanks to <a href="http://www.nicebread.de/">Felix Schönbrodt</a> who is currently hosting Curate Science.</center>
-		<br><br><br><br><br><br><br><br>
-	  </div>
+      </div>
     </div>
-
+		
+		
+		<p style="text-align:center;margin-top:50px;">
+		<strong>Contact:</strong><br>
+		curatescience@<span class=”displaynone”></span>gmail.com<br>
+		Western University<br>
+		1151 Richmond St<br>
+		London, Ontario, CANADA, N6A 3K7
+		</p>
+		
+		<p style="text-align:center;margin-top:50px;"><i>*Thanks to <a href="http://www.nicebread.de/">Felix Schönbrodt</a> who is currently hosting Curate Science.</i>
+		</p>
+		<br><br>
+	
+	
   </section>
+
+
 
 </div>
 
@@ -151,6 +186,7 @@ $(".faq-item .question").click(function(e) {
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
 });
+
 </script>
 
 
@@ -159,6 +195,7 @@ $(document).ready(function(){
   <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
   
   <script type="text/javascript">
+    
 
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -166,7 +203,7 @@ $(document).ready(function(){
   })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-48865749-1', 'auto');
   ga('send', 'pageview');
-
+  
   </script>
 </body>
 </html>
