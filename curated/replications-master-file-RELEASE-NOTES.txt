@@ -1,0 +1,33 @@
+﻿Replications Master File CSV release NOTES:
+
+
+Version 4.6.1 (November 2017)
+-CSV file character encoding: UTF-8 (therefore DO NOT use Microsoft Excel or else really bad things will happen; instead use a respectable editor such as LibreOffice Calc or xx, yy, zz)
+-effect size +/- reflects 95% CIs (when available);
+
+-NOTES regarding "replication outcome" categories: 
+1. successful-consistent: statistically significant effect & same direction as original
+2. successful-inconsistent: statistically significant effect & same direction, but qualitatitively smaller effect (e.g., original d=1.2+/-.8 with replication d=.2+/-.1; usually when replication uses massive sample size)
+3. unsuccessful: non-statistically significant effect, using sample size as large or larger than original (suboptimal see Simonsohn's small telescope paper, however, is principled for vast majority of replications and hence nonetheless valuable here as a heuristic; and is also how researchers traditionally intepret studies)
+4. unsuccessful-inconclusive: non-statistically effect, but using sample size SMALLER than original
+5. unsuccessful-inconsistent: statistically significant effect, but opposite direction (or inconsistent interaction pattern)
+
+
+
+-NOTES regarding Bayesian replication outcome categories
+
+-N refers to total sample size (Consistent with conventions in psychology; n refers to within-cell sample size;
+-NR = Effect size not reported, nor calculatable
+
+*Note: CAUTION: in a small minority cases, different effect size reported between original and replication studies
+
+
+
+Still to be added:
+-
+-
+
+
+
+
+
