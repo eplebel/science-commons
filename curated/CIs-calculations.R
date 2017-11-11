@@ -45,3 +45,12 @@ mes(3.92, 3.73, 1.46, 1.57, 48, 52)
 tes(t=2.45, 24, 24)
 
 chies(3.85, 37)
+
+#CI for RP:P social psych studies replicability rate
+prop.test(14, 55)
+#CI for ML1 social psych studies replicability rate
+prop.test(5, 8)
+#CI for ML3
+prop.test(1, 8)
+#CI for SP special issue
+prop.test(4, 31)
