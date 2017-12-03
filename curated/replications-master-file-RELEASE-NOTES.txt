@@ -1,33 +1,65 @@
-﻿Replications Master File CSV release NOTES:
+﻿Curated Replications Searchable Table release NOTES 
+***Version 4.6.1 (December 2017)***
+
+NOTES regarding "replication outcome" categories:
+1. signal detected - consistent
+2a. signal detected - inconsistent (larger) (same direction, but larger)
+2b. signal detected - inconsistent (smaller) (same direction, but smaller)
+2c. signal detected - inconsistent (opposite) (opposite direction or pattern)
+3. no signal - consistent 
+4. no signal - inconsistent 
+
+1. replication ES 95% CI excludes 0 and includes original ES point estimate.
+2a & 2b. replication ES 95% CI excludes 0 but also excludes original ES point estimate (rep ES is LARGER or SMALLER [but same direction] than original ES point estimate).
+2c. replication ES 95% CI excludes 0 but effect direction (or pattern) opposite to original ES direction/pattern.
+3. replication ES 95% CI includes 0 but also includes original ES point estimate
+4. replication ES 95% CI includes 0 but excludes original ES point estimate 
+
+in cases where signal is NOT detected, if rep ES estimate is LESS precise than original [i.e., rep ES CI is wider than original] , then the "inconclusive" label is added to warn readers that such replication should *not* be interpreted on an individual basis (but rather needs to be interpreted meta-analytically)
+**if original ES CI not available, then "inconclusive" qualifier made based on sample size (i.e., if rep used smaller N than original, then "inconclusive" is added); 
+***if original N not available, then "inconclusive" qualifier cannot be made and is thus left out of interpretation;
+****if original ES not available, then "consistent" vs. "inconsistent" attribute cannot be made;
+
+[insert Figure 1 from LCCV (2017)]
+
+General notes:
+- +/- reflects 95% confidence intervals (CIs) (NOTE: certain effect sizes are asymmetrical, e.g., eta-squared or odds ratio [OR]);
+-N refers to total sample size (consistent with conventions in psychology; n refers to within-cell sample size;
+-NR = not reported and/or not calculatable (NR can also apply to sample size)
+-empty cells means that such study characteristic information doesn't apply to a replication *OR* that such info has not yet been curated;
 
 
-Version 4.6.1 (November 2017)
--CSV file character encoding: UTF-8 (therefore DO NOT use Microsoft Excel or else really bad things will happen; instead use a respectable editor such as LibreOffice Calc or xx, yy, zz)
--effect size +/- reflects 95% CIs (when available);
+Coming soon
+-evidence/replication collection linked icon for replications that are part of an evidence collection (i.e., "Go to evidence collection this replication is part of.") [modification of this icon: https://cdn3.iconfinder.com/data/icons/education-37/49/78-512.png]
+-Bayesian replication outcome categories coming soon
+e.g., 
+-row background JS where alternate based on "factored" target.effect instead of alternating rows;
+-further refinements of "replication outcome" categories (e.g., unresolved issue: when a signal *IS* detected, should we distinguish between "signal detected - consistent" vs. "signal detected - consistent (inconclusive)", latter case when rep ES estimate LESS precise than original...; it seems we indeed should (given that less precise estimates will sometimes by chance be consistent *or* inconsistent with original), but this seems to overly complicate things quite a bit!
 
--NOTES regarding "replication outcome" categories: 
-1. successful-consistent: statistically significant effect & same direction as original
-2. successful-inconsistent: statistically significant effect & same direction, but qualitatitively smaller effect (e.g., original d=1.2+/-.8 with replication d=.2+/-.1; usually when replication uses massive sample size)
-3. unsuccessful: non-statistically significant effect, using sample size as large or larger than original (suboptimal see Simonsohn's small telescope paper, however, is principled for vast majority of replications and hence nonetheless valuable here as a heuristic; and is also how researchers traditionally intepret studies)
-4. unsuccessful-inconclusive: non-statistically effect, but using sample size SMALLER than original
-5. unsuccessful-inconsistent: statistically significant effect, but opposite direction (or inconsistent interaction pattern)
+concrete (consistent) example:
+Boroditsky (2000) Study 1	d(N=56) = .63 ± .56	d(N=44) = .77 ± .66	Bonfiglio et al. (2016, Ashland) 	signal detected - consistent (inconclusive)??
+vs.
+Boroditsky (2000) Study 1	d(N=56) = .63 ± .56	d(N=64) = .65 ± .53	Allen (2016, MontanaSU) 	signal detected - consistent
 
-
-
--NOTES regarding Bayesian replication outcome categories
-
--N refers to total sample size (Consistent with conventions in psychology; n refers to within-cell sample size;
--NR = Effect size not reported, nor calculatable
-
-*Note: CAUTION: in a small minority cases, different effect size reported between original and replication studies
+concrete (inconsistent) example:
+Ross & Wilson (2002) Study 2	d(N=357) = .21 ± .21	d(N=42) = -.76 ± .68	Capaldi et al. (2016, Carleton) 	signal detected - inconsistent (opposite) (inconclusive)??
+Ross & Wilson (2002) Study 2	d(N=357) = .21 ± .21	d(N=229) = .38 ± .26	Baranski et al. (2016, UCRiverside) 	signal detected (consistent) (inconclusive)??
 
 
 
-Still to be added:
--
--
+
+Known issues:
+-special character problems (only some characters) for hover titles (e.g., Correll active.sample.evidence ) (given problem does NOT occur for <TH> column header titles, suspect it may be a problem in the DataTables JS functions???)
+-sorting by rep.effort.type issue with ML #10 coming before ML #2
+
+To update later (post-sunday):
+-icons sprite in ECs on main page
+-add text description for generalization branches in ECs (cleanliness priming done!)
+-add footer with previous, current funders????
 
 
+OTHER things to update (sunday!!)
+-brief newsletter
 
 
 
