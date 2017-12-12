@@ -32,16 +32,49 @@ NA.to.blank <- function (x) {
 concat.ES.CI <- function (ES.type, ES.value, ES.CI) {
   if (ES.CI!="") {
     if (substr(ES.CI,1,1)=="[") {
-      return( paste(ES.type, "=", ES.value, ES.CI)) } #an extra space being added bet. ES. value & ES.CI so removed , "" ,
+      return( paste(ES.type, "=", ES.value, ES.CI)) } #an extra space somehow being added bet. ES. value & ES.CI so removed , "" ,
     else {
       return( paste(ES.type, "=", ES.value, "±", ES.CI))  }
     }
   if (ES.CI=="") {
     return( paste(ES.type, "=", ES.value))  }
 }
+#add ES.description title to original and replication ES cells (assumes same ES.description for both orig & rep)
+td.custom.title <- function (x,ES.description) {
+  if (ES.description!="") {
+     return(HTML(paste("<td title='",ES.description,"'>",x,"</td>")))  }
+  else 
+    { return(HTML(paste("<td>",x,"</td>"))) } #or could use shiny's tags$td fxn
+}
+td.rep.outcome.title <- function (x) {
+  if (substring(x,1,19)=="signal - consistent") {
+    return(HTML(paste("<td title='replication ES 95% CI excludes 0 and includes original ES point estimate'>",x,"</td>")))  }
+  else if (substring(x,1,21)=="signal - inconsistent") {
+    if (substring(x,1,30)=="signal - inconsistent, smaller"){
+      return(HTML(paste("<td title='replication ES 95% CI excludes 0 but also excludes original ES point estimate (smaller, same-direction)'>",x,"</td>")))  }
+    else if (substring(x,1,29)=="signal - inconsistent, larger"){
+      return(HTML(paste("<td title='replication ES 95% CI excludes 0 but also excludes original ES point estimate (larger, same-direction)'>",x,"</td>")))  }
+    else if (substring(x,1,31)=="signal - inconsistent, opposite"){
+      return(HTML(paste("<td title='replication ES 95% CI excludes 0 but also excludes original ES point estimate (opposite direction/pattern)'>",x,"</td>")))  }
+    else {
+      return(HTML(paste("<td title='replication ES 95% CI excludes 0 but also excludes original ES point estimate'>",x,"</td>")))  }
+    }
+  else if (substring(x,1,22)=="no signal - consistent"){
+    return(HTML(paste("<td title='replication ES 95% CI includes 0 but also includes original ES point estimate'>",x,"</td>")))  }
+  else if (substring(x,1,24)=="no signal - inconsistent"){
+    return(HTML(paste("<td title='replication ES 95% CI includes 0 but excludes original ES point estimate'>",x,"</td>")))  }
+  else {
+    if (substring(x,1,6)=="signal"){
+      return(HTML(paste("<td title='replication ES 95% CI excludes 0'>",x,"</td>")))  }
+    else if (substring(x,1,9)=="no signal"){
+      return(HTML(paste("<td title='replication ES 95% CI includes 0'>",x,"</td>")))  }
+    else {
+     return(HTML(paste("<td>",x,"</td>"))) } #or could use shiny's tags$td fxn }
+  }
+}
 #effect.title <- function (effect.description) {
 #  if (effect.description!="") {
-#    return(paste(" title='",effect.description,"'"))  } #on hold for now given DataTables ellipsis functions override <td> titles
+#    return(paste(" title='",effect.description,"'")) } #on hold for now given DataTables ellipsis functions override <td> titles (use td.custom.title fxn above)
 #}
 replication.HTML <- function(rep.num, rep.effort.type, orig.study.number, orig.N, orig.ES.type, orig.ES, orig.ES.CI,
                              rep.N, rep.ES.type, rep.ES, rep.ES.CI, rep.study.number, rep.outcome, target.effect, 
@@ -50,27 +83,30 @@ replication.HTML <- function(rep.num, rep.effort.type, orig.study.number, orig.N
                              orig.study.article.URL, rep.study.article.URL, orig.open.data.URL, orig.open.materials.URL,
                              orig.pre.reg.URL, effect.description, design, statistical.effect.type, orig.test.statistic,
                              orig.pvalue, rep.outcome.bayesian, study.order.CS, RPP.study.number, orig.article.title,EC.URL,
-                             orig.study.pub.year) {
-  row.string <- tags$tr(tags$td(NA.to.blank(target.effect)),
-      tags$td(orig.study.number,PDF.HTML(orig.study.article.URL),
-              data.HTML(orig.open.data.URL),materials.HTML(orig.open.materials.URL),prereg.HTML(orig.pre.reg.URL)),        
-      tags$td(orig.N),
-      tags$td(concat.ES.CI(orig.ES.type, orig.ES, orig.ES.CI)),
-      tags$td(rep.N),
-      tags$td(concat.ES.CI(rep.ES.type, rep.ES, rep.ES.CI)),
-      tags$td(rep.study.number,PDF.HTML(rep.study.article.URL),
-              data.HTML(rep.open.data.URL),materials.HTML(rep.open.materials.URL),
-              prereg.HTML(rep.pre.reg.URL),EC.icon.HTML(EC.URL)),        
-      tags$td(rep.outcome),
-      tags$td(IVs),
-      tags$td(DVs),
-      tags$td(rep.type),
-      tags$td(rep.effort.type),
-      tags$td(rep.method.differences),
-      tags$td(rep.active.sample.evidence),
-      tags$td(other.outcomes),
-      tags$td(effect.description))
-  cat(iconv(row.string, to="UTF-8"), file="output-all-replications.txt",append=TRUE) #needed to fix stupid Windows locale problem$@##@%!
+                             orig.study.pub.year, ES.description, include.in.HTML.table) {
+  #include only most precise replications among large-scale rep efforts (to declutter table and improve performance/loading time)
+  if (include.in.HTML.table=="yes") {
+    row.string <- tags$tr(tags$td(NA.to.blank(target.effect)),
+        tags$td(orig.study.number,PDF.HTML(orig.study.article.URL),
+                data.HTML(orig.open.data.URL),materials.HTML(orig.open.materials.URL),prereg.HTML(orig.pre.reg.URL)),        
+        tags$td(orig.N),
+        td.custom.title(concat.ES.CI(orig.ES.type, orig.ES, orig.ES.CI),ES.description),
+        tags$td(rep.N),
+        td.custom.title(concat.ES.CI(rep.ES.type, rep.ES, rep.ES.CI),ES.description),
+        tags$td(rep.study.number,PDF.HTML(rep.study.article.URL),
+                data.HTML(rep.open.data.URL),materials.HTML(rep.open.materials.URL),
+                prereg.HTML(rep.pre.reg.URL),EC.icon.HTML(EC.URL)),        
+        td.rep.outcome.title(rep.outcome),
+        tags$td(IVs),
+        tags$td(DVs),
+        tags$td(rep.type),
+        tags$td(rep.effort.type),
+        tags$td(rep.method.differences),
+        tags$td(rep.active.sample.evidence),
+        tags$td(other.outcomes),
+        tags$td(effect.description))
+    cat(iconv(row.string, to="UTF-8"), file="output-all-replications.txt",append=TRUE) #needed to fix stupid Windows locale problem$@##@%!
+  }
 }
 gSheet.url <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRdCTs0OOhcOI9LvmHkD4bXXm_kgxv7yq79VWtxwIgmwgi_LnK-2uWc-um_pfZBgbx2cWrNliMh9v7B/pub?output=csv'
 run <- function() {
@@ -117,6 +153,8 @@ run <- function() {
                      study.order.CS=NA.to.blank(rep.table[i,"study.order.CS"]),
                      RPP.study.number=NA.to.blank(rep.table[i,"RPP.study.number"]),
                      orig.article.title=NA.to.blank(rep.table[i,"orig.article.title"]),
-                     EC.URL=rep.table[i,"EC.URL"])
+                     EC.URL=rep.table[i,"EC.URL"],
+                     ES.description=NA.to.blank(rep.table[i,"ES.description"]),
+                     include.in.HTML.table=rep.table[i,"include.in.HTML.table"])
   }
 }
