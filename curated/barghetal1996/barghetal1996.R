@@ -1,7 +1,7 @@
 library(metafor)
 
 ### to save as png file
-#png(filename="barghetal1996.png", res=95, width=1200, height=800, type="cairo")
+png(filename="barghetal1996.png", res=95, width=1000, height=500, type="cairo")
 
 #from t(28)=2.86, d = 1.04
 barghetal2a.sd = (sqrt(15) * (.98/2.86)) / sqrt(2)
@@ -66,7 +66,7 @@ text(.4, .15, "Bargh et al.'s d_33% small telescope", col="blue", pos=4)
 #my alternative interpretation to d_33%=.40, is d_95% replications *could* have detected = .29
 d95_reps = pwr.t.test(n=302,power=.95)$d
 
-#dev.off()
+dev.off()
 
 
 

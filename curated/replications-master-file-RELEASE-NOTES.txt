@@ -1,7 +1,7 @@
-﻿Curated Replications Searchable Table release NOTES 
+﻿Curated Replications Searchable Table release NOTES [ended up presenting this info above the table and/or in ABOUT SECTION]
 ***Version 4.6.1 (December 2017)***
 
-NOTES regarding "replication outcome" categories:
+NOTES regarding "replication outcome" categories (**already out-of-date/obsolete, e.g., "imprecise" applied to any less precise rep even if signal detected):
 1. signal detected - consistent
 2a. signal detected - inconsistent (larger) (same direction, but larger)
 2b. signal detected - inconsistent (smaller) (same direction, but smaller)
@@ -29,37 +29,13 @@ General notes:
 -empty cells means that such study characteristic information doesn't apply to a replication *OR* that such info has not yet been curated;
 
 
-Coming soon
--evidence/replication collection linked icon for replications that are part of an evidence collection (i.e., "Go to evidence collection this replication is part of.") [modification of this icon: https://cdn3.iconfinder.com/data/icons/education-37/49/78-512.png]
--Bayesian replication outcome categories coming soon
-e.g., 
--row background JS where alternate based on "factored" target.effect instead of alternating rows;
--further refinements of "replication outcome" categories (e.g., unresolved issue: when a signal *IS* detected, should we distinguish between "signal detected - consistent" vs. "signal detected - consistent (inconclusive)", latter case when rep ES estimate LESS precise than original...; it seems we indeed should (given that less precise estimates will sometimes by chance be consistent *or* inconsistent with original), but this seems to overly complicate things quite a bit!
 
-concrete (consistent) example:
-Boroditsky (2000) Study 1	d(N=56) = .63 ± .56	d(N=44) = .77 ± .66	Bonfiglio et al. (2016, Ashland) 	signal detected - consistent (inconclusive)??
-vs.
-Boroditsky (2000) Study 1	d(N=56) = .63 ± .56	d(N=64) = .65 ± .53	Allen (2016, MontanaSU) 	signal detected - consistent
-
-concrete (inconsistent) example:
-Ross & Wilson (2002) Study 2	d(N=357) = .21 ± .21	d(N=42) = -.76 ± .68	Capaldi et al. (2016, Carleton) 	signal detected - inconsistent (opposite) (inconclusive)??
-Ross & Wilson (2002) Study 2	d(N=357) = .21 ± .21	d(N=229) = .38 ± .26	Baranski et al. (2016, UCRiverside) 	signal detected (consistent) (inconclusive)??
-
-
-
-
-Known issues:
--special character problems (only some characters) for hover titles (e.g., Correll active.sample.evidence ) (given problem does NOT occur for <TH> column header titles, suspect it may be a problem in the DataTables JS functions???)
--sorting by rep.effort.type issue with ML #10 coming before ML #2
-
-To update later (post-sunday):
--icons sprite in ECs on main page
--add text description for generalization branches in ECs (cleanliness priming done!)
--add footer with previous, current funders????
-
-
-OTHER things to update (sunday!!)
--brief newsletter
-
+specific examples used to clarify whether we should use "imprecise" label for different replication result scenarios
+--------------------------------------------------------------------------------------------------------------------
+**concrete (consistent) example:
+	Boroditsky (2000) Study 1	d(N=56) = .63 ± .56	d(N=44) = .77 ± .66	Bonfiglio et al. (2016, Ashland) 	signal - consistent (imprecise)
+**concrete (inconsistent) example:
+	Ross & Wilson (2002) Study 2	d(N=357) = .21 ± .21	d(N=42) = -.76 ± .68	Capaldi et al. (2016, Carleton) 	signal - inconsistent, opposite (imprecise)
+	Ross & Wilson (2002) Study 2	d(N=357) = .21 ± .21	d(N=229) = .38 ± .26	Baranski et al. (2016, UCRiverside) 	signal - consistent (imprecise)
 
 

@@ -1,0 +1,564 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="google-site-verification" content="7CrO9Y_velY8TjF6s8CWKB1s2S8TGRdQ8NoZ-gHPDE0" />
+  <meta http-equiv="Cache-control" content="public">
+  <title itemprop='name'>Curate Science - Science Cleaned Up.</title>
+  <meta name="description" content="Curate Science is a crowd-sourced platform to track, organize, and interpret replications of published findings in the social sciences." />
+  <meta name="keywords" content="replication, replications, direct replication, conceptual replication, replicability, generalizability, analytic reproducibility, analytic robustness, trustworthiness of research, trustworthiness of findings, sufficient transparency, open science, sufficient falsifiability, falsification, cumulative knowledge" />
+  <!--links to CSS files-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+  <link data-turbolinks-track="true" href="assets/main.css" media="all" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/extra.css">
+  <!--links to JS files-->
+  <script data-turbolinks-track="true" src="assets/main.js"></script> <!--only needed for ego depletion evidence collection-->
+  <script src="assets/bootstrap.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.10.16/dataRender/ellipsis.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.10.16/sorting/natural.js"></script>
+	
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			var table = $('#example-meta').DataTable( {
+				scrollY:        "575px",
+				scrollX:        true,
+				scrollCollapse: false,
+				"order": [[ 3, "asc" ]],
+				paging: true,
+				fixedColumns:   {
+					leftColumns: 0
+				},
+				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
+				"columnDefs": [ 
+					{ className: "bold-class", "targets": [ 5, 7 ] },
+					{ targets: [2,10,11,13,14],
+					render: $.fn.dataTable.render.ellipsis(32,true) },
+					{
+						 'targets': 1,
+						 'searchable':false,
+						 'orderable':false,
+						 'className': 'dt-body-center',
+						 'render': function (data, type, full, meta){
+							 return '<input type="checkbox" name="id[]" value="' 
+								+ $('<div/>').text(data).html() + '">';
+						 }
+					  },
+					  { className: "details-control", "targets": [ 0 ] }
+					],
+				"initComplete": function() { 
+					$('#loader-div').remove();
+					$("table").removeClass("hidden");
+					},
+				"dom": '<"top"fi<"clear">>rt<"bottom"pl<"clear">>'
+			} );
+			$('#example-meta tbody').on('click', 'td.details-control', function () {
+				  var tr = $(this).closest('tr');
+				  var row = table.row( tr );
+
+				  if (row.child.isShown()) {
+					// This row is already open - close it.
+					row.child.hide();
+					tr.removeClass('shown');
+				  } else {
+					// Open row.
+					row.child('<img src="logos/meta-analyze.figure.png" style="margin-left:100px;">').show();
+					tr.addClass('shown');
+				  }
+			} );
+			
+			// Handle click on "Select all" control
+		   $('#example-select-all').on('click', function(){
+			  // Check/uncheck all checkboxes in the table
+			  var rows = table.rows({ 'search': 'applied' }).nodes();
+			  $('input[type="checkbox"]', rows).prop('checked', this.checked);
+		   });
+
+		   // Handle click on checkbox to set state of "Select all" control
+		   $('#example tbody').on('change', 'input[type="checkbox"]', function(){
+			  // If checkbox is not checked
+			  if(!this.checked){
+				 var el = $('#example-select-all').get(0);
+				 // If "Select all" control is checked and has 'indeterminate' property
+				 if(el && el.checked && ('indeterminate' in el)){
+					// Set visual state of "Select all" control 
+					// as 'indeterminate'
+					el.indeterminate = true;
+				 }
+			  }
+		   });
+			
+		} );
+	</script>
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			var table = $('#example-popup').DataTable( {
+				scrollY:        "475px",
+				scrollX:        true,
+				scrollCollapse: false,
+				"order": [[ 0, "asc" ]],
+				paging: true,
+				fixedColumns:   {
+					leftColumns: 0
+				},
+				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
+				"columnDefs": [ 
+					{ className: "bold-class", "targets": [ 2 ] },
+					{ targets: [0,4,5,6],
+					render: $.fn.dataTable.render.ellipsis(40,true) }
+					],
+				"initComplete": function() { 
+					$('#loader-div').remove();
+					$("table").removeClass("hidden");
+					},
+				"dom": '<"top"fi<"clear">>rt<"bottom"pl<"clear">>'
+			} );
+		} );
+	</script>
+  
+  
+  <!--others-->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <script>
+
+  </script>
+  <style type="text/css" class="init"> <!--for DataTables table-->
+	/* Ensure that the demo table scrolls; */
+	th, td { white-space: normal; }
+	div.dataTables_wrapper {
+		width: auto; /*used to be: 1400px*/
+		margin: 0 auto;
+	}
+
+	td.details-control {
+	  background: url('logos/meta-analyze-button.png') no-repeat center center;
+	  cursor: pointer;
+	  min-width: 75px;
+	}
+	tr.shown td.details-control {
+	  background: url('logos/close-chevron-icon.png') no-repeat center center;
+	}
+	
+	.dataTables_wrapper .dataTables_length {
+		float: left;
+		}
+	.dataTables_wrapper .dataTables_filter {
+		float: left;
+		text-align: left;
+		margin: 0 auto;
+		}
+	.dataTables_wrapper .dataTables_info {
+		float: right;
+		clear: none;
+		padding-top:.5em;
+		}
+	.dataTables_filter input { width: 300px;
+							   max-height:15px;
+		}
+	.dataTables_length input { height:15px;}
+	<!--body { font-size: 13px;}-->
+	.bold-class { font-weight: bold; }
+	
+	<!--styling stuff for loading spinner-->
+	hidden { display:none; }
+	.loader {
+	  border: 16px solid #f3f3f3;
+	  border-radius: 50%;
+	  border-top: 16px solid #3498db;
+	  width: 30px;
+	  height: 30px;
+	  -webkit-animation: spin 1s linear infinite;
+	  animation: spin 1s linear infinite;
+	}
+	#loader-div { 
+		margin: 0 auto; 
+		top-margin:20px;}
+	@-webkit-keyframes spin {
+	  0% { -webkit-transform: rotate(0deg); }
+	  100% { -webkit-transform: rotate(360deg); }
+	}
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
+	}
+	
+	</style>
+  <style>
+	<!--temp place for troubleshooting style issues-->
+	.CellWithComment { position:relative; }
+	.CellWithComment:hover span.CellComment-rep1 { display:block; }
+	.CellWithComment:hover span.CellComment-rep2 { display:block; }
+	.CellWithComment:hover span.CellComment-rep3 { display:block; }
+	
+	.CellComment-rep1 {
+	  display:none;
+	  position:absolute; 
+	  z-index:100;
+	  border:1px;
+	  background-color:white;
+	  border-style:solid;
+	  border-width:1px;
+	  border-color:darkgrey;
+	  padding:3px;
+	  color:red; 
+	  top:40px; 
+	  left:15%;
+	}
+	.CellComment-rep2 {
+	  display:none;
+	  position:absolute; 
+	  z-index:100;
+	  border:1px;
+	  background-color:white;
+	  border-style:solid;
+	  border-width:1px;
+	  border-color:darkgrey;
+	  padding:3px;
+	  color:red; 
+	  top:92px; 
+	  left:15%;
+	}
+	.CellComment-rep3 {
+	  display:none;
+	  position:absolute; 
+	  z-index:100;
+	  border:1px;
+	  background-color:white;
+	  border-style:solid;
+	  border-width:1px;
+	  border-color:darkgrey;
+	  padding:3px;
+	  color:red; 
+	  top:145px; 
+	  left:15%;
+	}
+		
+  </style>
+</head>
+
+<body>
+
+<header class="pull-center" id="masthead" >
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="navbar-inner" style="min-height:50px;">
+      <div class="container" >
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <a class="brand brand-appland" href="#" style="padding-top:0px;padding-bottom:0px;">
+              <img alt="Curate Science" src="logos/navbar-icon-smaller.png" />
+            </a>
+          </a>
+        <div class="nav-collapse" style="text-transform:none;">
+          <ul class="nav navbar-nav" style="text-transform:none;">
+            <li><a class="brand brand-appland" href="#"><img alt="Navbar icon" src="logos/navbar-icon-smaller.png" /></a></li>
+			<li><a href="#replications-section">Replications</a></li>
+			<li><a href="#evidence-collections-section">Collections</a></li>
+			<li><a href="#about-section">About</a></li>
+			<li><a href="#people-section">People</a></li>
+			<li><a href="#signup-section">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="main-container push">
+
+
+	
+	<section class="section" style="background:white;box-shadow: 0 0 5px;">	
+		<div class="container" style="padding: 0px 0 40px;margin-top:0px;">
+			
+			
+					
+				
+			
+			<div class="wrapper" style="max-width:900px;margin: 0 auto;">	
+			
+				<h4 style="margin-top:100px;text-align:center;">2. Enhanced Visualization of Complex Designs</h4>
+				<p style="font-size:16px;line-height:1.2em;max-width:900px;margin: 0 auto;margin-bottom:15px;">Enhanced visualization of effect sizes for more complex designs by displaying small (side-by-side) plots of original and replication data patterns on hover/mouseover (e.g., complex interaction pattern). Try it by hovering over the original or replication effect size cells (dotted underline).</p>
+				
+			</div>
+			
+				<div id="loader-div" class="loader"></div>
+				<table id="example-popup" class="stripe row-border order-column compact hidden" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+							<th title="target effect/hypothesis tested in replication attempt">effect/hypothesis</th>
+							<th title="study sample size (N; total sample size)">N</th>
+							<th title="authors & study number (unnumbered for sole study papers)">authors</th>
+							<th></th>
+							<th title="independent variable constructs (operationalizations & conditions)">IVs</th>
+							<th title="dependent variable constructs (operationalizations)">DVs</th>
+							<th title="active sample evidence in replication to detect a positive effect (see About section for details)">active.evidence</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
+					  <td>playboy effect</td>
+					  <td>223</td>
+					  <td>
+						Balzarini et al. (2017) Study 1
+						<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+						</td><td><a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+						<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+						<a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+					  </td>
+					  <td>Playboy centerfolds vs. control; Participant sex</td>
+					  <td>Love for partner (Rubin Love-scale)</td>
+					  <td>Nudes rated as more pleasant than abstract art</td>
+					</tr><tr>
+					  <td>playboy effect</td>
+					  <td>263</td>
+					  <td>
+						Balzarini et al. (2017) Study 2
+						<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+						</td><td>
+						<a href=' https://osf.io/rqhjk/ ' target='_blank' class='sprite sprite-data'></a>
+						<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+						<a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+					  </td>
+					  <td>Playboy centerfolds vs. control; Participant sex</td>
+					  <td>Love for partner (Rubin Love-scale)</td>
+					  <td>Nudes rated as more pleasant than abstract art</td>
+					  <td></td>
+					</tr><tr>
+					  <td>playboy effect</td>
+					  <td>225</td>
+					  <td>
+						Balzarini et al. (2017) Study 3
+						<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+						</td><td>
+						<a href=' https://osf.io/f4n7b/ ' target='_blank' class='sprite sprite-data'></a>
+						<a href=' https://osf.io/f56a8/ ' target='_blank' class='sprite sprite-materials'></a>
+						<a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+					  </td>
+					  <td>Playboy centerfolds vs. control; Participant sex</td>
+					  <td>Love for partner (Rubin Love-scale)</td>
+					  <td>Nudes rated as more pleasant than abstract art</td>
+					</tr>
+							<tr>
+							  <td>Macbeth effect (transcribe text)</td>
+							  <td>36</td>
+							  <td>
+								Gamez et al. (2011) Study 2
+								<a href=' http://www.redalyc.org/pdf/172/17217456013.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								</td><td>
+								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+						<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+							  </td>
+							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
+							  <td>need to cleanse oneself (cleaning products desirability)</td>
+							  <td></td>
+							</tr><tr>
+							  <td>Macbeth effect (transcribe text)</td>
+							  <td>335</td>
+							  <td>
+								Siev (2012) Study 1
+								<a href=' https://github.com/eplebel/science-commons/blob/master/curated/z%26l/Siev%20(2012).pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								</td><td>
+								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+							  </td>
+							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
+							  <td>need to cleanse oneself (cleaning products desirability)</td>
+							  <td></td>
+							</tr><tr>
+							  <td>Macbeth effect (transcribe text)</td>
+							  <td>148</td>
+							  <td>
+								Siev (2012) Study 2
+								<a href=' https://github.com/eplebel/science-commons/blob/master/curated/z%26l/Siev%20(2012).pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								</td><td>
+								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+								<a href=' https://github.com/eplebel/science-commons/blob/master/curated/z%26l/Siev%20(2012%2C%20Study%202)%20-%20Spring08protocol%20undergrads%20fixed%20format.pdf ' target='_blank' class='sprite sprite-materials'></a>
+							  </td>
+							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
+							  <td>need to cleanse oneself (cleaning products desirability)</td>
+							  <td></td>
+							</tr><tr>
+							  <td>Macbeth effect (transcribe text)</td>
+							  <td>153</td>
+							  <td>
+								Earp et al. (2014) Study 1
+								<a href=' http://www.jimaceverett.com/wp-content/uploads/2014/09/Earp-Everett-et-al.-2014-Out-damned-spot.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								</td><td>
+								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+							  </td>
+							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
+							  <td>need to cleanse oneself (cleaning products desirability)</td>
+							  <td></td>
+							</tr><tr>
+							  <td>Macbeth effect (transcribe text)</td>
+							  <td>156</td>
+							  <td>
+								Earp et al. (2014) Study 2
+								<a href=' http://www.jimaceverett.com/wp-content/uploads/2014/09/Earp-Everett-et-al.-2014-Out-damned-spot.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								</td><td>
+								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+							  </td>
+							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
+							  <td>need to cleanse oneself (cleaning products desirability)</td>
+							  <td></td>
+							</tr><tr>
+							  <td>Macbeth effect (transcribe text)</td>
+							  <td>286</td>
+							  <td>
+								Earp et al. (2014) Study 3
+								<a href=' http://www.jimaceverett.com/wp-content/uploads/2014/09/Earp-Everett-et-al.-2014-Out-damned-spot.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								</td><td>
+								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+							  </td>
+							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
+							  <td>need to cleanse oneself (cleaning products desirability)</td>
+							  <td></td>
+							</tr>
+							<tr>
+							  <td>Macbeth effect (physical cleansing)</td>
+							  <td>115</td>
+							  <td>
+								Fayard et al. (2009) Study 2
+								<a href=' http://www.jasnh.com/pdf/Vol6-No2.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								</td><td>
+								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+							  </td>
+							  <td>physical cleansing (antiseptic wipe vs. control)</td>
+							  <td>volunteerism (help student RA)</td>
+							  <td></td>
+							</tr><tr>
+							  <td>Macbeth effect (physical cleansing)</td>
+							  <td>28</td>
+							  <td>
+								Gamez et al. (2011) Study 4
+								<a href=' http://www.redalyc.org/pdf/172/17217456013.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								</td><td>
+								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+							  </td>
+							  <td>physical cleansing (antiseptic wipe vs. control)</td>
+							  <td>volunteerism (help student RA)</td>
+							  <td></td>
+							</tr><tr>
+							  <td>Macbeth effect (physical cleansing)</td>
+							  <td>29</td>
+							  <td>
+								Reuven et al. (2013)
+								<a href=' https://msu.edu/~cesario/publications/Donnellan%20Lucas%20Cesario%20IN%20PRESS%20EMOTION%20loneliness%20bathing.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								</td><td>
+								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+							  </td>
+							  <td>physical cleansing (antiseptic wipe vs. control)</td>
+							  <td>volunteerism (help student RA)</td>
+							  <td></td>
+							</tr>
+				
+					</tbody>
+				</table>
+				
+			
+				
+					<p style="margin-bottom:200px;">
+					</p>
+				
+		</div>
+  </section>
+
+  
+  
+  
+	
+  
+		
+  
+
+
+  <!--footer-->
+	<div class="container" style="font-size:16px;padding-bottom:10px;">
+		<div class="row">
+			<div class="col-md-3">
+				<center>
+					<strong>Previous Funders</strong>
+					<br>
+					<a  href="https://cos.io/"><img src="logos/COS-logo.png"></a>
+					<br>
+					<img src="logos/anon-donor-logo.png" style="margin-top:5px;">
+				</center>
+			</div>			
+			<div class="col-md-3">
+				<center>
+					<strong>Current Funders</strong>
+					<br>
+					<a  href="http://www.bitss.org/"><img src="logos/BITSS-logo.png"></a>
+					<br>
+					<a  href="http://www.sshrc-crsh.gc.ca/home-accueil-eng.aspx"><img src="logos/SSHRC-logo.png" style="margin-top:5px;"></a>
+				</center>
+			</div>
+			<div class="col-md-3">
+				<center>
+					<strong>Current Partners</strong>
+					<br>
+					<a href="https://meta-lab.co/"><img src="logos/meta-lab-logo.png"></a>
+					<br>
+					<a href="https://igdore.org/"><img src="logos/IGDORE-logo.png" style="margin-top:10px;"></a>
+				</center>
+			</div>
+			<div class="col-md-3">
+				<center>
+					<strong>Contact Details</strong>
+					<p style="line-height:1.2em;">
+					University of Western Ontario<br>
+					1151 Richmond St<br>
+					London, Ontario, CANADA, N6A 3K7<br>
+					email: curatescience@<span class="displaynone"></span>gmail.com<br>
+					<a href="https://twitter.com/curatescience"><i class="fa fa-twitter fa-2" aria-hidden="true"></i></a>
+					<a href="https://github.com/eplebel/science-commons"><i class="fa fa-github fa-2" aria-hidden="true"></i></a>
+					</p>
+				</center>
+			</div>		
+		</div>
+	</div><!--footer div-->
+	
+	<div class="footer-bottom" style="background-color:whitesmoke;padding-top:10px;">
+		<div class="container">
+			<div class="row">
+					<center>
+						<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" title="This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License"/></a>
+						<br>
+						<i>*Thanks to <a href="http://www.nicebread.de/">Felix Schonbrodt</a> who is currently hosting CurateScience.org</i>
+					</center>
+			</div>
+		</div>
+	</div> <!--footer-bottom div-->
+    
+	</div> <!--main-container div-->
+
+
+
+</div>
+
+  <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+  <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script> 
+  <script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-48865749-1', 'auto');
+	  ga('send', 'pageview');
+  </script>
+  
+</body>
+</html>

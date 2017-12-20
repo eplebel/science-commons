@@ -3,7 +3,7 @@ library(plotrix) #for ablineclip function
 require(compute.es)
 
 ### to save as png file
-png(filename="rep.outcome.figure.png", res=95, width=1000, height=500, type="cairo")
+#png(filename="rep.outcome.figure.png", res=95, width=1000, height=500, type="cairo")
 
 dat <- read.csv(file = "rep-outcome-figure.csv", header = TRUE)
 dat <- escalc(measure="COR", ri=dat$r, ni=dat$N, data=dat, slab=dat$study)
@@ -45,6 +45,6 @@ text(.9,15, "no signal - consistent", pos=4)
 text(.9,14, "no signal - inconsistent", pos=4)
 op <- par(cex=1, font=3)
 text(.9,21.25, "Replication outcome", pos=4)
-dev.off()
+#dev.off()
 
 
