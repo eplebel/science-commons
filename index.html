@@ -70,6 +70,14 @@
 		width: auto; /*used to be: 1400px*/
 		margin: 0 auto;
 	}
+	td.details-control {
+	  background: url('logos/meta-analyze-button.png') no-repeat center center;
+	  cursor: pointer;
+	  min-width: 75px;
+	}
+	tr.shown td.details-control {
+	  background: url('logos/close-chevron-icon.png') no-repeat center center;
+	}
 	.dataTables_wrapper .dataTables_length {
 		float: left;
 		}
@@ -115,7 +123,53 @@
 	</style>
   <style>
 	<!--temp place for troubleshooting style issues-->
-	
+	.CellWithComment { position:relative; }
+	.CellWithComment:hover span.CellComment-rep1 { display:block; }
+	.CellWithComment:hover span.CellComment-rep2 { display:block; }
+	.CellWithComment:hover span.CellComment-rep3 { display:block; }
+	.CellComment-rep1 {
+	  display:none;
+	  position:absolute; 
+	  z-index:100;
+	  border:1px;
+	  background-color:white;
+	  border-style:solid;
+	  border-width:1px;
+	  border-color:darkgrey;
+	  padding:3px;
+	  color:red; 
+	  top:40px; 
+	  left:15%;
+	}
+	.CellComment-rep2 {
+	  display:none;
+	  position:absolute; 
+	  z-index:100;
+	  border:1px;
+	  background-color:white;
+	  border-style:solid;
+	  border-width:1px;
+	  border-color:darkgrey;
+	  padding:3px;
+	  color:red; 
+	  top:92px; 
+	  left:15%;
+	}
+	.CellComment-rep3 {
+	  display:none;
+	  position:absolute; 
+	  z-index:100;
+	  border:1px;
+	  background-color:white;
+	  border-style:solid;
+	  border-width:1px;
+	  border-color:darkgrey;
+	  padding:3px;
+	  color:red; 
+	  top:145px; 
+	  left:15%;
+	}
+	.center-pills { display: inline-block; }
   </style>
 </head>
 
@@ -22119,7 +22173,8 @@
 									<li>RRR11: SNARC effect (Spatial-Numerical Association of Response Codes) <font style="color:darkgrey;">[data being collected]</font> <a href="https://osf.io/he5za/" target="_blank"><img src="logos/osf.png"></a> <a href="https://osf.io/dhnf8/" target="_blank"><img class='open-logos active' src='logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></li>
 								</ul>
 								<li>Economics Reproducibility Project [<strong>67</strong> analytic reproductions; Chang & Li, 2015] <a href="https://www.federalreserve.gov/econresdata/feds/2015/files/2015083pap.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
-								<li>Economics Lab Experiments Replicability Project [<strong>18</strong> replications; Camerer et al, 2016] <a href="https://www.researchgate.net/profile/Teck_Ho/publication/297144482_Evaluating_replicability_of_laboratory_experiments_in_economics/links/56dd442308aee73df6d583b3.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+								<li>Economics Lab Experiments Replicability Project [<strong>18</strong> replications; Camerer et al., 2016] <a href="https://economics.stanford.edu/sites/default/files/eerp_sci_camerer_published_mainplussom_2016-1.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
+								<li>Experimental Economics Replications Meta-Study [<strong>85</strong> replications; Maniadis, Tufano, & List, 2017] <a href="https://github.com/eplebel/science-commons/blob/master/curated/Maniadis-et-al-2017-replicability-of-experimental-Economics-studies.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a></li>
 							</ul>
 						</div>
 					</div>
@@ -22133,21 +22188,44 @@
   
   <section class="section" id="about-section" style="box-shadow: 0 0 5px;">
 	<div class="container" style="padding: 0px 0 40px;">
-		<header class="page-header" style="padding-top:0px;margin-bottom:0px;"><h1>Our Approach</h1></header>
 		
+		<header class="page-header" style="padding-top:0px;margin-bottom:0px;padding-bottom:0px;"><h1>About</h1></header>
 		<div class="wrapper" style="max-width:900px;margin: 0 auto;">
 			
+			<div class="col-md-12 text-center">
+				<ul class="nav nav-pills center-pills">
+				  <li><a href="#our-approach-section">Our Approach</a></li>
+				  <li><a href="#current-developments-section">Current Developments: Upcoming Features</a></li>
+				  <li><a href="#future-directions-section">Future Directions</a></li>
+				</ul>
+			</div>
+
 			<p style="font-size:16px;line-height:1.2em;">Scientists only put weight in an empirical finding when (at minimum) it can be consistently replicated by independent researchers in independent samples. No database currently exists, however, to find such information. <strong>Curate Science</strong> is a crowdsourced platform to <i><u>track</u></i>, <i><u>organize</u></i>, and <i><u>interpret</u></i> replications of published findings in the social sciences (for full details of our approach, see <a href="https://osf.io/preprints/psyarxiv/uwmr8" target="_blank"> here [version 4.4.0]</a>).
 			</p>
-			<p style="font-size:16px;line-height:1.2em;margin-bottom:0px;">Our approach involves 4 key steps/considerations:
-				<ol style="font-size:16px;line-height:1.2em;">
+			<h5 style="margin-bottom:5px;text-align:center;">Value of Curating and Tracking Replications</h5>
+			<p style="font-size:16px;line-height:1.2em;margin-bottom:0px;">Beyond allowing us to base our beliefs about effects according to empirical evidence rather than authority or intuition, the benefits of tracking and curating replications include:
+				<ol style="font-size:14px;line-height:1.2em;">
+					<li>Ability to <strong>identify replicable effects</strong> that are ready to be extended (particularly useful for graduate students)</li>
+					<li>Ability to <strong>locate experimental materials</strong> for follow-up research and <strong>open data sets for secondary (re-)analayses</strong></li>
+					<li>Valuable resource for:</li>
+						<ul>
+							<li><strong>Teaching about replication</strong>: Searchable table can be used to show real world examples of effects exhibiting different levels of replicability.</li>
+							<li>Rich database of replications can be used for <strong>meta-science research</strong> to deepen our understanding of the predictors of replicability.</li>
+						</ul>
+					<li>Ability to <strong>identify "missing replications" of highly cited findings</strong>, and then commission the conduct of such replications (e.g., through <a href="https://osf.io/view/studyswap/" target="_blank">StudySwap</a> or the <a href="https://psysciacc.wordpress.com/" target="_blank">Psychological Science Accelerator</a>)</li>
+					<li><strong>Give thanks/show gratitude to researchers</strong> who dedicate their precious time to conducting critically important replication studies.</li>
+				</ol>
+			</p>
+			
+			<div id="our-approach-section"></div>
+			<h4 style="margin-bottom:5px;text-align:center;margin-top:60px;">Our Approach</h4>
+				<ol style="font-size:14px;line-height:1.2em;">
 					<li><strong>Categorize</strong> replication method similarity</li>
 					<li><strong>Organize</strong> replications by the different operationalizations of an effect/hypothesis (in "evidence collections")</li>
 					<li><strong>Gauge</strong> replication deviations & plausibility of auxiliary hypotheses/assumptions</li>
 					<li><strong>Evaluate</strong> statistical evidence of replications (meta-analytically or in nuanced manner when few replications available)</li>
 				</ol>
 			</p>
-			<p>
 			<h5 style="margin-bottom:5px;text-align:center;">1. Replication Method Similarity</h5>
 			<p style="font-size:16px;line-height:1.2em;margin-bottom:0px;">
 			Replications are first categorized in terms of their methodological similarity relative to an original study to ensure sufficient methodological similarity. We've developed a replication taxonomy to help in this task (see below). It distinguishes <i>sufficiently</i> methodologically-similar direct replications (i.e., "Exact", "Very Close", or "Close") from <i>insufficiently</i> methodologically-similar "conceptual replications" (i.e., generalizability studies, what are called "Far" or "Very Far").
@@ -22168,7 +22246,7 @@
 			
 			<h5 style="margin-bottom:5px;text-align:center;">3. Gauge Replication Deviations & Active Sample Evidence</h5>
 			<p style="font-size:16px;line-height:1.2em;margin-bottom:5px;">
-			When interpreting replications, it's crucial to carefully consider all known methodological deviations of a replication relative to an original study. It's also important to consider evidence that a replication sample had the ability to detect <i>some effect</i> (e.g., successfully replicating known replicable finding or other positive control; successful manipulation checks). Such "active sample evidence" helps evaluate the plausibility of the relevant auxiliary hypotheses needed to test the substantive hypothesis at hand <a href="https://pdfs.semanticscholar.org/ff88/cc5e63cb22fef2fd074eea91d9cf1889277b.pdf" target="_blank">(Meehl, 1967, p. 200)</a>. Consequently, information about replication deviations and active sample evidence is curated and prominently displayed (as shown below), in addition to links to the experimental materials/data and pre-registered protocol of the replication study (via badge icons when available).
+			When interpreting replications, it's crucial to carefully consider all known methodological deviations of a replication relative to an original study. It's also important to consider evidence that a replication sample had the ability to detect <i>some effect</i> (e.g., successfully replicating known replicable finding or other positive control; successful manipulation checks). Such "active sample evidence" helps evaluate the plausibility of the relevant auxiliary hypotheses needed to test the substantive hypothesis at hand <a href="https://pdfs.semanticscholar.org/ff88/cc5e63cb22fef2fd074eea91d9cf1889277b.pdf" target="_blank">(Meehl, 1990, p. 200)</a>. Consequently, information about replication deviations and active sample evidence is curated and prominently displayed (as shown below), in addition to links to the experimental materials/data and pre-registered protocol of the replication study (via badge icons when available).
 			</p>
 			<center><img src="logos/study-characteristics-prototype_small.png" ></center> 
 			
@@ -22177,9 +22255,9 @@
 			We then evaluate the statistical evidence of the replications by meta-analyzing effect sizes within each operationalization of an effect. For example, as shown below, the original instantiation and a method generalization of Bem's retroactive recall effect does not appear to be replicable (meta-analytic effect size estimates of d = -.03 +/- .40 and d = -.20 +/- .98 for Bem's Study 8 and 9 effects, respectively).
 			</p>
 			<center><img src="logos\bem-study8&9-forest-plots.png"></center>
-			<p style="font-size:16px;line-height:1.2em;">
+			<p style="font-size:16px;line-height:1.2em;margin-bottom:0px;">
 			In cases where only a few replications are available (the typical case), it's crucial to interpret the statistical evidence in a nuanced manner (rather than a black-and-white judgment) by considering 3 distinct aspects: (1) whether a signal was detected, (2) consistency of replication effect size (ES) relative to original, and (3) precision of replication ES estimate. Such considerations yield the following "replication outcomes" (see below for visual depictions):
-				<ol style="font-size:16px;line-height:1.2em;margin-bottom:0px">
+				<ol style="font-size:14px;line-height:1.2em;margin-bottom:0px">
 					<li><strong>signal - consistent:</strong> replication ES 95% CI <i>excludes</i> 0 and <i>includes</i> original ES point estimate.</li>
 					<li><strong>signal - inconsistent:</strong> replication ES 95% CI <i>excludes</i> 0 but also <i>excludes</i> original ES point estimate. Three subcategorizations:</li>
 						<ul>
@@ -22196,40 +22274,414 @@
 			In cases where a replication effect size estimate was <i>less</i> precise than the original (i.e., replication ES CI is <i>wider</i> than original), the label "imprecise" is added to warn readers that such replication should <strong>only</strong> be interpreted meta-analytically.
 			</p>
 
-				<div id="current-developments-section"></div>
-					<br>
-						<h1 style="text-align:center;">Current Developments/Future Directions</h1>
+			<div id="current-developments-section"></div>
+			<br>
+			<h1 style="text-align:center;">Current Developments: Upcoming Features</h1>
+						
 						<p style="font-size:16px;line-height:1.2em;">
-						Our current approach places a strong emphasis on study transparency by curating links to open data/experimental materials and pre-registered protocols of replications. That said, we're currently working on further refinements that will allow even more fine-grained interpretations of replications. In this spirit, we're currently developing meta-scientific instruments (and metrics) to quantify the (1) <i>method transparency</i> and (2) <i>analytic reproducibility</i> of a study. We're also developing a metric to more preciesly quantify degrees of (3) <i>effect replicability</i>.
+						The following 4 major features are currently in development: (1) <a href="#meta-analyze-reps-section">meta-analyze selected replications</a>, (2) <a href="#complex-designs-section">enhanced visualization of complex designs</a>, (3) <a href="#multiple-outcomes-section">curating and visualizing multiple outcomes</a>, and (4) <a href="#crowdsourcing-section">public crowdsourcing and replication alerts</a>.
 						</p>
-						<h5 style="margin-bottom:5px;text-align:center;">1. Method Transparency</h5>
-						<center><img src="logos\_materials_small.png" ></center>
-						<p style="font-size:16px;line-height:1.2em;margin-bottom:5px;">
-						Ensuring that a study's methodological details have been described with <i>sufficient transparency</i> is an incontrovertible requirement to allow the community of researchers to (1) carefully scrutinize and critique a finding and (2) attempt diagnostic independent direct replications of an original finding. To determine <i>sufficient method transparency</i>, we need to quantify the <i>degree</i> to which a study's methodology has been described according to official reporting guidelines (e.g., for an experimental study, the % of <a href="http://www.consort-statement.org/media/default/downloads/consort%202010%20checklist.pdf" target="_blank">CONSORT's 25-item checklist</a> decribed in a paper).
+						
+						<div id="meta-analyze-reps-section"></div>
+						<br>
+						<h5 style="text-align:center;">1. Meta-analyze Selected Replications</h5>
+						<p style="font-size:16px;line-height:1.2em;max-width:900px;margin: 0 auto;">
+							Meta-analyze and generate forest plots of user-selected replications, including displaying estimates of heterogeneity across replications (replications automatically grouped by distinct operationalizations of the effect). Try it by clicking the top "Meta-analyze" button on the left side of the table.</li>
 						</p>
-						<center><a href="http://www.consort-statement.org/media/default/downloads/consort%202010%20checklist.pdf" target="_blank">
-						<img src="logos\CONSORT-logo.jpg" style="margin-right:50px;"></a>
-						<img src="logos\transparency-meter-logo.jpg" style="margin-top:10px;"></center>
+				</div> <!-- max-width:900px wrapper-->
+				
+					<div id="loader-div" class="loader"></div>
+					<table id="example-meta" class="stripe row-border order-column compact hidden" cellspacing="0" width="100%">
+						<thead>
+						<tr>
+							<th></th>
+							<th ><input name="select_all" value="1" id="example-select-all" type="checkbox" /></th>
+							<th title="target effect/hypothesis tested in replication attempt">target.effect</th>
+							<th title="original authors & study number (unnumbered for sole study papers)">orig.study.number</th>
+							<th title="original study sample size (N; total sample size)">o.N</th>
+							<th title="original study effect size ± 95% CIs; NR means not reported and/or not calculatable">orig.effect.size</th>
+							<th title="replication study sample size (N; total sample size)">r.N</th>
+							<th title="replication study effect size ± 95% CIs; NR means not reported and/or not calculatable">rep.effect.size</th>
+							<th title="replication authors & study number (unnumbered for sole study papers)">rep.study.number</th>
+							<th title="replication outcome & consistency relative to original (see About section for details)">rep.outcome</th>
+							<th title="independent variable constructs (operationalizations & conditions)">IVs</th>
+							<th title="dependent variable constructs (operationalizations)">DVs</th>
+							<th title="type of direct replication (see replication taxonomy in About section for details)">rep.type</th>
+							<th title="known replication methodological differences relative to original (if any)">rep.differences</th>
+							<th title="active sample evidence in replication to detect a positive effect (see About section for details)">rep.active.evidence</th>
+							</tr>
+							</thead>
+							<tbody>
 
-						<h5 style="margin-bottom:5px;text-align:center;">2. Analytic Reproducibility</h5>
-						<center><img src="logos\reproducibility-logo.png" ></center>
-						<p style="font-size:16px;line-height:1.2em;margin-bottom:5px;">
-						In addition to <i>sufficient method transparency</i>, a published study result needs to be <i>analytically reproducible</i> from the data to ensure it is free of data errors and internal inconsistencies. To determine <i>sufficient analytic reproducibility</i>, we need to quantify the <i>degree</i> to which study results are reproducible from the data (i.e., the % of primary, secondary, and auxiliary analytic results that can be successfully reproduced from the data).
-						</p>
-						<a href="logos\study-view-analytic-reprod.png" target="_blank">
-						<center><img src="logos\study-view-analytic-reprod-logo.png" style="margin-right:50px;"></a>
-						<img src="logos\reproducibility-meter-logo.jpg" style="margin-top:5px;"></center>
-
-						<h5 style="margin-bottom:5px;text-align:center;">3. Effect Replicability</h5>
-						<center><img src="logos\replicability-logo.png" style="margin-bottom:5px;"></center>
-						<p style="font-size:16px;line-height:1.2em;margin-bottom:5px;">
-						A published finding can be considered trustworthy (at minimum) when an effect (of similar size) can be consistently observed in <a href="logos/replication-taxonomy-v3.png" target="_blank">sufficiently-methodologically-similar direct replications</a> conducted by independent researchers, each replication itself exhibiting <i>sufficient method transparency</i> and <i>analytic reproducibility</i>. <i>Effect replicability</i> is quantified by estimating the strength of evidence of the meta-analytic effect size of sufficiently-methodologically-similar direct replications, with each replication study weighted proportional to its method transparency, analytic reproducibility, and methodological similarity to the original study.
-						</p>
-						<center><img src="logos\bem-study9-forest-plot_02_reprod.jpg" ></center>
-
+							 <tr>
+							 <td></td>
+							 <td></td>
+							  <td>Macbeth effect (transcribe text)</td>
+							  <td>
+								Zhong &amp; Liljenquist (2006) Study 2
+								<a href=' http://haniff.sg/wp-content/uploads/2013/04/washing-away-your-sins.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+							  </td>
+							  <td>27</td>
+							  <td> r = .45 ± .31 </td>
+							  <td>36</td>
+							  <td> r = .04 ± .33 </td>
+							  <td>
+								Gamez et al. (2011) Study 2
+								<a href=' http://www.redalyc.org/pdf/172/17217456013.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								<a href=' #z&l ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+							  </td>
+							  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
+							  <td>need to cleanse oneself (cleaning products desirability)</td>
+							  <td>very close</td>
+							  <td></td>
+							  <td></td>
+							</tr><tr>
+							<td></td>
+							 <td></td>
+							  <td>Macbeth effect (transcribe text)</td>
+							  <td>
+								Zhong &amp; Liljenquist (2006) Study 2
+								<a href=' http://haniff.sg/wp-content/uploads/2013/04/washing-away-your-sins.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+							  </td>
+							  <td>27</td>
+							  <td> r = .45 ± .31 </td>
+							  <td>335</td>
+							  <td> r = -.04 ± .11 </td>
+							  <td>
+								Siev (2012) Study 1
+								<a href=' https://github.com/eplebel/science-commons/blob/master/curated/z%26l/Siev%20(2012).pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								<a href=' #z&l ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+							  </td>
+							  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
+							  <td>need to cleanse oneself (cleaning products desirability)</td>
+							  <td>very close</td>
+							  <td></td>
+							  <td></td>
+							</tr><tr>
+							<td></td>
+							 <td></td>
+							  <td>Macbeth effect (transcribe text)</td>
+							  <td>
+								Zhong &amp; Liljenquist (2006) Study 2
+								<a href=' http://haniff.sg/wp-content/uploads/2013/04/washing-away-your-sins.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+							  </td>
+							  <td>27</td>
+							  <td> r = .45 ± .31 </td>
+							  <td>148</td>
+							  <td> r = -.09 ± .16 </td>
+							  <td>
+								Siev (2012) Study 2
+								<a href=' https://github.com/eplebel/science-commons/blob/master/curated/z%26l/Siev%20(2012).pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								<a href=' https://github.com/eplebel/science-commons/blob/master/curated/z%26l/Siev%20(2012%2C%20Study%202)%20-%20Spring08protocol%20undergrads%20fixed%20format.pdf ' target='_blank' class='sprite sprite-materials'></a>
+								<a href=' #z&l ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+							  </td>
+							  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
+							  <td>need to cleanse oneself (cleaning products desirability)</td>
+							  <td>very close</td>
+							  <td></td>
+							  <td></td>
+							</tr><tr>
+							<td></td>
+							 <td></td>
+							  <td>Macbeth effect (transcribe text)</td>
+							  <td>
+								Zhong &amp; Liljenquist (2006) Study 2
+								<a href=' http://haniff.sg/wp-content/uploads/2013/04/washing-away-your-sins.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+							  </td>
+							  <td>27</td>
+							  <td> r = .45 ± .31 </td>
+							  <td>153</td>
+							  <td> r = .00 ± .16 </td>
+							  <td>
+								Earp et al. (2014) Study 1
+								<a href=' http://www.jimaceverett.com/wp-content/uploads/2014/09/Earp-Everett-et-al.-2014-Out-damned-spot.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								<a href=' http://www.jimaceverett.com/wp-content/uploads/2014/09/Macbeth-Study-1.csv ' target='_blank' class='sprite sprite-data'></a>
+								<a href=' #z&l ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+							  </td>
+							  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
+							  <td>need to cleanse oneself (cleaning products desirability)</td>
+							  <td>very close</td>
+							  <td></td>
+							  <td></td>
+							</tr><tr>
+							<td></td>
+							 <td></td>
+							  <td>Macbeth effect (transcribe text)</td>
+							  <td>
+								Zhong &amp; Liljenquist (2006) Study 2
+								<a href=' http://haniff.sg/wp-content/uploads/2013/04/washing-away-your-sins.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+							  </td>
+							  <td>27</td>
+							  <td> r = .45 ± .31 </td>
+							  <td>156</td>
+							  <td> r = -.07 ± .16 </td>
+							  <td>
+								Earp et al. (2014) Study 2
+								<a href=' http://www.jimaceverett.com/wp-content/uploads/2014/09/Earp-Everett-et-al.-2014-Out-damned-spot.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								<a href=' http://www.jimaceverett.com/wp-content/uploads/2014/09/Macbeth-Study-2-USA.csv ' target='_blank' class='sprite sprite-data'></a>
+								<a href=' #z&l ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+							  </td>
+							  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
+							  <td>need to cleanse oneself (cleaning products desirability)</td>
+							  <td>very close</td>
+							  <td></td>
+							  <td></td>
+							</tr><tr>
+							<td></td>
+							 <td></td>
+							  <td>Macbeth effect (transcribe text)</td>
+							  <td>
+								Zhong &amp; Liljenquist (2006) Study 2
+								<a href=' http://haniff.sg/wp-content/uploads/2013/04/washing-away-your-sins.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+							  </td>
+							  <td>27</td>
+							  <td> r = .45 ± .31 </td>
+							  <td>286</td>
+							  <td> r = -.11 ± .11 </td>
+							  <td>
+								Earp et al. (2014) Study 3
+								<a href=' http://www.jimaceverett.com/wp-content/uploads/2014/09/Earp-Everett-et-al.-2014-Out-damned-spot.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								<a href=' http://www.jimaceverett.com/wp-content/uploads/2014/09/Macbeth-Study-3-India.csv ' target='_blank' class='sprite sprite-data'></a>
+								<a href=' #z&l ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+							  </td>
+							  <td title='replication ES 95% CI excludes 0 but also excludes original ES point estimate (opposite direction/pattern)'> signal - inconsistent, opposite </td>
+							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
+							  <td>need to cleanse oneself (cleaning products desirability)</td>
+							  <td>very close</td>
+							  <td></td>
+							  <td></td>
+							</tr>
+							<tr>
+							<td></td>
+							 <td></td>
+							  <td>Macbeth effect (physical cleansing)</td>
+							  <td>
+								Zhong &amp; Liljenquist (2006) Study 4
+								<a href=' http://haniff.sg/wp-content/uploads/2013/04/washing-away-your-sins.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+							  </td>
+							  <td>45</td>
+							  <td> r = .33 ± .26 </td>
+							  <td>115</td>
+							  <td> r = .01 ± .18 </td>
+							  <td>
+								Fayard et al. (2009) Study 2
+								<a href=' http://www.jasnh.com/pdf/Vol6-No2.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								<a href=' #z&l ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+							  </td>
+							  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+							  <td>physical cleansing (antiseptic wipe vs. control)</td>
+							  <td>volunteerism (help student RA)</td>
+							  <td>close</td>
+							  <td>minutes volunteering instead of binary choice to help</td>
+							  <td></td>
+							</tr><tr>
+							<td></td>
+							 <td></td>
+							  <td>Macbeth effect (physical cleansing)</td>
+							  <td>
+								Zhong &amp; Liljenquist (2006) Study 4
+								<a href=' http://haniff.sg/wp-content/uploads/2013/04/washing-away-your-sins.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+							  </td>
+							  <td>45</td>
+							  <td> r = .33 ± .26 </td>
+							  <td>28</td>
+							  <td> r = .19 ± .36 </td>
+							  <td>
+								Gamez et al. (2011) Study 4
+								<a href=' http://www.redalyc.org/pdf/172/17217456013.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								<a href=' #z&l ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+							  </td>
+							  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent (imprecise) </td>
+							  <td>physical cleansing (antiseptic wipe vs. control)</td>
+							  <td>volunteerism (help student RA)</td>
+							  <td>very close</td>
+							  <td></td>
+							  <td></td>
+							</tr><tr>
+							<td></td>
+							 <td></td>
+							  <td>Macbeth effect (physical cleansing)</td>
+							  <td>
+								Zhong &amp; Liljenquist (2006) Study 4
+								<a href=' http://haniff.sg/wp-content/uploads/2013/04/washing-away-your-sins.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+							  </td>
+							  <td>45</td>
+							  <td> r = .33 ± .26 </td>
+							  <td>29</td>
+							  <td> r = .39 ± .31 </td>
+							  <td>
+								Reuven et al. (2013)
+								<a href=' https://msu.edu/~cesario/publications/Donnellan%20Lucas%20Cesario%20IN%20PRESS%20EMOTION%20loneliness%20bathing.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								<a href=' https://osf.io/g83w6/ ' target='_blank' class='sprite sprite-data'></a>
+								<a href=' #z&l ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+							  </td>
+							  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+							  <td>physical cleansing (antiseptic wipe vs. control)</td>
+							  <td>volunteerism (help student RA)</td>
+							  <td>close</td>
+							  <td>3-choice instead of binary choice DV</td>
+							  <td></td>
+							</tr>
+					</tbody>
+				</table>	
 					
+				<div id="complex-designs-section"></div>
+				<div class="wrapper" style="max-width:900px;margin: 0 auto;">
+						
+						<h5 style="margin-top:100px;text-align:center;">2. Enhanced Visualization of Complex Designs</h5>
+						<p style="font-size:16px;line-height:1.2em;max-width:900px;margin: 0 auto;">Enhanced visualization of effect sizes for more complex designs by displaying small (side-by-side) plots of original and replication data patterns on mouseover (e.g., complex interaction patterns). Try it by hovering over the original or replication effect size cells (dotted underline).</p>
+						
+				</div> <!-- max-width:900px wrapper-->
+				
+					<div id="loader-div" class="loader"></div>
+					<table id="example-popup" class="stripe row-border order-column compact hidden" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+							<th title="target effect/hypothesis tested in replication attempt">target.effect</th>
+							<th title="original authors & study number (unnumbered for sole study papers)">orig.study.number</th>
+							<th title="original study sample size (N; total sample size)">o.N</th>
+							<th title="original study effect size ± 95% CIs; NR means not reported and/or not calculatable">orig.effect.size</th>
+							<th title="replication study sample size (N; total sample size)">r.N</th>
+							<th title="replication study effect size ± 95% CIs; NR means not reported and/or not calculatable">rep.effect.size</th>
+							<th title="replication authors & study number (unnumbered for sole study papers)">rep.study.number</th>
+							<th title="replication outcome & consistency relative to original (see About section for details)">rep.outcome</th>
+							<th title="independent variable constructs (operationalizations & conditions)">IVs</th>
+							<th title="dependent variable constructs (operationalizations)">DVs</th>
+							<th title="type of direct replication (see replication taxonomy in About section for details)">rep.type</th>
+							<th title="known replication methodological differences relative to original (if any)">rep.differences</th>
+							<th title="active sample evidence in replication to detect a positive effect (see About section for details)">rep.active.evidence</th>
+							<th title="additional DVs assessed & verbal description of results">other.outcomes</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
+					  <td>playboy effect</td>
+					  <td>
+						Kenrick et al. (1989) Study 2
+						<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+					  </td>
+					  <td>65</td>
+					  <td class="CellWithComment"><u class="dotted">Δd = -.53 ± .64</u> <span class="CellComment-rep1"><img src="logos/interactions-popup1.png" alt=""></span>
+					  </td>
+					  <td>223</td>
+					  <td class="CellWithComment"><u class="dotted"> Δd = .29 ± .46</u> <span class="CellComment-rep1"><img src="logos/interactions-popup1.png" alt=""></span>
+					  </td>
+					  <td>
+						Balzarini et al. (2017) Study 1
+						<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+						<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+						<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+						<a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+					  </td>
+					  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+					  <td>Playboy centerfolds vs. control; Participant sex</td>
+					  <td>Love for partner (Rubin Love-scale)</td>
+					  <td>close</td>
+					  <td>Updated pictures of abstract art &amp; male/female nudes; Two attention check questions</td>
+					  <td>Nudes rated as more pleasant than abstract art</td>
+					  <td></td>
+					</tr><tr>
+					  <td>playboy effect</td>
+					  <td>
+						Kenrick et al. (1989) Study 2
+						<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+					  </td>
+					  <td>65</td>
+					  <td class="CellWithComment"><u class="dotted"> Δd = -.53 ± .64</u> <span class="CellComment-rep2"><img src="logos/interactions-popup2.png" alt=""></span> </td>
+					  <td>263</td>
+					  <td class="CellWithComment"><u class="dotted"> Δd = .30 ± .42</u> <span class="CellComment-rep2"><img src="logos/interactions-popup2.png" alt=""></span> </td>
+					  <td>
+						Balzarini et al. (2017) Study 2
+						<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+						<a href=' https://osf.io/rqhjk/ ' target='_blank' class='sprite sprite-data'></a>
+						<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+						<a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+					  </td>
+					  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+					  <td>Playboy centerfolds vs. control; Participant sex</td>
+					  <td>Love for partner (Rubin Love-scale)</td>
+					  <td>close</td>
+					  <td>Updated pictures of abstract art &amp; male/female nudes; Two attention check questions</td>
+					  <td>Nudes rated as more pleasant than abstract art</td>
+					  <td></td>
+					</tr><tr>
+					  <td>playboy effect</td>
+					  <td>
+						Kenrick et al. (1989) Study 2
+						<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+					  </td>
+					  <td>65</td>
+					  <td class="CellWithComment"><u class="dotted"> Δd = -.53 ± .64</u> <span class="CellComment-rep3"><img src="logos/interactions-popup3.png" alt=""></span> </td>
+					  <td>225</td>
+					  <td class="CellWithComment"><u class="dotted"> Δd = -.38 ± .46</u> <span class="CellComment-rep3"><img src="logos/interactions-popup3.png" alt=""></span> </td>
+					  <td>
+						Balzarini et al. (2017) Study 3
+						<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+						<a href=' https://osf.io/f4n7b/ ' target='_blank' class='sprite sprite-data'></a>
+						<a href=' https://osf.io/f56a8/ ' target='_blank' class='sprite sprite-materials'></a>
+						<a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+					  </td>
+					  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+					  <td>Playboy centerfolds vs. control; Participant sex</td>
+					  <td>Love for partner (Rubin Love-scale)</td>
+					  <td>close</td>
+					  <td>Updated pictures of abstract art &amp; male/female nudes; Two attention check questions</td>
+					  <td>Nudes rated as more pleasant than abstract art</td>
+					  <td></td>
+					</tr>
+				
+				
+					</tbody>
+				</table>
+				
+				<div id="multiple-outcomes-section"></div>
+				<div class="wrapper" style="max-width:900px;margin: 0 auto;">	
+					<h5 style="margin-top:100px;text-align:center;">3. Curating and Visualizing Multiple Outcomes</h5>
+					<p style="font-size:16px;line-height:1.2em;max-width:900px;margin: 0 auto;">Replications sometimes involve more than one outcome measure (dependent variable). We will soon offer the ability to add, meta-analyze, and visualize multiple outcomes (e.g., primary, secondary, and auxiliary outcomes):</p>
+					<p style="margin: 0px 0 0px;">
+					<font size="5px"><strong>Infidelity Distress Effect -- Replications (3)</strong></font>&nbsp;&nbsp;<a href="#multiple.outcomes"></a></p>
+					<center><a href="logos\multiple-outcomes-diagram[full].png" target="_blank">
+					<img src="logos/multiple-outcomes-diagram.png"></a>
+					</center>
 					
-		</div> <!-- wrapper div-->
+					<div id="crowdsourcing-section"></div>
+					<h5 style="margin-top:100px;text-align:center;">4. Crowdsourcing and Replication Alerts</h5>
+					<p style="font-size:16px;line-height:1.2em;max-width:900px;margin: 0 auto;margin-bottom:15px;">We will soon offer the ability for the broader community of researchers to add missing replications and update/modify replication study characteristics (we currently use an internal crowdsourcing mechanism). Registered users will also be able to create alerts to be automatically notified when new replications are posted based on the name of a target effect or existing evidence collection or by keyword/topic.</p>
+					<center><a href="logos\crowdsource-alerts-figure[full].png" target="_blank">
+					<img src="logos/crowdsource-alerts-figure.png"></a>
+					</center>
+							
+					<div id="future-directions-section"></div>
+					<br>
+					<h1 style="text-align:center;">Future Directions</h1>
+					<p style="font-size:16px;line-height:1.2em;">
+					As part of Curate Science's longer-term vision, we've begun development in the following two directions: (1) <a href="#analytic-reproducibility-section">analytic reproducibility endorsements</a> and (2) <a href="#open-components-search-section">curating open/public components for <i>any study</i></a> (not just replication studies).
+					</p>
+					<div id="analytic-reproducibility-section"></div>
+					<h5 style="margin-bottom:5px;text-align:center;margin-top:60px;">1. Analytic Reproducibility</h5>
+					<center><img src="logos\reproducibility-logo.png" ></center>
+					<p style="font-size:16px;line-height:1.2em;margin-bottom:5px;">
+					To trust a replication (or any study), its results need to be <i>analytically reproducible</i> from the data to ensure the empirical results are free of data errors and internal inconsistencies (i.e., can an independent researcher successfully reproduce the primary, secondary, and auxiliary analytic results reported in a published article?). In this spirit, we are developing a standardized workflow and metric to quantify analytic reproducibility (see image on the left for initial prototype), which we plan to achieve by partnering with cutting edge cloud-based computational reproducibility platforms (e.g., <a href="https://codeocean.com/" target="_blank">Code Ocean</a>, see image on the right for a prototype linking to a <a href="https://codeocean.com/2017/06/30/code-for-quot-coral-calcifying-fluid-aragonite-saturation-states-derived-from-raman-spectroscopy-quot/code" target="_blank">Code Ocean capsule</a>).
+					</p>
+					<center><a href="logos\study-view-analytic-reprod.png" target="_blank">
+					<img src="logos\study-view-analytic-reprod-logo.png" style="margin-right:50px;"></a>
+					<a href="logos\code-ocean-prototype[full].png" target="_blank">
+					<img src="logos\code-ocean-prototype[vertical-preview].png" style="margin-top:5px;"></a></center>
+					
+					<div id="open-components-search-section"></div>
+					<h5 style="margin-top:100px;margin-bottom:5px;text-align:center;">2. Curate and Search for Studies with Open/Public Components</h5>
+					<p style="font-size:16px;line-height:1.2em;margin-bottom:5px;">
+					Curating open science components (i.e., open data, open materials, pre-registered/registered protocols) is crucial to be able to thoroughly evaluate <i>any study</i>, not just replication studies. In this vein, we are designing an interface to curate, search, and filter by open/public components for <i>any study</i> (see image below for initial prototype).
+					</p>
+					<center><a href="logos\search-open-science-components[full].png" target="_blank"><img src="logos\search-open-science-components.png" ></a></center>
+					
+				</div> <!-- wrapper div-->
+				
 	</div> <!--container div-->
   </section>
   
@@ -22412,13 +22864,9 @@
         </form>
       </div>
 
-      <div class="row-fluid" >
-		<br><br>
-		<center>
-			<a class="twitter-timeline" data-width="600" data-height="1200" href="https://twitter.com/curatescience">Tweets by curatescience</a> 
-			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		</center>
-	  </div>
+	  
+     <br><br><br> <!--removed Tweet embed frame for now-->
+	 
     </div> <!--container div-->
 
   </section>
@@ -22482,6 +22930,106 @@
 	</div> <!--footer-bottom div-->
 
 </div> <!--main-container push div -->
+
+
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			var table = $('#example-meta').DataTable( {
+				scrollY:        "575px",
+				scrollX:        true,
+				scrollCollapse: false,
+				"order": [[ 3, "asc" ]],
+				paging: true,
+				fixedColumns:   {
+					leftColumns: 0
+				},
+				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
+				"columnDefs": [ 
+					{ className: "bold-class", "targets": [ 5, 7 ] },
+					{ targets: [2,10,11,13,14],
+					render: $.fn.dataTable.render.ellipsis(32,true) },
+					{
+						 'targets': 1,
+						 'searchable':false,
+						 'orderable':false,
+						 'className': 'dt-body-center',
+						 'render': function (data, type, full, meta){
+							 return '<input type="checkbox" name="id[]" value="' 
+								+ $('<div/>').text(data).html() + '">';
+						 }
+					  },
+					  { className: "details-control", "targets": [ 0 ] }
+					],
+				"initComplete": function() { 
+					$('#loader-div').remove();
+					$("table").removeClass("hidden");
+					},
+				"dom": '<"top"fi<"clear">>rt<"bottom"pl<"clear">>'
+			} );
+			$('#example-meta tbody').on('click', 'td.details-control', function () {
+				  var tr = $(this).closest('tr');
+				  var row = table.row( tr );
+
+				  if (row.child.isShown()) {
+					// This row is already open - close it.
+					row.child.hide();
+					tr.removeClass('shown');
+				  } else {
+					// Open row.
+					row.child('<img src="logos/meta-analyze.figure.png" style="margin-left:100px;">').show();
+					tr.addClass('shown');
+				  }
+			} );
+			
+			// Handle click on "Select all" control
+		   $('#example-select-all').on('click', function(){
+			  // Check/uncheck all checkboxes in the table
+			  var rows = table.rows({ 'search': 'applied' }).nodes();
+			  $('input[type="checkbox"]', rows).prop('checked', this.checked);
+		   });
+
+		   // Handle click on checkbox to set state of "Select all" control
+		   $('#example tbody').on('change', 'input[type="checkbox"]', function(){
+			  // If checkbox is not checked
+			  if(!this.checked){
+				 var el = $('#example-select-all').get(0);
+				 // If "Select all" control is checked and has 'indeterminate' property
+				 if(el && el.checked && ('indeterminate' in el)){
+					// Set visual state of "Select all" control 
+					// as 'indeterminate'
+					el.indeterminate = true;
+				 }
+			  }
+		   });
+			
+		} );
+	</script>
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			var table = $('#example-popup').DataTable( {
+				scrollY:        "475px",
+				scrollX:        true,
+				scrollCollapse: false,
+				"order": [[ 0, "asc" ]],
+				paging: true,
+				fixedColumns:   {
+					leftColumns: 0
+				},
+				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
+				"columnDefs": [ 
+					{ className: "bold-class", "targets": [ 3, 5 ] },
+					{ targets: [0,8,9,11,12,13],
+					render: $.fn.dataTable.render.ellipsis(33,true) }
+					],
+				"initComplete": function() { 
+					$('#loader-div').remove();
+					$("table").removeClass("hidden");
+					},
+				"dom": '<"top"fi<"clear">>rt<"bottom"pl<"clear">>'
+			} );
+		} );
+	</script>
+
 
   <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
   <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script> 
