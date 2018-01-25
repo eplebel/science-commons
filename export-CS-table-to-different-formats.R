@@ -1,5 +1,5 @@
 library("rio")
-# export to JSON (minimified non-beautified format)
+# export to JSON (minimified non-beautified format; cf. http://www.convertcsv.com/csv-to-json.htm)
 export(CS.rep.table, "CS.rep.table.json")
 
 #to export to .RData file type; works but not sure this is useful for enough ppl 
