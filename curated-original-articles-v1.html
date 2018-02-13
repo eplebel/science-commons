@@ -107,8 +107,10 @@
 				},
 				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
 				"columnDefs": [ 
-					{ className: "bold-class", "targets": [ 2 ] },
-					{ targets: [0,4,5,6],
+					{ className: "bold-class", "targets": [ 1 ] },
+					{ targets: [0],
+					render: $.fn.dataTable.render.ellipsis(30,true) },
+					{ targets: [3,4,5],
 					render: $.fn.dataTable.render.ellipsis(40,true) }
 					],
 				"initComplete": function() { 
@@ -282,9 +284,9 @@
 				
 			
 			<div class="wrapper" style="max-width:900px;margin: 0 auto;">	
-			
-				<h4 style="margin-top:100px;text-align:center;">2. Enhanced Visualization of Complex Designs</h4>
-				<p style="font-size:16px;line-height:1.2em;max-width:900px;margin: 0 auto;margin-bottom:15px;">Enhanced visualization of effect sizes for more complex designs by displaying small (side-by-side) plots of original and replication data patterns on hover/mouseover (e.g., complex interaction pattern). Try it by hovering over the original or replication effect size cells (dotted underline).</p>
+				<p><center><h4>Original Articles Linked Open Science Components -- Version 1</h4></center>
+				</p>
+				
 				
 			</div>
 			
@@ -293,9 +295,8 @@
 					<thead>
 						<tr>
 							<th title="target effect/hypothesis tested in replication attempt">effect/hypothesis</th>
+							<th style="white-space: nowrap" title="authors & study number (unnumbered for sole study papers)">authors/study.number</th>
 							<th title="study sample size (N; total sample size)">N</th>
-							<th title="authors & study number (unnumbered for sole study papers)">authors</th>
-							<th></th>
 							<th title="independent variable constructs (operationalizations & conditions)">IVs</th>
 							<th title="dependent variable constructs (operationalizations)">DVs</th>
 							<th title="active sample evidence in replication to detect a positive effect (see About section for details)">active.evidence</th>
@@ -304,162 +305,151 @@
 					<tbody>
 					<tr>
 					  <td>playboy effect</td>
-					  <td>223</td>
-					  <td>
+					  <td style="white-space: nowrap">
 						Balzarini et al. (2017) Study 1
 						<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-						</td><td><a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+						<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
 						<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
 						<a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
-					  </td>
+						</td>
+					  <td>223</td>
 					  <td>Playboy centerfolds vs. control; Participant sex</td>
 					  <td>Love for partner (Rubin Love-scale)</td>
 					  <td>Nudes rated as more pleasant than abstract art</td>
 					</tr><tr>
 					  <td>playboy effect</td>
-					  <td>263</td>
-					  <td>
+					  <td style="white-space: nowrap">
 						Balzarini et al. (2017) Study 2
 						<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-						</td><td>
 						<a href=' https://osf.io/rqhjk/ ' target='_blank' class='sprite sprite-data'></a>
 						<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
 						<a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
-					  </td>
+						</td>
+					  <td>263</td>
 					  <td>Playboy centerfolds vs. control; Participant sex</td>
 					  <td>Love for partner (Rubin Love-scale)</td>
 					  <td>Nudes rated as more pleasant than abstract art</td>
 					  <td></td>
 					</tr><tr>
 					  <td>playboy effect</td>
-					  <td>225</td>
-					  <td>
+					  <td style="white-space: nowrap">
 						Balzarini et al. (2017) Study 3
 						<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-						</td><td>
 						<a href=' https://osf.io/f4n7b/ ' target='_blank' class='sprite sprite-data'></a>
 						<a href=' https://osf.io/f56a8/ ' target='_blank' class='sprite sprite-materials'></a>
 						<a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
-					  </td>
+						</td>
+					  <td>225</td>
 					  <td>Playboy centerfolds vs. control; Participant sex</td>
 					  <td>Love for partner (Rubin Love-scale)</td>
 					  <td>Nudes rated as more pleasant than abstract art</td>
 					</tr>
 							<tr>
 							  <td>Macbeth effect (transcribe text)</td>
-							  <td>36</td>
-							  <td>
+							  <td style="white-space: nowrap">
 								Gamez et al. (2011) Study 2
 								<a href=' http://www.redalyc.org/pdf/172/17217456013.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-								</td><td>
 								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
-						<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
-							  </td>
+								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+								</td>
+							  <td>36</td>
 							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
 							  <td>need to cleanse oneself (cleaning products desirability)</td>
 							  <td></td>
 							</tr><tr>
 							  <td>Macbeth effect (transcribe text)</td>
-							  <td>335</td>
-							  <td>
+							  <td style="white-space: nowrap">
 								Siev (2012) Study 1
 								<a href=' https://github.com/eplebel/science-commons/blob/master/curated/z%26l/Siev%20(2012).pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-								</td><td>
 								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
 								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
-							  </td>
+								</td>
+							  <td>335</td>
 							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
 							  <td>need to cleanse oneself (cleaning products desirability)</td>
 							  <td></td>
 							</tr><tr>
 							  <td>Macbeth effect (transcribe text)</td>
-							  <td>148</td>
-							  <td>
+							  <td style="white-space: nowrap">
 								Siev (2012) Study 2
 								<a href=' https://github.com/eplebel/science-commons/blob/master/curated/z%26l/Siev%20(2012).pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-								</td><td>
 								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
 								<a href=' https://github.com/eplebel/science-commons/blob/master/curated/z%26l/Siev%20(2012%2C%20Study%202)%20-%20Spring08protocol%20undergrads%20fixed%20format.pdf ' target='_blank' class='sprite sprite-materials'></a>
-							  </td>
+								</td>
+							  <td>148</td>
 							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
 							  <td>need to cleanse oneself (cleaning products desirability)</td>
 							  <td></td>
 							</tr><tr>
 							  <td>Macbeth effect (transcribe text)</td>
-							  <td>153</td>
-							  <td>
+							  <td style="white-space: nowrap">
 								Earp et al. (2014) Study 1
 								<a href=' http://www.jimaceverett.com/wp-content/uploads/2014/09/Earp-Everett-et-al.-2014-Out-damned-spot.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-								</td><td>
 								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
 								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
-							  </td>
+								</td>
+							  <td>153</td>
 							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
 							  <td>need to cleanse oneself (cleaning products desirability)</td>
 							  <td></td>
 							</tr><tr>
 							  <td>Macbeth effect (transcribe text)</td>
-							  <td>156</td>
-							  <td>
+							  <td style="white-space: nowrap">
 								Earp et al. (2014) Study 2
 								<a href=' http://www.jimaceverett.com/wp-content/uploads/2014/09/Earp-Everett-et-al.-2014-Out-damned-spot.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-								</td><td>
 								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
 								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
-							  </td>
+								</td>
+							  <td>156</td>
 							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
 							  <td>need to cleanse oneself (cleaning products desirability)</td>
 							  <td></td>
 							</tr><tr>
 							  <td>Macbeth effect (transcribe text)</td>
-							  <td>286</td>
-							  <td>
+							  <td style="white-space: nowrap">
 								Earp et al. (2014) Study 3
 								<a href=' http://www.jimaceverett.com/wp-content/uploads/2014/09/Earp-Everett-et-al.-2014-Out-damned-spot.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-								</td><td>
 								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
 								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
-							  </td>
+								</td>
+							  <td>286</td>
 							  <td>moral purity threat (transcribe unethical vs. ethical act)</td>
 							  <td>need to cleanse oneself (cleaning products desirability)</td>
 							  <td></td>
 							</tr>
 							<tr>
 							  <td>Macbeth effect (physical cleansing)</td>
-							  <td>115</td>
-							  <td>
+							  <td style="white-space: nowrap">
 								Fayard et al. (2009) Study 2
 								<a href=' http://www.jasnh.com/pdf/Vol6-No2.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-								</td><td>
 								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
 								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
-							  </td>
+								</td>
+							  <td>115</td>
 							  <td>physical cleansing (antiseptic wipe vs. control)</td>
 							  <td>volunteerism (help student RA)</td>
 							  <td></td>
 							</tr><tr>
 							  <td>Macbeth effect (physical cleansing)</td>
-							  <td>28</td>
-							  <td>
+							  <td style="white-space: nowrap">
 								Gamez et al. (2011) Study 4
 								<a href=' http://www.redalyc.org/pdf/172/17217456013.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-								</td><td>
 								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
 								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
-							  </td>
+								</td>
+							  <td>28</td>
 							  <td>physical cleansing (antiseptic wipe vs. control)</td>
 							  <td>volunteerism (help student RA)</td>
 							  <td></td>
 							</tr><tr>
 							  <td>Macbeth effect (physical cleansing)</td>
-							  <td>29</td>
-							  <td>
+							  <td style="white-space: nowrap">
 								Reuven et al. (2013)
 								<a href=' https://msu.edu/~cesario/publications/Donnellan%20Lucas%20Cesario%20IN%20PRESS%20EMOTION%20loneliness%20bathing.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-								</td><td>
 								<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
 								<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
-							  </td>
+								</td>
+							  <td>29</td>
 							  <td>physical cleansing (antiseptic wipe vs. control)</td>
 							  <td>volunteerism (help student RA)</td>
 							  <td></td>
@@ -471,8 +461,17 @@
 			
 				
 					<p style="margin-bottom:200px;">
+						<iframe src="https://mfr.osf.io/render?url=https://osf.io/w928b/?action=download%26mode=render" width="100%" scrolling="yes" height="1047px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen>
 					</p>
 				
+				<p>
+					<div> 
+						<object type="text/html" data="https://osf.io/w928b/" width="800px" height="600px" style="overflow:auto;border:5px;">
+						</object>
+					 </div>
+					 <iframe src="https://osf.io/w928b/" width="800px" height="600px" style="overflow:auto;border:5px;">
+					 </iframe>
+				</p>
 		</div>
   </section>
 

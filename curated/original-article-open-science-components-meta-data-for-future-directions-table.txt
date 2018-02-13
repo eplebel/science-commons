@@ -1,0 +1,97 @@
+original article w/ open science components meta-data:
+
+effect
+author names
+PDF link
+open materials
+pre-reg
+open data
+IVs
+DVs
+N
+
+
+justifications shape ethical blind spot effect
+Pittarello et al. (2015) Study 1
+https://www.researchgate.net/profile/Andrea_Pittarello/publication/270757442_Justifications_Shape_Ethical_Blind_Spots/links/553200d20cf20ea0a071c477.pdf
+https://osf.io/d2ncs/
+https://osf.io/6jqsc/
+https://osf.io/7gmw5/
+payment condition; temptation (ambiguous-dice paradigm)
+reported outcome
+31
+
+justifications shape ethical blind spot effect
+Pittarello et al. (2015) Study 2
+https://www.researchgate.net/profile/Andrea_Pittarello/publication/270757442_Justifications_Shape_Ethical_Blind_Spots/links/553200d20cf20ea0a071c477.pdf
+https://osf.io/473gq/
+https://osf.io/7qsj2/
+https://osf.io/t5ren/
+payment condition; temptation; ambiguity (ambiguous-dice paradigm)
+reported outcome
+48
+
+equality grouping effect
+Colby et al. (2015) Study 1
+http://pubmedcentralcanada.ca/pmcc/articles/PMC4504740/pdf/nihms678183.pdf
+https://osf.io/r79qd/
+
+https://osf.io/wkj45/
+allocation level; transplant-likelihood level
+mean number of kidneys allocated efficiently
+428
+
+equality grouping effect
+Colby et al. (2015) Study 2
+http://pubmedcentralcanada.ca/pmcc/articles/PMC4504740/pdf/nihms678183.pdf
+https://osf.io/97jzi/
+
+https://osf.io/wkj45/
+information identification; grouping
+mean number of kidneys allocated efficiently
+246
+
+equality grouping effect
+Colby et al. (2015) Study 3
+http://pubmedcentralcanada.ca/pmcc/articles/PMC4504740/pdf/nihms678183.pdf
+https://osf.io/p4gde/
+https://osf.io/preg9/
+https://osf.io/wkj45/
+screen side (left vs. right); grouping
+mean number of kidneys allocated efficiently
+996
+
+is-ought effect
+Tworek & Cimpian (2016) Study 1
+https://pdfs.semanticscholar.org/6d2e/77ffa574ef2d5fa9b7ff93c34422e9e749e1.pdf
+https://osf.io/nwsx4/
+
+https://osf.io/8ewzu/
+
+is-ought effect
+Tworek & Cimpian (2016) Study 2
+https://pdfs.semanticscholar.org/6d2e/77ffa574ef2d5fa9b7ff93c34422e9e749e1.pdf
+https://osf.io/nwsx4/
+https://aspredicted.org/public/205223581.pdf
+https://osf.io/mr5fx/
+
+is-ought effect
+Tworek & Cimpian (2016) Study 3
+https://pdfs.semanticscholar.org/6d2e/77ffa574ef2d5fa9b7ff93c34422e9e749e1.pdf
+https://osf.io/nwsx4/
+
+https://osf.io/n25mf/
+
+is-ought effect
+Tworek & Cimpian (2016) Study 4
+https://pdfs.semanticscholar.org/6d2e/77ffa574ef2d5fa9b7ff93c34422e9e749e1.pdf
+https://osf.io/nwsx4/
+
+https://osf.io/5auzy/
+
+is-ought effect
+Tworek & Cimpian (2016) Study 5
+https://pdfs.semanticscholar.org/6d2e/77ffa574ef2d5fa9b7ff93c34422e9e749e1.pdf
+https://osf.io/nwsx4/
+
+https://osf.io/zmup2/
