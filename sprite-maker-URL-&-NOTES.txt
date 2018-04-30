@@ -1,0 +1,12 @@
+https://spritegen.website-performance.org/
+
+
+open materials/data and pre-reg icons are 18x18 pixels
+disclosure icons are also 18x18 pixels
+
+pdf-icon is 18x18 (pdf-icon.gif)
+ec-icon is 16x16 (ec-icon.gif)
+reproducibility icon is 18x18
+code ocean icon is 18x18
+
+--> leave "Include encoded image in CSS" *unchecked*

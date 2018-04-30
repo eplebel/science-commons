@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="google-site-verification" content="7CrO9Y_velY8TjF6s8CWKB1s2S8TGRdQ8NoZ-gHPDE0" />
+  <title>Curate Science</title>
+  <link data-turbolinks-track="true" href="assets/main.css" media="all" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/extra.css">
+
+  <script data-turbolinks-track="true" src="assets/main.js"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="/iDkQk3fySjDxSBGMaWY6CxQ9WzgIX4G/vkMyH6tgaU=" name="csrf-token" />
+  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="assets/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".navbar-nav li a").click(function(event) {
+        $(".nav-collapse").collapse('hide');
+      });
+    });
+	function changeImage() {
+		var image = document.getElementById('myImage');
+		if (image.src.match("button")) {
+			image.src = "logos/add-replication-window.png";
+		} else {
+			image.src = "logos/add-replication-button.png";
+		}
+	}
+  </script>
+  <style>
+	td {
+      line-height: 1em;
+      padding: 0em;
+      border: 0px dashed black;
+    }
+	#some-element {
+	border: 0px solid #ccc;
+	display: none;
+	font-size: 16px;
+	margin-bottom: 10px;
+	padding: 2px;
+	line-height: 1.25em;
+	}	
+	#some-div:hover #some-element {
+	display: block;
+	}
+	ul li { line-height:1.2em; }
+	a.anchor{
+		padding-top:80px;
+		display:block;
+		margin-top:-30px; /* if you want to cancel out the padding-top */
+		}
+	.nav-tabs > li > a
+	{
+    /* adjust padding for height*/
+    padding-top: 4px; 
+    padding-bottom: 4px;
+	}
+	
+  </style>
+</head>
+
+<body>
+<header class="pull-center" id="masthead">
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="navbar-inner" style="min-height:50px;">
+      <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <a class="brand brand-appland" href="#">
+              <img alt="Curate Science" src="logos/navbar-icon-smaller.png" />
+            </a>
+          </a>
+        <div class="nav-collapse">
+          <ul class="nav navbar-nav">
+            <li><a class="brand brand-appland" href="http://curatescience.org/"><img alt="Navbar icon" src="logos/navbar-icon-smaller.png" /></a></li>
+            <li><a href="http://curatescience.org#about-section">About</a></li>            
+			<li><a href="http://curatescience.org#people-section">People</a></li>
+			<li><a href="#signup-section">Sign Up</a></li>
+			<li><a href="index-log-in.html">Log In</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="main-container push">
+ 
+ <section class="section" id="section-5">
+	<div class="container" style="padding: 0px 0 40px;">		
+		<div class="wrapper" style="max-width:1200px;">
+		<header class="page-header" style="padding-top:20px;padding-bottom:0px;margin-top:15px;margin-bottom:15px;"><h1>Sandbox</h1></header>
+			
+			
+			
+			
+			<p style="margin: 20px 0 20px;"><a name="kgg1989" class="anchor"></a>
+			<font size="6px"><strong>More Complex Designs: Interaction Effect</strong></font><br><br>
+			<font size="6px"><em>Playboy Effect</em>: Kenrick, Gutierres, & Goldberg (1989) -- Replications (3)</font>&nbsp;&nbsp;<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20out%20curated%20replications%20of%20ego%20depletion%20studies&amp;url=http%3A%2F%2Fcuratescience.org%2F&#35ego%2Ddepletion&amp;via=curatescience">Tweet</a><a href="#kgg1989"><img src="logos/link.png" style="padding-left:10px;padding-bottom:10px;"></a></font><br>
+			<font size="5px">Influence of Popular Erotica on Judgments of Strangers and Mates</font>&nbsp;<a href="https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a><br>
+			<ul class="nav nav-tabs" style="margin-bottom:10px;">
+			  <li class="active" ><a data-target="#home-ego" data-toggle="tab">Results/Open Data</a></li>
+			  <li><a data-target="#dd-ego" data-toggle="tab">Design Details</a></li>
+			</ul>
+			<div class="tab-content" style="overflow:hidden;">
+			  <div class="tab-pane active" id="home-ego">
+			
+					<table ><tbody>
+						<tr>
+							<td width='27%'><strong>Original Studies & Replications</strong></td>
+							<td width='110px' class="center"><strong></strong></td>
+							<td class="center"><strong>N</strong></td>
+							<td class="center"><strong>Effect size (&Delta;d) [95% CI]</strong></td>
+							<td ><strong></strong></td>
+						</tr>
+						
+						<tr>
+							<td ><a href="https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf" target="_blank"><img src="logos/pdf-icon.gif" style="padding-right:6px;"></a><a href='https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf' target="_blank">Kenrick et al. (1989) Study 2</a></td>
+							<td ></td>
+							<td class="center">65</td>
+							<td ><img data-toggle="tooltip" data-placement="right" title="-.53 [+/- .64]; On average, playboy centerfolds decrease love in partner by .53 SDs more for men compared to women." src='logos/kgg1989_01.jpg'></td>
+							<td><img src="logos/kgg1989-interaction-01.jpg"></td>
+						</tr>
+						<tr>
+							<td style="padding-left:35px;"><a href="https://osf.io/gxsdq/" target="_blank"><img src="logos/osf.png" style="padding-right:4px;"></a><a href="https://osf.io/gxsdq/" target="_blank">Balzarini et al. (2015) Study 1</a></td>
+							<td class="center"><img src='logos/_data.png' title="This study has open data"><a href="https://osf.io/nrkej/" target="_blank"><img src='logos/_materials.png' title="This study has open materials"></a><a href="https://osf.io/nrkej/" target="_blank"><img src='logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+							<td class="center">223</td>
+							<td ><img data-toggle="tooltip" data-placement="right" title=".29 [+/- .46]" src='logos/kgg1989_03.jpg'></td>
+							<td><img src="logos/kgg1989-interaction-02.jpg"></td>
+						</tr>
+						<tr>
+							<td style="padding-left:35px;"><a href="https://osf.io/8gzk5/" target="_blank"><img src="logos/osf.png" style="padding-right:4px;"></a><a href="https://osf.io/8gzk5/" target="_blank">Balzarini et al. (2015) Study 2</a></td>
+							<td class="center"><img src='logos/_data.png' title="This study has open data"><a href="https://osf.io/nrkej/" target="_blank"><img src='logos/_materials.png' title="This study has open materials"></a><a href="https://osf.io/nrkej/" target="_blank"><img src='logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+							<td class="center">263</td>
+							<td ><img data-toggle="tooltip" data-placement="right" title=".30 [+/- .42]" src='logos/kgg1989_05.jpg'></td>
+							<td><img src="logos/kgg1989-interaction-03.jpg"></td>
+						</tr>
+						<tr>
+							<td style="padding-left:35px;"><a href="https://osf.io/sb8zd/" target="_blank"><img src="logos/osf.png" style="padding-right:4px;"></a><a href="https://osf.io/sb8zd/" target="_blank">Balzarini et al. (2015) Study 3</a></td>
+							<td class="center"><img src='logos/_data.png' title="This study has open data"><a href="https://osf.io/f56a8/" target="_blank"><img src='logos/_materials.png' title="This study has open materials"></a><a href="https://osf.io/f56a8/" target="_blank"><img src='logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+							<td class="center">225</td>
+							<td ><img data-toggle="tooltip" data-placement="right" title="-.38 [+/- .46]" src='logos/kgg1989_07.jpg'></td>
+							<td><img src="logos/kgg1989-interaction-04.jpg"></td>
+						</tr>
+						<tr>
+							<td colspan='3' class="right" style="color:#999999;vertical-align:top;font-style:italic;padding-top:20px">Random-effects meta-analytic estimate of all replications:</td><td><img  data-toggle="tooltip" data-placement="top" title=".08 [+/- .43]" src='logos/kgg1989_09.jpg'></td><td></td>
+						</tr>
+						<tr>
+							<td colspan='5' class="right" style="color:#999999;font-size:12px;padding-top:7px">[Underlying data (CSV)] [R-code]</td>
+						</tr>
+						</tbody>
+					</table>
+				
+				</div>
+				<div class="tab-pane" id="dd-ego">	
+				
+					<table ><tbody>
+						<tr>
+							<td width='24%'><strong>Original Studies & Replications</strong></td>
+							<td width='15%' class="center"><strong>Independent Variables</strong></td>
+							<td width='15%' class="center"><strong>Dependent Variables</strong></td>
+							<td width='15%' class="center"><strong>Design Differences</strong></td>
+							<td width='15%'><strong>Active Sample Evidence</strong></td>
+						</tr>
+						<tr>	
+							<td><a href="https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf" target="_blank"><img src="logos/pdf-icon.gif" style="padding-right:6px;"></a><a href='https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf' target="_blank">Kenrick et al. (1989) Study 2</a></td>
+							<td class="center">Playboy centerfolds vs. control<br>Participant sex</td>
+							<td class="center">Love for partner (Rubin Love-scale)</td>
+							<td class="center">-</td>
+							<td class="center"></td>
+						</tr>
+						<tr>	
+							<td style="padding-left:40px;"><a href="https://osf.io/gxsdq/" target="_blank"><img src="logos/osf.png" style="padding-right:4px;"></a><a href="https://osf.io/gxsdq/" target="_blank">Balzarini et al. (2015) Study 1</a></td>
+							<td class="center">Playboy centerfolds vs. control<br>Participant sex</td>
+							<td class="center">Love for partner (Rubin Love-scale)</td>
+							<td class="center">Updated pictures of abstract art & male/female nudes (as suggested by Kenrick)<br>Two attention check questions (online sample)</td>
+							<td class="center">Nudes rated as more pleasant than abstract art</td>
+						</tr>
+						<tr>	
+							<td style="padding-left:40px;"><a href="https://osf.io/8gzk5/" target="_blank"><img src="logos/osf.png" style="padding-right:4px;"></a><a href="https://osf.io/8gzk5/" target="_blank">Balzarini et al. (2015) Study 2</a></td>
+							<td class="center">Playboy centerfolds vs. control<br>Participant sex</td>
+							<td class="center">Love for partner (Rubin Love-scale)</td>
+							<td class="center">Updated pictures of abstract art & male/female nudes (as suggested by Kenrick)<br>Two attention check questions (online sample)</td>
+							<td class="center">Nudes rated as more pleasant than abstract art</td>
+						</tr>
+						<tr>	
+							<td style="padding-left:40px;"><a href="https://osf.io/sb8zd/" target="_blank"><img src="logos/osf.png" style="padding-right:4px;"></a><a href="https://osf.io/sb8zd/" target="_blank">Balzarini et al. (2015) Study 3</a></td>
+							<td class="center">Playboy centerfolds vs. control<br>Participant sex</td>
+							<td class="center">Love for partner (Rubin Love-scale)</td>
+							<td class="center">Updated pictures of abstract art & male/female nudes (as suggested by Kenrick)<br>Two attention check questions (online sample)</td>
+							<td class="center">Nudes rated as more pleasant than abstract art</td>
+						</tr>
+						<tr>
+							<td colspan='7' class="right" style="color:#999999;font-size:12px;padding-top:7px">[Underlying data (CSV)] [R-code]</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			 </div>	
+					
+			 <p></p>
+			 <p style="margin-bottom:0px;line-height:1.2em;"><strong>Summary:</strong> There appears to be replication difficulties...</p>
+			 <p style="line-height:1.2em;color:orange;"><strong>Original authors' and replicators' comments:</strong> 
+			 TBA
+			 </p>
+			 <p style="margin: 0px 0px 0px;"><strong>Related Commentary</strong><br>
+				<ul>
+					<li>Lorne Campbell (April 4, 2016): <a href="http://michaelinzlicht.com/getting-better/2016/4/3/updating-beliefs" target="_blank">Updating beliefs</a></li>
+					
+				</ul>
+			 </p>
+			
+			
+			<p style="margin: 100px 0 20px;"><a name="v&p2008" class="anchor"></a>
+			<font size="6px"><strong>More Complex Designs: Multiple Outcomes</strong></font><br><br>
+			<font size="6px"><em>Crowd-Within Effect</em>: Vul & Pashler (2008) -- Replications (3)</font>&nbsp;&nbsp;<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20out%20curated%20replications%20of%20ego%20depletion%20studies&amp;url=http%3A%2F%2Fcuratescience.org%2F&#35ego%2Ddepletion&amp;via=curatescience">Tweet</a><a href="#v&p2008"><img src="logos/link.png" style="padding-left:10px;padding-bottom:10px;"></a></font><br>
+			<font size="5px">Measuring the Crowd Within: Probabilistic Representations Within Individuals</font>&nbsp;<a href="http://laplab.ucsd.edu/articles/Vul_Pashler_PS2008.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a><br>
+			<a href="logos/vul&pashler[exported]-large.png"><img src="logos/vul&pashler[exported].png"></a>
+			<p></p>
+			 <p style="margin-bottom:0px;line-height:1.2em;"><strong>Summary:</strong> The crowd-within effect appears to be replicable...</p>
+			 <p style="line-height:1.2em;color:orange;"><strong>Original authors' and replicators' comments:</strong> 
+			 TBA
+			 </p>
+			 <p style="margin: 0px 0px 0px;"><strong>Related Commentary</strong><br>
+				
+			 </p>
+			
+			
+			
+			<p style="margin: 60px 0 0px;"><a name="s&e-s" class="anchor"></a>
+				<font size="6px"><strong>Pre-viewing Open Data</strong></font><br><br>
+				<font size="6px"><a href="http://pps.sagepub.com/content/9/5/556.full.pdf+html" target="_blank">RRR1 & RRR2: Alogna et al., ..., Zwaan (2014)</a></font>&nbsp;&nbsp;<a href="http://pps.sagepub.com/content/9/5/556.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a><br>
+				<font size="6px">Schooler & Engstler-Schooler (1990) -- Replications (23) </font>&nbsp;&nbsp;<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20out%20curated%20replications%20of%20verbal%20overshadowing%20RRR&amp;url=http%3A%2F%2Fcuratescience.org%2F&#35s%26e%2Ds&amp;via=curatescience">Tweet</a><br>
+				<font size="5px">Verbal overshadowing of visual memories: Some things are better left unsaid</font><br>
+				DOI:<a href='https://dx.doi.org/10.1016/0010-0285(90)90003-M' target="_blank">10.1016/0010-0285(90)90003-M</a>&nbsp;&nbsp;<a href="https://www.researchgate.net/profile/Jonathan_Schooler/publication/20861308_Verbal_overshadowing_of_visual_memories_Some_things_are_better_left_unsaid._Cognit._Psychol._22_36-71/links/5611ddba08ae6b29b49e3994.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a></p>
+				
+				<table ><tbody>
+					<tr>
+						<td width='23%'><strong>Original Studies & Replications</strong></td>
+						<td width='60px'></td>
+						<td width='16%'><strong>Data/Syntax</strong></td>
+						<td width='28px'></td>
+						<td width='18%'><strong>Materials/Pre-reg</strong></td>
+						<td width='28px' class="center"><strong>N</strong></td>
+						<td class="center"><strong>Effect size [95% CI]</strong></td>
+					</tr>
+					<tr>
+						<td ><a href='https://www.researchgate.net/profile/Jonathan_Schooler/publication/20861308_Verbal_overshadowing_of_visual_memories_Some_things_are_better_left_unsaid._Cognit._Psychol._22_36-71/links/5611ddba08ae6b29b49e3994.pdf' target="_blank">Schooler & Smith (1990) Study 1</a></td>
+						<td class="right"><img src='logos/_trans-square.png'></td>
+						<td ></td>
+						<td class="right" style="padding-right:3px;"><img src='logos/_materials.png' title="This study has open materials"></td>
+						<td ><a href='https://osf.io/brwdp/?action=download' target="_blank">approved_protocol.pdf</a>*</td>
+						<td class="center">88</td>
+						<td ><img data-toggle="tooltip" data-placement="right" title="-.25 [+/- .20]" src='logos/S&E-S_03.jpg'></td>
+					</tr>
+					<tr>
+						<td style="padding-left:40px;"><a href="http://www.fed.cuhk.edu.hk/~lchang/material/Evolutionary/Brain/Self-control%20relies%20on%20glucose%20as%20a%20limited%20energy%20source%20willpower%20Is%20more%20than%20a%20metaphor.pdf" target="_blank"><img src="logos/pdf-icon.gif" style="padding-right:6px;"></a><a href='https://osf.io/ez4w3/' target="_blank">Michael et al. (2014)</a></td>
+						<td class="right" style="padding-right:3px;">
+							<img src='logos/_data.png' title="This study has open data"></td>
+						<td ><a href='https://osf.io/tabw4/?action=download' target="_blank">Study2Protocol.xlsx</a></td>
+						<td class="right" style="padding-right:3px;"><img src='logos/_materials.png' title="This study has open materials"></td>
+						<td ><a href='https://osf.io/brwdp/?action=download' target="_blank">approved_protocol.pdf</a>*</td>
+						<td class="center">615</td>
+						<td ><img data-toggle="tooltip" data-placement="right" title="-.11 [+/- .10]" src='logos/S&E-S_06.jpg'></td>
+					</tr>
+					<tr>
+						<td style="padding-left:40px;"><a href="http://psychfiledrawer.org/replication.php?attempt=MTIw" target="_blank"><img src="logos/PFD.png" style="padding-right:4px;"></a><a href='https://osf.io/sqzuq/' target="_blank">Alogna et al. (2014)</a></td>
+						<td class="right" style="padding-right:3px;">
+							
+							<img src='logos/_data.png' title="This study has open data">
+							</td>
+								
+						<td >
+							<a href='https://osf.io/4xrpk/?action=download' target="_blank">lab_data_2.xlsx</a>
+							<a href='data-viewer.html' onclick='window.open(this.href,"popupwindow", "width=1300,height=1000,left=200,top=5,scrollbars,toolbar=0,resizable"); return false;' Target='_blank' >
+								<img src='logos/view-icon.png' title="Click to view data!">
+							</a>
+							</td>
+						<td class="right" style="padding-right:3px;"><img src='logos/_materials.png' title="This study has open materials"></td>
+						<td ><a href='https://osf.io/brwdp/?action=download' target="_blank">approved_protocol.pdf</a>*</td>
+						<td class="center">137</td>
+						<td ><img data-toggle="tooltip" data-placement="right" title="-.12 [+/- .19]" src='logos/S&E-S_08.jpg'></td>
+					</tr>
+					<tr>
+						<td colspan='6' class="right" style="color:#999999;vertical-align:top;font-style:italic;padding-top:7px">Random-effect meta-analytic estimate of all lab replications:</td>
+						<td><img data-toggle="tooltip" data-placement="right" title="-.16 [+/- .04]" src='logos/S&E-S_31.jpg'></td>
+					</tr>
+					<tr>
+						<td colspan='6'></td><td class="right" style="color:#999999;font-size:12px;padding-top:7px"><a href="https://github.com/eplebel/science-commons/tree/master/curated/s&e-s/s&e-s.R" target="_blank">[Underlying data (CSV) & R-code]</a></td>
+					</tr>
+					</tbody>
+				</table>
+				 <p></p>
+				 <p style="margin-bottom:0px;line-height:1.2em;"><strong>Summary:</strong> The verbal overshadowing effect appears to be replicable; verbally describing a robber after a 20-minute delay decreased correct identification rate in a lineup by 16% (from 54% [control] to 38% [verbal]; meta-analytic estimate = -16% [+/-.04], equivalent to r = .17). Still in question, however, is the validity and generalizability of the effect, hence it's still premature for public policy to be informed by verbal overshadowing evidence. Validity-wise, it's unclear whether verbal overshadowing is driven by a more conservative judgmental response bias process or driven by a reduced memory discriminability process because no "suspect-absent" lineups were used. This is important to clarify because it directly influences how eye-witness testimony should be treated (e.g., if verbal overshadowing is primarily driven by a more conservative response bias process, identifications made after a verbal descriptions should actually be given *more* [rather than less] weight, see <a href="http://wixtedlab.ucsd.edu/publications/wixted2015/Mickes_Wixted_2015_Persepectives.pdf" target="_blank">Mickes & Wixted, 2015</a>). Generalizability-wise, in a slight variant of RRR2 (i.e., RRR1), a much smaller overall verbal deficit of -4% [+/-.03] emerged, when the lineup identification occured 20 minutes after verbal description (which occurred immediately after seeing robbery). Future research needs to determine the size of verbal overshadowing when there's a delay between crime and verbal description and before lineup identification, which better reflect real-world conditions.</p>
+				 <p style="line-height:1.2em;color:orange;"><strong>STATUS:</strong> It works, but it'd be better to use modal windows, which is a bit more complicated to implement.</p>
+
+			 
+				
+				<p style="margin: 60px 0 0px;"><a name="analytic-reprod" class="anchor"></a>
+				<font size="6px"><strong>Gauging Analytic Reproducibility of Evidence</strong></font><br><br>
+				<font size="6px"><a href="http://pps.sagepub.com/content/9/5/556.full.pdf+html" target="_blank">RRR1 & RRR2: Alogna et al., ..., Zwaan (2014)</a></font>&nbsp;&nbsp;<a href="http://pps.sagepub.com/content/9/5/556.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a><br>
+				<font size="6px">Schooler & Engstler-Schooler (1990) -- Replications (23) </font>&nbsp;&nbsp;<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20out%20curated%20replications%20of%20verbal%20overshadowing%20RRR&amp;url=http%3A%2F%2Fcuratescience.org%2F&#35s%26e%2Ds&amp;via=curatescience">Tweet</a><br>
+				<font size="5px">Verbal overshadowing of visual memories: Some things are better left unsaid</font><br>
+				DOI:<a href='https://dx.doi.org/10.1016/0010-0285(90)90003-M' target="_blank">10.1016/0010-0285(90)90003-M</a>&nbsp;&nbsp;<a href="https://www.researchgate.net/profile/Jonathan_Schooler/publication/20861308_Verbal_overshadowing_of_visual_memories_Some_things_are_better_left_unsaid._Cognit._Psychol._22_36-71/links/5611ddba08ae6b29b49e3994.pdf" target="_blank"><img src="logos/pdf-icon.gif"></a></p>
+				
+				<table ><tbody>
+					<tr>
+						<td width='23%'><strong>Original Studies & Replications</strong></td>
+						<td width='60px'></td>
+						<td width='16%'><strong>Data/Syntax</strong></td>
+						<td width='28px'></td>
+						<td width='18%'><strong>Materials/Pre-reg</strong></td>
+						<td width='28px' class="center"><strong>N</strong></td>
+						<td class="center"><strong>Effect size [95% CI]</strong></td>
+					</tr>
+					<tr>
+						<td ><a href='https://www.researchgate.net/profile/Jonathan_Schooler/publication/20861308_Verbal_overshadowing_of_visual_memories_Some_things_are_better_left_unsaid._Cognit._Psychol._22_36-71/links/5611ddba08ae6b29b49e3994.pdf' target="_blank">Schooler & Smith (1990) Study 1</a></td>
+						<td class="right"><img src='logos/_trans-square.png'></td>
+						<td ></td>
+						<td class="right" style="padding-right:3px;"><img src='logos/_materials.png' title="This study has open materials"></td>
+						<td ><a href='https://osf.io/brwdp/?action=download' target="_blank">approved_protocol.pdf</a>*</td>
+						<td class="center">88</td>
+						<td ><img data-toggle="tooltip" data-placement="right" title="-.25 [+/- .20]" src='logos/S&E-S_03.jpg'></td>
+					</tr>
+					<tr>
+						<td style="padding-left:40px;"><a href="http://www.fed.cuhk.edu.hk/~lchang/material/Evolutionary/Brain/Self-control%20relies%20on%20glucose%20as%20a%20limited%20energy%20source%20willpower%20Is%20more%20than%20a%20metaphor.pdf" target="_blank"><img src="logos/pdf-icon.gif" style="padding-right:6px;"></a><a href='https://osf.io/ez4w3/' target="_blank">Michael et al. (2014)</a></td>
+						<td class="right" style="padding-right:3px;">
+							<img src='logos/_data.png' title="This study has open data"></td>
+						<td ><a href='https://osf.io/tabw4/?action=download' target="_blank">Study2Protocol.xlsx</a></td>
+						<td class="right" style="padding-right:3px;"><img src='logos/_materials.png' title="This study has open materials"></td>
+						<td ><a href='https://osf.io/brwdp/?action=download' target="_blank">approved_protocol.pdf</a>*</td>
+						<td class="center">615</td>
+						<td ><img data-toggle="tooltip" data-placement="right" title="-.11 [+/- .10]" src='logos/S&E-S_06.jpg'></td>
+					</tr>
+					<tr>
+						<td style="padding-left:40px;"><a href="http://psychfiledrawer.org/replication.php?attempt=MTIw" target="_blank"><img src="logos/PFD.png" style="padding-right:4px;"></a><a href='https://osf.io/sqzuq/' target="_blank">Alogna et al. (2014)</a></td>
+						<td class="right" style="padding-right:3px;">
+							<img src="logos/reproducible.png" title="Joe Hilgard has endorsed study's set of findings as analytically reproducible.">
+							<img src='logos/_data.png' title="This study has open data.">
+							</td>
+								
+						<td >
+							<a href='https://osf.io/4xrpk/?action=download' target="_blank">lab_data_2.xlsx</a>
+							<a href='data-reproducibility.html' onclick='window.open(this.href,"popupwindow", "width=1300,height=1000,left=200,top=5,scrollbars,toolbar=0,resizable"); return false;' Target='_blank' >
+								<img src='logos/view-icon.png' title="Click to view data and reproducibility status!">
+							</a>
+							</td>
+						<td class="right" style="padding-right:3px;"><img src='logos/_materials.png' title="This study has open materials"></td>
+						<td ><a href='https://osf.io/brwdp/?action=download' target="_blank">approved_protocol.pdf</a>*</td>
+						<td class="center">137</td>
+						<td ><img data-toggle="tooltip" data-placement="right" title="-.12 [+/- .19]" src='logos/S&E-S_08.jpg'></td>
+					</tr>
+					<tr>
+						<td colspan='6' class="right" style="color:#999999;vertical-align:top;font-style:italic;padding-top:7px">Random-effect meta-analytic estimate of all lab replications:</td>
+						<td><img data-toggle="tooltip" data-placement="right" title="-.16 [+/- .04]" src='logos/S&E-S_31.jpg'></td>
+					</tr>
+					<tr>
+						<td colspan='6'></td><td class="right" style="color:#999999;font-size:12px;padding-top:7px"><a href="https://github.com/eplebel/science-commons/tree/master/curated/s&e-s/s&e-s.R" target="_blank">[Underlying data (CSV) & R-code]</a></td>
+					</tr>
+					</tbody>
+				</table>
+				 <p></p>
+				 <p style="margin-bottom:0px;line-height:1.2em;"><strong>Summary:</strong> The verbal overshadowing effect appears to be replicable; verbally describing a robber after a 20-minute delay decreased correct identification rate in a lineup by 16% (from 54% [control] to 38% [verbal]; meta-analytic estimate = -16% [+/-.04], equivalent to r = .17). Still in question, however, is the validity and generalizability of the effect, hence it's still premature for public policy to be informed by verbal overshadowing evidence. Validity-wise, it's unclear whether verbal overshadowing is driven by a more conservative judgmental response bias process or driven by a reduced memory discriminability process because no "suspect-absent" lineups were used. This is important to clarify because it directly influences how eye-witness testimony should be treated (e.g., if verbal overshadowing is primarily driven by a more conservative response bias process, identifications made after a verbal descriptions should actually be given *more* [rather than less] weight, see <a href="http://wixtedlab.ucsd.edu/publications/wixted2015/Mickes_Wixted_2015_Persepectives.pdf" target="_blank">Mickes & Wixted, 2015</a>). Generalizability-wise, in a slight variant of RRR2 (i.e., RRR1), a much smaller overall verbal deficit of -4% [+/-.03] emerged, when the lineup identification occured 20 minutes after verbal description (which occurred immediately after seeing robbery). Future research needs to determine the size of verbal overshadowing when there's a delay between crime and verbal description and before lineup identification, which better reflect real-world conditions.</p>
+				 <p style="line-height:1.2em;color:orange;"><strong>STATUS:</strong> It works, but it'd be better to use modal windows, which is a bit more complicated to implement.</p>
+				
+				
+		
+			  <p style="margin: 60px 0 0px;"><a name="s&e-s" class="anchor"></a>
+				<font size="6px"><strong>Allowing Crowd to Add Replications</strong></font><br><br>
+				<font size="6px"><strong>Unicorn Priming -- Replications (2)</strong></font><br>
+				<font size="6px">Schooler & Engstler-Schooler (1990) </font><a href="http://pps.sagepub.com/content/9/5/556.full.pdf+html" target="_blank"><img src="logos/pdf-icon.gif"></a><br>
+				<font size="5px">Verbal overshadowing of visual memories: Some things are better left unsaid</font><br><br>
+				</p>
+				
+				<table ><tbody>
+					<tr>
+						<td width='23%'><strong>Original Studies & Replications</strong></td>
+						<td width='60px'></td>
+						<td width='16%'><strong>Data/Syntax</strong></td>
+						<td width='28px'></td>
+						<td width='18%'><strong>Materials/Pre-reg</strong></td>
+						<td width='28px' class="center"><strong>N</strong></td>
+						<td class="center"><strong>Effect size [95% CI]</strong></td>
+					</tr>
+					<tr>
+						<td ><a href='https://www.researchgate.net/profile/Jonathan_Schooler/publication/20861308_Verbal_overshadowing_of_visual_memories_Some_things_are_better_left_unsaid._Cognit._Psychol._22_36-71/links/5611ddba08ae6b29b49e3994.pdf' target="_blank">Schooler & Smith (1990) Study 1</a></td>
+						<td class="right"><img src='logos/_trans-square.png'></td>
+						<td ></td>
+						<td class="right" style="padding-right:3px;"><img src='logos/_materials.png' title="This study has open materials"></td>
+						<td ><a href='https://osf.io/brwdp/?action=download' target="_blank">approved_protocol.pdf</a>*</td>
+						<td class="center">88</td>
+						<td ><img data-toggle="tooltip" data-placement="right" title="-.25 [+/- .20]" src='logos/S&E-S_03.jpg'></td>
+					</tr>
+					<tr>
+						<td style="padding-left:40px;"><a href="http://www.fed.cuhk.edu.hk/~lchang/material/Evolutionary/Brain/Self-control%20relies%20on%20glucose%20as%20a%20limited%20energy%20source%20willpower%20Is%20more%20than%20a%20metaphor.pdf" target="_blank"><img src="logos/pdf-icon.gif" style="padding-right:6px;"></a><a href='https://osf.io/ez4w3/' target="_blank">Michael et al. (2014)</a></td>
+						<td class="right" style="padding-right:3px;">
+							<img src='logos/_data.png' title="This study has open data"></td>
+						<td ><a href='https://osf.io/tabw4/?action=download' target="_blank">Study2Protocol.xlsx</a></td>
+						<td class="right" style="padding-right:3px;"><img src='logos/_materials.png' title="This study has open materials"></td>
+						<td ><a href='https://osf.io/brwdp/?action=download' target="_blank">approved_protocol.pdf</a>*</td>
+						<td class="center">615</td>
+						<td ><img data-toggle="tooltip" data-placement="right" title="-.11 [+/- .10]" src='logos/S&E-S_06.jpg'></td>
+					</tr>
+					<tr>
+						<td style="padding-left:40px;"><a href="http://psychfiledrawer.org/replication.php?attempt=MTIw" target="_blank"><img src="logos/PFD.png" style="padding-right:4px;"></a><a href='https://osf.io/sqzuq/' target="_blank">Alogna et al. (2014)</a></td>
+						<td class="right" style="padding-right:3px;">
+							
+							<img src='logos/_data.png' title="This study has open data">
+							</td>
+								
+						<td >
+							<a href='https://osf.io/4xrpk/?action=download' target="_blank">lab_data_2.xlsx</a>
+							<a href='data-viewer.html' onclick='window.open(this.href,"popupwindow", "width=1300,height=1000,left=200,top=5,scrollbars,toolbar=0,resizable"); return false;' Target='_blank' >
+								<img src='logos/view-icon.png' title="Click to view data!">
+							</a>
+							</td>
+						<td class="right" style="padding-right:3px;"><img src='logos/_materials.png' title="This study has open materials"></td>
+						<td ><a href='https://osf.io/brwdp/?action=download' target="_blank">approved_protocol.pdf</a>*</td>
+						<td class="center">137</td>
+						<td ><img data-toggle="tooltip" data-placement="right" title="-.12 [+/- .19]" src='logos/S&E-S_08.jpg'></td>
+					</tr>
+					<tr>
+						<td colspan='6' class="right" style="color:#999999;vertical-align:top;font-style:italic;padding-top:7px">Random-effect meta-analytic estimate of all lab replications:</td>
+						<td><img data-toggle="tooltip" data-placement="right" title="-.16 [+/- .04]" src='logos/S&E-S_31.jpg'></td>
+					</tr>
+					<tr>
+						<td colspan='7'><img id="myImage" onclick="changeImage()" src="logos/add-replication-button.png"></td>
+					</tr>
+					</tbody>
+				</table>
+		
+		
+				<p style="margin: 60px 0 0px;"><a name="ss-dashboard" class="anchor"></a>
+				<font size="6px"><strong>Social Science Dashboard</strong></font><br><br>
+					<img src="logos/state-of-field-dashboard.png">
+				</p>
+		
+		
+		</div> <!--wrapper div-->
+		 
+		 
+	 </div>
+ </section>
+ 
+ 
+ 
+
+ <section class="section" id="signup-section" style="box-shadow: 0 0 5px;">
+    <div class="container" style="padding: 0px 0 40px;">
+      <header class="page-header">
+        <h1>Newsletter Sign Up</h1>
+      </header>
+      <div class="text-center" style="font-size:14px;">
+        <strong>
+          Please sign up below to receive the Curate Science Newsletter to be automatically notifed about news and updates. See <a href="http://us8.campaign-archive2.com/home/?u=0833383918fc50773891d363a&id=aaad5734e3">past announcements</a>.
+        </strong>
+      </div>
+      <br>
+      <div id="mc_embed_signup">
+        <form action="//curatescience.us8.list-manage.com/subscribe/post?u=0833383918fc50773891d363a&amp;id=aaad5734e3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-search pull-center" target="_blank" novalidate>
+          <div class="input-append input-signup">
+            <input type="email" value="" name="EMAIL" class="email span4" id="mce-EMAIL" placeholder="Enter email address!" size="20" type="text" required>
+          </div>
+          <br/>
+          <br/>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;"><input type="text" name="b_d140eca9cfe4a96473dac6ea5_fba08af7dd" value=""></div>
+          <div class="clear"><input type="submit" value="Sign up" name="subscribe" id="mc-embedded-subscribe" class="btn btn-info btn-xs"></div>
+        </form>
+      </div>
+
+	  
+	  
+      <div class="row-fluid" style="font-size:14px;">
+        <ul class="social">
+          <li>
+            <a href="https://twitter.com/curatescience">
+              <img alt="social-twitter" src="logos/social-twitter.png" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/eplebel/science-commons">
+              <img alt="social-github" src="logos/social-github.png" />
+            </a>
+          </li>
+        </ul>
+		
+		<br>
+		<br>
+		
+		<center><a class="twitter-timeline" data-width="600" data-height="1200" href="https://twitter.com/curatescience">Tweets by curatescience</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+		
+		<p style="text-align:center;margin-top:50px;">
+		<strong>Contact:</strong><br>
+		curatescience@<span class=”displaynone”></span>gmail.com<br>
+		Western University<br>
+		1151 Richmond St<br>
+		London, Ontario, CANADA, N6A 3K7
+		</p>
+		
+		<p style="text-align:center;margin-top:50px;"><i>*Thanks to <a href="http://www.nicebread.de/">Felix Schönbrodt</a> who is currently hosting Curate Science.</i>
+		</p>
+		<br><br>
+	  </div>
+    </div>
+
+  </section>
+
+
+</div>
+
+<script type="text/javascript">
+$(".faq-item .question").click(function(e) {
+  $(e.target).siblings(".answer").toggle();
+});
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+
+</script>
+
+
+  <!--<script src="assets/raven.min.js"></script>-->
+
+  <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+  
+  <script type="text/javascript">
+    
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-48865749-1', 'auto');
+  ga('send', 'pageview');
+  
+  </script>
+</body>
+</html>
