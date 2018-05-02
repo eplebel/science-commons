@@ -74,7 +74,118 @@
 		color: black;
 		text-decoration: none;
 	}
-
+	.label-info-teal {
+	  background-color: #00A388;
+	}
+	
+	
+	.center-pills { display: inline-block; }
+	
+	a.kinda-link:hover { cursor: pointer; }
+	
+		
+	.popUpStyle {
+		font-size:13px;
+		line-height:normal;
+		}
+	
+	.popUpOnHover { position:relative; }
+	.popUpOnHover:hover span.toDisplay1 { display:block; }
+	.popUpOnHover:hover span.toDisplay2 { display:block; }
+	.popUpOnHover:hover span.toDisplay3 { display:block; }
+	.popUpOnHover:hover span.toDisplay4 { display:block; }
+	.popUpOnHover:hover span.toDisplayBasic4Submission { display:block; }
+	.popUpOnHover:hover span.toDisplayBasic7Retroactive { display:block; }
+	.popUpOnHover:hover span.toDisplayFullPagePopUp { display:block; }
+	.toDisplay1 {
+		display:none;
+		position:absolute; 
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-54px; 
+		left:-10px; }
+	.toDisplay2 {
+		display:none;
+		position:absolute; 
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-38px; 
+		left:-10px; }
+	.toDisplay3 {
+		display:none;
+		position:absolute; 
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-22px; 
+		left:-10px; }
+	.toDisplay4 {
+		display:none;
+		position:absolute; 
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-35px; 
+		left:-10px; }	
+	.toDisplayBasic4Submission {
+		display:none;
+		position:absolute; 
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-95px; 
+		left:-10px; }
+	.toDisplayBasic7Retroactive {
+		display:none;
+		position:absolute; 		
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-305px; 
+		left:-10px; }
+	.toDisplayFullPagePopUp {
+		display:none;
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		position:fixed;
+		top: 55px;
+		bottom: 55px;
+		left: 250px; 
+		min-width: 80%; }
+	
+	
+	
+	
 .sprite {
     background-image: url(../logos/spritesheet.png);
     background-repeat: no-repeat;

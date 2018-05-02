@@ -71,6 +71,8 @@
        else
           e.style.display = 'block';
     }
+	
+
   </script>
   <style type="text/css" class="init"> <!--for DataTables table-->
 	/* Ensure that the demo table scrolls; */
@@ -181,119 +183,6 @@
 	  top:145px; 
 	  left:15%;
 	}
-	.center-pills { display: inline-block; }
-	
-	a.kinda-link:hover { cursor: pointer; }
-	.popUpStyle {
-		font-size:13px;
-		line-height:normal;
-		}
-	
-	.popUpOnHover { position:relative; }
-	.popUpOnHover:hover span.toDisplay1 { display:block; }
-	.popUpOnHover:hover span.toDisplay2 { display:block; }
-	.popUpOnHover:hover span.toDisplay3 { display:block; }
-	.popUpOnHover:hover span.toDisplay4 { display:block; }
-	.popUpOnHover:hover span.toDisplayBasic4Submission { display:block; }
-	.popUpOnHover:hover span.toDisplayBasic7Retroactive { display:block; }
-	.popUpOnHover:hover span.toDisplay5 { display:block; }
-	.popUpOnHover:hover span.toDisplay6 { display:block; }
-	.toDisplay1 {
-		display:none;
-		position:absolute; 
-		z-index:9998;
-		border:1px;
-		background-color:white;
-		border-style:solid;
-		border-width:1px;
-		border-color:darkgrey;
-		padding:3px;
-		top:-54px; 
-		left:-10px; }
-	.toDisplay2 {
-		display:none;
-		position:absolute; 
-		z-index:9998;
-		border:1px;
-		background-color:white;
-		border-style:solid;
-		border-width:1px;
-		border-color:darkgrey;
-		padding:3px;
-		top:-38px; 
-		left:-10px; }
-	.toDisplay3 {
-		display:none;
-		position:absolute; 
-		z-index:9998;
-		border:1px;
-		background-color:white;
-		border-style:solid;
-		border-width:1px;
-		border-color:darkgrey;
-		padding:3px;
-		top:-22px; 
-		left:-10px; }
-	.toDisplay4 {
-		display:none;
-		position:absolute; 
-		z-index:9998;
-		border:1px;
-		background-color:white;
-		border-style:solid;
-		border-width:1px;
-		border-color:darkgrey;
-		padding:3px;
-		top:-35px; 
-		left:-10px; }	
-	.toDisplayBasic4Submission {
-		display:none;
-		position:absolute; 
-		z-index:9998;
-		border:1px;
-		background-color:white;
-		border-style:solid;
-		border-width:1px;
-		border-color:darkgrey;
-		padding:3px;
-		top:-95px; 
-		left:-10px; }
-	.toDisplayBasic7Retroactive {
-		display:none;
-		position:absolute; 
-		z-index:9998;
-		border:1px;
-		background-color:white;
-		border-style:solid;
-		border-width:1px;
-		border-color:darkgrey;
-		padding:3px;
-		top:-305px; 
-		left:-10px; }
-	.toDisplay5 {
-		display:none;
-		position:absolute; 
-		z-index:9998;
-		border:1px;
-		background-color:white;
-		border-style:solid;
-		border-width:1px;
-		border-color:darkgrey;
-		padding:3px;
-		top:-450px; 
-		left:-10px; }
-	.toDisplay6 {
-		display:none;
-		position:absolute; 
-		z-index:9998;
-		border:1px;
-		background-color:white;
-		border-style:solid;
-		border-width:1px;
-		border-color:darkgrey;
-		padding:3px;
-		top:-450px; 
-		left:-10px; }
 		
   </style>
 </head>
@@ -531,7 +420,7 @@
 				</p>
 				<p style="font-size:12px;line-height:1.2em;padding-top:5px;padding-bottom:5px;max-width:900px;margin: 0 auto;">Examples: <strong>"RPP"</strong> for <i>Reproducibility Project: Psychology</i> replications; <strong>"ML1"</strong> or <strong>"ML3"</strong> for <i>Many Labs 1</i> or 3 replications; <strong>"RRR"</strong> for <i>Registered Replication Reports</i>; <strong>"SP: Spec"</strong> for <i>Social Psychology's Special Issue</i> replications. For topical searches, try "priming", "anchoring", "gambler's fallacy", "love", "moral" (for morality), or "power posing."</p>
 				<p style="font-size:12px;line-height:1.2em;padding-bottom:15px;max-width:900px;margin: 0 auto;color:darkgrey;">
-				Icon legend: <img class='open-logos active' src='logos/_data.png' title="This study has open data (Center for Open Science open science badge)" style="max-height:13px;max-width:13px;"> = data; <img class='open-logos active' src='logos/_materials.png' title="This study has open materials (Center for Open Science open science badge)" style="max-height:13px;max-width:13px;"> = experimental materials; <img class='open-logos active' src='logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered (Center for Open Science open science badge)" style="max-height:13px;max-width:13px;"> = pre-registered protocol; <img src="logos/ec-icon.gif" style="max-height:13px;max-width:13px;"> = link to a replication's associated <a href="#evidence-collections-section" title="Replications are organized in evidence collections by grouping them by different operationalizations of an effect/hypothesis (see about section for more details).">evidence collection</a>. To sort replications, click on column headers. Reveal overflow text (...) by hovering over cell. For details about replication outcome values hover over cell and see <a href="#our-approach-section">about section</a>. For additional replication study characteristics (& to see hidden imprecise large-scale-effort replications, see our <a href="https://docs.google.com/spreadsheets/d/1gLaWJwSRyBcrn3B5X7hbc3Sk99cs6XnwyQvUQQkh3uo/edit?usp=sharing" target="_blank">public gSheet <img src='logos/gSheet-icon.png' style="max-height:13px;max-width:13px;"></a> (see also our <a href="https://github.com/eplebel/science-commons/tree/master/curated" target="_blank">GitHub repo <i class="fa fa-github fa-2" aria-hidden="true"></i></a>).
+				Icon legend: <img class='open-logos active' src='logos/_data.png' title="This study has open data (Center for Open Science open science badge)" style="max-height:13px;max-width:13px;"> = data; <img class='open-logos active' src='logos/_materials.png' title="This study has open materials (Center for Open Science open science badge)" style="max-height:13px;max-width:13px;"> = study materials; <img class='open-logos active' src='logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered (Center for Open Science open science badge)" style="max-height:13px;max-width:13px;"> = pre-registered protocol; <img src="logos/ec-icon.gif" style="max-height:13px;max-width:13px;"> = link to a replication's associated <a href="#evidence-collections-section" title="Replications are organized in evidence collections by grouping them by different operationalizations of an effect/hypothesis (see about section for more details).">evidence collection</a>. To sort replications, click on column headers. Reveal overflow text (...) by hovering over cell. For details about replication outcome values hover over cell and see <a href="#our-approach-section">about section</a>. For additional replication study characteristics (& to see hidden imprecise large-scale-effort replications, see our <a href="https://docs.google.com/spreadsheets/d/1gLaWJwSRyBcrn3B5X7hbc3Sk99cs6XnwyQvUQQkh3uo/edit?usp=sharing" target="_blank">public gSheet <img src='logos/gSheet-icon.png' style="max-height:13px;max-width:13px;"></a> (see also our <a href="https://github.com/eplebel/science-commons/tree/master/curated" target="_blank">GitHub repo <i class="fa fa-github fa-2" aria-hidden="true"></i></a>).
 				</p>
 				
 				<div id="loader-div" class="loader"></div>
@@ -23488,7 +23377,7 @@
 				</ul>
 			</div>
 
-			<p style="font-size:16px;line-height:1.2em;">Scientists can only rely on an empirical finding if it is <i>credible</i>. In science, a credible finding is one that has (at minimum) repeatedly survived good faith attempts at proving it wrong along 3 dimensions: (1) method/data transparency, (2) analytic reproducibility/robustness, and (3) effect replicability. However, no platform currently exists to find such information. <strong>Curate Science</strong> aims to fill this gap. It is a platform to crowdsource the credibility of empirical research by allowing researchers to curate the <i>transparency</i>, <i>reproducibility/robustness</i>, and <i>replicability</i> of published findings (for full details of our current unified curation framework, see <a href="https://osf.io/preprints/psyarxiv/uwmr8" target="_blank"> here [version 5.2.0]</a>). <i>Our mission is to increase the cumulative and self-correcting nature of empirical research to accelerate the development of scientific knowledge and evidence-based applied innovations.</i>
+			<p style="font-size:16px;line-height:1.2em;">Scientists can only rely on an empirical finding if it is <i>credible</i>. In science, a credible finding is one that has (at minimum) survived scrutiny along 3 dimensions: (1) method/data transparency, (2) analytic reproducibility/robustness, and (3) effect replicability. However, no platform currently exists to find such information. <strong>Curate Science</strong> aims to fill this gap. It is a platform to crowdsource the credibility of empirical research by allowing researchers to curate the <i>transparency</i>, <i>reproducibility/robustness</i>, and <i>replicability</i> of published findings (for full details of our current unified curation framework, see <a href="https://osf.io/preprints/psyarxiv/uwmr8" target="_blank"> here [version 5.2.0]</a>). <i>Our mission is to increase the cumulative and self-correcting nature of empirical research to accelerate the development of scientific knowledge and evidence-based applied innovations.</i>
 			</p>
 			<p style="font-size:16px;line-height:1.2em;margin-bottom:0px;">Crowdsourcing the credibility of empirical research creates the following <u>value</u> for various stakeholders of scientific research:
 				<ol style="font-size:14px;line-height:1.2em;">
@@ -23508,7 +23397,7 @@ commission the conduct of such replications (via e.g., <a href="https://osf.io/v
 							<li>The platform can be used to track the <i>transparency</i>, <i>reproducibility</i>, <i>robustness</i>, and <i>replicability</i> of disciplines over time to gauge progress in achieving higher research integrity.</li>
 						</ul>
 					<li><strong>Teaching/pedagogical</strong>: The searchable database can be used to teach about transparency and replication (e.g., showing real world examples of effects exhibiting different levels of replicability; it can also inform teachers about replicable effects that can justifiably be taught).</li>
-					<li><strong>Practical</strong>: It helps researchers locate publicly-available experimental materials for follow-up research and publicly available data sets for secondary (re-)analyses from alternative theoretical perspectives.</li>
+					<li><strong>Practical</strong>: It helps researchers locate publicly-available study materials for follow-up research and publicly available data sets for secondary (re-)analyses from alternative theoretical perspectives.</li>
 					<li><strong>Social normative</strong>:</li>
 						<ul>
 							<li>Making it easier to find more transparently reported research increases the likelihood that ambivalent or unaware researchers will decide to adopt such transparent practices, hence accelerating a cultural shift in the research community where it becomes the social norm to report one’s research more transparently.</li>
@@ -23586,24 +23475,42 @@ contributions of researchers who devote their time to replicating the work of ot
 					<div id="search-for-transparent-studies-section"></div>
 					<h5 style="margin-bottom:5px;text-align:center;margin-top:60px;">Search for Transparently Reported Studies</h5>
 					
-					<p style="font-size:16px;line-height:1.2em;margin-bottom:5px;">
-					Evidence can only be considered credible if it has survived scrutiny by independent researchers. Such scrutiny is only possible if a study's methodological details and data are transparently reported. In this spirit, we are designing an interface to search for (and filter by) studies with curated transparency components (i.e., compliance to reporting standards, open materials, pre-registration/Registered Reports protocol, open data, and reproducibility syntax/computational capsules). See interactive prototype in development below (hover and/or click the badge icons to interact with a study's curated transparency components).
+					<p style="font-size:16px;line-height:1.2em;margin-bottom:25px;">
+					Evidence can only be considered credible if it has survived <u><i>scrutiny</i></u> by independent researchers. Such scrutiny is only possible if a study's methodological details and data are transparently reported. In this spirit, we're designing an interface to search for (and filter by) studies transparently reported along different <i>transparency dimensions</i> (i.e., compliance to reporting standards, open/public materials, pre-registration/Registered Reports protocol, open/public data, and reproducible code/computational capsules). See interactive prototype in development below (e.g., filter by transparency component checkboxes; hover and/or click badge icons to interact with curated transparency components).
 					</p>
 			</div> <!-- max-width:900px; wrapper -->
 			<!--</div> <!-- wrapper div-->
 				
 				<div class="wrapper" style="max-width:1200px;font-size:14px;">
 					
-					<center>
-						<img style="padding-top:20px;" src="logos/search-box-&-filter-logo.png">
-					</center>
-					<table id="example-future-v5" class="stripe row-border order-column compact" cellspacing="0" width="100%">
+					<div style="margin-left:40%;margin-bottom:-35px;overflow:visible;line-height:1.2em;">
+						<table cellspacing="0">
+							<tr>
+								<td style="text-align:right;vertical-align:top;padding-right:3px;">Show only articles with:</td>
+								<td>
+									<input onchange="filterme()" type="checkbox" name="rs" value="rs" style="margin-top:-6px;"><a class='sprite sprite-disclosure-medium-available'></a> Reporting standard/Methodological disclosure statement <br>
+									<input onchange="filterme()" type="checkbox" name="om" value="om" style="margin-top:-6px;"><a class='sprite sprite-materials-medium'></a> Open/public study materials <br>
+									<input onchange="filterme()" type="checkbox" name="prereg" value="prereg" style="margin-top:-6px;"><a class='sprite sprite-preregisteredplus-medium'></a> Preregistered/Registered Reports protocol <br>
+									<input onchange="filterme()" type="checkbox" name="od" value="od" style="margin-top:-6px;"><a class='sprite sprite-data-medium'></a> Open/public data <br>
+									<input onchange="filterme()" type="checkbox" name="rc" value="rc" style="margin-top:-6px;"><a class='sprite sprite-code-ocean-icon-medium'></a> Reproducible code/Computational capsule
+								</td>
+							</tr>
+						</table>
+					</div>
+					<br>
+					<div id="loader-div" class="loader"></div>
+					<table id="dt" class="stripe row-border order-column compact" cellspacing="0" width="100%">
 						<thead>
 							<tr>
 								<th title="authors & study number (unnumbered for sole study papers)">authors/study.number</th>
-								<th >journal.name</th>
 								<th >article.title</th>
+								<th >journal.name</th>
 								<th >DOI</th>
+								<th>rs</th>
+								<th>om</th>
+								<th>prereg</th>
+								<th>od</th>
+								<th>rc</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -23624,8 +23531,8 @@ contributions of researchers who devote their time to replicating the work of ot
 											</ol>
 										</span>
 									</div>
-									<a href=' https://osf.io/d2ncs/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
-									<a onclick="toggle_visibility('hidden-component-id6');" class='sprite sprite-preregisteredplus-medium kinda-link' title="View pre-registration document"></a>
+									<a href=' https://osf.io/d2ncs/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
+									<a href="https://osf.io/6jqsc" target="_blank" class='sprite sprite-preregisteredplus-medium' title="Go to pre-registration document"></a>
 									<a href=' https://osf.io/7gmw5/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
 									Study 2
@@ -23640,32 +23547,19 @@ contributions of researchers who devote their time to replicating the work of ot
 											</ol>
 										</span>
 									</div>
-									<a href='https://osf.io/473gq/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
-									<a onclick="toggle_visibility('hidden-component-id9');" class='sprite sprite-preregisteredplus-medium kinda-link' title="View pre-registration document"></a>
+									<a href='https://osf.io/473gq/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
+									<a href="https://osf.io/7qsj2" target="_blank" class='sprite sprite-preregisteredplus-medium' title="Go to pre-registration document"></a>
 									<a href='https://osf.io/t5ren/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								</div>
 							</td>
-						  <td style="vertical-align:top;"><i>Psychological Science</i></td>
 						  <td style="vertical-align:top;"><a href=' https://www.researchgate.net/profile/Andrea_Pittarello/publication/270757442_Justifications_Shape_Ethical_Blind_Spots/links/553200d20cf20ea0a071c477.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Justifications Shape Ethical Blind Spots</td>
+						  <td style="vertical-align:top;"><i>Psychological Science</i></td>
 						  <td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797615571018">10.1177/0956797615571018</a></td>
-						</tr>
-						<tr>
-							<td colspan="4" style="padding-top:0px;padding-bottom:0px;">
-								<div id="hidden-component-id6" style="display:none;">
-									<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/6jqsc/?action=download" target="_blank" title="Direct download file"> Pittarello_Leib_Gordon_Shalvi_OSF_12AUG14.pdf <span style="margin-left:30px;">Download</span> <i class="fa fa-download"></i></a><a href="https://osf.io/6jqsc" target="_blank"><span style="margin-left:30px;">View preregistration on OSF</span> <img src="logos/osf-13x13.png"></a><a onclick="toggle_visibility('hidden-component-id6');" style="margin-left:30px;">Hide preregistration preview <i class="fa fa-chevron-up icon-rotate"></i></a></div>
-									<br>
-									<iframe src="https://mfr.osf.io/render?url=https://osf.io/6jqsc/?action=download%26mode=render" width="100%" scrolling="yes" height="1083px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="4" style="padding-top:0px;padding-bottom:0px;">
-								<div id="hidden-component-id9" style="display:none;">
-									<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/7qsj2/?action=download" target="_blank" title="Direct download file"> Pre_registration_for_behavioral_exp_3_final.pdf <span style="margin-left:30px;">Download</span> <i class="fa fa-download"></i></a><a href="https://osf.io/7qsj2" target="_blank"><span style="margin-left:30px;">View preregistration on OSF</span> <img src="logos/osf-13x13.png"></a><a onclick="toggle_visibility('hidden-component-id9');" style="margin-left:30px;">Hide preregistration preview <i class="fa fa-chevron-up icon-rotate"></i></a></div>
-									<br>
-									<iframe src="https://mfr.osf.io/render?url=https://osf.io/7qsj2/?action=download%26mode=render" width="100%" scrolling="yes" height="1083px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
-								</div>
-							</td>
+						  <td>rs</td>
+						  <td>om</td>
+						  <td>prereg</td>
+						  <td>od</td>
+						  <td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -23684,7 +23578,7 @@ contributions of researchers who devote their time to replicating the work of ot
 											</ol>
 										</span>
 									</div>
-									<a href='https://osf.io/r79qd/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
+									<a href='https://osf.io/r79qd/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
 									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 									<a href=' https://osf.io/wkj45/' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
@@ -23700,7 +23594,7 @@ contributions of researchers who devote their time to replicating the work of ot
 											</ol>
 										</span>
 									</div>
-									<a href='https://osf.io/97jzi/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
+									<a href='https://osf.io/97jzi/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
 									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 									<a href='https://osf.io/wkj45/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
@@ -23716,14 +23610,27 @@ contributions of researchers who devote their time to replicating the work of ot
 											</ol>
 										</span>
 									</div>
-									<a href='https://osf.io/p4gde/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
-									<a href='https://osf.io/preg9/' target='_blank' class='sprite sprite-preregisteredplus-medium' title="Go to preregistration protocol"></a>
+									<a href='https://osf.io/p4gde/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
+									<div style="display:inline;" class="popUpOnHover"><a class='sprite sprite-preregisteredplus-medium'></a>
+										<span class="toDisplayFullPagePopUp popUpStyle">
+											<div style="min-width:850px;white-space:normal;">
+												<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/preg9/?action=download" target="_blank" title="Direct download file"> doctor_11_pre-registration.pdf <span style="margin-left:30px;">Download</span> <i class="fa fa-download"></i></a><a href="https://osf.io/preg9" target="_blank"><span style="margin-left:30px;">View preregistration on OSF</span> <img src="logos/osf-13x13.png"></a></div>
+												<br>
+												<iframe src="https://mfr.osf.io/render?url=https://osf.io/preg9/?action=download%26mode=render" width="100%" scrolling="yes" height="800px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+											</div>
+										</span>
+									</div>
 									<a href='https://osf.io/wkj45/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><i>Psychological Science</i></td>
 							<td style="vertical-align:top;"><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4504740/pdf/nihms678183.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Grouping Promotes Equality: The Effect of Recipient Grouping on Allocation of Limited Medical Resources</td>
+							<td style="vertical-align:top;"><i>Psychological Science</i></td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797615583978">10.1177/0956797615583978</a></td>
+							<td>rs</td>
+							<td>om</td>
+							<td>prereg</td>
+						    <td>od</td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -23752,9 +23659,14 @@ contributions of researchers who devote their time to replicating the work of ot
 									</span>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><i>Psychological Science</i></td>
 							<td style="vertical-align:top;"><a href=' http://www.its.caltech.edu/~dstanley/publications/2015_Birmingham_Stanley_et_al_wSupp.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Implicit Social Biases in People With Autism</td>
+							<td style="vertical-align:top;"><i>Psychological Science</i></td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797615595607">10.1177/0956797615595607</a></td>
+							<td>rs</td>
+							<td>om</td>
+							<td></td>
+						    <td>od</td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -23773,7 +23685,7 @@ contributions of researchers who devote their time to replicating the work of ot
 											</ol>
 										</span>
 									</div>
-									<a href=' https://osf.io/nwsx4/' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
+									<a href=' https://osf.io/nwsx4/' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
 									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 									<a href='https://osf.io/8ewzu/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
@@ -23789,8 +23701,8 @@ contributions of researchers who devote their time to replicating the work of ot
 											</ol>
 										</span>
 									</div>
-									<a href=' https://osf.io/nwsx4/' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
-									<a href='https://aspredicted.org/public/205223581.pdf ' target='_blank' class='sprite sprite-preregisteredplus-medium' title="View preregistered protocol"></a>
+									<a href=' https://osf.io/nwsx4/' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
+									<a href='https://aspredicted.org/public/205223581.pdf ' target='_blank' class='sprite sprite-preregisteredplus-medium' title="Go to preregistered protocol"></a>
 									<a href=' https://osf.io/mr5fx/' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
 									Study 3
@@ -23805,7 +23717,7 @@ contributions of researchers who devote their time to replicating the work of ot
 											</ol>
 										</span>
 									</div>
-									<a href='https://osf.io/nwsx4/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
+									<a href='https://osf.io/nwsx4/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
 									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 									<a href=' https://osf.io/n25mf/' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
@@ -23821,7 +23733,7 @@ contributions of researchers who devote their time to replicating the work of ot
 											</ol>
 										</span>
 									</div>
-									<a href='https://osf.io/nwsx4/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
+									<a href='https://osf.io/nwsx4/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
 									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 									<a href='https://osf.io/5auzy/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
@@ -23837,23 +23749,19 @@ contributions of researchers who devote their time to replicating the work of ot
 											</ol>
 										</span>
 									</div>
-									<a href='https://osf.io/nwsx4/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
+									<a href='https://osf.io/nwsx4/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
 									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 									<a href=' https://osf.io/zmup2/' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
-									<a onclick="toggle_visibility('hidden-component-id10');" class='sprite sprite-reproducible-icon-medium kinda-link' title="View analaytic reproducibility checks"></a>
-									<a onclick="toggle_visibility('hidden-component-id10');" class='sprite sprite-code-ocean-icon-medium kinda-link' title="View computational container"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><i>Psychological Science</i></td>
 							<td style="vertical-align:top;"><a href='https://pdfs.semanticscholar.org/6d2e/77ffa574ef2d5fa9b7ff93c34422e9e749e1.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Why Do People Tend to Infer 'Ought' From 'Is'? The Role of Biases in Explanation</td>
+							<td style="vertical-align:top;"><i>Psychological Science</i></td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797616650875">10.1177/0956797616650875</a></td>
-						</tr>
-						<tr>
-							<td colspan="4" style="padding-top:0px;padding-bottom:0px;">
-								<div id="hidden-component-id10" style="display:none;">
-									<script src="https://codeocean.com/widget.js?id=abd8b483-c5e3-4382-a493-1fc5aecb0f1d" async></script>
-								</div>
-							</td>
+							<td>rs</td>
+							<td>om</td>
+							<td>prereg</td>
+						    <td>od</td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -23876,13 +23784,18 @@ contributions of researchers who devote their time to replicating the work of ot
 										</div>
 									</span>
 								</div>
-								<a class='sprite sprite-materials-medium-unavailable' title="Open experimental materials information is not available"></a>
+								<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
 								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 								<a class='sprite sprite-data-medium-unavailable' title="Open/public data information is not available"></a>
 							</td>
-							<td style="vertical-align:top;"><i>Legal and Criminological Psychology</i></td>
 							<td style="vertical-align:top;"><a href='https://rebeccawillen.files.wordpress.com/2018/02/as1013805681295601401182419574_content_1.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Offenders’ uncoerced false confessions: A new application of statement analysis?</td>
+							<td style="vertical-align:top;"><i>Legal and Criminological Psychology</i></td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1111/j.2044-8333.2011.02018.x">10.1111/j.2044-8333.2011.02018.x</a></td>
+							<td>rs</td>
+							<td></td>
+							<td></td>
+						    <td></td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -23898,28 +23811,33 @@ contributions of researchers who devote their time to replicating the work of ot
 										</ol>
 									</span>
 								</div>
-								<a class='sprite sprite-materials-medium' href="https://osf.io/xuqmg/" target="_blank" title="Go to experimental files"></a>
+								<a class='sprite sprite-materials-medium' href="https://osf.io/xuqmg/" target="_blank" title="Go to study materials files"></a>
 								<div style="display:inline;" class="popUpOnHover"><a class='sprite sprite-preregisteredplus-medium'></a>
-									<span class="toDisplay5 popUpStyle">
+									<span class="toDisplayFullPagePopUp popUpStyle">
 										<div style="min-width:850px;white-space:normal;">
 											<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/ebuzm/?action=download" target="_blank" title="Direct download file"> EDC_Replication Protocol.docx <span style="margin-left:30px;">Download</span> <i class="fa fa-download"></i></a><a href="https://osf.io/ebuzm" target="_blank"><span style="margin-left:30px;">View preregistration on OSF</span> <img src="logos/osf-13x13.png"></a></div>
 											<br>
-											<iframe src="https://mfr.osf.io/render?url=https://osf.io/q8dx5//?action=download%26mode=render" width="100%" scrolling="yes" height="1083px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+											<iframe src="https://mfr.osf.io/render?url=https://osf.io/q8dx5//?action=download%26mode=render" width="100%" scrolling="yes" height="800px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
 										</div>
 									</span>
 								</div>
 								<a class='sprite sprite-data-medium' href="https://osf.io/wb6vc/" target="_blank" title="Go to data files"></a>
 								<div style="display:inline;" class="popUpOnHover"><a class='sprite sprite-code-ocean-icon-medium'></a>
-									<span class="toDisplay6 popUpStyle">
+									<span class="toDisplayFullPagePopUp popUpStyle">
 										<div style="min-width:850px;white-space:normal;">
 											<script src="https://codeocean.com/widget.js?id=91a4a325-5a3f-4899-826a-87fd4153824e" async></script>
 										</div>
 									</span>
 								</div>
 							</td>
+							<td style="vertical-align:top;"><a href=' https://static1.squarespace.com/static/594641bbe3df28301b1a0493/t/5970b5c8f5e2311272d3b4f0/1500558794416/2017+%28in+press%29_Campbell+et+al_JRP_Replication+of+Murray+et+al+2002.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Self-esteem, relationship threat, and dependency regulation: Independent replication of Murray, Rose, Bellavia, Holmes, and Kusche (2002) Study 3 <span class="label label-info-teal"><a href="https://psyarxiv.com/5suda/" target="_blank" class="black" title="View preprint of this article.">Preprint</a></span></td>
 							<td style="vertical-align:top;"><i>Journal of Research in Personality</i></td>
-							<td style="vertical-align:top;"><a href=' https://static1.squarespace.com/static/594641bbe3df28301b1a0493/t/5970b5c8f5e2311272d3b4f0/1500558794416/2017+%28in+press%29_Campbell+et+al_JRP_Replication+of+Murray+et+al+2002.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Self-esteem, relationship threat, and dependency regulation: Independent replication of Murray, Rose, Bellavia, Holmes, and Kusche (2002) Study 3</td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1016/j.jrp.2017.04.001">10.1016/j.jrp.2017.04.001</a></td>
+							<td>rs</td>
+							<td>om</td>
+							<td>prereg</td>
+						    <td>od</td>
+							<td>rc</td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -23940,62 +23858,50 @@ contributions of researchers who devote their time to replicating the work of ot
 									</span>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><i>European Journal of Personality</i></td>
 							<td style="vertical-align:top;"><a href='https://www.researchgate.net/profile/Katherine_Collison/publication/322685405_Examining_the_Effects_of_Controlling_for_Shared_Variance_among_the_Dark_Triad_Using_Meta-analytic_Structural_Equation_Modelling_Dark_Triad_metaSEM/links/5a6e7618458515d407585359/Examining-the-Effects-of-Controlling-for-Shared-Variance-among-the-Dark-Triad-Using-Meta-analytic-Structural-Equation-Modelling-Dark-Triad-metaSEM.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Examining the Effects of Controlling for Shared Variance among the Dark Triad Using Meta-analytic Structural Equation Modelling</td>
+							<td style="vertical-align:top;"><i>European Journal of Personality</i></td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1002/per.2137">10.1002/per.2137</a></td>
-						</tr>
-						<tr>
-							<td colspan="4" style="padding-top:0px;padding-bottom:0px;">
-								<div id="hidden-component-id8" style="display:none;">
-									<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/g37bz/?action=download" target="_blank" title="Direct download file">Supplementary Materials-Final.docx <span style="margin-left:30px;">Download</span> <i class="fa fa-download"></i></a><a href="https://osf.io/g37bz" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="logos/osf-13x13.png"></a><a onclick="toggle_visibility('hidden-component-id8');" style="margin-left:30px;">Hide file preview <i class="fa fa-chevron-up icon-rotate"></i></a></div>
-									<br>
-									<iframe src="https://mfr.osf.io/render?url=https://osf.io/g37bz/?action=download%26mode=render" width="100%" scrolling="yes" height="1047px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen style="margin-top:-15px;"></iframe>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="4" style="padding-top:0px;padding-bottom:0px;">
-								<div id="hidden-component-id4" style="display:none;">
-									<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/g2dsr/?action=download" target="_blank" title="Direct download file">DataMaster.xlsx <span style="margin-left:30px;">Download<span> <i class="fa fa-download"></i></a><a href="https://osf.io/g2dsr" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="logos/osf-13x13.png"></a><a onclick="toggle_visibility('hidden-component-id4');" style="margin-left:30px;">Hide file preview <i class="fa fa-chevron-up icon-rotate"></i></a></div>
-									<br>
-									<iframe src="https://mfr.osf.io/render?url=https://osf.io/g2dsr/?action=download%26mode=render" width="100%" scrolling="yes" height="678px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen style="margin-top:-15px;"></iframe>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="4" style="padding-top:0px;padding-bottom:0px;">
-								<div id="hidden-component-id5" style="display:none;">
-									<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/wfzh6/?action=download" target="_blank" title="Direct download file"> Study_Info_revised.xlsx <span style="margin-left:30px;">Download</span> <i class="fa fa-download"></i></a><a href="https://osf.io/wfzh6" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="logos/osf-13x13.png"></a><a onclick="toggle_visibility('hidden-component-id5');" style="margin-left:30px;">Hide file preview <i class="fa fa-chevron-up icon-rotate"></i></a></div>
-									<br>
-									<iframe src="https://mfr.osf.io/render?url=https://osf.io/wfzh6/?action=download%26mode=render" width="100%" scrolling="yes" height="678px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen style="margin-top:-15px;"></iframe>
-								</div>
-							</td>
+							<td></td>
+							<td>om</td>
+							<td></td>
+						    <td>od</td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
 								Butler, Karpowitz et al. (2017)
 								<a class='sprite sprite-disclosure-medium-unavailable' title="Compliance to reporting standard information is not available"></a>
-								<a class='sprite sprite-materials-medium-unavailable' title="Open experimental materials is not available"></a>
+								<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
 								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 								<a href='https://codeocean.com/2017/11/29/who-gets-the-credit-quest-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/code' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								<a href="https://codeocean.com/2017/11/29/who-gets-the-credit-quest-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/code" target="_blank" class='sprite sprite-code-ocean-icon-medium kinda-link' title="Go to computational container"></a>
 							</td>
+							<td style="vertical-align:top;"><a href='https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FED4A70A65D3458C1AC1AD7756967D5B/S2049847015000837a.pdf/who_gets_the_credit_legislative_responsiveness_and_evaluations_of_members_parties_and_the_us_congress.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Who Gets the Credit? Legislative Responsiveness and Evaluations of Members, Parties, and the US Congress <span class="label"><a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/who-gets-the-credit-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/FED4A70A65D3458C1AC1AD7756967D5B/core-reader#" target="_blank" class="black" title="View interactive HTML version of this article.">HTML</a></span></td>
 							<td style="vertical-align:top;"><i>Political Science Research and Methods</i></td>
-							<td style="vertical-align:top;"><a href='https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FED4A70A65D3458C1AC1AD7756967D5B/S2049847015000837a.pdf/who_gets_the_credit_legislative_responsiveness_and_evaluations_of_members_parties_and_the_us_congress.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Who Gets the Credit? Legislative Responsiveness and Evaluations of Members, Parties, and the US Congress <span class="label"><a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/who-gets-the-credit-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/FED4A70A65D3458C1AC1AD7756967D5B/core-reader#" target="_blank" class="black" title="View interactive HTML version of the article.">HTML</a></span></td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://doi.org/10.1017/psrm.2015.83">10.1017/psrm.2015.83</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						    <td>od</td>
+							<td>rc</td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
 								Gilad & Mizrahi-Man (2015)
 								<a class='sprite sprite-disclosure-medium-unavailable' title="Compliance to reporting standard information is not available"></a>
-								<a class='sprite sprite-materials-medium-unavailable' title="Open experimental materials is not available"></a>
+								<a class='sprite sprite-materials-medium-unavailable' title="Open study materials is not available"></a>
 								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 								<a href='https://zenodo.org/record/17606#.WtwCJohuZEY' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								<a href="https://codeocean.com/2017/04/19/reanalysis-of-mouse-encode-comparative-gene-expression-data/code" target="_blank" class='sprite sprite-code-ocean-icon-medium kinda-link' title="Go to computational container"></a>
 							</td>
+							<td style="vertical-align:top;"><a href='https://f1000researchdata.s3.amazonaws.com/manuscripts/7019/9f5f4330-d81d-46b8-9a3f-d8cb7aaf577e_6536_-_yoav_gilad-edited.pdf?doi=10.12688/f1000research.6536.1 ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> A reanalysis of mouse ENCODE comparative gene expression data <span class="label"><a href="https://f1000research.com/articles/4-121/v1" target="_blank" class="black" title="View interactive HTML version of this article.">HTML</a></span></td>
 							<td style="vertical-align:top;"><i>F1000Research</i></td>
-							<td style="vertical-align:top;"><a href='https://f1000researchdata.s3.amazonaws.com/manuscripts/7019/9f5f4330-d81d-46b8-9a3f-d8cb7aaf577e_6536_-_yoav_gilad-edited.pdf?doi=10.12688/f1000research.6536.1 ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> A reanalysis of mouse ENCODE comparative gene expression data <span class="label"><a href="https://f1000research.com/articles/4-121/v1" target="_blank" class="black" title="View interactive HTML version of the article.">HTML</a></span></td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://doi.org/10.12688/f1000research.6536.1">10.12688/f1000research.6536.1</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						    <td>od</td>
+							<td>rc</td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -24004,32 +23910,37 @@ contributions of researchers who devote their time to replicating the work of ot
 								<div style="padding-left:22px;">
 									Study 1
 									<a class='sprite sprite-disclosure-medium-unavailable' title="Compliance to reporting standard information is not available"></a>
-									<a class='sprite sprite-materials-medium-unavailable' title="Open experimental materials is not available"></a>
+									<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
 									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 									<a href='http://journal.sjdm.org/17/17127/study1.sav' target='_blank' class='sprite sprite-data-medium' title="Download data file"></a>
 									<br>
 									Study 2
 									<a class='sprite sprite-disclosure-medium-unavailable' title="Compliance to reporting standard information is not available"></a>
-									<a class='sprite sprite-materials-medium-unavailable' title="Open experimental materials information is not available"></a>
+									<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
 									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 									<a href=' http://journal.sjdm.org/17/17127/study2.sav' target='_blank' class='sprite sprite-data-medium' title="Download data file"></a>
 									<br>
 									Study 3
 									<a class='sprite sprite-disclosure-medium-unavailable' title="Compliance to reporting standard information is not available"></a>
-									<a class='sprite sprite-materials-medium-unavailable' title="Open experimental materials information is not available"></a>
+									<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
 									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 									<a href=' http://journal.sjdm.org/17/17127/study3.sav' target='_blank' class='sprite sprite-data-medium' title="Download data file"></a>
 									<br>
 									Study 4
 									<a class='sprite sprite-disclosure-medium-unavailable' title="Compliance to reporting standard information is not available"></a>
-									<a class='sprite sprite-materials-medium-unavailable' title="Open experimental materials information is not available"></a>
+									<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
 									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 									<a href=' http://journal.sjdm.org/17/17127/study4.sav' target='_blank' class='sprite sprite-data-medium' title="Download data file"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><i>Judgment and Decision Making</i></td>
 							<td style="vertical-align:top;"><a href='http://journal.sjdm.org/17/17127/jdm17127.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> When is it appropriate to reprimand a norm violation? The roles of anger, behavioral consequences, violation severity, and social distance</td>
+							<td style="vertical-align:top;"><i>Judgment and Decision Making</i></td>
 							<td style="vertical-align:top;"><a target="_blank" href="http://journal.sjdm.org/17/17127/jdm17127.html">jdm17127</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						    <td>od</td>
+							<td></td>
 						</tr>
 						
 					</tbody>
@@ -24779,7 +24690,7 @@ contributions of researchers who devote their time to replicating the work of ot
 	</script>
 	<script type="text/javascript" class="init">
 		$(document).ready(function() {
-			var table = $('#example-future-v5').DataTable( {
+			var otable = $('#dt').DataTable( {
 				scrollY:        "500px",
 				scrollX:        true,
 				scrollCollapse: false,
@@ -24788,11 +24699,10 @@ contributions of researchers who devote their time to replicating the work of ot
 				fixedColumns:   {
 					leftColumns: 0
 				},
-				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
 				"columnDefs": [ 
-					{ targets: [1],
-					render: $.fn.dataTable.render.ellipsis(50,true) }
-					],
+				{ "targets": [ 4,5,6,7,8 ],
+				"visible": false }],
+				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
 				"initComplete": function() { 
 				$('#loader-div').remove();
 				$("table").removeClass("hidden");
@@ -24800,6 +24710,44 @@ contributions of researchers who devote their time to replicating the work of ot
 				"dom": '<"top"fi<"clear">>rt<"bottom"pl<"clear">>'
 			} );
 		} );
+		
+		$(function() {
+		  otable = $('#dt').dataTable();
+		})
+		
+		function filterme() {
+		  //build a regex filter string with an or(|) condition
+		  var types = $('input:checkbox[name="rs"]:checked').map(function() {
+			return '^' + this.value + '\$';
+		  }).get().join('|');
+		  //filter in rs (reportingStandard) column , with a regex, no smart filtering, no inputbox,not case sensitive
+		  otable.fnFilter(types, 4, true, false, false, false);
+		  
+		  var types = $('input:checkbox[name="om"]:checked').map(function() {
+			return '^' + this.value + '\$';
+		  }).get().join('|');
+		  //filter in om (open materials) column, with a regex, no smart filtering, no inputbox,not case sensitive
+		  otable.fnFilter(types, 5, true, false, false, false);
+		  
+		  var types = $('input:checkbox[name="prereg"]:checked').map(function() {
+			return '^' + this.value + '\$';
+		  }).get().join('|');
+		  //filter in prereg column, with a regex, no smart filtering, no inputbox,not case sensitive
+		  otable.fnFilter(types, 6, true, false, false, false);
+		  
+		  var types = $('input:checkbox[name="od"]:checked').map(function() {
+			return '^' + this.value + '\$';
+		  }).get().join('|');
+		  //filter in od (open data) column, with a regex, no smart filtering, no inputbox,not case sensitive
+		  otable.fnFilter(types, 7, true, false, false, false);
+		  
+		  var types = $('input:checkbox[name="rc"]:checked').map(function() {
+			return '^' + this.value + '\$';
+		  }).get().join('|');
+		  //filter in rc (reproducible) column, with a regex, no smart filtering, no inputbox,not case sensitive
+		  otable.fnFilter(types, 8, true, false, false, false);
+		  
+		}
 	</script>
 
   <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script> 
