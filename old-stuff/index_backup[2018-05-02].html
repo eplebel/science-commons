@@ -334,7 +334,7 @@
 			<div class="wrapper" style="padding-left:5px;padding-right:5px;padding-top:15px;max-width:900px;margin: 0 auto;">
 				<div class="well" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:0px;">
 				  <p class="about" style="font-size:12px;line-height:1.2em;margin-top:-5px;margin-bottom:-15px;font-style:italic;text-align:center;padding-top:5px;">Crowdsourcing the credibility of empirical research.</p>
-				  <p class="about" style="font-size:14px;line-height:1.2em;padding-bottom:0px;margin-bottom:8px;">Scientists can only rely on an empirical finding if it is <i>credible</i>. In science, a credible finding is one that has (at minimum) repeatedly survived good faith attempts at proving it wrong along 3 dimensions: (1) method/data transparency, (2) analytic reproducibility/robustness, and (3) effect replicability. <strong>Curate Science</strong> is a platform to crowdsource the credibility of empirical research by curating its <i>transparency</i>, <i>reproducibility/robustness</i>, and <i>replicability</i>.</p>
+				  <p class="about" style="font-size:14px;line-height:1.2em;padding-bottom:0px;margin-bottom:8px;">Scientists can only rely on an empirical finding if it is <i>credible</i>. In science, a credible finding is one that has (at minimum) survived scrutiny along 3 dimensions: (1) method/data transparency, (2) analytic reproducibility/robustness, and (3) effect replicability. <strong>Curate Science</strong> is a platform to crowdsource the credibility of empirical research by curating its <i>transparency</i>, <i>reproducibility/robustness</i>, and <i>replicability</i>.</p>
 				  <a id="replications-section"></a>
 				  <p class="about" style="font-size:12px;padding-top:0px;padding-bottom:8px;margin-bottom:0px;line-height:1.2em;"><span style="color:darkorange;">UPDATE (April 19, 2018): </span>New unified curation framework released (<a href="https://osf.io/preprints/psyarxiv/uwmr8" target="_blank">version 5.2.0</a>) and important 2-year grant secured to scale up the platform (see <a href="https://mailchi.mp/2ba7e1d3fdbb/ax8p9efjsu-2712769" target="_blank">here</a> for details).</p>
 				</div> 
@@ -23587,7 +23587,7 @@ contributions of researchers who devote their time to replicating the work of ot
 					<h5 style="margin-bottom:5px;text-align:center;margin-top:60px;">Search for Transparently Reported Studies</h5>
 					
 					<p style="font-size:16px;line-height:1.2em;margin-bottom:5px;">
-					Evidence can only be considered credible if it originates from a study whose methodological details and data were transparently reported. This is crucial to allow for the comprehensive identification of study flaws and data errors, but also for the conduct of independent replications. In this spirit, we are designing an interface to search for (and filter by) studies with curated transparency components (i.e., compliance to reporting standards, open materials, pre-registration/Registered Reports protocol, open data, and reproducibility syntax/computational capsules). See interactive prototype in development below; hover and/or click the badge icons to interact with the curated transparency components.
+					Evidence can only be considered credible if it has survived scrutiny by independent researchers. Such scrutiny is only possible if a study's methodological details and data are transparently reported. In this spirit, we are designing an interface to search for (and filter by) studies with curated transparency components (i.e., compliance to reporting standards, open materials, pre-registration/Registered Reports protocol, open data, and reproducibility syntax/computational capsules). See interactive prototype in development below (hover and/or click the badge icons to interact with a study's curated transparency components).
 					</p>
 			</div> <!-- max-width:900px; wrapper -->
 			<!--</div> <!-- wrapper div-->
@@ -23601,8 +23601,8 @@ contributions of researchers who devote their time to replicating the work of ot
 						<thead>
 							<tr>
 								<th title="authors & study number (unnumbered for sole study papers)">authors/study.number</th>
-								<th >article.title</th>
 								<th >journal.name</th>
+								<th >article.title</th>
 								<th >DOI</th>
 							</tr>
 						</thead>
@@ -23625,7 +23625,7 @@ contributions of researchers who devote their time to replicating the work of ot
 										</span>
 									</div>
 									<a href=' https://osf.io/d2ncs/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
-									<a href="https://osf.io/6jqsc" target="_blank" class='sprite sprite-preregisteredplus-medium' title="Go to pre-registration document"></a>
+									<a onclick="toggle_visibility('hidden-component-id6');" class='sprite sprite-preregisteredplus-medium kinda-link' title="View pre-registration document"></a>
 									<a href=' https://osf.io/7gmw5/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
 									Study 2
@@ -23641,13 +23641,31 @@ contributions of researchers who devote their time to replicating the work of ot
 										</span>
 									</div>
 									<a href='https://osf.io/473gq/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
-									<a href="https://osf.io/7qsj2" target="_blank" class='sprite sprite-preregisteredplus-medium' title="Go to pre-registration document"></a>
+									<a onclick="toggle_visibility('hidden-component-id9');" class='sprite sprite-preregisteredplus-medium kinda-link' title="View pre-registration document"></a>
 									<a href='https://osf.io/t5ren/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								</div>
 							</td>
-						  <td style="vertical-align:top;"><a href=' https://www.researchgate.net/profile/Andrea_Pittarello/publication/270757442_Justifications_Shape_Ethical_Blind_Spots/links/553200d20cf20ea0a071c477.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Justifications Shape Ethical Blind Spots</td>
 						  <td style="vertical-align:top;"><i>Psychological Science</i></td>
+						  <td style="vertical-align:top;"><a href=' https://www.researchgate.net/profile/Andrea_Pittarello/publication/270757442_Justifications_Shape_Ethical_Blind_Spots/links/553200d20cf20ea0a071c477.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Justifications Shape Ethical Blind Spots</td>
 						  <td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797615571018">10.1177/0956797615571018</a></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="padding-top:0px;padding-bottom:0px;">
+								<div id="hidden-component-id6" style="display:none;">
+									<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/6jqsc/?action=download" target="_blank" title="Direct download file"> Pittarello_Leib_Gordon_Shalvi_OSF_12AUG14.pdf <span style="margin-left:30px;">Download</span> <i class="fa fa-download"></i></a><a href="https://osf.io/6jqsc" target="_blank"><span style="margin-left:30px;">View preregistration on OSF</span> <img src="logos/osf-13x13.png"></a><a onclick="toggle_visibility('hidden-component-id6');" style="margin-left:30px;">Hide preregistration preview <i class="fa fa-chevron-up icon-rotate"></i></a></div>
+									<br>
+									<iframe src="https://mfr.osf.io/render?url=https://osf.io/6jqsc/?action=download%26mode=render" width="100%" scrolling="yes" height="1083px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4" style="padding-top:0px;padding-bottom:0px;">
+								<div id="hidden-component-id9" style="display:none;">
+									<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/7qsj2/?action=download" target="_blank" title="Direct download file"> Pre_registration_for_behavioral_exp_3_final.pdf <span style="margin-left:30px;">Download</span> <i class="fa fa-download"></i></a><a href="https://osf.io/7qsj2" target="_blank"><span style="margin-left:30px;">View preregistration on OSF</span> <img src="logos/osf-13x13.png"></a><a onclick="toggle_visibility('hidden-component-id9');" style="margin-left:30px;">Hide preregistration preview <i class="fa fa-chevron-up icon-rotate"></i></a></div>
+									<br>
+									<iframe src="https://mfr.osf.io/render?url=https://osf.io/7qsj2/?action=download%26mode=render" width="100%" scrolling="yes" height="1083px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -23703,8 +23721,8 @@ contributions of researchers who devote their time to replicating the work of ot
 									<a href='https://osf.io/wkj45/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4504740/pdf/nihms678183.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Grouping Promotes Equality: The Effect of Recipient Grouping on Allocation of Limited Medical Resources</td>
 							<td style="vertical-align:top;"><i>Psychological Science</i></td>
+							<td style="vertical-align:top;"><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4504740/pdf/nihms678183.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Grouping Promotes Equality: The Effect of Recipient Grouping on Allocation of Limited Medical Resources</td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797615583978">10.1177/0956797615583978</a></td>
 						</tr>
 						<tr>
@@ -23734,8 +23752,8 @@ contributions of researchers who devote their time to replicating the work of ot
 									</span>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href=' http://www.its.caltech.edu/~dstanley/publications/2015_Birmingham_Stanley_et_al_wSupp.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Implicit Social Biases in People With Autism</td>
 							<td style="vertical-align:top;"><i>Psychological Science</i></td>
+							<td style="vertical-align:top;"><a href=' http://www.its.caltech.edu/~dstanley/publications/2015_Birmingham_Stanley_et_al_wSupp.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Implicit Social Biases in People With Autism</td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797615595607">10.1177/0956797615595607</a></td>
 						</tr>
 						<tr>
@@ -23772,7 +23790,7 @@ contributions of researchers who devote their time to replicating the work of ot
 										</span>
 									</div>
 									<a href=' https://osf.io/nwsx4/' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
-									<a href='https://aspredicted.org/public/205223581.pdf ' target='_blank' class='sprite sprite-preregisteredplus-medium' title="Go to preregistered protocol"></a>
+									<a href='https://aspredicted.org/public/205223581.pdf ' target='_blank' class='sprite sprite-preregisteredplus-medium' title="View preregistered protocol"></a>
 									<a href=' https://osf.io/mr5fx/' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
 									Study 3
@@ -23822,11 +23840,20 @@ contributions of researchers who devote their time to replicating the work of ot
 									<a href='https://osf.io/nwsx4/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to experimental files"></a>
 									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 									<a href=' https://osf.io/zmup2/' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
+									<a onclick="toggle_visibility('hidden-component-id10');" class='sprite sprite-reproducible-icon-medium kinda-link' title="View analaytic reproducibility checks"></a>
+									<a onclick="toggle_visibility('hidden-component-id10');" class='sprite sprite-code-ocean-icon-medium kinda-link' title="View computational container"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href='https://pdfs.semanticscholar.org/6d2e/77ffa574ef2d5fa9b7ff93c34422e9e749e1.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Why Do People Tend to Infer 'Ought' From 'Is'? The Role of Biases in Explanation</td>
 							<td style="vertical-align:top;"><i>Psychological Science</i></td>
+							<td style="vertical-align:top;"><a href='https://pdfs.semanticscholar.org/6d2e/77ffa574ef2d5fa9b7ff93c34422e9e749e1.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Why Do People Tend to Infer 'Ought' From 'Is'? The Role of Biases in Explanation</td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797616650875">10.1177/0956797616650875</a></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="padding-top:0px;padding-bottom:0px;">
+								<div id="hidden-component-id10" style="display:none;">
+									<script src="https://codeocean.com/widget.js?id=abd8b483-c5e3-4382-a493-1fc5aecb0f1d" async></script>
+								</div>
+							</td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -23853,8 +23880,8 @@ contributions of researchers who devote their time to replicating the work of ot
 								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
 								<a class='sprite sprite-data-medium-unavailable' title="Open/public data information is not available"></a>
 							</td>
-							<td style="vertical-align:top;"><a href='https://rebeccawillen.files.wordpress.com/2018/02/as1013805681295601401182419574_content_1.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Offenders’ uncoerced false confessions: A new application of statement analysis?</td>
 							<td style="vertical-align:top;"><i>Legal and Criminological Psychology</i></td>
+							<td style="vertical-align:top;"><a href='https://rebeccawillen.files.wordpress.com/2018/02/as1013805681295601401182419574_content_1.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Offenders’ uncoerced false confessions: A new application of statement analysis?</td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1111/j.2044-8333.2011.02018.x">10.1111/j.2044-8333.2011.02018.x</a></td>
 						</tr>
 						<tr>
@@ -23890,8 +23917,8 @@ contributions of researchers who devote their time to replicating the work of ot
 									</span>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href=' https://static1.squarespace.com/static/594641bbe3df28301b1a0493/t/5970b5c8f5e2311272d3b4f0/1500558794416/2017+%28in+press%29_Campbell+et+al_JRP_Replication+of+Murray+et+al+2002.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Self-esteem, relationship threat, and dependency regulation: Independent replication of Murray, Rose, Bellavia, Holmes, and Kusche (2002) Study 3</td>
 							<td style="vertical-align:top;"><i>Journal of Research in Personality</i></td>
+							<td style="vertical-align:top;"><a href=' https://static1.squarespace.com/static/594641bbe3df28301b1a0493/t/5970b5c8f5e2311272d3b4f0/1500558794416/2017+%28in+press%29_Campbell+et+al_JRP_Replication+of+Murray+et+al+2002.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Self-esteem, relationship threat, and dependency regulation: Independent replication of Murray, Rose, Bellavia, Holmes, and Kusche (2002) Study 3</td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1016/j.jrp.2017.04.001">10.1016/j.jrp.2017.04.001</a></td>
 						</tr>
 						<tr>
@@ -23913,9 +23940,36 @@ contributions of researchers who devote their time to replicating the work of ot
 									</span>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href='https://www.researchgate.net/profile/Katherine_Collison/publication/322685405_Examining_the_Effects_of_Controlling_for_Shared_Variance_among_the_Dark_Triad_Using_Meta-analytic_Structural_Equation_Modelling_Dark_Triad_metaSEM/links/5a6e7618458515d407585359/Examining-the-Effects-of-Controlling-for-Shared-Variance-among-the-Dark-Triad-Using-Meta-analytic-Structural-Equation-Modelling-Dark-Triad-metaSEM.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Examining the Effects of Controlling for Shared Variance among the Dark Triad Using Meta-analytic Structural Equation Modelling</td>
 							<td style="vertical-align:top;"><i>European Journal of Personality</i></td>
+							<td style="vertical-align:top;"><a href='https://www.researchgate.net/profile/Katherine_Collison/publication/322685405_Examining_the_Effects_of_Controlling_for_Shared_Variance_among_the_Dark_Triad_Using_Meta-analytic_Structural_Equation_Modelling_Dark_Triad_metaSEM/links/5a6e7618458515d407585359/Examining-the-Effects-of-Controlling-for-Shared-Variance-among-the-Dark-Triad-Using-Meta-analytic-Structural-Equation-Modelling-Dark-Triad-metaSEM.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Examining the Effects of Controlling for Shared Variance among the Dark Triad Using Meta-analytic Structural Equation Modelling</td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1002/per.2137">10.1002/per.2137</a></td>
+						</tr>
+						<tr>
+							<td colspan="4" style="padding-top:0px;padding-bottom:0px;">
+								<div id="hidden-component-id8" style="display:none;">
+									<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/g37bz/?action=download" target="_blank" title="Direct download file">Supplementary Materials-Final.docx <span style="margin-left:30px;">Download</span> <i class="fa fa-download"></i></a><a href="https://osf.io/g37bz" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="logos/osf-13x13.png"></a><a onclick="toggle_visibility('hidden-component-id8');" style="margin-left:30px;">Hide file preview <i class="fa fa-chevron-up icon-rotate"></i></a></div>
+									<br>
+									<iframe src="https://mfr.osf.io/render?url=https://osf.io/g37bz/?action=download%26mode=render" width="100%" scrolling="yes" height="1047px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen style="margin-top:-15px;"></iframe>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4" style="padding-top:0px;padding-bottom:0px;">
+								<div id="hidden-component-id4" style="display:none;">
+									<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/g2dsr/?action=download" target="_blank" title="Direct download file">DataMaster.xlsx <span style="margin-left:30px;">Download<span> <i class="fa fa-download"></i></a><a href="https://osf.io/g2dsr" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="logos/osf-13x13.png"></a><a onclick="toggle_visibility('hidden-component-id4');" style="margin-left:30px;">Hide file preview <i class="fa fa-chevron-up icon-rotate"></i></a></div>
+									<br>
+									<iframe src="https://mfr.osf.io/render?url=https://osf.io/g2dsr/?action=download%26mode=render" width="100%" scrolling="yes" height="678px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen style="margin-top:-15px;"></iframe>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4" style="padding-top:0px;padding-bottom:0px;">
+								<div id="hidden-component-id5" style="display:none;">
+									<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/wfzh6/?action=download" target="_blank" title="Direct download file"> Study_Info_revised.xlsx <span style="margin-left:30px;">Download</span> <i class="fa fa-download"></i></a><a href="https://osf.io/wfzh6" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="logos/osf-13x13.png"></a><a onclick="toggle_visibility('hidden-component-id5');" style="margin-left:30px;">Hide file preview <i class="fa fa-chevron-up icon-rotate"></i></a></div>
+									<br>
+									<iframe src="https://mfr.osf.io/render?url=https://osf.io/wfzh6/?action=download%26mode=render" width="100%" scrolling="yes" height="678px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen style="margin-top:-15px;"></iframe>
+								</div>
+							</td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -23926,8 +23980,8 @@ contributions of researchers who devote their time to replicating the work of ot
 								<a href='https://codeocean.com/2017/11/29/who-gets-the-credit-quest-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/code' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								<a href="https://codeocean.com/2017/11/29/who-gets-the-credit-quest-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/code" target="_blank" class='sprite sprite-code-ocean-icon-medium kinda-link' title="Go to computational container"></a>
 							</td>
-							<td style="vertical-align:top;"><a href='https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FED4A70A65D3458C1AC1AD7756967D5B/S2049847015000837a.pdf/who_gets_the_credit_legislative_responsiveness_and_evaluations_of_members_parties_and_the_us_congress.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> <span class="label"><a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/who-gets-the-credit-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/FED4A70A65D3458C1AC1AD7756967D5B/core-reader#" target="_blank" class="black" title="View interactive HTML version of the article.">HTML</a></span> Who Gets the Credit? Legislative Responsiveness and Evaluations of Members, Parties, and the US Congress</td>
 							<td style="vertical-align:top;"><i>Political Science Research and Methods</i></td>
+							<td style="vertical-align:top;"><a href='https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FED4A70A65D3458C1AC1AD7756967D5B/S2049847015000837a.pdf/who_gets_the_credit_legislative_responsiveness_and_evaluations_of_members_parties_and_the_us_congress.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Who Gets the Credit? Legislative Responsiveness and Evaluations of Members, Parties, and the US Congress <span class="label"><a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/who-gets-the-credit-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/FED4A70A65D3458C1AC1AD7756967D5B/core-reader#" target="_blank" class="black" title="View interactive HTML version of the article.">HTML</a></span></td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://doi.org/10.1017/psrm.2015.83">10.1017/psrm.2015.83</a></td>
 						</tr>
 						<tr>
@@ -23939,8 +23993,8 @@ contributions of researchers who devote their time to replicating the work of ot
 								<a href='https://zenodo.org/record/17606#.WtwCJohuZEY' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								<a href="https://codeocean.com/2017/04/19/reanalysis-of-mouse-encode-comparative-gene-expression-data/code" target="_blank" class='sprite sprite-code-ocean-icon-medium kinda-link' title="Go to computational container"></a>
 							</td>
-							<td style="vertical-align:top;"><a href='https://f1000researchdata.s3.amazonaws.com/manuscripts/7019/9f5f4330-d81d-46b8-9a3f-d8cb7aaf577e_6536_-_yoav_gilad-edited.pdf?doi=10.12688/f1000research.6536.1 ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> <span class="label"><a href="https://f1000research.com/articles/4-121/v1" target="_blank" class="black" title="View interactive HTML version of the article.">HTML</a></span> A reanalysis of mouse ENCODE comparative gene expression data</td>
 							<td style="vertical-align:top;"><i>F1000Research</i></td>
+							<td style="vertical-align:top;"><a href='https://f1000researchdata.s3.amazonaws.com/manuscripts/7019/9f5f4330-d81d-46b8-9a3f-d8cb7aaf577e_6536_-_yoav_gilad-edited.pdf?doi=10.12688/f1000research.6536.1 ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> A reanalysis of mouse ENCODE comparative gene expression data <span class="label"><a href="https://f1000research.com/articles/4-121/v1" target="_blank" class="black" title="View interactive HTML version of the article.">HTML</a></span></td>
 							<td style="vertical-align:top;"><a target="_blank" href="https://doi.org/10.12688/f1000research.6536.1">10.12688/f1000research.6536.1</a></td>
 						</tr>
 						<tr>
@@ -23973,8 +24027,8 @@ contributions of researchers who devote their time to replicating the work of ot
 									<a href=' http://journal.sjdm.org/17/17127/study4.sav' target='_blank' class='sprite sprite-data-medium' title="Download data file"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href='http://journal.sjdm.org/17/17127/jdm17127.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> When is it appropriate to reprimand a norm violation? The roles of anger, behavioral consequences, violation severity, and social distance</td>
 							<td style="vertical-align:top;"><i>Judgment and Decision Making</i></td>
+							<td style="vertical-align:top;"><a href='http://journal.sjdm.org/17/17127/jdm17127.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> When is it appropriate to reprimand a norm violation? The roles of anger, behavioral consequences, violation severity, and social distance</td>
 							<td style="vertical-align:top;"><a target="_blank" href="http://journal.sjdm.org/17/17127/jdm17127.html">jdm17127</a></td>
 						</tr>
 						
@@ -24735,6 +24789,10 @@ contributions of researchers who devote their time to replicating the work of ot
 					leftColumns: 0
 				},
 				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
+				"columnDefs": [ 
+					{ targets: [1],
+					render: $.fn.dataTable.render.ellipsis(50,true) }
+					],
 				"initComplete": function() { 
 				$('#loader-div').remove();
 				$("table").removeClass("hidden");
