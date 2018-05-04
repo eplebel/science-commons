@@ -1,7 +1,7 @@
 https://spritegen.website-performance.org/
 
 
-open materials/data and pre-reg icons are 18x18 pixels
+open materials/data and pre-reg icons are 18x18 pixels (i.e., "medium"; normal/default size is 13x13px for replication searchable table)
 disclosure icons are also 18x18 pixels
 
 pdf-icon is 18x18 (pdf-icon.gif)
