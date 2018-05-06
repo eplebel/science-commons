@@ -77,7 +77,14 @@
 	.label-info-teal {
 	  background-color: #00A388;
 	}
-	
+	.label-info-purple {
+	  background-color: #9b59b6;
+	}
+	.label-info-red {
+	  background-color: #e74c3c;
+	  opacity: 0.70;
+	  filter: alpha(opacity=70); /* For IE8 and earlier */
+	}
 	
 	.center-pills { display: inline-block; }
 	
