@@ -84,6 +84,7 @@
 	  background-color: #e74c3c;
 	  opacity: 0.70;
 	  filter: alpha(opacity=70); /* For IE8 and earlier */
+	  color: black;
 	}
 	
 	.center-pills { display: inline-block; }
@@ -311,6 +312,7 @@
     background-position: -5px -391px;
 	opacity: 0.70;
 	filter: alpha(opacity=70); /* For IE8 and earlier */
+	margin-bottom:-5px;
 }
 
 .sprite-preregisteredplus {

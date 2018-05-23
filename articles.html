@@ -157,7 +157,7 @@
 			</div> <!-- max-width:900px; wrapper -->
 			<!--</div> <!-- wrapper div-->
 				
-				<div class="wrapper" style="max-width:1200px;font-size:14px;">
+				<div class="wrapper" style="max-width:1050px;font-size:14px;">
 					
 					<div style="margin-left:35%;margin-bottom:-35px;overflow:visible;line-height:1.2em;">
 						<table cellspacing="0">
@@ -175,22 +175,26 @@
 					</div>
 					<br>
 					<div id="loader-div" class="loader"></div>
-					<table id="dt" class="stripe row-border order-column compact" cellspacing="0" width="100%">
+					<table id="dt" class="stripe row-border order-column compact hidden" cellspacing="0" width="100%">
 						<thead>
 							<tr>
-								<th title="authors & study number (unnumbered for sole study papers)">authors/study.number</th>
-								<th >article.title</th>
-								<th >journal.name</th>
+								<th title="authors & study number (unnumbered for sole study papers)">authors/pub.year</th>
+								<th style="min-width:300px;">article.title/PDF</th>
+								<th style="min-width:175px;">journal.name</th>
 								<th >DOI</th>
 								<th>rs</th>
 								<th>om</th>
 								<th>prereg</th>
 								<th>od</th>
 								<th>rc</th>
+								<th>rep</th>
+								<th>rr</th>
 							</tr>
 						</thead>
 						<tbody>
-						<tr>
+
+						
+					<tr>
 						  <td style="white-space: nowrap">
 								Pittarello, Leib et al. (2015)
 								<br>
@@ -208,7 +212,7 @@
 										</span>
 									</div>
 									<a href=' https://osf.io/d2ncs/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
-									<a href="https://osf.io/6jqsc" target="_blank" class='sprite sprite-preregisteredplus-medium' title="Go to pre-registration document"></a>
+									<a href="https://osf.io/6jqsc" target="_blank" class='sprite sprite-preregisteredplus-medium' title="Go to preregistered study protocol"></a>
 									<a href=' https://osf.io/7gmw5/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
 									Study 2
@@ -224,17 +228,19 @@
 										</span>
 									</div>
 									<a href='https://osf.io/473gq/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
-									<a href="https://osf.io/7qsj2" target="_blank" class='sprite sprite-preregisteredplus-medium' title="Go to pre-registration document"></a>
+									<a href="https://osf.io/7qsj2" target="_blank" class='sprite sprite-preregisteredplus-medium' title="Go to preregistered study protocol"></a>
 									<a href='https://osf.io/t5ren/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								</div>
 							</td>
-						  <td style="vertical-align:top;"><a href=' https://www.researchgate.net/profile/Andrea_Pittarello/publication/270757442_Justifications_Shape_Ethical_Blind_Spots/links/553200d20cf20ea0a071c477.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Justifications Shape Ethical Blind Spots</td>
-						  <td style="vertical-align:top;"><i>Psychological Science</i></td>
-						  <td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797615571018">10.1177/0956797615571018</a></td>
+						  <td >Justifications Shape Ethical Blind Spots <a href=' https://www.researchgate.net/profile/Andrea_Pittarello/publication/270757442_Justifications_Shape_Ethical_Blind_Spots/links/553200d20cf20ea0a071c477.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a></td>
+						  <td ><i>Psychological Science</i></td>
+						  <td ><a target="_blank" href="https://dx.doi.org/10.1177/0956797615571018">10.1177/0956797615571018</a></td>
 						  <td>rs</td>
 						  <td>om</td>
 						  <td>prereg</td>
 						  <td>od</td>
+						  <td></td>
+						  <td></td>
 						  <td></td>
 						</tr>
 						<tr>
@@ -255,7 +261,7 @@
 										</span>
 									</div>
 									<a href='https://osf.io/r79qd/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
-									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 									<a href=' https://osf.io/wkj45/' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
 									Study 2
@@ -271,7 +277,7 @@
 										</span>
 									</div>
 									<a href='https://osf.io/97jzi/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
-									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 									<a href='https://osf.io/wkj45/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
 									Study 3
@@ -299,13 +305,15 @@
 									<a href='https://osf.io/wkj45/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4504740/pdf/nihms678183.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Grouping Promotes Equality: The Effect of Recipient Grouping on Allocation of Limited Medical Resources</td>
-							<td style="vertical-align:top;"><i>Psychological Science</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797615583978">10.1177/0956797615583978</a></td>
+							<td >Grouping Promotes Equality: The Effect of Recipient Grouping on Allocation of Limited Medical Resources <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4504740/pdf/nihms678183.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a></td>
+							<td ><i>Psychological Science</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1177/0956797615583978">10.1177/0956797615583978</a></td>
 							<td>rs</td>
 							<td>om</td>
 							<td>prereg</td>
 						    <td>od</td>
+							<td></td>
+							<td></td>
 							<td></td>
 						</tr>
 						<tr>
@@ -327,7 +335,7 @@
 										<a target="_blank" href="https://osf.io/snpqu/files/"><span style="font-size:10px;">View materials files on OSF</span> <img src="logos/osf-13x13.png"></a>
 									</span>
 								</div>
-								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 								<div style="display:inline;" class="popUpOnHover"><a class='sprite sprite-data-medium'></a>
 									<span class="toDisplay4">
 										<a href="https://osf.io/69k2f/?action=download" title="Direct download file">Data_badge.zip <span style="font-size:10px;">[Download <i class="fa fa-download"></i>]</a><br>
@@ -335,13 +343,15 @@
 									</span>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href=' http://www.its.caltech.edu/~dstanley/publications/2015_Birmingham_Stanley_et_al_wSupp.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Implicit Social Biases in People With Autism</td>
-							<td style="vertical-align:top;"><i>Psychological Science</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797615595607">10.1177/0956797615595607</a></td>
+							<td >Implicit Social Biases in People With Autism <a href=' http://www.its.caltech.edu/~dstanley/publications/2015_Birmingham_Stanley_et_al_wSupp.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a></td>
+							<td ><i>Psychological Science</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1177/0956797615595607">10.1177/0956797615595607</a></td>
 							<td>rs</td>
 							<td>om</td>
 							<td></td>
 						    <td>od</td>
+							<td></td>
+							<td></td>
 							<td></td>
 						</tr>
 						<tr>
@@ -362,7 +372,7 @@
 										</span>
 									</div>
 									<a href=' https://osf.io/nwsx4/' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
-									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 									<a href='https://osf.io/8ewzu/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
 									Study 2
@@ -378,7 +388,7 @@
 										</span>
 									</div>
 									<a href=' https://osf.io/nwsx4/' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
-									<a href='https://aspredicted.org/public/205223581.pdf ' target='_blank' class='sprite sprite-preregisteredplus-medium' title="Go to preregistered protocol"></a>
+									<a href='https://aspredicted.org/public/205223581.pdf ' target='_blank' class='sprite sprite-preregisteredplus-medium' title="Go to preregistered study protocol"></a>
 									<a href=' https://osf.io/mr5fx/' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
 									Study 3
@@ -394,7 +404,7 @@
 										</span>
 									</div>
 									<a href='https://osf.io/nwsx4/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
-									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 									<a href=' https://osf.io/n25mf/' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
 									Study 4
@@ -410,7 +420,7 @@
 										</span>
 									</div>
 									<a href='https://osf.io/nwsx4/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
-									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 									<a href='https://osf.io/5auzy/ ' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 									<br>
 									Study 5
@@ -426,17 +436,19 @@
 										</span>
 									</div>
 									<a href='https://osf.io/nwsx4/ ' target='_blank' class='sprite sprite-materials-medium' title="Go to study materials files"></a>
-									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 									<a href=' https://osf.io/zmup2/' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href='https://pdfs.semanticscholar.org/6d2e/77ffa574ef2d5fa9b7ff93c34422e9e749e1.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Why Do People Tend to Infer 'Ought' From 'Is'? The Role of Biases in Explanation</td>
-							<td style="vertical-align:top;"><i>Psychological Science</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797616650875">10.1177/0956797616650875</a></td>
+							<td >Why Do People Tend to Infer 'Ought' From 'Is'? The Role of Biases in Explanation <a href='https://pdfs.semanticscholar.org/6d2e/77ffa574ef2d5fa9b7ff93c34422e9e749e1.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a></td>
+							<td ><i>Psychological Science</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1177/0956797616650875">10.1177/0956797616650875</a></td>
 							<td>rs</td>
 							<td>om</td>
 							<td>prereg</td>
 						    <td>od</td>
+							<td></td>
+							<td></td>
 							<td></td>
 						</tr>
 						<tr>
@@ -456,25 +468,63 @@
 												<li><strong>Other disclosures:</strong> <span style="font-size:13px;line-height:normal;">For the purpose of any future research aiming to replicate the study, it should be noted that the interviewer also had criminal experience and that all respondents were briefly informed about this (albeit not the nature of the experience) during the recruitment process. Before granting access, the prisons' heads of security did a thorough check-up to ensure that the interviewer was not familiar with any of the current prisoners (i.e., not only potential respondents).</span></li>
 											</ol>
 											<span style="color:red;">Date of retroactive disclosure:</u> February 1, 2018.</span><br>
-											Original <a href="https://rebeccawillen.files.wordpress.com/2018/02/disclosure-statement-willc3a9n-strc3b6mwall-2012.pdf" target="_blanket">retroactive disclosure statement <a href="https://rebeccawillen.files.wordpress.com/2018/02/disclosure-statement-willc3a9n-strc3b6mwall-2012.pdf" target="_blanket" class='sprite sprite-pdf-icon-medium'></a></a>
+											Original <a href="https://rebeccawillen.files.wordpress.com/2018/02/disclosure-statement-willc3a9n-strc3b6mwall-2012.pdf" target="_blank">retroactive disclosure statement <a href="https://rebeccawillen.files.wordpress.com/2018/02/disclosure-statement-willc3a9n-strc3b6mwall-2012.pdf" target="_blank" class='sprite sprite-pdf-icon-medium'></a></a>
 										</div>
 									</span>
 								</div>
 								<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
-								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
-								<a class='sprite sprite-data-medium-unavailable' title="Open/public data information is not available"></a>
+								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
+								<a class='sprite sprite-data-medium-unavailable' title="Open data information is not available"></a>
 							</td>
-							<td style="vertical-align:top;"><a href='https://rebeccawillen.files.wordpress.com/2018/02/as1013805681295601401182419574_content_1.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Offenders’ uncoerced false confessions: A new application of statement analysis?</td>
-							<td style="vertical-align:top;"><i>Legal and Criminological Psychology</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1111/j.2044-8333.2011.02018.x">10.1111/j.2044-8333.2011.02018.x</a></td>
+							<td >Offenders’ uncoerced false confessions: A new application of statement analysis? <a href='https://rebeccawillen.files.wordpress.com/2018/02/as1013805681295601401182419574_content_1.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a></td>
+							<td ><i>Legal and Criminological Psychology</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1111/j.2044-8333.2011.02018.x">10.1111/j.2044-8333.2011.02018.x</a></td>
 							<td>rs</td>
 							<td></td>
 							<td></td>
 						    <td></td>
 							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
+								Granhag, Strömwall et al. (2013)
+								<div style="display:inline;" class="popUpOnHover"><a class='sprite sprite-disclosure-medium-available'></a>
+									<span class="toDisplayBasic7Retroactive popUpStyle">
+										<div style="min-width:600px;white-space:normal;">
+											<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="https://medium.com/@IGDORE/retroactive-disclosure-statements-make-the-past-more-useful-c1b2e73f4bae" target="_blank">Basic 7 (retroactive)</a><a class='sprite sprite-disclosure-medium-available'></a> reporting standard:</span>
+											<ol style="margin-top:5px;margin-bottom:15px;">
+												<li><strong>Excluded data (subjects/observations):</strong> <span style="font-size:13px;line-height:normal;">12 participants were excluded during the process of transcribing and analysing the data. All 12 exclusions were made due to undisclosed problems with the employed quasi-experimental paradigm (mock-crime scenario): specifically, participants in the truth conditions afterwards report that they had to lie since they were not allowed to mention during the interview that they were involved in an experiment.</span></li>
+												<li><strong>Experimental conditions:</strong> <span style="font-size:13px;line-height:normal;">Whatever we did, critical p's were still > .05. Finally we merged 2 of 3 conditions and highlighted the effect sizes instead.</span></li>
+												<li><strong>Outcome measures:</strong> <span style="font-size:13px;line-height:normal;">The questionnaire included more items than publicly reported; there was a selective reporting of items from the questionnaire. The complete questionnaire (in Swedish) is found in the full <a href="https://rebeccawillen.files.wordpress.com/2018/02/disclosure-statement-granhag-et-al-20131.pdf" target="_blank">retroactive disclosure statement</a>.</span></li>
+												<li><strong>Sample size determination:</strong> <span style="font-size:13px;line-height:normal;">A rough sample size was decided in advance. No formal power calculation was conducted.</span></li>
+												<li><strong>Analytic plans:</strong> <span style="font-size:13px;line-height:normal;">5 of 6 supposedly confirmatory hypotheses were in fact exploratory. The only hypothesis that (arguably) can be viewed as confirmatory was the first hypothesis, namely: ”the statement-evidence inconsistency variable were a main effect for suspect veracity (higher scores for guilty suspects)” (p. 5). The model supposedly to be tested (i.e. the Evidence Framing Matrix) was in fact still developed successively while analysing the data and writing up the paper. 1 of the 2 independent variables (namely, ”within-statement inconsistency”) was in fact an exploratory finding resulting from analysing the data.</span></li>
+												<li><strong>Unreported related studies:</strong> <span style="font-size:13px;line-height:normal;">N/A</span></li>
+												<li><strong>Other disclosures:</strong> <span style="font-size:13px;line-height:normal;">N/A</span></li>
+											</ol>
+											<span style="color:red;">Date of retroactive disclosure:</u> February 1, 2018.</span><br>
+											Original <a href="https://rebeccawillen.files.wordpress.com/2018/02/disclosure-statement-granhag-et-al-20131.pdf" target="_blank">retroactive disclosure statement <a href="https://rebeccawillen.files.wordpress.com/2018/02/disclosure-statement-granhag-et-al-20131.pdf" target="_blank" class='sprite sprite-pdf-icon-medium'></a></a>
+										</div>
+									</span>
+								</div>
+								<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
+								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
+								<a class='sprite sprite-data-medium-unavailable' title="Open data information is not available"></a>
+							</td>
+							<td >Eliciting cues to deception by tactical disclosure of evidence: The first test of the Evidence Framing Matrix. <a href='https://rebeccawillen.files.wordpress.com/2018/02/as973445445754971400220156342_content_1.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a></td>
+							<td ><i> Legal and Criminological Psychology</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1111/j.2044-8333.2012.02047.x">10.1111/j.2044-8333.2012.02047.x</a></td>
+							<td>rs</td>
+							<td></td>
+							<td></td>
+						    <td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+						  <td style="white-space: nowrap;">
 							Campbell et al. (2018)
 								<div style="display:inline;" class="popUpOnHover"><a class='sprite sprite-disclosure-medium-available'></a>
 									<span class="toDisplayBasic4Submission popUpStyle">
@@ -508,14 +558,16 @@
 									</span>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href=' https://static1.squarespace.com/static/594641bbe3df28301b1a0493/t/5970b5c8f5e2311272d3b4f0/1500558794416/2017+%28in+press%29_Campbell+et+al_JRP_Replication+of+Murray+et+al+2002.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Self-esteem, relationship threat, and dependency regulation: Independent replication of Murray, Rose, Bellavia, Holmes, and Kusche (2002) Study 3 <span class="label label-info-purple"><a href="https://psyarxiv.com/5suda/" target="_blank" class="black" title="View preprint of this article.">Preprint</a></span></td>
-							<td style="vertical-align:top;"><i>Journal of Research in Personality</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1016/j.jrp.2017.04.001">10.1016/j.jrp.2017.04.001</a></td>
+							<td >Self-esteem, relationship threat, and dependency regulation: Independent replication of Murray, Rose, Bellavia, Holmes, and Kusche (2002) Study 3 <a href=' https://static1.squarespace.com/static/594641bbe3df28301b1a0493/t/5970b5c8f5e2311272d3b4f0/1500558794416/2017+%28in+press%29_Campbell+et+al_JRP_Replication+of+Murray+et+al+2002.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> <span class="label label-info-purple"><a href="https://psyarxiv.com/5suda/" target="_blank" class="black" title="View preprint of this article.">Preprint</a></span></td>
+							<td ><i>Journal of Research in Personality</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1016/j.jrp.2017.04.001">10.1016/j.jrp.2017.04.001</a></td>
 							<td>rs</td>
 							<td>om</td>
 							<td>prereg</td>
 						    <td>od</td>
 							<td>rc</td>
+							<td>rep</td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -532,18 +584,20 @@
 									</span>
 								</div>
 								<a class='sprite sprite-materials-medium' href="https://osf.io/9654k/" target="_blank" title="Go to study materials files"></a>
-								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 								<a class='sprite sprite-data-medium' href="https://osf.io/5s8eu/" target="_blank" title="Go to data files"></a>
 								<a class='sprite sprite-reproducible-icon-medium' href="https://osf.io/y8tf3/" target="_blank" title="Go to reproducible code files"></a>
 							</td>
-							<td style="vertical-align:top;"><a href='http://journals.sagepub.com/doi/pdf/10.1177/0956797618760197' target='_blank' class='sprite sprite-pdf-icon-medium'></a> No Compelling Evidence That Preferences for Facial Masculinity Track Changes in Women’s Hormonal Status <span class="label label-info-purple"><a href="https://www.biorxiv.org/content/early/2017/12/29/136549.full.pdf+html" target="_blank" class="black" title="View preprint of this article.">Preprint</a></span></td>
-							<td style="vertical-align:top;"><i>Psychological Science</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797618760197">10.1177/0956797618760197</a></td>
+							<td >No Compelling Evidence That Preferences for Facial Masculinity Track Changes in Women’s Hormonal Status <a href='http://journals.sagepub.com/doi/pdf/10.1177/0956797618760197' target='_blank' class='sprite sprite-pdf-icon-medium'></a> <span class="label label-info-purple"><a href="https://www.biorxiv.org/content/early/2017/12/29/136549.full.pdf+html" target="_blank" class="black" title="View preprint of this article.">Preprint</a></span></td>
+							<td ><i>Psychological Science</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1177/0956797618760197">10.1177/0956797618760197</a></td>
 							<td>rs</td>
 							<td>om</td>
 							<td></td>
 						    <td>od</td>
 							<td>rc</td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -554,14 +608,16 @@
 								<a class='sprite sprite-data-medium' href="https://osf.io/y74g6/" target="_blank" title="Go to data files"></a>
 								<a class='sprite sprite-reproducible-icon-medium' href="https://osf.io/y74g6/" target="_blank" title="Go to reproducible code files"></a>
 							</td>
-							<td style="vertical-align:top;"><a href='https://link.springer.com/content/pdf/10.3758%2Fs13414-017-1304-y.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> A test of the diffusion model explanation for the worst performance rule using preregistration and blinding <span class="label label-info-red"><a href="https://osf.io/we65f/" target="_blank" class="black">Registered Report</a></span></td>
-							<td style="vertical-align:top;"><i>Attention, Perception, & Psychophysics</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.3758/s13414-017-1304-y">10.3758/s13414-017-1304-y</a></td>
+							<td >A test of the diffusion model explanation for the worst performance rule using preregistration and blinding <a href='https://link.springer.com/content/pdf/10.3758%2Fs13414-017-1304-y.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> <span class="label label-info-red"><a href="https://osf.io/we65f/" target="_blank" class="black" title="Go to Registered Report preregistered study protocol">Registered Report</a></span></td>
+							<td ><i>Attention, Perception, & Psychophysics</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.3758/s13414-017-1304-y">10.3758/s13414-017-1304-y</a></td>
 							<td></td>
 							<td>om</td>
 							<td>prereg</td>
 						    <td>od</td>
 							<td>rc</td>
+							<td></td>
+							<td>rr</td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -605,14 +661,16 @@
 									<a class='sprite sprite-reproducible-icon-medium' href="https://osf.io/3ya7i/" target="_blank" title="Go to reproducible code files"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href='http://www.scottconnors.ca/uploads/4/7/4/6/47460837/connors_khamitov_moroz_campbell_and_henderson__2016__jesp.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Time, money, and happiness: Does putting a price on time affect our ability to smell the roses? </td>
-							<td style="vertical-align:top;"><i>Journal of Experimental Social Psychology</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1016/j.jesp.2015.08.005">10.1016/j.jesp.2015.08.005</a></td>
+							<td >Time, money, and happiness: Does putting a price on time affect our ability to smell the roses? <a href='http://www.scottconnors.ca/uploads/4/7/4/6/47460837/connors_khamitov_moroz_campbell_and_henderson__2016__jesp.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> </td>
+							<td ><i>Journal of Experimental Social Psychology</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1016/j.jesp.2015.08.005">10.1016/j.jesp.2015.08.005</a></td>
 							<td>rs</td>
 							<td>om</td>
 							<td>prereg</td>
 						    <td>od</td>
 							<td>rc</td>
+							<td>rep</td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -674,14 +732,16 @@
 									<a class='sprite sprite-reproducible-icon-medium' href="https://osf.io/k3hyj/" target="_blank" title="Go to reproducible code files"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href='https://s3.amazonaws.com/academia.edu.documents/50411489/Does_exposure_to_erotica_reduce_attraction_and_love_for_romantic_partners.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1525594020&Signature=mi1N1Tez8jZK6UNvrFEZLHuIAPU%3D&response-content-disposition=inline%3B%20filename%3DDoes_exposure_to_erotica_reduce_attracti.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Does exposure to erotica reduce attraction and love for romantic partners in men? Independent replications of Kenrick, Gutierres, and Goldberg (1989) Study 2 </td>
-							<td style="vertical-align:top;"><i>Journal of Experimental Social Psychology</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1016/j.jesp.2016.11.003">10.1016/j.jesp.2016.11.003</a></td>
+							<td >Does exposure to erotica reduce attraction and love for romantic partners in men? Independent replications of Kenrick, Gutierres, and Goldberg (1989) Study 2 <a href='https://www.researchgate.net/profile/Rhonda_Balzarini/publication/310488568_Does_exposure_to_erotica_reduce_attraction_and_love_for_romantic_partners_in_men_Independent_replications_of_Kenrick_Gutierres_and_Goldberg_1989_study_2/links/59cfdd434585150177ee21fd/Does-exposure-to-erotica-reduce-attraction-and-love-for-romantic-partners-in-men-Independent-replications-of-Kenrick-Gutierres-and-Goldberg-1989-study-2.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> </td>
+							<td ><i>Journal of Experimental Social Psychology</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1016/j.jesp.2016.11.003">10.1016/j.jesp.2016.11.003</a></td>
 							<td>rs</td>
 							<td>om</td>
 							<td>prereg</td>
 						    <td>od</td>
 							<td>rc</td>
+							<td>rep</td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -725,14 +785,16 @@
 									<a class='sprite sprite-reproducible-icon-medium' href="https://osf.io/d3zvh/" target="_blank" title="Go to reproducible code files"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href='http://etiennelebel.com/documents/l&c(2013,psci).pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Heightened Sensitivity to Temperature Cues in Individuals With High Anxious Attachment: Real or Elusive Phenomenon? </td>
-							<td style="vertical-align:top;"><i>Psychological Science</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1177/0956797613486983">10.1177/0956797613486983</a></td>
+							<td >Heightened Sensitivity to Temperature Cues in Individuals With High Anxious Attachment: Real or Elusive Phenomenon? <a href='http://etiennelebel.com/documents/l&c(2013,psci).pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> </td>
+							<td ><i>Psychological Science</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1177/0956797613486983">10.1177/0956797613486983</a></td>
 							<td>rs</td>
 							<td>om</td>
 							<td>prereg</td>
 						    <td>od</td>
 							<td>rc</td>
+							<td>rep</td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -758,13 +820,15 @@
 									<a class='sprite sprite-data-medium' href="https://osf.io/hgykr/" target="_blank" title="Go to data files"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href='https://www.researchgate.net/profile/Gordon_Pennycook/publication/317069544_Implausibility_and_illusory_truth_Prior_exposure_increases_perceived_accuracy_of_fake_news_but_has_no_effect_on_entirely_implausible_statements/links/5a1dc207458515a4c3d1ad4a/Implausibility-and-illusory-truth-Prior-exposure-increases-perceived-accuracy-of-fake-news-but-has-no-effect-on-entirely-implausible-statements.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Prior exposure increases perceived accuracy of fake news <span class="label label-info-purple"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2958246" target="_blank" class="black" title="View preprint of this article.">Preprint</a></span></td>
-							<td style="vertical-align:top;"><i>Journal of Experimental Psychology: General</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="http://dx.doi.org/10.2139/ssrn.2958246">10.2139/ssrn.2958246</a></td>
+							<td >Prior exposure increases perceived accuracy of fake news <a href='https://www.researchgate.net/profile/Gordon_Pennycook/publication/317069544_Implausibility_and_illusory_truth_Prior_exposure_increases_perceived_accuracy_of_fake_news_but_has_no_effect_on_entirely_implausible_statements/links/5a1dc207458515a4c3d1ad4a/Implausibility-and-illusory-truth-Prior-exposure-increases-perceived-accuracy-of-fake-news-but-has-no-effect-on-entirely-implausible-statements.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> <span class="label label-info-purple"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2958246" target="_blank" class="black" title="View preprint of this article.">Preprint</a></span></td>
+							<td><i>Journal of Experimental Psychology: General</i></td>
+							<td ><a target="_blank" href="http://dx.doi.org/10.2139/ssrn.2958246">10.2139/ssrn.2958246</a></td>
 							<td></td>
 							<td>om</td>
 							<td>prereg</td>
 						    <td>od</td>
+							<td></td>
+							<td></td>
 							<td></td>
 						</tr>
 						<tr>
@@ -777,7 +841,7 @@
 										<center><a target="_blank" href="https://osf.io/g37bz/"><span style="font-size:10px;">View file on OSF</span> <img src="logos/osf-13x13.png"></a></center>
 									</span>
 								</div>
-								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 								<div style="display:inline;" class="popUpOnHover"><a class='sprite sprite-data-medium'></a>
 									<span class="toDisplay1">
 										<a href="https://osf.io/g2dsr" target="_blank" title="Go to open data file">DataMaster.xlsx</a> <a href="https://osf.io/g2dsr/?action=download" target="_blank" title="Direct download file"><i class="fa fa-download"></i></a><br>
@@ -786,13 +850,15 @@
 									</span>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href='https://www.researchgate.net/profile/Katherine_Collison/publication/322685405_Examining_the_Effects_of_Controlling_for_Shared_Variance_among_the_Dark_Triad_Using_Meta-analytic_Structural_Equation_Modelling_Dark_Triad_metaSEM/links/5a6e7618458515d407585359/Examining-the-Effects-of-Controlling-for-Shared-Variance-among-the-Dark-Triad-Using-Meta-analytic-Structural-Equation-Modelling-Dark-Triad-metaSEM.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Examining the Effects of Controlling for Shared Variance among the Dark Triad Using Meta-analytic Structural Equation Modelling</td>
-							<td style="vertical-align:top;"><i>European Journal of Personality</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://dx.doi.org/10.1002/per.2137">10.1002/per.2137</a></td>
+							<td >Examining the Effects of Controlling for Shared Variance among the Dark Triad Using Meta-analytic Structural Equation Modelling <a href='https://www.researchgate.net/profile/Katherine_Collison/publication/322685405_Examining_the_Effects_of_Controlling_for_Shared_Variance_among_the_Dark_Triad_Using_Meta-analytic_Structural_Equation_Modelling_Dark_Triad_metaSEM/links/5a6e7618458515d407585359/Examining-the-Effects-of-Controlling-for-Shared-Variance-among-the-Dark-Triad-Using-Meta-analytic-Structural-Equation-Modelling-Dark-Triad-metaSEM.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a></td>
+							<td ><i>European Journal of Personality</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1002/per.2137">10.1002/per.2137</a></td>
 							<td></td>
 							<td>om</td>
 							<td></td>
 						    <td>od</td>
+							<td></td>
+							<td></td>
 							<td></td>
 						</tr>
 						<tr>
@@ -800,38 +866,42 @@
 								Butler et al. (2017)
 								<a class='sprite sprite-disclosure-medium-unavailable' title="Compliance to reporting standard information is not available"></a>
 								<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
-								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 								<a href='https://codeocean.com/2017/11/29/who-gets-the-credit-quest-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/code' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								<a class='sprite sprite-reproducible-icon-medium' href="https://codeocean.com/2017/11/29/who-gets-the-credit-quest-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/code" target="_blank" title="Go to reproducible code files"></a>
 								<a href="https://codeocean.com/2017/11/29/who-gets-the-credit-quest-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/code" target="_blank" class='sprite sprite-code-ocean-icon-medium kinda-link' title="Go to computational container"></a>
 							</td>
-							<td style="vertical-align:top;"><a href='https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FED4A70A65D3458C1AC1AD7756967D5B/S2049847015000837a.pdf/who_gets_the_credit_legislative_responsiveness_and_evaluations_of_members_parties_and_the_us_congress.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> Who Gets the Credit? Legislative Responsiveness and Evaluations of Members, Parties, and the US Congress <span class="label"><a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/who-gets-the-credit-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/FED4A70A65D3458C1AC1AD7756967D5B/core-reader#" target="_blank" class="black" title="View interactive HTML version of this article.">HTML</a></span></td>
-							<td style="vertical-align:top;"><i>Political Science Research and Methods</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://doi.org/10.1017/psrm.2015.83">10.1017/psrm.2015.83</a></td>
+							<td >Who Gets the Credit? Legislative Responsiveness and Evaluations of Members, Parties, and the US Congress <a href='https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FED4A70A65D3458C1AC1AD7756967D5B/S2049847015000837a.pdf/who_gets_the_credit_legislative_responsiveness_and_evaluations_of_members_parties_and_the_us_congress.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> <span class="label"><a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/who-gets-the-credit-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/FED4A70A65D3458C1AC1AD7756967D5B/core-reader#" target="_blank" class="black" title="View interactive HTML version of this article.">HTML</a></span></td>
+							<td ><i>Political Science Research and Methods</i></td>
+							<td ><a target="_blank" href="https://doi.org/10.1017/psrm.2015.83">10.1017/psrm.2015.83</a></td>
 							<td></td>
 							<td></td>
 							<td></td>
 						    <td>od</td>
 							<td>rc</td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
 								Gilad & Mizrahi-Man (2015)
 								<a class='sprite sprite-disclosure-medium-unavailable' title="Compliance to reporting standard information is not available"></a>
 								<a class='sprite sprite-materials-medium-unavailable' title="Open study materials is not available"></a>
-								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+								<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 								<a href='https://zenodo.org/record/17606#.WtwCJohuZEY' target='_blank' class='sprite sprite-data-medium' title="Go to data files"></a>
 								<a class='sprite sprite-reproducible-icon-medium' href="https://codeocean.com/2017/04/19/reanalysis-of-mouse-encode-comparative-gene-expression-data/code" target="_blank" title="Go to reproducible code files"></a>
 								<a href="https://codeocean.com/2017/04/19/reanalysis-of-mouse-encode-comparative-gene-expression-data/code" target="_blank" class='sprite sprite-code-ocean-icon-medium kinda-link' title="Go to computational container"></a>
 							</td>
-							<td style="vertical-align:top;"><a href='https://f1000researchdata.s3.amazonaws.com/manuscripts/7019/9f5f4330-d81d-46b8-9a3f-d8cb7aaf577e_6536_-_yoav_gilad-edited.pdf?doi=10.12688/f1000research.6536.1 ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> A reanalysis of mouse ENCODE comparative gene expression data <span class="label"><a href="https://f1000research.com/articles/4-121/v1" target="_blank" class="black" title="View interactive HTML version of this article.">HTML</a></span></td>
-							<td style="vertical-align:top;"><i>F1000Research</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="https://doi.org/10.12688/f1000research.6536.1">10.12688/f1000research.6536.1</a></td>
+							<td >A reanalysis of mouse ENCODE comparative gene expression data <a href='https://f1000researchdata.s3.amazonaws.com/manuscripts/7019/9f5f4330-d81d-46b8-9a3f-d8cb7aaf577e_6536_-_yoav_gilad-edited.pdf?doi=10.12688/f1000research.6536.1 ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> <span class="label"><a href="https://f1000research.com/articles/4-121/v1" target="_blank" class="black" title="View interactive HTML version of this article.">HTML</a></span></td>
+							<td ><i>F1000Research</i></td>
+							<td ><a target="_blank" href="https://doi.org/10.12688/f1000research.6536.1">10.12688/f1000research.6536.1</a></td>
 							<td></td>
 							<td></td>
 							<td></td>
 						    <td>od</td>
 							<td>rc</td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 						  <td style="white-space: nowrap">
@@ -841,37 +911,1206 @@
 									Study 1
 									<a class='sprite sprite-disclosure-medium-unavailable' title="Compliance to reporting standard information is not available"></a>
 									<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
-									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 									<a href='http://journal.sjdm.org/17/17127/study1.sav' target='_blank' class='sprite sprite-data-medium' title="Download data file"></a>
 									<br>
 									Study 2
 									<a class='sprite sprite-disclosure-medium-unavailable' title="Compliance to reporting standard information is not available"></a>
 									<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
-									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 									<a href=' http://journal.sjdm.org/17/17127/study2.sav' target='_blank' class='sprite sprite-data-medium' title="Download data file"></a>
 									<br>
 									Study 3
 									<a class='sprite sprite-disclosure-medium-unavailable' title="Compliance to reporting standard information is not available"></a>
 									<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
-									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 									<a href=' http://journal.sjdm.org/17/17127/study3.sav' target='_blank' class='sprite sprite-data-medium' title="Download data file"></a>
 									<br>
 									Study 4
 									<a class='sprite sprite-disclosure-medium-unavailable' title="Compliance to reporting standard information is not available"></a>
 									<a class='sprite sprite-materials-medium-unavailable' title="Open study materials information is not available"></a>
-									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Pre-registration information is not available"></a>
+									<a class='sprite sprite-preregisteredplus-medium-unavailable' title="Preregistration information is not available"></a>
 									<a href=' http://journal.sjdm.org/17/17127/study4.sav' target='_blank' class='sprite sprite-data-medium' title="Download data file"></a>
 								</div>
 							</td>
-							<td style="vertical-align:top;"><a href='http://journal.sjdm.org/17/17127/jdm17127.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a> When is it appropriate to reprimand a norm violation? The roles of anger, behavioral consequences, violation severity, and social distance</td>
-							<td style="vertical-align:top;"><i>Judgment and Decision Making</i></td>
-							<td style="vertical-align:top;"><a target="_blank" href="http://journal.sjdm.org/17/17127/jdm17127.html">jdm17127</a></td>
+							<td >When is it appropriate to reprimand a norm violation? The roles of anger, behavioral consequences, violation severity, and social distance <a href='http://journal.sjdm.org/17/17127/jdm17127.pdf ' target='_blank' class='sprite sprite-pdf-icon-medium'></a></td>
+							<td ><i>Judgment and Decision Making</i></td>
+							<td ><a target="_blank" href="http://journal.sjdm.org/17/17127/jdm17127.html">jdm17127</a></td>
 							<td></td>
 							<td></td>
 							<td></td>
 						    <td>od</td>
 							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
+						
+						
+<tr>
+  <td style='white-space: nowrap'>Lumian & McRae (2017)<div style='display:inline;' class='popUpOnHover'><a class='sprite sprite-disclosure-medium-available'></a>
+  <span class='toDisplayBasic4Submission popUpStyle'>
+  <span style='font-size:14px;font-weight:bold;color:gray;'>Study complies with the 
+<a href='https://www.psychologicalscience.org/publications/psychological_science/ps-submissions#DISC' target='_blank'>
+Basic 4 (at submission)</a><a class='sprite sprite-disclosure-medium-available'></a> reporting standard:</span>
+  <ol style='margin-top:5px;margin-bottom:5px;'>
+  <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+  <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+  <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+  <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+  </ol>
+  </span>
+  </div> <a href='https://osf.io/gjubv/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/pyh52/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/6v2c9/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a> </td>
+  <td>
+    Preregistered Replication of “Affective Flexibility: Evaluative Processing Goals Shape Amygdala Activity”
+    <a href='http://sci-hub.tw/10.1177/0956797617719730' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red'><a href='https://osf.io/pyh52/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Psychological Science</i></td>
+  <td><a href='https://dx.doi.org/10.1177/0956797617719730' target='_blank'>10.1177/0956797617719730</a></td>
+  <td>rs</td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Bernard et al. (2018) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://research.chicagobooth.edu/-/media/research/arc/docs/jar-annual-conference-papers/bernard-cade-hodge-accepted-proposal.pdf?la=en&hash=2B6FC6B13573F81718BE5A88F247C0CE630406E8' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Investor Behavior and the Benefits of Direct Stock Ownership
+    <a href='http://sci-hub.tw/http://onlinelibrary.wiley.com/doi/pdf/10.1111/1475-679X.12198' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red'><a href='https://research.chicagobooth.edu/-/media/research/arc/docs/jar-annual-conference-papers/bernard-cade-hodge-accepted-proposal.pdf?la=en&hash=2B6FC6B13573F81718BE5A88F247C0CE630406E8' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Journal of Accounting Research</i></td>
+  <td><a href='https://dx.doi.org/10.1111/1475-679X.12198' target='_blank'>10.1111/1475-679X.12198</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Rohrer et al. (2018)<div style='display:inline;' class='popUpOnHover'><a class='sprite sprite-disclosure-medium-available'></a>
+  <span class='toDisplayBasic4Submission popUpStyle'>
+  <span style='font-size:14px;font-weight:bold;color:gray;'>Study complies with the 
+<a href='https://www.psychologicalscience.org/publications/psychological_science/ps-submissions#DISC' target='_blank'>
+Basic 4 (at submission)</a><a class='sprite sprite-disclosure-medium-available'></a> reporting standard:</span>
+  <ol style='margin-top:5px;margin-bottom:5px;'>
+  <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+  <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+  <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+  <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+  </ol>
+  </span>
+  </div> <a href='https://osf.io/ma38k/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/4nsjb/register/565fb3678c5e4a66b5582f67' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                     title='Go to preregistered study protocol'></a>  <a href='https://osf.io/xw7d2/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/krwxn/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    Successfully Striving for Happiness: Socially Engaged Pursuits Predict Increases in Life Satisfaction
+    <a href='http://sci-hub.tw/http://journals.sagepub.com/doi/abs/10.1177/0956797618761660?journalCode=pssa' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+  </td>
+  <td><i>Psychological Science</i></td>
+  <td><a href='https://dx.doi.org/10.1177/0956797618761660' target='_blank'>10.1177/0956797618761660</a></td>
+  <td>rs</td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td></td>
+  <td></td>
+</tr><tr>
+  <td style='white-space: nowrap'>Sassenhagen & Bornkessel (2015) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    The P600 as a correlate of ventral attention network reorientation
+    <a href='http://sci-hub.tw/10.1016/j.cortex.2014.12.019' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Cortex</i></td>
+  <td><a href='https://dx.doi.org/10.1016/j.cortex.2014.12.019' target='_blank'>10.1016/j.cortex.2014.12.019</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Muthukumaraswamy et al. (2016) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a href='https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/7HCESJ' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a> </td>
+  <td>
+    The effects of AMPA blockade on the spectral profile of human early visual cortex recordings studied with non-invasive MEG
+    <a href='http://sci-hub.tw/10.1016/j.cortex.2016.03.004' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Cortex</i></td>
+  <td><a href='https://dx.doi.org/10.1016/j.cortex.2016.03.004' target='_blank'>10.1016/j.cortex.2016.03.004</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td>od</td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Paris et al. (2016) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Using EEG and stimulus context to probe the modelling of auditory-visual speech
+    <a href='http://sci-hub.tw/10.1016/j.cortex.2015.03.010' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Cortex</i></td>
+  <td><a href='https://dx.doi.org/10.1016/j.cortex.2015.03.010' target='_blank'>10.1016/j.cortex.2015.03.010</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Geng & Schnur (2016) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Role of features and categories in the organization of object knowledge: Evidence from adaptation fMRI
+    <a href='http://sci-hub.tw/10.1016/j.cortex.2016.01.006' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Cortex</i></td>
+  <td><a href='https://dx.doi.org/10.1016/j.cortex.2016.01.006' target='_blank'>10.1016/j.cortex.2016.01.006</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Kopiske et al. (2016) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a href='https://data.mendeley.com/datasets/4676n2pdrf/3/files/77004ef3-3745-4a08-92d2-fda57a1157c5/kopiskebrunohesseschenkfranz-CortexRR.zip?dl=1' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://data.mendeley.com/datasets/4676n2pdrf/3' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    The functional subdivision of the visual brain: Is there a real illusion effect on action? A multi-lab replication study
+    <a href='http://sci-hub.tw/10.1016/j.cortex.2016.03.020' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Cortex</i></td>
+  <td><a href='https://dx.doi.org/10.1016/j.cortex.2016.03.020' target='_blank'>10.1016/j.cortex.2016.03.020</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Hobson & Bishop (2016) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Mu suppression – A good measure of the human mirror neuron system?
+    <a href='http://sci-hub.tw/10.1016/j.cortex.2016.03.019' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Cortex</i></td>
+  <td><a href='https://dx.doi.org/10.1016/j.cortex.2016.03.019' target='_blank'>10.1016/j.cortex.2016.03.019</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Coltheart et al. (2018) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Belief, delusion, hypnosis, and the right dorsolateral prefrontal cortex: A transcranial magnetic stimulation study
+    <a href='http://sci-hub.tw/10.1016/j.cortex.2018.01.001' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Cortex</i></td>
+  <td><a href='https://dx.doi.org/10.1016/j.cortex.2018.01.001' target='_blank'>10.1016/j.cortex.2018.01.001</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Ratner et al. (2016) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/bhfa6/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/pzf2e/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/z2yay/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/rq7he/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    The effects of exposure to objective coherence on perceived meaning in life: a preregistered direct replication of Heintzelman, Trent &amp; King (2013)
+    <a href='http://rsos.royalsocietypublishing.org/content/royopensci/3/11/160431.full.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='http://rsos.royalsocietypublishing.org/content/3/11/160431' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/pzf2e/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Royal Society Open Science</i></td>
+  <td><a href='https://dx.doi.org/10.1098/rsos.160431' target='_blank'>10.1098/rsos.160431</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Guo et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a href='https://datadryad.org/resource/doi:10.5061/dryad.fv5mn' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a> </td>
+  <td>
+    Global network centrality of university rankings
+    <a href='http://rsos.royalsocietypublishing.org/content/4/10/171172.full.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='http://rsos.royalsocietypublishing.org/content/4/10/171172' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Royal Society Open Science</i></td>
+  <td><a href='https://dx.doi.org/10.1098/rsos.171172' target='_blank'>10.1098/rsos.171172</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td>od</td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Heycke et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/r95d8/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/3eda4/register/565fb3678c5e4a66b5582f67' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/cx5eh/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a> </td>
+  <td>
+    Subliminal influence on preferences? A test of evaluative conditioning for brief visual conditioned stimuli using auditory unconditioned stimuli
+    <a href='http://rsos.royalsocietypublishing.org/content/royopensci/4/9/160935.full.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='http://rsos.royalsocietypublishing.org/content/4/9/160935' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/3eda4/register/565fb3678c5e4a66b5582f67' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Royal Society Open Science</i></td>
+  <td><a href='https://dx.doi.org/10.1098/rsos.160935' target='_blank'>10.1098/rsos.160935</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Kuppuraj et al. (2018) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/u892g/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/ce7x8/register/565fb3678c5e4a66b5582f67' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/v2kws/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/v2kws/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    Online incidental statistical learning of audiovisual word sequences in adults: a registered report
+    <a href='http://rsos.royalsocietypublishing.org/content/royopensci/5/2/171678.full.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='http://rsos.royalsocietypublishing.org/content/5/2/171678' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/ce7x8/register/565fb3678c5e4a66b5582f67' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Royal Society Open Science</i></td>
+  <td><a href='https://dx.doi.org/10.1098/rsos.171678' target='_blank'>10.1098/rsos.171678</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Lightner et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://osf.io/qbp7h/register/565fb3678c5e4a66b5582f67' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://zenodo.org/record/1006726#.WwO9DIiFNEY' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://zenodo.org/record/1006730#.WwO9DIiFNEY' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    Radical framing effects in the ultimatum game: the impact of explicit culturally transmitted frames on economic decision-making
+    <a href='http://rsos.royalsocietypublishing.org/content/royopensci/4/12/170543.full.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='http://rsos.royalsocietypublishing.org/content/4/12/170543' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/qbp7h/register/565fb3678c5e4a66b5582f67' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Royal Society Open Science</i></td>
+  <td><a href='https://dx.doi.org/10.1098/rsos.170543' target='_blank'>10.1098/rsos.170543</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Bush et al. (2016) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    The Effects of Authoritarian Iconography: An Experimental Test
+    <a href='http://sci-hub.tw/10.1177/0010414016633228' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Comparative Political Studies</i></td>
+  <td><a href='https://dx.doi.org/10.1177/0010414016633228' target='_blank'>10.1177/0010414016633228</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Hidalgo et al. (2016) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Can Politicians Police Themselves? Natural Experimental Evidence From Brazil’s Audit Courts
+    <a href='http://sci-hub.tw/10.1177/0010414015626436' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Comparative Political Studies</i></td>
+  <td><a href='https://dx.doi.org/10.1177/0010414015626436' target='_blank'>10.1177/0010414015626436</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Huff & Kruszewska (2016) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Banners, Barricades, and Bombs: The Tactical Choices of Social Movements and Public Opinion
+    <a href='http://sci-hub.tw/10.1177/0010414015621072' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Comparative Political Studies</i></td>
+  <td><a href='https://dx.doi.org/10.1177/0010414015621072' target='_blank'>10.1177/0010414015621072</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Showalter et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://doi.org/10.7554/eLife.12626.001' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Replication Study: The common feature of leukemia-associated IDH1 and IDH2 mutations is a neomorphic enzyme activity converting alpha-ketoglutarate to 2-hydroxyglutarate
+    <span class='label'><a href='https://elifesciences.org/articles/26030' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://doi.org/10.7554/eLife.12626.001' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>eLife</i></td>
+  <td><a href='https://dx.doi.org/10.7554/eLife.26030.001' target='_blank'>10.7554/eLife.26030.001</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Shan et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://doi.org/10.7554/eLife.08997.001' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Replication Study: Inhibition of BET recruitment to chromatin as an effective treatment for MLL-fusion leukaemia
+    <span class='label'><a href='https://elifesciences.org/articles/25306' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://doi.org/10.7554/eLife.08997.001' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>eLife</i></td>
+  <td><a href='https://dx.doi.org/10.7554/eLife.25306.001' target='_blank'>10.7554/eLife.25306.001</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Aird et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://doi.org/10.7554/eLife.07072.001' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Replication Study: BET bromodomain inhibition as a therapeutic strategy to target c-Myc
+    <span class='label'><a href='https://elifesciences.org/articles/21253' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://doi.org/10.7554/eLife.07072.001' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>eLife</i></td>
+  <td><a href='https://dx.doi.org/10.7554/eLife.21253.001' target='_blank'>10.7554/eLife.21253.001</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Mantis et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://doi.org/10.7554/eLife.06959.001' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Replication Study: Coadministration of a tumor-penetrating peptide enhances the efficacy of cancer drugs
+    <span class='label'><a href='https://elifesciences.org/articles/17584' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://doi.org/10.7554/eLife.06959.001' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>eLife</i></td>
+  <td><a href='https://dx.doi.org/10.7554/eLife.17584.001' target='_blank'>10.7554/eLife.17584.001</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Kandela et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://doi.org/10.7554/eLife.06847.001' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Replication Study: Discovery and preclinical validation of drug indications using compendia of public gene expression data
+    <span class='label'><a href='https://elifesciences.org/articles/17044' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://doi.org/10.7554/eLife.06847.001' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>eLife</i></td>
+  <td><a href='https://dx.doi.org/10.7554/eLife.17044.001' target='_blank'>10.7554/eLife.17044.001</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Horrigan (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://doi.org/10.7554/eLife.04586.001' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Replication Study: The CD47-signal regulatory protein alpha (SIRPa) interaction is a therapeutic target for human solid tumors
+    <span class='label'><a href='https://elifesciences.org/articles/18173' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://doi.org/10.7554/eLife.04586.001' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>eLife</i></td>
+  <td><a href='https://dx.doi.org/10.7554/eLife.18173.001' target='_blank'>10.7554/eLife.18173.001</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Horrigan et al. (2018) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://doi.org/10.7554/eLife.04180.001' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Replication Study: Melanoma genome sequencing reveals frequent PREX2 mutations
+    <span class='label'><a href='https://elifesciences.org/articles/21634' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://doi.org/10.7554/eLife.04180.001' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>eLife</i></td>
+  <td><a href='https://dx.doi.org/10.7554/eLife.21634.001' target='_blank'>10.7554/eLife.21634.001</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Heuvel et al. (2018) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://doi.org/10.7554/eLife.13620.001' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Replication Study: Systematic identification of genomic markers of drug sensitivity in cancer cells
+    <span class='label'><a href='https://elifesciences.org/articles/29747' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://doi.org/10.7554/eLife.13620.001' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>eLife</i></td>
+  <td><a href='https://dx.doi.org/10.7554/eLife.29747' target='_blank'>10.7554/eLife.29747</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Lewis (2018) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://doi.org/10.7554/eLife.04024.001' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Replication Study: Transcriptional amplification in tumor cells with elevated c-Myc
+    <span class='label'><a href='https://elifesciences.org/articles/30274' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://doi.org/10.7554/eLife.04024.001' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>eLife</i></td>
+  <td><a href='https://dx.doi.org/10.7554/eLife.30274' target='_blank'>10.7554/eLife.30274</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr>
+
+						
+<tr>
+  <td style='white-space: nowrap'>Klauer et al. (2016) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Evaluative Priming in the Pronunciation Task: A Preregistered Replication and Extension
+    <a href='http://sci-hub.tw/10.1027/1618-3169/a000286' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Experimental Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.1027/1618-3169/a000286' target='_blank'>10.1027/1618-3169/a000286</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Teige-Mocigemba et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    The Affect Misattribution Procedure: In Search of Prejudice Effects
+    <a href='http://sci-hub.tw/10.1027/1618-3169/a000364' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Experimental Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.1027/1618-3169/a000364' target='_blank'>10.1027/1618-3169/a000364</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Bell et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://osf.io/h6ext/register/565fb3678c5e4a66b5582f67' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    The Effect of Cognitive Control on Different Types of Auditory Distraction: A Preregistered Study
+    <a href='http://www.psychologie.hhu.de/fileadmin/redaktion/Oeffentliche_Medien/Fakultaeten/Mathematisch-Naturwissenschaftliche_Fakultaet/Psychologie/AAP/Publikationen/in_press/ExPsy.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red'><a href='https://osf.io/h6ext/register/565fb3678c5e4a66b5582f67' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Experimental Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.1027/1618-3169/a000372' target='_blank'>10.1027/1618-3169/a000372</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Ivory et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/4cfj6/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/hs575/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/whuqf/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/xpb7t/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    Video Game Use as Risk Exposure, Protective Incapacitation, or Inconsequential Activity Among University Students: Comparing Approaches in a Unique Risk Environment
+    <a href='https://econtent.hogrefe.com/doi/pdf/10.1027/1864-1105/a000210' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='https://econtent.hogrefe.com/doi/10.1027/1864-1105/a000210' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/hs575/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Journal of Media Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.1027/1864-1105/a000210' target='_blank'>10.1027/1864-1105/a000210</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Breuer et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/2f5pm/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/5ubwm/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/kad2f/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/7cjd6/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    “Drive the Lane; Together, Hard!” An Examination of the Effects of Supportive Coplaying and Task Difficulty on Prosocial Behavior
+    <a href='http://sci-hub.tw/10.1027/1864-1105/a000209' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-purple'><a href='https://psyarxiv.com/6mmra/' target='_blank' 
+                      class='black' title='View preprint of this article.'>Preprint</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/5ubwm/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Journal of Media Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.1027/1864-1105/a000209' target='_blank'>10.1027/1864-1105/a000209</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Imhoff & Messer (2018) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/ja3yx/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a class='sprite sprite-preregisteredplus-medium-unavailable' title='Preregistration information is not available'></a>  <a href='https://osf.io/ja3yx/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/qxafd/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    In search of experimental evidence for secondary antisemitism - A file drawer report
+    <a href='https://osf.io/t8hsv/' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-purple'><a href='https://osf.io/t8hsv/' target='_blank' 
+                      class='black' title='View preprint of this article.'>Preprint</a></span>
+  </td>
+  <td><i>Meta-Psychology</i></td>
+  <td></td>
+  <td></td>
+  <td>om</td>
+  <td></td>
+  <td>od</td>
+  <td>rc</td>
+  <td></td>
+  <td></td>
+</tr><tr>
+  <td style='white-space: nowrap'>Yeager et al. (2016)<div style='display:inline;' class='popUpOnHover'><a class='sprite sprite-disclosure-medium-available'></a>
+  <span class='toDisplayBasic4Submission popUpStyle'>
+  <span style='font-size:14px;font-weight:bold;color:gray;'>Study complies with the 
+<a href='https://www.psychologicalscience.org/publications/psychological_science/ps-submissions#DISC' target='_blank'>
+Basic 4 (at submission)</a><a class='sprite sprite-disclosure-medium-available'></a> reporting standard:</span>
+  <ol style='margin-top:5px;margin-bottom:5px;'>
+  <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+  <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+  <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+  <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+  </ol>
+  </span>
+  </div> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://osf.io/vp8ck/register/564d31db8c5e4a7c9694b2be' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                     title='Go to preregistered study protocol'></a>  <a href='https://osf.io/zmafr/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/8p5sr/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    How to Improve Adolescent Stress Responses: Insights From Integrating Implicit Theories of Personality and Biopsychosocial Models
+    <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4976003/pdf/nihms781195.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4976003/' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+  </td>
+  <td><i>Psychological Science</i></td>
+  <td><a href='https://dx.doi.org/10.1177/0956797616649604' target='_blank'>10.1177/0956797616649604</a></td>
+  <td>rs</td>
+  <td></td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td></td>
+  <td></td>
+</tr><tr>
+  <td style='white-space: nowrap'>Hawkins et al. (2015)<div style='display:inline;' class='popUpOnHover'><a class='sprite sprite-disclosure-medium-available'></a>
+  <span class='toDisplayBasic4Submission popUpStyle'>
+  <span style='font-size:14px;font-weight:bold;color:gray;'>Study complies with the 
+<a href='https://www.psychologicalscience.org/publications/psychological_science/ps-submissions#DISC' target='_blank'>
+Basic 4 (at submission)</a><a class='sprite sprite-disclosure-medium-available'></a> reporting standard:</span>
+  <ol style='margin-top:5px;margin-bottom:5px;'>
+  <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+  <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+  <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+  <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+  </ol>
+  </span>
+  </div> <a href='https://osf.io/g3sca/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/dr42m/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                     title='Go to preregistered study protocol'></a>  <a href='https://osf.io/g3sca/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/g3sca/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    In Search of an Association Between Conception Risk and Prejudice
+    <a href='http://sci-hub.tw/10.1177/0956797614553121' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-purple'><a href='https://osf.io/w389p/' target='_blank' 
+                      class='black' title='View preprint of this article.'>Preprint</a></span>
+  </td>
+  <td><i>Psychological Science</i></td>
+  <td><a href='https://dx.doi.org/10.1177/0956797614553121' target='_blank'>10.1177/0956797614553121</a></td>
+  <td>rs</td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td>rep</td>
+  <td></td>
+</tr><tr>
+  <td style='white-space: nowrap'>Sadeh et al. (2016)<div style='display:inline;' class='popUpOnHover'><a class='sprite sprite-disclosure-medium-available'></a>
+  <span class='toDisplayBasic4Submission popUpStyle'>
+  <span style='font-size:14px;font-weight:bold;color:gray;'>Study complies with the 
+<a href='https://www.psychologicalscience.org/publications/psychological_science/ps-submissions#DISC' target='_blank'>
+Basic 4 (at submission)</a><a class='sprite sprite-disclosure-medium-available'></a> reporting standard:</span>
+  <ol style='margin-top:5px;margin-bottom:5px;'>
+  <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+  <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+  <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+  <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+  </ol>
+  </span>
+  </div> <a href='https://osf.io/hp9g8/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/a6hfd/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                     title='Go to preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Forgetting Patterns Differentiate Between Two Forms of Memory Representation
+    <a href='http://www.psych.utoronto.ca/Neuropsychologylab/PDF/Forgettingpatt.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+  </td>
+  <td><i>Psychological Science</i></td>
+  <td><a href='https://dx.doi.org/10.1177/0956797616638307' target='_blank'>10.1177/0956797616638307</a></td>
+  <td>rs</td>
+  <td>om</td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td></td>
+</tr><tr>
+  <td style='white-space: nowrap'>van Zant & Moore (2015)<div style='display:inline;' class='popUpOnHover'><a class='sprite sprite-disclosure-medium-available'></a>
+  <span class='toDisplayBasic4Submission popUpStyle'>
+  <span style='font-size:14px;font-weight:bold;color:gray;'>Study complies with the 
+<a href='https://www.psychologicalscience.org/publications/psychological_science/ps-submissions#DISC' target='_blank'>
+Basic 4 (at submission)</a><a class='sprite sprite-disclosure-medium-available'></a> reporting standard:</span>
+  <ol style='margin-top:5px;margin-bottom:5px;'>
+  <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+  <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+  <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+  <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+  </ol>
+  </span>
+  </div> <a href='https://osf.io/2htuq/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/wptk5/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                     title='Go to preregistered study protocol'></a>  <a href='https://osf.io/c2gaf/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a> </td>
+  <td>
+    Leaders’ Use of Moral Justifications Increases Policy Support
+    <a href='http://sci-hub.tw/10.1177/0956797615572909' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+  </td>
+  <td><i>Psychological Science</i></td>
+  <td><a href='https://dx.doi.org/10.1177/0956797615572909' target='_blank'>10.1177/0956797615572909</a></td>
+  <td>rs</td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr><tr>
+  <td style='white-space: nowrap'>Evers & Lakens (2014) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/e6cr3/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/e6cr3/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/e6cr3/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a> </td>
+  <td>
+    Revisiting Tversky's diagnosticity principle
+    <a href='http://www.readcube.com/articles/10.3389/fpsyg.2014.00875' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='https://www.frontiersin.org/articles/10.3389/fpsyg.2014.00875/full' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/e6cr3/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Frontiers in Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.3389/fpsyg.2014.00875' target='_blank'>10.3389/fpsyg.2014.00875</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Rotteveel et al. (2015) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://osf.io/spjqx/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/wxigz/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a> </td>
+  <td>
+    On the automatic link between affect and tendencies to approach and avoid: Chen and Bargh (1999) revisited
+    <a href='http://www.readcube.com/articles/10.3389/fpsyg.2015.00335' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00335/full' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/spjqx/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Frontiers in Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.3389/fpsyg.2015.00335' target='_blank'>10.3389/fpsyg.2015.00335</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td>od</td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Steegen et al. (2014) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/r2upe/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/4quek/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/arxvg/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/8zdqt/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    Measuring the crowd within again: a pre-registered replication study
+    <a href='http://www.readcube.com/articles/10.3389/fpsyg.2014.00786' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='https://www.frontiersin.org/articles/10.3389/fpsyg.2014.00786/full' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/4quek/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Frontiers in Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.3389/fpsyg.2014.00786' target='_blank'>10.3389/fpsyg.2014.00786</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Voorspoels et al. (2014) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/g5shj/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/jg97v/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/9n62e/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/9n62e/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    Can race really be erased? A pre-registered replication study
+    <a href='http://www.readcube.com/articles/10.3389/fpsyg.2014.01035' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='https://www.frontiersin.org/articles/10.3389/fpsyg.2014.01035/full' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/jg97v/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Frontiers in Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.3389/fpsyg.2014.01035' target='_blank'>10.3389/fpsyg.2014.01035</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>van't Veer et al. (2015) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://doi.org/10.3389/fpsyg.2014.00442' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/j8w4i/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/j8w4i/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    Unconscious deception detection measured by finger skin temperature and indirect veracity judgments—results of a registered report
+    <a href='http://www.readcube.com/articles/10.3389/fpsyg.2015.00672' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00672/full' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://doi.org/10.3389/fpsyg.2014.00442' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Frontiers in Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.3389/fpsyg.2015.00672' target='_blank'>10.3389/fpsyg.2015.00672</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Wagenmakers et al. (2015) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/uszvx/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/y7j4h/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/uszvx/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/uszvx/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    Turning the hands of time again: a purely confirmatory replication study and a Bayesian analysis
+    <a href='http://www.readcube.com/articles/10.3389/fpsyg.2015.00494' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00494/full' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/y7j4h/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Frontiers in Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.3389/fpsyg.2015.00494' target='_blank'>10.3389/fpsyg.2015.00494</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Jackson et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a href='https://osf.io/g85ep/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/g85ep/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    Does that pose become you? Testing the effect of body postures on self-concept
+    <a href='http://sci-hub.tw/10.1080/23743603.2017.1341178' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Comprehensive Results in Social Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.1080/23743603.2017.1341178' target='_blank'>10.1080/23743603.2017.1341178</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Keller, Johnson et al. (2017 <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a class='sprite sprite-materials-medium-unavailable' title='Open study materials information is not available'></a>  <a href='https://osf.io/ut9jv/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/hnef7/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/um26s/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    Meeting your inner super(wo)man: are power poses effective when taught?
+    <a href='http://sci-hub.tw/10.1080/23743603.2017.1341186' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red'><a href='https://osf.io/ut9jv/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Comprehensive Results in Social Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.1080/23743603.2017.1341186' target='_blank'>10.1080/23743603.2017.1341186</a></td>
+  <td></td>
+  <td></td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Ronay, Tybur et al. (2017) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='http://faculty.haas.berkeley.edu/dana_carney/PRS%20Materials%20-%20to%20replicate.zip' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a class='sprite sprite-preregisteredplus-medium' 
+                     title='Registered Report preregistered study protocol not (yet) publicly available'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    Embodied power, testosterone, and overconfidence as a causal pathway to risk-taking
+    <a href='http://sci-hub.tw/10.1080/23743603.2016.1248081' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red' 
+                    title='Registered Report preregistered study protocol not (yet) publicly available.'>Registered Report</span>
+  </td>
+  <td><i>Comprehensive Results in Social Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.1080/23743603.2016.1248081' target='_blank'>10.1080/23743603.2016.1248081</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Blanken et al. (2014) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='http://www.openscienceframework.org/project/3cmz4/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/i3upg/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='http://www.openscienceframework.org/project/3cmz4/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a> </td>
+  <td>
+    Three Attempts to Replicate the Moral Licensing Effect
+    <a href='http://econtent.hogrefe.com/doi/pdf/10.1027/1864-9335/a000189' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='https://econtent.hogrefe.com/doi/10.1027/1864-9335/a000189' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/i3upg/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Social Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.1027/1864-9335/a000189' target='_blank'>10.1027/1864-9335/a000189</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Brandt et al. (2014) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='http://www.openscienceframework.org/project/seqgd/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/bewi7/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='http://www.openscienceframework.org/project/seqgd/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/bggzq/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    Does Recalling Moral Behavior Change the Perception of Brightness? A Replication and Meta-Analysis of Banerjee, Chatterjee, and Sinha (2012)
+    <a href='http://econtent.hogrefe.com/doi/pdf/10.1027/1864-9335/a000191' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000191' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/bewi7/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Social Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.1027/1864-9335/a000191' target='_blank'>10.1027/1864-9335/a000191</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Calin-Jageman & Caldwell (2014) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='http://www.openscienceframework.org/project/fsadm/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/i8jrm/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='http://www.openscienceframework.org/project/fsadm/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a> </td>
+  <td>
+    Replication of the Superstition and Performance Study by Damisch, Stoberock, and Mussweiler (2010)
+    <a href='https://econtent.hogrefe.com/doi/pdf/10.1027/1864-9335/a000190' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000190' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/i8jrm/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Social Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.1027/1864-9335/a000190' target='_blank'>10.1027/1864-9335/a000190</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Gibson, Losee, & Vitiello (2014) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/bauqc/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/hktdw/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a class='sprite sprite-materials-medium-unavailable' title='Open data information is not available'></a> </td>
+  <td>
+    A Replication Attempt of Stereotype Susceptibility (Shih, Pittinsky, &amp; Ambady, 1999): Identity Salience and Shifts in Quantitative Performance
+    <a href='https://econtent.hogrefe.com/doi/pdf/10.1027/1864-9335/a000184' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label'><a href='https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000184' target='_blank' 
+                      class='black' title='View interactive HTML version of this article.'>HTML</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/hktdw/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Social Psychology</i></td>
+  <td><a href='https://dx.doi.org/10.1027/1864-9335/a000184' target='_blank'>10.1027/1864-9335/a000184</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td></td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Weston & Jackson (2018) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/hr7vx/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/tz7qe/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/hr7vx/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a>  <a href='https://osf.io/hr7vx/' target='_blank' class='sprite sprite-reproducible-icon-medium' 
+                      title='Go to reproducible code files'></a> </td>
+  <td>
+    The role of vigilance in the relationship between neuroticism and health: A registered report
+    <a href='http://sci-hub.tw/10.1016/j.jrp.2017.10.005' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-purple'><a href='https://psyarxiv.com/tpx5c/' target='_blank' 
+                      class='black' title='View preprint of this article.'>Preprint</a></span>
+    <span class='label label-info-red'><a href='https://osf.io/tz7qe/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Journal of Research in Personality</i></td>
+  <td><a href='https://dx.doi.org/10.1016/j.jrp.2017.10.005' target='_blank'>10.1016/j.jrp.2017.10.005</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td>rc</td>
+  <td></td>
+  <td>rr</td>
+</tr><tr>
+  <td style='white-space: nowrap'>Heycke et al. (2018) <a class='sprite sprite-disclosure-medium-unavailable' 
+                      title='Compliance to reporting standard information is not available'></a> <a href='https://osf.io/cm2sj/' target='_blank' class='sprite sprite-materials-medium' 
+                      title='Go to study materials files'></a>  <a href='https://osf.io/rv54j/' target='_blank' class='sprite sprite-preregisteredplus-medium' 
+                      title='Go to Registered Report preregistered study protocol'></a>  <a href='https://osf.io/cm2sj/' target='_blank' class='sprite sprite-data-medium' 
+                      title='Go to data files'></a> </td>
+  <td>
+    Of two minds or one? A registered replication of Rydell et al. (2006)
+    <a href='http://sci-hub.tw/10.1080/02699931.2018.1429389' target='_blank' class='sprite sprite-pdf-icon-medium'></a>
+    <span class='label label-info-red'><a href='https://osf.io/rv54j/' target='_blank' 
+                      class='black' title='Go to Registered Report preregistered study protocol.'>Registered Report</a></span>
+  </td>
+  <td><i>Cognition and Emotion</i></td>
+  <td><a href='https://dx.doi.org/10.1080/02699931.2018.1429389' target='_blank'>10.1080/02699931.2018.1429389</a></td>
+  <td></td>
+  <td>om</td>
+  <td>prereg</td>
+  <td>od</td>
+  <td></td>
+  <td>rep</td>
+  <td>rr</td>
+</tr>						
+
 						
 					</tbody>
 				</table>
@@ -957,7 +2196,7 @@
 					leftColumns: 0
 				},
 				"columnDefs": [ 
-				{ "targets": [ 4,5,6,7,8 ],
+				{ "targets": [ 4,5,6,7,8,9,10 ],
 				"visible": false }],
 				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
 				"initComplete": function() { 
