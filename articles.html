@@ -164,24 +164,24 @@
 							<tr>
 								<td style="text-align:right;vertical-align:top;padding-right:3px;">Show only articles with:</td>
 								<td>
-									<input onchange="filterme()" type="checkbox" name="rs" value="rs" style="margin-top:-6px;">
+									<input onchange="filterRS()" type="checkbox" name="rs" value="rs" style="margin-top:-6px;">
 										<a class='sprite sprite-disclosure-medium-available' title="Study complies with relevant reporting standard and/or includes a methodological disclosure statement."></a> Reporting standard/Methodological disclosure statement <br>
-									<input onchange="filterme()" type="checkbox" name="om" value="om" style="margin-top:-6px;">
+									<input onchange="filterOM()" type="checkbox" name="om" value="om" style="margin-top:-6px;">
 										<a class='sprite sprite-materials-medium' title="Study materials required to conduct an independent replication are available at a public repository."></a> Open/public study materials <br>
-									<input onchange="filterme()" type="checkbox" name="prereg" value="prereg" style="margin-top:-6px;">
+									<input onchange="filterPREREG()" type="checkbox" name="prereg" value="prereg" style="margin-top:-6px;">
 										<a class='sprite sprite-preregisteredplus-medium' title="Study design and analysis plans were preregistered prior to data collection (independently or via Registered Report format)."></a> Preregistered study design/<span class="label label-info-red"><a href="http://orca.cf.ac.uk/45177/1/Chambers_Cortex_2013b_GreenOA.pdf" target="_blank" class="black" title="Study design and analysis plans were peer-reviewed and preregistered prior to data collection.">Registered Report</a></span> format<br>
-									<input onchange="filterme()" type="checkbox" name="od" value="od" style="margin-top:-6px;">
+									<input onchange="filterOD()" type="checkbox" name="od" value="od" style="margin-top:-6px;">
 										<a class='sprite sprite-data-medium' title="Study data (raw or transformed) are available at a public repository."></a> Open/public data <br>
-									<input onchange="filterme()" type="checkbox" name="rc" value="rc" style="margin-top:-6px;">
+									<input onchange="filterRC()" type="checkbox" name="rc" value="rc" style="margin-top:-6px;">
 										<a class='sprite sprite-reproducible-icon-medium' title="Code/syntax to reproduce study results are available at a public repository or via a public Code Ocean computational capsule."></a> Reproducible code/Code Ocean<a class='sprite sprite-code-ocean-icon-medium' title="Code/syntax to reproduce study results are available in a public Code Ocean computational capsule."></a> computational capsule
 								</td>
 							</tr>
 							<tr>
 								<td style="text-align:right;padding-right:3px;padding-top:5px;">Article type:</td>
 								<td style="padding-top:5px;">
-									<input onchange="filterme()" type="checkbox" name="articleType" value="orig" style="margin-top:-2px;" checked>
+									<input onchange="filterAT()" type="checkbox" name="articleType" value="orig" style="margin-top:-2px;" checked>
 										Original
-									<input onchange="filterme()" type="checkbox" name="articleType" value="rep" style="margin-top:-2px;margin-left:10px;" checked>
+									<input onchange="filterAT()" type="checkbox" name="articleType" value="rep" style="margin-top:-2px;margin-left:10px;" checked>
 										Replication
 								</td>
 							</tr>
@@ -2255,44 +2255,48 @@ Basic 4 (at submission)</a><a class='sprite sprite-disclosure-medium-available'>
 		  otable = $('#dt').dataTable();
 		})
 		
-		function filterme() {
+		function filterRS() {
 		  //build a regex filter string with an or(|) condition
 		  var types = $('input:checkbox[name="rs"]:checked').map(function() {
 			return '^' + this.value + '\$';
 		  }).get().join('|');
 		  //filter in rs (reportingStandard) column , with a regex, no smart filtering, no inputbox,not case sensitive
 		  otable.fnFilter(types, 4, true, false, false, false);
-		  
+		}
+		function filterOM() {
 		  var types = $('input:checkbox[name="om"]:checked').map(function() {
 			return '^' + this.value + '\$';
 		  }).get().join('|');
 		  //filter in om (open materials) column, with a regex, no smart filtering, no inputbox,not case sensitive
 		  otable.fnFilter(types, 5, true, false, false, false);
-		  
+		}
+		function filterPREREG() {  
 		  var types = $('input:checkbox[name="prereg"]:checked').map(function() {
 			return '^' + this.value + '\$';
 		  }).get().join('|');
 		  //filter in prereg column, with a regex, no smart filtering, no inputbox,not case sensitive
 		  otable.fnFilter(types, 6, true, false, false, false);
-		  
+		}
+		function filterOD() {  
 		  var types = $('input:checkbox[name="od"]:checked').map(function() {
 			return '^' + this.value + '\$';
 		  }).get().join('|');
 		  //filter in od (open data) column, with a regex, no smart filtering, no inputbox,not case sensitive
 		  otable.fnFilter(types, 7, true, false, false, false);
-		  
+		}
+		function filterRC() {  
 		  var types = $('input:checkbox[name="rc"]:checked').map(function() {
 			return '^' + this.value + '\$';
 		  }).get().join('|');
 		  //filter in rc (reproducible) column, with a regex, no smart filtering, no inputbox,not case sensitive
 		  otable.fnFilter(types, 8, true, false, false, false);
-		  
+		}
+		function filterAT() {  
 		  var types = $('input:checkbox[name="articleType"]:checked').map(function() {
 			return '^' + this.value + '\$';
 		  }).get().join('|');
 		  //filter in articleType column, with a regex, no smart filtering, no inputbox,not case sensitive
 		  otable.fnFilter(types, 9, true, false, false, false);
-		  
 		}
 	</script>
 
