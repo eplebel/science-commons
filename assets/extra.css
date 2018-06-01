@@ -76,15 +76,28 @@
 	}
 	.label-info-teal {
 	  background-color: #00A388;
+	  color: black;
+	  font-size:90%;
 	}
 	.label-info-purple {
 	  background-color: #9b59b6;
+	  opacity: 0.70;
+	  filter: alpha(opacity=70); /* For IE8 and earlier */
+	  color: black;
+	  font-size:90%;
 	}
 	.label-info-red {
 	  background-color: #e74c3c;
 	  opacity: 0.70;
 	  filter: alpha(opacity=70); /* For IE8 and earlier */
 	  color: black;
+	  font-size:90%;	  
+	}
+	.label-default {
+	  opacity: 0.70;
+	  filter: alpha(opacity=70); /* For IE8 and earlier */
+	  color: black;
+	  font-size:90%;
 	}
 	
 	.center-pills { display: inline-block; }
