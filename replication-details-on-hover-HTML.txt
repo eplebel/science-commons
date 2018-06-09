@@ -1,0 +1,35 @@
+*need to copy and paste within Babcock et al. (2017) article after generating HTML (because still haven't automated this part)
+
+
+
+<div style="display:inline;" class="popUpOnHover">
+	<span class="label label-info-brown" title='This article reports replications.'>Replication <span class="badge badge-repnum">2</span></span>
+	<span class="toDisplayBasic4Submission popUpStyle" style='padding-left:5px;white-space:nowrap;'>
+		<table class="stripe compact" cellspacing="0" width="100%" border=0>
+			<thead>
+				<tr>
+					<th title="">replication.study</th>
+					<th></th>
+					<th title="">original.study</th>
+					<th title="">rep.method.similarity</th>
+					<th title="">target.effect</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>Babcock et al. (2017) Study 1 <a href='https://pdfs.semanticscholar.org/fd33/452b5529e4ca49a30239f1e787fdc4f628eb.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
+				<td class="center" style="font-size:11px;">replication of</td>
+				<td>Côté, Piff et al. (2013) Study 3 <a href='http://www-2.rotman.utoronto.ca/facbios/file/social%20class%20utilitarian%20reasoning%20JPSP.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a></td>
+				<td class="center">Very close</td>
+				<td class="center">Low empathy utilitarian effect</td>
+			</tr>
+			<tr>
+				<td>Babcock et al. (2017) Study 2 <a href='https://pdfs.semanticscholar.org/fd33/452b5529e4ca49a30239f1e787fdc4f628eb.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
+				<td class="center" style="font-size:11px;">replication of</td>
+				<td>Côté, Piff et al. (2013) Study 3 <a href='http://www-2.rotman.utoronto.ca/facbios/file/social%20class%20utilitarian%20reasoning%20JPSP.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a></td>
+				<td class="center">Very close</td>
+				<td class="center">Low empathy utilitarian effect</td>
+			</tr>
+		</table>
+	</span>
+</div>

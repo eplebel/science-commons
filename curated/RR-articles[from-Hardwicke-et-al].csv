@@ -1,0 +1,146 @@
+journal_full,id,protocolMadeAvailable,reasonForNoShare,public,duplicate,protocolLinkProvided,registered,timingsAvailable,Date of in principle acceptance,Have the authors submitted a full paper,Date of submission of full paper,Has the paper been published,Date of publication of full paper,linkToPaper,numberOfRegisteredStudies,replication,design,identifiesAsRR,editorialConfirmsRR
+International Journal of Psychophysiology,IJP_1,yes,NA,yes,no,https://osf.io/tn7j9/,OSF timestamp only,yes,5/19/17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Cortex,COR_1,yes,NA,no,no,NA,NA,yes,11/26/13,yes,8/19/14,yes,2/13/15,http://dx.doi.org/10.1016/j.cortex.2014.12.019,2,no,laboratoryCrossover,RR,NA
+Cortex,COR_2,yes,NA,no,no,NA,NA,yes,2002-02-13,yes,2009-01-15,yes,3/31/16,http://dx.doi.org/10.1016/j.cortex.2016.03.004,1,no,laboratoryCrossover,RR,NA
+Cortex,COR_3,yes,NA,no,no,NA,NA,yes,2005-07-14,yes,2002-03-15,yes,4/17/15,http://dx.doi.org/10.1016/j.cortex.2015.03.010,1,no,laboratoryCrossover,RR,NA
+Cortex,COR_4,yes,NA,no,no,NA,NA,yes,10/21/14,yes,2005-05-15,yes,2002-06-16,http://dx.doi.org/10.1016/j.cortex.2016.01.006,1,no,laboratoryCrossover,RR,NA
+Cortex,COR_5,yes,NA,no,no,NA,NA,yes,2009-02-14,yes,9/29/15,yes,2004-06-16,http://dx.doi.org/10.1016/j.cortex.2016.03.020,1,no,laboratoryCrossover,RR,NA
+Cortex,COR_6,yes,NA,no,no,NA,NA,yes,1/30/15,yes,1/20/16,yes,4/15/16,http://dx.doi.org/10.1016/j.cortex.2016.03.019,1,no,laboratoryCrossover,RR,NA
+Cortex,COR_7,no,authorConfidentiality,no,no,NA,NA,yes,6/18/15,yes,6/28/17,yes,1/31/18,https://doi.org/10.1016/j.cortex.2018.01.001,2,no,laboratoryCrossover,RR,NA
+Cortex,COR_8,no,authorConfidentiality,no,no,NA,NA,yes,9/14/16,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Cortex,COR_9,no,authorConfidentiality,no,no,NA,NA,yes,1/24/17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Cortex,COR_10,no,authorConfidentiality,no,no,NA,NA,yes,2003-10-17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Cortex,COR_11,no,authorConfidentiality,no,no,NA,NA,yes,2005-12-17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Cortex,COR_12,no,authorConfidentiality,no,no,NA,NA,yes,1/25/17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Cortex,COR_13,no,authorConfidentiality,no,no,NA,NA,yes,2001-06-17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Cortex,COR_14,no,authorConfidentiality,no,no,NA,NA,yes,2/24/17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Cortex,COR_15,no,authorConfidentiality,no,no,NA,NA,yes,2006-02-17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Cognitive Research: Principles and Implications,CRPI_1,yes,NA,yes,no,https://osf.io/hzd5v/,OSF timestamp only,no,?,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+European Journal of Neuroscience,EJN_1,no,authorConfidentiality,no,no,NA,NA,yes,4/25/17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Royal Society Open Science,RSOS_1,yes,NA,yes,yes,https://osf.io/pzf2e/,yes,yes,2007-03-16,yes,2009-08-16,yes,11/23/16,https://dx.doi.org/10.1098/rsos.160431,2,yes,laboratoryIndependentGroups,RR,NA
+Royal Society Open Science,RSOS_2,yes,authorConfidentiality,no,no,NA,NA,yes,2012-12-16,yes,NA,yes,2010-04-17, https://doi.org/10.1098/rsos.171172 ,1,no,observational,RR,NA
+Royal Society Open Science,RSOS_3,yes,authorConfidentiality,no,no,NA,NA,yes,3/14/17,yes,NA,yes,9/20/17,https://doi.org/10.1098/rsos.160935,1,no,laboratoryIndependentGroups,RR,NA
+Royal Society Open Science,RSOS_4,yes,authorConfidentiality,yes,no,https://osf.io/qbp7h/,OSF timestamp only,yes,2/22/17,yes,7/19/17,yes,2/21/18,https://doi.org/10.1098/rsos.171678,1,no,laboratoryCrossover,RR,NA
+Royal Society Open Science,RSOS_5,yes,authorConfidentiality,no,no,NA,NA,yes,5/26/17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Royal Society Open Science,RSOS_6,yes,authorConfidentiality,yes,no,https://osf.io/qbp7h/,yes,yes,2006-09-17,yes,NA,yes,12/20/17,https://doi.org/10.1098/rsos.170543 ,1,no,laboratoryIndependentGroups,RR,NA
+Royal Society Open Science,RSOS_7,no,authorConfidentiality,no,no,NA,NA,yes,5/18/17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Animal Behavior and Cognition,ABC_1,no,noReasonProvided,no,no,NA,NA,no,?,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+"Attention, Perception, and Psychophysics",APP_1,yes,NA,yes,no,https://osf.io/qc5dh/,yes,no,?,yes,?,yes,2/23/17,https://doi.org/10.3758/s13414-017-1304-y,1,no,observational,RR,NA
+"Attention, Perception, and Psychophysics",APP_2,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,no,NA,NA,NA,NA,NA,NA,NA
+"Attention, Perception, and Psychophysics",APP_3,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,no,NA,NA,NA,NA,NA,NA,NA
+"Attention, Perception, and Psychophysics",APP_4,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,no,NA,NA,NA,NA,NA,NA,NA
+"Attention, Perception, and Psychophysics",APP_5,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,no,NA,NA,NA,NA,NA,NA,NA
+"Attention, Perception, and Psychophysics",APP_6,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,no,NA,NA,NA,NA,NA,NA,NA
+"Attention, Perception, and Psychophysics",APP_7,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,no,NA,NA,NA,NA,NA,NA,NA
+"Attention, Perception, and Psychophysics",APP_8,no,noReasonProvided,no,no,NA,NA,no,?,?,?,no,NA,NA,NA,NA,NA,NA,NA
+"Attention, Perception, and Psychophysics",APP_9,no,noReasonProvided,no,no,NA,NA,no,?,?,?,no,NA,NA,NA,NA,NA,NA,NA
+"Attention, Perception, and Psychophysics",APP_10,no,noReasonProvided,no,no,NA,NA,no,?,?,?,no,NA,NA,NA,NA,NA,NA,NA
+Comparative Political Studies,CPS_1,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,2004-06-17,https://doi.org/10.1177/0010414016633228,1,no,laboratoryIndependentGroups,P,https://doi.org/10.1177/0010414016655539
+Comparative Political Studies,CPS_2,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,2003-03-17,https://doi.org/10.1177/0010414015626436,1,no,fieldIndependentGroups,U,https://doi.org/10.1177/0010414016655539
+Comparative Political Studies,CPS_3,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,1/14/16,https://doi.org/10.1177/0010414015621072,1,no,laboratoryIndependentGroups,U,https://doi.org/10.1177/0010414016655539
+eLife,eLife_1,yes,NA,yes,no,https://doi.org/10.7554/eLife.12626.001,published,yes,2/13/16,yes,2/15/17,yes,6/27/17,https://doi.org/10.7554/eLife.26030.001,1,yes,laboratoryIndependentGroups,RR,NA
+eLife,eLife_2,yes,NA,yes,no,https://doi.org/10.7554/eLife.08997.001,published,yes,2008-04-15,yes,1/23/17,yes,6/27/17,https://doi.org/10.7554/eLife.25306.001,1,yes,laboratoryIndependentGroups,RR,NA
+eLife,eLife_3,yes,NA,yes,no,https://doi.org/10.7554/eLife.07072.001,published,yes,2006-08-15,yes,2009-05-16,yes,1/19/17,https://doi.org/10.7554/eLife.21253.001,1,yes,laboratoryIndependentGroups,RR,NA
+eLife,eLife_4,yes,NA,yes,no,https://doi.org/10.7554/eLife.06959.001,published,yes,4/29/15,yes,2005-06-16,yes,1/19/17,https://doi.org/10.7554/eLife.17584.001,1,yes,laboratoryIndependentGroups,RR,NA
+eLife,eLife_5,yes,NA,yes,no,https://doi.org/10.7554/eLife.06847.001,published,yes,4/15/15,yes,4/18/16,yes,1/19/17,https://doi.org/10.7554/eLife.17044.001,1,yes,laboratoryIndependentGroups,RR,NA
+eLife,eLife_6,yes,NA,yes,no,https://doi.org/10.7554/eLife.04586.001,published,yes,12/20/14,yes,5/25/16,yes,1/19/17,https://doi.org/10.7554/eLife.18173.001,1,yes,laboratoryIndependentGroups,RR,NA
+eLife,eLife_7,yes,NA,yes,no,https://doi.org/10.7554/eLife.04180.001,published,yes,2011-11-14,yes,9/19/16,yes,1/19/17,https://doi.org/10.7554/eLife.21634.001,1,yes,laboratoryIndependentGroups,RR,NA
+eLife,eLife_8,yes,NA,yes,no,https://doi.org/10.7554/eLife.13620.001,published,yes,5/25/16,yes,6/27/17,yes,2001-09-18,https://doi.org/10.7554/eLife.29747,1,yes,laboratoryIndependentGroups,RR,NA
+eLife,eLife_9,yes,NA,yes,no,https://doi.org/10.7554/eLife.10012.001,published,yes,11/30/15,yes,2002-08-17,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_10,yes,NA,yes,no,https://doi.org/10.7554/eLife.04024.001,published,yes,12/14/14,yes,2007-10-17,yes,2001-09-18,https://doi.org/10.7554/eLife.30274,1,yes,laboratoryIndependentGroups,RR,NA
+eLife,eLife_11,yes,NA,yes,no,https://doi.org/10.7554/eLife.12470.001,published,yes,2002-04-16,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_12,yes,NA,yes,no,https://doi.org/10.7554/eLife.11999.001,published,yes,1/25/16,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_13,yes,NA,yes,no,https://doi.org/10.7554/eLife.11566.001,published,yes,2001-08-16,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_14,yes,NA,yes,no,https://doi.org/10.7554/eLife.11414.001,published,yes,2003-07-16,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_15,yes,NA,yes,no,https://doi.org/10.7554/eLife.10860.001,published,yes,2/15/16,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_16,yes,NA,yes,no,https://doi.org/10.7554/eLife.09976.001,published,yes,2001-06-16,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_17,yes,NA,yes,no,https://doi.org/10.7554/eLife.09462.001,published,yes,10/29/15,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_18,yes,NA,yes,no,https://doi.org/10.7554/eLife.08245.001,published,yes,2008-08-15,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_19,yes,NA,yes,no,https://doi.org/10.7554/eLife.07420.001,published,yes,2007-09-15,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_20,yes,NA,yes,no,https://doi.org/10.7554/eLife.07383.001,published,yes,10/28/15,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_21,yes,NA,yes,no,https://doi.org/10.7554/eLife.07301.001,published,yes,2008-01-15,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_22,yes,NA,yes,no,https://doi.org/10.7554/eLife.06938.001,published,yes,5/22/15,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_23,yes,NA,yes,no,https://doi.org/10.7554/eLife.06434.001,published,yes,2007-10-15,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_24,yes,NA,yes,no,https://doi.org/10.7554/eLife.04796.001,published,yes,6/26/15,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_25,yes,NA,yes,no,https://doi.org/10.7554/eLife.04363.001,published,yes,1/27/15,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_26,yes,NA,yes,no,https://doi.org/10.7554/eLife.04186.001,published,yes,2002-12-15,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_27,yes,NA,yes,no,https://doi.org/10.7554/eLife.04105.001,published,yes,12/14/14,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_28,yes,NA,yes,no,https://doi.org/10.7554/eLife.04037.001,published,yes,9/28/14,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+eLife,eLife_29,yes,NA,yes,no,https://doi.org/10.7554/eLife.04034.001,published,yes,11/17/14,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Review of Financial Studies,RFS_1,no,noReasonProvided,no,no,NA,NA,no,?,?,?,no,NA,NA,NA,NA,NA,NA,NA
+Review of Financial Studies,RFS_2,no,noReasonProvided,no,no,NA,NA,no,?,?,?,no,NA,NA,NA,NA,NA,NA,NA
+Review of Financial Studies,RFS_3,no,noReasonProvided,no,no,NA,NA,no,?,?,?,no,NA,NA,NA,NA,NA,NA,NA
+Review of Financial Studies,RFS_4,no,noReasonProvided,no,no,NA,NA,no,?,?,?,no,NA,NA,NA,NA,NA,NA,NA
+Review of Financial Studies,RFS_5,no,noReasonProvided,no,no,NA,NA,no,?,?,?,no,NA,NA,NA,NA,NA,NA,NA
+Review of Financial Studies,RFS_6,no,noReasonProvided,no,no,NA,NA,no,?,?,?,no,NA,NA,NA,NA,NA,NA,NA
+Review of Financial Studies,RFS_7,no,noReasonProvided,no,no,NA,NA,no,?,?,?,no,NA,NA,NA,NA,NA,NA,NA
+Review of Financial Studies,RFS_8,no,noReasonProvided,no,no,NA,NA,no,?,?,?,no,NA,NA,NA,NA,NA,NA,NA
+Experimental Psychology,EP_1,no,noReasonProvided,no,no,NA,NA,yes,12/17/14,yes,2009-08-15,yes,3/29/16,https://doi.org/10.1027/1618-3169/a000286,1,yes,laboratoryCrossover,RR,NA
+Experimental Psychology,EP_2,no,noReasonProvided,no,no,NA,NA,yes,2/13/17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Experimental Psychology,EP_3,no,noReasonProvided,no,no,NA,NA,yes,4/26/16,yes,12/15/16,yes,6/20/17,https://doi.org/10.1027/1618-3169/a000364,1,yes,laboratoryCrossover,RR,NA
+Experimental Psychology,EP_4,yes,NA,yes,no,https://osf.io/h6ext/,yes,yes,12/13/16,yes,3/14/17,yes,6/29/17,https://doi.org/10.1027/1618-3169/a000372,1,yes,laboratoryCrossover,RR,NA
+Journal of European Psychology Students,EJPS_1,no,noReasonProvided,no,no,NA,NA,yes,2005-08-17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Journal of European Psychology Students,EJPS_2,no,noReasonProvided,no,no,NA,NA,yes,3/24/17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
+Journal of Media Psychology,JMP_1,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,3/21/17,https://doi.org/10.1027/1864-1105/a000210,1,no,survey,P,https://doi.org/10.1027/1864-1105/a000208
+Journal of Media Psychology,JMP_2,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,3/21/17,https://doi.org/10.1027/1864-1105/a000211,1,no,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-1105/a000209
+Journal of Media Psychology,JMP_3,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,3/21/17,https://doi.org/10.1027/1864-1105/a000208,1,no,laboratoryCrossover,P,https://doi.org/10.1027/1864-1105/a000210
+Journal of Media Psychology,JMP_4,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,3/21/17,https://doi.org/10.1027/1864-1105/a000213,1,yes,laboratoryIndependentGroups,U,https://doi.org/10.1027/1864-1105/a000211
+Journal of Media Psychology,JMP_5,yes,NA,yes,no,https://osf.io/4veh9/,OSF timestamp only,no,?,yes,?,yes,3/21/17,https://doi.org/10.1027/1864-1105/a000209,1,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-1105/a000212
+Comprehensive Results in Social Psychology,CRSP_1,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,6/28/17,https://doi.org/10.1080/23743603.2017.1341178,1,yes,laboratoryIndependentGroups,P,https://doi.org/10.1080/23743603.2015.1070611
+Comprehensive Results in Social Psychology,CRSP_2,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,6/28/17,https://doi.org/10.1080/23743603.2017.1341186,1,yes,laboratoryIndependentGroups,P,https://doi.org/10.1080/23743603.2015.1070612
+Comprehensive Results in Social Psychology,CRSP_3,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,6/28/17,https://doi.org/10.1080/23743603.2017.1327178,1,yes,laboratoryIndependentGroups,P,https://doi.org/10.1080/23743603.2015.1070613
+Comprehensive Results in Social Psychology,CRSP_4,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,1/17/17,https://doi.org/10.1080/23743603.2016.1248079,1,yes,laboratoryIndependentGroups,P,https://doi.org/10.1080/23743603.2015.1070614
+Comprehensive Results in Social Psychology,CRSP_5,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,6/28/17,https://doi.org/10.1080/23743603.2017.1341183,1,yes,laboratoryIndependentGroups,P,https://doi.org/10.1080/23743603.2015.1070615
+Comprehensive Results in Social Psychology,CRSP_6,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,6/28/17,https://doi.org/10.1080/23743603.2016.1248081,1,yes,laboratoryIndependentGroups,U,https://doi.org/10.1080/23743603.2015.1070616
+Comprehensive Results in Social Psychology,CRSP_7,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,2005-10-17,https://doi.org/10.1080/23743603.2017.1298355,1,yes,laboratoryCrossover,P,https://doi.org/10.1080/23743603.2015.1070617
+Comprehensive Results in Social Psychology,CRSP_8,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,2/24/16,https://doi.org/10.1080/23743603.2016.1139390,2,no,laboratoryIndependentGroups,P,https://doi.org/10.1080/23743603.2015.1070618
+Comprehensive Results in Social Psychology,CRSP_9,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,1/26/17,https://doi.org/10.1080/23743603.2016.1273647,1,no,fieldIndependentGroups,P,https://doi.org/10.1080/23743603.2015.1070619
+Comprehensive Results in Social Psychology,CRSP_10,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,3/21/17,https://doi.org/10.1080/23743603.2017.1288877,2,no,laboratoryIndependentGroups,P,https://doi.org/10.1080/23743603.2015.1070620
+Comprehensive Results in Social Psychology,CRSP_11,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,4/28/17,https://doi.org/10.1080/23743603.2017.1298356,1,no,laboratoryIndependentGroups,U,https://doi.org/10.1080/23743603.2015.1070611
+Comprehensive Results in Social Psychology,CRSP_12,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,1/26/18,https://doi.org/10.1080/23743603.2018.1425089,1,no,survey,RR,
+Frontiers in Psychology,FP_1,yes,NA,yes,no,https://osf.io/e6cr3/,OSF timestamp only,no,?,yes,?,yes,2008-12-14,https://doi.org/10.3389/fpsyg.2014.00875,2,yes,laboratoryCrossover,P,https://www.frontiersin.org/research-topics/1461/replication-attempts-of-important-results-in-the-study-of-cognition
+Frontiers in Psychology,FP_2,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,2001-05-15,https://doi.org/10.3389/fpsyg.2014.01511,2,yes,laboratoryCrossover,P,https://www.frontiersin.org/research-topics/1461/replication-attempts-of-important-results-in-the-study-of-cognition
+Frontiers in Psychology,FP_3,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,2004-01-15,https://doi.org/10.3389/fpsyg.2015.00314,1,yes,laboratoryIndependentGroups,P,https://www.frontiersin.org/research-topics/1461/replication-attempts-of-important-results-in-the-study-of-cognition
+Frontiers in Psychology,FP_4,yes,NA,yes,no,https://osf.io/jp6ek/,OSF timestamp only,no,?,yes,?,yes,2004-02-15,https://doi.org/10.3389/fpsyg.2015.00335,2,yes,laboratoryIndependentGroups,P,https://www.frontiersin.org/research-topics/1461/replication-attempts-of-important-results-in-the-study-of-cognition
+Frontiers in Psychology,FP_5,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,11/21/15,https://doi.org/10.3389/fpsyg.2014.01343,3,yes,laboratoryCrossover,U,https://www.frontiersin.org/research-topics/1461/replication-attempts-of-important-results-in-the-study-of-cognition
+Frontiers in Psychology,FP_6,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,2006-04-15,https://doi.org/10.3389/fpsyg.2014.00539,2,yes,laboratoryCrossover,U,https://www.frontiersin.org/research-topics/1461/replication-attempts-of-important-results-in-the-study-of-cognition
+Frontiers in Psychology,FP_7,yes,NA,yes,no,https://osf.io/p2qfv/,yes,no,?,yes,?,yes,7/28/14,https://doi.org/10.3389/fpsyg.2014.00786,1,yes,laboratoryIndependentGroups,P,https://www.frontiersin.org/research-topics/1461/replication-attempts-of-important-results-in-the-study-of-cognition
+Frontiers in Psychology,FP_8,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,2009-10-14,https://doi.org/10.3389/fpsyg.2014.00987,6,yes,laboratoryCrossover,U,https://www.frontiersin.org/research-topics/1461/replication-attempts-of-important-results-in-the-study-of-cognition
+Frontiers in Psychology,FP_9,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,3/31/14,https://doi.org/10.3389/fpsyg.2014.00259,1,yes,laboratoryCrossover,P,https://www.frontiersin.org/research-topics/1461/replication-attempts-of-important-results-in-the-study-of-cognition
+Frontiers in Psychology,FP_10,yes,NA,yes,no,https://osf.io/vnhrm/,OSF timestamp only,no,?,yes,?,yes,9/16/14,https://doi.org/10.3389/fpsyg.2014.01035,1,yes,laboratoryIndependentGroups,P,https://www.frontiersin.org/research-topics/1461/replication-attempts-of-important-results-in-the-study-of-cognition
+Frontiers in Psychology,FP_11,yes,NA,yes,no,https://doi.org/10.3389/fpsyg.2014.00442,published,no,?,yes,?,yes,2006-08-15,https://doi.org/10.3389/fpsyg.2015.00672,1,yes,laboratoryCrossover,RR,NA
+Frontiers in Psychology,FP_12,yes,NA,yes,no,https://osf.io/p3isc/,OSF timestamp only,no,?,yes,?,yes,4/24/15,https://doi.org/10.3389/fpsyg.2015.00494,1,yes,laboratoryIndependentGroups,P,https://www.frontiersin.org/research-topics/1461/replication-attempts-of-important-results-in-the-study-of-cognition
+Social Psychology,SP_1,yes,NA,yes,no,https://osf.io/3cmz4/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000189,3,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000192
+Social Psychology,SP_2,yes,NA,yes,no,https://osf.io/seqgd/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000191,4,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000193
+Social Psychology,SP_3,yes,NA,yes,no,https://osf.io/fsadm/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000190,2,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000194
+Social Psychology,SP_4,yes,NA,yes,no,https://osf.io/5itqa/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000184,1,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000195
+Social Psychology,SP_5,yes,NA,yes,no,https://osf.io/hqvmc/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000185,2,yes,laboratoryIndependentGroups,RR,https://doi.org/10.1027/1864-9335/a000196
+Social Psychology,SP_6,yes,NA,yes,no,http://osf.io/zwrxc/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000186,2,yes,laboratoryCrossover,P,https://doi.org/10.1027/1864-9335/a000197
+Social Psychology,SP_7,yes,NA,yes,no,https://osf.io/tv8ai/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000183,1,yes,laboratoryCrossover,P,https://doi.org/10.1027/1864-9335/a000198
+Social Psychology,SP_8,yes,NA,yes,no,http://osf.io/z6e8j,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000182,3,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000199
+Social Psychology,SP_9,yes,NA,yes,no,http://osf.io/project/aBEsQ/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000178,13,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000200
+Social Psychology,SP_10,yes,NA,yes,no,https://osf.io/gjt37/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000187,3,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000201
+Social Psychology,SP_11,yes,NA,yes,no,https://osf.io/6wxgf/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000181,1,yes,survey,P,https://doi.org/10.1027/1864-9335/a000202
+Social Psychology,SP_12,yes,NA,yes,no,http://osf.io/s92i4/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000180,1,yes,laboratoryCrossover,P,https://doi.org/10.1027/1864-9335/a000203
+Social Psychology,SP_13,yes,NA,yes,no,https://osf.io/vyacr/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000188,4,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000204
+Social Psychology,SP_14,yes,NA,yes,no,http://osf.io/b9pkj/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000193,1,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000204
+Social Psychology,SP_15,yes,NA,yes,no,http://osf.io/r6idy/,yes,no,?,yes,?,yes,2001-01-14,http://dx.doi.org/10.1027/1864-9335/a000179,1,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000205
+Perspectives on Psychological Science,PPS_1,yes,NA,yes,no,https://osf.io/ybeur/,yes,no,?,yes,?,yes,9/17/14,https://doi.org/10.1177/1745691614545653,2,yes,laboratoryIndependentGroups,RR,NA
+Perspectives on Psychological Science,PPS_2,yes,NA,yes,no,https://osf.io/d3mw4/,yes,no,?,yes,?,yes,7/27/16,https://doi.org/10.1177/1745691615605826,1,yes,laboratoryIndependentGroups,RR,NA
+Perspectives on Psychological Science,PPS_3,yes,NA,yes,no,https://osf.io/jymhe/,yes,no,?,yes,?,yes,7/29/16,https://doi.org/10.1177/1745691616652873,1,yes,laboratoryIndependentGroups,RR,NA
+Perspectives on Psychological Science,PPS_4,yes,NA,yes,no,https://osf.io/pkd65/,yes,no,?,yes,?,yes,10/26/16,https://doi.org/10.1177/1745691616674458,1,yes,laboratoryIndependentGroups,RR,NA
+Perspectives on Psychological Science,PPS_5,yes,NA,yes,no,https://osf.io/s3hfr/,OSF timestamp only,no,?,yes,?,yes,9/29/16,https://doi.org/10.1177/1745691616664694,1,yes,laboratoryIndependentGroups,RR,NA
+Perspectives on Psychological Science,PPS_6,yes,NA,yes,no,https://osf.io/scu2f/,OSF timestamp only,no,?,yes,?,yes,2003-01-17,https://doi.org/10.1177/1745691617693624,1,yes,laboratoryIndependentGroups,RR,NA
+Psychological Science,PS_1,yes,NA,yes,yes,https://osf.io/4bjw5/,OSF timestamp only,no,?,yes,?,yes,2008-09-17,https://doi.org/10.1177/0956797617719730,1,yes,laboratoryCrossover,P,https://doi.org/10.1177/0956797617718802
+Drug and Alcohol Dependence,DAD_1,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,9/20/17,https://doi.org/10.1016/j.drugalcdep.2017.08.022,1,no,laboratoryCrossover,RR,NA
+Journal of Research in Personality,JRP_1,yes,NA,yes,no,https://osf.io/fjqtu/,yes,no,?,yes,?,yes,10/28/17,https://doi.org/10.1016/j.jrp.2017.10.005,1,no,survey,RR,NA
+Journal of Research in Personality,JRP_2,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,2002-04-18,https://doi.org/10.1016/j.jrp.2018.01.002,1,no,observational,RR,NA
+Journal of Research in Personality,JRP_3,no,noReasonProvided,no,no,NA,NA,no,?,yes,?,yes,2001-02-18,https://doi.org/10.1016/j.jrp.2017.12.003,1,no,laboratoryIndependentGroups,RR,NA
+Cognition and Emotion,CE_1,yes,NA,yes,no,https://osf.io/cm2sj,yes,no,?,yes,?,yes,1/31/18,https://doi.org/10.1080/02699931.2018.1429389,2,yes,laboratoryIndependentGroups,RR,NA
+Journal of Accounting Research,JAR_1,yes,NA,yes,no,https://research.chicagobooth.edu/arc/journal-of-accounting-research/online-supplements,no,no,?,yes,?,yes,1/22/18,https://doi.org/10.1111/1475-679X.12198,1,no,fieldIndependentGroups,RR,NA
+Journal of Accounting Research,JAR_2,yes,NA,yes,no,https://research.chicagobooth.edu/arc/journal-of-accounting-research/online-supplements,no,no,?,yes,?,yes,2002-07-18,https://doi.org/10.1111/1475-679X.12203,1,no,observational,RR,NA
+Journal of Accounting Research,JAR_3,yes,NA,yes,no,https://research.chicagobooth.edu/arc/journal-of-accounting-research/online-supplements,no,no,?,yes,?,yes,1/30/18,https://doi.org/10.1111/1475-679X.12201,1,no,observational,RR,NA
+Journal of Accounting Research,JAR_4,yes,NA,yes,no,https://research.chicagobooth.edu/arc/journal-of-accounting-research/online-supplements,no,no,?,yes,?,yes,2002-03-18,https://doi.org/10.1111/1475-679X.12202,1,no,fieldIndependentGroups,RR,NA
+Journal of Accounting Research,JAR_5,yes,NA,yes,no,https://research.chicagobooth.edu/arc/journal-of-accounting-research/online-supplements,no,no,?,yes,?,yes,1/24/18,https://doi.org/10.1111/1475-679X.12199,1,no,fieldIndependentGroups,RR,NA
+Journal of Accounting Research,JAR_6,yes,NA,yes,no,https://research.chicagobooth.edu/arc/journal-of-accounting-research/online-supplements,no,no,?,yes,?,yes,1/23/18,https://doi.org/10.1111/1475-679X.12200,1,no,observational,RR,NA
+Journal of Accounting Research,JAR_7,yes,NA,yes,no,https://research.chicagobooth.edu/arc/journal-of-accounting-research/online-supplements,no,no,?,yes,?,yes,1/18/18,https://doi.org/10.1111/1475-679X.12197,1,no,laboratoryIndependentGroups,RR,NA

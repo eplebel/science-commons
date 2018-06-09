@@ -2,8 +2,7 @@ d<-http://www.crossref.org/openurl/?pid=etienne.lebel@gmail.com&format=unixref&i
 
 
 install.packages("rcrossref")
-load(rcrossref)
-
+require(rcrossref)
 
 cr_cn(dois = "10.1126/science.169.3946.635", format = "text", style = "apa")
 
