@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <meta name="google-site-verification" content="7CrO9Y_velY8TjF6s8CWKB1s2S8TGRdQ8NoZ-gHPDE0" />
   <meta http-equiv="Cache-control" content="public">
-  <title itemprop='name'>Curate Science - Crowdsourcing the Credibility of Empirical Research.</title>
+  <title itemprop='name'>Curate Science - Crowdsourcing the Transparency of Empirical Research.</title>
   <meta name="description" content="Curate Science is a platform to crowdsource the credibility of scientific research by curating its transparency, analytic reproducibility, analytic robustness, and replicability." />
   <meta name="keywords" content="replication, replications, direct replication, conceptual replication, replicability, generalizability, analytic reproducibility, analytic robustness, research credibility, credibility of findings, sufficient transparency, open science, sufficient falsifiability, falsification, cumulative knowledge" />
   <!--links to CSS files-->
@@ -25,7 +25,9 @@
 	
   
   <!--others-->
-  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!--<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />-->
+  <link rel="shortcut icon" type="image/x-icon" href="logos/sprite-icons/CS-icon-dark-blue.png"/>
+  
 
   <script type="text/javascript">
     <!--$(document).ready(function () {
@@ -104,7 +106,7 @@
 	
 	td.center { text-align:center;}
 	td.right { text-align:right;}
-	td { line-height: 1.25em;
+	td { line-height: 1.12em;
 		 padding: 0em;
 		 border: 0px dashed black; }
 	#some-element {
@@ -176,34 +178,18 @@
 	p span.displaynone { display:none; }
 	
 	.label-info-teal {
-	  opacity: 0.60;
-	  filter: alpha(opacity=60); /* For IE8 and earlier */
 	  background-color: #00A388;
-	  color: black;
 	}
 	.label-info-brown {
-	  opacity: 0.60;
-	  filter: alpha(opacity=60); /* For IE8 and earlier */
 	  background-color: #996633;
-	  color: black;
 	}
 	.label-info-purple {
 	  background-color: #9b59b6;
-	  opacity: 0.60;
-	  filter: alpha(opacity=60); /* For IE8 and earlier */
-	  color: black;
 	}
 	.label-info-red {
 	  background-color: #e74c3c;
-	  opacity: 0.60;
-	  filter: alpha(opacity=60); /* For IE8 and earlier */
-	  color: black;
 	}
-	.label-default {
-	  opacity: 0.60;
-	  filter: alpha(opacity=60); /* For IE8 and earlier */
-	  color: black;
-	}
+	.label-default {}
 	.badge-repnum{
 		padding-left:4px;
 		padding-right:4px;
@@ -221,10 +207,13 @@
 		font-size:10px;
 		line-height:10px;
 		background-color:white }
+	.label {
+		opacity:.55;
+		filter: alpha(opacity=50); /* For IE8 and earlier */
+		color:black;}
+		
 	.center-pills { display: inline-block; }
-	
 	a.kinda-link:hover { cursor: pointer; }
-	
 		
 	.popUpStyle {
 		font-size:13px;
@@ -345,6 +334,13 @@
 	.transparent {
 		opacity: 0.60;
 		filter: alpha(opacity=60); /* For IE8 and earlier */ }
+	.code-icon {
+		opacity: .45;
+		margin-top:2px;	}
+	
+	h4 {margin-top:12px;
+		margin-bottom:0px;
+		}
 	
 	</style>
   <style>
@@ -365,12 +361,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <a class="brand brand-appland" href="#" style="padding-top:0px;padding-bottom:0px;">
-              <img alt="Curate Science" src="logos/navbar-icon-smaller.png" />
+              <h4>Curate Science<img src="logos/sprite-icons/CS-icon-light-blue.png" style="margin-left:-1px;width:22px;margin-top:-8px;font-style:normal;"></h4>
             </a>
           </a>
         <div class="nav-collapse" style="text-transform:none;">
           <ul class="nav navbar-nav" style="text-transform:none;">
-            <li><a class="brand brand-appland" href="http://curatescience.org"><img alt="Navbar icon" src="logos/navbar-icon-smaller.png" /></a></li>
+            <li><a class="brand brand-appland" href="http://curatescience.org"><h4>Curate Science<img src="logos/sprite-icons/CS-icon-light-blue.png" style="margin-left:-1px;width:22px;margin-top:-8px;"></h4></a></li>
 			<li><a href="articles.html">Articles</a></li>
 			<li><a href="http://curatescience.org/#replications-section">Replications</a></li>
 			<li><a href="http://curatescience.org/#about-section">About</a></li>
@@ -390,10 +386,9 @@
 		<div class="container" style="padding: 0px 0 40px;">
 			<div class="wrapper" style="max-width:900px;margin: 0 auto;">		
 				<div id="search-for-transparent-studies-section"></div>
-				<h4 style="margin-bottom:5px;text-align:center;margin-top:30px;">Search for Transparently Reported Studies</h4>
 				
-				<p style="font-size:16px;line-height:1.2em;margin-bottom:20px;">
-				Science requires <i><u>transparency</u></i>. Curate Science is a crowdsourcing platform to curate the transparency of empirical studies. Explore our initial interface below (e.g., check the "open/public data" checkbox to show only articles with public data; click on/hover over transparency badges to interact with study content).
+				<p style="font-size:16px;line-height:1.2em;margin-top:20px;margin-bottom:20px;">
+				Science requires <i><u>transparency</u></i>. Curate Science is a crowdsourcing platform for researchers to organize/curate the <i>transparency</i> of empirical studies. Explore our initial interface below (e.g., tick the "open/public data" checkbox to show only articles with public data; click on/hover over transparency badges).
 				</p>
 			</div> <!-- max-width:900px; wrapper -->
 			<!--</div> <!-- wrapper div-->
@@ -405,26 +400,26 @@
 							<tr>
 								<td style="text-align:right;vertical-align:top;padding-right:3px;">Show only articles with:</td>
 								<td style="line-height:1.2em;">
-									<input onchange="filterRS()" type="checkbox" name="rs" value="rs">
+									<input onchange="filterRS()" type="checkbox" name="rs" value="rs" style="margin-top:1px;">
 										<img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent" title="Study complies with relevant reporting standard and/or includes a methodological disclosure statement."> Reporting standard/Methodological disclosure statement <br>
-									<input onchange="filterOM()" type="checkbox" name="om" value="om" >
+									<input onchange="filterOM()" type="checkbox" name="om" value="om" style="margin-top:1px;" >
 										<img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent" title="Study materials required to conduct an independent replication are available at a public repository."> Open/public study materials <br>
-									<input onchange="filterPREREG()" type="checkbox" name="prereg" value="prereg" >
+									<input onchange="filterPREREG()" type="checkbox" name="prereg" value="prereg" style="margin-top:1px;">
 										<img src="logos/sprite-icons/preregistered-available.png" class="shrunk-16 transparent" title="Study design and analysis plans were preregistered prior to data collection (independently or via Registered Report format)."> Preregistered study design/<span class="label label-info-red"><a href="http://orca.cf.ac.uk/45177/1/Chambers_Cortex_2013b_GreenOA.pdf" target="_blank" class="black" title="Study design and analysis plans were peer-reviewed and preregistered prior to data collection.">Registered Report</a></span> format<br>
-									<input onchange="filterOD()" type="checkbox" name="od" value="od" >
+									<input onchange="filterOD()" type="checkbox" name="od" value="od" style="margin-top:1px;" >
 										<img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent" title="Study data (raw or transformed) are available at a public repository."> Open/public data <br>
-									<input onchange="filterRC()" type="checkbox" name="rc" value="rc" >
-										<img src="logos/sprite-icons/reproducible-code.png" class="shrunk-16 transparent" title="Code/syntax to reproduce study results are available at a public repository or via a public Code Ocean computational capsule."> Reproducible code/Code Ocean<img src="logos/sprite-icons/code-ocean.png" class="shrunk-16 transparent" title="Code/syntax to reproduce study results are available in a public Code Ocean computational capsule."> computational capsule
+									<input onchange="filterRC()" type="checkbox" name="rc" value="rc" style="margin-top:1px;" >
+										<img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon' title="Code/syntax to reproduce study results are available at a public repository or via a public Code Ocean computational capsule."> Reproducible code/Code Ocean<img src="logos/sprite-icons/code-ocean.png" class="shrunk-16 transparent" title="Code/syntax to reproduce study results are available in a public Code Ocean computational capsule."> computational capsule
 								</td>
 							</tr>
 							<tr>
 								<td style="text-align:right;padding-right:3px;padding-top:2px;line-height:1em;">Article type:</td>
 								<td style="padding-top:5px;line-height:1em;">
-									<input onchange="filterAT()" type="checkbox" name="articleType" value="orig" style="margin-top:-2px;">
+									<input onchange="filterAT()" type="checkbox" name="articleType" value="orig" style="margin-top:1px;">
 										Original
-									<input onchange="filterAT()" type="checkbox" name="articleType" value="rep" style="margin-top:-2px;margin-left:10px;">
+									<input onchange="filterAT()" type="checkbox" name="articleType" value="rep" style="margin-top:1px;margin-left:10px;">
 										<span class="label label-info-brown" title="Article reports at least 1 replication of a published effect.">Replication</span>
-									<input onchange="filterAT()" type="checkbox" name="articleType" value="meta" style="margin-top:-2px;margin-left:10px;">
+									<input onchange="filterAT()" type="checkbox" name="articleType" value="meta" style="margin-top:1px;margin-left:10px;">
 										Meta-analysis
 								</td>
 							</tr>
@@ -784,7 +779,7 @@
 									</span>
 								</div>
 								<a href="https://osf.io/wb6vc/" target="_blank" title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
-								<a href="https://codeocean.com/2018/04/19/code-for-colon-self-esteem-relationship-threat-and-dependency-regulation-colon-independent-replication-of-murray-rose-bellavia-holmes-and-kusche-lpar-2002-rpar-study-3/code" target="_blank" title="Go to reproducible code files"><img src="logos/sprite-icons/reproducible-code.png" class="shrunk-16 transparent"></a>
+								<a href="https://codeocean.com/2018/04/19/code-for-colon-self-esteem-relationship-threat-and-dependency-regulation-colon-independent-replication-of-murray-rose-bellavia-holmes-and-kusche-lpar-2002-rpar-study-3/code" target="_blank" title="Go to reproducible code files"><img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
 								<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/code-ocean.png" class="shrunk-16 transparent">
 									<span class="toDisplayFullPagePopUp popUpStyle">
 										<div style="min-width:850px;white-space:normal;">
@@ -828,7 +823,7 @@
 									<a href="https://osf.io/dzwny/" target="_blank" title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/tksjc/" target="_blank" title="Go to preregistered study protocol"><img src="logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/hupve/" target="_blank" title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
-									<a href="https://osf.io/3ya7i/" target="_blank" title="Go to reproducible code files"><img src="logos/sprite-icons/reproducible-code.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/3ya7i/" target="_blank" title="Go to reproducible code files"><img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
 									<br>
 									Study 2
 									<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
@@ -846,7 +841,7 @@
 									<a href="https://osf.io/dzwny/" target="_blank" title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/tksjc/" target="_blank" title="Go to preregistered study protocol"><img src="logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/8ksh3/" target="_blank" title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
-									<a href="https://osf.io/3ya7i/" target="_blank" title="Go to reproducible code files"><img src="logos/sprite-icons/reproducible-code.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/3ya7i/" target="_blank" title="Go to reproducible code files"><img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
 								</div>
 								
 							</td>
@@ -883,7 +878,7 @@
 									<a href="https://osf.io/nrkej/" target="_blank" title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/6xqju/" target="_blank" title="Go to preregistered study protocol"><img src="logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/w648b/" target="_blank" title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
-									<a href="https://osf.io/e9f2q/" target="_blank" title="Go to reproducible code files"><img src="logos/sprite-icons/reproducible-code.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/e9f2q/" target="_blank" title="Go to reproducible code files"><img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
 									<br>
 									Study 2
 									<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
@@ -901,7 +896,7 @@
 									<a href="https://osf.io/nrkej/" target="_blank" title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/6xqju/" target="_blank" title="Go to preregistered study protocol"><img src="logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/rqhjk/" target="_blank" title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
-									<a href="https://osf.io/zusm3/" target="_blank" title="Go to reproducible code files"><img src="logos/sprite-icons/reproducible-code.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/zusm3/" target="_blank" title="Go to reproducible code files"><img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
 									<br>
 									Study 3
 									<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
@@ -919,7 +914,7 @@
 									<a href="https://osf.io/f56a8/" target="_blank" title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/6xqju/" target="_blank" title="Go to preregistered study protocol"><img src="logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/f4n7b/" target="_blank" title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
-									<a href="https://osf.io/k3hyj/" target="_blank" title="Go to reproducible code files"><img src="logos/sprite-icons/reproducible-code.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/k3hyj/" target="_blank" title="Go to reproducible code files"><img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
 								</div>
 							
 							</td>
@@ -956,7 +951,7 @@
 									<a href="https://osf.io/kizyn/" target="_blank" title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/kizyn/" target="_blank" title="Go to preregistered study protocol"><img src="logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/suza9/" target="_blank" title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
-									<a href="https://osf.io/pu8as/" target="_blank" title="Go to reproducible code files"><img src="logos/sprite-icons/reproducible-code.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/pu8as/" target="_blank" title="Go to reproducible code files"><img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
 									<br>
 									Study 2
 									<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
@@ -974,7 +969,7 @@
 									<a href="https://osf.io/5kyjt/" target="_blank" title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/5kyjt/" target="_blank" title="Go to preregistered study protocol"><img src="logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
 									<a href="https://osf.io/mgq8f/" target="_blank" title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
-									<a href="https://osf.io/d3zvh/" target="_blank" title="Go to reproducible code files"><img src="logos/sprite-icons/reproducible-code.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/d3zvh/" target="_blank" title="Go to reproducible code files"><img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
 								</div>						
 							
 							</td>
@@ -1153,7 +1148,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a title='Preregistration information is not available'>
                     <img src='logos/sprite-icons/preregistered-unavailable.png' class='shrunk-16'></a>  <a href='https://osf.io/5s8eu/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/y8tf3/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Psychological Science</i></td>
   <td><a href='https://dx.doi.org/10.1177/0956797618760197' target='_blank' class='doi-dimmed grey'>10.1177/0956797618760197</a></td>
   <td>rs</td>
@@ -1173,7 +1168,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/y74g6/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/y74g6/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Attention, Perception, & Psychophysics</i></td>
   <td><a href='https://dx.doi.org/10.3758/s13414-017-1304-y' target='_blank' class='doi-dimmed grey'>10.3758/s13414-017-1304-y</a></td>
   <td></td>
@@ -1192,7 +1187,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                 <img src='logos/sprite-icons/materials-unavailable.png' class='shrunk-16'></a>  <a title='Preregistration information is not available'>
                     <img src='logos/sprite-icons/preregistered-unavailable.png' class='shrunk-16'></a>  <a href='https://codeocean.com/2017/11/29/who-gets-the-credit-quest-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/code' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://codeocean.com/2017/11/29/who-gets-the-credit-quest-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/code' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a>  <a href='https://codeocean.com/2017/11/29/who-gets-the-credit-quest-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/code' target='_blank' title='Go to computational container'>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>  <a href='https://codeocean.com/2017/11/29/who-gets-the-credit-quest-legislative-responsiveness-and-evaluations-of-members-parties-and-the-us-congress/code' target='_blank' title='Go to computational container'>
                        <img src='logos/sprite-icons/code-ocean.png' class='shrunk-16 transparent'></a> </td>
   <td><i>Political Science Research and Methods</i></td>
   <td><a href='https://dx.doi.org/10.1017/psrm.2015.83' target='_blank' class='doi-dimmed grey'>10.1017/psrm.2015.83</a></td>
@@ -1213,7 +1208,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                 <img src='logos/sprite-icons/materials-unavailable.png' class='shrunk-16'></a>  <a title='Preregistration information is not available'>
                     <img src='logos/sprite-icons/preregistered-unavailable.png' class='shrunk-16'></a>  <a href='https://zenodo.org/record/17606#.WtwCJohuZEY' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://codeocean.com/2017/04/19/reanalysis-of-mouse-encode-comparative-gene-expression-data/code' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a>  <a href='https://codeocean.com/2017/04/19/reanalysis-of-mouse-encode-comparative-gene-expression-data/code' target='_blank' title='Go to computational container'>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>  <a href='https://codeocean.com/2017/04/19/reanalysis-of-mouse-encode-comparative-gene-expression-data/code' target='_blank' title='Go to computational container'>
                        <img src='logos/sprite-icons/code-ocean.png' class='shrunk-16 transparent'></a> </td>
   <td><i>F1000Research</i></td>
   <td><a href='https://dx.doi.org/10.12688/f1000research.6536.1' target='_blank' class='doi-dimmed grey'>10.12688/f1000research.6536.1</a></td>
@@ -1295,7 +1290,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/4nsjb/register/565fb3678c5e4a66b5582f67' target='_blank' title='Go to preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/xw7d2/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/krwxn/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Psychological Science</i></td>
   <td><a href='https://dx.doi.org/10.1177/0956797618761660' target='_blank' class='doi-dimmed grey'>10.1177/0956797618761660</a></td>
   <td>rs</td>
@@ -1387,7 +1382,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                 <img src='logos/sprite-icons/materials-unavailable.png' class='shrunk-16'></a>  <a title='Registered Report preregistered study protocol not (yet) publicly available'>
                     <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://data.mendeley.com/datasets/4676n2pdrf/3/files/77004ef3-3745-4a08-92d2-fda57a1157c5/kopiskebrunohesseschenkfranz-CortexRR.zip?dl=1' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://data.mendeley.com/datasets/4676n2pdrf/3' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Cortex</i></td>
   <td><a href='https://dx.doi.org/10.1016/j.cortex.2016.03.020' target='_blank' class='doi-dimmed grey'>10.1016/j.cortex.2016.03.020</a></td>
   <td></td>
@@ -1445,7 +1440,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/z2yay/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/rq7he/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Royal Society Open Science</i></td>
   <td><a href='https://dx.doi.org/10.1098/rsos.160431' target='_blank' class='doi-dimmed grey'>10.1098/rsos.160431</a></td>
   <td></td>
@@ -1505,7 +1500,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/v2kws/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/v2kws/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Royal Society Open Science</i></td>
   <td><a href='https://dx.doi.org/10.1098/rsos.171678' target='_blank' class='doi-dimmed grey'>10.1098/rsos.171678</a></td>
   <td></td>
@@ -1526,7 +1521,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://zenodo.org/record/1006726#.WwO9DIiFNEY' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://zenodo.org/record/1006730#.WwO9DIiFNEY' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Royal Society Open Science</i></td>
   <td><a href='https://dx.doi.org/10.1098/rsos.170543' target='_blank' class='doi-dimmed grey'>10.1098/rsos.170543</a></td>
   <td></td>
@@ -1601,7 +1596,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/8l4ea/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/8l4ea/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>eLife</i></td>
   <td><a href='https://dx.doi.org/10.7554/eLife.26030.001' target='_blank' class='doi-dimmed grey'>10.7554/eLife.26030.001</a></td>
   <td></td>
@@ -1622,7 +1617,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/hcqqy/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/hcqqy/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>eLife</i></td>
   <td><a href='https://dx.doi.org/10.7554/eLife.25306.001' target='_blank' class='doi-dimmed grey'>10.7554/eLife.25306.001</a></td>
   <td></td>
@@ -1643,7 +1638,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/pnvtd/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/pnvtd/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>eLife</i></td>
   <td><a href='https://dx.doi.org/10.7554/eLife.21253.001' target='_blank' class='doi-dimmed grey'>10.7554/eLife.21253.001</a></td>
   <td></td>
@@ -1664,7 +1659,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/xu1g2/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/xu1g2/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>eLife</i></td>
   <td><a href='https://dx.doi.org/10.7554/eLife.17584.001' target='_blank' class='doi-dimmed grey'>10.7554/eLife.17584.001</a></td>
   <td></td>
@@ -1685,7 +1680,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/hxrmm/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/hxrmm/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>eLife</i></td>
   <td><a href='https://dx.doi.org/10.7554/eLife.17044.001' target='_blank' class='doi-dimmed grey'>10.7554/eLife.17044.001</a></td>
   <td></td>
@@ -1706,7 +1701,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/43jau/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/y4q5r/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>eLife</i></td>
   <td><a href='https://dx.doi.org/10.7554/eLife.18173.001' target='_blank' class='doi-dimmed grey'>10.7554/eLife.18173.001</a></td>
   <td></td>
@@ -1728,7 +1723,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/jvpnw/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/jvpnw/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>eLife</i></td>
   <td><a href='https://dx.doi.org/10.7554/eLife.21634.001' target='_blank' class='doi-dimmed grey'>10.7554/eLife.21634.001</a></td>
   <td></td>
@@ -1750,7 +1745,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/nbryi/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/nbryi/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>eLife</i></td>
   <td><a href='https://dx.doi.org/10.7554/eLife.29747' target='_blank' class='doi-dimmed grey'>10.7554/eLife.29747</a></td>
   <td></td>
@@ -1772,7 +1767,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/mokeb/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/mokeb/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>eLife</i></td>
   <td><a href='https://dx.doi.org/10.7554/eLife.30274' target='_blank' class='doi-dimmed grey'>10.7554/eLife.30274</a></td>
   <td></td>
@@ -1849,7 +1844,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/whuqf/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/xpb7t/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Journal of Media Psychology</i></td>
   <td><a href='https://dx.doi.org/10.1027/1864-1105/a000210' target='_blank' class='doi-dimmed grey'>10.1027/1864-1105/a000210</a></td>
   <td></td>
@@ -1870,7 +1865,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/kad2f/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/7cjd6/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Journal of Media Psychology</i></td>
   <td><a href='https://dx.doi.org/10.1027/1864-1105/a000209' target='_blank' class='doi-dimmed grey'>10.1027/1864-1105/a000209</a></td>
   <td></td>
@@ -1889,7 +1884,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a title='Preregistration information is not available'>
                     <img src='logos/sprite-icons/preregistered-unavailable.png' class='shrunk-16'></a>  <a href='https://osf.io/ja3yx/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/qxafd/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Meta-Psychology</i></td>
   <td></td>
   <td></td>
@@ -1920,7 +1915,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                 <img src='logos/sprite-icons/materials-unavailable.png' class='shrunk-16'></a>  <a href='https://osf.io/vp8ck/register/564d31db8c5e4a7c9694b2be' target='_blank' title='Go to preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/zmafr/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/8p5sr/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Psychological Science</i></td>
   <td><a href='https://dx.doi.org/10.1177/0956797616649604' target='_blank' class='doi-dimmed grey'>10.1177/0956797616649604</a></td>
   <td>rs</td>
@@ -1952,7 +1947,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/dr42m/' target='_blank' title='Go to preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/g3sca/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/g3sca/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Psychological Science</i></td>
   <td><a href='https://dx.doi.org/10.1177/0956797614553121' target='_blank' class='doi-dimmed grey'>10.1177/0956797614553121</a></td>
   <td>rs</td>
@@ -2075,7 +2070,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/arxvg/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/8zdqt/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Frontiers in Psychology</i></td>
   <td><a href='https://dx.doi.org/10.3389/fpsyg.2014.00786' target='_blank' class='doi-dimmed grey'>10.3389/fpsyg.2014.00786</a></td>
   <td></td>
@@ -2097,7 +2092,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/9n62e/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/9n62e/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Frontiers in Psychology</i></td>
   <td><a href='https://dx.doi.org/10.3389/fpsyg.2014.01035' target='_blank' class='doi-dimmed grey'>10.3389/fpsyg.2014.01035</a></td>
   <td></td>
@@ -2119,7 +2114,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/j8w4i/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/j8w4i/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Frontiers in Psychology</i></td>
   <td><a href='https://dx.doi.org/10.3389/fpsyg.2015.00672' target='_blank' class='doi-dimmed grey'>10.3389/fpsyg.2015.00672</a></td>
   <td></td>
@@ -2141,7 +2136,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/uszvx/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/uszvx/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Frontiers in Psychology</i></td>
   <td><a href='https://dx.doi.org/10.3389/fpsyg.2015.00494' target='_blank' class='doi-dimmed grey'>10.3389/fpsyg.2015.00494</a></td>
   <td></td>
@@ -2160,7 +2155,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                 <img src='logos/sprite-icons/materials-unavailable.png' class='shrunk-16'></a>  <a title='Registered Report preregistered study protocol not (yet) publicly available'>
                     <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/g85ep/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/g85ep/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Comprehensive Results in Social Psychology</i></td>
   <td><a href='https://dx.doi.org/10.1080/23743603.2017.1341178' target='_blank' class='doi-dimmed grey'>10.1080/23743603.2017.1341178</a></td>
   <td></td>
@@ -2181,7 +2176,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/hnef7/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/um26s/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Comprehensive Results in Social Psychology</i></td>
   <td><a href='https://dx.doi.org/10.1080/23743603.2017.1341186' target='_blank' class='doi-dimmed grey'>10.1080/23743603.2017.1341186</a></td>
   <td></td>
@@ -2243,7 +2238,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='http://www.openscienceframework.org/project/seqgd/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/bggzq/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Social Psychology</i></td>
   <td><a href='https://dx.doi.org/10.1027/1864-9335/a000191' target='_blank' class='doi-dimmed grey'>10.1027/1864-9335/a000191</a></td>
   <td></td>
@@ -2306,7 +2301,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/hr7vx/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/hr7vx/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Journal of Research in Personality</i></td>
   <td><a href='https://dx.doi.org/10.1016/j.jrp.2017.10.005' target='_blank' class='doi-dimmed grey'>10.1016/j.jrp.2017.10.005</a></td>
   <td></td>
@@ -2344,7 +2339,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/afsc6/' target='_blank' title='Go to preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/fb9hj/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/wdvpz/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Perception</i></td>
   <td><a href='https://dx.doi.org/10.1177/0301006617720831' target='_blank' class='doi-dimmed grey'>10.1177/0301006617720831</a></td>
   <td></td>
@@ -2364,7 +2359,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a title='Preregistration information is not available'>
                     <img src='logos/sprite-icons/preregistered-unavailable.png' class='shrunk-16'></a>  <a href='https://osf.io/a8g32/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/a8g32/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>PeerJ</i></td>
   <td><a href='https://dx.doi.org/10.7717/peerj.837' target='_blank' class='doi-dimmed grey'>10.7717/peerj.837</a></td>
   <td></td>
@@ -2428,7 +2423,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/nykh5/register/5771ca429ad5a1020de2872e' target='_blank' title='Go to preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/b94yx/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/b94yx/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Psychonomic Bulletin & Review</i></td>
   <td><a href='https://dx.doi.org/10.3758/s13423-018-1489-7' target='_blank' class='doi-dimmed grey'>10.3758/s13423-018-1489-7</a></td>
   <td></td>
@@ -2449,7 +2444,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                            title='Go to Registered Report preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://data.mendeley.com/datasets/b5grw3pz3r/1' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://data.mendeley.com/datasets/b5grw3pz3r/1' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Cortex</i></td>
   <td><a href='https://dx.doi.org/10.1016/j.cortex.2018.02.009' target='_blank' class='doi-dimmed grey'>10.1016/j.cortex.2018.02.009</a></td>
   <td></td>
@@ -2467,7 +2462,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a title='Preregistration information is not available'>
                     <img src='logos/sprite-icons/preregistered-unavailable.png' class='shrunk-16'></a>  <a href='https://osf.io/v72ca/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/v72ca/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>The Journal of Social Psychology</i></td>
   <td><a href='https://dx.doi.org/10.1080/00224545.2017.1341374' target='_blank' class='doi-dimmed grey'>10.1080/00224545.2017.1341374</a></td>
   <td></td>
@@ -2498,7 +2493,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                 <img src='logos/sprite-icons/materials-unavailable.png' class='shrunk-16'></a>  <a href='https://osf.io/658n7/' target='_blank' title='Go to preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/qzmh5/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/u6xwr/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Journal of Experimental Social Psychology</i></td>
   <td><a href='https://dx.doi.org/10.1016/j.jesp.2017.07.002' target='_blank' class='doi-dimmed grey'>10.1016/j.jesp.2017.07.002</a></td>
   <td>rs</td>
@@ -2529,7 +2524,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/5wej5/' target='_blank' title='Go to preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/2fzmt/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/kdm8c/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Management Science</i></td>
   <td></td>
   <td>rs</td>
@@ -2561,14 +2556,14 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
 								<tr>
 									<td>Babcock et al. (2017) Study 1 <a href='https://pdfs.semanticscholar.org/fd33/452b5529e4ca49a30239f1e787fdc4f628eb.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
 									<td class="center" style="font-size:11px;">replication of</td>
-									<td>Côté, Piff et al. (2013) Study 3 <a href='http://www-2.rotman.utoronto.ca/facbios/file/social%20class%20utilitarian%20reasoning%20JPSP.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a></td>
+									<td>Côté, Piff et al. (2013) Study 3 <a href='http://www-2.rotman.utoronto.ca/facbios/file/social%20class%20utilitarian%20reasoning%20JPSP.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
 									<td class="center">Very close</td>
 									<td class="center">Low empathy utilitarian effect</td>
 								</tr>
 								<tr>
 									<td>Babcock et al. (2017) Study 2 <a href='https://pdfs.semanticscholar.org/fd33/452b5529e4ca49a30239f1e787fdc4f628eb.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
 									<td class="center" style="font-size:11px;">replication of</td>
-									<td>Côté, Piff et al. (2013) Study 3 <a href='http://www-2.rotman.utoronto.ca/facbios/file/social%20class%20utilitarian%20reasoning%20JPSP.pdf' target='_blank' class='sprite sprite-pdf-icon-medium'></a></td>
+									<td>Côté, Piff et al. (2013) Study 3 <a href='http://www-2.rotman.utoronto.ca/facbios/file/social%20class%20utilitarian%20reasoning%20JPSP.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
 									<td class="center">Very close</td>
 									<td class="center">Low empathy utilitarian effect</td>
 								</tr>
@@ -2593,7 +2588,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/bbs5k/' target='_blank' title='Go to preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/sgjpy/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/sgjpy/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Scientific Data</i></td>
   <td><a href='https://dx.doi.org/10.1038/sdata.2016.129' target='_blank' class='doi-dimmed grey'>10.1038/sdata.2016.129</a></td>
   <td>rs</td>
@@ -2625,7 +2620,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/cmqa2/' target='_blank' title='Go to preregistered study protocol'>
                            <img src='logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/nqc8t/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/nqc8t/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Scientific Data</i></td>
   <td><a href='https://dx.doi.org/10.1038/sdata.2016.120' target='_blank' class='doi-dimmed grey'>10.1038/sdata.2016.120</a></td>
   <td>rs</td>
@@ -2644,7 +2639,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a title='Preregistration information is not available'>
                     <img src='logos/sprite-icons/preregistered-unavailable.png' class='shrunk-16'></a>  <a href='https://osf.io/q46ye/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/q46ye/' target='_blank' title='Go to reproducible code files'>
-                       <img src='logos/sprite-icons/reproducible-code.png' class='shrunk-16 transparent'></a> </td>
+                       <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> </td>
   <td><i>Evolutionary Psychology</i></td>
   <td><a href='https://dx.doi.org/10.1177/1474704918776748' target='_blank' class='doi-dimmed grey'>10.1177/1474704918776748</a></td>
   <td></td>
