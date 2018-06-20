@@ -1,11 +1,11 @@
 journal_full,id,protocolMadeAvailable,reasonForNoShare,public,duplicate,protocolLinkProvided,registered,timingsAvailable,Date of in principle acceptance,Have the authors submitted a full paper,Date of submission of full paper,Has the paper been published,Date of publication of full paper,linkToPaper,numberOfRegisteredStudies,replication,design,identifiesAsRR,editorialConfirmsRR
 International Journal of Psychophysiology,IJP_1,yes,NA,yes,no,https://osf.io/tn7j9/,OSF timestamp only,yes,5/19/17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
-Cortex,COR_1,yes,NA,no,no,NA,NA,yes,11/26/13,yes,8/19/14,yes,2/13/15,http://dx.doi.org/10.1016/j.cortex.2014.12.019,2,no,laboratoryCrossover,RR,NA
-Cortex,COR_2,yes,NA,no,no,NA,NA,yes,2002-02-13,yes,2009-01-15,yes,3/31/16,http://dx.doi.org/10.1016/j.cortex.2016.03.004,1,no,laboratoryCrossover,RR,NA
-Cortex,COR_3,yes,NA,no,no,NA,NA,yes,2005-07-14,yes,2002-03-15,yes,4/17/15,http://dx.doi.org/10.1016/j.cortex.2015.03.010,1,no,laboratoryCrossover,RR,NA
-Cortex,COR_4,yes,NA,no,no,NA,NA,yes,10/21/14,yes,2005-05-15,yes,2002-06-16,http://dx.doi.org/10.1016/j.cortex.2016.01.006,1,no,laboratoryCrossover,RR,NA
-Cortex,COR_5,yes,NA,no,no,NA,NA,yes,2009-02-14,yes,9/29/15,yes,2004-06-16,http://dx.doi.org/10.1016/j.cortex.2016.03.020,1,no,laboratoryCrossover,RR,NA
-Cortex,COR_6,yes,NA,no,no,NA,NA,yes,1/30/15,yes,1/20/16,yes,4/15/16,http://dx.doi.org/10.1016/j.cortex.2016.03.019,1,no,laboratoryCrossover,RR,NA
+Cortex,COR_1,yes,NA,no,no,NA,NA,yes,11/26/13,yes,8/19/14,yes,2/13/15,https://doi.org/10.1016/j.cortex.2014.12.019,2,no,laboratoryCrossover,RR,NA
+Cortex,COR_2,yes,NA,no,no,NA,NA,yes,2002-02-13,yes,2009-01-15,yes,3/31/16,https://doi.org/10.1016/j.cortex.2016.03.004,1,no,laboratoryCrossover,RR,NA
+Cortex,COR_3,yes,NA,no,no,NA,NA,yes,2005-07-14,yes,2002-03-15,yes,4/17/15,https://doi.org/10.1016/j.cortex.2015.03.010,1,no,laboratoryCrossover,RR,NA
+Cortex,COR_4,yes,NA,no,no,NA,NA,yes,10/21/14,yes,2005-05-15,yes,2002-06-16,https://doi.org/10.1016/j.cortex.2016.01.006,1,no,laboratoryCrossover,RR,NA
+Cortex,COR_5,yes,NA,no,no,NA,NA,yes,2009-02-14,yes,9/29/15,yes,2004-06-16,https://doi.org/10.1016/j.cortex.2016.03.020,1,no,laboratoryCrossover,RR,NA
+Cortex,COR_6,yes,NA,no,no,NA,NA,yes,1/30/15,yes,1/20/16,yes,4/15/16,https://doi.org/10.1016/j.cortex.2016.03.019,1,no,laboratoryCrossover,RR,NA
 Cortex,COR_7,no,authorConfidentiality,no,no,NA,NA,yes,6/18/15,yes,6/28/17,yes,1/31/18,https://doi.org/10.1016/j.cortex.2018.01.001,2,no,laboratoryCrossover,RR,NA
 Cortex,COR_8,no,authorConfidentiality,no,no,NA,NA,yes,9/14/16,no,NA,no,NA,NA,NA,NA,NA,NA,NA
 Cortex,COR_9,no,authorConfidentiality,no,no,NA,NA,yes,1/24/17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
@@ -17,7 +17,7 @@ Cortex,COR_14,no,authorConfidentiality,no,no,NA,NA,yes,2/24/17,no,NA,no,NA,NA,NA
 Cortex,COR_15,no,authorConfidentiality,no,no,NA,NA,yes,2006-02-17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
 Cognitive Research: Principles and Implications,CRPI_1,yes,NA,yes,no,https://osf.io/hzd5v/,OSF timestamp only,no,?,no,NA,no,NA,NA,NA,NA,NA,NA,NA
 European Journal of Neuroscience,EJN_1,no,authorConfidentiality,no,no,NA,NA,yes,4/25/17,no,NA,no,NA,NA,NA,NA,NA,NA,NA
-Royal Society Open Science,RSOS_1,yes,NA,yes,yes,https://osf.io/pzf2e/,yes,yes,2007-03-16,yes,2009-08-16,yes,11/23/16,https://dx.doi.org/10.1098/rsos.160431,2,yes,laboratoryIndependentGroups,RR,NA
+Royal Society Open Science,RSOS_1,yes,NA,yes,yes,https://osf.io/pzf2e/,yes,yes,2007-03-16,yes,2009-08-16,yes,11/23/16,https://doi.org/10.1098/rsos.160431,2,yes,laboratoryIndependentGroups,RR,NA
 Royal Society Open Science,RSOS_2,yes,authorConfidentiality,no,no,NA,NA,yes,2012-12-16,yes,NA,yes,2010-04-17, https://doi.org/10.1098/rsos.171172 ,1,no,observational,RR,NA
 Royal Society Open Science,RSOS_3,yes,authorConfidentiality,no,no,NA,NA,yes,3/14/17,yes,NA,yes,9/20/17,https://doi.org/10.1098/rsos.160935,1,no,laboratoryIndependentGroups,RR,NA
 Royal Society Open Science,RSOS_4,yes,authorConfidentiality,yes,no,https://osf.io/qbp7h/,OSF timestamp only,yes,2/22/17,yes,7/19/17,yes,2/21/18,https://doi.org/10.1098/rsos.171678,1,no,laboratoryCrossover,RR,NA
@@ -124,7 +124,7 @@ Social Psychology,SP_11,yes,NA,yes,no,https://osf.io/6wxgf/,yes,no,?,yes,?,yes,2
 Social Psychology,SP_12,yes,NA,yes,no,http://osf.io/s92i4/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000180,1,yes,laboratoryCrossover,P,https://doi.org/10.1027/1864-9335/a000203
 Social Psychology,SP_13,yes,NA,yes,no,https://osf.io/vyacr/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000188,4,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000204
 Social Psychology,SP_14,yes,NA,yes,no,http://osf.io/b9pkj/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000193,1,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000204
-Social Psychology,SP_15,yes,NA,yes,no,http://osf.io/r6idy/,yes,no,?,yes,?,yes,2001-01-14,http://dx.doi.org/10.1027/1864-9335/a000179,1,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000205
+Social Psychology,SP_15,yes,NA,yes,no,http://osf.io/r6idy/,yes,no,?,yes,?,yes,2001-01-14,https://doi.org/10.1027/1864-9335/a000179,1,yes,laboratoryIndependentGroups,P,https://doi.org/10.1027/1864-9335/a000205
 Perspectives on Psychological Science,PPS_1,yes,NA,yes,no,https://osf.io/ybeur/,yes,no,?,yes,?,yes,9/17/14,https://doi.org/10.1177/1745691614545653,2,yes,laboratoryIndependentGroups,RR,NA
 Perspectives on Psychological Science,PPS_2,yes,NA,yes,no,https://osf.io/d3mw4/,yes,no,?,yes,?,yes,7/27/16,https://doi.org/10.1177/1745691615605826,1,yes,laboratoryIndependentGroups,RR,NA
 Perspectives on Psychological Science,PPS_3,yes,NA,yes,no,https://osf.io/jymhe/,yes,no,?,yes,?,yes,7/29/16,https://doi.org/10.1177/1745691616652873,1,yes,laboratoryIndependentGroups,RR,NA

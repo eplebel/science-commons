@@ -141,7 +141,7 @@ RR.HTML <- function(rr, prereg.URL) {
 }
 DOI.HTML <- function(DOI) {
   if(toString(DOI) != "NA") {
-    return(HTML(paste0("<a href='https://dx.doi.org/", DOI,"' target='_blank'>",DOI,"</a>")))} #still not trimming correctly but link still works
+    return(HTML(paste0("<a href='https://doi.org/", DOI,"' target='_blank'>",DOI,"</a>")))} #still not trimming correctly but link still works
 }
 journal.name.HTML <- function(journal.name) {
   return(HTML(paste0("<i>",journal.name,"</i>")))
