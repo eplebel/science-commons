@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="google-site-verification" content="7CrO9Y_velY8TjF6s8CWKB1s2S8TGRdQ8NoZ-gHPDE0" />
+  <meta http-equiv="Cache-control" content="public">
+  <title itemprop='name'>Curate Science - Crowdsourcing the Transparency of Empirical Research.</title>
+  <meta name="description" content="Curate Science is a platform to crowdsource the credibility of scientific research by curating its transparency, analytic reproducibility, analytic robustness, and replicability." />
+  <meta name="keywords" content="replication, replications, direct replication, conceptual replication, replicability, generalizability, analytic reproducibility, analytic robustness, research credibility, credibility of findings, sufficient transparency, open science, sufficient falsifiability, falsification, cumulative knowledge" />
+  <!--links to CSS files-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+  <link data-turbolinks-track="true" href="assets/main.css" media="all" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/extra.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!--links to JS files-->
+  <script data-turbolinks-track="true" src="assets/main.js"></script> <!--only needed for ego depletion evidence collection-->
+  <script src="assets/bootstrap.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.10.16/dataRender/ellipsis.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.10.16/sorting/natural.js"></script>
+	
+  
+  <!--others-->
+  <!--<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />-->
+  <link rel="shortcut icon" type="image/x-icon" href="logos/sprite-icons/CS-icon-dark-blue.png"/>
+  
+
+  <script type="text/javascript">
+    <!--$(document).ready(function () {
+    <!--$(".navbar-nav li a").click(function(event) {
+    <!--    $(".nav-collapse").collapse('hide');
+    <!-- });
+    <!--});
+	
+	function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+	
+
+  </script>
+  <style type="text/css" class="init"> <!--for DataTables table-->
+	/* Ensure that the demo table scrolls; */
+	th, td { white-space: normal; }
+	div.dataTables_wrapper {
+		width: auto; /*used to be: 1400px*/
+		margin: 0 auto;
+	}
+	td.details-control {
+	  background: url('logos/meta-analyze-button.png') no-repeat center center;
+	  cursor: pointer;
+	  min-width: 75px;
+	}
+	tr.shown td.details-control {
+	  background: url('logos/close-chevron-icon.png') no-repeat center center;
+	}
+	.dataTables_wrapper .dataTables_length {
+		float: left;
+		}
+	.dataTables_wrapper .dataTables_filter {
+		float: left;
+		text-align: left;
+		margin: 0 auto;
+		}
+	.dataTables_wrapper .dataTables_info {
+		float: right;
+		clear: none;
+		padding-top:.5em;
+		}
+	.dataTables_filter input { width: 300px;
+							   max-height:15px;
+		}
+	.dataTables_length input { height:15px;}
+	body { font-size: 13px;}
+	.bold-class { font-weight: bold; }
+	
+	<!--styling stuff for loading spinner-->
+	hidden { display:none; }
+	.loader {
+	  border: 16px solid #f3f3f3;
+	  border-radius: 50%;
+	  border-top: 16px solid #3498db;
+	  width: 30px;
+	  height: 30px;
+	  -webkit-animation: spin 1s linear infinite;
+	  animation: spin 1s linear infinite;
+	}
+	#loader-div { 
+		margin: 0 auto; 
+		top-margin:20px;}
+	@-webkit-keyframes spin {
+	  0% { -webkit-transform: rotate(0deg); }
+	  100% { -webkit-transform: rotate(360deg); }
+	}
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
+	}
+	
+	td.center { text-align:center;}
+	td.right { text-align:right;}
+	td { line-height: 1.12em;
+		 padding: 0em;
+		 border: 0px dashed black; }
+	#some-element {
+		border: 0px solid #ccc;
+		display: none;
+		font-size: 16px;
+		margin-bottom: 10px;
+		padding: 2px;
+		line-height: 1.25em;}	
+	#some-div:hover #some-element {
+		display: block;}
+	ul li { line-height:1.2em; }
+	ol li { line-height:1.2em; }
+	i { font-style: italic;}
+	a.anchor{
+		padding-top:80px;
+		display:block;
+		margin-top:-30px; /* if you want to cancel out the padding-top */}
+	u.dotted{
+	  border-bottom: 1px dashed #999;
+	  text-decoration: none; 
+	}	
+	span.displaynone { display:none; }
+	h1 { font-size: 24px; }
+		.navbar .nav { font-size: 12px;}
+		.navbar-nav>li>a { line-height: 15px;}
+	iframe { border: none; overflow: hidden;}
+	img.open-logos {
+		opacity: 0.06;
+		filter: alpha(opacity=6); /* For IE8 and earlier */
+		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+		filter: grayscale(100%);}
+	img.open-logos.active {
+			opacity: 0.75;
+			filter: alpha(opacity=75); /* For IE8 and earlier */
+			-webkit-filter: none; /* Safari 6.0 - 9.0 */
+			filter: none;}
+	img.pdf-icon {padding-right:4px;}
+	table.all-replications {
+		font-size:14px;
+		margin-top:15px;
+		table-layout: fixed;
+		width: 1600px;}
+	table.all-replications th {line-height:16px;}
+	tr.area {color:CornflowerBlue;font-weight:bold;font-size:18px;}
+	tr.effect {color:black;font-weight:bold;font-size:17px;}
+		.effect td {line-height:1.4em;}
+	tr.original {color:darkgrey;font-weight:bold;}
+	td.original.primary {text-align:center;font-family:courier;}
+	tr.replication {color:black;}
+	.replication td:nth-child(1) {
+		padding-left:25px;}
+	td.primary {text-align:center;font-family:courier;}
+	td.secondary {color:lightgrey;font-weight:normal;font-size:12px;}
+	.table-all-replications { 
+		overflow-x: scroll;
+		overflow-y: hidden;
+		min-width:1000px;}
+	.table-all-replications-RPP { 
+		overflow-x: hidden;
+		overflow-y: hidden;
+		min-width:1000px;}
+	table.all-replications-RPP {
+		font-size:14px;
+		margin-top:15px;
+		table-layout: fixed;
+		}
+	img.about {padding:5px;}
+	p span.displaynone { display:none; }
+	
+	.label-info-teal {
+	  background-color: #00A388;
+	}
+	.label-info-brown {
+	  background-color: #996633;
+	}
+	.label-info-purple {
+	  background-color: #9b59b6;
+	}
+	.label-info-red {
+	  background-color: #e74c3c;
+	}
+	.label-default {}
+	.badge-repnum{
+		padding-left:4px;
+		padding-right:4px;
+		padding-top:1px;
+		padding-bottom:1px;
+		border-radius:3px;
+	}
+	.label, .badge {
+		text-shadow: 0px 0px;
+		/*vertical-align:top;*/ /*don't actually need this*/
+		margin-top:2px;
+		font-size:80%;}
+	.badge {
+		color:black;
+		font-size:10px;
+		line-height:10px;
+		background-color:white }
+	.label {
+		opacity:.55;
+		filter: alpha(opacity=50); /* For IE8 and earlier */
+		color:black;}
+		
+	.center-pills { display: inline-block; }
+	a.kinda-link:hover { cursor: pointer; }
+		
+	.popUpStyle {
+		font-size:13px;
+		line-height:normal;
+		}
+	
+	.popUpOnHover { position:relative; }
+	.popUpOnHover:hover span.toDisplay1 { display:block; }
+	.popUpOnHover:hover span.toDisplay2 { display:block; }
+	.popUpOnHover:hover span.toDisplay3 { display:block; }
+	.popUpOnHover:hover span.toDisplay4 { display:block; }
+	.popUpOnHover:hover span.toDisplayBasic4Submission { display:block; }
+	.popUpOnHover:hover span.toDisplayBasic7Retroactive { display:block; }
+	.popUpOnHover:hover span.toDisplayFullPagePopUp { display:block; }
+	.popUpOnHover:hover span.toDisplay3RepsPopup { display:block; }
+	.toDisplay1 {
+		display:none;
+		position:absolute; 
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-54px; 
+		left:-10px; }
+	.toDisplay2 {
+		display:none;
+		position:absolute; 
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-38px; 
+		left:-10px; }
+	.toDisplay3 {
+		display:none;
+		position:absolute; 
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-22px; 
+		left:-10px; }
+	.toDisplay4 {
+		display:none;
+		position:absolute; 
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-35px; 
+		left:-10px; }	
+	.toDisplayBasic4Submission {
+		display:none;
+		position:absolute; 
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-25px; 
+		left:-10px; }
+	.toDisplayBasic7Retroactive {
+		display:none;
+		position:absolute; 		
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-330px; 
+		left:-10px; }
+	.toDisplayFullPagePopUp {
+		display:none;
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		position:fixed;
+		top: 55px;
+		bottom: 55px;
+		left: 250px; 
+		min-width: 80%; }
+	.toDisplay3RepsPopup {
+		display:none;
+		position:absolute; 
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-25px; 
+		left:-10px; }
+
+
+	.doi-dimmed {
+		opacity: 0.5;
+		filter: alpha(opacity=50); /* For IE8 and earlier */
+		}
+
+	a.black:link, a.black:visited, a.black:hover, a.black:active {
+		color: black;
+		text-decoration: none;
+	}
+	a.grey:link, a.grey:visited, a.grey:hover, a.grey:active {
+		color: grey;
+	}
+	
+	.shrunk-16 { width:16px;}
+	.shrunk-14 { width:14px;}
+	.transparent {
+		opacity: 0.60;
+		filter: alpha(opacity=60); /* For IE8 and earlier */ }
+	.code-icon {
+		opacity: .45;
+		margin-top:2px;	}
+	
+	h4 {margin-top:12px;
+		margin-bottom:0px;
+		}
+	
+	</style>
+  <style>
+	<!--temp place for troubleshooting style issues-->
+	
+		
+  </style>
+</head>
+
+<body>
+
+<header class="pull-center" id="masthead" >
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="navbar-inner" style="min-height:50px;">
+      <div class="container" >
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <a class="brand brand-appland" href="index.html" style="padding-top:0px;padding-bottom:0px;">
+              <h4>Curate Science<img src="logos/sprite-icons/CS-icon-light-blue.png" style="margin-left:1px;width:22px;margin-top:-8px;font-style:normal;"></h4>
+            </a>
+          </a>
+        <div class="nav-collapse" style="text-transform:none;">
+          <ul class="nav navbar-nav" style="text-transform:none;">
+            <li><a class="brand brand-appland" href="http://curatescience.org"><h4>Curate Science<img src="logos/sprite-icons/CS-icon-light-blue.png" style="margin-left:-1px;width:22px;margin-top:-8px;"></h4></a></li>
+			<li style="font-weight:bold"><a href="index.html#about">About</a></li>
+			<li style="font-weight:bold"><a href="index.html#people">People</a></li>
+			<li style="font-weight:bold"><a href="index.html#FAQ">FAQ</a></li>
+			<li style="font-weight:bold"><a href="index.html#newsletter">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="main-container push">
+
+  
+  
+  <section class="section" id="about-section" style="box-shadow: 0 0 5px;background-color:white;">
+		<div class="container" style="padding: 0px 0 40px;">
+			<div class="wrapper" style="max-width:800px;margin: 0 auto;">		
+				<div id="search-for-transparent-studies-section"></div>
+				<h3 style="text-align:center">Features in Development</h3>
+				
+			
+				<p style="font-size:14px;line-height:1.2em;margin-top:20px;margin-bottom:0px;">
+				Explore new features in development below, which allow even more direct interactive access to transparently reported study components: 
+				<ol style="margin-top:0px;">
+					<li>replication details when hovering over replication label, </li>
+					<li>study-level curation of transparency components (e.g., Colby et al., 2015), </li>
+					<li>direct access to publicly accessible embeddable content on hover (e.g., hover over preregistration and Code Ocean icons of Campbell et al., 2018), and </li>
+					<li>curated lists of open materials/data files on hover (e.g., hover over open data icon of Vize, Collison et al., 2018).</li>
+				</ol>
+			
+				</p>
+			</div> <!-- max-width:900px; wrapper -->
+			<!--</div> <!-- wrapper div-->
+				
+				<div class="wrapper" style="max-width:950px;font-size:13px;line-height:1.2em;">
+					
+					<div style="margin-left:35%;margin-bottom:-10px;overflow:visible;line-height:1.2em;">
+						<table cellspacing="0">
+							<tr>
+								<td style="text-align:right;vertical-align:top;padding-right:3px;">Show only articles with:</td>
+								<td style="line-height:1.2em;">
+									<input onchange="filterRS()" type="checkbox" name="rs" value="rs" style="margin-top:1px;">
+										<img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent" title="Study complies with relevant reporting standard and/or includes a methodological disclosure statement."> Reporting standard/Methodological disclosure statement <br>
+									<input onchange="filterOM()" type="checkbox" name="om" value="om" style="margin-top:1px;" >
+										<img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent" title="Study materials required to conduct an independent replication are available at a public repository."> Open/public study materials <br>
+									<input onchange="filterPREREG()" type="checkbox" name="prereg" value="prereg" style="margin-top:1px;">
+										<img src="logos/sprite-icons/preregistered-available.png" class="shrunk-16 transparent" title="Study design and analysis plans were preregistered prior to data collection (independently or via Registered Report format)."> Preregistered study design/<span class="label label-info-red"><a href="http://orca.cf.ac.uk/45177/1/Chambers_Cortex_2013b_GreenOA.pdf" target="_blank" class="black" title="Study design and analysis plans were peer-reviewed and preregistered prior to data collection.">Registered Report</a></span> format<br>
+									<input onchange="filterOD()" type="checkbox" name="od" value="od" style="margin-top:1px;" >
+										<img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent" title="Study data (raw or transformed) are available at a public repository."> Open/public data <br>
+									<input onchange="filterRC()" type="checkbox" name="rc" value="rc" style="margin-top:1px;" >
+										<img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon' title="Code/syntax to reproduce study results are available at a public repository or via a public Code Ocean computational capsule."> Reproducible code/Code Ocean<img src="logos/sprite-icons/code-ocean.png" class="shrunk-16 transparent" title="Code/syntax to reproduce study results are available in a public Code Ocean computational capsule."> computational capsule
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align:right;padding-right:3px;padding-top:2px;line-height:1em;">Article type:</td>
+								<td style="padding-top:5px;line-height:1em;">
+									<input onchange="filterAT()" type="checkbox" name="articleType" value="orig" style="margin-top:1px;">
+										Original
+									<input onchange="filterAT()" type="checkbox" name="articleType" value="rep" style="margin-top:1px;margin-left:10px;">
+										<span class="label label-info-brown" title="Article reports at least 1 replication of a published effect.">Replication</span>
+									<input onchange="filterAT()" type="checkbox" name="articleType" value="meta" style="margin-top:1px;margin-left:10px;">
+										Meta-analysis
+								</td>
+							</tr>
+						</table>
+					</div>
+					<br>
+					<div id="loader-div" class="loader"></div>
+					<table id="dt" class="stripe row-border order-column compact hidden" cellspacing="0" width="100%" style="font-size:14px;">
+						<thead>
+							<tr>
+								<th title="authors & study number (unnumbered for sole study papers)">authors/pub.year</th>
+								<th style="min-width:350px;">article.title/PDF/transparency.components</th>
+								<th style="min-width:125px;">journal.name</th>
+								<th >DOI</th>
+								<th>rs</th>
+								<th>om</th>
+								<th>prereg</th>
+								<th>od</th>
+								<th>rc</th>
+								<th>article.type</th>
+								<th>rr</th>
+							</tr>
+						</thead>
+						<tbody>
+
+						
+						
+						
+						<tr>
+						  <td >
+								Colby, DeWitt & Chapman (2015)
+							</td>
+							<td >Grouping Promotes Equality: The Effect of Recipient Grouping on Allocation of Limited Medical Resources <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4504740/pdf/nihms678183.pdf' target='_blank' ><img src="logos/sprite-icons/pdf.png" class="shrunk-14 transparent"></a>
+							<br>
+							<div style="padding-left:22px;">
+									Study 1
+									<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
+										<span class="toDisplayBasic4Submission popUpStyle" style='padding-left:5px;white-space:nowrap;'>
+											<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="https://www.psychologicalscience.org/publications/psychological_science/ps-submissions#DISC" target="_blank">Basic 4 (at submission)</a> <img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent"> reporting standard:</span>
+											<ol style="margin-top:5px;margin-bottom:5px;">
+												<li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+												<li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+												<li><strong>Outcome measures:</strong> Full details reported in article.</li>
+												<li><strong>Sample size determination:</strong> Full details reported in article.</li>
+											</ol>
+										</span>
+									</div>
+									<a href='https://osf.io/r79qd/ ' target='_blank' title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
+									<a title="Preregistration information is not available"><img src="logos/sprite-icons/preregistered-unavailable.png" class="shrunk-16"></a>
+									<a href=' https://osf.io/wkj45/' target='_blank' title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
+									<br>
+									Study 2
+									<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
+										<span class="toDisplayBasic4Submission popUpStyle" style='padding-left:5px;white-space:nowrap;'>
+											<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="https://www.psychologicalscience.org/publications/psychological_science/ps-submissions#DISC" target="_blank">Basic 4 (at submission)</a> <img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent"> reporting standard:</span>
+											<ol style="margin-top:5px;margin-bottom:5px;">
+												<li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+												<li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+												<li><strong>Outcome measures:</strong> Full details reported in article.</li>
+												<li><strong>Sample size determination:</strong> Full details reported in article.</li>
+											</ol>
+										</span>
+									</div>
+									<a href='https://osf.io/97jzi/ ' target='_blank' title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
+									<a title="Preregistration information is not available"><img src="logos/sprite-icons/preregistered-unavailable.png" class="shrunk-16"></a>
+									<a href='https://osf.io/wkj45/ ' target='_blank' title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
+									<br>
+									Study 3
+									<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
+										<span class="toDisplayBasic4Submission popUpStyle" style='padding-left:5px;white-space:nowrap;'>
+											<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="https://www.psychologicalscience.org/publications/psychological_science/ps-submissions#DISC" target="_blank">Basic 4 (at submission)</a> <img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent"> reporting standard:</span>
+											<ol style="margin-top:5px;margin-bottom:5px;">
+												<li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+												<li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+												<li><strong>Outcome measures:</strong> Full details reported in article.</li>
+												<li><strong>Sample size determination:</strong> Full details reported in article.</li>
+											</ol>
+										</span>
+									</div>
+									<a href='https://osf.io/p4gde/ ' target='_blank' title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
+									<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/preregistered-available.png" class="shrunk-16 transparent">
+										<span class="toDisplayFullPagePopUp popUpStyle">
+											<div style="min-width:850px;white-space:normal;">
+												<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/preg9/?action=download" target="_blank" title="Direct download file"> doctor_11_pre-registration.pdf <span style="margin-left:30px;">Download</span> <i class="fa fa-download"></i></a><a href="https://osf.io/preg9" target="_blank"><span style="margin-left:30px;">View preregistration on OSF</span> <img src="logos/osf-13x13.png"></a></div>
+												<br>
+												<iframe src="https://mfr.osf.io/render?url=https://osf.io/preg9/?action=download%26mode=render" width="100%" scrolling="yes" height="800px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+											</div>
+										</span>
+									</div>
+									<a href='https://osf.io/wkj45/ ' target='_blank' title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
+								</div>
+							
+							</td>
+							<td ><i>Psychological Science</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1177/0956797615583978" class='doi-dimmed grey'>10.1177/0956797615583978</a></td>
+							<td>rs</td>
+							<td>om</td>
+							<td>prereg</td>
+						    <td>od</td>
+							<td></td>
+							<td>orig</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+						  <td >
+								Willén & Strömwall (2012)
+							</td>
+							<td >Offenders’ uncoerced false confessions: A new application of statement analysis? <a href='https://rebeccawillen.files.wordpress.com/2018/02/as1013805681295601401182419574_content_1.pdf' target='_blank' ><img src="logos/sprite-icons/pdf.png" class="shrunk-14 transparent"></a>
+							<br>
+							<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
+									<span class="toDisplayBasic7Retroactive popUpStyle">
+										<div style="min-width:600px;white-space:normal;">
+											<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="https://medium.com/@IGDORE/retroactive-disclosure-statements-make-the-past-more-useful-c1b2e73f4bae" target="_blank">Basic 7 (retroactive)</a> <img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent"> reporting standard:</span>
+											<ol style="margin-top:5px;margin-bottom:15px;">
+												<li><strong>Excluded data (subjects/observations):</strong> <span style="font-size:13px;line-height:normal;">Initially, 36 offenders participated in the experiment. The narratives from six participants were excluded for different reasons. Three respondents were excluded because – on the respondents' initiative – the narratives were not focused on the purpose of the interview (i.e., the experiment). One was excluded because the false confession was so lengthy that the interviewer had to end the interview prematurely. One respondent was excluded because the narratives were severely incoherent to the extent that they were not possible to understand. One respondent was excluded because the interviewer had reason to believe that the event behind the supposedly true confession actually had taken place. All six respondents were excluded prior to the statistical analyses being made. Some of the excluded narratives were used by the research assistants/coders for training purposes.</span></li>
+												<li><strong>Experimental conditions:</strong> <span style="font-size:13px;line-height:normal;">Full details reported in article.</span></li>
+												<li><strong>Outcome measures:</strong> <span style="font-size:13px;line-height:normal;">Full details reported in article.</span></li>
+												<li><strong>Sample size determination:</strong> <span style="font-size:13px;line-height:normal;">A rough sample size of about 30 participants was decided in advance. No formal power calculation was conducted and the participation rate was expected to be low.</span></li>
+												<li><strong>Analytic plans:</strong> <span style="font-size:13px;line-height:normal;">It was initially predicted that gender and interview experience would influence the outcome on CBCA and RM scores. These analyses were not statistically significant (p > .05). In line with common publication practice (John et al., 2012), these predictions were therefore deleted from the report and the two variables instead included as covariates.</span></li>
+												<li><strong>Unreported related studies:</strong> <span style="font-size:13px;line-height:normal;">N/A</span></li>
+												<li><strong>Other disclosures:</strong> <span style="font-size:13px;line-height:normal;">For the purpose of any future research aiming to replicate the study, it should be noted that the interviewer also had criminal experience and that all respondents were briefly informed about this (albeit not the nature of the experience) during the recruitment process. Before granting access, the prisons' heads of security did a thorough check-up to ensure that the interviewer was not familiar with any of the current prisoners (i.e., not only potential respondents).</span></li>
+											</ol>
+											<span style="color:red;">Date of retroactive disclosure:</u> February 1, 2018.</span><br>
+											Original <a href="https://rebeccawillen.files.wordpress.com/2018/02/disclosure-statement-willc3a9n-strc3b6mwall-2012.pdf" target="_blank">retroactive disclosure statement <a href="https://rebeccawillen.files.wordpress.com/2018/02/disclosure-statement-willc3a9n-strc3b6mwall-2012.pdf" target="_blank" class='sprite sprite-pdf-icon-large'></a></a>
+										</div>
+									</span>
+								</div>
+								<a title="Open study materials information is not available"><img src="logos/sprite-icons/materials-unavailable.png" class="shrunk-16"></a>
+								<a title="Preregistration information is not available"><img src="logos/sprite-icons/preregistered-unavailable.png" class="shrunk-16"></a>
+								<a title="Open data information is not available"><img src="logos/sprite-icons/data-unavailable.png" class="shrunk-16"></a>
+							
+							</td>
+							<td ><i>Legal and Criminological Psychology</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1111/j.2044-8333.2011.02018.x" class='doi-dimmed grey'>10.1111/j.2044-8333.2011.02018.x</a></td>
+							<td>rs</td>
+							<td></td>
+							<td></td>
+						    <td></td>
+							<td></td>
+							<td>orig</td>
+							<td></td>
+						</tr>
+						<tr>
+						  <td >
+								Granhag, Strömwall, Willén, & Hartwig (2013)
+							</td>
+							<td >Eliciting cues to deception by tactical disclosure of evidence: The first test of the Evidence Framing Matrix. <a href='https://rebeccawillen.files.wordpress.com/2018/02/as973445445754971400220156342_content_1.pdf' target='_blank' ><img src="logos/sprite-icons/pdf.png" class="shrunk-14 transparent"></a>
+							<br>
+								<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
+									<span class="toDisplayBasic7Retroactive popUpStyle">
+										<div style="min-width:600px;white-space:normal;">
+											<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="https://medium.com/@IGDORE/retroactive-disclosure-statements-make-the-past-more-useful-c1b2e73f4bae" target="_blank">Basic 7 (retroactive)</a> <img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent"> reporting standard:</span>
+											<ol style="margin-top:5px;margin-bottom:15px;">
+												<li><strong>Excluded data (subjects/observations):</strong> <span style="font-size:13px;line-height:normal;">12 participants were excluded during the process of transcribing and analysing the data. All 12 exclusions were made due to undisclosed problems with the employed quasi-experimental paradigm (mock-crime scenario): specifically, participants in the truth conditions afterwards report that they had to lie since they were not allowed to mention during the interview that they were involved in an experiment.</span></li>
+												<li><strong>Experimental conditions:</strong> <span style="font-size:13px;line-height:normal;">Whatever we did, critical p's were still > .05. Finally we merged 2 of 3 conditions and highlighted the effect sizes instead.</span></li>
+												<li><strong>Outcome measures:</strong> <span style="font-size:13px;line-height:normal;">The questionnaire included more items than publicly reported; there was a selective reporting of items from the questionnaire. The complete questionnaire (in Swedish) is found in the full <a href="https://rebeccawillen.files.wordpress.com/2018/02/disclosure-statement-granhag-et-al-20131.pdf" target="_blank">retroactive disclosure statement</a>.</span></li>
+												<li><strong>Sample size determination:</strong> <span style="font-size:13px;line-height:normal;">A rough sample size was decided in advance. No formal power calculation was conducted.</span></li>
+												<li><strong>Analytic plans:</strong> <span style="font-size:13px;line-height:normal;">5 of 6 supposedly confirmatory hypotheses were in fact exploratory. The only hypothesis that (arguably) can be viewed as confirmatory was the first hypothesis, namely: ”the statement-evidence inconsistency variable were a main effect for suspect veracity (higher scores for guilty suspects)” (p. 5). The model supposedly to be tested (i.e. the Evidence Framing Matrix) was in fact still developed successively while analysing the data and writing up the paper. 1 of the 2 independent variables (namely, ”within-statement inconsistency”) was in fact an exploratory finding resulting from analysing the data.</span></li>
+												<li><strong>Unreported related studies:</strong> <span style="font-size:13px;line-height:normal;">N/A</span></li>
+												<li><strong>Other disclosures:</strong> <span style="font-size:13px;line-height:normal;">N/A</span></li>
+											</ol>
+											<span style="color:red;">Date of retroactive disclosure:</u> February 1, 2018.</span><br>
+											Original <a href="https://rebeccawillen.files.wordpress.com/2018/02/disclosure-statement-granhag-et-al-20131.pdf" target="_blank">retroactive disclosure statement <a href="https://rebeccawillen.files.wordpress.com/2018/02/disclosure-statement-granhag-et-al-20131.pdf" target="_blank" class='sprite sprite-pdf-icon-large'></a></a>
+										</div>
+									</span>
+								</div>
+								<a title="Open study materials information is not available"><img src="logos/sprite-icons/materials-unavailable.png" class="shrunk-16"></a>
+								<a title="Preregistration information is not available"><img src="logos/sprite-icons/preregistered-unavailable.png" class="shrunk-16"></a>
+								<a title="Open data information is not available"><img src="logos/sprite-icons/data-unavailable.png" class="shrunk-16"></a>
+							
+							</td>
+							<td ><i>Legal and Criminological Psychology</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1111/j.2044-8333.2012.02047.x" class='doi-dimmed grey'>10.1111/j.2044-8333.2012.02047.x</a></td>
+							<td>rs</td>
+							<td></td>
+							<td></td>
+						    <td></td>
+							<td></td>
+							<td>orig</td>
+							<td></td>
+						</tr>
+						<tr>
+						  <td >
+							Campbell, Balzarini, Kohut, Dobson et al. (2018)
+							</td>
+							<td >Self-esteem, relationship threat, and dependency regulation: Independent replication of Murray, Rose, Bellavia, Holmes, and Kusche (2002) Study 3 <a href=' https://static1.squarespace.com/static/594641bbe3df28301b1a0493/t/5970b5c8f5e2311272d3b4f0/1500558794416/2017+%28in+press%29_Campbell+et+al_JRP_Replication+of+Murray+et+al+2002.pdf' target='_blank' ><img src="logos/sprite-icons/pdf.png" class="shrunk-14 transparent"></a> <span class="label label-info-purple"><a href="https://psyarxiv.com/5suda/" target="_blank" class="black" title="View preprint of this article.">Preprint</a></span> 
+
+							<div style="display:inline;" class="popUpOnHover">
+								<span class="label label-info-brown" title='This article reports replications.'>Replication <span class="badge badge-repnum">1</span></span>
+								<span class="toDisplay3RepsPopup popUpStyle" style='padding-left:5px;white-space:nowrap;'>
+									<table class="stripe compact" cellspacing="0" width="100%" border=0>
+										<thead>
+											<tr>
+												<th title="">replication.study</th>
+												<th></th>
+												<th title="">original.study</th>
+												<th title="">rep.method.similarity</th>
+												<th title="">target.effect</th>
+											</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td>Campbell, Balzarini, Kohut, Dobson et al. (2018) <a href='https://static1.squarespace.com/static/594641bbe3df28301b1a0493/t/5970b5c8f5e2311272d3b4f0/1500558794416/2017+%28in+press%29_Campbell+et+al_JRP_Replication+of+Murray+et+al+2002.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
+											<td class="center" style="font-size:11px;">replication of</td>
+											<td>Murray, Rose et al. (2002) Study 3 <a href='http://psycnet.apa.org/record/2002-17813-005' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
+											<td class="center">Very close</td>
+											<td class="center">Self-esteem buffers relationship threat effect</td>
+										</tr>
+									</table>
+								</span>
+							</div>
+							
+							<br>
+							<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
+									<span class="toDisplayBasic4Submission popUpStyle" style='padding-left:5px;white-space:nowrap;'>
+										<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="http://psychdisclosure.org" target="_blank">Basic 4 (retroactive)</a> <img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent"> reporting standard:</span>
+										<ol style="margin-top:5px;margin-bottom:5px;">
+											<li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+											<li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+											<li><strong>Outcome measures:</strong> Full details reported in article.</li>
+											<li><strong>Sample size determination:</strong> Full details reported in article.</li>
+										</ol>
+										<span style="color:red;">Date of retroactive disclosure:</u> May 2, 2018.</span>
+									</span>
+								</div>
+								<a href="https://osf.io/xuqmg/" target="_blank" title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
+								<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent">
+									<span class="toDisplayFullPagePopUp popUpStyle">
+										<div style="min-width:850px;white-space:normal;">
+											<div style="padding-top:5px;font-size:10px"><a href="https://osf.io/ebuzm/?action=download" target="_blank" title="Direct download file"> EDC_Replication Protocol.docx <span style="margin-left:30px;">Download</span> <i class="fa fa-download"></i></a><a href="https://osf.io/ebuzm" target="_blank"><span style="margin-left:30px;">View preregistration on OSF</span> <img src="logos/osf-13x13.png"></a></div>
+											<br>
+											<iframe src="https://mfr.osf.io/render?url=https://osf.io/q8dx5//?action=download%26mode=render" width="100%" scrolling="yes" height="800px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+										</div>
+									</span>
+								</div>
+								<a href="https://osf.io/wb6vc/" target="_blank" title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
+								<a href="https://codeocean.com/2018/04/19/code-for-colon-self-esteem-relationship-threat-and-dependency-regulation-colon-independent-replication-of-murray-rose-bellavia-holmes-and-kusche-lpar-2002-rpar-study-3/code" target="_blank" title="Go to reproducible code files"><img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
+								<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/code-ocean.png" class="shrunk-16 transparent">
+									<span class="toDisplayFullPagePopUp popUpStyle">
+										<div style="min-width:850px;white-space:normal;">
+											<script src="https://codeocean.com/widget.js?id=91a4a325-5a3f-4899-826a-87fd4153824e" async></script>
+										</div>
+									</span>
+								</div>
+								</td>
+								
+							<td ><i>Journal of Research in Personality</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1016/j.jrp.2017.04.001" class='doi-dimmed grey'>10.1016/j.jrp.2017.04.001</a></td>
+							<td>rs</td>
+							<td>om</td>
+							<td>prereg</td>
+						    <td>od</td>
+							<td>rc</td>
+							<td>rep</td>
+							<td></td>
+						</tr>
+						
+						
+						<tr>
+						  <td >
+							Balzarini, Dobson, & Campbell (2016)
+							</td>
+							<td >Does exposure to erotica reduce attraction and love for romantic partners in men? Independent replications of Kenrick, Gutierres, and Goldberg (1989) Study 2 <a href='https://www.researchgate.net/profile/Rhonda_Balzarini/publication/310488568_Does_exposure_to_erotica_reduce_attraction_and_love_for_romantic_partners_in_men_Independent_replications_of_Kenrick_Gutierres_and_Goldberg_1989_study_2/links/59cfdd434585150177ee21fd/Does-exposure-to-erotica-reduce-attraction-and-love-for-romantic-partners-in-men-Independent-replications-of-Kenrick-Gutierres-and-Goldberg-1989-study-2.pdf' target='_blank' ><img src="logos/sprite-icons/pdf.png" class="shrunk-14 transparent"></a> 
+							
+							<div style="display:inline;" class="popUpOnHover">
+								<span class="label label-info-brown" title='This article reports replications.'>Replications <span class="badge badge-repnum">3</span></span>
+								<span class="toDisplay3RepsPopup popUpStyle" style='padding-left:5px;white-space:nowrap;'>
+									<table class="stripe compact" cellspacing="0" width="100%" border=0>
+										<thead>
+											<tr>
+												<th title="">replication.study</th>
+												<th></th>
+												<th title="">original.study</th>
+												<th title="">rep.method.similarity</th>
+												<th title="">target.effect</th>
+											</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td>Balzarini, Dobson, & Campbell (2016) Study 1 <a href='https://www.researchgate.net/profile/Rhonda_Balzarini/publication/310488568_Does_exposure_to_erotica_reduce_attraction_and_love_for_romantic_partners_in_men_Independent_replications_of_Kenrick_Gutierres_and_Goldberg_1989_study_2/links/59cfdd434585150177ee21fd/Does-exposure-to-erotica-reduce-attraction-and-love-for-romantic-partners-in-men-Independent-replications-of-Kenrick-Gutierres-and-Goldberg-1989-study-2.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
+											<td class="center" style="font-size:11px;">replication of</td>
+											<td>Kenrick, Gutierres, & Goldberg (1989) Study 2 <a href='https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
+											<td class="center">Close</td>
+											<td class="center">Playbox effect</td>
+										</tr>
+										<tr>
+											<td>Balzarini, Dobson, & Campbell (2016) Study 2 <a href='https://www.researchgate.net/profile/Rhonda_Balzarini/publication/310488568_Does_exposure_to_erotica_reduce_attraction_and_love_for_romantic_partners_in_men_Independent_replications_of_Kenrick_Gutierres_and_Goldberg_1989_study_2/links/59cfdd434585150177ee21fd/Does-exposure-to-erotica-reduce-attraction-and-love-for-romantic-partners-in-men-Independent-replications-of-Kenrick-Gutierres-and-Goldberg-1989-study-2.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
+											<td class="center" style="font-size:11px;">replication of</td>
+											<td>Kenrick, Gutierres, & Goldberg (1989) Study 2 <a href='https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
+											<td class="center">Close</td>
+											<td class="center">Playboy effect</td>
+										</tr>
+										<tr>
+											<td>Balzarini, Dobson, & Campbell (2016) Study 3 <a href='https://www.researchgate.net/profile/Rhonda_Balzarini/publication/310488568_Does_exposure_to_erotica_reduce_attraction_and_love_for_romantic_partners_in_men_Independent_replications_of_Kenrick_Gutierres_and_Goldberg_1989_study_2/links/59cfdd434585150177ee21fd/Does-exposure-to-erotica-reduce-attraction-and-love-for-romantic-partners-in-men-Independent-replications-of-Kenrick-Gutierres-and-Goldberg-1989-study-2.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
+											<td class="center" style="font-size:11px;">replication of</td>
+											<td>Kenrick, Gutierres, & Goldberg (1989) Study 2 <a href='https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf' target='_blank'><img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
+											<td class="center">Close</td>
+											<td class="center">Playboy effect</td>
+										</tr>
+									</table>
+								</span>
+							</div>
+							
+							
+							<br>
+							<div style="padding-left:22px;">
+									Study 1
+									<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
+										<span class="toDisplayBasic4Submission popUpStyle" style='padding-left:5px;white-space:nowrap;'>
+											<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="http://psychdisclosure.org" target="_blank">Basic 4 (retroactive)</a> <img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent"> reporting standard:</span>
+											<ol style="margin-top:5px;margin-bottom:5px;">
+												<li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+												<li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+												<li><strong>Outcome measures:</strong> Full details reported in article.</li>
+												<li><strong>Sample size determination:</strong> Full details reported in article.</li>
+											</ol>
+											<span style="color:red;">Date of retroactive disclosure:</u> May 6, 2018.</span>
+										</span>
+									</div>
+									<a href="https://osf.io/nrkej/" target="_blank" title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/6xqju/" target="_blank" title="Go to preregistered study protocol"><img src="logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/w648b/" target="_blank" title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/e9f2q/" target="_blank" title="Go to reproducible code files"><img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
+									<br>
+									Study 2
+									<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
+										<span class="toDisplayBasic4Submission popUpStyle" style='padding-left:5px;white-space:nowrap;'>
+											<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="http://psychdisclosure.org" target="_blank">Basic 4 (retroactive)</a> <img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent"> reporting standard:</span>
+											<ol style="margin-top:5px;margin-bottom:5px;">
+												<li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+												<li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+												<li><strong>Outcome measures:</strong> Full details reported in article.</li>
+												<li><strong>Sample size determination:</strong> Full details reported in article.</li>
+											</ol>
+											<span style="color:red;">Date of retroactive disclosure:</u> May 6, 2018.</span>
+										</span>
+									</div>
+									<a href="https://osf.io/nrkej/" target="_blank" title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/6xqju/" target="_blank" title="Go to preregistered study protocol"><img src="logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/rqhjk/" target="_blank" title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/zusm3/" target="_blank" title="Go to reproducible code files"><img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
+									<br>
+									Study 3
+									<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
+										<span class="toDisplayBasic4Submission popUpStyle" style='padding-left:5px;white-space:nowrap;'>
+											<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="http://psychdisclosure.org" target="_blank">Basic 4 (retroactive)</a> <img src="logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent"> reporting standard:</span>
+											<ol style="margin-top:5px;margin-bottom:5px;">
+												<li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+												<li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+												<li><strong>Outcome measures:</strong> Full details reported in article.</li>
+												<li><strong>Sample size determination:</strong> Full details reported in article.</li>
+											</ol>
+											<span style="color:red;">Date of retroactive disclosure:</u> May 6, 2018.</span>
+										</span>
+									</div>
+									<a href="https://osf.io/f56a8/" target="_blank" title="Go to study materials files"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/6xqju/" target="_blank" title="Go to preregistered study protocol"><img src="logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/f4n7b/" target="_blank" title="Go to data files"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
+									<a href="https://osf.io/k3hyj/" target="_blank" title="Go to reproducible code files"><img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
+								</div>
+							
+							</td>
+							<td ><i>Journal of Experimental Social Psychology</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1016/j.jesp.2016.11.003" class='doi-dimmed grey'>10.1016/j.jesp.2016.11.003</a></td>
+							<td>rs</td>
+							<td>om</td>
+							<td>prereg</td>
+						    <td>od</td>
+							<td>rc</td>
+							<td>rep</td>
+							<td></td>
+						</tr>
+						
+						
+						<tr>
+						  <td >
+								Vize, Collison et al. (2018)
+							</td>
+							<td >Examining the Effects of Controlling for Shared Variance among the Dark Triad Using Meta-analytic Structural Equation Modelling <a href='https://www.researchgate.net/profile/Katherine_Collison/publication/322685405_Examining_the_Effects_of_Controlling_for_Shared_Variance_among_the_Dark_Triad_Using_Meta-analytic_Structural_Equation_Modelling_Dark_Triad_metaSEM/links/5a6e7618458515d407585359/Examining-the-Effects-of-Controlling-for-Shared-Variance-among-the-Dark-Triad-Using-Meta-analytic-Structural-Equation-Modelling-Dark-Triad-metaSEM.pdf' target='_blank' ><img src="logos/sprite-icons/pdf.png" class="shrunk-14 transparent"></a>
+							<br>
+							<a title="Compliance to reporting standard information is not available"><img src="logos/sprite-icons/disclosure-unavailable.png" class="shrunk-16"></a>
+								<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/materials-available.png" class="shrunk-16 transparent">
+									<span class="toDisplay2" style='white-space:nowrap'>
+										<a href="https://osf.io/g37bz/" target="_blank" title="Go to open study materials file">Supplementary Materials-Final.docx</a> <a href="https://osf.io/g37bz/?action=download" target="_blank" title="Direct download file"><i class="fa fa-download"></i></a><br>
+										<center><a target="_blank" href="https://osf.io/g37bz/"><span style="font-size:10px;">View file on OSF</span> <img src="logos/osf-13x13.png"></a></center>
+									</span>
+								</div>
+								<a title="Preregistration information is not available"><img src="logos/sprite-icons/preregistered-unavailable.png" class="shrunk-16"></a>
+								<div style="display:inline;" class="popUpOnHover"><img src="logos/sprite-icons/data-available.png" class="shrunk-16 transparent">
+									<span class="toDisplay1" style='white-space:nowrap'>
+										<a href="https://osf.io/g2dsr" target="_blank" title="Go to open data file">DataMaster.xlsx</a> <a href="https://osf.io/g2dsr/?action=download" target="_blank" title="Direct download file"><i class="fa fa-download"></i></a><br>
+										<a href="https://osf.io/wfzh6" target="_blank" title="Go to open data file">Study_Info_revised.xlsx</a> <a href="https://osf.io/wfzh6/?action=download" target="_blank" title="Direct download file"><i class="fa fa-download"></i></a><br>
+										<center><a target="_blank" href="https://osf.io/g2dsr/"><span style="font-size:10px;">View additional files on OSF</span> <img src="logos/osf-13x13.png"></a></center>
+									</span>
+								</div>
+							
+							</td>
+							<td ><i>European Journal of Personality</i></td>
+							<td ><a target="_blank" href="https://dx.doi.org/10.1002/per.2137" class='doi-dimmed grey'>10.1002/per.2137</a></td>
+							<td></td>
+							<td>om</td>
+							<td></td>
+						    <td>od</td>
+							<td></td>
+							<td>meta</td>
+							<td></td>
+						</tr>
+						
+
+						
+					
+						
+						
+			
+					
+
+
+						
+					</tbody>
+				</table>
+			</div> <!-- "max-width:1200px wrapper -->
+			
+			<br><br><br><br>
+	 
+    </div> <!--container div-->
+
+  </section>
+
+  <!--footer-->
+	
+	
+	<div class="footer-bottom" style="background-color:whitesmoke;padding-top:10px;">
+		<div class="container">
+			<div class="row">
+					<center>
+						<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" title="This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License"/></a>
+						<br>
+						<i>*Thanks to <a href="http://www.nicebread.de/">Felix Schonbrodt</a> for hosting CurateScience.org</i>
+					</center>
+			</div>
+		</div>
+	</div> <!--footer-bottom div-->
+
+</div> <!--main-container push div -->
+
+
+	
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			var otable = $('#dt').DataTable( {
+				scrollY:        "500px",
+				scrollX:        true,
+				scrollCollapse: false,
+				"order": [[ 0, "asc" ]],
+				paging: true,
+				fixedColumns:   {
+					leftColumns: 0
+				},
+				"columnDefs": [ 
+				{ "targets": [ 4,5,6,7,8,9,10 ],
+				"visible": false }],
+				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
+				"initComplete": function() { 
+				$('#loader-div').remove();
+				$("table").removeClass("hidden");
+				},
+				"dom": '<"top"fi<"clear">>rt<"bottom"pl<"clear">>'
+			} );
+		} );
+		
+		$(function() {
+		  otable = $('#dt').dataTable();
+		})
+		
+		function filterRS() {
+		  //build a regex filter string with an or(|) condition
+		  var types = $('input:checkbox[name="rs"]:checked').map(function() {
+			return '^' + this.value + '\$';
+		  }).get().join('|');
+		  //filter in rs (reportingStandard) column , with a regex, no smart filtering, no inputbox,not case sensitive
+		  otable.fnFilter(types, 4, true, false, false, false);
+		}
+		function filterOM() {
+		  var types = $('input:checkbox[name="om"]:checked').map(function() {
+			return '^' + this.value + '\$';
+		  }).get().join('|');
+		  //filter in om (open materials) column, with a regex, no smart filtering, no inputbox,not case sensitive
+		  otable.fnFilter(types, 5, true, false, false, false);
+		}
+		function filterPREREG() {  
+		  var types = $('input:checkbox[name="prereg"]:checked').map(function() {
+			return '^' + this.value + '\$';
+		  }).get().join('|');
+		  //filter in prereg column, with a regex, no smart filtering, no inputbox,not case sensitive
+		  otable.fnFilter(types, 6, true, false, false, false);
+		}
+		function filterOD() {  
+		  var types = $('input:checkbox[name="od"]:checked').map(function() {
+			return '^' + this.value + '\$';
+		  }).get().join('|');
+		  //filter in od (open data) column, with a regex, no smart filtering, no inputbox,not case sensitive
+		  otable.fnFilter(types, 7, true, false, false, false);
+		}
+		function filterRC() {  
+		  var types = $('input:checkbox[name="rc"]:checked').map(function() {
+			return '^' + this.value + '\$';
+		  }).get().join('|');
+		  //filter in rc (reproducible) column, with a regex, no smart filtering, no inputbox,not case sensitive
+		  otable.fnFilter(types, 8, true, false, false, false);
+		}
+		function filterAT() {  
+		  var types = $('input:checkbox[name="articleType"]:checked').map(function() {
+			return '^' + this.value + '\$';
+		  }).get().join('|');
+		  //filter in articleType column, with a regex, no smart filtering, no inputbox,not case sensitive
+		  otable.fnFilter(types, 9, true, false, false, false);
+		}
+	</script>
+
+  <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script> 
+  <script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-48865749-1', 'auto');
+	  ga('send', 'pageview');
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,2791 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="google-site-verification" content="7CrO9Y_velY8TjF6s8CWKB1s2S8TGRdQ8NoZ-gHPDE0" />
+  <meta http-equiv="Cache-control" content="public">
+  <title itemprop='name'>Curate Science - Crowdsourcing the Transparency of Empirical Research.</title>
+  <meta name="description" content="Curate Science is a platform to crowdsource the credibility of scientific research by curating its transparency, analytic reproducibility, analytic robustness, and replicability." />
+  <meta name="keywords" content="replication, replications, direct replication, conceptual replication, replicability, generalizability, analytic reproducibility, analytic robustness, research credibility, credibility of findings, sufficient transparency, open science, sufficient falsifiability, falsification, cumulative knowledge" />
+  
+  <!--links to CSS files-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+	<!--main bootstrap CSS file-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../assets/fonts-collections.css" media="screen" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  
+  <!--links to JS files-->
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.10.16/dataRender/ellipsis.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.10.16/sorting/natural.js"></script>
+	<!-- main bootstrap JS file-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<!--others-->
+	<link rel="shortcut icon" type="image/x-icon" href="../logos/sprite-icons/CS-icon-dark-blue.png"/>
+	<link rel="stylesheet" href="../assets/sprite-CSS.css">
+	<link rel="stylesheet" href="../assets/text-stylings.css">
+	
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			var table = $('#example').DataTable( {
+				scrollY:        "500px",
+				scrollX:        true,
+				scrollCollapse: false,
+				"order": [[ 0, "asc" ]],
+				paging: true,
+				fixedColumns:   {
+					leftColumns: 0
+				},
+				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
+				"columnDefs": [ 
+					{ className: "bold-class", "targets": [ 3, 5 ] },
+					{ targets: [0,8,9,12,13,14],
+					render: $.fn.dataTable.render.ellipsis(40,true) },
+					{ targets: [2,4],
+					render: $.fn.dataTable.render.ellipsis(4) },
+					{ "targets": [ 15 ],
+					"visible": false },
+					{ type: 'natural-ci', targets: [ 11 ] }
+					],
+				"initComplete": function() { 
+				$('#loader-div').remove();
+				$("table").removeClass("hidden");
+				},
+				"dom": '<"top"fi<"clear">>rt<"bottom"pl<"clear">>'
+			} );
+		} );
+	</script>
+  
+  
+  
+  <style type="text/css" class="init"> <!--for DataTables table-->
+	/* Ensure that the demo table scrolls; */
+	th, td { white-space: normal; }
+	div.dataTables_wrapper {
+		width: auto; /*used to be: 1400px*/
+		margin: 0 auto;
+	}
+	td.details-control {
+	  background: url('../logos/meta-analyze-button.png') no-repeat center center;
+	  cursor: pointer;
+	  min-width: 75px;
+	}
+	tr.shown td.details-control {
+	  background: url('../logos/close-chevron-icon.png') no-repeat center center;
+	}
+	.dataTables_wrapper .dataTables_length {
+		float: left;
+		}
+	.dataTables_wrapper .dataTables_filter {
+		float: left;
+		text-align: left;
+		margin: 0 auto;
+		}
+	.dataTables_wrapper .dataTables_info {
+		float: right;
+		clear: none;
+		padding-top:.5em;
+		}
+	.dataTables_filter input { width: 300px; }
+	.dataTables_length input { }
+	<!--body { font-size: 13px;}-->
+	.bold-class { font-weight: bold; }
+	
+	<!--styling stuff for loading spinner-->
+	hidden { display:none; }
+	.loader {
+	  border: 16px solid #f3f3f3;
+	  border-radius: 50%;
+	  border-top: 16px solid #3498db;
+	  width: 30px;
+	  height: 30px;
+	  -webkit-animation: spin 1s linear infinite;
+	  animation: spin 1s linear infinite;
+	}
+	#loader-div { 
+		margin: 0 auto; 
+		top-margin:20px;}
+	@-webkit-keyframes spin {
+	  0% { -webkit-transform: rotate(0deg); }
+	  100% { -webkit-transform: rotate(360deg); }
+	}
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
+	}
+	
+	
+	
+	</style>
+  <style>
+	<!--temp place for troubleshooting style issues-->
+	
+	body {
+    width: 70%;
+    margin: 0 auto; }
+	
+	
+	
+  </style>
+</head>
+
+<body>
+
+<header >
+  
+  <nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="../index.html">
+			<span style="padding-top:10px;margin-bottom:3px;font-weight:700;">Curate Science<img src="../logos/sprite-icons/CS-icon-light-blue.png" style="margin-left:1px;width:22px;margin-top:-2px;font-style:normal;"></span>
+		  </a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			<li style="font-weight:bold"><a href="../index.html#about">About</a></li>
+			<li style="font-weight:bold"><a href="../index.html#people">People</a></li>
+			<li style="font-weight:bold"><a href="../index.html#FAQ">FAQ</a></li>
+			<li style="font-weight:bold"><a href="../index.html#newsletter">Newsletter</a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+  
+</header>
+
+<div class="main-container">
+	<div class="container">
+	
+		
+		<h1 class="collection">Reproducibility Project: Psychology <img src="../logos/sprite-icons/collection.png" class="shrunk-16 transparent"> <a href='http://etiennelebel.com/documents/osc(2015,science).pdf' target='_blank' ><img src="../logos/sprite-icons/pdf.png" class="shrunk-14 transparent"></a> </h1>
+		<p style="margin:5px 5px 0 0;">
+		Collection type: <span class="label label-info-purple">Multi effect</span> <span class="label label-info-teal">Single-method</span> <span class="label label-info-red">Multi-lab</span> <span class="label label-info-brown" title="This collection contains 100 replications of 100 social/cognitive psychology effects across 100 labs.">Replications <span class="badge badge-repnum">100</span></span>
+		</p>
+		<p style="margin:5px 5px 0 0;">
+			<span class="collection-description">Collection contains 100 replications of 100 social/cognitive psychology effects across 100 labs.</span> 
+		</p>
+		<p style="margin:0px 5px 0 0;">
+			<div class="added-by hover-edit">Last updated by: chiefeditor 9 days ago 
+				
+			</div>  
+		</p>
+				
+		
+			<ul class="nav nav-pills">
+			  <li ><a href="#forest-plot">Forest Plots/Key Figures</a></li> 
+			  <li ><a href="#replication-details">Replication Details</a></li>
+			</ul>
+		<p style="border-bottom: 1px solid darkgrey;">
+		</p>
+			
+		
+		<p style="margin-top:30px;">
+			<h3 class="collection"><a class="offset" id="forest-plot">Key Figures</a></h3>
+			<span class="label label-info-brown" >Replications <span class="badge badge-repnum">100</span></span>
+		</p>
+		
+		
+			<p>
+				<img src="key-figures/RPP-Figure1.png" class="img-responsive" title="CC-By Attribution 4.0 International License (Open Science Collaboration (2015). Estimating the reproducibility of psychological science. Science, 349, aac4716 DOI: 10.1126/science.aac4716)">
+				<br><br>
+				<img src="key-figures/RPP-Figure3.png" class="img-responsive" title="CC-By Attribution 4.0 International License (Open Science Collaboration (2015). Estimating the reproducibility of psychological science. Science, 349, aac4716 DOI: 10.1126/science.aac4716)">
+			</p>
+	
+		
+		 <br><br>
+		 <h3 class="collection"><a class="offset" id="replication-details">Replication Details</a> </h3>
+		 <span class="label label-info-brown" >Replications <span class="badge badge-repnum">100</span></span>
+		 <br><br>
+			
+			<div id="loader-div" class="loader"></div>
+			<table id="example" class="stripe row-border order-column compact hidden" cellspacing="0" width="100%">
+						<thead>
+						
+						<tr>
+							<th title="target effect/hypothesis tested in replication attempt">target.effect</th>
+							<th title="original authors & study number (unnumbered for sole study papers)">orig.study.number</th>
+							<th title="original study sample size (N; total sample size)">o.N</th>
+							<th title="original study effect size ± 95% CIs; NR means not reported and/or not calculatable">orig.effect.size</th>
+							<th title="replication study sample size (N; total sample size)">r.N</th>
+							<th title="replication study effect size ± 95% CIs; NR means not reported and/or not calculatable">rep.effect.size</th>
+							<th title="replication authors & study number (unnumbered for sole study papers)">rep.study.number</th>
+							<th title="replication outcome & consistency relative to original (see About section for details)">rep.outcome</th>
+							<th title="independent variable constructs (operationalizations & conditions)">IVs</th>
+							<th title="dependent variable constructs (operationalizations)">DVs</th>
+							<th title="type of direct replication (see replication taxonomy in About section for details)">rep.type</th>
+							<th title="name of large-scale multi-lab effort or individual effort">rep.effort.type</th>
+							<th title="known replication methodological differences relative to original (if any)">rep.differences</th>
+							<th title="active sample evidence in replication to detect a positive effect (see About section for details)">rep.active.evidence</th>
+							<th title="additional DVs assessed & verbal description of results">other.outcomes</th>
+						</tr>
+						</thead>
+						<tbody>
+
+<tr>
+  <td>rebel vs obedient liking effect</td>
+  <td>
+    Monin et al. (2008) Study 4
+    <a href=' http://www.ask-force.org/web/Discourse/Monin-Rejection-Moral-Rebels-2008.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>67</td>
+  <td> r = .35 ± .22 </td>
+  <td>75</td>
+  <td> r = .16 ± .22 </td>
+  <td>
+    Holubar &amp; Frank (2015)
+    <a href=' https://osf.io/a4fmg/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/pz0my/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/pz0my/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #1</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Decreased liking for rebels compared to obedient confederates (in non-self-affirmed control condition) eliminated in self-affirmed condition</td>
+</tr><tr>
+  <td>implicit-explicit correspondence effect</td>
+  <td>
+    Payne et al. (2008) Study 4
+    <a href=' https://pdfs.semanticscholar.org/0b28/0b8e08cd35cce13fc6cca1a25dc2b9a7e696.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>70</td>
+  <td> r = .35 ± .22 </td>
+  <td>180</td>
+  <td> r = .15 ± .14 </td>
+  <td>
+    Vianello (2015)
+    <a href=' https://osf.io/79y8g/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/rc6mv/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/rc6mv/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 but also excludes original ES point estimate (smaller, same-direction)'> signal - inconsistent, smaller </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #2</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Positive relation between indirect ratings (AMP) and direct ratings (of Black vs. White faces) stronger in low (compared to high) pressure to respond in socially desirable manner conditions.</td>
+</tr><tr>
+  <td>young acquiescent variability effect</td>
+  <td>
+    Soto, John et al. (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/0f4f/d4199114ba21c832edc1800d92fd5c5f4034.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>230047</td>
+  <td> r = .02 ± 0 </td>
+  <td>455326</td>
+  <td> r = .02 ± 0 </td>
+  <td>
+    Soderberg (2015)
+    <a href=' https://osf.io/6zdct/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/kez47/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/kez47/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #3</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Younger respondents show greater variability (variance) in acquiescent response tendencies than older respondents.</td>
+</tr><tr>
+  <td>anxious attachment mortality effect</td>
+  <td>Cox, Arndt et al. (2008) Study 6</td>
+  <td>100</td>
+  <td> r = .23 ± .19 </td>
+  <td>200</td>
+  <td> r = -.05 ± .14 </td>
+  <td>
+    Wissink, Zeelenberg et al. (2015)
+    <a href=' https://osf.io/uhnd2/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/5tbxf/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/5tbxf/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #4</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Increased relative preference for parent among mortality-salience induced Ps scoring low on avoidance but high on anxiety compared to control conditions (dental pain)</td>
+</tr><tr>
+  <td>action priming boosts cognitive performance</td>
+  <td>
+    Albarracin  et al. (2008) Study 5
+    <a href=' https://pdfs.semanticscholar.org/dac5/23772e965444540d31e0fb743464fbb56b0e.pdf?_ga=2.187221102.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>36</td>
+  <td> r = .38 ± .30 </td>
+  <td>88</td>
+  <td> r = -.03 ± .21 </td>
+  <td>
+    Kim, Frank et al. (2015)
+    <a href=' https://osf.io/2pbaf/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/vy1bc/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/vy1bc/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #5</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps primed with action words correctly solved higher number of SAT-type verbal and math problems than Ps primed with inaction words.</td>
+</tr><tr>
+  <td>action priming boosts # of thoughts effect</td>
+  <td>
+    Albarracin  et al. (2008) Study 7
+    <a href=' https://pdfs.semanticscholar.org/dac5/23772e965444540d31e0fb743464fbb56b0e.pdf?_ga=2.187221102.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>98</td>
+  <td> r = .21 ± .19 </td>
+  <td>109</td>
+  <td> r = .16 ± .19 </td>
+  <td>
+    Voracek &amp; Sonnleitner (2015)
+    <a href=' https://osf.io/xbyqd/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/rgm6p/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/rgm6p/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #6</td>
+  <td>German instead of English language</td>
+  <td></td>
+  <td></td>
+  <td>Action-word primed Ps completing an inactive task generated a greater number of thoughts compared to inaction-primed Ps completing an active task, with no difference in thoughts in control conditions. </td>
+</tr><tr>
+  <td>affective incoherence effect</td>
+  <td>
+    Centerbar, Schnall et al. (2008) Study 5
+    <a href=' https://pdfs.semanticscholar.org/7f67/facff28bac9ae369ec0e635863c25fa147e3.pdf?_ga=2.187221102.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>133</td>
+  <td> r = .21 ± .16 </td>
+  <td>113</td>
+  <td> r = .09 ± .18 </td>
+  <td>
+    Humphries, Brown et al. (2015)
+    <a href=' https://osf.io/wcgx5/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/l8srm/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/l8srm/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #7</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Affective coherence increased cognitive complexity in participant-generated narratives compared to affective incoherence.</td>
+</tr><tr>
+  <td>intergroup bias regulation effect</td>
+  <td>
+    Amodio, Devine et al. (2008) Study 2
+    <a href=' https://pdfs.semanticscholar.org/f071/dae9159b3f93e540c928692dfbd6097bc1bf.pdf?_ga=2.187221102.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>48</td>
+  <td> r = .38 ± .25 </td>
+  <td>75</td>
+  <td> r = .08 ± .23 </td>
+  <td>
+    Johnson, Graham et al. (2015)
+    <a href=' https://osf.io/ysxmf/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/wkgpq/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/wkgpq/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #8</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Low-prejudice Ps whose non-prejudiced responses were motivated by internal (but not external) factors exhibited better control on a stereotype-inhibition task than did Ps motivated by a combination of internal and external factors.</td>
+</tr><tr>
+  <td>action-oriented mindset dissonance effect</td>
+  <td>
+    Harmon-Jones et al. (2008) Study 2
+    <a href=' https://pdfs.semanticscholar.org/df6f/78f60a3aef237604e02636657343f0e4e974.pdf?_ga=2.227535963.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>57</td>
+  <td> r = .23 ± .26 </td>
+  <td>71</td>
+  <td> r = .07 ± .24 </td>
+  <td>
+    Gable &amp; Mechin (2015)
+    <a href=' https://osf.io/zpwne/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/su6bm/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/su6bm/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #9</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Action-oriented mindset caused attitude changes from pre- to post-decision to both chosen and rejected alternatives, whereas positive-nonaction and neutral mindsets caused attitude changes solely to rejected alternative. </td>
+</tr><tr>
+  <td>anger communication bargaining effect</td>
+  <td>
+    van Dijk, van Kleef et al. (2008) Study 3
+    <a href=' https://pdfs.semanticscholar.org/16af/db45ada4a1951aa464be49ef82ac6eebf0c1.pdf?_ga=2.227535963.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>103</td>
+  <td> r = .38 ± .17 </td>
+  <td>83</td>
+  <td> r = -.04 ± .22 </td>
+  <td>
+    Voracek &amp; Slowik (2015)
+    <a href=' https://osf.io/2idfu/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/xtsq6/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/xtsq6/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #10</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps made lower bargaining offers to angry (compared to happy) recipients than happy, but only when consequences of rejection were low. </td>
+</tr><tr>
+  <td>walking on eggshells effect</td>
+  <td>
+    Lemay &amp; Clark (2008a) Study 5
+    <a href=' https://pdfs.semanticscholar.org/7d50/911e5a1e8199449e74e82ab7515c33695ff8.pdf?_ga=2.227535963.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>186</td>
+  <td> r = .17 ± .14 </td>
+  <td>280</td>
+  <td> r = .04 ± .12 </td>
+  <td>
+    Baranski (2015)
+    <a href=' https://osf.io/efjn3/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/ke43j/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/ke43j/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #11</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps believed confederate's expressions were happier than their private feelings, but only in vulnerable conditions. </td>
+</tr><tr>
+  <td>head liberates heart effect</td>
+  <td>
+    Lemay &amp; Clark (2008b) Study 5
+    <a href=' https://pdfs.semanticscholar.org/7b10/2f1d04ba874821f66569d41683070b783bd5.pdf?_ga=2.227535963.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>153</td>
+  <td> R² = .68 </td>
+  <td>216</td>
+  <td> b = .72 </td>
+  <td>
+    Marigold, Forest et al. (2015)
+    <a href=' https://osf.io/mv3i7/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/h84qd/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/h84qd/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #12</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps own responsiveness was a significant predictor of their perception of their partners' responsiveness.</td>
+</tr><tr>
+  <td>poignancy effect</td>
+  <td>
+    Ersner-Hershfield et al. (2008) Study 2
+    <a href=' https://pdfs.semanticscholar.org/72a0/2b6869a1330a4090a9ddfb21674c6a0e21fe.pdf?_ga=2.139570293.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>110</td>
+  <td> r = .22 ± .18 </td>
+  <td>222</td>
+  <td> r = .00 ± .14 </td>
+  <td>
+    Talhelm, Eggleston, &amp; Lee (2015a)
+    <a href=' https://osf.io/fw6hv/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/sq8k9/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/sq8k9/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #13</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps (college seniors) reminded they were experiencing their last day as students at graduation reported fewer mixed emotions than Ps not reminded.</td>
+</tr><tr>
+  <td>modulation of 1/f noise racial bias emission effect</td>
+  <td>
+    Correll (2008) Study 2
+    <a href=' https://github.com/eplebel/science-commons/blob/master/curated/correll(2008).pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>71</td>
+  <td> r = .27 ± .22 </td>
+  <td>148</td>
+  <td> r = .07 ± .16 </td>
+  <td>
+    LeBel (2015) Study 1
+    <a href=' https://osf.io/hzka3/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/fejxb/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/fejxb/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>avoid/use race information vs. control instructions</td>
+  <td>1/f noise (weapon identification task)</td>
+  <td>very close</td>
+  <td>RPP #14</td>
+  <td>Canadian rather than US undergraduates; keyboard used instead of response box;</td>
+  <td>Racial bias (in terms of RT) higher in use and avoid race (compared to control) conditions (d = .34 Â± .35); 1/f noise observed within each of the 3 conditions (p&lt;.0001)</td>
+  <td></td>
+  <td>Ps in use-race or avoid-race instruction conditions exhibited less 1/f noise (as reflected in PSD slopes) on WIT than Ps in a control condition.</td>
+</tr><tr>
+  <td>aggression priming perceptual effect</td>
+  <td>
+    Forster, Liberman et al. (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/4643/46b57725371f6d93e625699667ad784cb3bd.pdf?_ga=2.197004522.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>82</td>
+  <td> r = .43 ± .18 </td>
+  <td>71</td>
+  <td> r = .11 ± .24 </td>
+  <td>
+    Reinhard (2015)
+    <a href=' https://osf.io/sxnu6/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/mxryb/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/mxryb/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #15</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Aggression priming increased perceptions of aggression (assimilation effect) among Ps whose processing style induced to be global (or control) whereas it decreased perceptions of aggression (contrast effect) among Ps whose processing style induced to be local.</td>
+</tr><tr>
+  <td>not so innocent effect</td>
+  <td>Exline, Baumeister et al. (2008) Study 7</td>
+  <td>45</td>
+  <td> r = .43 ± .25 </td>
+  <td>135</td>
+  <td> r = .01 ± .17 </td>
+  <td>
+    Lin &amp; Frank (2015)
+    <a href=' https://osf.io/es7ub/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/imrx2/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/imrx2/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #16</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Subtly asking Ps questions about their empathic understanding and capability of exhibiting similar transgressions reduced male (but not female) Ps' feelings of vengefulness.</td>
+</tr><tr>
+  <td>tempting fate effect</td>
+  <td>
+    Risen &amp; Gilovich (2008) Study 6
+    <a href=' https://pdfs.semanticscholar.org/d828/30e4f7686ca44031a62d002bb9349ce6d5be.pdf?_ga=2.160491515.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>122</td>
+  <td> r = .19 ± .17 </td>
+  <td>226</td>
+  <td> r = .00 ± .13 </td>
+  <td>
+    Mathur &amp; Frank (2015)
+    <a href=' https://osf.io/nwua6/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/sg3su/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/sg3su/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #17</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Tempting fate effect (tempting fate increases perceived likelihood of negative outcomes) amplified under cognitive load compared to a control condition.</td>
+</tr><tr>
+  <td>cross-cultural nonverbal pride expression effect</td>
+  <td>
+    Tracy &amp; Robins (2008) Study 4
+    <a href=' https://pdfs.semanticscholar.org/2acf/75b16de98f1e49b8d62dcaddc0e8193488f8.pdf?_ga=2.233351384.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>211</td>
+  <td> Propor = .78 </td>
+  <td>333</td>
+  <td> Propor = .77 </td>
+  <td>
+    Sullivan (2015)
+    <a href=' https://osf.io/9uqxr/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/qthf2/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/qthf2/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #18</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps recognized conveyed emotions as pride at an above chance level, no matter what culture target represented. </td>
+</tr><tr>
+  <td>Wason task performance and cognitive ability correlation</td>
+  <td>
+    Stanovich &amp; West (2008) Study 8
+    <a href=' https://pdfs.semanticscholar.org/372b/31dd367450ee278ebc6bfe2d50287f893c7d.pdf?_ga=2.233351384.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>375</td>
+  <td> r = .22 ± .10 </td>
+  <td>177</td>
+  <td> r = .07 ± .15 </td>
+  <td>
+    Baranski (2015)
+    <a href=' https://osf.io/p3gz2/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/7ux8p/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/7ux8p/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #19</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps correctly answering Wason's four-card selection task exhibited higher cognitive ability (SAT scores) than Ps answering card task incorrectly.</td>
+</tr><tr>
+  <td>closed open mind effect</td>
+  <td>
+    Blankenship &amp; Wegener (2008) Study 5a
+    <a href=' https://pdfs.semanticscholar.org/f853/aa287ee48bcfcfcc1f807fa10faeccc04d0f.pdf?_ga=2.233351384.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>261</td>
+  <td> r = .21 ± .12 </td>
+  <td>251</td>
+  <td> r = .04 ± .12 </td>
+  <td>
+    Lemm (2015)
+    <a href=' https://osf.io/v3e2z/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/2gx4k/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/2gx4k/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #20</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Strong arguments more persuasive than weak arguments among Ps forced to focus on important values in the messages, but no argument strength effect among Ps forced to focus on unimportant values. </td>
+</tr><tr>
+  <td>descriptive deviant popularity effect</td>
+  <td>Morrison &amp; Miller (2008) Study 3</td>
+  <td>37</td>
+  <td> r = .32 ± .30 </td>
+  <td>120</td>
+  <td> r = .20 ± .18 </td>
+  <td>
+    Motyl (2015)
+    <a href=' https://osf.io/2jwi6/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/nhwv5/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/nhwv5/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #21</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Bumper stickers of descriptive deviants rated as more popular than bumper stickers of prescriptive deviants.</td>
+</tr><tr>
+  <td>(un)accomplished goal action effect</td>
+  <td>
+    Koo &amp; Fishbach (2008) Study 4
+    <a href=' https://pdfs.semanticscholar.org/430d/1ea2b5233cb303dfa5eb39d8e67bd5c84e42.pdf?_ga=2.228124123.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>246</td>
+  <td> η² = .041 </td>
+  <td>768703</td>
+  <td> OR = .159 </td>
+  <td>
+    Kidwell &amp; Dodson (2015)
+    <a href=' https://osf.io/68m2c/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/nr7d9/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/nr7d9/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0'> no signal </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #22</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Increased donations to HIV/AIDS initiative when emphasizing "to-date" information among Ps who hadn't yet donated, but emphasizing "to-go" information among Ps who had. </td>
+</tr><tr>
+  <td>implemental mind-set attitude strength effect</td>
+  <td>
+    Henderson, de Liver et al. (2008) Study 5
+    <a href=' https://pdfs.semanticscholar.org/aa89/13651dae184a14a3186c74a9570b80a9ce1a.pdf?_ga=2.38709349.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>46</td>
+  <td> r = .26 ± .28 </td>
+  <td>70</td>
+  <td> r = .16 ± .24 </td>
+  <td>
+    Lane &amp; Gazarian (2015)
+    <a href=' https://osf.io/cjr7d/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/79dey/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/79dey/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #23</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps in one-sided focus condition exhibited less ambivalence than participants in two-sided focus condition.</td>
+</tr><tr>
+  <td>need for acceptance reconcialiation effect</td>
+  <td>
+    Shnabel &amp; Nadler (2008) Study 4
+    <a href=' https://pdfs.semanticscholar.org/9e10/97af99a1b9d8e2e178170bf700feed1fd1d8.pdf?_ga=2.38709349.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>94</td>
+  <td> r = .27 ± .19 </td>
+  <td>141</td>
+  <td> r = -.10 ± .16 </td>
+  <td>
+    E. Gilbert (2015)
+    <a href=' https://osf.io/fuj2c/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/xse7q/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/xse7q/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #24</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps in perpetrator condition reported higher need for social acceptance and reconciliation after moral acceptance was restored, whereas Ps in victim condition reported higher need for power and reconciliation after sense of power was restored.</td>
+</tr><tr>
+  <td>face of success effect</td>
+  <td>
+    Rule &amp; Ambady (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/71d5/3c7980b9561ffd56e6012b2bbb6685209df3.pdf?_ga=2.38709349.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>50</td>
+  <td> r = .30 ± .26 </td>
+  <td>50</td>
+  <td> r = .27 ± .27 </td>
+  <td>
+    Talhelm, Eggleston, &amp; Lee (2015b)
+    <a href=' https://osf.io/4peq6/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/r5gpv/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/r5gpv/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #25</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Composite ratings of perceived power and leadership positively correlated with company profits, even after controlling for CEO age, CEO attractiveness, and affect CEOs displayed in photo. </td>
+</tr><tr>
+  <td>selective exposure information quantity effect</td>
+  <td>Fischer, Schulz-Hardt et al. (2008) Study 4</td>
+  <td>52</td>
+  <td> r = .50 ± .21 </td>
+  <td>150</td>
+  <td> r = .22 ± .16 </td>
+  <td>
+    Ratliff (2015)
+    <a href=' https://osf.io/5afur/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/v8vft/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/v8vft/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 but also excludes original ES point estimate (smaller, same-direction)'> signal - inconsistent, smaller </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #26</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Decision-makers prefer inconsistent information when choosing between two pieces of information, but prefer consistent information when choosing between more pieces of information. </td>
+</tr><tr>
+  <td>ego depletion confirmatory bias effect</td>
+  <td>Fischer, Greitemeyer et al. (2008) Study 2</td>
+  <td>85</td>
+  <td> r = .21 ± .20 </td>
+  <td>140</td>
+  <td> r = .12 ± .16 </td>
+  <td>
+    Galliani (2015)
+    <a href=' https://osf.io/9pnct/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/j8bpa/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/j8bpa/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #27</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps whose self-regulation resources depleted exhibited increased biases in confirmatory information processing compared to non-depleted and ego-threatened condition Ps</td>
+</tr><tr>
+  <td>stereotype threat interaction distance effect</td>
+  <td>
+    Goff, Steele et al. (2008) Study 4
+    <a href=' https://pdfs.semanticscholar.org/e2d7/50c087773d3d19b488007b16e70aef0a1ce4.pdf?_ga=2.159777915.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>55</td>
+  <td> r = .40 ± .23 </td>
+  <td>51</td>
+  <td> r = .01 ± .28 </td>
+  <td>
+    Kelso, Gampa, Wright et al. (2015)
+    <a href=' https://osf.io/7q5us/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/abxcj/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/abxcj/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #28</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>When learning goals absent, Ps sat closer to each other when they discussed love and relationships compared to when they discussed racial profiling. </td>
+</tr><tr>
+  <td>generalized earning prospect predicts romantic interest effect</td>
+  <td>
+    Eastwick &amp; Finkel (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/ec64/e26322c7fdbf9e54981a07693974423f3031.pdf?_ga=2.159777915.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>163</td>
+  <td> r = .14 ± .16 </td>
+  <td>304</td>
+  <td> r = .03 ± .11 </td>
+  <td>
+    Selterman, Chagnon et al. (2015)
+    <a href=' https://osf.io/5pjsn/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/ng6cc/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/ng6cc/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #29</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Perceived earning prospects significantly positively predicted romantic interest in speed-dating situation for both men and women (absence of evidence for interaction effect).</td>
+</tr><tr>
+  <td>approach priming partner criticism effect</td>
+  <td>
+    Murray, Derrick et al. (2008) Study 8
+    <a href=' https://www.researchgate.net/profile/Jaye_Derrick/publication/5568464_Balancing_Connectedness_and_Self-Protection_Goals_in_Close_Relationships_A_Levels-of-Processing_Perspective_on_Risk_Regulation/links/0912f50eb380ee6584000000.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>91</td>
+  <td> r = .32 ± .18 </td>
+  <td>76</td>
+  <td> r = -.14 ± .22 </td>
+  <td>
+    Sinclair, Goldberg et al. (2015)
+    <a href=' https://osf.io/3hndq/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/cxmf6/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/cxmf6/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #30</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>When primed with approach goals, low self-esteem Ps in partner criticism condition believed their partner regarded them significantly more negatively than did controls. </td>
+</tr><tr>
+  <td>math self-handicapping effect</td>
+  <td>
+    McCrea (2008) Study 5
+    <a href=' https://pdfs.semanticscholar.org/1724/262903b5e1164bf55c1bf263d05761516b68.pdf?_ga=2.159777915.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>28</td>
+  <td> r = .34 ± .35 </td>
+  <td>61</td>
+  <td> r = .29 ± .24 </td>
+  <td>
+    Chartier (2015)
+    <a href=' https://osf.io/ytxgr/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/mua6d/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/mua6d/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #31</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Self-handicap condition Ps performed worse on mathematical questions task than control condition Ps.</td>
+</tr><tr>
+  <td>social identity contingencies effect</td>
+  <td>
+    Purdie-Vaughns  et al. (2008) Study 2
+    <a href=' https://pdfs.semanticscholar.org/95f9/403e6b658714ddfdca17ac94b5274cf8f81f.pdf?_ga=2.128443466.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>90</td>
+  <td> r = .38 ± .18 </td>
+  <td>1490</td>
+  <td> r = -.04 ± .05 </td>
+  <td>
+    Schmidt (2015)
+    <a href=' https://osf.io/3rxvs/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/etg7c/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/etg7c/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #32</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Among Black, but not White professionals, high (compared to low) fairness cue lowered expectations of threatening identity contingencies and increased trust. </td>
+</tr><tr>
+  <td>fluency priming on psychological distance effect</td>
+  <td>
+    Alter &amp; Oppenheimer (2008) Study 2
+    <a href=' https://pdfs.semanticscholar.org/75b8/524267afcc74aa0d317689c8b6d28bb3d3f0.pdf?_ga=2.128443466.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>236</td>
+  <td> r = .13 ± .12 </td>
+  <td>1146</td>
+  <td> r = .02 ± .06 </td>
+  <td>
+    Foster (2015)
+    <a href=' https://osf.io/jym7h/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/kegmc/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/kegmc/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #33</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Conceptually-fluent primed Ps reported increased preference for concrete descriptions of the prime later, compared to conceptually-disfluent primed Ps. </td>
+</tr><tr>
+  <td>goal priming boosts learning effect</td>
+  <td>
+    Eitam, Hassin et al. (2008) Study 2
+    <a href=' http://pluto.mscc.huji.ac.il/~mschul/yaacov_schul_files/2008-eitam%26hassin%26schul-psych-science.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>86</td>
+  <td> r = .22 ± .20 </td>
+  <td>158</td>
+  <td> r = .10 ± .16 </td>
+  <td>
+    Prenoveau &amp; Kirkhart (2015)
+    <a href=' https://osf.io/x75fq/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/edcr7/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/edcr7/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #34</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Goal primed Ps learned more on an incidental-learning task (serial reaction time task; SRT) than control-group Ps.</td>
+</tr><tr>
+  <td>sex difference in perceived sexual interest effect</td>
+  <td>
+    Farris, Treat et al. (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/7506/0955a43d0c40d1e10ffee2f66b23c4f912fe.pdf?_ga=2.160367867.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>280</td>
+  <td> r = .55 ± .08 </td>
+  <td>144</td>
+  <td> r = .09 ± .16 </td>
+  <td>
+    Attwood, Easey, &amp; Munafo (2015)
+    <a href=' https://osf.io/5u4km/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/7dyp5/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/7dyp5/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #35</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Male Ps exhibited less sensitivity in distinguishing friendliness versus sexual interest compared to women (supporting a male perceptual insensitivity account).</td>
+</tr><tr>
+  <td>prescribed optimism effect</td>
+  <td>
+    Armor, Massey et al. (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/ebcb/12ed8b27bfe3588e8f9b994f4acc914f050e.pdf?_ga=2.160367867.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>126</td>
+  <td> r = .68 ± .10 </td>
+  <td>177</td>
+  <td> r = .76 ± .06 </td>
+  <td>
+    Lassetter, Brandt et al. (2015)
+    <a href=' https://osf.io/8u5v2/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/qlzap/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/qlzap/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 but also excludes original ES point estimate (larger, same-direction)'> signal - inconsistent, larger </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #36</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Among accurate, optimistic, or pessimistic predictions, Ps most likely to recommend optimistic predictions. </td>
+</tr><tr>
+  <td>age-related episodic memory effect</td>
+  <td>
+    Addis, Wong et al. (2008) Study 1
+    <a href=' http://scholar.harvard.edu/files/schacterlab/files/addiswongschacter2008.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>32</td>
+  <td> r = .57 ± .26 </td>
+  <td>32</td>
+  <td> r = .65 ± .22 </td>
+  <td>
+    Vasquez (2015)
+    <a href=' https://osf.io/9ayxi/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/yaeu7/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/yaeu7/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #37</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Older adults produced fewer internal details, but more external details compared to young adults. </td>
+</tr><tr>
+  <td>ego depletion boosts attraction effect</td>
+  <td>
+    Masicampo &amp; Baumeister (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/2820/47d5641dcba11516a64d6f082154c0ab79a9.pdf?_ga=2.228131675.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>115</td>
+  <td> r = .21 ± .18 </td>
+  <td>166</td>
+  <td> r = -.05 ± .16 </td>
+  <td>
+    Osborne, Vuu, &amp; Henninger (2015)
+    <a href=' https://osf.io/897ew/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/3h29d/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/3h29d/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #38</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps in depletion/placebo group exhibited larger attraction effect compared to Ps in other three conditions (depletion with sugar, no depletion with sugar, no depletion with placebo). </td>
+</tr><tr>
+  <td>aversive errors effect</td>
+  <td>
+    Hajcak &amp; Foti (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/4909/934881166b7b8e4c35c6f059bf2cf3952dcb.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>31</td>
+  <td> r = -.38 ± .32 </td>
+  <td>43</td>
+  <td> r = -.25 ± .29 </td>
+  <td>
+    Lewis &amp; Pitts (2015)
+    <a href=' https://osf.io/82bwv/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/73pnd/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/73pnd/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #39</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Startle response magnitude following an error negatively correlated to Error-Related Negativity (ERN) amplitude.</td>
+</tr><tr>
+  <td>sunny side of fairness effect</td>
+  <td>
+    Tabibnia, Satpute et al. (2008) Study 2
+    <a href=' https://pdfs.semanticscholar.org/2275/5d2aeb2f4f1216ffa0f829e4cf31141c79f9.pdf?_ga=2.228131675.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>12</td>
+  <td> r = .85 ± .24 </td>
+  <td>24</td>
+  <td> r = .83 ± .15 </td>
+  <td>
+    Beer, Rigney, &amp; Flagan (2015)
+    <a href=' https://osf.io/nxp9w/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/94j6h/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/94j6h/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #40</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Accepting unfair offers increased activation in right ventrolateral prefrontal cortex compared to baseline</td>
+</tr><tr>
+  <td>loving woman who justify inequality effect</td>
+  <td>
+    Lau, Kay &amp; Spencer (2008) Study 1
+    <a href=' https://u.osu.edu/spencerlab/files/2017/02/j2E1467-92802E20082E020402Ex-ov88xp.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>36</td>
+  <td> r = .38 ± .30 </td>
+  <td>70</td>
+  <td> r = -.03 ± .24 </td>
+  <td>
+    Stieger (2015)
+    <a href=' https://osf.io/42hgf/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/fxqsk/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/fxqsk/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #41</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Male Ps whose faith in economic system was threatened reported greater romantic interest in women who embody (versus did not embody) benevolent sexist ideals</td>
+</tr><tr>
+  <td>threat of appearing prejudiced attentional bias effect</td>
+  <td>
+    Richeson &amp; Trawalter (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/8d43/78b38e48bbfaa4ea06765f14709abb5ac39b.pdf?_ga=2.198763753.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>28</td>
+  <td> r = .37 ± .34 </td>
+  <td>66</td>
+  <td> r = .02 ± .24 </td>
+  <td>
+    Lai (2015)
+    <a href=' https://osf.io/phwi4/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/c5fza/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/c5fza/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #42</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps with high "external motivation" (EM) to be non-prejudiced exhibited attentional biases for neutral, but not happy Black faces. </td>
+</tr><tr>
+  <td>offensive behavior looking effect</td>
+  <td>
+    Crosby, Monin et al. (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/5458/e25a697d427d5647dda42fa4989188894d2f.pdf?_ga=2.198763753.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>25</td>
+  <td> r = .25 ± .40 </td>
+  <td>30</td>
+  <td> r = .18 ± .36 </td>
+  <td>
+    Skorinko &amp; Jonas (2015)
+    <a href=' https://osf.io/nkaw4/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/b98zw/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/b98zw/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #43</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>When White man made potentially offensive comment in presence of Black man, Ps who could hear interaction looked at Black man for a longer compared to when Ps couldnt hear interaction. </td>
+</tr><tr>
+  <td>having what you want happiness effect</td>
+  <td>
+    Larsen &amp; McKibban (2008) Study 2
+    <a href=' http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.1027.2039&rep=rep1&type=pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>119</td>
+  <td> r = .21 ± .18 </td>
+  <td>238</td>
+  <td> r = .50 ± .09 </td>
+  <td>
+    Seibel, Vermue et al. (2015)
+    <a href=' https://osf.io/h4cbg/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/5dx4v/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/5dx4v/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 but also excludes original ES point estimate (larger, same-direction)'> signal - inconsistent, larger </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #44</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>People who had what they wanted were happier than others, even after controlling for the degree to which they wanted what they had. </td>
+</tr><tr>
+  <td>implicit attitude generalization occurs immediately effect</td>
+  <td>
+    Ranganath &amp; Nosek (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/9259/4542085ad219d5a5c611c16a8cd62c06785d.pdf?_ga=2.167774311.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>684</td>
+  <td> r = .00 ± .08 </td>
+  <td>3597</td>
+  <td> r = .11 ± .04 </td>
+  <td>
+    Cohn (2015)
+    <a href=' https://osf.io/9xt25/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/2gkjt/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/2gkjt/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 but also excludes original ES point estimate (larger, same-direction)'> signal - inconsistent, larger </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #45</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Information about original individuals automatically influenced Ps' implicit responses toward new individuals from same social category.</td>
+</tr><tr>
+  <td>anti-free-will boosts cheating effect</td>
+  <td>
+    Vohs &amp; Schooler (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/a20c/fba85021eabd83780f3042636e8a3de8e58a.pdf?_ga=2.167774311.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>30</td>
+  <td> r = .50 ± .30 </td>
+  <td>58</td>
+  <td> r = .10 ± .26 </td>
+  <td>
+    Giner-Sorolla, Embley et al. (2015)
+    <a href=' https://osf.io/2nf3u/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/i29mh/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/i29mh/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #46</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps who read anti-free-will essay cheated more often that Ps who read a control essay.</td>
+</tr><tr>
+  <td>distance priming boosts psychological closeness effect</td>
+  <td>
+    Williams &amp; Bargh (2008) Study 4
+    <a href=' https://pdfs.semanticscholar.org/e63b/2302efaa97ed0909dd5a42221e6b6524a28d.pdf?_ga=2.167774311.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>84</td>
+  <td> r = .23 ± .20 </td>
+  <td>125</td>
+  <td> r = .04 ± .18 </td>
+  <td>
+    Joy-Gaba, Clay, &amp; Cleary (2015)
+    <a href=' https://osf.io/7uh8g/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/vnsqg/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/vnsqg/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #47</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Distance-primed Ps reported higher levels of closeness toward one's family members and hometown compared to control condition Ps.</td>
+</tr><tr>
+  <td>hedonic anger regulation effect</td>
+  <td>
+    Tamir, Mitchell et al. (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/774a/37707de80f2a062f4833b8f01dc4257bd7ec.pdf?_ga=2.167774311.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>82</td>
+  <td> r = .59 ± .14 </td>
+  <td>88</td>
+  <td> r = .61 ± .13 </td>
+  <td>
+    Masicampo (2015)
+    <a href=' https://osf.io/7i2tf/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/k4y9i/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/k4y9i/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #48</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>When Ps anticipated playing confrontational games, Ps preferred anger-inducing activities more so than exciting and neutral activities. </td>
+</tr><tr>
+  <td>social disconnection boosts supernatural agent beliefs effect</td>
+  <td>
+    Epley, Akalis et al. (2008) Study 3
+    <a href=' https://pdfs.semanticscholar.org/3be8/050244871a888256d769ab247639de174a72.pdf?_ga=2.239477829.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>57</td>
+  <td> r = .17 ± .26 </td>
+  <td>78</td>
+  <td> r = .06 ± .23 </td>
+  <td>
+    Sandstrom &amp; Dunn (2015)
+    <a href=' https://osf.io/m5a2c/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/yuybh/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/yuybh/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #49</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>socially disconnected condition Ps reported stronger beliefs in supernatural agents and events (and attributed more social traits to pets) compared to control condition Ps.</td>
+</tr><tr>
+  <td>intergroup prisoners dilemma-maximizing difference effect</td>
+  <td>
+    Halevy, Bornstein et al. (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/7f74/6a26fc71e57ab3733b079ba005dcca25321a.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>80</td>
+  <td> r = .77 ± .09 </td>
+  <td>40</td>
+  <td> r = .65 ± .20 </td>
+  <td>
+    Thomae, Woo, &amp; Immelman (2015)
+    <a href=' https://osf.io/sjwcd/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/76qc5/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/76qc5/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #50</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps in an intergroup prisoners dilemma-maximizing difference (IPD-MD) game contributed fewer tokens than Ps in an intergroup prisoners dilemma (IPD) game.</td>
+</tr><tr>
+  <td>ovulation boosts attraction to single men effect</td>
+  <td>
+    Bressan &amp; Stranieri (2008) Study 2
+    <a href=' https://sci-hub.tw/http://www.jstor.org/stable/pdf/40064685.pdf?seq=1#page_scan_tab_contents ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>208</td>
+  <td> r = .19 ± .14 </td>
+  <td>263</td>
+  <td> r = -.03 ± .12 </td>
+  <td>
+    Frazier &amp; Hasselman (2015) Study 1
+    <a href=' https://osf.io/7vriw/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/blcj6/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/blcj6/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #51</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Attached women are more attracted to single men when they're ovulating (compared to not ovulating), but are more attracted to attached men when they're not ovulating (compared to ovulating). </td>
+</tr><tr>
+  <td>ovulation boosts attraction to single men effect</td>
+  <td>
+    Bressan &amp; Stranieri (2008) Study 2
+    <a href=' https://sci-hub.tw/http://www.jstor.org/stable/pdf/40064685.pdf?seq=1#page_scan_tab_contents ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>208</td>
+  <td> r = .19 ± .14 </td>
+  <td>318</td>
+  <td> r = .02 ± .11 </td>
+  <td>
+    Frazier &amp; Hasselman (2015) Study 2
+    <a href=' https://osf.io/7vriw/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/blcj6/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/blcj6/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #52</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Attached women are more attracted to single men when they're ovulating (compared to not ovulating), but are more attracted to attached men when they're not ovulating (compared to ovulating). </td>
+</tr><tr>
+  <td>cleanliness priming</td>
+  <td>
+    Schnall, Benton &amp; Harvey (2008) Study 2
+    <a href=' https://core.ac.uk/download/pdf/1335179.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>43</td>
+  <td> r = -.40 ± .26 </td>
+  <td>126</td>
+  <td> r = .00 ± .18 </td>
+  <td>
+    Cheung et al. (2015) Study 2
+    <a href=' https://osf.io/2dem3/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/apidb/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/apidb/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' #sbh2008a ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>hand washing vs. control condition</td>
+  <td>moral wrongness (6 moral dilemmas)</td>
+  <td>very close</td>
+  <td>RPP #53</td>
+  <td>US rather than UK undergraduates</td>
+  <td>α = .62 on private body consciousness (PBC) subscale</td>
+  <td></td>
+  <td>After experiencing disgust, Ps who washed their hands judged questionable behaviors as less morally wrong than Ps who did not wash their hands. </td>
+</tr><tr>
+  <td>conscientiousness validity correlation</td>
+  <td>
+    Heine, Buchtel et al. (2008) Study 1
+    <a href=' http://www2.psych.ubc.ca/~heine/docs/2008Mccrae-rejoinder.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>70</td>
+  <td> r = -.43 ± .20 </td>
+  <td>16</td>
+  <td> r = -.11 ± .53 </td>
+  <td>
+    Lazarevic &amp; Knezevic (2015)
+    <a href=' https://osf.io/g4hn3/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/siaqe/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/siaqe/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #54</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Perceptions of National Characters (PNC) measure negatively correlated with behavioural and demographic measures of conscientiousness (validity criteria).</td>
+</tr><tr>
+  <td>social dominance verticality embodiment effect</td>
+  <td>
+    Moeller, Robinson et al. (2008) Study 2
+    <a href=' https://sci-hub.tw/http://journals.sagepub.com/doi/abs/10.1111/j.1467-9280.2008.02093.x ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>53</td>
+  <td> r = -.31 ± .25 </td>
+  <td>72</td>
+  <td> r = .03 ± .24 </td>
+  <td>
+    Levitan &amp; Fernandez-Castilla (2015)
+    <a href=' https://osf.io/7dybc/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/tg2wd/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/tg2wd/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #55</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps scoring high in dominance exhibited faster RTs to vertical compare to horizontal stimuli, unlike Ps scoring low in dominance </td>
+</tr><tr>
+  <td>conflict-triggered goal shielding effect</td>
+  <td>
+    Goschke &amp; Dreisbach (2008) Study 1
+    <a href=' http://www.uni-regensburg.de/psychologie-paedagogik-sport/psychologie-dreisbach/medien/goschkedreisbachpssc08.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>40</td>
+  <td> r = .37 ± .28 </td>
+  <td>95</td>
+  <td> r = .41 ± .17 </td>
+  <td>
+    Costantini &amp; Perugini (2015)
+    <a href=' https://osf.io/pnius/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/bk53t/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/bk53t/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #56</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Interaction between Perspective Memory (PM) cue dimension and compatibility on mean proportion of errors (missed PM cues).</td>
+</tr><tr>
+  <td>relative frequency value heuristic effect</td>
+  <td>
+    Dai, Wertenbroch et al. (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/b84f/8d58d35b9df66ef16e5c65405ecac636a32c.pdf?_ga=2.197521257.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>56</td>
+  <td> r = .28 ± .24 </td>
+  <td>51</td>
+  <td> r = -.18 ± .28 </td>
+  <td>
+    Fuchs, Estel, &amp; Goellner (2015)
+    <a href=' https://osf.io/js7gd/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/q7f6w/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/q7f6w/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #57</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps underestimated number of pictures belonging to category for which they expected to be paid compared to control pictures in non-endowed category.</td>
+</tr><tr>
+  <td>tracing attention effect</td>
+  <td>
+    Roelofs (2008) Study 3
+    <a href=' https://pdfs.semanticscholar.org/d87e/e3b2481809ec84244a42e53cea179e443b83.pdf?_ga=2.197521257.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>24</td>
+  <td> r = .59 ± .29 </td>
+  <td>29</td>
+  <td> r = .15 ± .38 </td>
+  <td>
+    van Rijn (2015)
+    <a href=' https://osf.io/janu3/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/qwkum/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/qwkum/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #58</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Effect of relation between target and distractor was present for picture naming, but absent for word reading.</td>
+</tr><tr>
+  <td>repetition blindness for nonwords effect</td>
+  <td>Morris &amp; Still (2008) Study 6</td>
+  <td>24</td>
+  <td> r = .61 ± .28 </td>
+  <td>24</td>
+  <td> r = .23 ± .40 </td>
+  <td>
+    Goodbourn (2015)
+    <a href=' https://osf.io/5f42t/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/rmvk5/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/rmvk5/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #59</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Repetition blindness (RB) effect observed for nonwords.</td>
+</tr><tr>
+  <td>working memory task switching costs effect</td>
+  <td>
+    Liefooghe, Barouillet et al. (2008) Study 4
+    <a href=' https://pdfs.semanticscholar.org/e6af/57197bd1fdb085be8e0301cb60a399c9e87c.pdf?_ga=2.233351384.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>25</td>
+  <td> r = .42 ± .35 </td>
+  <td>32</td>
+  <td> r = -.22 ± .35 </td>
+  <td>
+    Plessow, Moschl, &amp; Pavel (2015)
+    <a href=' https://osf.io/2h4vx/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/4dvzb/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/4dvzb/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #60</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Lower recall for low-switch lists with degraded stimuli compared to low-switch lists with normal (non-degraded) stimuli.</td>
+</tr><tr>
+  <td>retrieval-induced forgetting effect</td>
+  <td>
+    Storm, Bjork &amp; Bjork (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/ae64/a52dac69038be1691e31913e7fe7d4f19986.pdf?_ga=2.233351384.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>240</td>
+  <td> r = .23 ± .12 </td>
+  <td>270</td>
+  <td> r = -.01 ± .12 </td>
+  <td>
+    Callahan (2015)
+    <a href=' https://osf.io/4m3py/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/8j9cg/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/8j9cg/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #61</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Larger relearning effect for non-practiced items from practiced categories than non-practiced items from non-practiced categories.</td>
+</tr><tr>
+  <td>intermixed-blocked effect revisited</td>
+  <td>
+    Mitchell, Nash &amp; Hall (2008) Study 2
+    <a href=' https://pdfs.semanticscholar.org/b618/a19f7652f6177b15c1f497c5efc24e821798.pdf?_ga=2.233351384.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>32</td>
+  <td> r = .46 ± .30 </td>
+  <td>48</td>
+  <td> r = .13 ± .28 </td>
+  <td>
+    Lakens (2015)
+    <a href=' https://osf.io/beckg/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/4xdkk/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/4xdkk/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #62</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Intermixed–blocked effect: Intermixed pre-exposure to stimuli lead to better  performance (perceptual learning) compared to non-intermixed pre-exposure.</td>
+</tr><tr>
+  <td>independent memory sources for priming &amp; recognition effect</td>
+  <td>
+    Berry, Shanks &amp; Henson (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/4cb1/b8dbbf9f8192c06acf571382c3540d252054.pdf?_ga=2.37610470.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>24</td>
+  <td> r = .59 ± .29 </td>
+  <td>32</td>
+  <td> r = .40 ± .31 </td>
+  <td>
+    Meixner &amp; Bruning (2015)
+    <a href=' https://osf.io/87gna/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/atgp5/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/atgp5/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #63</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Faster RTs to misses compared to correct rejections (suggesting memory sources for priming and recognition are independent).</td>
+</tr><tr>
+  <td>enhanced memory for word order effect</td>
+  <td>
+    Beaman, Neath et al. (2008) Study 2
+    <a href=' https://pdfs.semanticscholar.org/1804/b24bd7241a64200b824b088d7fd6980da00f.pdf?_ga=2.37610470.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>100</td>
+  <td> r = .72 ± .10 </td>
+  <td>15</td>
+  <td> r = .13 ± .55 </td>
+  <td>
+    Kleinberg &amp; Kunkels (2015)
+    <a href=' https://osf.io/a6mje/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/6n3bm/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/6n3bm/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #64</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Enhanced memory for order of words when word lists contained only short words compared to when word lists only contained long words.</td>
+</tr><tr>
+  <td>retrieval-provoked illusory source recollection effect</td>
+  <td>
+    Dodson, Darragh et al. (2008) Study 3
+    <a href=' https://www.researchgate.net/profile/Chad_Dodson/publication/5407191_Stereotypes_and_Retrieval-Provoked_Illusory_Source_Recollections/links/5416ea210cf2788c4b35f3d4/Stereotypes-and-Retrieval-Provoked-Illusory-Source-Recollections.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>48</td>
+  <td> r = .56 ± .20 </td>
+  <td>33</td>
+  <td> r = -.11 ± .36 </td>
+  <td>
+    Calhoun-Sauls (2015)
+    <a href=' https://osf.io/b9dpu/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/c5pbg/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/c5pbg/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #65</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Higher number of incorrect judgments observed for schema-consistent attributions in neutral proportion condition and schema-inconsistent attributions in conflicting proportion condition.</td>
+</tr><tr>
+  <td>comparative distance effect revisited</td>
+  <td>Ganor-Stern &amp; Tzelgov (2008) Study 2</td>
+  <td>32</td>
+  <td> r = .70 ± .20 </td>
+  <td>32</td>
+  <td> r = .78 ± .16 </td>
+  <td>
+    Shaki (2015)
+    <a href=' https://osf.io/7mgwh/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/vmipw/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/vmipw/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #66</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Comparative distance effect observed when task required numerical matching.</td>
+</tr><tr>
+  <td>semantic neighborhood density effect</td>
+  <td>
+    Mirman &amp; Magnuson (2008) Study 2
+    <a href=' https://pdfs.semanticscholar.org/ef29/60a55152ec7e7ea07792496896f777110169.pdf?_ga=2.207086421.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>22</td>
+  <td> r = .67 ± .26 </td>
+  <td>30</td>
+  <td> r = .47 ± .30 </td>
+  <td>
+    Bosco &amp; Field (2015)
+    <a href=' https://osf.io/r57hu/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/rvkc5/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/rvkc5/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #67</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Words with many near neighbors (e.g., chicken) associated with increased level of processing (i.e., categorized more slowly) compared to words with few near neighbors (e.g., hyena)</td>
+</tr><tr>
+  <td>between-sequence phonological similarity effect</td>
+  <td>
+    Marsh, Vachon, &amp; Jones (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/2504/8cee5e5e2526ab16d707eec83f7b6daa3e9c.pdf?_ga=2.207086421.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>48</td>
+  <td> r = .18 ± .29 </td>
+  <td>118</td>
+  <td> r = .08 ± .18 </td>
+  <td>
+    Bell (2015)
+    <a href=' https://osf.io/sqcwk/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/7rtcz/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/7rtcz/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #68</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Pronounced disruptive effect of between-sequence phonological similarity on free recall of lists of end rhyming words.</td>
+</tr><tr>
+  <td>bidirectional association in multiplication memory</td>
+  <td>Campbell &amp; Robert (2008) Study 3</td>
+  <td>36</td>
+  <td> r = .52 ± .25 </td>
+  <td>36</td>
+  <td> r = .52 ± .25 </td>
+  <td>
+    Ricker (2015)
+    <a href=' https://osf.io/bux7k/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/gxvd3/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/gxvd3/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #69</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>RTs faster when participants were given the same mathematical operation to practice and to test, relative to operational change or a new problem.</td>
+</tr><tr>
+  <td>contingency Stroop effect</td>
+  <td>
+    Schmidt &amp; Besner (2008) Study 2
+    <a href=' https://pdfs.semanticscholar.org/0d41/5a1655f7b5831d3bacded6ee54184b33bd8c.pdf?_ga=2.207086421.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>95</td>
+  <td> r = .20 ± .20 </td>
+  <td>242</td>
+  <td> r = .25 ± .12 </td>
+  <td>
+    Cloud (2015)
+    <a href=' https://osf.io/bskwq/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/bscfe/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/bscfe/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #70</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Higher number of errors on low contingency trials compared to medium contingency trials.</td>
+</tr><tr>
+  <td>ultimate sampling dilemma effect</td>
+  <td>
+    Fiedler (2008) Study 2
+    <a href=' http://paulallen.ca/documents/2016/01/fiedler-k-the-ultimate-sampling-dilemma-in-experience-based-decision-making-2008.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>39</td>
+  <td> r = .30 ± .30 </td>
+  <td>47</td>
+  <td> r = .43 ± .24 </td>
+  <td>
+    Glockner &amp; Jekel (2015)
+    <a href=' https://osf.io/vtz2i/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/hp27x/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/hp27x/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #71</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Tendency to underestimate (overestimate) frequency of positive (negative) observations increased from provider with smallest to provider with highest overall frequency.</td>
+</tr><tr>
+  <td>how to say no effect</td>
+  <td>
+    Oberauer (2008) Study 3
+    <a href=' https://www.researchgate.net/profile/Klaus_Oberauer/publication/5407190_How_to_Say_No_Single-_and_Dual-Process_Theories_of_Short-Term_Recognition_Tested_on_Negative_Probes/links/55f2bef508ae0960a389770b/How-to-Say-No-Single-and-Dual-Process-Theories-of-Short-Term-Recognition-Tested-on-Negative-Probes.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>32</td>
+  <td> r = .56 ± .26 </td>
+  <td>21</td>
+  <td> r = .40 ± .40 </td>
+  <td>
+    Bosch, Neijenhuijs et al. (2015)
+    <a href=' https://osf.io/n32zj/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/gcj7x/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/gcj7x/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #72</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Higher new probe accuracy for short compared to long lists.</td>
+</tr><tr>
+  <td>intentional forgetting effect revisited</td>
+  <td>
+    Sahakyan, Delaney et al. (2008) Study 3
+    <a href=' http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.690.2906&rep=rep1&type=pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>96</td>
+  <td> r = .22 ± .19 </td>
+  <td>108</td>
+  <td> r = .02 ± .19 </td>
+  <td>
+    Fiedler &amp; May (2015)
+    <a href=' https://osf.io/kcwfa/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/bzdr2/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/bzdr2/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #73</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Directed forgetting effect observed for spaced but not grouped (massed) items.</td>
+</tr><tr>
+  <td>bilingualism executive control effect</td>
+  <td>
+    Colzato, Bajo et al. (2008) Study 3
+    <a href=' https://pdfs.semanticscholar.org/58cf/daeeb1b63540aee243ae494dcdc17f9f0440.pdf?_ga=2.167758968.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>18</td>
+  <td> r = .22 ± .48 </td>
+  <td>32</td>
+  <td> r = .06 ± .36 </td>
+  <td>
+    Kappes (2015)
+    <a href=' https://osf.io/a5ukz/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/p9thw/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/p9thw/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #74</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Bilingual Ps less successful than monolinguals at reporting T2 target when it lagged a successfully identified T1 target by 2 items (i.e., at lag 3).</td>
+</tr><tr>
+  <td>addition facts priming effect</td>
+  <td>Bassok, Pedigo et al. (2008) Study 1</td>
+  <td>154</td>
+  <td> r = .36 ± .14 </td>
+  <td>49</td>
+  <td> r = .28 ± .26 </td>
+  <td>
+    Hung, Lin, &amp; Tsang (2015)
+    <a href=' https://osf.io/irgbs/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/sqim7/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/sqim7/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #75</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>RT difference between sum and neutral targets larger when cue digits primed with categorical (compared to unrelated or functionally related) primes.</td>
+</tr><tr>
+  <td>Hebb repetition effect revisited</td>
+  <td>Couture, Lafond, &amp; Tremblay (2008) Study 1</td>
+  <td>24</td>
+  <td> r = .35 ± .38 </td>
+  <td>63</td>
+  <td> r = .27 ± .24 </td>
+  <td>
+    Roebke &amp; Penna (2015)
+    <a href=' https://osf.io/qm5n6/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/k9gp6/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/k9gp6/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #76</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Likelihood of producing a given response increased as a function of the number of times same response had previously been recalled, even for errors.</td>
+</tr><tr>
+  <td>reading aloud contextual effect</td>
+  <td>
+    Reynolds &amp; Besner (2008) Study 5
+    <a href=' https://www.researchgate.net/profile/Derek_Besner/publication/5657620_Contextual_Effects_on_Reading_Aloud_Evidence_for_Pathway_Control/links/0c9605281090c9dd59000000/Contextual-Effects-on-Reading-Aloud-Evidence-for-Pathway-Control.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>16</td>
+  <td> r = .16 ± .52 </td>
+  <td>20</td>
+  <td> r = .14 ± .46 </td>
+  <td>
+    Lai &amp; Simpson (2015)
+    <a href=' https://osf.io/fkcn5/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/hasfu/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/hasfu/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #77</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>No delay in response when switching between pronouncing regular words and nonwords.</td>
+</tr><tr>
+  <td>stimulus quality word frequency effect</td>
+  <td>
+    Yap, Balota et al. (2008) Study 4
+    <a href=' https://pdfs.semanticscholar.org/e4d0/b0275069be7bcf79e517fc26502ac51d3372.pdf?_ga=2.201189864.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>32</td>
+  <td> r = .38 ± .32 </td>
+  <td>71</td>
+  <td> r = .38 ± .20 </td>
+  <td>
+    Chartier (2015)
+    <a href=' https://osf.io/dh4jx/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/ahpik/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/ahpik/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #78</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Larger frequency effect for degraded compared to non-degraded words (interaction between stimulus quality and word frequency).</td>
+</tr><tr>
+  <td>semantic interference in naming task revisited</td>
+  <td>
+    Janssen, Schirm et al. (2008a) Study 1
+    <a href=' https://pdfs.semanticscholar.org/3954/63e228d592bb930be8169e25b69fd36cef98.pdf?_ga=2.201189864.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>32</td>
+  <td> r = .34 ± .32 </td>
+  <td>91</td>
+  <td> r = .10 ± .21 </td>
+  <td>
+    Galak (2015)
+    <a href=' https://osf.io/5p7i6/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/uhpyr/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/uhpyr/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #79</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>RTs slower for semantically-related compared to semantically unrelated word-picture pairs in a delayed picture naming task.</td>
+</tr><tr>
+  <td>multidimensional visual statistical learning effect</td>
+  <td>
+    Turk-Brown, Isola et al. (2008) Study 4b
+    <a href=' https://pdfs.semanticscholar.org/a572/71eaf9e300f638c69611ec69c81c2d95971b.pdf?_ga=2.201189864.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>8</td>
+  <td> r = .74 ± .54 </td>
+  <td>15</td>
+  <td> r = .70 ± .32 </td>
+  <td>
+    Ostkamp &amp; Jakel (2015)
+    <a href=' https://osf.io/ktnmc/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/ujhlw/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/ujhlw/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #80</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Above-chance recall rate on real-triplet test trials compared to familiarization phase (can visual statistical learning be feature-based over colors of objects?).</td>
+</tr><tr>
+  <td>contingency information in causal judgments effect</td>
+  <td>
+    White (2008) Study 3
+    <a href=' http://psych.cf.ac.uk/home2/white/white%20jeplmc%202008.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>37</td>
+  <td> r = .62 ± .21 </td>
+  <td>38</td>
+  <td> r = .48 ± .26 </td>
+  <td>
+    Muller &amp; Renkewitz (2015)
+    <a href=' https://osf.io/x7c9i/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/rhbqj/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/rhbqj/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #81</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>A+ instances raised judgment of A and lowered judgment of B as causes for outcome.</td>
+</tr><tr>
+  <td>short-term memory temporal gap effect</td>
+  <td>
+    Farrell (2008) Study 2
+    <a href=' https://www.researchgate.net/profile/Simon_Farrell/publication/5657625_Multiple_Roles_for_Time_in_Short-Term_Memory_Evidence_From_Serial_Recall_of_Order_and_Timing/links/53fc51590cf2364ccc04870d.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>40</td>
+  <td> r = .52 ± .24 </td>
+  <td>40</td>
+  <td> r = .32 ± .30 </td>
+  <td>
+    Olsson &amp; Saxe (2015)
+    <a href=' https://osf.io/tqf2u/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/swrhy/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/swrhy/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #82</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Ps instructed to group items induced temporal gap between groups, both when trying to recall order of items and when trying to recall timing of items.</td>
+</tr><tr>
+  <td>dependency learning effect</td>
+  <td>
+    Pacton &amp; Perruchet (2008) Study 4b
+    <a href=' https://pdfs.semanticscholar.org/3eb6/a98229c292e16a04a9eef6afa29a22e6c235.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>24</td>
+  <td> r = .71 ± .22 </td>
+  <td>24</td>
+  <td> r = .68 ± .25 </td>
+  <td>
+    Jahn (2015)
+    <a href=' https://osf.io/asn7w/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/vmz2e/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/vmz2e/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #83</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Number of correct responses differed only as a function of the type of dependency.</td>
+</tr><tr>
+  <td>visual working memory orienting attention effect</td>
+  <td>
+    Makovski, Sussman et al. (2008) Study 3
+    <a href=' https://pdfs.semanticscholar.org/cb5a/78af4f032bdaa0eb1a5547c8b7a244be5233.pdf?_ga=2.169274343.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>12</td>
+  <td> r = .55 ± .49 </td>
+  <td>18</td>
+  <td> r = .35 ± .45 </td>
+  <td>
+    Moore (2015)
+    <a href=' https://osf.io/xtcuv/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/0pxro/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/0pxro/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #84</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>For both shape and color conditions, better recall for retro(active) compared to simultaneous cue at all set sizes (except set size = 1).</td>
+</tr><tr>
+  <td>learning on risky decision making effect</td>
+  <td>
+    Pleskac (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/9ab7/5e6684f2d9006b5ccde6c17a79a1f678b49e.pdf?_ga=2.131006537.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>68</td>
+  <td> r = .37 ± .21 </td>
+  <td>153</td>
+  <td> r = .10 ± .16 </td>
+  <td>
+    Forsell, Dreber et al. (2015)
+    <a href=' https://osf.io/gyn9e/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/38ges/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/38ges/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #85</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Comparison of correlations between ART and drug use in sunny versus cloudy conditions.</td>
+</tr><tr>
+  <td>directional language feature binding effect</td>
+  <td>Dessalegn &amp; Landau (2008) Study 4</td>
+  <td>36</td>
+  <td> r = .38 ± .30 </td>
+  <td>47</td>
+  <td> r = -.22 ± .28 </td>
+  <td>
+    Fitneva (2015)
+    <a href=' https://osf.io/83n4z/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/iajp5/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/iajp5/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #86</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Directional language (e.g., "to the left") helps children bind color and shape information to a greater extent than relational language alone (e.g., "next to").</td>
+</tr><tr>
+  <td>anchor precision anchoring effect</td>
+  <td>
+    Janiszewski &amp; Uy (2008) Study 4
+    <a href=' https://pdfs.semanticscholar.org/d5eb/5e12b79ac605770778af40195ff105458691.pdf?_ga=2.131006537.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>59</td>
+  <td> r = .33 ± .24 </td>
+  <td>120</td>
+  <td> r = .23 ± .17 </td>
+  <td>
+    Chandler (2015)
+    <a href=' https://osf.io/ehjdm/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/aaudl/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/aaudl/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #87</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>More precise (e.g., $9.99) compared to less price (e.g., $10) anchors decreased (anchoring effect) adjustment.</td>
+</tr><tr>
+  <td>sample entropy decision making effect</td>
+  <td>
+    McKinstry, Dale, &amp; Spivey (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/e293/11600a720040ea3b39821f17e23c50da30fe.pdf?_ga=2.131006537.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>141</td>
+  <td> r = -.70 ± .09 </td>
+  <td>51</td>
+  <td> r = -.75 ± .13 </td>
+  <td>
+    Saxe, Velez, &amp; Feather (2015)
+    <a href=' https://osf.io/pu9nb/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/d0n81/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/d0n81/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #88</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Sample entropy was higher for middle-truth-value questions than for low- and high-truth-value questions.</td>
+</tr><tr>
+  <td>perspective taking in word learning effect</td>
+  <td>
+    Nurmsoo &amp; Bloom (2008) Study 1
+    <a href=' https://minddevlab.yale.edu/sites/default/files/files/Preschoolers'%20perspective%20taking%20in%20word%20learning.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>32</td>
+  <td> r = .50 ± .28 </td>
+  <td>8</td>
+  <td> r = -.45 ± .72 </td>
+  <td>
+    Brown, Kleinberg et al. (2015)
+    <a href=' https://osf.io/ictp5/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/aczvt/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/aczvt/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #89</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Older children selected correct object more frequently than would be expected by chance on "where" trials.</td>
+</tr><tr>
+  <td>crowd within effect</td>
+  <td>
+    Vul &amp; Pashler (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/ada7/7b14a18daaef0e4c5a30d77f9ed0b64a9777.pdf?_ga=2.193375083.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>173</td>
+  <td> r = .29 ± .14 </td>
+  <td>140</td>
+  <td> r = .32 ± .15 </td>
+  <td>
+    Steegen, Vanpaemel et al. (2015)
+    <a href=' https://osf.io/7kimb/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/ivfu6/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/ivfu6/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #90</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Averaging two guesses within one person provides a more accurate answer than either guess alone.</td>
+</tr><tr>
+  <td>temporal selection in attentional blink effect</td>
+  <td>
+    Vul, Nieuwenstein et al. (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/f6c4/cf2339c229a2462de88634b14748a1bd286d.pdf?_ga=2.193375083.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>12</td>
+  <td> r = .13 ± .62 </td>
+  <td>12</td>
+  <td> r = .12 ± .62 </td>
+  <td>
+    Barnett-Cowan (2015)
+    <a href=' https://osf.io/jupew/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/rzjvn/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/rzjvn/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #91</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Selection is (a) suppressed (efficacy), (b) delayed (latency), and (c) diffused (precision) in time during the attentional blink.</td>
+</tr><tr>
+  <td>representation of ensemble visual features effect</td>
+  <td>
+    Alvarez &amp; Oliva (2008) Study 3
+    <a href=' https://pdfs.semanticscholar.org/d507/c3ff9dc42d1755b8dbce306b7088af959ab2.pdf?_ga=2.193375083.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>8</td>
+  <td> r = -.72 ± .55 </td>
+  <td>17</td>
+  <td> r = -.92 ± .09 </td>
+  <td>
+    Schlegelmilch et al. (2015)
+    <a href=' https://osf.io/dm2kj/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/dnaxe/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/dnaxe/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 but also excludes original ES point estimate (larger, same-direction)'> signal - inconsistent, larger </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #92</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Fewer localization errors for targets compared to distractors in the centroid condition.</td>
+</tr><tr>
+  <td>motion affereffect effect</td>
+  <td>
+    Winawer, Huk, &amp; Boroditsky (2008) Study 3
+    <a href=' https://pdfs.semanticscholar.org/91ff/99e3c012ac0f4f301bf083673bc0815973fb.pdf?_ga=2.193375083.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>32</td>
+  <td> r = -.69 ± .20 </td>
+  <td>26</td>
+  <td> r = -.53 ± .30 </td>
+  <td>
+    Levitan, Errington &amp; Gampa (2015)
+    <a href=' https://osf.io/ertbg/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/mjasz/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/mjasz/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #93</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Motion aftereffects were present following the presentation of a still photograph depicting motion</td>
+</tr><tr>
+  <td>survival words memory boost effect</td>
+  <td>
+    Nairne, Pandeirada et al. (2008) Study 2
+    <a href=' http://www.psych.purdue.edu/~nairne/pdfs/46.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>24</td>
+  <td> r = .45 ± .35 </td>
+  <td>38</td>
+  <td> r = .42 ± .28 </td>
+  <td>
+    Muller &amp; Renkewitz (2015)
+    <a href=' https://osf.io/v4d2b/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/jhkpe/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/jhkpe/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #94</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Higher recall for words rated for survival relevance compared to control words.</td>
+</tr><tr>
+  <td>auditory change detection effect</td>
+  <td>
+    Demany, Trost et al. (2008) Study 5
+    <a href=' https://pdfs.semanticscholar.org/0ba5/24a25a76a642543d8a972882fe6fd1f57a98.pdf?_ga=2.38129637.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>4</td>
+  <td> r = .50 ± 1.00 </td>
+  <td>5</td>
+  <td> r = .51 ± .94 </td>
+  <td>
+    Snyder &amp; Irsik (2015)
+    <a href=' https://osf.io/wx74s/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/ta3j8/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/ta3j8/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #95</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Auditory memory makes change detection easier in audition than in vision.</td>
+</tr><tr>
+  <td>word-order constraint effect</td>
+  <td>
+    Janssen, Alario et al. (2008b) Study 2
+    <a href=' https://pdfs.semanticscholar.org/8c7c/6aa1f0c83cc434dfab69c1fe70d21cc61eec.pdf?_ga=2.38129637.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>30</td>
+  <td> r = .65 ± .23 </td>
+  <td>24</td>
+  <td> r = .50 ± .34 </td>
+  <td>
+    Melinger (2015)
+    <a href=' https://osf.io/e3ry5/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/dncxa/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/dncxa/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #96</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Color and object naming times in congruent condition faster than in incongruent condition in color and object naming tasks, respectively.</td>
+</tr><tr>
+  <td>object viewpoint sensitivity effect</td>
+  <td>Forti &amp; Humphreys (2008) Study 1</td>
+  <td>14</td>
+  <td> r = .72 ± .33 </td>
+  <td>19</td>
+  <td> r = .21 ± .46 </td>
+  <td>
+    Dorrough &amp; Fiedler (2015)
+    <a href=' https://osf.io/nhqgs/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/tf8ky/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/tf8ky/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #97</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Significant interaction between viewpoint (prototypical or non-prototypical) and visual field (upper visual field or lower visual field) on the probability of the first fixation being on the target.</td>
+</tr><tr>
+  <td>extremal edge effect</td>
+  <td>
+    Palmer &amp; Ghose (2008) Study 2
+    <a href=' https://pdfs.semanticscholar.org/17f9/dcd45045b540ee254936d7ba258a67a282a3.pdf?_ga=2.234735064.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>8</td>
+  <td> r = .86 ± .38 </td>
+  <td>8</td>
+  <td> r = .12 ± .78 </td>
+  <td>
+    Saxe, Velez, &amp; Johnston (2015)
+    <a href=' https://osf.io/27cmh/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/0aifq/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/0aifq/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #98</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Surfaces with a single EE (EE1) along the shared contour were perceived as closer than surfaces with two EE's orthogonal to the shared contour (Convex2)</td>
+</tr><tr>
+  <td>snake in the grass detection effect</td>
+  <td>
+    Lobue &amp; DeLoache (2008) Study 3
+    <a href=' https://pdfs.semanticscholar.org/ffad/209c5b2ecbf260e242fa7af1c848cd96350b.pdf?_ga=2.234735064.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>48</td>
+  <td> r = .48 ± .23 </td>
+  <td>48</td>
+  <td> r = .18 ± .29 </td>
+  <td>
+    Cramblet, Alvarez et al. (2015)
+    <a href=' https://osf.io/5ygej/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/sd7kg/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/sd7kg/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #99</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Faster identification RTs for fear-relevant compared to fear-irrelevant stimuli, in both children and adults.</td>
+</tr><tr>
+  <td>head up foot down effect</td>
+  <td>
+    Estes, Verges, &amp; Barsalou (2008) Study 1
+    <a href=' https://pdfs.semanticscholar.org/e2b5/8b38a61c6f08de528fdeeee1909a4b0a5205.pdf?_ga=2.234735064.756229126.1510337183-1264817730.1510337183 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+  </td>
+  <td>18</td>
+  <td> r = .60 ± .35 </td>
+  <td>22</td>
+  <td> r = .25 ± .42 </td>
+  <td>
+    Renkewitz &amp; Muller (2015)
+    <a href=' https://osf.io/b7zek/ ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/vwnit/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/vwnit/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent (imprecise) </td>
+  <td></td>
+  <td></td>
+  <td>very close</td>
+  <td>RPP #100</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>Attentional effect of object words interfered with the visual perception of a target in the typical location of the object.</td>
+</tr>
+						
+					</tbody>
+				</table>		
+			
+
+		<h3 class="collection">Related Collections </h3>
+		
+		<p>
+			<ul>
+				<li>
+					<a href="ML1.html">Many Labs 1 collection <img src="../logos/sprite-icons/collection.png" class="shrunk-14 transparent"></a>
+				</li>
+				<li>
+					<a href="ML3.html">Many Labs 3 collection <img src="../logos/sprite-icons/collection.png" class="shrunk-14 transparent"></a>
+				</li>
+			</ul>
+		</p>
+		<p style="margin-top:50px;">
+		</p>
+		
+	
+  
+	
+	
+	</div> <!--secondary container div-->
+	
+	
+		<div class="footer-bottom" style="background-color:whitesmoke;padding-top:10px;">
+			
+			<div class="row">
+				<div class="col-sm-4 center" style="margin-top:30px;">
+						<span style="font-weight:bold;">Previous Funders</span>
+						<br>
+						<a  href="https://cos.io/"><img src="../logos/COS-logo.png" style="margin-top:15px;"></a> <a  href="http://www.bitss.org/"><img src="../logos/BITSS-logo.png" style="margin-left:30px;margin-top:15px;"></a>
+				</div>			
+				<div class="col-sm-4 center" style="margin-top:30px;">
+					<span style="font-weight:bold;">Current Funders</span>
+						<br>
+						<a  href="https://cordis.europa.eu/project/rcn/215183_en.html"><img src="../logos/european-commission-icon.png" style="margin-top:15px;width:128px;"></a>
+				</div>
+				<div class="col-sm-4 center" style="margin-top:30px;">
+					<span style="font-weight:bold;margin-bottom:15px;">Contact Details</span>
+						<p style="line-height:1.2em;margin-top:15px;">
+						University of Western Ontario<br>
+						1151 Richmond St<br>
+						London, Ontario, CANADA, N6A 3K7<br>
+						email: curatescience@<span class="displaynone"></span>gmail.com<br>
+						<a href="https://twitter.com/curatescience"><i class="fab fa-twitter fa-2" aria-hidden="true"></i></a>
+						<a href="https://github.com/eplebel/science-commons"><i class="fab fa-github fa-2" aria-hidden="true"></i></a>
+						</p>
+				</div>		
+			</div>
+			
+			<div class="container" style="margin-top:50px;">
+				<div class="row">
+						<center>
+							<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" title="This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License"/></a>
+							<br>
+							<i>*Thanks to <a href="http://www.nicebread.de/">Felix Schonbrodt</a> for hosting CurateScience.org</i>
+						</center>
+				</div>
+			</div>
+		</div> <!--footer-bottom div-->
+	
+	
+	
+	
+</div> <!--main-container push div -->
+
+
+	
+	
+
+  <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script> 
+  <script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-48865749-1', 'auto');
+	  ga('send', 'pageview');
+  </script>
+  
+</body>
+</html>
