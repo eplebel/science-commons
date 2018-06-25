@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="google-site-verification" content="7CrO9Y_velY8TjF6s8CWKB1s2S8TGRdQ8NoZ-gHPDE0" />
+  <meta http-equiv="Cache-control" content="public">
+  <title itemprop='name'>Curate Science - Crowdsourcing the Transparency of Empirical Research.</title>
+  <meta name="description" content="Curate Science is a platform to crowdsource the credibility of scientific research by curating its transparency, analytic reproducibility, analytic robustness, and replicability." />
+  <meta name="keywords" content="replication, replications, direct replication, conceptual replication, replicability, generalizability, analytic reproducibility, analytic robustness, research credibility, credibility of findings, sufficient transparency, open science, sufficient falsifiability, falsification, cumulative knowledge" />
+  
+  <!--links to CSS files-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+	<!--main bootstrap CSS file-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../assets/fonts-collections.css" media="screen" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  
+  <!--links to JS files-->
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.10.16/dataRender/ellipsis.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.10.16/sorting/natural.js"></script>
+	<!-- main bootstrap JS file-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<!--others-->
+	<link rel="shortcut icon" type="image/x-icon" href="../logos/sprite-icons/CS-icon-dark-blue.png"/>
+	<link rel="stylesheet" href="../assets/sprite-CSS.css">
+	<link rel="stylesheet" href="../assets/text-stylings.css">
+	
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			var table = $('#example').DataTable( {
+				scrollY:        "500px",
+				scrollX:        true,
+				scrollCollapse: false,
+				"order": [[ 4, "asc" ]],
+				paging: true,
+				fixedColumns:   {
+					leftColumns: 0
+				},
+				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
+				"columnDefs": [ 
+					{ targets: [3, 10, 11],
+					render: $.fn.dataTable.render.ellipsis(40,true) },
+					{ targets: [5,7],
+					render: $.fn.dataTable.render.ellipsis(4) },
+					{ type: 'natural-ci', targets: [ 4 ] },
+					{ className: "center", "targets": [ 2 ] }
+					],
+				"initComplete": function() { 
+				$('#loader-div').remove();
+				$("table").removeClass("hidden");
+				},
+				"dom": '<"top"fi<"clear">>rt<"bottom"pl<"clear">>'
+			} );
+		} );
+	</script>
+  
+  
+  
+  <style type="text/css" class="init"> <!--for DataTables table-->
+	/* Ensure that the demo table scrolls; */
+	th, td { white-space: normal; }
+	div.dataTables_wrapper {
+		width: auto; /*used to be: 1400px*/
+		margin: 0 auto;
+	}
+	td.details-control {
+	  background: url('../logos/meta-analyze-button.png') no-repeat center center;
+	  cursor: pointer;
+	  min-width: 75px;
+	}
+	tr.shown td.details-control {
+	  background: url('../logos/close-chevron-icon.png') no-repeat center center;
+	}
+	.dataTables_wrapper .dataTables_length {
+		float: left;
+		}
+	.dataTables_wrapper .dataTables_filter {
+		float: left;
+		text-align: left;
+		margin: 0 auto;
+		}
+	.dataTables_wrapper .dataTables_info {
+		float: right;
+		clear: none;
+		padding-top:.5em;
+		}
+	.dataTables_filter input { width: 300px; }
+	.dataTables_length input { }
+	<!--body { font-size: 13px;}-->
+	.bold-class { font-weight: bold; }
+	
+	<!--styling stuff for loading spinner-->
+	hidden { display:none; }
+	.loader {
+	  border: 16px solid #f3f3f3;
+	  border-radius: 50%;
+	  border-top: 16px solid #3498db;
+	  width: 30px;
+	  height: 30px;
+	  -webkit-animation: spin 1s linear infinite;
+	  animation: spin 1s linear infinite;
+	}
+	#loader-div { 
+		margin: 0 auto; 
+		top-margin:20px;}
+	@-webkit-keyframes spin {
+	  0% { -webkit-transform: rotate(0deg); }
+	  100% { -webkit-transform: rotate(360deg); }
+	}
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
+	}
+	
+	
+	
+	</style>
+  <style>
+	<!--temp place for troubleshooting style issues-->
+	
+	
+	
+	
+	
+  </style>
+</head>
+
+<body>
+
+<header >
+  
+  <nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="../">
+			<span style="padding-top:10px;margin-bottom:3px;font-weight:700;">Curate Science<img src="../logos/sprite-icons/CS-icon-light-blue.png" style="margin-left:1px;width:22px;margin-top:-2px;font-style:normal;"></span>
+		  </a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			<li style="font-weight:bold"><a href="../index.html#about">About</a></li>
+			<li style="font-weight:bold"><a href="../index.html#people">People</a></li>
+			<li style="font-weight:bold"><a href="../index.html#FAQ">FAQ</a></li>
+			<li style="font-weight:bold"><a href="../index.html#newsletter">Newsletter</a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+  
+</header>
+
+<div class="main-container">
+	<div class="container">
+	
+		
+		<h1 class="collection">Verbal overshadowing effect <img src="../logos/sprite-icons/collection.png" class="shrunk-16 transparent"> <i class="fas fa-share-alt" style="font-size:2rem;color:grey"></i> 
+			<button type=button class="btn btn-default btn-xs" style="float:right;margin-top:10px;" title="Coming soon (Fall 2018)"><span class="glyphicon glyphicon-star" aria-hidden=true></span> Track Collection</button></h1>
+		<p style="margin:5px 5px 0 0;">
+		Collection type: <span class="label label-info-purple">Single effect</span> <span class="label label-info-teal">Multi-method</span> <span class="label label-info-red">Multi-lab</span> <span class="label label-info-brown" title="This collection contains 55 replications of the verbal overshadowing effect.">Replications <span class="badge badge-repnum">55</span></span>
+		</p>
+		<p style="margin:5px 5px 0 0;">
+			<span class="collection-description">Collection contains 55 replications of the verbal overshadowing effect across 2 methods.</span> 
+		</p>
+		<p style="margin:0px 5px 0 0;">
+			<div class="added-by hover-edit">Last updated by: chiefeditor 9 days ago 
+				<span style="color:grey;" title="Coming soon (Fall 2018)" class="hidden-edit"><i class="fas fa-pencil-alt" style="padding-left:30px;"></i> Edit Collection</span>
+			</div>  
+		</p>
+				
+		
+			<ul class="nav nav-pills">
+			  <li ><a href="#forest-plot">Forest Plots</a></li>
+			  <li ><a href="#replication-details">Replication Details</a></li>
+			</ul>
+		<p style="border-bottom: 1px solid darkgrey;">
+		</p>
+			
+		
+		<p style="margin-top:30px;">
+			<h3 class="collection"><a class="offset" id="forest-plot">Forest plots</a></h3>
+			<span class="label label-info-brown" >Replications <span class="badge badge-repnum">23</span></span> <span style="color:grey;font-size:10px;">(Details of all 55 replications presented in <a href="#replication-details">replication table below</a>.)</span><br>
+		</p>
+		
+		<table style="font-size:13px;margin-top:15px;"><tbody>
+			<tr>
+				<td style="min-width:280px"><strong>Original Study & Replications</strong></td>
+				<td class="center"><strong>Effect size [95% CI]</strong></td>
+			</tr>
+			<tr>
+				<td colspan='2' style="color:#999999;vertical-align:top;font-style:bold;padding-top:5px;font-size:12px;"><strong>Method #1 (<a href="http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653" target="_blank">RRR2</a>)</strong>: Verbal description (bank robber) impairs identification of perpetrator (lineup task; for Method #2 [RRR1 replications] see <a href="#replication-details">table below</a>)</td>
+			</tr>
+			<tr>
+				<td >Schooler & Engstler-Schooler (1990) Study 1 <a href="http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653" target="_blank"><img src="../logos/pdf-icon.gif"></a> <img src='../logos/_materials.png' title="This study has open materials" class="open-logos active"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.25 [+/- .20]" src='../logos/S&E-S_03.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/zgmex/' target="_blank">Poirer et al. (2014)</a> <a href='https://osf.io/dkc7v' target="_blank"><img src='../logos/_data.png' title="This study has open data" class="open-logos active"></a><a href='https://osf.io/td8rp/' target="_blank"><img src='../logos/_materials.png' title="This study has open materials" class="open-logos active"></a><a href='https://osf.io/brwdp/' target="_blank"><img src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered" class="open-logos active"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.29 [+/- .20]" src='../logos/S&E-S_24.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/vucan/' target="_blank">Delvenne et al. (2014)</a> <img src='../logos/_trans-square.png'><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.26 [+/- .19]" src='../logos/S&E-S_14.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/y3xtf/' target="_blank">Birt & Aucoin (2014)</a> <a href='https://osf.io/wvc3h' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.25 [+/- .24]" src='../logos/S&E-S_10.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/5vunt/' target="_blank">Susa et al. (2014)</a> <a href='https://osf.io/ifc3v' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.24 [+/- .18]" src='../logos/S&E-S_26.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/s73uq/' target="_blank">Carlson et al. (2014)</a> <img class="open-logos active" src='../logos/_trans-square.png'><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.24 [+/- .15]" src='../logos/S&E-S_12.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/ybfmu/' target="_blank">Musselman & Colarusso (2014)</a> <a href='https://osf.io/w4yne' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.23 [+/- .24]" src='../logos/S&E-S_23.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/dmuqj/' target="_blank">Echterhoff & Kopietz (2014)</a> <a href='https://osf.io/qpigy' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.22 [+/- .20]" src='../logos/S&E-S_15.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/edsrz/' target="_blank">Mammarella et al. (2014)</a> <img class="open-logos active" src='../logos/_trans-square.png'><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.22 [+/- .19]" src='../logos/S&E-S_20.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/qrz2g/' target="_blank">Dellapaolera & Bornstein (2014)</a> <img class="open-logos active" src='../logos/_trans-square.png'><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.21 [+/- .16]" src='../logos/S&E-S_13.jpg'></td>
+			</tr>
+			
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/zqnjb/' target="_blank">Mitchell & Petro (2014)</a> <a href='https://osf.io/cy7tx' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.20 [+/- .19]" src='../logos/S&E-S_22.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/bzhvf/' target="_blank">Ulatowska & Cislak (2014)</a> <a href='https://osf.io/t6qvu' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.17 [+/- .19]" src='../logos/S&E-S_28.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/dbxv4/' target="_blank">Wade et al. (2014)</a> <a href='https://osf.io/q98df' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.17 [+/- .17]" src='../logos/S&E-S_29.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/9zu4g/' target="_blank">Birch (2014)</a> <a href='https://osf.io/87b3s' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.16 [+/- .18]" src='../logos/S&E-S_09.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/ejj7d/' target="_blank">McCoy & Rancourt (2014)</a> <a href='https://osf.io/gpq3d' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.15 [+/- .21]" src='../logos/S&E-S_21.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/sieea/' target="_blank">Greenberg et al. (2014)</a> <a href='https://osf.io/czk4f' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.13 [+/- .25]" src='../logos/S&E-S_17.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/sqzuq/' target="_blank">Alogna et al. (2014)</a> <a href='https://osf.io/4xrpk' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.12 [+/- .19]" src='../logos/S&E-S_08.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/ez4w3/' target="_blank">Michael et al. (2014, mTurk)</a> <a href='https://osf.io/tabw4/' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.11 [+/- .10]" src='../logos/S&E-S_06.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/bym2a/' target="_blank">Koch et al. (2014)</a> <a href='https://osf.io/6kpnj' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.10 [+/- .25]" src='../logos/S&E-S_19.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/4ijas/' target="_blank">Thompson (2014)</a> <a href='https://osf.io/ivfry' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.09 [+/- .22]" src='../logos/S&E-S_27.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/ikuh7/' target="_blank">Rubinova et al. (2014)</a> <a href='https://osf.io/a7hwn' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.03 [+/- .18]" src='../logos/S&E-S_25.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/gfyyd/' target="_blank">Brandimonte (2014)</a> <a href='https://osf.io/ktx8g' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.02 [+/- .20]" src='../logos/S&E-S_11.jpg'></td>
+			</tr>
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/b4g79/' target="_blank">Eggleston et al. (2014)</a> <a href='https://osf.io/672ms' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.02 [+/- .20]" src='../logos/S&E-S_16.jpg'></td>
+			</tr>
+			
+			<tr>
+				<td style="padding-left:35px;"><a href='https://osf.io/mkz84/' target="_blank">Kehn et al. (2014)</a> <a href='https://osf.io/9g86r' target="_blank"><img class="open-logos active" src='../logos/_data.png' title="This study has open data"></a><a href='https://osf.io/td8rp/' target="_blank"><img class="open-logos active" src='../logos/_materials.png' title="This study has open materials"></a><a href='https://osf.io/brwdp/' target="_blank"><img class="open-logos active" src='../logos/_preregisteredplus.png' title="Study and analysis plans were pre-registered"></a></td>
+				<td ><img data-toggle="tooltip" data-placement="right" title="-.01 [+/- .20]" src='../logos/S&E-S_18.jpg'></td>
+			</tr>
+			<tr>
+				<td class="right" style="color:#999999;vertical-align:top;font-style:italic;font-size:12px;padding-top:7px">Current meta-analytic estimate of Method #1 replications:</td>
+				<td><img data-toggle="tooltip" data-placement="right" title="-.16 [+/- .04]" src='../logos/S&E-S_31.jpg'></td>
+			</tr>
+			<tr>
+				<td ></td><td class="right" style="color:#999999;font-size:12px;padding-top:7px"><a href="https://github.com/eplebel/science-commons/tree/master/curated/s&e-s/s&e-s.R" target="_blank">[Underlying data (CSV) & R-code]</a></td>
+			</tr>
+			</tbody>
+		</table>
+		 <p></p>
+		 <div class="wrapper" style="max-width:900px;">
+			<p style="margin-bottom:0px;line-height:1.2em;font-size:13px;"><strong>Summary</strong>: The verbal overshadowing effect currently appears to be replicable; verbally describing a robber after a 20-minute delay decreased correct identification rate in a lineup by 16% (from 54% [control] to 38% [verbal]; meta-analytic estimate = -16% [+/-.04], equivalent to r = .17). Still in question, however, is the validity and generalizability of the effect, hence it's still premature for public policy to be informed by verbal overshadowing evidence. Validity-wise, it's unclear whether verbal overshadowing is driven by a more conservative judgmental response bias process or driven by a reduced memory discriminability process because no "suspect-absent" lineups were used. This is important to clarify because it directly influences how eye-witness testimony should be treated (e.g., if verbal overshadowing is primarily driven by a more conservative response bias process, identifications made after a verbal descriptions should actually be given *more* [rather than less] weight, see <a href="http://wixtedlab.ucsd.edu/publications/wixted2015/Mickes_Wixted_2015_Persepectives.pdf" target="_blank">Mickes & Wixted, 2015</a>). Generalizability-wise, in a slight variant of RRR2 (i.e., RRR1), a much smaller overall verbal deficit of -4% [+/-.03] emerged, when the lineup identification occured 20 minutes after verbal description (which occurred immediately after seeing robbery). Future research needs to determine the size of verbal overshadowing when there's a delay between crime and verbal description and before lineup identification, which better reflect real-world conditions.
+			</p>
+		 </div>
+		 <br><br>
+		 <h3 class="collection"><a class="offset" id="replication-details">Replication Details</a> </h3>
+		 <span class="label label-info-brown" >Replications <span class="badge badge-repnum">55</span></span>
+		 <br><br>
+			
+			<div id="loader-div" class="loader"></div>
+			<table id="example" class="stripe row-border order-column compact hidden" cellspacing="0" >
+						<thead>
+						
+						<tr>
+							<th title="replication authors & study number (unnumbered for sole study papers)">replication.study.number</th>
+							<th title="original authors & study number (unnumbered for sole study papers)">original.study.number</th>
+							<th title="direct replication similarity (see replication taxonomy in white paper for details)">rep.method.similarity</th>
+							<th title="target effect/hypothesis tested in replication attempt">target.effect</th>
+							<th title="name of large-scale multi-lab effort or individual effort">rep.effort.type</th>
+							<th title="original study sample size (N; total sample size)">o.N</th>
+							<th title="original study effect size ± 95% CIs; NR means not reported and/or not calculatable">orig.effect.size</th>
+							<th title="replication study sample size (N; total sample size)">r.N</th>
+							<th title="replication study effect size ± 95% CIs; NR means not reported and/or not calculatable">rep.effect.size</th>
+							<th title="replication outcome & consistency relative to original (see About section for details)">rep.outcome</th>
+							<th title="independent variable constructs (operationalizations & conditions)">IVs</th>
+							<th title="dependent variable constructs (operationalizations)">DVs</th>
+						</tr>
+						</thead>
+						<tbody>
+
+<tr>
+  <td>
+    Leite (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/xua2c/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #1</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>102</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -18% ± 19% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Echterhoff &amp; Kopietz (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/8vqns/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #2</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>87</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -16% ± 20% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Musselman &amp; Colarusso (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/bpz7x/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #3</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>101</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -16% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    McCoy &amp; Rancourt (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/2nrqa/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #4</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>123</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -15% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Dellapaolera &amp; Bornstein (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/3895k/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #5</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>150</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -15% ± 16% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Alogna et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/tcgqu/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #6</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>113</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -13% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Poirer et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/i3z58/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #7</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>110</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -13% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Carlson et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/xhnqf/wiki/home/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #8</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>150</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -13% ± 16% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Mammarella et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #9</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>220</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -12% ± 13% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Chu, Marsh, &amp; Skelton (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/7kpa2/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #10</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>101</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -9% ± 19% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Greenberg et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/4yvcf/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #11</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>100</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -8% ± 20% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Wade et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/g4mq7/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #12</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>120</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -8% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Eggleston et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/zr4f2/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #13</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>150</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -7% ± 16% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Verkoeijen, Zwaan et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/7vdy9/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #14</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>105</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -5% ± 19% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Kehn et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/wyi3p/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #15</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>131</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -5% ± 17% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Birt &amp; Aucoin (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/w5a84/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #16</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>101</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -3% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Palmer et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/dz28w/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #17</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>107</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -2% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Was et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/rs4xg/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #18</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>135</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -2% ± 17% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    McIntyre, Langton et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/r8d7b/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #19</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>103</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -1% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Birch (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/h4ukj/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #20</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>106</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 0% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Susa et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/i4uh2/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #21</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>110</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 0% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Michael et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/q2uei/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #22</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>185</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 0% ± 15% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Delvenne et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #23</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>120</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 2% ± 17% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Gabbert &amp; Valentine (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/sdte4/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #24</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>108</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 3% ± 19% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Ulatowska &amp; Cislak (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/jq6rn/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #25</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>110</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 4% ± 17% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Mitchell &amp; Petro (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/igbvm/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #26</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>113</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 4% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Michael et al. (2014, mTURK) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/q2uei/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #27</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>390</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 6% ± 10% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Rubinova et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/d35cv/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #28</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>118</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 7% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Koch et al. (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/9mfh7/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #29</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>96</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 8% ± 20% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Brandimonte (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/67muv/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #30</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>140</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 10% ± 16% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Edlund &amp; Nichols (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/yspv3/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #31</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>112</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 12% ± 19% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Thompson (2014) Study 1
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/bt8j5/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 4
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect (description immediately after video)</td>
+  <td>RRR1 #32</td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 22% </td>
+  <td>100</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = 14% ± 19% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Poirer et al. (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/dkc7v ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #1</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>95</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -29% ± 20% </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Delvenne et al. (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #2</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>98</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -26% ± 19% </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Birt &amp; Aucoin (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/wvc3h ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #3</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>65</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 24% </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent (imprecise) </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Susa et al. (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/ifc3v ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #4</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>111</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -24% ± 18% </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Carlson et al. (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #5</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>160</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -24% ± 15% </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Musselman &amp; Colarusso (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/w4yne ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #6</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>78</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -23% ± 24% </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent (imprecise) </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Echterhoff &amp; Kopietz (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/qpigy ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #7</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>124</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 20% </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Mammarella et al. (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #8</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>104</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -22% ± 19% </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Dellapaolera &amp; Bornstein (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #9</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>164</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -21% ± 16% </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Mitchell &amp; Petro (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/cy7tx ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #10</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>109</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -20% ± 19% </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Ulatowska &amp; Cislak (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/t6qvu ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #11</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>106</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -17% ± 19% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Wade et al. (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/q98df ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #12</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>121</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -17% ± 17% </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Birch (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/87b3s ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #13</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>156</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -16% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    McCoy &amp; Rancourt (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/gpq3d ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #14</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>89</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -15% ± 21% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Greenberg et al. (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/czk4f ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #15</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>75</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -13% ± 25% </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent (imprecise) </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Alogna et al. (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/4xrpk ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #16</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>137</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -12% ± 19% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Michael et al. (2014, mTURK) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/tabw4/ ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #17</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>615</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -11% ± 10% </td>
+  <td title='replication ES 95% CI excludes 0 and includes original ES point estimate'> signal - consistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Koch et al. (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/6kpnj ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #18</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>67</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -10% ± 25% </td>
+  <td title='replication ES 95% CI includes 0 but also includes original ES point estimate'> no signal - consistent (imprecise) </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Thompson (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/ivfry ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #19</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>102</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -9% ± 22% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Rubinova et al. (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/a7hwn ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #20</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>110</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -3% ± 18% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Brandimonte (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/ktx8g ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #21</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>100</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -2% ± 20% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Eggleston et al. (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/672ms ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #22</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>93</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -2% ± 20% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr><tr>
+  <td>
+    Kehn et al. (2014) Study 2
+    <a href=' http://journals.sagepub.com/doi/pdf/10.1177/1745691614545653 ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/9g86r ' target='_blank' class='sprite sprite-data'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+    <a href=' https://osf.io/brwdp/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+    <a href=' #s&e-s ' class='sprite sprite-ec-icon' title='Go to evidence collection this replication is part of'></a>
+  </td>
+  <td>
+    Schooler &amp; Eng...-Schooler (1990) Study 1
+    <a href=' http://wixtedlab.ucsd.edu/publications/Psych%20272/Schooler_Engstler-Schooler_1990.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+    <a href=' https://osf.io/td8rp/ ' target='_blank' class='sprite sprite-materials'></a>
+  </td>
+  <td>very close</td>
+  <td>verbal overshadowing effect</td>
+  <td>RRR2 #23</td>
+  <td>88</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -25% ± 20% </td>
+  <td>113</td>
+  <td title=' IRD = identification rate difference of verbal description compared to control condition Ps '> IRD = -1% ± 20% </td>
+  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+  <td>verbal description vs. control task</td>
+  <td>identification of perpetrator in lineup</td>
+</tr>
+						
+					</tbody>
+				</table>		
+			
+
+		<h3 class="collection" >Related Collections/Related Articles </h3>
+		
+		<p>
+			<ul>
+				<li>
+				<a href="http://wixtedlab.ucsd.edu/publications/wixted2015/Mickes_Wixted_2015_Persepectives.pdf" target="_blank">Mickes & Wixted (2015) On the Applied Implications of the 'Verbal Overshadowing Effect'</a> <a href='http://wixtedlab.ucsd.edu/publications/wixted2015/Mickes_Wixted_2015_Persepectives.pdf' target='_blank' ><img src="../logos/sprite-icons/pdf.png" class="shrunk-14 transparent"></a>
+				</li>
+			</ul>
+		</p>
+		<p style="margin-top:50px;">
+		</p>
+		
+	
+	
+	</div> <!--secondary container div-->
+	
+	
+		<div class="footer-bottom" style="background-color:whitesmoke;padding-top:10px;">
+			
+			<div class="row">
+				<div class="col-sm-4 center" style="margin-top:30px;">
+						<span style="font-weight:bold;">Previous Funders</span>
+						<br>
+						<a  href="https://cos.io/"><img src="../logos/COS-logo.png" style="margin-top:15px;"></a> <a  href="http://www.bitss.org/"><img src="../logos/BITSS-logo.png" style="margin-left:30px;margin-top:15px;"></a>
+				</div>			
+				<div class="col-sm-4 center" style="margin-top:30px;">
+					<span style="font-weight:bold;">Current Funders</span>
+						<br>
+						<a  href="https://cordis.europa.eu/project/rcn/215183_en.html"><img src="../logos/european-commission-icon.png" style="margin-top:15px;width:128px;"></a>
+				</div>
+				<div class="col-sm-4 center" style="margin-top:30px;">
+					<span style="font-weight:bold;margin-bottom:15px;">Contact Details</span>
+						<p style="line-height:1.2em;margin-top:15px;">
+						University of Western Ontario<br>
+						1151 Richmond St<br>
+						London, Ontario, CANADA, N6A 3K7<br>
+						email: curatescience@<span class="displaynone"></span>gmail.com<br>
+						<a href="https://twitter.com/curatescience"><i class="fab fa-twitter fa-2" aria-hidden="true"></i></a>
+						<a href="https://github.com/eplebel/science-commons"><i class="fab fa-github fa-2" aria-hidden="true"></i></a>
+						</p>
+				</div>		
+			</div>
+			
+			<div class="container" style="margin-top:50px;">
+				<div class="row">
+						<center>
+							<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" title="This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License"/></a>
+							<br>
+							<i>*Thanks to <a href="http://www.nicebread.de/">Felix Schonbrodt</a> for hosting CurateScience.org</i>
+						</center>
+				</div>
+			</div>
+		</div> <!--footer-bottom div-->
+
+
+	
+	
+</div> <!--main-container push div -->
+
+
+	
+	
+
+  
+  <script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-48865749-1', 'auto');
+	  ga('send', 'pageview');
+  </script>
+  
+</body>
+</html>
