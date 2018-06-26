@@ -89,6 +89,12 @@
 	.label-info-red {
 	  background-color: #e74c3c;
 	}
+	.label-info-black {
+	  background-color: black;
+	}
+	.label-info-golden {
+	  background-color: #eec134;
+	}
 	.label-default {}
 	.badge-repnum{
 		padding-left:4px;
