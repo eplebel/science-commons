@@ -5,7 +5,7 @@
 	.article-styling {
 		padding-top:5px; 
 		padding-bottom:30px; 
-		border-top: 1px solid darkgrey; } /*these added above in "datatables init" because were being overridden*/	
+		border-top: 1px solid darkgrey; } /*these added within "datatables class="init" because were being overridden*/	
 	.PDF-column {
 		vertical-align:top; 
 		text-align:right; }
@@ -25,7 +25,6 @@
 		color:grey;
 		/*margin-top:3px;*/
 		font-style:italic}
-	
 	
 	
 	.doi-dimmed {
@@ -75,8 +74,15 @@
 	}
 		
 	.label-info-teal {
-	  background-color: #00A388;
+	  background-color: #66b2b2;
 	}
+	.label-info-teal-darker {
+	  background-color: #008080;
+	}
+	.label-info-teal-darkest {
+	  background-color: #006666;
+	}
+	
 	.label-info-brown {
 	  background-color: #996633;
 	}
@@ -97,8 +103,8 @@
 	}
 	.label-default {}
 	.badge-repnum{
-		padding-left:4px;
-		padding-right:4px;
+		padding-left:2px;
+		padding-right:2px;
 		padding-top:1px;
 		padding-bottom:1px;
 		border-radius:3px;
@@ -110,11 +116,12 @@
 		color:black;
 		font-size:10px;
 		line-height:10px;
-		background-color:white }
+		background-color:white;}
 	.label {
 		opacity:.55;
 		filter: alpha(opacity=50); /* For IE8 and earlier */
-		color:white;}
+		color:white;
+		padding: .0em .3em .15em; } /*added this to avoid overlapping labels on different rows*/
 	
 	.label-empirical {
 		  opacity: 0.55;
