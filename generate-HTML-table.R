@@ -36,8 +36,8 @@ concat.ES.CI <- function (ES.type, ES.value, ES.CI) {
     else {
       return( paste(ES.type, "=", ES.value, "±", ES.CI))  }
     }
-  if (ES.CI=="") {
-    return( paste(ES.type, "=", ES.value))  }
+  if (ES.CI=="" & ES.value!="") #added & ES.value!="" to deal with cases where no ES.value available
+    { return( paste(ES.type, "=", ES.value))  }
 }
 #add ES.description title to original and replication ES cells (assumes same ES.description for both orig & rep)
 td.custom.title <- function (x,ES.description) {
@@ -85,7 +85,7 @@ replication.HTML <- function(rep.num, rep.effort.type, orig.study.number, orig.N
                              orig.pvalue, rep.outcome.bayesian, study.order.CS, RPP.study.number, orig.article.title,EC.URL,
                              orig.study.pub.year, ES.description, include.in.HTML.table) {
   #include only most precise replications among large-scale rep efforts (to declutter table and improve performance/loading time)
-  if (include.in.HTML.table=="yes") {
+  #if (substr(rep.effort.type,1,3)=="ML3") {
     row.string <- tags$tr(tags$td(NA.to.blank(target.effect)),
         tags$td(orig.study.number,PDF.HTML(orig.study.article.URL),
                 data.HTML(orig.open.data.URL),materials.HTML(orig.open.materials.URL),prereg.HTML(orig.pre.reg.URL)),        
@@ -106,8 +106,54 @@ replication.HTML <- function(rep.num, rep.effort.type, orig.study.number, orig.N
         tags$td(other.outcomes),
         tags$td(effect.description))
     cat(iconv(row.string, to="UTF-8"), file="output-all-replications.txt",append=TRUE) #needed to fix stupid Windows locale problem$@##@%!
-  }
+  #}
 }
+replication.HTML.5.columns <- function(rep.num, rep.effort.type, orig.study.number, orig.N, orig.ES.type, orig.ES, orig.ES.CI,
+                             rep.N, rep.ES.type, rep.ES, rep.ES.CI, rep.study.number, rep.outcome, target.effect, 
+                             rep.num.in.set, discipline, rep.method.differences, rep.active.sample.evidence, IVs, DVs, 
+                             rep.type, other.outcomes, rep.open.data.URL, rep.open.materials.URL, rep.pre.reg.URL, 
+                             orig.study.article.URL, rep.study.article.URL, orig.open.data.URL, orig.open.materials.URL,
+                             orig.pre.reg.URL, effect.description, design, statistical.effect.type, orig.test.statistic,
+                             orig.pvalue, rep.outcome.bayesian, study.order.CS, RPP.study.number, orig.article.title,EC.URL,
+                             orig.study.pub.year, ES.description, include.in.HTML.table) {
+    row.string <- tags$tr(tags$td(rep.study.number,PDF.HTML(rep.study.article.URL),
+                                  data.HTML(rep.open.data.URL),materials.HTML(rep.open.materials.URL),
+                                  prereg.HTML(rep.pre.reg.URL),EC.icon.HTML(EC.URL)),
+                          tags$td(orig.study.number,PDF.HTML(orig.study.article.URL),
+                                  data.HTML(orig.open.data.URL),materials.HTML(orig.open.materials.URL),
+                                  prereg.HTML(orig.pre.reg.URL)),
+                          tags$td(rep.type),
+                          tags$td(NA.to.blank(target.effect)),
+                          tags$td(rep.effort.type))
+    cat(iconv(row.string, to="UTF-8"), file="output-all-replications-5-columns.txt",append=TRUE) #needed to fix stupid Windows locale problem$@##@%!
+}
+replication.HTML.12.columns <- function(rep.num, rep.effort.type, orig.study.number, orig.N, orig.ES.type, orig.ES, orig.ES.CI,
+                                       rep.N, rep.ES.type, rep.ES, rep.ES.CI, rep.study.number, rep.outcome, target.effect, 
+                                       rep.num.in.set, discipline, rep.method.differences, rep.active.sample.evidence, IVs, DVs, 
+                                       rep.type, other.outcomes, rep.open.data.URL, rep.open.materials.URL, rep.pre.reg.URL, 
+                                       orig.study.article.URL, rep.study.article.URL, orig.open.data.URL, orig.open.materials.URL,
+                                       orig.pre.reg.URL, effect.description, design, statistical.effect.type, orig.test.statistic,
+                                       orig.pvalue, rep.outcome.bayesian, study.order.CS, RPP.study.number, orig.article.title,EC.URL,
+                                       orig.study.pub.year, ES.description, include.in.HTML.table) {
+  row.string <- tags$tr(tags$td(rep.study.number,PDF.HTML(rep.study.article.URL),
+                                data.HTML(rep.open.data.URL),materials.HTML(rep.open.materials.URL),
+                                prereg.HTML(rep.pre.reg.URL),EC.icon.HTML(EC.URL)),
+                        tags$td(orig.study.number,PDF.HTML(orig.study.article.URL),
+                                data.HTML(orig.open.data.URL),materials.HTML(orig.open.materials.URL),
+                                prereg.HTML(orig.pre.reg.URL)),
+                        tags$td(rep.type),
+                        tags$td(NA.to.blank(target.effect)),
+                        tags$td(rep.effort.type),
+                        tags$td(orig.N),
+                        td.custom.title(concat.ES.CI(orig.ES.type, orig.ES, orig.ES.CI),ES.description),
+                        tags$td(rep.N),
+                        td.custom.title(concat.ES.CI(rep.ES.type, rep.ES, rep.ES.CI),ES.description),
+                        td.rep.outcome.title(rep.outcome),
+                        tags$td(IVs),
+                        tags$td(DVs))
+  cat(iconv(row.string, to="UTF-8"), file="output-all-replications-12-columns.txt",append=TRUE) #needed to fix stupid Windows locale problem$@##@%!
+}
+
 gSheet.url <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRdCTs0OOhcOI9LvmHkD4bXXm_kgxv7yq79VWtxwIgmwgi_LnK-2uWc-um_pfZBgbx2cWrNliMh9v7B/pub?output=csv'
 run <- function() {
   rep.table <- read.csv(url(gSheet.url), quote = "\"", stringsAsFactors=FALSE,encoding="UTF-8",na.strings="")
