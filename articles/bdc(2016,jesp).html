@@ -39,8 +39,8 @@
 				scrollY:        "500px",
 				scrollX:        true,
 				scrollCollapse: true,
-				"order": [[ 1, "asc" ]],
-				paging: true,
+				"order": [[ 6, "asc" ]],
+				paging: false,
 				fixedColumns:   {
 					leftColumns: 0
 				},
@@ -73,16 +73,9 @@
 		width: auto; /*used to be: 1400px*/
 		margin: 0 auto;
 	}
-	td.details-control {
-	  background: url('../logos/meta-analyze-button.png') no-repeat center center;
-	  cursor: pointer;
-	  min-width: 75px;
-	}
-	tr.shown td.details-control {
-	  background: url('../logos/close-chevron-icon.png') no-repeat center center;
-	}
 	.dataTables_wrapper .dataTables_length {
 		float: left;
+		display:none;
 		}
 	.dataTables_wrapper .dataTables_filter {
 		float: left;
@@ -176,17 +169,19 @@
 			<table cellspacing="0" width="100%">
 				<tbody>
 					<tr>
+					  <td style="vertical-align:top;">
+                            <img src='../logos/sprite-icons/article.png' class='shrunk-20 transparent' style="margin-top:0px;padding-top:3px;padding-right:5px;">
+						</td>
 					  <td width="65%">
-											  <span class='article-page-title'>Does exposure to erotica reduce attraction and love for romantic partners in men? Independent replications of Kenrick, Gutierres, and Goldberg (1989) Study 2 <img src="../logos/sprite-icons/article.png" class="article-icon"></span>
-								<br><span class='author-text' style="line-height:24px;">Balzarini, Dobson, & Campbell (2016)</span> <span class='journal-text'> Journal of Experimental Social Psychology</span><span class='doi-dimmed'> <a href='https://dx.doi.org/10.1016/j.jesp.2016.11.003' target='_blank' class='doi-dimmed grey'>10.1016/j.jesp.2016.11.003</a></span>
-								<br> 
-							
-							<span class='label label-info-brown' 
-						   title='This article reports replications.'>Replications <span class='badge badge-repnum'>3</span></span>  <span class='target-effects'> playboy effect</span><br>
-							
-							<div style="margin-top:5px;margin-bottom:0px;">
+							<span class='article-page-title'>Does exposure to erotica reduce attraction and love for romantic partners in men? Independent replications of Kenrick, Gutierres, and Goldberg (1989) Study 2 </span>
+							<br>
+							<span class='author-text' style="line-height:24px;">Balzarini, Dobson, & Campbell (2016)</span> 
+							<br>
+							<span class='journal-text'> Journal of Experimental Social Psychology</span><span class='doi-dimmed'> <a href='https://dx.doi.org/10.1016/j.jesp.2016.11.003' target='_blank' class='doi-dimmed grey'>10.1016/j.jesp.2016.11.003</a></span>
+							<br> 
+							<div style="margin-bottom:4px;">
 								<a href='https://osf.io/6xqju/' target='_blank' title='Go to preregistered study protocol (study design + analytic plans) '>
-								   <img src='../logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/nrkej/' target='_blank' title='Go to study materials files'>
+								   <img src='../logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a> <a href='https://osf.io/nrkej/' target='_blank' title='Go to study materials files'>
 								   <img src='../logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/b47jp/' target='_blank' title='Go to data files'>
 								   <img src='../logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/b47jp/' target='_blank' title='Go to reproducible code files'>
 								   <img src='../logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> 
@@ -206,15 +201,12 @@
 									   </span>
 									</div> 
 								</div>
-								
-								
-						    
-							
+							<span class='label label-info-brown' title='This article reports replications.'>Replications <span class='badge badge-repnum'>3</span></span>  <span class='target-effects'> playboy effect</span>
 						</td>
-						<td class='PDF-column' width="10%"> <a href='https://www.researchgate.net/profile/Rhonda_Balzarini/publication/310488568_Does_exposure_to_erotica_reduce_attraction_and_love_for_romantic_partners_in_men_Independent_replications_of_Kenrick_Gutierres_and_Goldberg_1989_study_2/links/59cfdd434585150177ee21fd/Does-exposure-to-erotica-reduce-attraction-and-love-for-romantic-partners-in-men-Independent-replications-of-Kenrick-Gutierres-and-Goldberg-1989-study-2.pdf' target='_blank'>
-						   <img src='../logos/sprite-icons/pdf.png' class='shrunk-20 transparent'></a> 
-						</td width="25%">
-						<td style="vertical-align:top;">
+						<td class='PDF-column' width="10%"> 
+							<a href='https://www.researchgate.net/profile/Rhonda_Balzarini/publication/310488568_Does_exposure_to_erotica_reduce_attraction_and_love_for_romantic_partners_in_men_Independent_replications_of_Kenrick_Gutierres_and_Goldberg_1989_study_2/links/59cfdd434585150177ee21fd/Does-exposure-to-erotica-reduce-attraction-and-love-for-romantic-partners-in-men-Independent-replications-of-Kenrick-Gutierres-and-Goldberg-1989-study-2.pdf' target='_blank'> <img src='../logos/sprite-icons/pdf.png' class='shrunk-20 transparent'></a> 
+						</td >
+						<td style="vertical-align:top;" width="25%">
 							<button type=button class="btn btn-default btn-xs" style="float:right;margin-left:20px;" title="Coming soon (Fall 2018)"><span class="glyphicon glyphicon-star" aria-hidden=true></span> Track Article</button>
 						</td>
 					</tr>
@@ -222,217 +214,440 @@
 			</table>
 		</div>
 		
-		<ul class="nav nav-pills" style="border-bottom: 1px solid darkgrey;margin-top:15px;">
-		  <li ><a href="#study-details">Study-Level Transparency </a></li>
-		  <li ><a href="#key-figures">Key Figures/Tables</a></li>
-		  <li ><a href="#replication-details">Replication Details</a></li>
-		</ul>
-	
+			<ul class="nav nav-tabs" style="margin-top:30px;margin-left:24px;">
+				<li class="active"><a data-toggle="tab" href="#transparency" title='View transparency components'>Transparency</a></li>
+				<li><a data-toggle="tab" href="#key-figures" title='View key figures/tables'>Key Figures/Tables</a></li>
+				<li><a data-toggle="tab" href="#rep-details" title='View replication details'>Replication Details</a></li>
+			</ul>
 
-		 <h4 class="collection"><div class="hover-edit"><a class="offset" id="study-details">Study-Level Transparency</a>  <span style="color:grey;font-size:14px;" title="Coming soon (Fall 2018)" class="hidden-edit"><i class="fas fa-pencil-alt" style="padding-left:30px;font-size:1.5rem;"></i> Edit study details</span></div> </h4>
-				
-			Study 1
-						   
-							<a href="https://osf.io/6xqju/" target="_blank" title="Go to preregistered study protocol"><img src="../logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
-							<a href="https://osf.io/nrkej/" target="_blank" title="Go to study materials files"><img src="../logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
-							<a href="https://osf.io/w648b/" target="_blank" title="Go to data files"><img src="../logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
-							<a href="https://osf.io/e9f2q/" target="_blank" title="Go to reproducible code files"><img src='../logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
-							<div style="display:inline;" class="popUpOnHover"><img src="../logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
-								<span class="toDisplayBasic4Submission popUpStyle" style='padding-left:5px;white-space:nowrap;'>
-									<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="http://psychdisclosure.org" target="_blank">Basic 4 (retroactive)</a> <img src="../logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent"> reporting standard:</span>
-									<ol style="margin-top:5px;margin-bottom:5px;">
-										<li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
-										<li><strong>Experimental conditions:</strong> Full details reported in article.</li>
-										<li><strong>Outcome measures:</strong> Full details reported in article.</li>
-										<li><strong>Sample size determination:</strong> Full details reported in article.</li>
-									</ol>
-									<span style="color:red;">Date of retroactive disclosure:</u> May 6, 2018.</span>
-								</span>
-							</div>
-							
-							<br>
-							Study 2
-							<a href="https://osf.io/6xqju/" target="_blank" title="Go to preregistered study protocol"><img src="../logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
-							<a href="https://osf.io/nrkej/" target="_blank" title="Go to study materials files"><img src="../logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
-							<a href="https://osf.io/rqhjk/" target="_blank" title="Go to data files"><img src="../logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
-							<a href="https://osf.io/zusm3/" target="_blank" title="Go to reproducible code files"><img src='../logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>
-							<div style="display:inline;" class="popUpOnHover"><img src="../logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
-								<span class="toDisplayBasic4Submission popUpStyle" style='padding-left:5px;white-space:nowrap;'>
-									<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="http://psychdisclosure.org" target="_blank">Basic 4 (retroactive)</a> <img src="../logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent"> reporting standard:</span>
-									<ol style="margin-top:5px;margin-bottom:5px;">
-										<li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
-										<li><strong>Experimental conditions:</strong> Full details reported in article.</li>
-										<li><strong>Outcome measures:</strong> Full details reported in article.</li>
-										<li><strong>Sample size determination:</strong> Full details reported in article.</li>
-									</ol>
-									<span style="color:red;">Date of retroactive disclosure:</u> May 6, 2018.</span>
-								</span>
-							</div>
-							<br>
-							Study 3
-							<a href="https://osf.io/6xqju/" target="_blank" title="Go to preregistered study protocol"><img src="../logos/sprite-icons/preregistered-plus-available.png" class="shrunk-16 transparent"></a>
-							<a href="https://osf.io/f56a8/" target="_blank" title="Go to study materials files"><img src="../logos/sprite-icons/materials-available.png" class="shrunk-16 transparent"></a>
-							<a href="https://osf.io/f4n7b/" target="_blank" title="Go to data files"><img src="../logos/sprite-icons/data-available.png" class="shrunk-16 transparent"></a>
-							<a href="https://osf.io/k3hyj/" target="_blank" title="Go to reproducible code files"><img src='../logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>	
-							<div style="display:inline;" class="popUpOnHover"><img src="../logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent">
-								<span class="toDisplayBasic4Submission popUpStyle" style='padding-left:5px;white-space:nowrap;'>
-									<span style="font-size:14px;font-weight:bold;color:gray;">Study complies with the <a href="http://psychdisclosure.org" target="_blank">Basic 4 (retroactive)</a> <img src="../logos/sprite-icons/disclosure-available.png" class="shrunk-16 transparent"> reporting standard:</span>
-									<ol style="margin-top:5px;margin-bottom:5px;">
-										<li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
-										<li><strong>Experimental conditions:</strong> Full details reported in article.</li>
-										<li><strong>Outcome measures:</strong> Full details reported in article.</li>
-										<li><strong>Sample size determination:</strong> Full details reported in article.</li>
-									</ol>
-									<span style="color:red;">Date of retroactive disclosure:</u> May 6, 2018.</span>
-								</span>
-							</div>
-		<br>
-		 <h4 class="collection"><div class="hover-edit"><a class="offset" id="key-figures">Key Figures/Tables</a> <span style="color:grey;font-size:14px;" title="Coming soon (Fall 2018)" class="hidden-edit"><i class="fas fa-pencil-alt" style="padding-left:30px;font-size:1.5rem;"></i> Edit key figures/tables</span></div></h4>
-		 
-		
-		<table class="stripe compact" cellspacing="0" width="100%" border=0>
-			<tbody>
-			<tr>
-				<td>Study 1	</td>
-				<td class="center"><img src="../logos/interactions-popup1.png" class="img-responsive"></td>
-			</tr>
-			<tr>
-				<td>Study 2
-				</td>
-				<td class="center"><img src="../logos/interactions-popup2.png" class="img-responsive"></td>
-			</tr>
-			<tr>
-				<td>Study 3
-				</td>
-				<td class="center"><img src="../logos/interactions-popup3.png" class="img-responsive"></td>
-			</tr>
-		</table>
-		
-		
-		<br>
-		 <h4 class="collection"><div class="hover-edit"><a class="offset" id="replication-details">Replication Details</a> <span style="color:grey;font-size:14px;" title="Coming soon (Fall 2018)" class="hidden-edit"><i class="fas fa-pencil-alt" style="padding-left:30px;font-size:1.5rem;"></i> Edit replication details</span></div></h4>
-		 
-		 <span class="label label-info-brown" >Replications <span class="badge badge-repnum">3</span></span>
-		 <br><br>
-			
-			<div id="loader-div" class="loader"></div>
-			<table id="example" class="stripe row-border order-column compact hidden" cellspacing="0" width="100%">
-						<thead>
+			  <div class="tab-content" style="padding-left:26px;">
+				<div id="transparency" class="tab-pane fade in active" style="margin-top:15px;">
+					
+					<div style="margin-top:5px;margin-bottom:5px;">
+						Study 1
+						<div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study 1 Preregistered Protocol</span>
+										<a href="https://osf.io/6xqju/?action=download" target="_blank" title="Direct download file"> Replication Protocol for Kenrick, Gutierres, & Goldberg (Study 2).pdf <i class="fa fa-download"></i></a><a href="https://osf.io/6xqju/" target="_blank"><span style="margin-left:30px;">View pregistered study protocol on OSF</span> <img src="../logos/osf-13x13.png"></a>
+									</div>
+										<br>
+									  <iframe src="https://mfr.osf.io/render?url=https://osf.io/6xqju/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study 1 Materials</span>
+											<a href="https://osf.io/nrkej/?action=download" target="_blank" title="Direct download file"> Replication Protocol (Study 1 and 2).pdf <i class="fa fa-download"></i></a><a href="https://osf.io/nrkej/" target="_blank"><span style="margin-left:30px;">View pregistered study protocol on OSF</span> <img src="../logos/osf-13x13.png"></a>
+											<span style="color:grey;padding-left:30px;">Study materials available in preregistered study protocol</span>
+									</div>
+										<br>
+									  <iframe src="https://mfr.osf.io/render?url=https://osf.io/nrkej/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/data-available.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study 1 Data</span>
+										<a href="https://osf.io/w648b/?action=download" target="_blank" title="Direct download file"> Study 1 Data.sav <i class="fa fa-download"></i></a><a href="https://osf.io/w648b/" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="../logos/osf-13x13.png"></a>
+									</div>
+									<br>
+								  <iframe src="https://mfr.osf.io/render?url=https://osf.io/w648b/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/code.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study 1 Code</span>
+										<a href="https://osf.io/e9f2q/?action=download" target="_blank" title="Direct download file"> Study 1 Syntax.sps <i class="fa fa-download"></i></a><a href="https://osf.io/e9f2q/" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="../logos/osf-13x13.png"></a>
+									</div>
+									<br>
+									<iframe src="https://mfr.osf.io/render?url=https://osf.io/e9f2q/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style='display:inline;' class='popUpOnHover'>
+							<img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'>
+						   <span class='toDisplayBasic4Submission popUpStyle' style='padding-left:5px;white-space:nowrap;'>
+						   <span style='font-weight:bold;color:gray;'>Study 1 complies with the 
+						   <a href='http://psychdisclosure.org' target='_blank'>Basic 4 (retroactive)</a> 
+						   <img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'> reporting standard:</span>
+						   <ol style='margin-top:5px;margin-bottom:5px;'>
+						   <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+						   <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+						   <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+						   <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+						   </ol>
+						   <span style='color:red;'>Date of retroactive disclosure: May 6, 2018.</span>
+						   </span>
+					   </div> 
 						
+					</div>
+					
+					<div style="margin-top:15px;margin-bottom:5px;">
+						Study 2
+						<div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study 2 Preregistered Protocol</span>
+										<a href="https://osf.io/6xqju/?action=download" target="_blank" title="Direct download file"> Replication Protocol for Kenrick, Gutierres, & Goldberg (Study 2).pdf <i class="fa fa-download"></i></a><a href="https://osf.io/6xqju/" target="_blank"><span style="margin-left:30px;">View pregistered study protocol on OSF</span> <img src="../logos/osf-13x13.png"></a>
+									</div>
+										<br>
+									  <iframe src="https://mfr.osf.io/render?url=https://osf.io/6xqju/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study 2 Materials</span>
+											<a href="https://osf.io/nrkej/?action=download" target="_blank" title="Direct download file"> Replication Protocol (Study 1 and 2).pdf <i class="fa fa-download"></i></a><a href="https://osf.io/nrkej/" target="_blank"><span style="margin-left:30px;">View pregistered study protocol on OSF</span> <img src="../logos/osf-13x13.png"></a>
+											<span style="color:grey;padding-left:30px;">Study materials available in preregistered study protocol</span>
+									</div>
+										<br>
+									  <iframe src="https://mfr.osf.io/render?url=https://osf.io/nrkej/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/data-available.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study 2 Data</span>
+										<a href="https://osf.io/rqhjk/?action=download" target="_blank" title="Direct download file"> Study 2 Data.sav <i class="fa fa-download"></i></a><a href="https://osf.io/rqhjk/" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="../logos/osf-13x13.png"></a>
+									</div>
+									<br>
+									<iframe src="https://mfr.osf.io/render?url=https://osf.io/rqhjk/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe> 
+								</div>
+							</span>
+						</div>
+					   
+					   <div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/code.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study 2 Code</span>
+										<a href="https://osf.io/zusm3/?action=download" target="_blank" title="Direct download file"> Study 2 Syntax.sps <i class="fa fa-download"></i></a><a href="https://osf.io/zusm3/" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="../logos/osf-13x13.png"></a>
+									</div>
+									<br>
+									<iframe src="https://mfr.osf.io/render?url=https://osf.io/zusm3/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style='display:inline;' class='popUpOnHover'>
+							<img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'>
+						   <span class='toDisplayBasic4Submission popUpStyle' style='padding-left:5px;white-space:nowrap;'>
+						   <span style='font-weight:bold;color:gray;'>Study 2 complies with the 
+						   <a href='http://psychdisclosure.org' target='_blank'>Basic 4 (retroactive)</a> 
+						   <img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'> reporting standard:</span>
+						   <ol style='margin-top:5px;margin-bottom:5px;'>
+						   <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+						   <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+						   <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+						   <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+						   </ol>
+						   <span style='color:red;'>Date of retroactive disclosure: May 6, 2018.</span>
+						   </span>
+					   </div> 
+						
+					</div>
+					
+					<div style="margin-top:15px;margin-bottom:5px;">
+						Study 3
+						<div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study 3 Preregistered Protocol</span>
+										<a href="https://osf.io/6xqju/?action=download" target="_blank" title="Direct download file"> Replication Protocol for Kenrick, Gutierres, & Goldberg (Study 2).pdf <i class="fa fa-download"></i></a><a href="https://osf.io/6xqju/" target="_blank"><span style="margin-left:30px;">View pregistered study protocol on OSF</span> <img src="../logos/osf-13x13.png"></a>
+									</div>
+										<br>
+									  <iframe src="https://mfr.osf.io/render?url=https://osf.io/6xqju/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study 3 Materials</span>
+											<a href="https://osf.io/f56a8/?action=download" target="_blank" title="Direct download file"> Replication Protocol (Study 3).docx <i class="fa fa-download"></i></a><a href="https://osf.io/f56a8/" target="_blank"><span style="margin-left:30px;">View pregistered study protocol on OSF</span> <img src="../logos/osf-13x13.png"></a>
+											<span style="color:grey;padding-left:30px;">Study materials available in preregistered study protocol</span>
+									</div>
+										<br>
+									  <iframe src="https://mfr.osf.io/render?url=https://osf.io/f56a8/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/data-available.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study 3 Data</span>
+										<a href="https://osf.io/f4n7b/?action=download" target="_blank" title="Direct download file"> Study 3 Data.sav <i class="fa fa-download"></i></a><a href="https://osf.io/f4n7b/" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="../logos/osf-13x13.png"></a>
+									</div>
+									<br>
+								  <iframe src="https://mfr.osf.io/render?url=https://osf.io/f4n7b/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/code.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study 3 Code</span>
+										<a href="https://osf.io/k3hyj/?action=download" target="_blank" title="Direct download file"> Study 3 Syntax.sps <i class="fa fa-download"></i></a><a href="https://osf.io/k3hyj/" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="../logos/osf-13x13.png"></a>
+									</div>
+									<br>
+									<iframe src="https://mfr.osf.io/render?url=https://osf.io/k3hyj/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style='display:inline;' class='popUpOnHover'>
+							<img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'>
+						   <span class='toDisplayBasic4Submission popUpStyle' style='padding-left:5px;white-space:nowrap;'>
+						   <span style='font-weight:bold;color:gray;'>Study 3 complies with the 
+						   <a href='http://psychdisclosure.org' target='_blank'>Basic 4 (retroactive)</a> 
+						   <img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'> reporting standard:</span>
+						   <ol style='margin-top:5px;margin-bottom:5px;'>
+						   <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+						   <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+						   <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+						   <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+						   </ol>
+						   <span style='color:red;'>Date of retroactive disclosure: May 6, 2018.</span>
+						   </span>
+					   </div> 
+						
+						<br>
+						<div style="font-style:italic;font-size:10px;color:grey;margin-top:15px;">Hover over badges to reveal curated transparency components</div>
+					</div>
+					
+					
+					
+				 
+				</div>
+				<div id="key-figures" class="tab-pane fade" style="margin-top:15px;">
+					<table class="stripe compact" cellspacing="0" width="100%" border=0>
 						<tr>
-							<th title="target effect/hypothesis tested in replication attempt">target.effect</th>
-							<th title="original authors & study number (unnumbered for sole study papers)">orig.study.number</th>
-							<th title="original study sample size (N; total sample size)">o.N</th>
-							<th title="original study effect size ± 95% CIs; NR means not reported and/or not calculatable">orig.effect.size</th>
-							<th title="replication study sample size (N; total sample size)">r.N</th>
-							<th title="replication study effect size ± 95% CIs; NR means not reported and/or not calculatable">rep.effect.size</th>
-							<th title="replication authors & study number (unnumbered for sole study papers)">rep.study.number</th>
-							<th title="replication outcome & consistency relative to original (see About section for details)">rep.outcome</th>
-							<th title="independent variable constructs (operationalizations & conditions)">IVs</th>
-							<th title="dependent variable constructs (operationalizations)">DVs</th>
-							<th title="type of direct replication (see replication taxonomy in About section for details)">rep.type</th>
-							<th title="name of large-scale multi-lab effort or individual effort">rep.effort.type</th>
-							<th title="known replication methodological differences relative to original (if any)">rep.differences</th>
-							<th title="active sample evidence in replication to detect a positive effect (see About section for details)">rep.active.evidence</th>
-							<th title="additional DVs assessed & verbal description of results">other.outcomes</th>
+							<td>Study 1	</td>
+							<td class="center"><img src="../logos/interactions-popup1.png" class="img-responsive"></td>
 						</tr>
+						<tr>
+							<td>Study 2
+							</td>
+							<td class="center"><img src="../logos/interactions-popup2.png" class="img-responsive"></td>
+						</tr>
+						<tr>
+							<td>Study 3
+							</td>
+							<td class="center"><img src="../logos/interactions-popup3.png" class="img-responsive"></td>
+						</tr>
+					</table>
+				</div>
+				<div id="rep-details" class="tab-pane fade" style="margin-top:15px;">
+					
+			
+					<div id="loader-div" class="loader"></div>
+
+					
+					<table id="example" class="stripe row-border order-column compact hidden" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th title="target effect/hypothesis tested in replication attempt">target.effect</th>
+								<th title="original authors & study number (unnumbered for sole study papers)">orig.study.number</th>
+								<th title="original study sample size (N; total sample size)">o.N</th>
+								<th title="original study effect size ± 95% CIs; NR means not reported and/or not calculatable">orig.effect.size</th>
+								<th title="replication study sample size (N; total sample size)">r.N</th>
+								<th title="replication study effect size ± 95% CIs; NR means not reported and/or not calculatable">rep.effect.size</th>
+								<th title="replication authors & study number (unnumbered for sole study papers)">rep.study.number</th>
+								<th title="replication outcome & consistency relative to original (see About section for details)">rep.outcome</th>
+								<th title="independent variable constructs (operationalizations & conditions)">IVs</th>
+								<th title="dependent variable constructs (operationalizations)">DVs</th>
+								<th title="type of direct replication (see replication taxonomy in About section for details)">rep.type</th>
+								<th title="name of large-scale multi-lab effort or individual effort">rep.effort.type</th>
+								<th title="known replication methodological differences relative to original (if any)">rep.differences</th>
+								<th title="active sample evidence in replication to detect a positive effect (see About section for details)">rep.active.evidence</th>
+								<th title="additional DVs assessed & verbal description of results">other.outcomes</th>
+							</tr>
 						</thead>
 						<tbody>
-
-					<tr>
-  <td>playboy effect</td>
-  <td>
-    Kenrick et al. (1989) Study 2
-    <a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-  </td>
-  <td>65</td>
-  <td title=' Δd = change in love after exposure to opposite-sex nudes vs. control (d_men - d_women; negative value means exposure to nudes decreased love more for men compared to women) '> Δd = -.53 ± .64 </td>
-  <td>223</td>
-  <td title=' Δd = change in love after exposure to opposite-sex nudes vs. control (d_men - d_women; negative value means exposure to nudes decreased love more for men compared to women) '> Δd = .29 ± .46 </td>
-  <td>
-    Balzarini et al. (2017) Study 1
-    <a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-    <a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
-    <a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
-    <a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
-  </td>
-  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
-  <td>Playboy centerfolds vs. control; Participant sex</td>
-  <td>Love for partner (Rubin Love-scale)</td>
-  <td>close</td>
-  <td>individual effort</td>
-  <td>Updated pictures of abstract art &amp; male/female nudes; Two attention check questions</td>
-  <td>Nudes rated as more pleasant than abstract art</td>
-  <td>1 other DV (partner attraction; same pattern of results observed)</td>
-  <td>Opposite-sex nudes exposure decreases love among men, but not women</td>
-</tr><tr>
-  <td>playboy effect</td>
-  <td>
-    Kenrick et al. (1989) Study 2
-    <a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-  </td>
-  <td>65</td>
-  <td title=' Δd = change in love after exposure to opposite-sex nudes vs. control (d_men - d_women; negative value means exposure to nudes decreased love more for men compared to women) '> Δd = -.53 ± .64 </td>
-  <td>263</td>
-  <td title=' Δd = change in love after exposure to opposite-sex nudes vs. control (d_men - d_women; negative value means exposure to nudes decreased love more for men compared to women) '> Δd = .30 ± .42 </td>
-  <td>
-    Balzarini et al. (2017) Study 2
-    <a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-    <a href=' https://osf.io/rqhjk/ ' target='_blank' class='sprite sprite-data'></a>
-    <a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
-    <a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
-  </td>
-  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
-  <td>Playboy centerfolds vs. control; Participant sex</td>
-  <td>Love for partner (Rubin Love-scale)</td>
-  <td>close</td>
-  <td>individual effort</td>
-  <td>Updated pictures of abstract art &amp; male/female nudes; Two attention check questions</td>
-  <td>Nudes rated as more pleasant than abstract art</td>
-  <td>1 other DV (partner attraction; same pattern of results observed)</td>
-  <td>Opposite-sex nudes exposure decreases love among men, but not women</td>
-</tr><tr>
-  <td>playboy effect</td>
-  <td>
-    Kenrick et al. (1989) Study 2
-    <a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-  </td>
-  <td>65</td>
-  <td title=' Δd = change in love after exposure to opposite-sex nudes vs. control (d_men - d_women; negative value means exposure to nudes decreased love more for men compared to women) '> Δd = -.53 ± .64 </td>
-  <td>225</td>
-  <td title=' Δd = change in love after exposure to opposite-sex nudes vs. control (d_men - d_women; negative value means exposure to nudes decreased love more for men compared to women) '> Δd = -.38 ± .46 </td>
-  <td>
-    Balzarini et al. (2017) Study 3
-    <a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
-    <a href=' https://osf.io/f4n7b/ ' target='_blank' class='sprite sprite-data'></a>
-    <a href=' https://osf.io/f56a8/ ' target='_blank' class='sprite sprite-materials'></a>
-    <a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
-  </td>
-  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
-  <td>Playboy centerfolds vs. control; Participant sex</td>
-  <td>Love for partner (Rubin Love-scale)</td>
-  <td>close</td>
-  <td>individual effort</td>
-  <td>Updated pictures of abstract art &amp; male/female nudes; Two attention check questions</td>
-  <td>Nudes rated as more pleasant than abstract art</td>
-  <td>1 other DV (partner attraction; same pattern of results observed)</td>
-  <td>Opposite-sex nudes exposure decreases love among men, but not women</td>
-</tr>
-						
-					</tbody>
-				</table>		
+							<tr>
+								  <td>playboy effect</td>
+								  <td>
+									Kenrick et al. (1989) Study 2
+									<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								  </td>
+								  <td>65</td>
+								  <td title=' Δd = change in love after exposure to opposite-sex nudes vs. control (d_men - d_women; negative value means exposure to nudes decreased love more for men compared to women) '> Δd = -.53 ± .64 </td>
+								  <td>223</td>
+								  <td title=' Δd = change in love after exposure to opposite-sex nudes vs. control (d_men - d_women; negative value means exposure to nudes decreased love more for men compared to women) '> Δd = .29 ± .46 </td>
+								  <td>
+									Balzarini et al. (2017) Study 1
+									<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+									<a href=' https://osf.io/w648b/ ' target='_blank' class='sprite sprite-data'></a>
+									<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+									<a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+								  </td>
+								  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+								  <td>Playboy centerfolds vs. control; Participant sex</td>
+								  <td>Love for partner (Rubin Love-scale)</td>
+								  <td>close</td>
+								  <td>individual effort</td>
+								  <td>Updated pictures of abstract art &amp; male/female nudes; Two attention check questions</td>
+								  <td>Nudes rated as more pleasant than abstract art</td>
+								  <td>1 other DV (partner attraction; same pattern of results observed)</td>
+								  <td>Opposite-sex nudes exposure decreases love among men, but not women</td>
+								</tr>
+								<tr>
+								  <td>playboy effect</td>
+								  <td>
+									Kenrick et al. (1989) Study 2
+									<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								  </td>
+								  <td>65</td>
+								  <td title=' Δd = change in love after exposure to opposite-sex nudes vs. control (d_men - d_women; negative value means exposure to nudes decreased love more for men compared to women) '> Δd = -.53 ± .64 </td>
+								  <td>263</td>
+								  <td title=' Δd = change in love after exposure to opposite-sex nudes vs. control (d_men - d_women; negative value means exposure to nudes decreased love more for men compared to women) '> Δd = .30 ± .42 </td>
+								  <td>
+									Balzarini et al. (2017) Study 2
+									<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+									<a href=' https://osf.io/rqhjk/ ' target='_blank' class='sprite sprite-data'></a>
+									<a href=' https://osf.io/nrkej/ ' target='_blank' class='sprite sprite-materials'></a>
+									<a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+								  </td>
+								  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+								  <td>Playboy centerfolds vs. control; Participant sex</td>
+								  <td>Love for partner (Rubin Love-scale)</td>
+								  <td>close</td>
+								  <td>individual effort</td>
+								  <td>Updated pictures of abstract art &amp; male/female nudes; Two attention check questions</td>
+								  <td>Nudes rated as more pleasant than abstract art</td>
+								  <td>1 other DV (partner attraction; same pattern of results observed)</td>
+								  <td>Opposite-sex nudes exposure decreases love among men, but not women</td>
+								</tr>
+								<tr>
+								  <td>playboy effect</td>
+								  <td>
+									Kenrick et al. (1989) Study 2
+									<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/Kenrick%2C%20Gutierres%2C%20%26%20Goldbergs%20(1989)%20Study%202%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+								  </td>
+								  <td>65</td>
+								  <td title=' Δd = change in love after exposure to opposite-sex nudes vs. control (d_men - d_women; negative value means exposure to nudes decreased love more for men compared to women) '> Δd = -.53 ± .64 </td>
+								  <td>225</td>
+								  <td title=' Δd = change in love after exposure to opposite-sex nudes vs. control (d_men - d_women; negative value means exposure to nudes decreased love more for men compared to women) '> Δd = -.38 ± .46 </td>
+								  <td>
+									Balzarini et al. (2017) Study 3
+									<a href=' https://github.com/eplebel/science-commons/blob/master/curated/kgg1989/balzarini%20et%20al%20(2016%2C%20JESP)%203%20independent%20direct%20replications%20of%20playboy%20effect.pdf ' target='_blank' class='sprite sprite-pdf-icon'></a>
+									<a href=' https://osf.io/f4n7b/ ' target='_blank' class='sprite sprite-data'></a>
+									<a href=' https://osf.io/f56a8/ ' target='_blank' class='sprite sprite-materials'></a>
+									<a href=' https://osf.io/6xqju/ ' target='_blank' class='sprite sprite-preregisteredplus'></a>
+								  </td>
+								  <td title='replication ES 95% CI includes 0 but excludes original ES point estimate'> no signal - inconsistent </td>
+								  <td>Playboy centerfolds vs. control; Participant sex</td>
+								  <td>Love for partner (Rubin Love-scale)</td>
+								  <td>close</td>
+								  <td>individual effort</td>
+								  <td>Updated pictures of abstract art &amp; male/female nudes; Two attention check questions</td>
+								  <td>Nudes rated as more pleasant than abstract art</td>
+								  <td>1 other DV (partner attraction; same pattern of results observed)</td>
+								  <td>Opposite-sex nudes exposure decreases love among men, but not women</td>
+								</tr>
+												
+						</tbody>
+					</table>		
+					
+					<div style="margin-top:200px;margin-left:24px;">
+						<span style="color:grey;font-size:14px;">Related Articles/Collections </span>
+						<table style="margin-top:5px;">
+							<tr>
+								<td style="vertical-align:top;padding:5px;">
+									<img src='../logos/sprite-icons/article.png' class='shrunk-12 transparent'>
+								</td>
+								<td style="padding:5px;max-width:700px;">
+									<a href="bdc(2016,jesp).html">Self-esteem, relationship threat, and dependency regulation: Independent replication of Murray, Rose, Bellavia, Holmes, and Kusche (2002) Study 3 </a>
+								<br>
+								<span class='author-text' style="line-height:24px;">Campbell, Balzarini, Kohut, Dobson, Hahn, Moroz, & Stanton (2018)</span> 						
+								<br>
+								<span class='label label-info-brown'  title='This article reports replications.'>Replications <span class='badge badge-repnum'>1</span></span> <span class='target-effects'> self-esteem buffers relationship threat</span> 
+								</td>
+							</tr>
+						</table>
+						<p style="margin-top:50px;">
+						</p>
+					</div>
+					
+				</div>
+				
+			</div>
+			 
+		
+		
+	
+		 
+	
+		 <div style="margin-top:200px;margin-left:24px;">
+			<span style="color:grey;font-size:14px;">Related Articles/Collections </span>
+			<table style="margin-top:5px;">
+				<tr>
+					<td style="vertical-align:top;padding:5px;">
+						<img src='../logos/sprite-icons/article.png' class='shrunk-12 transparent'>
+					</td>
+					<td style="padding:5px;max-width:700px;">
+						<a href="bdc(2016,jesp).html">Self-esteem, relationship threat, and dependency regulation: Independent replication of Murray, Rose, Bellavia, Holmes, and Kusche (2002) Study 3 </a>
+					<br>
+					<span class='author-text' style="line-height:24px;">Campbell, Balzarini, Kohut, Dobson, Hahn, Moroz, & Stanton (2018)</span> 						
+					<br>
+					<span class='label label-info-brown'  title='This article reports replications.'>Replications <span class='badge badge-repnum'>1</span></span> <span class='target-effects'> self-esteem buffers relationship threat</span> 
+					</td>
+				</tr>
+			</table>
+			<p style="margin-top:50px;">
+			</p>
+		</div>
+	
+		 
 			
 
-		<h4 class="collection"><div class="hover-edit">Related Articles/Collections <span style="color:grey;font-size:14px;" title="Coming soon (Fall 2018)" class="hidden-edit"><i class="fas fa-pencil-alt" style="padding-left:30px;font-size:1.5rem;"></i> Edit related articles/collections</span></div></h4>
 		
-		<p>
-			<ul>
-				
-				
-				
-			</ul>
-		</p>
-		<p style="margin-top:50px;">
+			
+		
+		
+		<p style="margin-top:500px;">
+		
 		</p>
 		
 	
