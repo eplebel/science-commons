@@ -41,6 +41,7 @@
 	.popUpOnHover:hover span.toDisplayBasic7Retroactive { display:block; }
 	.popUpOnHover:hover span.toDisplayMARS { display:block; }
 	.popUpOnHover:hover span.toDisplayFullPagePopUp { display:block; }
+	.popUpOnHover:hover span.toDisplayCommentaries { display:block; }
 	.toDisplayBasic4Submission {
 		display:none;
 		position:absolute; 
@@ -88,7 +89,18 @@
 		position:absolute;
 		top: -250px;
 		left: -30px; }
-
+	.toDisplayCommentaries {
+		display:none;
+		position:absolute; 		
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:10px; 
+		left:13px; }
 		
 	a.black:link, a.black:visited, a.black:hover, a.black:active {
 		color: white;
@@ -117,6 +129,9 @@
 	.label-info-purple {
 	  background-color: #9b59b6;
 	  font-size:95% !important;
+	}
+	.label-info-commentary {
+	  background-color: #4424D6;
 	}
 	.label-info-red {
 	  background-color: #e74c3c;
