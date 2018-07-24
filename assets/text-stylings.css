@@ -131,7 +131,9 @@
 	  font-size:95% !important;
 	}
 	.label-info-commentary {
-	  background-color: #4424D6;
+	  background-color:#b4b4b4;
+	  opacity:.75 !important;
+	  filter: alpha(opacity=75) !important;
 	}
 	.label-info-red {
 	  background-color: #e74c3c;
@@ -142,7 +144,9 @@
 	.label-info-golden {
 	  background-color: #eec134;
 	}
-	.label-default {font-size:95% !important;}
+	.label-default {
+		font-size:95% !important;
+		background-color:#4424D6;}
 	.badge-repnum{
 		padding-left:2px;
 		padding-right:2px;
@@ -160,7 +164,7 @@
 		background-color:white;}
 	.label {
 		opacity:.55;
-		filter: alpha(opacity=50); /* For IE8 and earlier */
+		filter: alpha(opacity=55); /* For IE8 and earlier */
 		color:white;
 		padding: .0em .3em .15em; } /*added this to avoid overlapping labels on different rows*/
 	
