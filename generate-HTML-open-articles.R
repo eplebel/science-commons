@@ -8,14 +8,17 @@ article.single.column <- function(article.title, authors.pub.year, journal.name,
                              code.ocean.URL, reporting.type, disclosure.URL,
                              disclosure.date, discl.exclusions, discl.conditions, discl.DVs, article.URL,
                              discl.sample.size, discl.analyses, discl.other.studies, discl.others, prereg, EC.URL, target.effects,
-                             article.type, rep.num, article.PDF.URL, article.preprint.URL, article.HTML.URL, addition.date, added.by){
+                             article.type, rep.num, article.PDF.URL, article.preprint.URL, article.HTML.URL, addition.date, 
+                             added.by,commentaries.URLs){
     return(HTML(paste0("<td class='article-styling'>
-                            <img src='logos/sprite-icons/article.png' class='shrunk-14 transparent'></td>
+                            <img src='logos/sprite-icons/article.png' class='shrunk-14 transparent'>
+                        </td>
                         <td class='article-styling'>
 							              <span class='article-title'>", title.link(article.title,article.URL), "</span>
-                            <br><span class='author-text'>", authors.pub.year, "</span> <span class='journal-text'> ", 
-                            journal.name, "</span><span class='doi-dimmed'> ",
-                                DOI.HTML(DOI), "</span>
+                            <br>
+                                <span class='author-text'>", authors.pub.year, "</span>
+                            <br>", 
+                                journal.name.HTML(journal.name), "<span class='doi-dimmed'> ", DOI.HTML(DOI), "</span>
                             <br>",
                               prereg.HTML(prereg, prereg.URL),       
                               materials.HTML(open.mat.URL),
@@ -24,16 +27,19 @@ article.single.column <- function(article.title, authors.pub.year, journal.name,
                               disclosure.HTML(reporting.type, disclosure.URL, disclosure.date, 
                                        discl.exclusions, discl.conditions, discl.DVs, 
                                        discl.sample.size, discl.analyses, discl.other.studies, discl.others),
-                              code.ocean.HTML(code.ocean.URL), " ",
-                              RR.label(prereg, prereg.URL), "<br>",      
-                              rep.label(article.type, rep.num), " ", reanal.label(article.type), " ", EC.icon.HTML(EC.URL), 
-                              target.effects.HTML(target.effects), "<div class='added-by doi-dimmed'>", added.by, " ", 
-                            format(as.Date(addition.date, "%m/%d/%Y"), format="%B %d %Y"), "</div>
-                       </td>
-                       <td class='article-styling PDF-column'>",
+                              code.ocean.HTML(code.ocean.URL), 
+                            " <br>",      
+                              rep.label(article.type, rep.num), " ", reanal.label(article.type), " ", EC.icon.HTML(EC.URL), " ",
+                              RR.label(prereg, prereg.URL), " ", commentaries.label(commentaries.URLs),
+                              target.effects.HTML(target.effects), 
+                            "<div class='added-by doi-dimmed'>", added.by, " ", format(as.Date(addition.date, "%m/%d/%Y"), 
+                              format="%B %d %Y"), "</div>
+                          </td>
+                          <td class='article-styling PDF-column'>",
                             preprint.label(article.preprint.URL),
                             article.HTML.label(article.HTML.URL),
-                            PDF.HTML(article.PDF.URL), "</td>"
+                            PDF.HTML(article.PDF.URL), 
+                          "</td>"
                        )))
 }
 collection.single.column <- function(collection.name, rep.num, updating.user, update.date, effects.num, methods.num, labs.num, 
@@ -98,10 +104,13 @@ disclosure.HTML <- function(reporting.type, disclosure.URL, disclosure.date,
     return(HTML(paste0("<div style='display:inline;' class='popUpOnHover'>
                           <img src='logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'>
                             <span class='toDisplayMARS popUpStyle' style='padding-left:5px;white-space:nowrap;'>
-                               <span style='font-weight:bold;color:gray;'>Meta-analysis complies with: 
+                               <span style='font-weight:bold;color:gray;'>Meta-analysis complies with the 
+                                  <a href='http://www.apa.org/pubs/journals/releases/amp-amp0000191.pdf' target='_blank'>MARS</a> 
+                                <img src='logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'> reporting standard: 
     								          	<ul>
-                                    <li><a href='https://www.apa.org/pubs/authors/jars.pdf' target='_blank'>APA's Meta-Analysis Reporting Standards (MARS)</a> 
-                                    <img src='logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'> reporting standard.</li></span>
+                                    <li><a href='http://www.apa.org/pubs/journals/releases/amp-amp0000191.pdf' target='_blank'>
+                                        APA's Meta-Analysis Reporting Standards (MARS; Table 9)</a> 
+                                    </li></span>
                                 </ul>
                           </span>
                        </div>")))
@@ -174,7 +183,7 @@ code.ocean.HTML <- function(code.ocean.URL) {
 PDF.HTML <- function(PDF.URL) {
   if(toString(PDF.URL) != "NA") {
     return(HTML(paste0(" <a href='",PDF.URL,"' target='_blank'>
-                       <img src='logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a> ")))}
+                       <img src='logos/sprite-icons/pdf.png' class='shrunk-20 transparent'></a> ")))}
 }
 EC.icon.HTML <- function(EC.URL) {
   if (toString(EC.URL) != "NA") {
@@ -183,7 +192,7 @@ EC.icon.HTML <- function(EC.URL) {
 }
 target.effects.HTML <- function(target.effects) {
   if (toString(target.effects) != "NA") {
-    return(HTML(paste0("<span class='target-effects'> ", target.effects, "</span><br>")))} 
+    return(HTML(paste0("<br><span class='target-effects'> ", target.effects, "</span><br>")))} 
   }
 
 rep.label <- function(article.type, rep.num) {
@@ -191,6 +200,21 @@ rep.label <- function(article.type, rep.num) {
     return(HTML(paste0(" <span class='label label-info-brown' 
                        title='This article reports replications.'>Replications <span class='badge badge-repnum'>",
                        rep.num, "</span></span> ")))}
+}
+commentaries.label <- function(commentaries.URLs) {
+  if(toString(commentaries.URLs) != "NA") {
+    URLs.list <- strsplit(commentaries.URLs, ";")
+    comment.list=""
+    for (i in 1:lengths(URLs.list)) { 
+      comment.list <- paste0(comment.list, "<li><a href='", URLs.list[[1]][i] , "' target='_blank'>Commentary ", toString(i), "</a></li>") }
+    return(HTML(paste0("<div style='display:inline;' class='popUpOnHover'>
+                          <span class='label label-info-commentary' >Commentaries <span class='badge badge-repnum'>",
+                       lengths(URLs.list), "</span></span> 
+                       <span class='toDisplayCommentaries popUpStyle' style='padding-left:5px;white-space:nowrap;'>
+                       Commentaries about this article: 
+                       <ul>"
+                       , comment.list, "</ul></span></div>")))
+    }
 }
 reanal.label <- function(article.type) {
   if(toString(article.type) == "reanal") {
@@ -222,7 +246,8 @@ DOI.HTML <- function(DOI) {
     return(HTML(paste0("<a href='https://dx.doi.org/", DOI,"' target='_blank' class='doi-dimmed grey'>", DOI,"</a>")))} 
 }
 journal.name.HTML <- function(journal.name) {
-  return(HTML(paste0("<i>",journal.name,"</i>")))
+  if (toString(journal.name) != "NA") 
+   { return(HTML(paste0("<span class='journal-text'> ",journal.name,"</span>"))) }
 }
 NA.to.blank <- function (x) {
   if (is.na(x)) {
@@ -249,14 +274,16 @@ article.HTML.single.column <- function(authors.pub.year, article.title, journal.
                          open.data.URL, open.code.URL, code.ocean.URL, reporting.type, disclosure.URL,
                          disclosure.date, discl.exclusions, discl.conditions, discl.DVs,
                          discl.sample.size, discl.analyses, discl.other.studies, discl.others, article.URL,
-                         rs, om, prereg, od, rc, article.type, rep.num, addition.date, EC.URL, target.effects, added.by) {
+                         rs, om, prereg, od, rc, article.type, rep.num, addition.date, EC.URL, target.effects, 
+                         added.by,commentaries.URLs) {
   
   row.string <- tags$tr(article.single.column(article.title, authors.pub.year, journal.name, DOI,
                                          open.mat.URL, prereg.URL, open.data.URL, open.code.URL, 
                                          code.ocean.URL, reporting.type, disclosure.URL,
                                          disclosure.date, discl.exclusions, discl.conditions, discl.DVs, article.URL,
-                                         discl.sample.size, discl.analyses, discl.other.studies, discl.others, prereg, EC.URL, target.effects,
-                                         article.type, rep.num, article.PDF.URL, article.preprint.URL, article.HTML.URL,addition.date, added.by),
+                                         discl.sample.size, discl.analyses, discl.other.studies, discl.others, prereg, EC.URL,
+                                         target.effects, article.type, rep.num, article.PDF.URL, article.preprint.URL, 
+                                         article.HTML.URL,addition.date, added.by,commentaries.URLs),
                         tags$td(addition.date),
                         tags$td(NA.to.blank(rs)),
                         tags$td(NA.to.blank(om)),
@@ -291,7 +318,7 @@ run <- function() {
     #calling by header names so still works if column order changes in CSV file
     article.HTML.single.column(authors.pub.year = article.table[i,"authors.pub.year"],
                  article.title = article.table[i,"article.title"],
-                 journal.name = NA.to.blank(article.table[i,"journal.name"]),
+                 journal.name = article.table[i,"journal.name"],
                  DOI = article.table[i,"DOI"],
                  article.PDF.URL = article.table[i,"article.PDF.URL"],
                  article.preprint.URL = article.table[i,"article.preprint.URL"],
@@ -322,7 +349,8 @@ run <- function() {
                  target.effects = article.table[i,"target.effects"],
                  EC.URL = article.table[i,"EC.URL"],
                  added.by = NA.to.blank(article.table[i,"added.by"]),
-                 article.URL = article.table[i,"article.URL"])
+                 article.URL = article.table[i,"article.URL"],
+                 commentaries.URLs = article.table[i,"commentaries.URLs"])
   }
 
   collection.table <- read.csv(url(gSheet.collection.url), quote = "\"", stringsAsFactors=FALSE,encoding="UTF-8",na.strings="")
