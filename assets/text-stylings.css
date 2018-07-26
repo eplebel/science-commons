@@ -42,6 +42,8 @@
 	.popUpOnHover:hover span.toDisplayMARS { display:block; }
 	.popUpOnHover:hover span.toDisplayFullPagePopUp { display:block; }
 	.popUpOnHover:hover span.toDisplayCommentaries { display:block; }
+	.popUpOnHover:hover span.toDisplayAuthorPopUp { display:block; }
+	.popUpOnHover:hover span.toDisplayKeyFigures { display:block; }
 	.toDisplayBasic4Submission {
 		display:none;
 		position:absolute; 
@@ -101,6 +103,31 @@
 		padding:3px;
 		top:10px; 
 		left:13px; }
+	.toDisplayAuthorPopUp {
+		display:none;
+		position:absolute; 		
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:12px; 
+		left:1px; }
+	.toDisplayKeyFigures {
+		display:none;
+		position:absolute; 		
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-190px; 
+		left:6px; }
+		
 		
 	a.black:link, a.black:visited, a.black:hover, a.black:active {
 		color: white;
@@ -249,5 +276,5 @@
 	}
 	.article-page-top-section {margin-top:55px;}
 
-	
+	.big-icon { font-size: 2.5rem; }
 	
