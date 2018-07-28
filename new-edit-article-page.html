@@ -230,12 +230,15 @@
 					  <td>
 					  </td>
 					  <td style="max-width:700px;">
-								<input type="text" name="articletitle" placeholder="Article title" style="font-size:20px;line-height:26px;margin-top:10px;" size="65"> <b>*</b>
+								<input type="text" name="articletitle" placeholder="Article title" style="font-size:20px;line-height:26px;margin-top:10px;" size="65"><b>*</b>
 								<br>
-								<input type="text" name="authors" placeholder="Authors" style="color:#009933;margin-top:10px;" size="75"> <b>*</b>
-								<input type="text" name="pub.year" placeholder="Year (or 'in press')" style="color:#009933;margin-top:10px;margin-left:20px;" size="15"> <b>*</b>
+								<input type="text" name="authors" placeholder="Authors" style="color:#009933;margin-top:10px;" size="75"><b>*</b>
+								<input type="text" name="pub.year" placeholder="Year (or 'in press')" style="color:#009933;margin-top:10px;margin-left:20px;" size="15"><b>*</b>
 								<br>
-								<input type="text" name="authors" placeholder="Journal name (or 'Under peer review' or 'Unpublished')" style="color:#999999;font-style:italic;margin-top:10px;" size="50"> <b>*</b>
+								<input type="text" name="authors" placeholder="Journal name (or 'Under peer review' or 'Unpublished')" style="color:#999999;font-style:italic;margin-top:10px;" size="50"><b>*</b>
+								<br>
+								<textarea name="abstract" placeholder="Abstract (optional)" style="font-size:12px;color:grey;margin-top:10px;height:80px;width:707px;max-height:250px;min-height:50px;overflow:auto;resize:vertical;"></textarea>
+								
 						</td>
 						<td style="vertical-align:top;text-align:right;"> 
 								<span class='label label-info-purple' style="font-size:80%!important;">Preprint</a></span>
@@ -252,57 +255,57 @@
 						<td>
 						</td>
 						<td colspan="2">
-							<div style="margin-top:15px;display:inline-block;">
-								<div style="font-style:italic;font-size:10px;color:grey;">Leave all unselected for articles reporting solely original research</div>
-								<input type="checkbox" name="articleType" value="rep" style="margin-top:1px;vertical-align:bottom;" autocomplete="off"> <span class='label label-info-brown' title='This article reports replications.'>Replications <span class='badge badge-repnum'>
-										<select name="rep.num">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-											<option value="9">9</option>
-											<option value="10">10</option>
-											
-										</select>
-										</span>
-									</span> 
+							<div style="margin-top:10px;margin-bottom:5px;display:inline-block;">
+								<div style="font-style:italic;font-size:10px;color:grey;margin-bottom:3px;">Leave all unselected for articles reporting solely original research</div>
+								<input type="checkbox" name="articleType" value="rep" style="margin-top:1px;vertical-align:bottom;" autocomplete="off"> <span class='label label-info-brown' title='Article reports replications (enter # of replications reported).'>Replications: <span class='badge badge-repnum'></span></span>
+								<input type="text" name="rep.num" placeholder="1" style="margin-left:2px;font-size:9px;line-height:10px;" size="2" maxlength="4"><b>*</b>								
 								<input type="checkbox" name="articleType" value="reanal" style="margin-top:1px;vertical-align:bottom;margin-left:10px;" autocomplete="off">  <span class="label label-info-pecan" title="Article reports a reproducibility or robustness reanalysis of a previously published result.">Reanalysis</span> (reproducibility or robustness)
 								<br>
-								<input type="radio" name="articleType" value="meta" style="margin-top:1px;" autocomplete="off"> Meta-analysis (traditional)
+								<input type="radio" name="articleType" value="meta" style="margin-top:5px;vertical-align:bottom" autocomplete="off"> Meta-analysis (traditional)
 								<br>
-								<input type="radio" name="articleType" value="meta" style="margin-top:1px;" autocomplete="off"> Commentary
+								<input type="radio" name="articleType" value="meta" style="margin-top:5px;vertical-align:bottom;" autocomplete="off"> <span class='label label-info-commentary'>Commentary</span>
 							</div>
-							<div style="margin-top:15px;display:inline-block;margin-left:60px;vertical-align:top;">
+							<div style="margin-top:10px;display:inline-block;margin-left:60px;vertical-align:top;">
 								<span style="font-weight:600;color:grey;">Reanalysis Details</span>
 								<br>
 								<input type="checkbox" name="articleType" value="rep" style="margin-top:1px;vertical-align:bottom;" autocomplete="off">Reproducibility
 								<input type="checkbox" name="articleType" value="rep" style="margin-top:1px;vertical-align:bottom;margin-left:20px;" autocomplete="off">Robustness
 								<br>
 								of Study: 
-								<input type="text" name="rep.study.authors" placeholder="Original study DOI" style="color:#999999;margin-top:5px;" size="15"> <b>*</b>
+								<input type="text" name="rep.study.authors" placeholder="Original study DOI" style="color:#999999;margin-top:5px;" size="15"><b>*</b>
 								<input type="text" name="rep.study.number" placeholder="Study #" style="color:#999999;" size="5">	
 							</div>
-							<div style="margin-top:15px;display:inline-block;margin-left:60px;vertical-align:top;">
+							<div style="margin-top:10px;display:inline-block;margin-left:60px;vertical-align:top;">
 								<span style="font-weight:600;color:grey;">Commentary Details</span>
 								<br>
 								Of article: 
-								<input type="text" name="rep.study.authors" placeholder="Article DOI" style="color:#999999;margin-top:5px;" size="15"> <b>*</b>
+								<input type="text" name="rep.study.authors" placeholder="Article DOI" style="color:#999999;margin-top:5px;" size="15"><b>*</b>
+							</div>
+							
+							<div style="margin-top:0px;opacity:.65;font-size:10px;">
+								<a style="font-size:10px;cursor:pointer;" onclick="toggleDisplayBlock('article-level-key-figure-DIV')"><i class="fas fa-plus" style="font-size:1em;"></i> Add article-level key figures/tables</a> [edge case for large-scale replication effort articles]
+							</div>
+							<div id="article-level-key-figure-DIV" style="margin-bottom:10px;display:none;">
+								<div style="margin-left:15px;margin-bottom:5px;">
+									<input type="submit" value="Upload image" style="font-size:10px;margin-top:2px;"> or 
+									<input type="text" name="keyFigureURL" placeholder="Image URL" style="color:#999999;margin-top:4px;" size="20">
+									<br>
+									<a href="" style="font-size:10px;"><i class="fas fa-plus" style="font-size:1em;"></i> Add another image URL</a>
+								</div>
+							</div>
+							<div style="margin-top:10px;">
 							</div>
 						</td>
 					<tr>
 						<td >
 						</td>
-						<td  colspan="2">
+						<td  colspan="2" style="border:lightgrey solid 1px;margin-top:20px;">
 							
-							<table style="margin-top:15px;table-layout:fixed;" border=0>
+							<table style="margin-top:5px;table-layout:fixed;" border=0>
 								<tr>
-									<td width="55px">
+									<td width="55px" class="padded">
 										Study
-										<input type="text" name="rep.study.number" placeholder="Study #" style="color:#999999;display:inline;font-size:10px;" size="5">
+										<input type="text" name="rep.study.number" placeholder="Study #" style="color:#999999;display:inline;font-size:10px;" size="5" maxlength="2">
 										<div style="font-style:italic;font-size:8px;color:grey;margin-top:15px;">Leave blank for sole study article</div>
 									</td>
 									<td style="min-width:200px;">
@@ -408,7 +411,7 @@
 															<option value="close"> Close </option>
 															<option value="veryClose"> Very Close </option>
 															<option value="exact"> Exact </option>
-														</select> <b>*</b>
+														</select><b>*</b>
 													</div>
 													<div style="display:inline-block;text-align:left;">
 														<div style="display:inline-block;text-align:left;vertical-align:top;">
@@ -435,9 +438,9 @@
 							<div id="newStudyDIV" style="display:none;">
 								<table style="margin-top:15px;table-layout:fixed;" border=0>
 									<tr>
-										<td width="55px">
+										<td width="55px" class="padded">
 											Study
-											<input type="text" name="rep.study.number" placeholder="Study #" style="color:#999999;display:inline;font-size:10px;" size="5">
+											<input type="text" name="rep.study.number" placeholder="Study #" style="color:#999999;display:inline;font-size:10px;" size="5" maxlength="2">
 											
 										</td>
 										<td style="min-width:200px;">
@@ -543,7 +546,7 @@
 																<option value="close"> Close </option>
 																<option value="veryClose"> Very Close </option>
 																<option value="exact"> Exact </option>
-															</select> <b>*</b>
+															</select><b>*</b>
 														</div>
 														<div style="display:inline-block;text-align:left;">
 															<div style="display:inline-block;text-align:left;vertical-align:top;">
@@ -568,7 +571,7 @@
 								</table>
 							</div>
 							
-							<div style="margin-top:10px"><a style="font-size:10px;cursor:pointer;" onclick="myFunction()"><i class="fas fa-plus" style="font-size:1em;"></i> Add another study</a></div>
+							<div style="padding:5px;margin-top:10px"><a style="font-size:10px;cursor:pointer;" onclick="toggleDisplayBlock('newStudyDIV')"><i class="fas fa-plus" style="font-size:1em;"></i> Add another study</a></div>
 						</td>
 					</tr>		
 					<tr>		
@@ -623,8 +626,8 @@
 
 	
 	<script>
-	function myFunction() {
-    var x = document.getElementById("newStudyDIV");
+	function toggleDisplayBlock(divID) {
+    var x = document.getElementById(divID);
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
