@@ -124,6 +124,23 @@
 	<!--temp place for troubleshooting style issues-->
 	
 	
+	#abstract { height: 57px; }
+	div.abstract{
+		margin-top:5px;
+		font-size:13px;
+		overflow: hidden;
+		-webkit-transition: max-height .5s cubic-bezier(0, 1.05, 0, 1);
+		-moz-transition: max-height .5s cubic-bezier(0, 1.05, 0, 1);
+		transition: max-height .5s ease cubic-bezier(0, 1.05, 0, 1);
+		max-height: 57px;
+	}
+
+	div.abstract:hover{
+		-webkit-transition: max-height .5s ease;
+		-moz-transition: max-height .5s ease;
+		transition: max-height .5s ease;
+		max-height: 150px;
+	}
 	
 	
 	
@@ -135,7 +152,7 @@
 <header >
   
   <nav class="navbar navbar-default navbar-fixed-top">
-	  <div class="container" style="margin:0">
+	  <div class="container" >
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;">
@@ -165,7 +182,7 @@
 </header>
 
 <div class="main-container">
-	<div class="container" style="margin:0">
+	<div class="container" >
 		
 		
 		<div class="article-page-top-section">
@@ -181,34 +198,56 @@
 							<span class='author-text' style="line-height:24px;">Balzarini, Dobson, & Campbell (2016)</span> 
 							<br>
 							<span class='journal-text'> Journal of Experimental Social Psychology</span><span class='doi-dimmed'> <a href='https://dx.doi.org/10.1016/j.jesp.2016.11.003' target='_blank' class='doi-dimmed grey'>10.1016/j.jesp.2016.11.003</a></span>
-							<br> 
-							<div style="margin-bottom:4px;">
-								<a href='https://osf.io/6xqju/' target='_blank' title='Go to preregistered study protocol (study design + analytic plans) '>
-								   <img src='../logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a> <a href='https://osf.io/nrkej/' target='_blank' title='Go to study materials files'>
-								   <img src='../logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/b47jp/' target='_blank' title='Go to data files'>
-								   <img src='../logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/b47jp/' target='_blank' title='Go to reproducible code files'>
-								   <img src='../logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> 
-								   <div style='display:inline;' class='popUpOnHover'>
-										<img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'>
-									   <span class='toDisplayBasic4Submission popUpStyle' style='padding-left:5px;white-space:nowrap;'>
-									   <span style='font-weight:bold;color:gray;'>Study complies with the 
-									   <a href='http://psychdisclosure.org' target='_blank'>Basic 4 (retroactive)</a> 
-									   <img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'> reporting standard:</span>
-									   <ol style='margin-top:5px;margin-bottom:5px;'>
-									   <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
-									   <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
-									   <li><strong>Outcome measures:</strong> Full details reported in article.</li>
-									   <li><strong>Sample size determination:</strong> Full details reported in article.</li>
-									   </ol>
-									   <span style='color:red;'>Date of retroactive disclosure: May 6, 2018.</span>
-									   </span>
-									</div> 
-								</div>
-							<span class='label label-info-brown' title='This article reports replications.'>Replications <span class='badge badge-repnum'>3</span></span>  <span class='target-effects'> playboy effect</span>
 						</td>
 						<td class='PDF-column'> 
 							<a href='https://www.researchgate.net/profile/Rhonda_Balzarini/publication/310488568_Does_exposure_to_erotica_reduce_attraction_and_love_for_romantic_partners_in_men_Independent_replications_of_Kenrick_Gutierres_and_Goldberg_1989_study_2/links/59cfdd434585150177ee21fd/Does-exposure-to-erotica-reduce-attraction-and-love-for-romantic-partners-in-men-Independent-replications-of-Kenrick-Gutierres-and-Goldberg-1989-study-2.pdf' target='_blank'> <img src='../logos/sprite-icons/pdf.png' class='shrunk-20 transparent'></a> 
 						</td >
+					</tr>
+					<tr>
+							<td>
+							</td>
+							<td>
+								<div style="margin-top:3px;margin-bottom:5px;">
+									<a href='https://osf.io/6xqju/' target='_blank' title='Go to preregistered study protocol (study design + analytic plans) '>
+									   <img src='../logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a> <a href='https://osf.io/nrkej/' target='_blank' title='Go to study materials files'>
+									   <img src='../logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/b47jp/' target='_blank' title='Go to data files'>
+									   <img src='../logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/b47jp/' target='_blank' title='Go to reproducible code files'>
+									   <img src='../logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> 
+									   <div style='display:inline;' class='popUpOnHover'>
+											<img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'>
+										   <span class='toDisplayBasic4Submission popUpStyle' style='padding-left:5px;white-space:nowrap;'>
+										   <span style='font-weight:bold;color:gray;'>Study complies with the 
+										   <a href='http://psychdisclosure.org' target='_blank'>Basic 4 (retroactive)</a> 
+										   <img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'> reporting standard:</span>
+										   <ol style='margin-top:5px;margin-bottom:5px;'>
+										   <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+										   <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+										   <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+										   <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+										   </ol>
+										   <span style='color:red;'>Date of retroactive disclosure: May 6, 2018.</span>
+										   </span>
+										</div> 
+									</div>
+									<span class='label label-info-brown' title='This article reports replications.'>Replications <span class='badge badge-repnum'>3</span></span>  <span class='target-effects'> playboy effect</span>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							</td>
+							<td>
+								<div class="abstract" style="max-width:700px;color:grey;">
+									<span style="font-weight:600;">Abstract</span>
+									<br>
+									Kenrick, Gutierres, and Goldberg (1989; Study 2) demonstrated that men, but not women, in committed relationships exposed to erotic images of opposite-sex others reported lower ratings for their partner's sexual attractiveness (d = 0.91) and less love for their partner (d = 0.69) than men exposed to images of abstract art. This research has implications for understanding the possible effects of erotica on men in relationships, but has not been replicated. We conducted three preregistered, high-powered close replications, and meta-analyzed the effects of the original and replication studies. We did not find support for the original finding that exposure to attractive images of opposite-sex others affects males' ratings of their partners' sexual attractiveness or love for their partner.
+								</div>
+								
+								</td>
+								<td>
+								</td>
+								
 					</tr>
 				</tbody>
 			</table>
@@ -238,19 +277,19 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td style="font-weight:600;" class="padded" title="original authors & study number (unnumbered for sole study papers)">original.study</td>
-					<td style="text-align:center;font-weight:600;" class="padded" title="target effect/hypothesis tested in replication attempt">target.effect</td>
-					<td style="text-align:center;font-weight:600;" class="padded" title="type of direct replication (see replication taxonomy in About section for details)">rep.method.similarity</td>
-					<td style="text-align:center;font-weight:600;" class="padded" title="known replication methodological differences relative to original (if any)">rep.differences</td>
-					<td style="text-align:center;font-weight:600;" class="padded" title="active sample evidence in replication to detect a positive effect (see About section for details)">auxiliary.hypotheses</td>
-					<td style="text-align:center;font-weight:600;" class="padded" title="original study sample size (N; total sample size)">o.N</td>
-					<td style="text-align:center;font-weight:600;" class="padded" title="original study effect size ± 95% CIs; NR means not reported and/or not calculatable">orig.effect.size</td>
-					<td style="text-align:center;font-weight:600;" class="padded" title="replication study sample size (N; total sample size)">r.N</td>
-					<td style="text-align:center;font-weight:600;" class="padded" title="replication study effect size ± 95% CIs; NR means not reported and/or not calculatable">rep.effect.size</td>
-					<td style="text-align:center;font-weight:600;" class="padded" title="replication outcome & consistency relative to original (see About section for details)">rep.outcome</td>
-					<td style="text-align:center;font-weight:600;" class="padded" title="independent variable constructs (operationalizations & conditions)">IVs</td>
-					<td style="text-align:center;font-weight:600;" class="padded" title="dependent variable constructs (operationalizations)">DVs</td>
-					<td style="text-align:center;font-weight:600;" class="padded" title="additional DVs assessed & verbal description of results">other.outcomes</td>
+					<td style="font-weight:600;color:grey;" class="padded" title="original authors & study number (unnumbered for sole study papers)">Original.Study</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded" title="target effect/hypothesis tested in replication attempt">Target.Effect</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded" title="type of direct replication (see replication taxonomy in About section for details)">Rep.Method.Similarity</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded" title="known replication methodological differences relative to original (if any)">Rep.Differences</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded" title="active sample evidence in replication to detect a positive effect (see About section for details)">Auxiliary.Hypotheses</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded" title="original study sample size (N; total sample size)">o.N</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded" title="original study effect size ± 95% CIs; NR means not reported and/or not calculatable">Orig.Effect.Size</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded" title="replication study sample size (N; total sample size)">r.N</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded" title="replication study effect size ± 95% CIs; NR means not reported and/or not calculatable">Rep.Effect.Size</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded" title="replication outcome & consistency relative to original (see About section for details)">Rep.Outcome</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded" title="independent variable constructs (operationalizations & conditions)">IVs</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded" title="dependent variable constructs (operationalizations)">DVs</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded" title="additional DVs assessed & verbal description of results">Other.Outcomes</td>
 				</tr>
 				<tr>
 					<td class="padded" style="white-space:nowrap;">Study 1</td>

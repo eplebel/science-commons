@@ -65,7 +65,6 @@
 	</script>
   
   
-  
   <style type="text/css" class="init"> <!--for DataTables table-->
 	/* Ensure that the demo table scrolls; */
 	th, td { white-space: normal; }
@@ -131,8 +130,24 @@
 	<!--temp place for troubleshooting style issues-->
 	
 	
-	
-	
+	#abstract { height: 57px; }
+	div.abstract{
+		margin-top:5px;
+		font-size:13px;
+		height: 170px;
+		overflow: hidden;
+		-webkit-transition: max-height .5s cubic-bezier(0, 1.05, 0, 1);
+		-moz-transition: max-height .5s cubic-bezier(0, 1.05, 0, 1);
+		transition: max-height .5s ease cubic-bezier(0, 1.05, 0, 1);
+		max-height: 57px;
+	}
+
+	div.abstract:hover{
+		-webkit-transition: max-height .5s ease;
+		-moz-transition: max-height .5s ease;
+		transition: max-height .5s ease;
+		max-height: 170px;
+	}
 	
   </style>
 </head>
@@ -142,7 +157,7 @@
 <header >
   
   <nav class="navbar navbar-default navbar-fixed-top">
-	  <div class="container" style="margin:0">
+	  <div class="container" >
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;">
@@ -172,11 +187,11 @@
 </header>
 
 <div class="main-container">
-	<div class="container" style="margin:0">
+	<div class="container" >
 		
 		
 		<div class="article-page-top-section">
-			<table cellspacing="0" >
+			<table cellspacing="0" border=0>
 				<tbody>
 					<tr>
 					  <td style="vertical-align:top;">
@@ -210,38 +225,59 @@
 								   </div>, Balzarini, Kohut, Dobson, Hahn, Moroz, & Stanton (2018)</span>
 								<br>
 								<span class='journal-text'> Journal of Research in Personality</span><span class='doi-dimmed'> <a href='https://dx.doi.org/10.1016/j.jrp.2017.04.001 ' target='_blank' class='doi-dimmed grey'>10.1016/j.jrp.2017.04.001 </a></span>
-								<br> 
-
-							<div style="margin-bottom:4px;">
-								<a href='https://osf.io/ebuzm/' target='_blank' title='Go to preregistered study protocol (study design + analytic plans) '>
-								   <img src='../logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/xuqmg/' target='_blank' title='Go to study materials files'>
-							   <img src='../logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/wb6vc/' target='_blank' title='Go to data files'>
-							   <img src='../logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://codeocean.com/2018/04/19/code-for-colon-self-esteem-relationship-threat-and-dependency-regulation-colon-independent-replication-of-murray-rose-bellavia-holmes-and-kusche-lpar-2002-rpar-study-3/code' target='_blank' title='Go to reproducible code files'>
-							   <img src='../logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> <div style='display:inline;' class='popUpOnHover'>
-								<img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'>
-							   <span class='toDisplayBasic4Submission popUpStyle' style='padding-left:5px;white-space:nowrap;'>
-							   <span style='font-weight:bold;color:gray;'>Study complies with the 
-							   <a href='http://psychdisclosure.org' target='_blank'>Basic 4 (retroactive)</a> 
-							   <img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'> reporting standard:</span>
-							   <ol style='margin-top:5px;margin-bottom:5px;'>
-							   <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
-							   <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
-							   <li><strong>Outcome measures:</strong> Full details reported in article.</li>
-							   <li><strong>Sample size determination:</strong> Full details reported in article.</li>
-							   </ol>
-							   <span style='color:red;'>Date of retroactive disclosure: May 2, 2018.</span>
-							   </span>
-							   </div> <a href='https://codeocean.com/2018/04/19/code-for-colon-self-esteem-relationship-threat-and-dependency-regulation-colon-independent-replication-of-murray-rose-bellavia-holmes-and-kusche-lpar-2002-rpar-study-3/code' target='_blank' title='Go to computational container'>
-							   <img src='../logos/sprite-icons/code-ocean.png' class='shrunk-16 transparent'></a> 
-							</div>
-							
-							<span class='label label-info-brown' title='This article reports replications.'>Replications <span class='badge badge-repnum'>1</span></span>  <span class='target-effects'> self-esteem buffers relationship threat</span>
-							
+							</td>
+							<td class='PDF-column'> <span class='label label-info-purple'><a href='https://psyarxiv.com/5suda/' target='_blank' 
+								class='black' title='View preprint of this article.'>Preprint</a></span>  <a href='https://static1.squarespace.com/static/594641bbe3df28301b1a0493/t/5970b5c8f5e2311272d3b4f0/1500558794416/2017+%28in+press%29_Campbell+et+al_JRP_Replication+of+Murray+et+al+2002.pdf' target='_blank'>
+								<img src='../logos/sprite-icons/pdf.png' class='shrunk-20 transparent'></a>
+							</td >
+						</tr>
+						<tr>
+							<td>
+							</td>
+							<td>
+								<div style="margin-top:3px;margin-bottom:5px;">
+									<a href='https://osf.io/ebuzm/' target='_blank' title='Go to preregistered study protocol (study design + analytic plans) '>
+									   <img src='../logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/xuqmg/' target='_blank' title='Go to study materials files'>
+								   <img src='../logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/wb6vc/' target='_blank' title='Go to data files'>
+								   <img src='../logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://codeocean.com/2018/04/19/code-for-colon-self-esteem-relationship-threat-and-dependency-regulation-colon-independent-replication-of-murray-rose-bellavia-holmes-and-kusche-lpar-2002-rpar-study-3/code' target='_blank' title='Go to reproducible code files'>
+								   <img src='../logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> <div style='display:inline;' class='popUpOnHover'>
+									<img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'>
+								   <span class='toDisplayBasic4Submission popUpStyle' style='padding-left:5px;white-space:nowrap;'>
+								   <span style='font-weight:bold;color:gray;'>Study complies with the 
+								   <a href='http://psychdisclosure.org' target='_blank'>Basic 4 (retroactive)</a> 
+								   <img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'> reporting standard:</span>
+								   <ol style='margin-top:5px;margin-bottom:5px;'>
+								   <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+								   <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+								   <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+								   <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+								   </ol>
+								   <span style='color:red;'>Date of retroactive disclosure: May 2, 2018.</span>
+								   </span>
+								   </div> <a href='https://codeocean.com/2018/04/19/code-for-colon-self-esteem-relationship-threat-and-dependency-regulation-colon-independent-replication-of-murray-rose-bellavia-holmes-and-kusche-lpar-2002-rpar-study-3/code' target='_blank' title='Go to computational container'>
+								   <img src='../logos/sprite-icons/code-ocean.png' class='shrunk-16 transparent'></a> 
+								</div>
+								<span class='label label-info-brown' title='This article reports replications.'>Replications <span class='badge badge-repnum'>1</span></span>  <span class='target-effects'> self-esteem buffers relationship threat</span>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							</td>
+							<td>
+								<div class="abstract" style="max-width:700px;color:grey;">
+									<span style="font-weight:600;">Abstract</span>
+									<br>
+									Across three studies, Murray, Rose, Bellavia, Holmes, and Kusche (2002) found that low self-esteem individuals responded in a negative manner compared to those high in self-esteem in the face of relationship threat, perceiving their partners and relationships less positively. This was the first empirical support for the hypothesized dynamics of a dependency regulation perspective, and has had a significant impact on the field of relationship science. In the present research, we sought to reproduce the methods and procedures of Study 3 of Murray et al. (2002) to further test the two-way interaction between individual differences in self-esteem and situational relationship threat. Manipulation check effects replicated the original study, but no interaction between self-esteem and experimental condition was observed for any primary study outcomes.
+								</div>
+								
+								
+								
+								
 						</td>
-						<td class='PDF-column'> <span class='label label-info-purple'><a href='https://psyarxiv.com/5suda/' target='_blank' 
-							class='black' title='View preprint of this article.'>Preprint</a></span>  <a href='https://static1.squarespace.com/static/594641bbe3df28301b1a0493/t/5970b5c8f5e2311272d3b4f0/1500558794416/2017+%28in+press%29_Campbell+et+al_JRP_Replication+of+Murray+et+al+2002.pdf' target='_blank'>
-							<img src='../logos/sprite-icons/pdf.png' class='shrunk-20 transparent'></a>
-						</td >
+						<td>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -250,7 +286,7 @@
 		
 		
 		<div style="margin-top:30px;margin-left:24px;">
-			<table >
+			<table border=0>
 				<tr >
 					<th class="padded">Transparency</th>
 					<th class="padded" style="white-space:nowrap;">Key Figures/Tables</th>
@@ -265,11 +301,11 @@
 					</td>
 					<td>
 					</td>
-					<td style="font-weight:600;" class="padded">original.study</td>
-					<td style="text-align:center;font-weight:600;" class="padded">target.effect</td>
-					<td style="text-align:center;font-weight:600;" class="padded">rep.method.similarity</td>
-					<td style="text-align:center;font-weight:600;" class="padded">rep.differences</td>
-					<td style="text-align:center;font-weight:600;" class="padded">auxiliary.hypotheses</td>
+					<td style="font-weight:600;color:grey;" class="padded">Original.Study</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded">Target.Effect</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded">Rep.Method.Similarity</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded">Rep.Differences</td>
+					<td style="text-align:center;font-weight:600;color:grey;" class="padded">Auxiliary.Hypotheses</td>
 				</tr>
 				<tr>
 					<td class="padded" style="white-space:nowrap;">
@@ -378,8 +414,14 @@
 						</ul>
 					</td>
 					<td>
+						<ul style="text-align:left;font-size:9px;padding-left:15px;">
+							<li>Canadian rather than US undergraduate sample</li>
+						</ul>
 					</td>
 					<td>
+						<ul style="text-align:left;font-size:9px;padding-left:15px;">
+							<li>Successful relationship threat manipulation check</li>
+						</ul>
 					</td>
 				</tr>	
 				
