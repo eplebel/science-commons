@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="google-site-verification" content="7CrO9Y_velY8TjF6s8CWKB1s2S8TGRdQ8NoZ-gHPDE0" />
+  <meta http-equiv="Cache-control" content="public">
+  <title itemprop='name'>Curate Science - Crowdsourcing the Transparency of Empirical Research.</title>
+  <meta name="description" content="Curate Science is a platform to crowdsource the credibility of scientific research by curating its transparency, analytic reproducibility, analytic robustness, and replicability." />
+  <meta name="keywords" content="replication, replications, direct replication, conceptual replication, replicability, generalizability, analytic reproducibility, analytic robustness, research credibility, credibility of findings, sufficient transparency, open science, sufficient falsifiability, falsification, cumulative knowledge" />
+  
+  <!--links to CSS files-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+	<!--main bootstrap CSS file-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../assets/fonts-collections.css" media="screen" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  
+  <!--links to JS files-->
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.10.16/dataRender/ellipsis.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/plug-ins/1.10.16/sorting/natural.js"></script>
+	<!-- main bootstrap JS file-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<!--others-->
+	<link rel="shortcut icon" type="image/x-icon" href="../logos/sprite-icons/CS-icon-dark-blue.png"/>
+	<link rel="stylesheet" href="../assets/sprite-CSS.css">
+	<link rel="stylesheet" href="../assets/text-stylings.css">
+	
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			var table = $('#example').DataTable( {
+				scrollY:        "500px",
+				scrollX:        true,
+				scrollCollapse: true,
+				"order": [[ 1, "asc" ]],
+				paging: true,
+				fixedColumns:   {
+					leftColumns: 0
+				},
+				"lengthMenu": [[ 250, 500, -1], [250, 500, "All"]],
+				"columnDefs": [ 
+					{ className: "bold-class", "targets": [ 3, 5 ] },
+					{ targets: [0,8,9,12,13,14],
+					render: $.fn.dataTable.render.ellipsis(40,true) },
+					{ targets: [2,4],
+					render: $.fn.dataTable.render.ellipsis(4) },
+					{ "targets": [ 15 ],
+					"visible": false },
+					{ type: 'natural-ci', targets: [ 11 ] }
+					],
+				"initComplete": function() { 
+				$('#loader-div').remove();
+				$("table").removeClass("hidden");
+				},
+				"dom": '<"top"fi<"clear">>rt<"bottom"pl<"clear">>'
+			} );
+		} );
+	</script>
+  
+  
+  
+  <style type="text/css" class="init"> <!--for DataTables table-->
+	/* Ensure that the demo table scrolls; */
+	th, td { white-space: normal; }
+	div.dataTables_wrapper {
+		width: auto; /*used to be: 1400px*/
+		margin: 0 auto;
+	}
+	td.details-control {
+	  background: url('../logos/meta-analyze-button.png') no-repeat center center;
+	  cursor: pointer;
+	  min-width: 75px;
+	}
+	tr.shown td.details-control {
+	  background: url('../logos/close-chevron-icon.png') no-repeat center center;
+	}
+	.dataTables_wrapper .dataTables_length {
+		float: left;
+		}
+	.dataTables_wrapper .dataTables_filter {
+		float: left;
+		text-align: left;
+		margin: 0 auto;
+		}
+	.dataTables_wrapper .dataTables_info {
+		float: right;
+		clear: none;
+		padding-top:.5em;
+		}
+	.dataTables_filter input { width: 300px; }
+	.dataTables_length input { }
+	<!--body { font-size: 13px;}-->
+	.bold-class { font-weight: bold; }
+	
+	<!--styling stuff for loading spinner-->
+	hidden { display:none; }
+	.loader {
+	  border: 16px solid #f3f3f3;
+	  border-radius: 50%;
+	  border-top: 16px solid #3498db;
+	  width: 30px;
+	  height: 30px;
+	  -webkit-animation: spin 1s linear infinite;
+	  animation: spin 1s linear infinite;
+	}
+	#loader-div { 
+		margin: 0 auto; 
+		top-margin:20px;}
+	@-webkit-keyframes spin {
+	  0% { -webkit-transform: rotate(0deg); }
+	  100% { -webkit-transform: rotate(360deg); }
+	}
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
+	}
+	
+	th.padded, td.padded {
+		padding: 5px;
+	}
+	
+	</style>
+  <style>
+	<!--temp place for troubleshooting style issues-->
+	
+	
+	
+	
+	
+  </style>
+</head>
+
+<body>
+
+<header >
+  
+  <nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="../index.html">
+			<span style="padding-top:10px;margin-bottom:3px;font-weight:700;">Curate Science<img src="../logos/sprite-icons/CS-icon-light-blue.png" style="margin-left:1px;width:22px;margin-top:-2px;font-style:normal;"></span>
+		  </a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			<li style="font-weight:bold"><a href="../index.html#about">About</a></li>
+			<li style="font-weight:bold"><a href="../index.html#people">People</a></li>
+			<li style="font-weight:bold"><a href="../index.html#FAQ">FAQ</a></li>
+			<li style="font-weight:bold"><a href="../index.html#newsletter">Newsletter</a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+  
+</header>
+
+<div class="main-container">
+	<div class="container">
+		
+		
+		<div class="article-page-top-section">
+			<table cellspacing="0" >
+				<tbody>
+					<tr>
+					  <td style="vertical-align:top;">
+                            <img src='../logos/sprite-icons/article.png' class='shrunk-14 transparent' style="margin-top:2px;margin-right:10px;">
+						</td>
+					  <td style="max-width:700px;">
+								<span class='article-page-title'>Self-esteem, relationship threat, and dependency regulation: Independent replication of Murray, Rose, Bellavia, Holmes, and Kusche (2002) Study 3</span>
+								<br>
+								<span class='author-text' style="line-height:24px;">									
+									<div style='display:inline;' class='popUpOnHover'>
+									  Campbell
+									  <span class='toDisplayAuthorPopUp popUpStyle' style='padding-left:5px;white-space:nowrap;'>
+											<p style="text-align:center;margin-top:5px;color:black;">
+												<span style="font-size:15px;font-weight:bold;"><a href="../author-page.html">Lorne Campbell</a></span>
+												<br>
+												<span style="font-size:13px;font-style:italic;">University of Western Ontario </span>
+											</p>
+											<p style="text-align:center;margin-top:-2px;">
+												<a href="http://publish.uwo.ca/~lcampb23/" target="_blank" title="View website" class="doi-dimmed grey"><i class="fas fa-globe big-icon"></i></a>
+												<a href="https://scholar.google.ca/citations?user=E80DLosAAAAJ&hl=en" target="_blank" title="View Google Scholar profile" class="doi-dimmed grey"><i class="ai ai-google-scholar ai-2x"></i></a>
+												<a href="https://orcid.org/0000-0002-9071-4845" target="_blank" title="View ORCID profile" class="doi-dimmed grey"><i class="ai ai-orcid ai-2x"></i></a>
+												<a href="http://twitter.com/LorneJCampbell" target="_blank" title="Twitter" class="doi-dimmed grey"><i class="fab fa-twitter big-icon"></i></a>
+												<a href="https://osf.io/sa9im/" target="_blank" title="OSF account" class="doi-dimmed grey"><i class="ai ai-osf big-icon"></i></a>
+												<a href="http://www.lornecampbell.org/" target="_blank" title="Go to blog" class="doi-dimmed grey"><i class="fab fa-wordpress big-icon" aria-hidden="true"></i></a>
+												<a href="mailto:lcampb23@uwo@@ca" onmouseover="this.href=this.href.replace('@@','.')" class="doi-dimmed grey"><i class="fa fa-envelope fa-2x"></i></a>
+											</p>
+											<p style="text-align:center;">
+												Go to <a href="../author-page.html">author page</a>
+											</p>
+									  </span>
+								   </div>, Balzarini, Kohut, Dobson, Hahn, Moroz, & Stanton (2018)</span>
+								<br>
+								<span class='journal-text'> Journal of Research in Personality</span><span class='doi-dimmed'> <a href='https://dx.doi.org/10.1016/j.jrp.2017.04.001 ' target='_blank' class='doi-dimmed grey'>10.1016/j.jrp.2017.04.001 </a></span>
+								<br> 
+
+							<div style="margin-bottom:4px;">
+								<a href='https://osf.io/ebuzm/' target='_blank' title='Go to preregistered study protocol (study design + analytic plans) '>
+								   <img src='../logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/xuqmg/' target='_blank' title='Go to study materials files'>
+							   <img src='../logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/wb6vc/' target='_blank' title='Go to data files'>
+							   <img src='../logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://codeocean.com/2018/04/19/code-for-colon-self-esteem-relationship-threat-and-dependency-regulation-colon-independent-replication-of-murray-rose-bellavia-holmes-and-kusche-lpar-2002-rpar-study-3/code' target='_blank' title='Go to reproducible code files'>
+							   <img src='../logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a> <div style='display:inline;' class='popUpOnHover'>
+								<img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'>
+							   <span class='toDisplayBasic4Submission popUpStyle' style='padding-left:5px;white-space:nowrap;'>
+							   <span style='font-weight:bold;color:gray;'>Study complies with the 
+							   <a href='http://psychdisclosure.org' target='_blank'>Basic 4 (retroactive)</a> 
+							   <img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'> reporting standard:</span>
+							   <ol style='margin-top:5px;margin-bottom:5px;'>
+							   <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+							   <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+							   <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+							   <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+							   </ol>
+							   <span style='color:red;'>Date of retroactive disclosure: May 2, 2018.</span>
+							   </span>
+							   </div> <a href='https://codeocean.com/2018/04/19/code-for-colon-self-esteem-relationship-threat-and-dependency-regulation-colon-independent-replication-of-murray-rose-bellavia-holmes-and-kusche-lpar-2002-rpar-study-3/code' target='_blank' title='Go to computational container'>
+							   <img src='../logos/sprite-icons/code-ocean.png' class='shrunk-16 transparent'></a> 
+							</div>
+							
+							<span class='label label-info-brown' title='This article reports replications.'>Replications <span class='badge badge-repnum'>1</span></span>  <span class='target-effects'> self-esteem buffers relationship threat</span>
+							
+						</td>
+						<td class='PDF-column'> <span class='label label-info-purple'><a href='https://psyarxiv.com/5suda/' target='_blank' 
+							class='black' title='View preprint of this article.'>Preprint</a></span>  <a href='https://static1.squarespace.com/static/594641bbe3df28301b1a0493/t/5970b5c8f5e2311272d3b4f0/1500558794416/2017+%28in+press%29_Campbell+et+al_JRP_Replication+of+Murray+et+al+2002.pdf' target='_blank'>
+							<img src='../logos/sprite-icons/pdf.png' class='shrunk-20 transparent'></a>
+						</td >
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		
+		<ul class="nav nav-tabs" style="margin-top:30px;margin-left:24px;">
+			<li class="active"><a data-toggle="tab" href="#transparency" title='View transparency components'>Transparency</a></li>
+			<li><a data-toggle="tab" href="#key-figures" title='View key figures/tables'>Key Figures/Tables</a></li>
+			<li><a data-toggle="tab" href="#rep-details" title='View replication details'>Replication Details</a></li>
+		</ul>
+
+			  <div class="tab-content" style="padding-left:26px;">
+				<div id="transparency" class="tab-pane fade in active" style="margin-top:15px;">
+	
+					<div style="margin-top:5px;margin-bottom:10px;">
+						
+						<div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/preregistered-plus-available.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Preregistered Study Protocol</span>
+										<a href="https://osf.io/ebuzm/?action=download" target="_blank" title="Direct download file"> EDC_Replication Protocol.docx <i class="fa fa-download"></i></a><a href="https://osf.io/ebuzm/" target="_blank"><span style="margin-left:30px;">View pregistered study protocol on OSF</span> <img src="../logos/osf-13x13.png"></a>
+									</div>
+										<br>
+									  <iframe src="https://mfr.osf.io/render?url=https://osf.io/ebuzm/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Study Materials</span>
+											<a href="https://osf.io/ebuzm/?action=download" target="_blank" title="Direct download file"> EDC_Replication Protocol.docx <i class="fa fa-download"></i></a><a href="https://osf.io/ebuzm/" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="../logos/osf-13x13.png"></a>
+											<span style="color:grey;padding-left:30px;">Study materials available in preregistered study protocol</span>
+									</div>
+										<br>
+									  <iframe src="https://mfr.osf.io/render?url=https://osf.io/ebuzm/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/data-available.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Data</span>
+										<a href="https://osf.io/n64j9/?action=download" target="_blank" title="Direct download file"> EDC_clean2.csv <i class="fa fa-download"></i></a><a href="https://osf.io/n64j9/" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="../logos/osf-13x13.png"></a>
+									</div>
+									<br>
+								  <iframe src="https://mfr.osf.io/render?url=https://osf.io/n64j9/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style="display:inline;" class="popUpOnHover">
+							<img src='../logos/sprite-icons/code.png' class='shrunk-16 transparent'>
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<div style="padding-top:15px;padding-left:5px;font-size:10px">
+										<span style="font-weight:bold;font-size:16px;padding-right:20px;">Code</span>
+										<a href="https://osf.io/yyrw6/?action=download" target="_blank" title="Direct download file"> Murray_replication.Rmd <i class="fa fa-download"></i></a><a href="https://osf.io/yyrw6" target="_blank"><span style="margin-left:30px;">View file on OSF</span> <img src="../logos/osf-13x13.png"></a>
+									</div>
+									<br>
+									<iframe src="https://mfr.osf.io/render?url=https://osf.io/yyrw6/?action=download%26mode=render" width="100%" scrolling="yes" height="600px" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+								</div>
+							</span>
+						</div>
+					   
+					   <div style='display:inline;' class='popUpOnHover'>
+							<img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'>
+						   <span class='toDisplayBasic4Submission popUpStyle' style='padding-left:5px;white-space:nowrap;'>
+						   <span style='font-weight:bold;color:gray;'>Study complies with the 
+						   <a href='http://psychdisclosure.org' target='_blank'>Basic 4 (retroactive)</a> 
+						   <img src='../logos/sprite-icons/disclosure-available.png' class='shrunk-16 transparent'> reporting standard:</span>
+						   <ol style='margin-top:5px;margin-bottom:5px;'>
+						   <li><strong>Excluded data (subjects/observations):</strong> Full details reported in article.</li>
+						   <li><strong>Experimental conditions:</strong> Full details reported in article.</li>
+						   <li><strong>Outcome measures:</strong> Full details reported in article.</li>
+						   <li><strong>Sample size determination:</strong> Full details reported in article.</li>
+						   </ol>
+						   <span style='color:red;'>Date of retroactive disclosure: May 2, 2018.</span>
+						   </span>
+					   </div> 
+					   
+					   <div style="display:inline;" class="popUpOnHover"><img src="../logos/sprite-icons/code-ocean.png" class="shrunk-16 transparent">
+							<span class="toDisplayFullPagePopUp popUpStyle">
+								<div style="min-width:1000px;white-space:normal;">
+									<script src="https://codeocean.com/widget.js?id=91a4a325-5a3f-4899-826a-87fd4153824e" async></script>
+								</div>
+							</span>
+						</div>
+						
+						<br>
+						<div style="font-style:italic;font-size:10px;color:grey;margin-top:15px;">Hover over badges to reveal curated transparency components</div>
+					</div>
+				</div>
+				
+				<div id="key-figures" class="tab-pane fade" style="margin-top:15px;">
+					<img src="key-figures/cbkd(2018,jrp)-table3.png" class="img-responsive">
+				</div>
+				
+				<div id="rep-details" class="tab-pane fade" style="margin-top:15px;">
+				
+						<div style="max-width:1000px;margin-top:15px;">
+						  <table class="stripe ">
+								<thead>
+									<tr style="border-bottom:solid 1px black;">
+										<th title="" class="padded">replication.study</th>
+										<th style="text-align:center;" class="padded">original.study</th>
+										<th style="text-align:center;" class="padded">target.effect</th>
+										<th style="text-align:center;" class="padded">rep.method.similarity</th>
+										<th style="text-align:center;" class="padded">rep.differences</th>
+										<th style="text-align:center;" class="padded">auxiliary.hypotheses</th>
+									</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="padded"> Campbell, Balzarini, Kohut, Dobson, Hahn, Moroz, & Stanton (2018)  <a href='https://static1.squarespace.com/static/594641bbe3df28301b1a0493/t/5970b5c8f5e2311272d3b4f0/1500558794416/2017+%28in+press%29_Campbell+et+al_JRP_Replication+of+Murray+et+al+2002.pdf' target='_blank'><img src='../logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
+									<td class="padded">Murray, Rose, Bellavia, Holmes, & Kusche (2002) Study 3 <a href='http://psycnet.apa.org/record/2002-17813-005' target='_blank'><img src='../logos/sprite-icons/pdf.png' class='shrunk-14 transparent'></a></td>
+									<td class="center padded">self-esteem buffers relationship threat</td>
+									<td class="center padded"><i>exact</i> <br> (same IV/DV operationalizations, IV/DV stimuli, procedural details, physical setting, and population)</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+			
+				</div>
+		
+			</div>
+		
+		
+		<div style="margin-top:200px;margin-left:24px;">
+			<span style="color:grey;font-size:14px;">Related Articles/Collections </span>
+			<table style="margin-top:5px;">
+				<tr>
+					<td style="vertical-align:top;padding:5px;">
+						<img src='../logos/sprite-icons/article.png' class='shrunk-12 transparent'>
+					</td>
+					<td style="padding:5px;max-width:700px;">
+						<a href="bdc(2016,jesp).html">Does exposure to erotica reduce attraction and love for romantic partners in men? Independent replications of Kenrick, Gutierres, and Goldberg (1989) Study 2 </a>
+						<br>
+						<span class='author-text' style="line-height:24px;">Balzarini, Dobson, & Campbell (2016)</span> 						
+						<br>
+						<span class='label label-info-brown'  title='This article reports replications.'>Replications <span class='badge badge-repnum'>3</span></span> <span class='target-effects'> playboy effect</span> 
+					</td>
+				</tr>
+			</table>
+			<p style="margin-top:50px;">
+			</p>
+		</div>
+		
+		
+	
+	
+	</div> <!--secondary container div-->
+	
+	
+		<div class="footer-bottom" style="background-color:whitesmoke;padding-top:10px;">
+			
+			<div class="row">
+				<div class="col-sm-4 center" style="margin-top:30px;">
+						<span style="font-weight:bold;">Previous Funders</span>
+						<br>
+						<a  href="https://cos.io/"><img src="../logos/COS-logo.png" style="margin-top:15px;"></a> <a  href="http://www.bitss.org/"><img src="../logos/BITSS-logo.png" style="margin-left:30px;margin-top:15px;"></a>
+				</div>			
+				<div class="col-sm-4 center" style="margin-top:30px;">
+					<span style="font-weight:bold;">Current Funders</span>
+						<br>
+						<a  href="https://cordis.europa.eu/project/rcn/215183_en.html"><img src="../logos/european-commission-icon.png" style="margin-top:15px;width:128px;"></a>
+				</div>
+				<div class="col-sm-4 center" style="margin-top:30px;">
+					<span style="font-weight:bold;margin-bottom:15px;">Contact Details</span>
+						<p style="line-height:1.2em;margin-top:15px;">
+						University of Western Ontario<br>
+						1151 Richmond St<br>
+						London, Ontario, CANADA, N6A 3K7<br>
+						email: curatescience@<span class="displaynone"></span>gmail.com<br>
+						<a href="https://twitter.com/curatescience"><i class="fab fa-twitter fa-2" aria-hidden="true"></i></a>
+						<a href="https://github.com/eplebel/science-commons"><i class="fab fa-github fa-2" aria-hidden="true"></i></a>
+						</p>
+				</div>		
+			</div>
+			
+			<div class="container" style="margin-top:50px;">
+				<div class="row">
+						<center>
+							<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" title="This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License"/></a>
+							<br>
+							<i>*Thanks to <a href="http://www.nicebread.de/">Felix Schonbrodt</a> for hosting CurateScience.org</i>
+						</center>
+				</div>
+			</div>
+		</div> <!--footer-bottom div-->
+
+
+	
+	
+</div> <!--main-container push div -->
+
+
+	
+	
+
+  
+  <script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-48865749-1', 'auto');
+	  ga('send', 'pageview');
+  </script>
+  
+</body>
+</html>
