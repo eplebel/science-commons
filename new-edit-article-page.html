@@ -181,7 +181,7 @@
 <header >
   
   <nav class="navbar navbar-default navbar-fixed-top">
-	  <div class="container">
+	  <div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;">
@@ -210,7 +210,7 @@
 </header>
 
 <div class="main-container">
-	<div class="container" style="font-size:12px;">
+	<div class="container-fluid" style="font-size:12px;">
 		
 		
 		<div class="article-page-top-section">
@@ -228,7 +228,7 @@
 						</td>
 						<td  colspan="2">
 							
-							<table style="margin-top:0px;border:1px solid lightgrey;" width="100%" border=0>
+							<table style="margin-top:0px;border:1px solid lightgrey;" border=0>
 								<tr>
 									<td style="padding:5px;">
 										<div style="font-style:italic;font-size:10px;color:grey;">Article-level</div>
@@ -409,14 +409,14 @@
 					<tr>
 						<td >
 						</td>
-						<td width="20px">
+						<td width="20px"><img src="logos\_trans-square.png">
 						</td>
-						<td  style="border:lightgrey solid 1px;margin-top:20px;">
+						<td  style="border:lightgrey solid 1px;">
 							<div style="font-style:italic;font-size:10px;color:grey;padding:2px;">Study-level</div>
 							<table style="table-layout:fixed;margin-top:0px;margin-left:5px;" border=0>
 								<tr>
 									<td></td>
-									<td><div style="font-weight:600;">Transparency</div></td>
+									<td ><div style="font-weight:600;">Transparency</div></td>
 									<td><div style="font-weight:600;margin-bottom:5px;">Key Figures/Tables </div></td>
 									<td><div style="font-weight:600;margin-bottom:5px;">Replication Details </div></td>
 								</tr>
@@ -506,7 +506,7 @@
 									</td>
 									<td style="vertical-align:top;padding-left:2px;">
 									
-									  <table class="stripe" style="opacity:.5;">
+									  <table class="stripe" style="opacity:.5;" border=0>
 											<thead>
 												<tr style="border-bottom:solid 1px lightgrey;">
 													<th style="text-align:center;color:grey;" class="padded">Original.Study</th>
@@ -514,6 +514,10 @@
 													<th style="text-align:center;color:grey;" class="padded">Rep.Method.Similarity</th>
 													<th style="text-align:center;color:grey;" class="padded">Rep.Differences</th>
 													<th style="text-align:center;color:grey;" class="padded">Auxiliary.Hypotheses</th>
+													<th style="text-align:center;color:grey;" class="padded">IVs</th>
+													<th style="text-align:center;color:grey;" class="padded">DVs</th>
+													<th style="text-align:center;color:grey;" class="padded">IV.methods</th>
+													<th style="text-align:center;color:grey;" class="padded">DV.methods</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -543,10 +547,23 @@
 													</div>
 												</td>
 												<td class="center padded">
-													<input type="text" name="method.diffs" placeholder="e.g., 'diff. DV stimuli'" style="color:#999999;" size="15">
+													<input type="text" name="method.diffs" placeholder="e.g., 'diff. DV stimuli'" style="color:#999999;" size="15" title="e.g., 'different DV stimuli'">
 												</td>
 												<td class="center padded">
-													<input type="text" name="aux.hypotheses" placeholder="e.g., 'success. manip.check'" style="color:#999999;" size="15">
+													<input type="text" name="aux.hypotheses" placeholder="e.g., 'success. manip. check'" style="color:#999999;" size="15" title="e.g., 'successful manipulation check'">
+												</td>
+												
+												<td class="center padded">
+													<input type="text" name="IVs" placeholder="e.g., 'erotica exposure vs. control'" style="color:#999999;" size="15" title="e.g., 'erotica exposure vs. control'">
+												</td>
+												<td class="center padded">
+													<input type="text" name="DVs" placeholder="e.g., 'partner love'" style="color:#999999;" size="15">
+												</td>
+												<td class="center padded">
+													<input type="text" name="IV.methods" placeholder="e.g., 'Playboy centerfolds vs. abstract art images'" style="color:#999999;" size="15" title="e.g., 'Playboy centerfolds vs. abstract art images'">
+												</td>
+												<td class="center padded">
+													<input type="text" name="DV.methods" placeholder="e.g., 'Rubin Love Scale (13-item)'" style="color:#999999;" size="15" title="e.g., 'Rubin Love Scale (13-item)'">
 												</td>
 											</tr>
 											</tbody>
@@ -651,6 +668,10 @@
 														<th style="text-align:center;color:grey;" class="padded">Rep.Method.Similarity</th>
 														<th style="text-align:center;color:grey;" class="padded">Rep.Differences</th>
 														<th style="text-align:center;color:grey;" class="padded">Auxiliary.Hypotheses</th>
+														<th style="text-align:center;color:grey;" class="padded">IVs</th>
+														<th style="text-align:center;color:grey;" class="padded">DVs</th>
+														<th style="text-align:center;color:grey;" class="padded">IV.methods</th>
+														<th style="text-align:center;color:grey;" class="padded">DV.methods</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -680,10 +701,23 @@
 														</div>
 													</td>
 													<td class="center padded">
-														<input type="text" name="method.diffs" placeholder="e.g., 'diff. DV stimuli'" style="color:#999999;" size="15">
+														<input type="text" name="method.diffs" placeholder="e.g., 'diff. DV stimuli'" style="color:#999999;" size="15" title="e.g., 'different DV stimuli'">
 													</td>
 													<td class="center padded">
-														<input type="text" name="aux.hypotheses" placeholder="e.g., 'success. manip.check'" style="color:#999999;" size="15">
+														<input type="text" name="aux.hypotheses" placeholder="e.g., 'success. manip. check'" style="color:#999999;" size="15" title="e.g., 'successful manipulation check'">
+													</td>
+													
+													<td class="center padded">
+														<input type="text" name="IVs" placeholder="e.g., 'erotica exposure vs. control'" style="color:#999999;" size="15" title="e.g., 'erotica exposure vs. control'">
+													</td>
+													<td class="center padded">
+														<input type="text" name="DVs" placeholder="e.g., 'partner love'" style="color:#999999;" size="15">
+													</td>
+													<td class="center padded">
+														<input type="text" name="IV.methods" placeholder="e.g., 'Playboy centerfolds vs. abstract art images'" style="color:#999999;" size="15" title="e.g., 'Playboy centerfolds vs. abstract art images'">
+													</td>
+													<td class="center padded">
+														<input type="text" name="DV.methods" placeholder="e.g., 'Rubin Love Scale (13-item)'" style="color:#999999;" size="15" title="e.g., 'Rubin Love Scale (13-item)'">
 													</td>
 												</tr>
 												</tbody>
