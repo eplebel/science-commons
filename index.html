@@ -140,12 +140,15 @@
 							<div class="col-sm-4 col-sm-push-8" style="font-size:11px;color:darkgrey;">
 								
 								<div style="margin-top:10px;color:darkblue;font-weight:bold;">Content type</div>
-									<input onchange="filterAT()" type="checkbox" name="articleType" value="ec" style="margin-top:1px;vertical-align:bottom;" autocomplete="off"> <img src='logos/sprite-icons/collection.png' class='shrunk-14 transparent' title="Replication collection"> Collections of <span class="label label-info-brown" title="Article reports at least 1 replication of a published effect.">Replications</span><br>
-								<input onchange="filterAT()" type="checkbox" name="articleType" value="rep" style="margin-top:1px;vertical-align:bottom;" autocomplete="off"> <img src='logos/sprite-icons/article.png' class='shrunk-12 transparent' title="Article"> <span class="label label-info-brown" title="Article reports at least 1 replication of a published effect.">Replications</span> <br>
-								<input onchange="filterAT()" type="checkbox" name="articleType" value="reanal" style="margin-top:1px;vertical-align:bottom;" autocomplete="off"> <img src='logos/sprite-icons/article.png' class='shrunk-12 transparent' title="Article"> <span class="label label-info-pecan" title="Article reports a reproducibility or robustness reanalysis of a previously published result.">Reanalyses</span> (reproducibility or robustness)<br>
-								<input onchange="filterAT()" type="checkbox" name="articleType" value="orig" style="margin-top:1px;vertical-align:bottom;" autocomplete="off"> <img src='logos/sprite-icons/article.png' class='shrunk-12 transparent' title="Article"> Original research <br>
-								<input onchange="filterAT()" type="checkbox" name="articleType" value="meta" style="margin-top:1px;vertical-align:bottom;" autocomplete="off"> <img src='logos/sprite-icons/article.png' class='shrunk-12 transparent' title="Article"> Meta-analyses (traditional)
-								
+								<input onchange="filterAT()" type="checkbox" name="articleType" value="rep" style="margin-top:1px;vertical-align:bottom;" autocomplete="off"> <img src='logos/sprite-icons/article.png' class='shrunk-12 transparent' title="Article"> <span class="label label-info-brown" title="Article reports at least 1 replication of a published effect.">Replications</span>
+								<br>
+								<input onchange="filterAT()" type="checkbox" name="articleType" value="ec" style="margin-top:1px;vertical-align:bottom;" autocomplete="off"> <img src='logos/sprite-icons/collection.png' class='shrunk-14 transparent' title="Replication collection" style="margin-top:2px;"> Collections of <span class="label label-info-brown" title="Article reports at least 1 replication of a published effect.">Replications</span>
+								<br>
+								<input onchange="filterAT()" type="checkbox" name="articleType" value="reanal" style="margin-top:1px;vertical-align:bottom;" autocomplete="off"> <img src='logos/sprite-icons/article.png' class='shrunk-12 transparent' title="Article"> <span class="label label-info-pecan" title="Article reports a reproducibility or robustness reanalysis of a previously published result.">Reanalyses - Reproducibility/Robustness</span> 
+								<br>								
+								<input onchange="filterAT()" type="checkbox" name="articleType" value="meta" style="margin-top:1px;vertical-align:bottom;" autocomplete="off"> <img src='logos/sprite-icons/article.png' class='shrunk-12 transparent' title="Article"> <span class="label label-info-pecan" title="Article reports a (traditional) meta-analysis of a target effect/phenomenon.">Reanalyses - Meta-analyses (traditional)</span>
+								<br>
+								<input onchange="filterAT()" type="checkbox" name="articleType" value="orig" style="margin-top:1px;vertical-align:bottom;" autocomplete="off"> <img src='logos/sprite-icons/article.png' class='shrunk-12 transparent' title="Article"> Original research 
 								
 								<div style="margin-top:20px;color:darkblue;font-weight:bold;">Transparency</div>
 								<input onchange="filterPREREG()" type="checkbox" name="prereg" value="preregplusrr" style="margin-top:1px;vertical-align:bottom;" autocomplete="off">
@@ -276,7 +279,11 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/materials-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/g2dsr/' target='_blank' title='Go to data files'>
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a title='Open code information is not available'>
                 <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon unavailable'></a>  <a title='Compliance to reporting standard information is not available'>
-                <img src='logos/sprite-icons/disclosure-unavailable.png' class='shrunk-16'></a> <br>    <div class='added-by doi-dimmed'>chiefeditor May 03 2018</div>
+                <img src='logos/sprite-icons/disclosure-unavailable.png' class='shrunk-16'></a> 
+				<br>
+				<span class="label label-info-pecan" title="Article reports a (traditional) meta-analysis of a target effect/phenomenon.">Reanalysis - Meta-analysis</span>
+				<br>
+				<div class='added-by doi-dimmed'>chiefeditor May 03 2018</div>
                           </td>
                           <td class='article-styling PDF-column'> <a href='https://www.researchgate.net/profile/Katherine_Collison/publication/322685405_Examining_the_Effects_of_Controlling_for_Shared_Variance_among_the_Dark_Triad_Using_Meta-analytic_Structural_Equation_Modelling_Dark_Triad_metaSEM/links/5a6e7618458515d407585359/Examining-the-Effects-of-Controlling-for-Shared-Variance-among-the-Dark-Triad-Using-Meta-analytic-Structural-Equation-Modelling-Dark-Triad-metaSEM.pdf' target='_blank'>
                        <img src='logos/sprite-icons/pdf.png' class='shrunk-20 transparent'></a> </td>
@@ -679,7 +686,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>  <a title='Compliance to reporting standard information is not available'>
                 <img src='logos/sprite-icons/disclosure-unavailable.png' class='shrunk-16'></a> <a href='https://codeocean.com/2017/04/19/reanalysis-of-mouse-encode-comparative-gene-expression-data/code' target='_blank' title='Go to computational container'>
                        <img src='logos/sprite-icons/code-ocean.png' class='shrunk-16 transparent'></a>  <br>  <span class='label label-info-pecan' 
-                       title='This article reports a reproducibility or robustness reanalysis of a previously published result.'>Reanalysis</span>    <div class='added-by doi-dimmed'>chiefeditor May 21 2018</div>
+                       title='This article reports a reproducibility or robustness reanalysis of a previously published result.'>Reanalysis - Robustness</span>    <div class='added-by doi-dimmed'>chiefeditor May 21 2018</div>
                           </td>
                           <td class='article-styling PDF-column'><span class='label label-default'><a href='https://f1000research.com/articles/4-121/v1' target='_blank' 
                       class='black' title='View HTML version of this article.'>HTML</a></span>  <a href='https://f1000researchdata.s3.amazonaws.com/manuscripts/7019/9f5f4330-d81d-46b8-9a3f-d8cb7aaf577e_6536_-_yoav_gilad-edited.pdf?doi=10.12688/f1000research.6536.1 ' target='_blank'>
@@ -4208,7 +4215,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://f1000researchdata.s3.amazonaws.com/datasets/14584/2ec1963a-7d35-4c7a-91dc-6c63ec4d46dc_Dataset_1.zip' target='_blank' title='Go to reproducible code files'>
                        <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>  <a title='Compliance to reporting standard information is not available'>
                 <img src='logos/sprite-icons/disclosure-unavailable.png' class='shrunk-16'></a> <br>  <span class='label label-info-pecan' 
-                       title='This article reports a reproducibility or robustness reanalysis of a previously published result.'>Reanalysis</span>    <div class='added-by doi-dimmed'>chiefeditor May 23 2018</div>
+                       title='This article reports a reproducibility or robustness reanalysis of a previously published result.'>Reanalysis - Robustness</span>    <div class='added-by doi-dimmed'>chiefeditor May 23 2018</div>
                           </td>
                           <td class='article-styling PDF-column'><span class='label label-default'><a href='https://f1000research.com/articles/7-487/v1' target='_blank' 
                       class='black' title='View HTML version of this article.'>HTML</a></span>  <a href='https://f1000researchdata.s3.amazonaws.com/manuscripts/15871/5f6f128b-752d-4584-83f5-99b9a8649ec3_14584_-_Hiroyuki_Akama.pdf?doi=10.12688/f1000research.14584.1' target='_blank'>
@@ -4235,7 +4242,7 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                        <img src='logos/sprite-icons/data-available.png' class='shrunk-16 transparent'></a>  <a href='https://osf.io/sbhn9/files/' target='_blank' title='Go to reproducible code files'>
                        <img src='logos/sprite-icons/code.png' class='shrunk-16 code-icon'></a>  <a title='Compliance to reporting standard information is not available'>
                 <img src='logos/sprite-icons/disclosure-unavailable.png' class='shrunk-16'></a> <br>  <span class='label label-info-pecan' 
-                       title='This article reports a reproducibility or robustness reanalysis of a previously published result.'>Reanalysis</span>    <div class='added-by doi-dimmed'>chiefeditor June 24 2018</div>
+                       title='This article reports a reproducibility or robustness reanalysis of a previously published result.'>Reanalysis - Robustness</span>    <div class='added-by doi-dimmed'>chiefeditor June 24 2018</div>
                           </td>
                           <td class='article-styling PDF-column'><span class='label label-default'><a href='https://f1000research.com/articles/5-1778/v1' target='_blank' 
                       class='black' title='View HTML version of this article.'>HTML</a></span>  <a href='https://f1000researchdata.s3.amazonaws.com/manuscripts/9905/08d186c6-0334-465e-b4f5-9f9b6e37b3ff_9202_-_alex_holcombe.pdf?doi=10.12688/f1000research.9202.1' target='_blank'>
@@ -4272,7 +4279,11 @@ Basic 4 (at submission)</a> <img src='logos/sprite-icons/disclosure-available.pn
                                     </li></span>
                                 </ul>
                           </span>
-                       </div> <br>    <div class='added-by doi-dimmed'>chiefeditor June 28 2018</div>
+                       </div> 
+					   <br>
+						<span class="label label-info-pecan" title="Article reports a (traditional) meta-analysis of a target effect/phenomenon.">Reanalysis - Meta-analysis</span>
+						<br>
+					   <div class='added-by doi-dimmed'>chiefeditor June 28 2018</div>
                           </td>
                           <td class='article-styling PDF-column'><span class='label label-info-purple'><a href='https://psyarxiv.com/d2a3s/' target='_blank' 
                       class='black' title='View preprint of this article.'>Preprint</a></span> </td>
