@@ -232,7 +232,7 @@
 								<tr>
 									<td style="padding:5px;">
 										<div style="font-style:italic;font-size:10px;color:grey;">Article-level</div>
-										<input type="text" name="DOI" placeholder="DOI (or leave blank for Unpublished/Under peer review articles)" style="color:grey;opacity:.40;margin-top:10px;" size="53">
+										<input type="text" name="DOI" placeholder="DOI (or leave blank for Unpublished/Under peer review articles)" style="color:grey;opacity:.40;margin-top:5px;" size="54">
 										<input type="submit" value="Populate article metadata" style="font-size:9px;">
 									</td>
 									<td>
@@ -247,8 +247,7 @@
 										<br>
 										<input type="text" name="authors" placeholder="Journal name (or 'Under peer review' or 'Unpublished')" style="color:#999999;font-style:italic;margin-top:10px;" size="50"><b>*</b>
 										<br>
-										<textarea name="abstract" placeholder="Abstract (optional)" style="font-size:12px;color:grey;margin-top:10px;height:50px;width:707px;max-height:250px;min-height:50px;overflow:auto;resize:vertical;"></textarea>
-											
+										<textarea name="abstract" placeholder="Abstract (optional)" style="font-size:12px;color:grey;margin-top:10px;height:30px;width:707px;max-height:250px;min-height:30px;overflow:auto;resize:vertical;"></textarea>
 									</td>
 									<td style="vertical-align:top;text-align:right;padding:5px;"> 
 											<span class='label label-info-purple' style="font-size:80%!important;">Preprint</a></span>
@@ -263,9 +262,11 @@
 								</tr>
 								<tr>
 									<td colspan="2" style="padding:5px;">
-										
 										<div style="margin-left:15px;margin-bottom:5px;vertical-align:top;display:inline-block;">
-											<input type="radio" name="articleType" value="orig" style="margin-top:5px;vertical-align:bottom" autocomplete="off" > Original research
+											Article type<b>*</b>:
+										</div>
+										<div style="margin-bottom:5px;vertical-align:top;display:inline-block;">
+											<input type="radio" name="articleType" value="orig" style="margin-top:5px;vertical-align:bottom;margin-left:15px;" autocomplete="off" > Original research
 											
 										</div>
 										<div style="margin-bottom:5px;vertical-align:top;display:inline-block;">
@@ -316,7 +317,7 @@
 																<input type="text" name="omURL" placeholder="Study materials URL" style="color:#999999;margin-top:5px;" size="25">
 																<br>
 																<a href="" style="font-size:10px;"><i class="fas fa-plus" style="font-size:1em;"></i> Add another URL</a>
-																<div style="font-style:italic;font-size:10px;color:grey;margin-top:2px;">Not typically applicable to reanalyses</div>
+																
 															</div>
 															<div id="od3" class="tab-pane fade" >
 																<span style="font-weight:600;">Open data:</span>
@@ -376,13 +377,11 @@
 															<input type="checkbox" name="articleType" value="rep" style="margin-top:1px;vertical-align:bottom;" autocomplete="off">Reproducibility
 															<input type="checkbox" name="articleType" value="rep" style="margin-top:1px;vertical-align:bottom;margin-left:20px;" autocomplete="off">Robustness
 															<br>
-															of Study: 
-															<input type="text" name="rep.study.authors" placeholder="Study authors & pub.year*" style="color:#999999;font-size:10px;margin-top:5px;" size="25">
+															Of article: 
+															<input type="text" name="rep.study.authors" placeholder="Article authors & pub.year*" style="color:#999999;font-size:10px;margin-top:5px;" size="25">
 															<br>
 															<a href="" style="font-size:10px;"><i class="fas fa-plus" style="font-size:1em;"></i> Add article</a>
-															<br>
-															<input type="text" name="rep.study.number" placeholder="Study #" style="color:#999999;font-size:10px;margin-top:5px;" size="10">	
-															<div style="font-style:italic;font-size:8px;color:grey;margin-top:2px;">N/A for sole study articles</div>	
+																
 														</div>
 													</td>
 													<td style="vertical-align:top;">
