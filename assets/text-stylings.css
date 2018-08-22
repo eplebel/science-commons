@@ -47,6 +47,7 @@
 	.popUpOnHover:hover span.toDisplayBadgePopupOneLink { display:block; }
 	.popUpOnHover:hover span.toDisplayBadgePopupTwoLinks { display:block; }
 	.popUpOnHover:hover span.toDisplayBasic4ArticlePage { display:block; }
+	.popUpOnHover:hover span.toDisplayRepDiagram { display:block; }
 	.toDisplayBasic4Submission {
 		display:none;
 		position:absolute; 
@@ -166,6 +167,18 @@
 		padding:3px;
 		top:-112px; 
 		left:0px; }	
+	.toDisplayRepDiagram {
+		display:none;
+		position:absolute; 		
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-110px; 
+		left:-50px; }
 	
 	a.black:link, a.black:visited, a.black:hover, a.black:active {
 		color: white;
