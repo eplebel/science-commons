@@ -44,9 +44,14 @@
 	.popUpOnHover:hover span.toDisplayCommentaries { display:block; }
 	.popUpOnHover:hover span.toDisplayAuthorPopUp { display:block; }
 	.popUpOnHover:hover span.toDisplayKeyFigures { display:block; }
+	.popUpOnHover:hover span.toDisplayBadgePopup1StudyArticleLevel { display:block; }
 	.popUpOnHover:hover span.toDisplayBadgePopupOneLink { display:block; }
 	.popUpOnHover:hover span.toDisplayBadgePopupTwoLinks { display:block; }
+	.popUpOnHover:hover span.toDisplayBadgePopup3StudiesArticleLevel { display:block; }
+	.popUpOnHover:hover span.toDisplayBadgePopup3StudiesRSArticleLevel { display:block; }
+	.popUpOnHover:hover span.toDisplayBadgePopup1StudyRSArticleLevel { display:block; }
 	.popUpOnHover:hover span.toDisplayBasic4ArticlePage { display:block; }
+	.popUpOnHover:hover span.toDisplayBasic4ArticlePage3Studies{ display:block; }
 	.popUpOnHover:hover span.toDisplayRepDiagram { display:block; }
 	.toDisplayBasic4Submission {
 		display:none;
@@ -131,6 +136,18 @@
 		padding:3px;
 		top:-190px; 
 		left:6px; }
+	.toDisplayBadgePopup1StudyArticleLevel {
+		display:none;
+		position:absolute; 		
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-53px; 
+		left:0px; }
 	.toDisplayBadgePopupOneLink {
 		display:none;
 		position:absolute; 		
@@ -141,7 +158,7 @@
 		border-width:1px;
 		border-color:darkgrey;
 		padding:3px;
-		top:-40px; 
+		top:-37px; 
 		left:0px; }
 	.toDisplayBadgePopupTwoLinks {
 		display:none;
@@ -155,6 +172,42 @@
 		padding:3px;
 		top:-56px; 
 		left:0px; }
+	.toDisplayBadgePopup3StudiesArticleLevel {
+		display:none;
+		position:absolute; 		
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-117px; 
+		left:0px; }
+	.toDisplayBadgePopup3StudiesRSArticleLevel {
+		display:none;
+		position:absolute; 		
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-56px; 
+		left:0px; }
+	.toDisplayBadgePopup1StudyRSArticleLevel {
+		display:none;
+		position:absolute; 		
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-38px; 
+		left:0px; }
 	.toDisplayBasic4ArticlePage {
 		display:none;
 		position:absolute; 
@@ -166,7 +219,19 @@
 		border-color:darkgrey;
 		padding:3px;
 		top:-112px; 
-		left:0px; }	
+		left:0px; }
+	.toDisplayBasic4ArticlePage3Studies {
+		display:none;
+		position:absolute; 
+		z-index:9998;
+		border:1px;
+		background-color:white;
+		border-style:solid;
+		border-width:1px;
+		border-color:darkgrey;
+		padding:3px;
+		top:-75px; 
+		left:0px; }		
 	.toDisplayRepDiagram {
 		display:none;
 		position:absolute; 		
@@ -328,4 +393,15 @@
 	.article-page-top-section {margin-top:55px;}
 
 	.big-icon { font-size: 2.5rem; }
+	
+	.transp-popup-main-heading {
+		font-weight:bold;
+		font-size:12px;
+		color:grey;
+	}
+	.transp-popup-heading {
+		font-weight:600;
+		font-size:12px;
+		color:grey;
+	}
 	
